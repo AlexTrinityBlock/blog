@@ -2,17 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>一個凡人的筆記 on 無面者小站</title>
-    <link>https://alextrinityblock.github.io/blog/public/</link>
+    <link>/</link>
     <description>Recent content in 一個凡人的筆記 on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Fri, 26 Feb 2021 17:04:06 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Feb 2021 17:04:06 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>手動連接裝置或磁碟槽（掛載）</title>
+      <link>/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/</link>
+      <pubDate>Sun, 28 Feb 2021 00:46:22 +0800</pubDate>
+      
+      <guid>/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/</guid>
+      <description>假設今天，你的硬碟同時存在linux與windows
+你啟動linux後希望存取windows的D槽
+此時D槽被標記為
+/dev/sda2 這時你可以先建立資料夾
+/media/MyDisk 然後將D槽也就是 /dev/sda2 用下列指令掛載到/media/MyDsik上頭
+sudo mount /dev/sda2 /media/MyDisk/ 只後當你從linux進入/media/MyDisk/
+就可以從中看到你的D槽文件了</description>
+    </item>
+    
     <item>
       <title>加入佈景主題</title>
-      <link>https://alextrinityblock.github.io/blog/public/hugo/%E5%8A%A0%E5%85%A5%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C/</link>
+      <link>/hugo/%E5%8A%A0%E5%85%A5%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C/</link>
       <pubDate>Sat, 27 Feb 2021 09:36:30 +0800</pubDate>
       
-      <guid>https://alextrinityblock.github.io/blog/public/hugo/%E5%8A%A0%E5%85%A5%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C/</guid>
+      <guid>/hugo/%E5%8A%A0%E5%85%A5%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C/</guid>
       <description>從github抓取的指令 例如 ，我們要抓的佈景主題的名稱叫 m10c
 我們找到m10c的部落格網址
 然後輸入以下指令
@@ -23,20 +38,20 @@ themes/m10c 意思是將主題模塊放入
     
     <item>
       <title>建立一個新的部落格</title>
-      <link>https://alextrinityblock.github.io/blog/public/hugo/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%83%A8%E8%90%BD%E6%A0%BC/</link>
+      <link>/hugo/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%83%A8%E8%90%BD%E6%A0%BC/</link>
       <pubDate>Fri, 26 Feb 2021 21:14:30 +0800</pubDate>
       
-      <guid>https://alextrinityblock.github.io/blog/public/hugo/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%83%A8%E8%90%BD%E6%A0%BC/</guid>
+      <guid>/hugo/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%83%A8%E8%90%BD%E6%A0%BC/</guid>
       <description>1.命令行 命令行輸入後
 hugo new site hahablog 這樣會建立一個稱為『haha』的部落格</description>
     </item>
     
     <item>
       <title>Hugo建立文章</title>
-      <link>https://alextrinityblock.github.io/blog/public/hugo/hugo%E5%BB%BA%E7%AB%8B%E6%96%87%E7%AB%A0/</link>
+      <link>/hugo/hugo%E5%BB%BA%E7%AB%8B%E6%96%87%E7%AB%A0/</link>
       <pubDate>Fri, 26 Feb 2021 16:31:03 +0800</pubDate>
       
-      <guid>https://alextrinityblock.github.io/blog/public/hugo/hugo%E5%BB%BA%E7%AB%8B%E6%96%87%E7%AB%A0/</guid>
+      <guid>/hugo/hugo%E5%BB%BA%E7%AB%8B%E6%96%87%E7%AB%A0/</guid>
       <description>1.命令行 命令行輸入後
 hugo new posts/心平氣和.md 這樣會建立一個稱為『心平氣和』的文章
 2.編輯 可以用各種文字編輯器進行編輯

@@ -1,4 +1,4 @@
-baseURL = "https://alextrinityblock.github.io/blog/public/"
+#baseURL = "https://alextrinityblock.github.io/blog/public/"
 languageCode = "zh-hant"
 title = "無面者小站"
 theme = "ananke"

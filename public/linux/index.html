@@ -32,20 +32,20 @@
 
     
     
-      <link href="/categories/index.xml" rel="alternate" type="application/rss+xml" title="無面者小站" />
-      <link href="/categories/index.xml" rel="feed" type="application/rss+xml" title="無面者小站" />
+      <link href="/linux/index.xml" rel="alternate" type="application/rss+xml" title="無面者小站" />
+      <link href="/linux/index.xml" rel="feed" type="application/rss+xml" title="無面者小站" />
       
     
     
-    <meta property="og:title" content="Categories" />
+    <meta property="og:title" content="Linuxes" />
 <meta property="og:description" content="歡迎來到無面者小站" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/categories/" />
-
-<meta itemprop="name" content="Categories">
+<meta property="og:url" content="/linux/" />
+<meta property="og:updated_time" content="2021-02-28T00:46:22+08:00" />
+<meta itemprop="name" content="Linuxes">
 <meta itemprop="description" content="歡迎來到無面者小站">
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Categories"/>
+<meta name="twitter:title" content="Linuxes"/>
 <meta name="twitter:description" content="歡迎來到無面者小站"/>
 
 	
@@ -108,7 +108,7 @@
 
       <div class="tc-l pv4 pv6-l ph3 ph4-ns">
         <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-          Categories
+          Linuxes
         </h1>
         
       </div>
@@ -118,17 +118,34 @@
 
     <main class="pb7" role="main">
       
-    
-  <article class="cf pa3 pa4-m pa4-l">
-    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
+  <article class="pa3 pa4-ns nested-copy-line-height nested-img">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
+    <section class="flex-ns flex-wrap justify-around mt5">
       
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Linux</span>
+    <h1 class="f3 near-black">
+      <a href="/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/" class="link black dim">
+        手動連接裝置或磁碟槽（掛載）
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      假設今天，你的硬碟同時存在linux與windows
+你啟動linux後希望存取windows的D槽
+此時D槽被標記為
+/dev/sda2 這時你可以先建立資料夾
+/media/MyDisk 然後將D槽也就是 /dev/sda2 用下列指令掛載到/media/MyDsik上頭
+sudo mount /dev/sda2 /media/MyDisk/ 只後當你從linux進入/media/MyDisk/
+就可以從中看到你的D槽文件了
     </div>
-  </article>
-  <div class="mw8 center">
-    <section class="ph4">
+  </div>
+</div>
+</div>
       
     </section>
-  </div>
+
+</article>
 
     </main>
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
