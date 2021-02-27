@@ -1,49 +1,41 @@
-baseURL = "https://example.com"
-#title = "Your title"
-theme = "m10c"
-paginate = 5
+# baseURL = "https://alextrinityblock.github.io/blog/public/"
+languageCode = "zh-hant"
+title = "無面者小站"
+theme = "ananke"
 
-[menu]
-  [[menu.main]]
-    identifier = "home"
-    name = "Home"
-    url = "/"
-  [[menu.main]]
-    identifier = "tags"
-    name = "Tags"
-    url = "/tags/"
+DefaultContentLanguage = "zh-tw"
+SectionPagesMenu = "main" #上排標籤選單
+Paginate = 3 # 單頁最大文章數量
+# googleAnalytics = ""
+# enableRobotsTXT = true
+
+# [sitemap]
+#   changefreq = "monthly"
+#   priority = 0.5
+#   filename = "sitemap.xml"
 
 [params]
-  author = "John Doe"
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium."
-  menu_item_separator = " - "
-  [[params.social]]
-    name = "github"
-    url = "https://github.com/gohugoio"
-  [[params.social]]
-    name = "twitter"
-    url = "https://twitter.com/gohugoio"
+  favicon = "" #網站上頭的圖示
+  site_logo = "/logo.jpg" #網站左上角logo
+  description = "歡迎來到無面者小站" #html meta 裡面的說明
+#   facebook = ""
+#   twitter = ""
+#   instagram = ""
+#   youtube = ""
+#   github = ""
+#   gitlab = ""
+#   linkedin = ""
+#   mastodon = ""
+#   slack = ""
+#   stackoverflow = ""
+#   rss = ""
 
-  # Brown theme
-  #[params.style]
-  #  darkestColor = "#463625"
-  #  darkColor = "#2a3738"
-  #  primaryColor = "#eeee6a"
-  #  lightColor = "#96a879"
-  #  lightestColor = "#ffffff"
+  # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
+  #無圖片時的背景顏色
+  background_color_class = "mid-gray"
 
-  # Green theme
-  #[params.style]
-  #  darkestColor = "#315659"
-  #  darkColor = "#253031"
-  #  primaryColor = "#dad865"
-  #  lightColor = "#96a879"
-  #  lightestColor = "#fff"
+  # 下面的主頁面畫像在public/images裡頭
+  # featured_image = "/images/gohugo-default-sample-hero-image.jpg"
+  featured_image = "/home.jpg"
+  recent_posts_number = 3
 
-  # Red and black theme
-  #[params.style]
-  #  darkestColor = "#d35050"
-  #  darkColor = "#212121"
-  #  primaryColor = "#ffffff"
-  #  lightColor = "#a2a2a2"
-  #  lightestColor = "#d3d3d3"
