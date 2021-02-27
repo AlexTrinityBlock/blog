@@ -15,8 +15,8 @@ Paginate = 3 # 單頁最大文章數量
 #   filename = "sitemap.xml"
 
 [params]
-  favicon = "/public/avatar2.jpg" #網站上頭的圖示
-  site_logo = "/public/logo.jpg" #網站左上角logo
+  favicon = "/blog/public/avatar2.jpg" #網站上頭的圖示
+  site_logo = "/blog/public/logo.jpg" #網站左上角logo
   description = "歡迎來到無面者小站" #html meta 裡面的說明
 #   facebook = ""
 #   twitter = ""
