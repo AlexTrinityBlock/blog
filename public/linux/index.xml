@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linuxes on 無面者小站</title>
-    <link>/linux/</link>
+    <link>https://alextrinityblock.github.io/blog/public/linux/</link>
     <description>Recent content in Linuxes on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Sun, 28 Feb 2021 00:46:22 +0800</lastBuildDate><atom:link href="/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Feb 2021 00:46:22 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>手動連接裝置或磁碟槽（掛載）</title>
-      <link>/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/</link>
+      <link>https://alextrinityblock.github.io/blog/public/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/</link>
       <pubDate>Sun, 28 Feb 2021 00:46:22 +0800</pubDate>
       
-      <guid>/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/</guid>
       <description>假設今天，你的硬碟同時存在linux與windows
 你啟動linux後希望存取windows的D槽
 此時D槽被標記為
