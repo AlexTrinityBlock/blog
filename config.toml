@@ -1,5 +1,5 @@
 #上傳時記得啟動網址
-#baseURL = "https://alextrinityblock.github.io/blog/public/"
+baseURL = "https://alextrinityblock.github.io/blog/public/"
 languageCode = "zh-hant"
 title = "無面者小站"
 theme = "ananke"
