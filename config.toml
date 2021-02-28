@@ -1,5 +1,5 @@
 #上傳時記得啟動網址
-baseURL = "https://alextrinityblock.github.io/blog/public/"
+#baseURL = "https://alextrinityblock.github.io/blog/public/"
 languageCode = "zh-hant"
 title = "無面者小站"
 theme = "ananke"
@@ -36,8 +36,12 @@ SectionPagesMenu = "main" #上排標籤選單
 
 [params]
   favicon = "/avatar2.jpg" #網站上頭的圖示
-#  site_logo = "/blog/public/logo2.jpg" #網站左上角logo
+#  背景顏色
+#  body_classes = "avenir bg-light-silver"
+#  文章字體
+#  post_content_classes = "avenir white"
   description = "歡迎來到無面者小站" #html meta 裡面的說明
+#   site_logo = "/blog/public/logo2.jpg" #網站左上角logo
 #   facebook = ""
 #   twitter = ""
 #   instagram = ""
@@ -53,7 +57,7 @@ SectionPagesMenu = "main" #上排標籤選單
   # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
   #無圖片時的背景顏色
   background_color_class = "mid-gray"
-
+  
   # 下面的主頁面畫像在public/images裡頭
   # featured_image = "/images/gohugo-default-sample-hero-image.jpg"
   featured_image = "/home.jpg"
