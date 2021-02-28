@@ -41,7 +41,7 @@
 <meta property="og:description" content="歡迎來到無面者小站" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://alextrinityblock.github.io/blog/public/tags/linux/" />
-<meta property="og:updated_time" content="2021-02-28T00:46:22+08:00" />
+<meta property="og:updated_time" content="2021-03-01T01:04:15+08:00" />
 <meta itemprop="name" content="linux">
 <meta itemprop="description" content="歡迎來到無面者小站">
 <meta name="twitter:card" content="summary"/>
@@ -131,6 +131,33 @@
   </article>
   <div class="mw8 center">    
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Post</span>
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A5/" class="link black dim">
+        Linux在SSD上的損耗減少策略
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      概述 固態硬碟SSD存在著寫入次數限制
+而linux上頭各應用程式
+暫時存在的檔案通常會放在
+/tmp 目錄之中
+我們該如何減少/tmp 中頻繁的擦寫帶來的損耗呢？
+linux mint 中的解決方案 tmpfs是個可以將資料暫存到記憶體
+也就是Ram中的程式
+雖然可以直接操控，但是為求簡便linux mint中預設某個可用的服務，可以直接達成此目標
+打開終端機
+sudo cp /usr/share/systemd/tmp.mount /etc/systemd/system/tmp.mount 將沒被啟用的服務檔案tmp.mount複製到正在使用的服務檔案資料夾
+sudo systemctl enable tmp.mount 啟用服務，完成！
+    </div>
+  </div>
+</div>
+
+        </div>
       
         <div class="relative w-100  mb4 bg-white">
           <div class="relative w-100 mb4 bg-white nested-copy-line-height">

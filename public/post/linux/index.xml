@@ -8,6 +8,25 @@
     <language>zh-hant</language>
     <lastBuildDate>Fri, 26 Feb 2021 17:04:06 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Linux在SSD上的損耗減少策略</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A5/</link>
+      <pubDate>Mon, 01 Mar 2021 01:04:15 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A5/</guid>
+      <description>概述 固態硬碟SSD存在著寫入次數限制
+而linux上頭各應用程式
+暫時存在的檔案通常會放在
+/tmp 目錄之中
+我們該如何減少/tmp 中頻繁的擦寫帶來的損耗呢？
+linux mint 中的解決方案 tmpfs是個可以將資料暫存到記憶體
+也就是Ram中的程式
+雖然可以直接操控，但是為求簡便linux mint中預設某個可用的服務，可以直接達成此目標
+打開終端機
+sudo cp /usr/share/systemd/tmp.mount /etc/systemd/system/tmp.mount 將沒被啟用的服務檔案tmp.mount複製到正在使用的服務檔案資料夾
+sudo systemctl enable tmp.mount 啟用服務，完成！</description>
+    </item>
+    
+    <item>
       <title>手動連接裝置或磁碟槽（掛載）</title>
       <link>https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/</link>
       <pubDate>Sun, 28 Feb 2021 00:46:22 +0800</pubDate>

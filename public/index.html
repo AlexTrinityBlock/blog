@@ -163,6 +163,48 @@
           
         
         <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A5/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/debian1.jpeg" class="img" alt="image from Linux在SSD上的損耗減少策略">
+          </a>
+        </div>
+      
+      <div class="blah w-100 w-60-ns pl3-ns">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A5/" class="color-inherit dim link">
+            Linux在SSD上的損耗減少策略
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          概述 固態硬碟SSD存在著寫入次數限制
+而linux上頭各應用程式
+暫時存在的檔案通常會放在
+/tmp 目錄之中
+我們該如何減少/tmp 中頻繁的擦寫帶來的損耗呢？
+linux mint 中的解決方案 tmpfs是個可以將資料暫存到記憶體
+也就是Ram中的程式
+雖然可以直接操控，但是為求簡便linux mint中預設某個可用的服務，可以直接達成此目標
+打開終端機
+sudo cp /usr/share/systemd/tmp.mount /etc/systemd/system/tmp.mount 將沒被啟用的服務檔案tmp.mount複製到正在使用的服務檔案資料夾
+sudo systemctl enable tmp.mount 啟用服務，完成！
+        </div>
+          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A5/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+          
+        
+        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
           <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/" class="db grow">
             <img src="https://alextrinityblock.github.io/blog/public/debian1.jpeg" class="img" alt="image from 手動連接裝置或磁碟槽（掛載）">
           </a>
@@ -229,45 +271,18 @@ themes/m10c 意思是將主題模塊放入
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-          
-        
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%83%A8%E8%90%BD%E6%A0%BC/" class="db grow">
-            <img src="https://alextrinityblock.github.io/blog/public/hugo.png" class="img" alt="image from 建立一個新的部落格">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%83%A8%E8%90%BD%E6%A0%BC/" class="color-inherit dim link">
-            建立一個新的部落格
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          1.命令行 命令行輸入後
-hugo new site hahablog 這樣會建立一個稱為『haha』的部落格
-        </div>
-          <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%83%A8%E8%90%BD%E6%A0%BC/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">更多</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%83%A8%E8%90%BD%E6%A0%BC/" class="link black dim">
+              建立一個新的部落格
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://alextrinityblock.github.io/blog/public/post/hugo/hugo%E5%BB%BA%E7%AB%8B%E6%96%87%E7%AB%A0/" class="link black dim">

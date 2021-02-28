@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>linux on 無面者小站</title>
-    <link>https://alextrinityblock.github.io/blog/public/tags/linux/</link>
-    <description>Recent content in linux on 無面者小站</description>
+    <title>ssd on 無面者小站</title>
+    <link>https://alextrinityblock.github.io/blog/public/tags/ssd/</link>
+    <description>Recent content in ssd on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Mon, 01 Mar 2021 01:04:15 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Mar 2021 01:04:15 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/ssd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux在SSD上的損耗減少策略</title>
       <link>https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A5/</link>
@@ -24,21 +24,6 @@ linux mint 中的解決方案 tmpfs是個可以將資料暫存到記憶體
 打開終端機
 sudo cp /usr/share/systemd/tmp.mount /etc/systemd/system/tmp.mount 將沒被啟用的服務檔案tmp.mount複製到正在使用的服務檔案資料夾
 sudo systemctl enable tmp.mount 啟用服務，完成！</description>
-    </item>
-    
-    <item>
-      <title>手動連接裝置或磁碟槽（掛載）</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/</link>
-      <pubDate>Sun, 28 Feb 2021 00:46:22 +0800</pubDate>
-      
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/</guid>
-      <description>假設今天，你的硬碟同時存在linux與windows
-你啟動linux後希望存取windows的D槽
-此時D槽被標記為
-/dev/sda2 這時你可以先建立資料夾
-/media/MyDisk 然後將D槽也就是 /dev/sda2 用下列指令掛載到/media/MyDsik上頭
-sudo mount /dev/sda2 /media/MyDisk/ 只後當你從linux進入/media/MyDisk/
-就可以從中看到你的D槽文件了</description>
     </item>
     
   </channel>
