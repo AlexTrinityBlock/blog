@@ -18,7 +18,7 @@ tags: ["linux","ssd"]
 
 紀錄程式的名稱稱為 rsyslog，以下是關閉的指令：
 ```
-systemctl disable rsyslog
+sudo systemctl disable rsyslog
 ```
 systemctl適用於調整開機時自動執行的程式  
 disable 關閉 / emable 啟動  
