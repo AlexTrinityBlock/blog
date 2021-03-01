@@ -10,7 +10,7 @@ pluralizelisttitles = false
 DefaultContentLanguage = "zh-tw"
 Paginate = 3 # 單頁最大文章數量
 # googleAnalytics = ""
-# enableRobotsTXT = true
+enableRobotsTXT = true
 
 #上排選單設置
 SectionPagesMenu = "main" #上排標籤選單

@@ -163,15 +163,54 @@
           
         
         <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A5/" class="db grow">
-            <img src="https://alextrinityblock.github.io/blog/public/debian1.jpeg" class="img" alt="image from Linux在SSD上的損耗減少策略">
+          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/debian1.jpeg" class="img" alt="image from Linux在SSD上的損耗減少策略2(關閉系統紀錄)">
           </a>
         </div>
       
       <div class="blah w-100 w-60-ns pl3-ns">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A5/" class="color-inherit dim link">
-            Linux在SSD上的損耗減少策略
+          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/" class="color-inherit dim link">
+            Linux在SSD上的損耗減少策略2(關閉系統紀錄)
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          在linux中，為了明確清楚電腦曾經發生過什麼，所以會將一切紀錄記載在以下資料夾
+/var/log 但是這樣終究會損耗SSD的寫入次數
+而且紀錄檔會越來越大
+如果沒有意圖要紀錄linux中發生的大小事時
+可以這樣操作
+關閉紀錄程式 紀錄程式的名稱稱為 rsyslog，以下是關閉的指令：
+systemctl disable rsyslog systemctl適用於調整開機時自動執行的程式
+disable 關閉 / emable 啟動
+        </div>
+          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+          
+        
+        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/debian1.jpeg" class="img" alt="image from linux在SSD上的損耗減少策略1(佔存檔移入記憶體)">
+          </a>
+        </div>
+      
+      <div class="blah w-100 w-60-ns pl3-ns">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/" class="color-inherit dim link">
+            linux在SSD上的損耗減少策略1(佔存檔移入記憶體)
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
@@ -187,7 +226,7 @@ linux mint 中的解決方案 tmpfs是個可以將資料暫存到記憶體
 sudo cp /usr/share/systemd/tmp.mount /etc/systemd/system/tmp.mount 將沒被啟用的服務檔案tmp.mount複製到正在使用的服務檔案資料夾
 sudo systemctl enable tmp.mount 啟用服務，完成！
         </div>
-          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A5/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
         
       </div>
     </div>
@@ -234,49 +273,18 @@ sudo mount /dev/sda2 /media/MyDisk/ 只後當你從linux進入/media/MyDisk/
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-          
-        
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%8A%A0%E5%85%A5%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C/" class="db grow">
-            <img src="https://alextrinityblock.github.io/blog/public/hugo.png" class="img" alt="image from 加入佈景主題">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%8A%A0%E5%85%A5%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C/" class="color-inherit dim link">
-            加入佈景主題
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          從github抓取的指令 例如 ，我們要抓的佈景主題的名稱叫 m10c
-我們找到m10c的部落格網址
-然後輸入以下指令
-git submodule add https://github.com/vaga/hugo-theme-m10c.git themes/m10c 指令的最後一段
-themes/m10c 意思是將主題模塊放入
-/blog/themes/m10c 資料夾
-        </div>
-          <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%8A%A0%E5%85%A5%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">更多</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%8A%A0%E5%85%A5%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C/" class="link black dim">
+              加入佈景主題
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%83%A8%E8%90%BD%E6%A0%BC/" class="link black dim">
