@@ -41,7 +41,7 @@
 <meta property="og:description" content="歡迎來到無面者小站" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://alextrinityblock.github.io/blog/public/tags/" />
-<meta property="og:updated_time" content="2021-03-01T13:01:33+08:00" />
+<meta property="og:updated_time" content="2021-03-01T13:29:36+08:00" />
 <meta itemprop="name" content="Tags">
 <meta itemprop="description" content="歡迎來到無面者小站">
 <meta name="twitter:card" content="summary"/>
@@ -143,6 +143,26 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Post</span>
     <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%8A%8A%E8%A8%98%E6%86%B6%E9%AB%94%E7%95%B6%E7%A1%AC%E7%A2%9F%E7%94%A8/" class="link black dim">
+        把記憶體當硬碟用
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      你希望有個資料夾可以關機之後就徹底清除嗎？
+你感覺某個檔案在硬碟裡的執行速度還是不夠快嗎？
+這時候你可以啟用ramdisk
+修改檔案系統表 已root權限打開這個設定檔
+/etc/fstab 裡頭長這樣
+# /etc/fstab: static file system information. # # Use 'blkid' to print the universally unique identifier for a # device; this may be used with UUID= as a more robust way to name devices # that works even if disks are added and removed. See fstab(5). # # &lt;file system&gt; &lt;mount point&gt; &lt;type&gt; &lt;options&gt; &lt;dump&gt; &lt;pass&gt; # / was on /dev/sdb7 during installation UUID=beaf8a82-1495-478f-b85f-951a4670f4d1 / ext4 errors=remount-ro 0 1 # swap was on /dev/sdb6 during installation UUID=a773e6bc-3536-4dfc-9e4c-b2128d50feb4 none swap sw 0 0 然後假設我們要產生一個50MB的資料夾在/mnt/happyDir
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Post</span>
+    <h1 class="f3 near-black">
       <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux-mint20%E6%9B%B4%E6%8F%9B%E9%96%8B%E6%A9%9F%E5%9C%96%E7%A4%BA/" class="link black dim">
         Linux Mint20更換開機圖示
       </a>
@@ -233,6 +253,33 @@ sudo mount /dev/sda2 /media/MyDisk/ 只後當你從linux進入/media/MyDisk/
         
       
         <h2 class="f1">
+          <a href="/blog/public/tags/ramdisk" class="link blue hover-black">
+            Tag: ramdisk
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Post</span>
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%8A%8A%E8%A8%98%E6%86%B6%E9%AB%94%E7%95%B6%E7%A1%AC%E7%A2%9F%E7%94%A8/" class="link black dim">
+        把記憶體當硬碟用
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      你希望有個資料夾可以關機之後就徹底清除嗎？
+你感覺某個檔案在硬碟裡的執行速度還是不夠快嗎？
+這時候你可以啟用ramdisk
+修改檔案系統表 已root權限打開這個設定檔
+/etc/fstab 裡頭長這樣
+# /etc/fstab: static file system information. # # Use 'blkid' to print the universally unique identifier for a # device; this may be used with UUID= as a more robust way to name devices # that works even if disks are added and removed. See fstab(5). # # &lt;file system&gt; &lt;mount point&gt; &lt;type&gt; &lt;options&gt; &lt;dump&gt; &lt;pass&gt; # / was on /dev/sdb7 during installation UUID=beaf8a82-1495-478f-b85f-951a4670f4d1 / ext4 errors=remount-ro 0 1 # swap was on /dev/sdb6 during installation UUID=a773e6bc-3536-4dfc-9e4c-b2128d50feb4 none swap sw 0 0 然後假設我們要產生一個50MB的資料夾在/mnt/happyDir
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
           <a href="/blog/public/tags/ssd" class="link blue hover-black">
             Tag: ssd
           </a>
@@ -280,6 +327,33 @@ linux mint 中的解決方案 tmpfs是個可以將資料暫存到記憶體
 打開終端機
 sudo cp /usr/share/systemd/tmp.mount /etc/systemd/system/tmp.mount 將沒被啟用的服務檔案tmp.mount複製到正在使用的服務檔案資料夾
 sudo systemctl enable tmp.mount 啟用服務，完成！
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/blog/public/tags/tmpfs" class="link blue hover-black">
+            Tag: tmpfs
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Post</span>
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%8A%8A%E8%A8%98%E6%86%B6%E9%AB%94%E7%95%B6%E7%A1%AC%E7%A2%9F%E7%94%A8/" class="link black dim">
+        把記憶體當硬碟用
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      你希望有個資料夾可以關機之後就徹底清除嗎？
+你感覺某個檔案在硬碟裡的執行速度還是不夠快嗎？
+這時候你可以啟用ramdisk
+修改檔案系統表 已root權限打開這個設定檔
+/etc/fstab 裡頭長這樣
+# /etc/fstab: static file system information. # # Use 'blkid' to print the universally unique identifier for a # device; this may be used with UUID= as a more robust way to name devices # that works even if disks are added and removed. See fstab(5). # # &lt;file system&gt; &lt;mount point&gt; &lt;type&gt; &lt;options&gt; &lt;dump&gt; &lt;pass&gt; # / was on /dev/sdb7 during installation UUID=beaf8a82-1495-478f-b85f-951a4670f4d1 / ext4 errors=remount-ro 0 1 # swap was on /dev/sdb6 during installation UUID=a773e6bc-3536-4dfc-9e4c-b2128d50feb4 none swap sw 0 0 然後假設我們要產生一個50MB的資料夾在/mnt/happyDir
     </div>
   </div>
 </div>
