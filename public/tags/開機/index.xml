@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>開機 on 無面者小站</title>
+    <link>https://alextrinityblock.github.io/blog/public/tags/%E9%96%8B%E6%A9%9F/</link>
+    <description>Recent content in 開機 on 無面者小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <lastBuildDate>Mon, 01 Mar 2021 13:01:33 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/%E9%96%8B%E6%A9%9F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux Mint20更換開機圖示</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/linux/linux-mint20%E6%9B%B4%E6%8F%9B%E9%96%8B%E6%A9%9F%E5%9C%96%E7%A4%BA/</link>
+      <pubDate>Mon, 01 Mar 2021 13:01:33 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/linux/linux-mint20%E6%9B%B4%E6%8F%9B%E9%96%8B%E6%A9%9F%E5%9C%96%E7%A4%BA/</guid>
+      <description>下載喜歡的開機圖示 下載開機圖示1
+下載開機圖示2
+打開圖示資料夾取出最裡層的資料夾
+然後將其複製到以下位置
+/usr/share/plymouth/themes 修改圖示檔案設定文件 修改預設的開機圖示檔 default.plymouth
+[Plymouth Theme] Name=Mate Red Description=A theme that features an animated Linux Mint logo. ModuleName=script [script] ImageDir=/usr/share/plymouth/themes/mate_red ScriptFile=/usr/share/plymouth/themes/mate_red/mate_red.script 把ImageDir改成你下載的圖示的資料夾
+ImageDir=/usr/share/plymouth/themes/下載圖示的資料夾 然後將執行腳本改成ScriptFile改成下載圖示資料夾中的腳本
+腳本的副檔名通常為script
+ScriptFile=/usr/share/plymouth/themes/下載圖示的資料夾/下載圖示的資料夾.script 然後將他編譯成二進制的檔案
+sudo update-initramfs -u 完成～！</description>
+    </item>
+    
+  </channel>
+</rss>

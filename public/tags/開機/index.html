@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>無面者小站</title>
+    <title>開機 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="歡迎來到無面者小站">
     <meta name="generator" content="Hugo 0.80.0" />
@@ -32,20 +32,20 @@
 
     
     
-      <link href="/blog/public/post/index.xml" rel="alternate" type="application/rss+xml" title="無面者小站" />
-      <link href="/blog/public/post/index.xml" rel="feed" type="application/rss+xml" title="無面者小站" />
+      <link href="/blog/public/tags/%E9%96%8B%E6%A9%9F/index.xml" rel="alternate" type="application/rss+xml" title="無面者小站" />
+      <link href="/blog/public/tags/%E9%96%8B%E6%A9%9F/index.xml" rel="feed" type="application/rss+xml" title="無面者小站" />
       
     
     
-    <meta property="og:title" content="" />
+    <meta property="og:title" content="開機" />
 <meta property="og:description" content="歡迎來到無面者小站" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/tags/%E9%96%8B%E6%A9%9F/" />
 <meta property="og:updated_time" content="2021-03-01T13:01:33+08:00" />
-<meta itemprop="name" content="">
+<meta itemprop="name" content="開機">
 <meta itemprop="description" content="歡迎來到無面者小站">
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
+<meta name="twitter:title" content="開機"/>
 <meta name="twitter:description" content="歡迎來到無面者小站"/>
 
 	
@@ -114,7 +114,7 @@
 
       <div class="tc-l pv4 pv6-l ph3 ph4-ns">
         <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-          無面者小站
+          開機
         </h1>
         
       </div>
@@ -124,18 +124,42 @@
 
     <main class="pb7" role="main">
       
+  <article class="cf pa3 pa4-m pa4-l">
+    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
+      <p>標籤為 “開機” 的頁面如下</p>
+    </div>
+  </article>
+  <div class="mw8 center">    
+    <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Post</span>
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux-mint20%E6%9B%B4%E6%8F%9B%E9%96%8B%E6%A9%9F%E5%9C%96%E7%A4%BA/" class="link black dim">
+        Linux Mint20更換開機圖示
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      下載喜歡的開機圖示 下載開機圖示1
+下載開機圖示2
+打開圖示資料夾取出最裡層的資料夾
+然後將其複製到以下位置
+/usr/share/plymouth/themes 修改圖示檔案設定文件 修改預設的開機圖示檔 default.plymouth
+[Plymouth Theme] Name=Mate Red Description=A theme that features an animated Linux Mint logo. ModuleName=script [script] ImageDir=/usr/share/plymouth/themes/mate_red ScriptFile=/usr/share/plymouth/themes/mate_red/mate_red.script 把ImageDir改成你下載的圖示的資料夾
+ImageDir=/usr/share/plymouth/themes/下載圖示的資料夾 然後將執行腳本改成ScriptFile改成下載圖示資料夾中的腳本
+腳本的副檔名通常為script
+ScriptFile=/usr/share/plymouth/themes/下載圖示的資料夾/下載圖示的資料夾.script 然後將他編譯成二進制的檔案
+sudo update-initramfs -u 完成～！
+    </div>
+  </div>
+</div>
 
-  <article class="pa3 pa4-ns nested-copy-line-height nested-img">
-    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
+        </div>
       
     </section>
-    <aside class="flex-ns flex-wrap justify-around mt5">
-      
-    </aside>
-    
-
-
-  </article>
+  </div>
 
     </main>
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">

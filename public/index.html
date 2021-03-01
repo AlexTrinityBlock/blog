@@ -163,6 +163,47 @@
           
         
         <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux-mint20%E6%9B%B4%E6%8F%9B%E9%96%8B%E6%A9%9F%E5%9C%96%E7%A4%BA/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/debian1.jpeg" class="img" alt="image from Linux Mint20更換開機圖示">
+          </a>
+        </div>
+      
+      <div class="blah w-100 w-60-ns pl3-ns">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux-mint20%E6%9B%B4%E6%8F%9B%E9%96%8B%E6%A9%9F%E5%9C%96%E7%A4%BA/" class="color-inherit dim link">
+            Linux Mint20更換開機圖示
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          下載喜歡的開機圖示 下載開機圖示1
+下載開機圖示2
+打開圖示資料夾取出最裡層的資料夾
+然後將其複製到以下位置
+/usr/share/plymouth/themes 修改圖示檔案設定文件 修改預設的開機圖示檔 default.plymouth
+[Plymouth Theme] Name=Mate Red Description=A theme that features an animated Linux Mint logo. ModuleName=script [script] ImageDir=/usr/share/plymouth/themes/mate_red ScriptFile=/usr/share/plymouth/themes/mate_red/mate_red.script 把ImageDir改成你下載的圖示的資料夾
+ImageDir=/usr/share/plymouth/themes/下載圖示的資料夾 然後將執行腳本改成ScriptFile改成下載圖示資料夾中的腳本
+腳本的副檔名通常為script
+ScriptFile=/usr/share/plymouth/themes/下載圖示的資料夾/下載圖示的資料夾.script 然後將他編譯成二進制的檔案
+sudo update-initramfs -u 完成～！
+        </div>
+          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux-mint20%E6%9B%B4%E6%8F%9B%E9%96%8B%E6%A9%9F%E5%9C%96%E7%A4%BA/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+          
+        
+        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
           <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/" class="db grow">
             <img src="https://alextrinityblock.github.io/blog/public/debian1.jpeg" class="img" alt="image from Linux在SSD上的損耗減少策略2(關閉系統紀錄)">
           </a>
@@ -235,50 +276,18 @@ sudo systemctl enable tmp.mount 啟用服務，完成！
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-          
-        
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/" class="db grow">
-            <img src="https://alextrinityblock.github.io/blog/public/debian1.jpeg" class="img" alt="image from 手動連接裝置或磁碟槽（掛載）">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/" class="color-inherit dim link">
-            手動連接裝置或磁碟槽（掛載）
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          假設今天，你的硬碟同時存在linux與windows
-你啟動linux後希望存取windows的D槽
-此時D槽被標記為
-/dev/sda2 這時你可以先建立資料夾
-/media/MyDisk 然後將D槽也就是 /dev/sda2 用下列指令掛載到/media/MyDsik上頭
-sudo mount /dev/sda2 /media/MyDisk/ 只後當你從linux進入/media/MyDisk/
-就可以從中看到你的D槽文件了
-        </div>
-          <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">更多</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/" class="link black dim">
+              手動連接裝置或磁碟槽（掛載）
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%8A%A0%E5%85%A5%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C/" class="link black dim">

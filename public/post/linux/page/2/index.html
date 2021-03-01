@@ -137,82 +137,22 @@
             <div class="mb3 pa4 mid-gray overflow-hidden">
     
       <div class="f6">
-        March 1, 2021
+        February 28, 2021
       </div>
     
     <h1 class="f3 near-black">
-      <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux-mint20%E6%9B%B4%E6%8F%9B%E9%96%8B%E6%A9%9F%E5%9C%96%E7%A4%BA/" class="link black dim">
-        Linux Mint20更換開機圖示
+      <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/" class="link black dim">
+        手動連接裝置或磁碟槽（掛載）
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      下載喜歡的開機圖示 下載開機圖示1
-下載開機圖示2
-打開圖示資料夾取出最裡層的資料夾
-然後將其複製到以下位置
-/usr/share/plymouth/themes 修改圖示檔案設定文件 修改預設的開機圖示檔 default.plymouth
-[Plymouth Theme] Name=Mate Red Description=A theme that features an animated Linux Mint logo. ModuleName=script [script] ImageDir=/usr/share/plymouth/themes/mate_red ScriptFile=/usr/share/plymouth/themes/mate_red/mate_red.script 把ImageDir改成你下載的圖示的資料夾
-ImageDir=/usr/share/plymouth/themes/下載圖示的資料夾 然後將執行腳本改成ScriptFile改成下載圖示資料夾中的腳本
-腳本的副檔名通常為script
-ScriptFile=/usr/share/plymouth/themes/下載圖示的資料夾/下載圖示的資料夾.script 然後將他編譯成二進制的檔案
-sudo update-initramfs -u 完成～！
-    </div>
-  </div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          
-            <div class="mb3 pa4 mid-gray overflow-hidden">
-    
-      <div class="f6">
-        March 1, 2021
-      </div>
-    
-    <h1 class="f3 near-black">
-      <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/" class="link black dim">
-        Linux在SSD上的損耗減少策略2(關閉系統紀錄)
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      在linux中，為了明確清楚電腦曾經發生過什麼，所以會將一切紀錄記載在以下資料夾
-/var/log 但是這樣終究會損耗SSD的寫入次數
-而且紀錄檔會越來越大
-如果沒有意圖要紀錄linux中發生的大小事時
-可以這樣操作
-關閉紀錄程式 紀錄程式的名稱稱為 rsyslog，以下是關閉的指令：
-sudo systemctl disable rsyslog systemctl適用於調整開機時自動執行的程式
-disable 關閉 / emable 啟動
-    </div>
-  </div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          
-            <div class="mb3 pa4 mid-gray overflow-hidden">
-    
-      <div class="f6">
-        March 1, 2021
-      </div>
-    
-    <h1 class="f3 near-black">
-      <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/" class="link black dim">
-        linux在SSD上的損耗減少策略1(佔存檔移入記憶體)
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      概述 固態硬碟SSD存在著寫入次數限制
-而linux上頭各應用程式
-暫時存在的檔案通常會放在
-/tmp 目錄之中
-我們該如何減少/tmp 中頻繁的擦寫帶來的損耗呢？
-linux mint 中的解決方案 tmpfs是個可以將資料暫存到記憶體
-也就是Ram中的程式
-雖然可以直接操控，但是為求簡便linux mint中預設某個可用的服務，可以直接達成此目標
-打開終端機
-sudo cp /usr/share/systemd/tmp.mount /etc/systemd/system/tmp.mount 將沒被啟用的服務檔案tmp.mount複製到正在使用的服務檔案資料夾
-sudo systemctl enable tmp.mount 啟用服務，完成！
+      假設今天，你的硬碟同時存在linux與windows
+你啟動linux後希望存取windows的D槽
+此時D槽被標記為
+/dev/sda2 這時你可以先建立資料夾
+/media/MyDisk 然後將D槽也就是 /dev/sda2 用下列指令掛載到/media/MyDsik上頭
+sudo mount /dev/sda2 /media/MyDisk/ 只後當你從linux進入/media/MyDisk/
+就可以從中看到你的D槽文件了
     </div>
   </div>
 
@@ -224,17 +164,17 @@ sudo systemctl enable tmp.mount 啟用服務，完成！
   <li class="page-item">
     <a href="/blog/public/post/linux/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
   </li>
-  <li class="page-item disabled">
-    <a  class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+  <li class="page-item">
+    <a href="/blog/public/post/linux/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
   </li>
-  <li class="page-item active">
+  <li class="page-item">
     <a class="page-link" href="/blog/public/post/linux/">1</a>
   </li>
-  <li class="page-item">
+  <li class="page-item active">
     <a class="page-link" href="/blog/public/post/linux/page/2/">2</a>
   </li>
-  <li class="page-item">
-    <a href="/blog/public/post/linux/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+  <li class="page-item disabled">
+    <a  class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
   </li>
   <li class="page-item">
     <a href="/blog/public/post/linux/page/2/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
