@@ -85,6 +85,12 @@
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/post/vue" title="vue page">
+              vue
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/post/" title=" page">
               
             </a>
@@ -153,6 +159,117 @@
 
       <section class="w-100 mw8">
         
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+          
+        
+        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+          <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue3.%E4%BF%AE%E6%94%B9%E6%A8%99%E7%B1%A4%E5%B1%AC%E6%80%A7/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/vue.png" class="img" alt="image from Vue筆記 3:動態修改標籤屬性">
+          </a>
+        </div>
+      
+      <div class="blah w-100 w-60-ns pl3-ns">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue3.%E4%BF%AE%E6%94%B9%E6%A8%99%E7%B1%A4%E5%B1%AC%E6%80%A7/" class="color-inherit dim link">
+            Vue筆記 3:動態修改標籤屬性
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Vue筆記 3:動態修改標籤屬性 稍微提到一下，如果這篇教學對你有幫助，請不要吝嗇教導你周圍的同事，我可以保證你一定會過得更快樂
+HTMl標籤存在許多屬性 例如style屬性可以修改文字的顏色大小，基本上就是css
+還有title屬性，滑鼠停在該標籤上頭實惠顯示出來的文字
+使用v-bind來動態修改屬性 v-bind:title=&ldquo;title_text&quot;可以綁定title屬性到 title_text
+v-bind:style=&ldquo;text_color&quot;可以綁定style屬性到text_color
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--要插入的目標位置--&gt; &lt;div id=&#34;tag01&#34; v-bind:title=&#34;title_text&#34; v-bind:style=&#34;text_color&#34;&gt; 若苦難必然會發生，行善受苦，總比行惡受苦好。 &lt;/div&gt; &lt;/body&gt; &lt;!--引入Vue--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;script&gt; var object01 = new Vue({ el: &#39;#tag01&#39;, data: { title_text: &#34;&#34;, text_color: &#34;&#34; } }) //此處將title屬性修改，這樣滑鼠停在文字上頭時就會顯示這段英文  object01.title_text = &#34;Be good! You can bear any pain.&#34; //這裡，我們動態修改文字顏色  object01.text_color = &#34;color:gray&#34; &lt;/script&gt; &lt;/html&gt; 
+        </div>
+          <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue3.%E4%BF%AE%E6%94%B9%E6%A8%99%E7%B1%A4%E5%B1%AC%E6%80%A7/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+          
+        
+        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+          <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue2.%E5%B0%87%E5%AD%97%E4%B8%B2%E6%8F%92%E5%85%A5%E7%9B%AE%E6%A8%99%E6%A8%99%E7%B1%A4/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/vue.png" class="img" alt="image from Vue:2">
+          </a>
+        </div>
+      
+      <div class="blah w-100 w-60-ns pl3-ns">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue2.%E5%B0%87%E5%AD%97%E4%B8%B2%E6%8F%92%E5%85%A5%E7%9B%AE%E6%A8%99%E6%A8%99%E7%B1%A4/" class="color-inherit dim link">
+            Vue:2
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Vue筆記 2:將字串插入目標標籤 我們注意到vue導入特定文字需要四個部份：
+1.目標html標籤，下列範例為tag01
+2.目標標籤中的文字區塊，這裡為message01
+3.被建立起來的vue物件，這裡為object01
+4.在vue物件生成的同時插入該物件的訊息，el:標籤id,data:標籤內容
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--要插入的目標位置--&gt; &lt;div id=&#34;tag01&#34;&gt; {{ message01 }} &lt;/div&gt; &lt;/body&gt; &lt;!--引入Vue--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;!--引發字串插入效果的js--&gt; &lt;script&gt; var object01 = new Vue({ el: &#39;#tag01&#39;, data: { message01: &#39;Life is sad but beautiful!&#39; } }) &lt;/script&gt; &lt;/html&gt; 此時畫面上會顯示
+Life is sad but beautiful! 動態修改標籤內容 如果要隨著需求動態修改標籤內容
+可以直接修改物件屬性
+以下範例：
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--要插入的目標位置--&gt; &lt;div id=&#34;tag01&#34;&gt; {{ message01 }} &lt;/div&gt; &lt;/body&gt; &lt;!
+        </div>
+          <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue2.%E5%B0%87%E5%AD%97%E4%B8%B2%E6%8F%92%E5%85%A5%E7%9B%AE%E6%A8%99%E6%A8%99%E7%B1%A4/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+          
+        
+        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+          <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue1.%E7%9B%B4%E6%8E%A5%E5%BC%95%E7%94%A8/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/vue.png" class="img" alt="image from Vue:1直接引用">
+          </a>
+        </div>
+      
+      <div class="blah w-100 w-60-ns pl3-ns">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue1.%E7%9B%B4%E6%8E%A5%E5%BC%95%E7%94%A8/" class="color-inherit dim link">
+            Vue:1直接引用
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Vue筆記 1：直接引用 該筆記為了快速上手，蓄意忽視webpack等套件使用，若有機會將會於別篇筆記提及 首先我們簡單的建立一個html檔案，然後輸入以下內容
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;/body&gt; &lt;!--此行引入vue.js--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;/html&gt; 
+        </div>
+          <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue1.%E7%9B%B4%E6%8E%A5%E5%BC%95%E7%94%A8/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
         
           <div class="relative w-100 mb4">
             
@@ -271,6 +388,156 @@ disable 關閉 / emable 啟動
 
           </div>
         
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+          
+        
+        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/debian1.jpeg" class="img" alt="image from linux在SSD上的損耗減少策略1(佔存檔移入記憶體)">
+          </a>
+        </div>
+      
+      <div class="blah w-100 w-60-ns pl3-ns">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/" class="color-inherit dim link">
+            linux在SSD上的損耗減少策略1(佔存檔移入記憶體)
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          概述 固態硬碟SSD存在著寫入次數限制
+而linux上頭各應用程式
+暫時存在的檔案通常會放在
+/tmp 目錄之中
+我們該如何減少/tmp 中頻繁的擦寫帶來的損耗呢？
+linux mint 中的解決方案 tmpfs是個可以將資料暫存到記憶體
+也就是Ram中的程式
+雖然可以直接操控，但是為求簡便linux mint中預設某個可用的服務，可以直接達成此目標
+打開終端機
+sudo cp /usr/share/systemd/tmp.mount /etc/systemd/system/tmp.mount 將沒被啟用的服務檔案tmp.mount複製到正在使用的服務檔案資料夾
+sudo systemctl enable tmp.mount 啟用服務，完成！
+        </div>
+          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+          
+        
+        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+          <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/debian1.jpeg" class="img" alt="image from 手動連接裝置或磁碟槽（掛載）">
+          </a>
+        </div>
+      
+      <div class="blah w-100 w-60-ns pl3-ns">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/" class="color-inherit dim link">
+            手動連接裝置或磁碟槽（掛載）
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          假設今天，你的硬碟同時存在linux與windows
+你啟動linux後希望存取windows的D槽
+此時D槽被標記為
+/dev/sda2 這時你可以先建立資料夾
+/media/MyDisk 然後將D槽也就是 /dev/sda2 用下列指令掛載到/media/MyDsik上頭
+sudo mount /dev/sda2 /media/MyDisk/ 只後當你從linux進入/media/MyDisk/
+就可以從中看到你的D槽文件了
+        </div>
+          <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+          
+        
+        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+          <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%8A%A0%E5%85%A5%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/hugo.png" class="img" alt="image from 加入佈景主題">
+          </a>
+        </div>
+      
+      <div class="blah w-100 w-60-ns pl3-ns">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%8A%A0%E5%85%A5%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C/" class="color-inherit dim link">
+            加入佈景主題
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          從github抓取的指令 例如 ，我們要抓的佈景主題的名稱叫 m10c
+我們找到m10c的部落格網址
+然後輸入以下指令
+git submodule add https://github.com/vaga/hugo-theme-m10c.git themes/m10c 指令的最後一段
+themes/m10c 意思是將主題模塊放入
+/blog/themes/m10c 資料夾
+        </div>
+          <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%8A%A0%E5%85%A5%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+          
+        
+        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+          <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%83%A8%E8%90%BD%E6%A0%BC/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/hugo.png" class="img" alt="image from 建立一個新的部落格">
+          </a>
+        </div>
+      
+      <div class="blah w-100 w-60-ns pl3-ns">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%83%A8%E8%90%BD%E6%A0%BC/" class="color-inherit dim link">
+            建立一個新的部落格
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          1.命令行 命令行輸入後
+hugo new site hahablog 這樣會建立一個稱為『haha』的部落格
+        </div>
+          <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%83%A8%E8%90%BD%E6%A0%BC/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
       </section>
 
       
@@ -279,26 +546,8 @@ disable 關閉 / emable 啟動
         
         
           <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/" class="link black dim">
-              linux在SSD上的損耗減少策略1(佔存檔移入記憶體)
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/" class="link black dim">
-              手動連接裝置或磁碟槽（掛載）
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%8A%A0%E5%85%A5%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C/" class="link black dim">
-              加入佈景主題
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%83%A8%E8%90%BD%E6%A0%BC/" class="link black dim">
-              建立一個新的部落格
+            <a href="https://alextrinityblock.github.io/blog/public/post/hugo/hugo%E5%BB%BA%E7%AB%8B%E6%96%87%E7%AB%A0/" class="link black dim">
+              Hugo建立文章
             </a>
           </h2>
         

@@ -8,7 +8,7 @@ theme = "ananke"
 pluralizelisttitles = false
 
 DefaultContentLanguage = "zh-tw"
-Paginate = 3 # 單頁最大文章數量
+Paginate = 5 # 單頁最大文章數量
 # googleAnalytics = ""
 enableRobotsTXT = true
 
@@ -27,7 +27,12 @@ SectionPagesMenu = "main" #上排標籤選單
     title = "hugo"
     url = "/post/hugo"
     weight = 1
-
+[[menu.main]]
+    identifier = "vue"
+    name = "vue"
+    title = "vue"
+    url = "/post/vue"
+    weight = 1
 
 #[sitemap]
 #    changefreq = "monthly"
@@ -61,5 +66,5 @@ SectionPagesMenu = "main" #上排標籤選單
   # 下面的主頁面畫像在public/images裡頭
   # featured_image = "/images/gohugo-default-sample-hero-image.jpg"
   featured_image = "/home.jpg"
-  recent_posts_number = 3
+  recent_posts_number = 10
 

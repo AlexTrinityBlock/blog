@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>前端 on 無面者小站</title>
+    <link>https://alextrinityblock.github.io/blog/public/tags/%E5%89%8D%E7%AB%AF/</link>
+    <description>Recent content in 前端 on 無面者小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <lastBuildDate>Thu, 11 Mar 2021 14:52:38 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vue筆記 3:動態修改標籤屬性</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue3.%E4%BF%AE%E6%94%B9%E6%A8%99%E7%B1%A4%E5%B1%AC%E6%80%A7/</link>
+      <pubDate>Thu, 11 Mar 2021 14:52:38 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue3.%E4%BF%AE%E6%94%B9%E6%A8%99%E7%B1%A4%E5%B1%AC%E6%80%A7/</guid>
+      <description>Vue筆記 3:動態修改標籤屬性 稍微提到一下，如果這篇教學對你有幫助，請不要吝嗇教導你周圍的同事，我可以保證你一定會過得更快樂
+HTMl標籤存在許多屬性 例如style屬性可以修改文字的顏色大小，基本上就是css
+還有title屬性，滑鼠停在該標籤上頭實惠顯示出來的文字
+使用v-bind來動態修改屬性 v-bind:title=&amp;ldquo;title_text&amp;quot;可以綁定title屬性到 title_text
+v-bind:style=&amp;ldquo;text_color&amp;quot;可以綁定style屬性到text_color
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;zh-hant-TW&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;簡化版Vue學習&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;!--要插入的目標位置--&amp;gt; &amp;lt;div id=&amp;#34;tag01&amp;#34; v-bind:title=&amp;#34;title_text&amp;#34; v-bind:style=&amp;#34;text_color&amp;#34;&amp;gt; 若苦難必然會發生，行善受苦，總比行惡受苦好。 &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;!--引入Vue--&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; var object01 = new Vue({ el: &amp;#39;#tag01&amp;#39;, data: { title_text: &amp;#34;&amp;#34;, text_color: &amp;#34;&amp;#34; } }) //此處將title屬性修改，這樣滑鼠停在文字上頭時就會顯示這段英文  object01.title_text = &amp;#34;Be good! You can bear any pain.&amp;#34; //這裡，我們動態修改文字顏色  object01.text_color = &amp;#34;color:gray&amp;#34; &amp;lt;/script&amp;gt; &amp;lt;/html&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Vue:2</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue2.%E5%B0%87%E5%AD%97%E4%B8%B2%E6%8F%92%E5%85%A5%E7%9B%AE%E6%A8%99%E6%A8%99%E7%B1%A4/</link>
+      <pubDate>Thu, 11 Mar 2021 14:49:54 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue2.%E5%B0%87%E5%AD%97%E4%B8%B2%E6%8F%92%E5%85%A5%E7%9B%AE%E6%A8%99%E6%A8%99%E7%B1%A4/</guid>
+      <description>Vue筆記 2:將字串插入目標標籤 我們注意到vue導入特定文字需要四個部份：
+1.目標html標籤，下列範例為tag01
+2.目標標籤中的文字區塊，這裡為message01
+3.被建立起來的vue物件，這裡為object01
+4.在vue物件生成的同時插入該物件的訊息，el:標籤id,data:標籤內容
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;zh-hant-TW&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;簡化版Vue學習&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;!--要插入的目標位置--&amp;gt; &amp;lt;div id=&amp;#34;tag01&amp;#34;&amp;gt; {{ message01 }} &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;!--引入Vue--&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;!--引發字串插入效果的js--&amp;gt; &amp;lt;script&amp;gt; var object01 = new Vue({ el: &amp;#39;#tag01&amp;#39;, data: { message01: &amp;#39;Life is sad but beautiful!&amp;#39; } }) &amp;lt;/script&amp;gt; &amp;lt;/html&amp;gt; 此時畫面上會顯示
+Life is sad but beautiful! 動態修改標籤內容 如果要隨著需求動態修改標籤內容
+可以直接修改物件屬性
+以下範例：
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;zh-hant-TW&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;簡化版Vue學習&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;!--要插入的目標位置--&amp;gt; &amp;lt;div id=&amp;#34;tag01&amp;#34;&amp;gt; {{ message01 }} &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;!</description>
+    </item>
+    
+    <item>
+      <title>Vue:1直接引用</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue1.%E7%9B%B4%E6%8E%A5%E5%BC%95%E7%94%A8/</link>
+      <pubDate>Thu, 11 Mar 2021 14:43:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue1.%E7%9B%B4%E6%8E%A5%E5%BC%95%E7%94%A8/</guid>
+      <description>Vue筆記 1：直接引用 該筆記為了快速上手，蓄意忽視webpack等套件使用，若有機會將會於別篇筆記提及 首先我們簡單的建立一個html檔案，然後輸入以下內容
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;zh-hant-TW&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;簡化版Vue學習&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;!--此行引入vue.js--&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/html&amp;gt; </description>
+    </item>
+    
+  </channel>
+</rss>
