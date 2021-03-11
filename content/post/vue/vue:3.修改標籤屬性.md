@@ -13,7 +13,7 @@ tags: ["vue","前端"]
 ## HTMl標籤存在許多屬性
 
 例如style屬性可以修改文字的顏色大小，基本上就是css  
-還有title屬性，滑鼠停在該標籤上頭實惠顯示出來的文字  
+還有title屬性，滑鼠停在該標籤上頭時會顯示出來的文字  
 
 ## 使用v-bind來動態修改屬性
 
@@ -55,4 +55,7 @@ v-bind:style="text_color"可以綁定style屬性到text_color
 
 </html>
 ```
+
+這樣的結果就是文字變成灰色  
+滑鼠停在文字上時顯示 "Be good! You can bear any pain."  
 

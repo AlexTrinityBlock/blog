@@ -8,10 +8,11 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Vue筆記 3:動態修改標籤屬性 稍微提到一下，如果這篇教學對你有幫助，請不要吝嗇教導你周圍的同事，我可以保證你一定會過得更快樂
 HTMl標籤存在許多屬性 例如style屬性可以修改文字的顏色大小，基本上就是css
-還有title屬性，滑鼠停在該標籤上頭實惠顯示出來的文字
+還有title屬性，滑鼠停在該標籤上頭時會顯示出來的文字
 使用v-bind來動態修改屬性 v-bind:title=&ldquo;title_text&quot;可以綁定title屬性到 title_text
 v-bind:style=&ldquo;text_color&quot;可以綁定style屬性到text_color
-&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--要插入的目標位置--&gt; &lt;div id=&#34;tag01&#34; v-bind:title=&#34;title_text&#34; v-bind:style=&#34;text_color&#34;&gt; 若苦難必然會發生，行善受苦，總比行惡受苦好。 &lt;/div&gt; &lt;/body&gt; &lt;!--引入Vue--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;script&gt; var object01 = new Vue({ el: &#39;#tag01&#39;, data: { title_text: &#34;&#34;, text_color: &#34;&#34; } }) //此處將title屬性修改，這樣滑鼠停在文字上頭時就會顯示這段英文  object01.title_text = &#34;Be good! You can bear any pain.&#34; //這裡，我們動態修改文字顏色  object01.text_color = &#34;color:gray&#34; &lt;/script&gt; &lt;/html&gt; ">
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--要插入的目標位置--&gt; &lt;div id=&#34;tag01&#34; v-bind:title=&#34;title_text&#34; v-bind:style=&#34;text_color&#34;&gt; 若苦難必然會發生，行善受苦，總比行惡受苦好。 &lt;/div&gt; &lt;/body&gt; &lt;!--引入Vue--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;script&gt; var object01 = new Vue({ el: &#39;#tag01&#39;, data: { title_text: &#34;&#34;, text_color: &#34;&#34; } }) //此處將title屬性修改，這樣滑鼠停在文字上頭時就會顯示這段英文  object01.title_text = &#34;Be good! You can bear any pain.&#34; //這裡，我們動態修改文字顏色  object01.text_color = &#34;color:gray&#34; &lt;/script&gt; &lt;/html&gt; 這樣的結果就是文字變成灰色
+滑鼠停在文字上時顯示 &ldquo;Be good! You can bear any pain.">
     <meta name="generator" content="Hugo 0.80.0" />
     
     
@@ -40,10 +41,11 @@ v-bind:style=&ldquo;text_color&quot;可以綁定style屬性到text_color
     <meta property="og:title" content="Vue筆記 3:動態修改標籤屬性" />
 <meta property="og:description" content="Vue筆記 3:動態修改標籤屬性 稍微提到一下，如果這篇教學對你有幫助，請不要吝嗇教導你周圍的同事，我可以保證你一定會過得更快樂
 HTMl標籤存在許多屬性 例如style屬性可以修改文字的顏色大小，基本上就是css
-還有title屬性，滑鼠停在該標籤上頭實惠顯示出來的文字
+還有title屬性，滑鼠停在該標籤上頭時會顯示出來的文字
 使用v-bind來動態修改屬性 v-bind:title=&ldquo;title_text&quot;可以綁定title屬性到 title_text
 v-bind:style=&ldquo;text_color&quot;可以綁定style屬性到text_color
-&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--要插入的目標位置--&gt; &lt;div id=&#34;tag01&#34; v-bind:title=&#34;title_text&#34; v-bind:style=&#34;text_color&#34;&gt; 若苦難必然會發生，行善受苦，總比行惡受苦好。 &lt;/div&gt; &lt;/body&gt; &lt;!--引入Vue--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;script&gt; var object01 = new Vue({ el: &#39;#tag01&#39;, data: { title_text: &#34;&#34;, text_color: &#34;&#34; } }) //此處將title屬性修改，這樣滑鼠停在文字上頭時就會顯示這段英文  object01.title_text = &#34;Be good! You can bear any pain.&#34; //這裡，我們動態修改文字顏色  object01.text_color = &#34;color:gray&#34; &lt;/script&gt; &lt;/html&gt; " />
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--要插入的目標位置--&gt; &lt;div id=&#34;tag01&#34; v-bind:title=&#34;title_text&#34; v-bind:style=&#34;text_color&#34;&gt; 若苦難必然會發生，行善受苦，總比行惡受苦好。 &lt;/div&gt; &lt;/body&gt; &lt;!--引入Vue--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;script&gt; var object01 = new Vue({ el: &#39;#tag01&#39;, data: { title_text: &#34;&#34;, text_color: &#34;&#34; } }) //此處將title屬性修改，這樣滑鼠停在文字上頭時就會顯示這段英文  object01.title_text = &#34;Be good! You can bear any pain.&#34; //這裡，我們動態修改文字顏色  object01.text_color = &#34;color:gray&#34; &lt;/script&gt; &lt;/html&gt; 這樣的結果就是文字變成灰色
+滑鼠停在文字上時顯示 &ldquo;Be good! You can bear any pain." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/vue/vue3.%E4%BF%AE%E6%94%B9%E6%A8%99%E7%B1%A4%E5%B1%AC%E6%80%A7/" />
 <meta property="article:published_time" content="2021-03-11T14:52:38+08:00" />
@@ -51,13 +53,14 @@ v-bind:style=&ldquo;text_color&quot;可以綁定style屬性到text_color
 <meta itemprop="name" content="Vue筆記 3:動態修改標籤屬性">
 <meta itemprop="description" content="Vue筆記 3:動態修改標籤屬性 稍微提到一下，如果這篇教學對你有幫助，請不要吝嗇教導你周圍的同事，我可以保證你一定會過得更快樂
 HTMl標籤存在許多屬性 例如style屬性可以修改文字的顏色大小，基本上就是css
-還有title屬性，滑鼠停在該標籤上頭實惠顯示出來的文字
+還有title屬性，滑鼠停在該標籤上頭時會顯示出來的文字
 使用v-bind來動態修改屬性 v-bind:title=&ldquo;title_text&quot;可以綁定title屬性到 title_text
 v-bind:style=&ldquo;text_color&quot;可以綁定style屬性到text_color
-&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--要插入的目標位置--&gt; &lt;div id=&#34;tag01&#34; v-bind:title=&#34;title_text&#34; v-bind:style=&#34;text_color&#34;&gt; 若苦難必然會發生，行善受苦，總比行惡受苦好。 &lt;/div&gt; &lt;/body&gt; &lt;!--引入Vue--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;script&gt; var object01 = new Vue({ el: &#39;#tag01&#39;, data: { title_text: &#34;&#34;, text_color: &#34;&#34; } }) //此處將title屬性修改，這樣滑鼠停在文字上頭時就會顯示這段英文  object01.title_text = &#34;Be good! You can bear any pain.&#34; //這裡，我們動態修改文字顏色  object01.text_color = &#34;color:gray&#34; &lt;/script&gt; &lt;/html&gt; ">
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--要插入的目標位置--&gt; &lt;div id=&#34;tag01&#34; v-bind:title=&#34;title_text&#34; v-bind:style=&#34;text_color&#34;&gt; 若苦難必然會發生，行善受苦，總比行惡受苦好。 &lt;/div&gt; &lt;/body&gt; &lt;!--引入Vue--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;script&gt; var object01 = new Vue({ el: &#39;#tag01&#39;, data: { title_text: &#34;&#34;, text_color: &#34;&#34; } }) //此處將title屬性修改，這樣滑鼠停在文字上頭時就會顯示這段英文  object01.title_text = &#34;Be good! You can bear any pain.&#34; //這裡，我們動態修改文字顏色  object01.text_color = &#34;color:gray&#34; &lt;/script&gt; &lt;/html&gt; 這樣的結果就是文字變成灰色
+滑鼠停在文字上時顯示 &ldquo;Be good! You can bear any pain.">
 <meta itemprop="datePublished" content="2021-03-11T14:52:38+08:00" />
 <meta itemprop="dateModified" content="2021-03-11T14:52:38+08:00" />
-<meta itemprop="wordCount" content="63">
+<meta itemprop="wordCount" content="72">
 
 
 
@@ -66,10 +69,11 @@ v-bind:style=&ldquo;text_color&quot;可以綁定style屬性到text_color
 <meta name="twitter:title" content="Vue筆記 3:動態修改標籤屬性"/>
 <meta name="twitter:description" content="Vue筆記 3:動態修改標籤屬性 稍微提到一下，如果這篇教學對你有幫助，請不要吝嗇教導你周圍的同事，我可以保證你一定會過得更快樂
 HTMl標籤存在許多屬性 例如style屬性可以修改文字的顏色大小，基本上就是css
-還有title屬性，滑鼠停在該標籤上頭實惠顯示出來的文字
+還有title屬性，滑鼠停在該標籤上頭時會顯示出來的文字
 使用v-bind來動態修改屬性 v-bind:title=&ldquo;title_text&quot;可以綁定title屬性到 title_text
 v-bind:style=&ldquo;text_color&quot;可以綁定style屬性到text_color
-&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--要插入的目標位置--&gt; &lt;div id=&#34;tag01&#34; v-bind:title=&#34;title_text&#34; v-bind:style=&#34;text_color&#34;&gt; 若苦難必然會發生，行善受苦，總比行惡受苦好。 &lt;/div&gt; &lt;/body&gt; &lt;!--引入Vue--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;script&gt; var object01 = new Vue({ el: &#39;#tag01&#39;, data: { title_text: &#34;&#34;, text_color: &#34;&#34; } }) //此處將title屬性修改，這樣滑鼠停在文字上頭時就會顯示這段英文  object01.title_text = &#34;Be good! You can bear any pain.&#34; //這裡，我們動態修改文字顏色  object01.text_color = &#34;color:gray&#34; &lt;/script&gt; &lt;/html&gt; "/>
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--要插入的目標位置--&gt; &lt;div id=&#34;tag01&#34; v-bind:title=&#34;title_text&#34; v-bind:style=&#34;text_color&#34;&gt; 若苦難必然會發生，行善受苦，總比行惡受苦好。 &lt;/div&gt; &lt;/body&gt; &lt;!--引入Vue--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;script&gt; var object01 = new Vue({ el: &#39;#tag01&#39;, data: { title_text: &#34;&#34;, text_color: &#34;&#34; } }) //此處將title屬性修改，這樣滑鼠停在文字上頭時就會顯示這段英文  object01.title_text = &#34;Be good! You can bear any pain.&#34; //這裡，我們動態修改文字顏色  object01.text_color = &#34;color:gray&#34; &lt;/script&gt; &lt;/html&gt; 這樣的結果就是文字變成灰色
+滑鼠停在文字上時顯示 &ldquo;Be good! You can bear any pain."/>
 
 	
   </head>
@@ -205,7 +209,7 @@ v-bind:style=&ldquo;text_color&quot;可以綁定style屬性到text_color
 <p>稍微提到一下，如果這篇教學對你有幫助，請不要吝嗇教導你周圍的同事，我可以保證你一定會過得更快樂</p>
 <h2 id="html標籤存在許多屬性">HTMl標籤存在許多屬性</h2>
 <p>例如style屬性可以修改文字的顏色大小，基本上就是css<br>
-還有title屬性，滑鼠停在該標籤上頭實惠顯示出來的文字</p>
+還有title屬性，滑鼠停在該標籤上頭時會顯示出來的文字</p>
 <h2 id="使用v-bind來動態修改屬性">使用v-bind來動態修改屬性</h2>
 <p>v-bind:title=&ldquo;title_text&quot;可以綁定title屬性到 title_text<br>
 v-bind:style=&ldquo;text_color&quot;可以綁定style屬性到text_color</p>
@@ -242,7 +246,9 @@ v-bind:style=&ldquo;text_color&quot;可以綁定style屬性到text_color</p>
 &lt;/<span style="color:#f92672">script</span>&gt;
 
 &lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><ul class="pa0">
+</code></pre></div><p>這樣的結果就是文字變成灰色<br>
+滑鼠停在文字上時顯示 &ldquo;Be good! You can bear any pain.&rdquo;</p>
+<ul class="pa0">
   
    <li class="list">
      <a href="/blog/public/tags/vue" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">vue</a>
