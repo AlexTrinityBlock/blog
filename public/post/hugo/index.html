@@ -91,8 +91,8 @@
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/blog/public/post/" title=" page">
-              
+            <a class="hover-white no-underline white-90" href="/blog/public/post/" title="目錄 page">
+              目錄
             </a>
           </li>
           
@@ -129,18 +129,221 @@
 
 
     <main class="pb7" role="main">
-      
-
-  <article class="pa3 pa4-ns nested-copy-line-height nested-img">
+       
+<article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-      <p>一個非常實用的靜態部落格生成器</p>
+        <p>一個非常實用的靜態部落格生成器</p>
 
     </section>
     <aside class="flex-ns flex-wrap justify-around mt5">
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          
-            <div class="mb3 pa4 mid-gray overflow-hidden">
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        March 11, 2021
+      </div>
+    
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue3.%E4%BF%AE%E6%94%B9%E6%A8%99%E7%B1%A4%E5%B1%AC%E6%80%A7/" class="link black dim">
+        Vue筆記 3:動態修改標籤屬性
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Vue筆記 3:動態修改標籤屬性 稍微提到一下，如果這篇教學對你有幫助，請不要吝嗇教導你周圍的同事，我可以保證你一定會過得更快樂
+HTMl標籤存在許多屬性 例如style屬性可以修改文字的顏色大小，基本上就是css
+還有title屬性，滑鼠停在該標籤上頭時會顯示出來的文字
+使用v-bind來動態修改屬性 v-bind:title=&ldquo;title_text&quot;可以綁定title屬性到 title_text
+v-bind:style=&ldquo;text_color&quot;可以綁定style屬性到text_color
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--要插入的目標位置--&gt; &lt;div id=&#34;tag01&#34; v-bind:title=&#34;title_text&#34; v-bind:style=&#34;text_color&#34;&gt; 若苦難必然會發生，行善受苦，總比行惡受苦好。 &lt;/div&gt; &lt;/body&gt; &lt;!--引入Vue--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;script&gt; var object01 = new Vue({ el: &#39;#tag01&#39;, data: { title_text: &#34;&#34;, text_color: &#34;&#34; } }) //此處將title屬性修改，這樣滑鼠停在文字上頭時就會顯示這段英文  object01.title_text = &#34;Be good! You can bear any pain.&#34; //這裡，我們動態修改文字顏色  object01.text_color = &#34;color:gray&#34; &lt;/script&gt; &lt;/html&gt; 這樣的結果就是文字變成灰色
+滑鼠停在文字上時顯示 &ldquo;Be good! You can bear any pain.
+    </div>
+  </div>
+
+        </div>
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        March 11, 2021
+      </div>
+    
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue2.%E5%B0%87%E5%AD%97%E4%B8%B2%E6%8F%92%E5%85%A5%E7%9B%AE%E6%A8%99%E6%A8%99%E7%B1%A4/" class="link black dim">
+        Vue筆記 2:將字串插入目標標籤
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Vue筆記 2:將字串插入目標標籤 我們注意到vue導入特定文字需要四個部份：
+1.目標html標籤，下列範例為tag01
+2.目標標籤中的文字區塊，這裡為message01
+3.被建立起來的vue物件，這裡為object01
+4.在vue物件生成的同時插入該物件的訊息，el:標籤id,data:標籤內容
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--要插入的目標位置--&gt; &lt;div id=&#34;tag01&#34;&gt; {{ message01 }} &lt;/div&gt; &lt;/body&gt; &lt;!--引入Vue--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;!--引發字串插入效果的js--&gt; &lt;script&gt; var object01 = new Vue({ el: &#39;#tag01&#39;, data: { message01: &#39;Life is sad but beautiful!&#39; } }) &lt;/script&gt; &lt;/html&gt; 此時畫面上會顯示
+Life is sad but beautiful! 動態修改標籤內容 如果要隨著需求動態修改標籤內容
+可以直接修改物件屬性
+以下範例：
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--要插入的目標位置--&gt; &lt;div id=&#34;tag01&#34;&gt; {{ message01 }} &lt;/div&gt; &lt;/body&gt; &lt;!
+    </div>
+  </div>
+
+        </div>
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        March 11, 2021
+      </div>
+    
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue1.%E7%9B%B4%E6%8E%A5%E5%BC%95%E7%94%A8/" class="link black dim">
+        Vue:1直接引用
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Vue筆記 1：直接引用 該筆記為了快速上手，蓄意忽視webpack等套件使用，若有機會將會於別篇筆記提及 首先我們簡單的建立一個html檔案，然後輸入以下內容
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;/body&gt; &lt;!--此行引入vue.js--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;/html&gt; 
+    </div>
+  </div>
+
+        </div>
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        March 1, 2021
+      </div>
+    
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%8A%8A%E8%A8%98%E6%86%B6%E9%AB%94%E7%95%B6%E7%A1%AC%E7%A2%9F%E7%94%A8/" class="link black dim">
+        把記憶體當硬碟用
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      你希望有個資料夾可以關機之後就徹底清除嗎？
+你感覺某個檔案在硬碟裡的執行速度還是不夠快嗎？
+這時候你可以啟用ramdisk
+修改檔案系統表 已root權限打開這個設定檔
+/etc/fstab 裡頭長這樣
+# /etc/fstab: static file system information. # # Use 'blkid' to print the universally unique identifier for a # device; this may be used with UUID= as a more robust way to name devices # that works even if disks are added and removed. See fstab(5). # # &lt;file system&gt; &lt;mount point&gt; &lt;type&gt; &lt;options&gt; &lt;dump&gt; &lt;pass&gt; # / was on /dev/sdb7 during installation UUID=beaf8a82-1495-478f-b85f-951a4670f4d1 / ext4 errors=remount-ro 0 1 # swap was on /dev/sdb6 during installation UUID=a773e6bc-3536-4dfc-9e4c-b2128d50feb4 none swap sw 0 0 然後假設我們要產生一個50MB的資料夾在/mnt/happyDir
+    </div>
+  </div>
+
+        </div>
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        March 1, 2021
+      </div>
+    
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux-mint20%E6%9B%B4%E6%8F%9B%E9%96%8B%E6%A9%9F%E5%9C%96%E7%A4%BA/" class="link black dim">
+        Linux Mint20更換開機圖示
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      下載喜歡的開機圖示 下載開機圖示1
+下載開機圖示2
+打開圖示資料夾取出最裡層的資料夾
+然後將其複製到以下位置
+/usr/share/plymouth/themes 修改圖示檔案設定文件 修改預設的開機圖示檔 default.plymouth
+[Plymouth Theme] Name=Mate Red Description=A theme that features an animated Linux Mint logo. ModuleName=script [script] ImageDir=/usr/share/plymouth/themes/mate_red ScriptFile=/usr/share/plymouth/themes/mate_red/mate_red.script 把ImageDir改成你下載的圖示的資料夾
+ImageDir=/usr/share/plymouth/themes/下載圖示的資料夾 然後將執行腳本改成ScriptFile改成下載圖示資料夾中的腳本
+腳本的副檔名通常為script
+ScriptFile=/usr/share/plymouth/themes/下載圖示的資料夾/下載圖示的資料夾.script 然後將他編譯成二進制的檔案
+sudo update-initramfs -u 完成～！
+    </div>
+  </div>
+
+        </div>
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        March 1, 2021
+      </div>
+    
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/" class="link black dim">
+        Linux在SSD上的損耗減少策略2(關閉系統紀錄)
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      在linux中，為了明確清楚電腦曾經發生過什麼，所以會將一切紀錄記載在以下資料夾
+/var/log 但是這樣終究會損耗SSD的寫入次數
+而且紀錄檔會越來越大
+如果沒有意圖要紀錄linux中發生的大小事時
+可以這樣操作
+關閉紀錄程式 紀錄程式的名稱稱為 rsyslog，以下是關閉的指令：
+sudo systemctl disable rsyslog systemctl適用於調整開機時自動執行的程式
+disable 關閉 / emable 啟動
+    </div>
+  </div>
+
+        </div>
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        March 1, 2021
+      </div>
+    
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/" class="link black dim">
+        linux在SSD上的損耗減少策略1(佔存檔移入記憶體)
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      概述 固態硬碟SSD存在著寫入次數限制
+而linux上頭各應用程式
+暫時存在的檔案通常會放在
+/tmp 目錄之中
+我們該如何減少/tmp 中頻繁的擦寫帶來的損耗呢？
+linux mint 中的解決方案 tmpfs是個可以將資料暫存到記憶體
+也就是Ram中的程式
+雖然可以直接操控，但是為求簡便linux mint中預設某個可用的服務，可以直接達成此目標
+打開終端機
+sudo cp /usr/share/systemd/tmp.mount /etc/systemd/system/tmp.mount 將沒被啟用的服務檔案tmp.mount複製到正在使用的服務檔案資料夾
+sudo systemctl enable tmp.mount 啟用服務，完成！
+    </div>
+  </div>
+
+        </div>
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        February 28, 2021
+      </div>
+    
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/" class="link black dim">
+        手動連接裝置或磁碟槽（掛載）
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      假設今天，你的硬碟同時存在linux與windows
+你啟動linux後希望存取windows的D槽
+此時D槽被標記為
+/dev/sda2 這時你可以先建立資料夾
+/media/MyDisk 然後將D槽也就是 /dev/sda2 用下列指令掛載到/media/MyDsik上頭
+sudo mount /dev/sda2 /media/MyDisk/ 只後當你從linux進入/media/MyDisk/
+就可以從中看到你的D槽文件了
+    </div>
+  </div>
+
+        </div>
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
     
       <div class="f6">
         February 27, 2021
@@ -162,10 +365,9 @@ themes/m10c 意思是將主題模塊放入
   </div>
 
         </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          
-            <div class="mb3 pa4 mid-gray overflow-hidden">
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
     
       <div class="f6">
         February 26, 2021
@@ -183,10 +385,9 @@ hugo new site hahablog 這樣會建立一個稱為『haha』的部落格
   </div>
 
         </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          
-            <div class="mb3 pa4 mid-gray overflow-hidden">
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
     
       <div class="f6">
         February 26, 2021
@@ -210,12 +411,12 @@ hugo server -D 就會生成文章的html檔案，在public資料夾了
   </div>
 
         </div>
-      
+        
     </aside>
     
 
 
-  </article>
+</article>
 
     </main>
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">

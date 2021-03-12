@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>無面者小站</title>
+    <title>目錄 on 無面者小站</title>
     <link>https://alextrinityblock.github.io/blog/public/post/</link>
-    <description>Recent content on 無面者小站</description>
+    <description>Recent content in 目錄 on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Thu, 11 Mar 2021 14:52:38 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Feb 2021 17:04:06 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
