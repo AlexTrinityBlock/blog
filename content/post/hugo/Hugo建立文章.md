@@ -3,6 +3,7 @@ title: "Hugo建立文章"
 date: 2021-02-26T16:31:03+08:00
 draft: true
 featured_image: "/hugo.png"
+tags: ["hugo"]
 ---
 
 ### 1.命令行

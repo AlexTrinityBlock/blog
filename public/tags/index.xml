@@ -79,5 +79,14 @@
       <description></description>
     </item>
     
+    <item>
+      <title>hugo</title>
+      <link>https://alextrinityblock.github.io/blog/public/tags/hugo/</link>
+      <pubDate>Sat, 27 Feb 2021 09:36:30 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

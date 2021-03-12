@@ -15,24 +15,24 @@ enableRobotsTXT = true
 #上排選單設置
 SectionPagesMenu = "main" #上排標籤選單
 
-#[[menu.main]]
-#    identifier = "linux"
-#    name = "linux"
-#    title = "linux"
-#    url = "/post/linux"
-#    weight = 1
-#[[menu.main]]
-#    identifier = "hugo"
-#    name = "hugo"
-#    title = "hugo"
-#    url = "/post/hugo"
-#    weight = 1
-#[[menu.main]]
-#    identifier = "vue"
-#    name = "vue"
-#    title = "vue"
-#    url = "/post/vue"
-#    weight = 1
+[[menu.main]]
+    identifier = "linux"
+    name = "linux"
+    title = "linux"
+    url = "/tags/linux"
+    weight = 1
+[[menu.main]]
+    identifier = "hugo"
+    name = "hugo"
+    title = "hugo"
+    url = "/tags/hugo"
+    weight = 1
+[[menu.main]]
+    identifier = "vue"
+    name = "vue"
+    title = "vue"
+    url = "/tags/vue/"
+    weight = 1
 
 [sitemap]
     changefreq = "monthly"
