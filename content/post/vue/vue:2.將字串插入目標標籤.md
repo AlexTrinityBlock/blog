@@ -1,5 +1,5 @@
 ---
-title: "Vue:2"
+title: "Vue筆記 2:將字串插入目標標籤"
 date: 2021-03-11T14:49:54+08:00
 draft: true
 featured_image: "/vue.png"
