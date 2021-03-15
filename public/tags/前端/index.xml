@@ -6,7 +6,18 @@
     <description>Recent content in 前端 on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Mon, 15 Mar 2021 15:31:27 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Mar 2021 18:31:39 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vue筆記5.for迴圈</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%985.for%E8%BF%B4%E5%9C%88/</link>
+      <pubDate>Mon, 15 Mar 2021 18:31:39 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%985.for%E8%BF%B4%E5%9C%88/</guid>
+      <description>Vue筆記5.for迴圈 若我們希望某個元素重複出現，例如卡片或商品外框
+但是內容要求不同，例如商品名稱，我們可採用v-for
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;zh-hant-TW&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;簡化版Vue學習&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;!--要插入的目標位置--&amp;gt; &amp;lt;div id=&amp;#34;tag01&amp;#34;&amp;gt; &amp;lt;!--要執行迴圈的標籤--&amp;gt; &amp;lt;!--item可以隨意命名，此處只是個代號--&amp;gt; &amp;lt;div v-for=&amp;#34;item in items&amp;#34;&amp;gt; {{item.text}} &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;!--引入Vue--&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; //建立陣列元素  var element = [{ text: &amp;#34;仁愛&amp;#34; }, { text: &amp;#34;喜樂&amp;#34; }, { text: &amp;#34;和平&amp;#34; }, { text: &amp;#34;忍耐&amp;#34; }] //將陣列元素放入data  var object01 = new Vue({ el: &amp;#39;#tag01&amp;#39;, data: { items: element } }) &amp;lt;/script&amp;gt; &amp;lt;/html&amp;gt; </description>
+    </item>
+    
     <item>
       <title>Vue筆記4.條件式顯示隱藏元素</title>
       <link>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%984.%E6%A2%9D%E4%BB%B6%E5%BC%8F%E9%A1%AF%E7%A4%BA%E9%9A%B1%E8%97%8F%E5%85%83%E7%B4%A0/</link>
