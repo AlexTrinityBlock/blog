@@ -145,6 +145,25 @@
       </div>
     
     <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%989.%E7%B5%84%E4%BB%B6%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F/" class="link black dim">
+        Vue筆記9.組件基本使用方式
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Vue筆記9.組件基本使用方式 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--物件目標標籤--&gt; &lt;div id=&#34;tag01&#34;&gt; &lt;!-- v-for:讓模板循環數次，每次循環中item內容來自input_list的一個元素 v-bind:input_item:將模板的input_item屬性綁定在上述的item中 --&gt; &lt;my-temp v-for=&#34;item in input_list&#34; v-bind:input_item=&#34;item&#34; v-bind:key=&#34;item.id&#34;&gt;&lt;/my-temp&gt; &lt;/div&gt; &lt;/body&gt; &lt;!--引入Vue--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;script&gt; //註冊my-temp這個標籤  Vue.component(&#39;my-temp&#39;, { props: [&#39;input_item&#39;], template: &#39;&lt;div&gt;{{ input_item.text }}&lt;/div&gt;&#39; }) //實體化vue物件  var object01 = new Vue({ el: &#39;#tag01&#39;, data: { /*輸入清單陣列元素*/ input_list: [{ id: 0, text: &#34;愛是恆久忍耐&#34; }, { id: 1, text: &#34;又有恩慈&#34; }, { id: 2, text: &#34;信實良善&#34; } ] } }) &lt;/script&gt; &lt;/html&gt; 
+    </div>
+  </div>
+
+        </div>
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        March 16, 2021
+      </div>
+    
+    <h1 class="f3 near-black">
       <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%988.%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8%E7%B5%84%E4%BB%B6/" class="link black dim">
         Vue筆記8.簡單使用組件
       </a>
