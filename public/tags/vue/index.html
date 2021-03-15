@@ -41,7 +41,7 @@
 <meta property="og:description" content="歡迎來到無面者小站" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://alextrinityblock.github.io/blog/public/tags/vue/" />
-<meta property="og:updated_time" content="2021-03-11T14:52:38+08:00" />
+<meta property="og:updated_time" content="2021-03-15T15:31:27+08:00" />
 <meta itemprop="name" content="vue">
 <meta itemprop="description" content="歡迎來到無面者小站">
 <meta name="twitter:card" content="summary"/>
@@ -137,6 +137,28 @@
   </article>
   <div class="mw8 center">    
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Post</span>
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%984.%E6%A2%9D%E4%BB%B6%E5%BC%8F%E9%A1%AF%E7%A4%BA%E9%9A%B1%E8%97%8F%E5%85%83%E7%B4%A0/" class="link black dim">
+        Vue筆記4.條件式顯示隱藏元素
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Vue筆記4.條件式顯示隱藏元素 我們如果希望某些頁面元素，
+在特定條件下隱藏或顯示。
+甚至是將所有頁面元素放入同一頁，
+僅在需要時顯示必要部份。
+我們就可以採取v-if。
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--要插入的目標位置--&gt; &lt;div id=&#34;tag01&#34;&gt; &lt;!--命運顯示與否，由activeObject01決定，而恩賜顯示與否由activeObject02決定--&gt; &lt;div v-if=&#34;activeObject01&#34;&gt;命運&lt;/div&gt; &lt;div v-if=&#34;activeObject02&#34;&gt;恩賜&lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;!--引入Vue--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;script&gt; var object01 = new Vue({ el: &#39;#tag01&#39;, data: { //我們可以注意到底下兩個數值都是布林值  activeObject01: true, activeObject02: true } }) object01.activeObject01 = false &lt;/script&gt; &lt;/html&gt; 
+    </div>
+  </div>
+</div>
+
+        </div>
       
         <div class="relative w-100  mb4 bg-white">
           <div class="relative w-100 mb4 bg-white nested-copy-line-height">
