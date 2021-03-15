@@ -157,6 +157,41 @@
           
         
         <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+          <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%986.%E4%BB%A5%E6%8C%89%E9%88%95%E5%95%9F%E5%8B%95%E5%87%BD%E6%95%B8/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/vue.png" class="img" alt="image from Vue筆記6.以按鈕啟動函數">
+          </a>
+        </div>
+      
+      <div class="blah w-100 w-60-ns pl3-ns">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%986.%E4%BB%A5%E6%8C%89%E9%88%95%E5%95%9F%E5%8B%95%E5%87%BD%E6%95%B8/" class="color-inherit dim link">
+            Vue筆記6.以按鈕啟動函數
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Vue筆記6.以按鈕啟動函數 我們建立一段字串&quot;我是貓&quot;在vue物件中
+然後用&quot;addWord()&ldquo;這個函式來添加&rdquo;~喵!&ldquo;在字串後頭
+要將函式放入vue物件的方法如下
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--要插入的目標位置--&gt; &lt;div id=&#34;tag01&#34;&gt; &lt;div&gt;{{ message }}&lt;/div&gt; &lt;button v-on:click=&#34;addWord&#34;&gt;添加文字&lt;/button&gt; &lt;/div&gt; &lt;/body&gt; &lt;!--引入Vue--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;script&gt; //將陣列元素放入data  var object01 = new Vue({ el: &#39;#tag01&#39;, data: { message: &#34;我是貓&#34; }, methods: { addWord: function() { this.message = this.message + &#34;～喵！&#34; } } }) &lt;/script&gt; &lt;/html&gt; 
+        </div>
+          <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%986.%E4%BB%A5%E6%8C%89%E9%88%95%E5%95%9F%E5%8B%95%E5%87%BD%E6%95%B8/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+        </div>
+        
+        <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+          
+        
+        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
           <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%985.for%E8%BF%B4%E5%9C%88/" class="db grow">
             <img src="https://alextrinityblock.github.io/blog/public/vue.png" class="img" alt="image from Vue筆記5.for迴圈">
           </a>
@@ -490,50 +525,18 @@ sudo systemctl enable tmp.mount 啟用服務，完成！
 
         </div>
         
-        <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-          
-        
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/" class="db grow">
-            <img src="https://alextrinityblock.github.io/blog/public/debian1.jpeg" class="img" alt="image from 手動連接裝置或磁碟槽（掛載）">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/" class="color-inherit dim link">
-            手動連接裝置或磁碟槽（掛載）
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          假設今天，你的硬碟同時存在linux與windows
-你啟動linux後希望存取windows的D槽
-此時D槽被標記為
-/dev/sda2 這時你可以先建立資料夾
-/media/MyDisk 然後將D槽也就是 /dev/sda2 用下列指令掛載到/media/MyDsik上頭
-sudo mount /dev/sda2 /media/MyDisk/ 只後當你從linux進入/media/MyDisk/
-就可以從中看到你的D槽文件了
-        </div>
-          <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-        </div>
-        
     </section>
 
     
     <section class="w-100">
         <h1 class="f3">更多</h1>
          
+        <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/" class="link black dim">
+              手動連接裝置或磁碟槽（掛載）
+            </a>
+        </h2>
+        
         <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%8A%A0%E5%85%A5%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C/" class="link black dim">
               加入佈景主題

@@ -145,6 +145,28 @@
       </div>
     
     <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%986.%E4%BB%A5%E6%8C%89%E9%88%95%E5%95%9F%E5%8B%95%E5%87%BD%E6%95%B8/" class="link black dim">
+        Vue筆記6.以按鈕啟動函數
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Vue筆記6.以按鈕啟動函數 我們建立一段字串&quot;我是貓&quot;在vue物件中
+然後用&quot;addWord()&ldquo;這個函式來添加&rdquo;~喵!&ldquo;在字串後頭
+要將函式放入vue物件的方法如下
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--要插入的目標位置--&gt; &lt;div id=&#34;tag01&#34;&gt; &lt;div&gt;{{ message }}&lt;/div&gt; &lt;button v-on:click=&#34;addWord&#34;&gt;添加文字&lt;/button&gt; &lt;/div&gt; &lt;/body&gt; &lt;!--引入Vue--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;script&gt; //將陣列元素放入data  var object01 = new Vue({ el: &#39;#tag01&#39;, data: { message: &#34;我是貓&#34; }, methods: { addWord: function() { this.message = this.message + &#34;～喵！&#34; } } }) &lt;/script&gt; &lt;/html&gt; 
+    </div>
+  </div>
+
+        </div>
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        March 15, 2021
+      </div>
+    
+    <h1 class="f3 near-black">
       <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%985.for%E8%BF%B4%E5%9C%88/" class="link black dim">
         Vue筆記5.for迴圈
       </a>
@@ -459,6 +481,26 @@ hugo server -D 就會生成文章的html檔案，在public資料夾了
         
     </aside>
     
+<ul class="pagination">
+  <li class="page-item">
+    <a href="/blog/public/post/vue/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+  </li>
+  <li class="page-item disabled">
+    <a  class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+  </li>
+  <li class="page-item active">
+    <a class="page-link" href="/blog/public/post/vue/">1</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="/blog/public/post/vue/page/2/">2</a>
+  </li>
+  <li class="page-item">
+    <a href="/blog/public/post/vue/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+  </li>
+  <li class="page-item">
+    <a href="/blog/public/post/vue/page/2/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+  </li>
+</ul>
 
 
 </article>

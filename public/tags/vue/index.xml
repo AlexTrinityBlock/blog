@@ -6,7 +6,19 @@
     <description>Recent content in vue on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Mon, 15 Mar 2021 18:31:39 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Mar 2021 18:52:53 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vue筆記6.以按鈕啟動函數</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%986.%E4%BB%A5%E6%8C%89%E9%88%95%E5%95%9F%E5%8B%95%E5%87%BD%E6%95%B8/</link>
+      <pubDate>Mon, 15 Mar 2021 18:52:53 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%986.%E4%BB%A5%E6%8C%89%E9%88%95%E5%95%9F%E5%8B%95%E5%87%BD%E6%95%B8/</guid>
+      <description>Vue筆記6.以按鈕啟動函數 我們建立一段字串&amp;quot;我是貓&amp;quot;在vue物件中
+然後用&amp;quot;addWord()&amp;ldquo;這個函式來添加&amp;rdquo;~喵!&amp;ldquo;在字串後頭
+要將函式放入vue物件的方法如下
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;zh-hant-TW&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;簡化版Vue學習&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;!--要插入的目標位置--&amp;gt; &amp;lt;div id=&amp;#34;tag01&amp;#34;&amp;gt; &amp;lt;div&amp;gt;{{ message }}&amp;lt;/div&amp;gt; &amp;lt;button v-on:click=&amp;#34;addWord&amp;#34;&amp;gt;添加文字&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;!--引入Vue--&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; //將陣列元素放入data  var object01 = new Vue({ el: &amp;#39;#tag01&amp;#39;, data: { message: &amp;#34;我是貓&amp;#34; }, methods: { addWord: function() { this.message = this.message + &amp;#34;～喵！&amp;#34; } } }) &amp;lt;/script&amp;gt; &amp;lt;/html&amp;gt; </description>
+    </item>
+    
     <item>
       <title>Vue筆記5.for迴圈</title>
       <link>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%985.for%E8%BF%B4%E5%9C%88/</link>
