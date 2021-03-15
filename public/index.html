@@ -157,6 +157,75 @@
           
         
         <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+          <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%988.%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8%E7%B5%84%E4%BB%B6/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/vue.png" class="img" alt="image from Vue筆記8.簡單使用組件">
+          </a>
+        </div>
+      
+      <div class="blah w-100 w-60-ns pl3-ns">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%988.%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8%E7%B5%84%E4%BB%B6/" class="color-inherit dim link">
+            Vue筆記8.簡單使用組件
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Vue筆記8.簡單使用組件 vue框架對於重複使用網頁部件（例如按鈕，分隔線）提出了解決方案
+這類重複使用部件內容有些複雜
+以下先用最簡單但是無法更改內容的方式展現
+下個章節會提及如何動態改變內容
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--物件目標標籤--&gt; &lt;div id=&#34;tag01&#34;&gt; &lt;!--會被置換成模板的標籤--&gt; &lt;my-temp&gt;&lt;/my-temp&gt; &lt;my-sad&gt;&lt;/my-sad&gt; &lt;/div&gt; &lt;/body&gt; &lt;!--引入Vue--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;script&gt; //註冊my-temp這個標籤  Vue.component(&#39;my-temp&#39;, { template: &#39;&lt;div&gt;這個世界善惡參半&lt;/div&gt;&#39; }) //註冊my-sad這個標籤  Vue.component(&#39;my-sad&#39;, { template: &#39;&lt;div&gt;天國的門是窄的&lt;/div&gt;&#39; }) //上頭註冊的標籤在任何vue實例中都能被呼喚  //實體化vue物件，並一定要掛上標籤，此處是tag01  var object01 = new Vue({ el: &#39;#tag01&#39; }) &lt;/script&gt; &lt;/html&gt; 
+        </div>
+          <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%988.%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8%E7%B5%84%E4%BB%B6/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+        </div>
+        
+        <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+          
+        
+        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+          <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%987.%E5%90%8C%E6%AD%A5%E8%A1%A8%E5%96%AE%E8%88%87%E9%A0%81%E9%9D%A2%E6%96%87%E5%AD%97/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/vue.png" class="img" alt="image from Vue筆記7.同步表單與頁面文字">
+          </a>
+        </div>
+      
+      <div class="blah w-100 w-60-ns pl3-ns">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%987.%E5%90%8C%E6%AD%A5%E8%A1%A8%E5%96%AE%E8%88%87%E9%A0%81%E9%9D%A2%E6%96%87%E5%AD%97/" class="color-inherit dim link">
+            Vue筆記7.同步表單與頁面文字
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Vue筆記7.同步表單與頁面文字 可以藉由v-model來同步輸入框與物件內的資料
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--要插入的目標位置--&gt; &lt;div id=&#34;tag01&#34;&gt; &lt;div&gt;{{ text_content }}&lt;/div&gt; &lt;input v-model=&#34;text_content&#34;&gt; &lt;/div&gt; &lt;/body&gt; &lt;!--引入Vue--&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue&#34;&gt;&lt;/script&gt; &lt;script&gt; var object01 = new Vue({ el: &#39;#tag01&#39;, data: { text_content: &#34;日光之下皆是空虛&#34; //此元素將與輸入框同步  } }) &lt;/script&gt; &lt;/html&gt; 
+        </div>
+          <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%987.%E5%90%8C%E6%AD%A5%E8%A1%A8%E5%96%AE%E8%88%87%E9%A0%81%E9%9D%A2%E6%96%87%E5%AD%97/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+        </div>
+        
+        <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+          
+        
+        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
           <a href="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%986.%E4%BB%A5%E6%8C%89%E9%88%95%E5%95%9F%E5%8B%95%E5%87%BD%E6%95%B8/" class="db grow">
             <img src="https://alextrinityblock.github.io/blog/public/vue.png" class="img" alt="image from Vue筆記6.以按鈕啟動函數">
           </a>
@@ -444,93 +513,24 @@ sudo update-initramfs -u 完成～！
 
         </div>
         
-        <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-          
-        
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/" class="db grow">
-            <img src="https://alextrinityblock.github.io/blog/public/debian1.jpeg" class="img" alt="image from Linux在SSD上的損耗減少策略2(關閉系統紀錄)">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/" class="color-inherit dim link">
-            Linux在SSD上的損耗減少策略2(關閉系統紀錄)
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          在linux中，為了明確清楚電腦曾經發生過什麼，所以會將一切紀錄記載在以下資料夾
-/var/log 但是這樣終究會損耗SSD的寫入次數
-而且紀錄檔會越來越大
-如果沒有意圖要紀錄linux中發生的大小事時
-可以這樣操作
-關閉紀錄程式 紀錄程式的名稱稱為 rsyslog，以下是關閉的指令：
-sudo systemctl disable rsyslog systemctl適用於調整開機時自動執行的程式
-disable 關閉 / emable 啟動
-        </div>
-          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-        </div>
-        
-        <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-          
-        
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/" class="db grow">
-            <img src="https://alextrinityblock.github.io/blog/public/debian1.jpeg" class="img" alt="image from linux在SSD上的損耗減少策略1(佔存檔移入記憶體)">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/" class="color-inherit dim link">
-            linux在SSD上的損耗減少策略1(佔存檔移入記憶體)
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          概述 固態硬碟SSD存在著寫入次數限制
-而linux上頭各應用程式
-暫時存在的檔案通常會放在
-/tmp 目錄之中
-我們該如何減少/tmp 中頻繁的擦寫帶來的損耗呢？
-linux mint 中的解決方案 tmpfs是個可以將資料暫存到記憶體
-也就是Ram中的程式
-雖然可以直接操控，但是為求簡便linux mint中預設某個可用的服務，可以直接達成此目標
-打開終端機
-sudo cp /usr/share/systemd/tmp.mount /etc/systemd/system/tmp.mount 將沒被啟用的服務檔案tmp.mount複製到正在使用的服務檔案資料夾
-sudo systemctl enable tmp.mount 啟用服務，完成！
-        </div>
-          <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-        </div>
-        
     </section>
 
     
     <section class="w-100">
         <h1 class="f3">更多</h1>
          
+        <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/" class="link black dim">
+              Linux在SSD上的損耗減少策略2(關閉系統紀錄)
+            </a>
+        </h2>
+        
+        <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/" class="link black dim">
+              linux在SSD上的損耗減少策略1(佔存檔移入記憶體)
+            </a>
+        </h2>
+        
         <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/" class="link black dim">
               手動連接裝置或磁碟槽（掛載）
@@ -540,18 +540,6 @@ sudo systemctl enable tmp.mount 啟用服務，完成！
         <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%8A%A0%E5%85%A5%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C/" class="link black dim">
               加入佈景主題
-            </a>
-        </h2>
-        
-        <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://alextrinityblock.github.io/blog/public/post/hugo/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%83%A8%E8%90%BD%E6%A0%BC/" class="link black dim">
-              建立一個新的部落格
-            </a>
-        </h2>
-        
-        <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://alextrinityblock.github.io/blog/public/post/hugo/hugo%E5%BB%BA%E7%AB%8B%E6%96%87%E7%AB%A0/" class="link black dim">
-              Hugo建立文章
             </a>
         </h2>
           
