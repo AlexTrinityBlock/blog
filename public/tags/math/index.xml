@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>math on 無面者小站</title>
+    <link>https://alextrinityblock.github.io/blog/public/tags/math/</link>
+    <description>Recent content in math on 無面者小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <lastBuildDate>Fri, 20 Aug 2021 14:43:44 +0800</lastBuildDate>
+    
+	<atom:link href="https://alextrinityblock.github.io/blog/public/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>單向函數</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/math/%E5%96%AE%E5%90%91%E5%87%BD%E6%95%B8/</link>
+      <pubDate>Fri, 20 Aug 2021 14:43:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/math/%E5%96%AE%E5%90%91%E5%87%BD%E6%95%B8/</guid>
+      <description>1.簡介 簡單來說，用某個函數將x算成y很容易。 \[ y=f(x) \] 但是反過來的話，將y算回x則十分困難。也就是說，y算回x需要大量的時間，甚至有時候只能將</description>
+    </item>
+    
+    <item>
+      <title>數學符號</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/math/%E6%95%B8%E5%AD%B8%E7%AC%A6%E8%99%9F/</link>
+      <pubDate>Fri, 20 Aug 2021 14:43:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/math/%E6%95%B8%E5%AD%B8%E7%AC%A6%E8%99%9F/</guid>
+      <description>1.連續乘法符號 該符號代表連續成法，是pi的大寫版本。 \[ \prod_{i=1}^{4} {i} = 1\times2\times3\times4=24 \] &amp;lt;script src=&amp;#34;https://polyfill.io/v3/polyfill.min.js?features=es6&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script id=&amp;#34;MathJax-script&amp;#34; async src=&amp;#34;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;p&amp;gt; \[ \prod_{i=1}^{4} {i} = 1\times2\times3\times4 \] &amp;lt;/p&amp;gt;</description>
+    </item>
+    
+  </channel>
+</rss>

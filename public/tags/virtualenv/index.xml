@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>virtualenv on 無面者小站</title>
+    <link>https://alextrinityblock.github.io/blog/public/tags/virtualenv/</link>
+    <description>Recent content in virtualenv on 無面者小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <lastBuildDate>Thu, 29 Apr 2021 14:43:44 +0800</lastBuildDate>
+    
+	<atom:link href="https://alextrinityblock.github.io/blog/public/tags/virtualenv/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>python_virtualenv使用</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/python/python_virtualenv%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Thu, 29 Apr 2021 14:43:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/python/python_virtualenv%E4%BD%BF%E7%94%A8/</guid>
+      <description>1.安裝virtualenv虛擬環境 linux mint或ubuntu上頭安裝時可以用apt來進行安裝 sudo apt install virtualenv 或直接用pip3來安裝 pip3 install virtualenv 2.建立虛擬</description>
+    </item>
+    
+  </channel>
+</rss>

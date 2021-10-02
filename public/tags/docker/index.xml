@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on 無面者小站</title>
+    <link>https://alextrinityblock.github.io/blog/public/tags/docker/</link>
+    <description>Recent content in docker on 無面者小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <lastBuildDate>Sat, 17 Jul 2021 10:05:03 +0800</lastBuildDate>
+    
+	<atom:link href="https://alextrinityblock.github.io/blog/public/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>讓firefox跑在docker-compose裡頭的正確腳本</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/docker/%E8%AE%93firefox%E8%B7%91%E5%9C%A8docker-compose%E8%A3%A1%E9%A0%AD%E7%9A%84%E6%AD%A3%E7%A2%BA%E8%85%B3%E6%9C%AC/</link>
+      <pubDate>Sat, 17 Jul 2021 10:05:03 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/docker/%E8%AE%93firefox%E8%B7%91%E5%9C%A8docker-compose%E8%A3%A1%E9%A0%AD%E7%9A%84%E6%AD%A3%E7%A2%BA%E8%85%B3%E6%9C%AC/</guid>
+      <description>資料夾結構 firefox ├── docker-compose.yml ├── Dockerfile └── run docker-compose.yml #docker-compose版本 version: &amp;#34;3.4&amp;#34; #服務，不過這裡唯一的服務就是firefox瀏覽器 services: #服務名稱，</description>
+    </item>
+    
+    <item>
+      <title>讓容器獲得本機網路的完整權限</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/docker/%E8%AE%93%E5%AE%B9%E5%99%A8%E7%8D%B2%E5%BE%97%E6%9C%AC%E6%A9%9F%E7%B6%B2%E8%B7%AF%E7%9A%84%E5%AE%8C%E6%95%B4%E6%AC%8A%E9%99%90/</link>
+      <pubDate>Sat, 12 Jun 2021 00:05:03 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/docker/%E8%AE%93%E5%AE%B9%E5%99%A8%E7%8D%B2%E5%BE%97%E6%9C%AC%E6%A9%9F%E7%B6%B2%E8%B7%AF%E7%9A%84%E5%AE%8C%E6%95%B4%E6%AC%8A%E9%99%90/</guid>
+      <description>docker run指令的對外網開放端口選項 我們如果想讓容器與本機使用同一個網路，並且能建立像是網頁伺服器一類的對外開放端口， 可以將網路設置為host。</description>
+    </item>
+    
+    <item>
+      <title>docker運作圖形程式</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/docker/docker%E9%81%8B%E4%BD%9C%E5%9C%96%E5%BD%A2%E7%A8%8B%E5%BC%8F/</link>
+      <pubDate>Tue, 08 Jun 2021 00:05:03 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/docker/docker%E9%81%8B%E4%BD%9C%E5%9C%96%E5%BD%A2%E7%A8%8B%E5%BC%8F/</guid>
+      <description>本篇我們以在docker上頭運作firefox程式為案例。 但也可應用在其他的軟體。 知識 連線檔案 由於在linux上頭連socket連線都是以檔</description>
+    </item>
+    
+    <item>
+      <title>LinuxMint20.1上安裝docker</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/docker/linuxmint%E4%B8%8A%E5%AE%89%E8%A3%9Ddocker/</link>
+      <pubDate>Wed, 19 May 2021 00:05:03 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/docker/linuxmint%E4%B8%8A%E5%AE%89%E8%A3%9Ddocker/</guid>
+      <description>Mint安裝docker會遇上的問題 由於Mint目前還沒有專用版本的docker儲存庫， 所以我們必須使用Mint的源頭Ubuntu版本的do</description>
+    </item>
+    
+    <item>
+      <title>docker.sock錯誤處理</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/docker/docker%E7%A7%92%E9%80%80%E7%9A%84%E5%95%8F%E9%A1%8C/</link>
+      <pubDate>Sat, 01 May 2021 23:05:03 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/docker/docker%E7%A7%92%E9%80%80%E7%9A%84%E5%95%8F%E9%A1%8C/</guid>
+      <description>docker.sock的錯誤 剛裝好docker時常常會跳出此種錯誤 Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/json: dial unix /var/run/docker.sock: connect: permission denied docker.sock的功能 簡</description>
+    </item>
+    
+    <item>
+      <title>docker秒退的問題</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/docker/docker.sock%E9%8C%AF%E8%AA%A4%E8%99%95%E7%90%86/</link>
+      <pubDate>Fri, 16 Apr 2021 16:31:03 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/docker/docker.sock%E9%8C%AF%E8%AA%A4%E8%99%95%E7%90%86/</guid>
+      <description>docker為何秒退的猜測 這只是猜測，個人實力不足，不能直接斷言問題所在。 當docker中所有的程序（process）都執行完畢時，dock</description>
+    </item>
+    
+  </channel>
+</rss>

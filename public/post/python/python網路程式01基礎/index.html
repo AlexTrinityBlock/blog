@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>python網路程式01:基礎 | 無面者小站</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="本篇引用自Foundations of Python Network Programming一書 本章討論如何使用python發出http請求 1.用網址取得主機ip import socket if __name__ ==">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+      
+	  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    
+
+  
+  
+    <link rel="stylesheet" href="/blog/public/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css" >
+  
+
+
+
+
+    
+      
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+
+
+    
+
+    
+    
+    <meta property="og:title" content="python網路程式01:基礎" />
+<meta property="og:description" content="本篇引用自Foundations of Python Network Programming一書 本章討論如何使用python發出http請求 1.用網址取得主機ip import socket if __name__ ==" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F01%E5%9F%BA%E7%A4%8E/" />
+<meta property="article:published_time" content="2021-04-29T16:15:44+08:00" />
+<meta property="article:modified_time" content="2021-04-29T16:15:44+08:00" />
+<meta itemprop="name" content="python網路程式01:基礎">
+<meta itemprop="description" content="本篇引用自Foundations of Python Network Programming一書 本章討論如何使用python發出http請求 1.用網址取得主機ip import socket if __name__ ==">
+<meta itemprop="datePublished" content="2021-04-29T16:15:44&#43;08:00" />
+<meta itemprop="dateModified" content="2021-04-29T16:15:44&#43;08:00" />
+<meta itemprop="wordCount" content="1318">
+
+
+
+<meta itemprop="keywords" content="python,network,網路," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="python網路程式01:基礎"/>
+<meta name="twitter:description" content="本篇引用自Foundations of Python Network Programming一書 本章討論如何使用python發出http請求 1.用網址取得主機ip import socket if __name__ =="/>
+
+	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://alextrinityblock.github.io/blog/public/python.jpg');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/blog/public/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        無面者小站
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/android/" title="android page">
+              android
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/c/" title="c page">
+              c
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/docker/" title="docker page">
+              docker
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/git/" title="git page">
+              git
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/hugo" title="hugo page">
+              hugo
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/linux" title="linux page">
+              linux
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/math/" title="math page">
+              math
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/network/" title="network page">
+              network
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/opencv/" title="opencv page">
+              opencv
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/python/" title="python page">
+              python
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/secure/" title="secure page">
+              secure
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/vue/" title="vue page">
+              vue
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/" title="更多 page">
+              更多
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/post/" title=" page">
+              
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">python網路程式01:基礎</h1>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F01%E5%9F%BA%E7%A4%8E/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F01%E5%9F%BA%E7%A4%8E/&amp;text=python%e7%b6%b2%e8%b7%af%e7%a8%8b%e5%bc%8f01:%e5%9f%ba%e7%a4%8e" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F01%E5%9F%BA%E7%A4%8E/&amp;title=python%e7%b6%b2%e8%b7%af%e7%a8%8b%e5%bc%8f01:%e5%9f%ba%e7%a4%8e" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">python網路程式01:基礎</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-04-29T16:15:44+08:00">April 29, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>本篇引用自Foundations of Python Network Programming一書
+本章討論如何使用python發出http請求</p>
+<h1 id="1用網址取得主機ip">1.用網址取得主機ip</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> socket
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    hostname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;maps.google.com&#39;</span> <span style="color:#75715e">#此處是google地圖的網址</span>
+    addr <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span>gethostbyname(hostname) <span style="color:#75715e">#放入socket函數中</span>
+    <span style="color:#75715e">#最後將結果用format插入字串    </span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;網址 {} 的ip位址是 {}&#39;</span><span style="color:#f92672">.</span>format(hostname, addr))
+</code></pre></div><h1 id="2用nominatim的api查詢地址的座標">2.用Nominatim的API查詢地址的座標</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#引入Nominatim專用函數庫進行座標查詢</span>
+<span style="color:#f92672">from</span> geopy.geocoders <span style="color:#f92672">import</span> Nominatim 
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    <span style="color:#75715e">#一段英文地址</span>
+    address <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;207 N. Defiance St, Archbold, OH&#39;</span>
+    user_agent <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hello&#39;</span><span style="color:#75715e">#這段伺服器端會看到，一般會透漏瀏覽器等資訊</span>
+    <span style="color:#75715e">#伺服器回傳的地理位置會存入location物件中    </span>
+    location <span style="color:#f92672">=</span> Nominatim(user_agent<span style="color:#f92672">=</span>user_agent)<span style="color:#f92672">.</span>geocode(address)
+    <span style="color:#75715e">#印出緯度與經度    </span>
+    <span style="color:#66d9ef">print</span>(location<span style="color:#f92672">.</span>latitude, location<span style="color:#f92672">.</span>longitude)
+
+</code></pre></div><h1 id="3用requests函數庫發送http請求取得座標">3.用requests函數庫發送http請求，取得座標</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#發送http請求的函數庫</span>
+<span style="color:#f92672">import</span> requests
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">send_request</span>(address):
+    base <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://nominatim.openstreetmap.org/search&#39;</span><span style="color:#75715e">#網址</span>
+    parameters <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;q&#39;</span>: address, <span style="color:#e6db74">&#39;format&#39;</span>: <span style="color:#e6db74">&#39;json&#39;</span>}<span style="color:#75715e">#輸入地址參數，格式為json</span>
+    user_agent <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hello&#39;</span><span style="color:#75715e">#這段伺服器端會看到，一般會透漏瀏覽器等資訊</span>
+    headers <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;User-Agent&#39;</span>: user_agent}<span style="color:#75715e">#組合請求header</span>
+    response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(base, params<span style="color:#f92672">=</span>parameters, headers<span style="color:#f92672">=</span>headers)<span style="color:#75715e">#發送</span>
+    reply <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>json()<span style="color:#75715e">#取得回應的json格式</span>
+    <span style="color:#66d9ef">print</span>(reply[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;lat&#39;</span>], reply[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;lon&#39;</span>])<span style="color:#75715e">#印出內容</span>
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    send_request(<span style="color:#e6db74">&#39;207 N. Defiance St, Archbold, OH&#39;</span>)
+
+</code></pre></div><h1 id="4直接使用http函數庫">4.直接使用http函數庫</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> http.client<span style="color:#75715e">#引入http模塊</span>
+<span style="color:#f92672">import</span> json <span style="color:#75715e">#引入json模塊</span>
+<span style="color:#f92672">from</span> urllib.parse <span style="color:#f92672">import</span> quote_plus <span style="color:#75715e">#引入將文字轉換成url格式的模塊</span>
+
+<span style="color:#75715e">#之所以要這個是因為api的網址是nominatim.openstreetmap.org/search</span>
+base <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/search&#39;</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">geocode</span>(address):
+    <span style="color:#75715e">#將整個請求組合起來，quote_plus()可以將原本不能放入url的文字轉成url可接受的格式    </span>
+    path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;{}?q={}&amp;format=json&#39;</span><span style="color:#f92672">.</span>format(base, quote_plus(address))
+    <span style="color:#75715e">#此處的b是將字串轉換成byte格式，才可經由http傳輸    </span>
+    user_agent <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;Foundations of Python Network Programming example search3.py&#39;</span>
+    headers <span style="color:#f92672">=</span> {<span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;User-Agent&#39;</span>: user_agent}
+    <span style="color:#75715e">#網址連接    </span>
+    connection <span style="color:#f92672">=</span> http<span style="color:#f92672">.</span>client<span style="color:#f92672">.</span>HTTPSConnection(<span style="color:#e6db74">&#39;nominatim.openstreetmap.org&#39;</span>)
+    <span style="color:#75715e">#請求的方式主要有get,post,put,delete四種，目前主流是get,post</span>
+    <span style="color:#75715e">#單純取得資料一般用get    </span>
+    connection<span style="color:#f92672">.</span>request(<span style="color:#e6db74">&#39;GET&#39;</span>, path, None, headers)
+    <span style="color:#75715e">#原始的回應</span>
+    rawreply <span style="color:#f92672">=</span> connection<span style="color:#f92672">.</span>getresponse()<span style="color:#f92672">.</span>read()
+    <span style="color:#75715e">#轉換成json並且以utf-8編碼    </span>
+    reply <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(rawreply<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>))
+    <span style="color:#66d9ef">print</span>(reply[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;lat&#39;</span>], reply[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;lon&#39;</span>])
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    geocode(<span style="color:#e6db74">&#39;207 N. Defiance St, Archbold, OH&#39;</span>)
+
+</code></pre></div><h1 id="5使用socket發送http字段">5.使用socket發送http字段</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> socket <span style="color:#75715e">#原始的socket連線</span>
+<span style="color:#f92672">import</span> ssl <span style="color:#75715e">#https安全連線模塊（傳輸會加密）</span>
+<span style="color:#f92672">from</span> urllib.parse <span style="color:#f92672">import</span> quote_plus <span style="color:#75715e">#引入將文字轉換成url格式的模塊</span>
+
+<span style="color:#75715e">#從http的角度是個get的請求，從socket的角度就是如下的字串</span>
+request_text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#e6db74">GET /search?q={}&amp;format=json HTTP/1.1</span><span style="color:#ae81ff">\r\n\
+</span><span style="color:#ae81ff"></span><span style="color:#e6db74">Host: nominatim.openstreetmap.org</span><span style="color:#ae81ff">\r\n\
+</span><span style="color:#ae81ff"></span><span style="color:#e6db74">User-Agent: Foundations of Python Network Programming example search4.py</span><span style="color:#ae81ff">\r\n\
+</span><span style="color:#ae81ff"></span><span style="color:#e6db74">Connection: close</span><span style="color:#ae81ff">\r\n\
+</span><span style="color:#ae81ff">\r\n\
+</span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">geocode</span>(address):
+    <span style="color:#75715e">#未加密的socket連線</span>
+    unencrypted_sock <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span>socket()
+    <span style="color:#75715e">#由伺服器443 port進行連線</span>
+    unencrypted_sock<span style="color:#f92672">.</span>connect((<span style="color:#e6db74">&#39;nominatim.openstreetmap.org&#39;</span>, <span style="color:#ae81ff">443</span>))
+    <span style="color:#75715e">#加上https加密連線</span>
+    sock <span style="color:#f92672">=</span> ssl<span style="color:#f92672">.</span>wrap_socket(unencrypted_sock)
+    <span style="color:#75715e">#將上方的請求字串拼接</span>
+    request <span style="color:#f92672">=</span> request_text<span style="color:#f92672">.</span>format(quote_plus(address))
+    <span style="color:#75715e">#將其轉ascii編碼，然後送出</span>
+    sock<span style="color:#f92672">.</span>sendall(request<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;ascii&#39;</span>))
+    <span style="color:#75715e">#得到的原始回應會是byte型態的</span>
+    raw_reply <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;&#39;</span>
+    <span style="color:#66d9ef">while</span> True:
+        <span style="color:#75715e">#一次接收4096個byte</span>
+        more <span style="color:#f92672">=</span> sock<span style="color:#f92672">.</span>recv(<span style="color:#ae81ff">4096</span>)
+        <span style="color:#75715e">#都接收完後停止迴圈</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> more:
+            <span style="color:#66d9ef">break</span>
+        raw_reply <span style="color:#f92672">+=</span> more
+    <span style="color:#66d9ef">print</span>(raw_reply<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>))
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    geocode(<span style="color:#e6db74">&#39;207 N. Defiance St, Archbold, OH&#39;</span>)
+
+</code></pre></div><h1 id="6備註">6.備註</h1>
+<p>*雖然ip協定一個數據包最大可以64kb，但是乙太網路某些時候只支持更小的數據包所以會切分數個fragment。</p>
+<p>*如果要了解關於ip的更多知識，可以讀IETF發布的RFC文檔。</p>
+<p>*網路傳輸常常在unicode與原始的ascii之間切換，utf-8最常使用。</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/blog/public/tags/python" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">python</a>
+   </li>
+  
+   <li class="list">
+     <a href="/blog/public/tags/network" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">network</a>
+   </li>
+  
+   <li class="list">
+     <a href="/blog/public/tags/%E7%B6%B2%E8%B7%AF" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">網路</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">相關內容</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/blog/public/post/python/python_virtualenv%E4%BD%BF%E7%94%A8/">python_virtualenv使用</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/network/ngrok%E4%BD%BF%E7%94%A8/">ngrok使用</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
+    &copy;  無面者小站 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>用UFW在ping下隱藏自己 | 無面者小站</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="作者 阿維 概念 通常入侵與攻擊的第一步驟，是藉由ICMP(例如ping)或其他開放端口服務發掘主機所在的IP位址。 我們可以嘗試先在ICMP的角度">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+      
+	  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    
+
+  
+  
+    <link rel="stylesheet" href="/blog/public/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css" >
+  
+
+
+
+
+    
+      
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+
+
+    
+
+    
+    
+    <meta property="og:title" content="用UFW在ping下隱藏自己" />
+<meta property="og:description" content="作者 阿維 概念 通常入侵與攻擊的第一步驟，是藉由ICMP(例如ping)或其他開放端口服務發掘主機所在的IP位址。 我們可以嘗試先在ICMP的角度" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/secure/%E7%94%A8ufw%E5%9C%A8ping%E4%B8%8B%E9%9A%B1%E8%97%8F%E8%87%AA%E5%B7%B1/" />
+<meta property="article:published_time" content="2021-07-13T16:00:49+08:00" />
+<meta property="article:modified_time" content="2021-07-13T16:00:49+08:00" />
+<meta itemprop="name" content="用UFW在ping下隱藏自己">
+<meta itemprop="description" content="作者 阿維 概念 通常入侵與攻擊的第一步驟，是藉由ICMP(例如ping)或其他開放端口服務發掘主機所在的IP位址。 我們可以嘗試先在ICMP的角度">
+<meta itemprop="datePublished" content="2021-07-13T16:00:49&#43;08:00" />
+<meta itemprop="dateModified" content="2021-07-13T16:00:49&#43;08:00" />
+<meta itemprop="wordCount" content="886">
+
+
+
+<meta itemprop="keywords" content="secure,防火牆,資安,firewall," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="用UFW在ping下隱藏自己"/>
+<meta name="twitter:description" content="作者 阿維 概念 通常入侵與攻擊的第一步驟，是藉由ICMP(例如ping)或其他開放端口服務發掘主機所在的IP位址。 我們可以嘗試先在ICMP的角度"/>
+
+	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://alextrinityblock.github.io/blog/public/secure.jpg');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/blog/public/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        無面者小站
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/android/" title="android page">
+              android
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/c/" title="c page">
+              c
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/docker/" title="docker page">
+              docker
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/git/" title="git page">
+              git
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/hugo" title="hugo page">
+              hugo
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/linux" title="linux page">
+              linux
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/math/" title="math page">
+              math
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/network/" title="network page">
+              network
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/opencv/" title="opencv page">
+              opencv
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/python/" title="python page">
+              python
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/secure/" title="secure page">
+              secure
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/vue/" title="vue page">
+              vue
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/" title="更多 page">
+              更多
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/post/" title=" page">
+              
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">用UFW在ping下隱藏自己</h1>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://alextrinityblock.github.io/blog/public/post/secure/%E7%94%A8ufw%E5%9C%A8ping%E4%B8%8B%E9%9A%B1%E8%97%8F%E8%87%AA%E5%B7%B1/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://alextrinityblock.github.io/blog/public/post/secure/%E7%94%A8ufw%E5%9C%A8ping%E4%B8%8B%E9%9A%B1%E8%97%8F%E8%87%AA%E5%B7%B1/&amp;text=%e7%94%a8UFW%e5%9c%a8ping%e4%b8%8b%e9%9a%b1%e8%97%8f%e8%87%aa%e5%b7%b1" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://alextrinityblock.github.io/blog/public/post/secure/%E7%94%A8ufw%E5%9C%A8ping%E4%B8%8B%E9%9A%B1%E8%97%8F%E8%87%AA%E5%B7%B1/&amp;title=%e7%94%a8UFW%e5%9c%a8ping%e4%b8%8b%e9%9a%b1%e8%97%8f%e8%87%aa%e5%b7%b1" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">用UFW在ping下隱藏自己</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-07-13T16:00:49+08:00">July 13, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="作者">作者</h2>
+<p>阿維</p>
+<h2 id="概念">概念</h2>
+<p>通常入侵與攻擊的第一步驟，是藉由ICMP(例如ping)或其他開放端口服務發掘主機所在的IP位址。</p>
+<p>我們可以嘗試先在ICMP的角度上頭隱藏好自己，至少對方沒有明確目標時，可能會忽略對我們的攻擊。</p>
+<p>當我們使用Linux的時候，我們有個很不錯的防火牆iptables，但是由於直接config時需要更多的經驗，才能確保連線順利。<br>
+所以Ubuntu提供了一個簡便的軟體替我們代為調整iptables也就是UFW(Uncomplicated Firewall)(不複雜的防火牆)</p>
+<h2 id="1ufw的預設配置">1.UFW的預設配置</h2>
+<p>我們可以在以下路徑找到UFW設定檔:</p>
+<pre><code>/etc/ufw/before.rules
+</code></pre><p>UFW的預設配值如下</p>
+<pre><code>#
+# rules.before
+#
+# Rules that should be run before the ufw command line added rules. Custom
+# rules should be added to one of these chains:
+#   ufw-before-input
+#   ufw-before-output
+#   ufw-before-forward
+#
+
+# Don't delete these required lines, otherwise there will be errors
+*filter
+:ufw-before-input - [0:0]
+:ufw-before-output - [0:0]
+:ufw-before-forward - [0:0]
+:ufw-not-local - [0:0]
+# End required lines
+
+
+# allow all on loopback
+-A ufw-before-input -i lo -j ACCEPT
+-A ufw-before-output -o lo -j ACCEPT
+
+# quickly process packets for which we already have a connection
+-A ufw-before-input -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+-A ufw-before-output -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+-A ufw-before-forward -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+
+# drop INVALID packets (logs these in loglevel medium and higher)
+-A ufw-before-input -m conntrack --ctstate INVALID -j ufw-logging-deny
+-A ufw-before-input -m conntrack --ctstate INVALID -j DROP
+
+# ok icmp codes for INPUT
+-A ufw-before-input -p icmp --icmp-type destination-unreachable -j ACCEPT
+-A ufw-before-input -p icmp --icmp-type time-exceeded -j ACCEPT
+-A ufw-before-input -p icmp --icmp-type parameter-problem -j ACCEPT
+-A ufw-before-input -p icmp --icmp-type echo-request -j ACCEPT
+
+# ok icmp code for FORWARD
+-A ufw-before-forward -p icmp --icmp-type destination-unreachable -j ACCEPT
+-A ufw-before-forward -p icmp --icmp-type time-exceeded -j ACCEPT
+-A ufw-before-forward -p icmp --icmp-type parameter-problem -j ACCEPT
+-A ufw-before-forward -p icmp --icmp-type echo-request -j ACCEPT
+
+# allow dhcp client to work
+-A ufw-before-input -p udp --sport 67 --dport 68 -j ACCEPT
+
+#
+# ufw-not-local
+#
+-A ufw-before-input -j ufw-not-local
+
+# if LOCAL, RETURN
+-A ufw-not-local -m addrtype --dst-type LOCAL -j RETURN
+
+# if MULTICAST, RETURN
+-A ufw-not-local -m addrtype --dst-type MULTICAST -j RETURN
+
+# if BROADCAST, RETURN
+-A ufw-not-local -m addrtype --dst-type BROADCAST -j RETURN
+
+# all other non-local packets are dropped
+-A ufw-not-local -m limit --limit 3/min --limit-burst 10 -j ufw-logging-deny
+-A ufw-not-local -j DROP
+
+# allow MULTICAST mDNS for service discovery (be sure the MULTICAST line above
+# is uncommented)
+-A ufw-before-input -p udp -d 224.0.0.251 --dport 5353 -j ACCEPT
+
+# allow MULTICAST UPnP for service discovery (be sure the MULTICAST line above
+# is uncommented)
+-A ufw-before-input -p udp -d 239.255.255.250 --dport 1900 -j ACCEPT
+
+# don't delete the 'COMMIT' line or these rules won't be processed
+COMMIT
+</code></pre><p>要達成本篇文章的目的我們只要注意到兩個關鍵字</p>
+<pre><code>ACCEPT 與 DROP
+</code></pre><p>DROP代表符合描述時丟棄封包，ACCEPT則代表接受。</p>
+<h2 id="2丟棄icmp封包">2.丟棄ICMP封包</h2>
+<p>我們先找到，同意接受外部ICMP，例如Ping的項目:</p>
+<pre><code># ok icmp codes for INPUT
+-A ufw-before-input -p icmp --icmp-type destination-unreachable -j ACCEPT
+-A ufw-before-input -p icmp --icmp-type time-exceeded -j ACCEPT
+-A ufw-before-input -p icmp --icmp-type parameter-problem -j ACCEPT
+-A ufw-before-input -p icmp --icmp-type echo-request -j ACCEPT
+</code></pre><p>我們注意到，裡頭有許多的ACCEPT<br>
+這代表同意各式的ICMP，而ping也在其中。</p>
+<p>然後將所有ICMP都丟棄，改成以下這一段:</p>
+<pre><code># ok icmp codes for INPUT
+-A ufw-before-input -p icmp --icmp-type destination-unreachable -j DROP
+-A ufw-before-input -p icmp --icmp-type time-exceeded -j DROP
+-A ufw-before-input -p icmp --icmp-type parameter-problem -j DROP
+-A ufw-before-input -p icmp --icmp-type echo-request -j DROP
+</code></pre><h2 id="3重新載入ufw">3.重新載入UFW</h2>
+<pre><code>sudo ufw reload
+</code></pre><h2 id="補充閱讀">補充閱讀</h2>
+<p><a href="https://bobcares.com/blog/ufw-block-ping/">https://bobcares.com/blog/ufw-block-ping/</a><br>
+<a href="https://linuxconfig.org/how-to-deny-icmp-ping-requests-on-ubuntu-18-04-bionic-beaver-linux">https://linuxconfig.org/how-to-deny-icmp-ping-requests-on-ubuntu-18-04-bionic-beaver-linux</a></p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/blog/public/tags/secure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">secure</a>
+   </li>
+  
+   <li class="list">
+     <a href="/blog/public/tags/%E9%98%B2%E7%81%AB%E7%89%86" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">防火牆</a>
+   </li>
+  
+   <li class="list">
+     <a href="/blog/public/tags/%E8%B3%87%E5%AE%89" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">資安</a>
+   </li>
+  
+   <li class="list">
+     <a href="/blog/public/tags/firewall" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">firewall</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">相關內容</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/blog/public/post/secure/%E5%85%AC%E5%85%B1wifi%E7%B6%B2%E8%B7%AF%E5%97%85%E6%8E%A2/">公共WIFI網路嗅探</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/secure/apparmor%E7%A0%94%E7%A9%B6_1/">AppArmor研究_1</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/secure/%E4%B8%AD%E6%96%B7%E7%84%A1%E7%B7%9A%E7%B6%B2%E8%B7%AF%E7%9A%84%E6%96%B9%E6%B3%95/">中斷無線網路的方法</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/secure/%E6%AA%A2%E6%9F%A5%E4%B8%8B%E8%BC%89%E6%AA%94%E6%98%AF%E5%90%A6%E8%A2%AB%E8%AA%BF%E5%8C%85/">檢查下載檔是否被調包</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/secure/%E4%B8%80%E7%AF%87cc%E6%94%BB%E6%93%8A%E8%85%B3%E6%9C%AC%E5%88%86%E6%9E%90/">一篇CC攻擊腳本分析</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
+    &copy;  無面者小站 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>主機狀態 on 無面者小站</title>
+    <link>https://alextrinityblock.github.io/blog/public/tags/%E4%B8%BB%E6%A9%9F%E7%8B%80%E6%85%8B/</link>
+    <description>Recent content in 主機狀態 on 無面者小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <lastBuildDate>Wed, 28 Apr 2021 11:39:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://alextrinityblock.github.io/blog/public/tags/%E4%B8%BB%E6%A9%9F%E7%8B%80%E6%85%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bashtop好看點的主機狀態面板</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/linux/bashtop%E5%A5%BD%E7%9C%8B%E9%BB%9E%E7%9A%84%E4%B8%BB%E6%A9%9F%E7%8B%80%E6%85%8B%E9%9D%A2%E6%9D%BF/</link>
+      <pubDate>Wed, 28 Apr 2021 11:39:25 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/linux/bashtop%E5%A5%BD%E7%9C%8B%E9%BB%9E%E7%9A%84%E4%B8%BB%E6%A9%9F%E7%8B%80%E6%85%8B%E9%9D%A2%E6%9D%BF/</guid>
+      <description>希望有個看起來酷炫又詳細的主機狀態顯示器嗎？ bashtop符合你的需求！ 在debian上頭安裝bashtop sudo add-apt-repository ppa:bashtop-monitor/bashtop sudo apt update sudo apt install bashtop</description>
+    </item>
+    
+  </channel>
+</rss>

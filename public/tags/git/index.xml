@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on 無面者小站</title>
+    <link>https://alextrinityblock.github.io/blog/public/tags/git/</link>
+    <description>Recent content in git on 無面者小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <lastBuildDate>Wed, 19 May 2021 00:05:03 +0800</lastBuildDate>
+    
+	<atom:link href="https://alextrinityblock.github.io/blog/public/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>github免密碼上傳與RSA金鑰產生</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/git/github%E5%85%8D%E5%AF%86%E7%A2%BC%E4%B8%8A%E5%82%B3/</link>
+      <pubDate>Wed, 19 May 2021 00:05:03 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/git/github%E5%85%8D%E5%AF%86%E7%A2%BC%E4%B8%8A%E5%82%B3/</guid>
+      <description>先決條件 這篇是建立在理解 git基本使用 擁有github帳號 使用linux 上述條件達成才比較能夠理解本篇git的部份， 建議上網找些資料學習。 不</description>
+    </item>
+    
+  </channel>
+</rss>

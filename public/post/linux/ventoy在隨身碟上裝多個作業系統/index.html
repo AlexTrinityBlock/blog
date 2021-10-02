@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>ventoy在隨身碟上裝多個作業系統 | 無面者小站</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="傳統隨身碟安裝作業統的方法 傳統上，我們會一個隨身碟安裝一個作業系統安裝程式或Live CD。當然也可以採取用分割區的方式，來在單個隨身碟安裝多">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+      
+	  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    
+
+  
+  
+    <link rel="stylesheet" href="/blog/public/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css" >
+  
+
+
+
+
+    
+      
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+
+
+    
+
+    
+    
+    <meta property="og:title" content="ventoy在隨身碟上裝多個作業系統" />
+<meta property="og:description" content="傳統隨身碟安裝作業統的方法 傳統上，我們會一個隨身碟安裝一個作業系統安裝程式或Live CD。當然也可以採取用分割區的方式，來在單個隨身碟安裝多" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/linux/ventoy%E5%9C%A8%E9%9A%A8%E8%BA%AB%E7%A2%9F%E4%B8%8A%E8%A3%9D%E5%A4%9A%E5%80%8B%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1/" />
+<meta property="article:published_time" content="2021-07-08T10:29:36+08:00" />
+<meta property="article:modified_time" content="2021-07-08T10:29:36+08:00" />
+<meta itemprop="name" content="ventoy在隨身碟上裝多個作業系統">
+<meta itemprop="description" content="傳統隨身碟安裝作業統的方法 傳統上，我們會一個隨身碟安裝一個作業系統安裝程式或Live CD。當然也可以採取用分割區的方式，來在單個隨身碟安裝多">
+<meta itemprop="datePublished" content="2021-07-08T10:29:36&#43;08:00" />
+<meta itemprop="dateModified" content="2021-07-08T10:29:36&#43;08:00" />
+<meta itemprop="wordCount" content="707">
+
+
+
+<meta itemprop="keywords" content="linux,ventoy," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ventoy在隨身碟上裝多個作業系統"/>
+<meta name="twitter:description" content="傳統隨身碟安裝作業統的方法 傳統上，我們會一個隨身碟安裝一個作業系統安裝程式或Live CD。當然也可以採取用分割區的方式，來在單個隨身碟安裝多"/>
+
+	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://alextrinityblock.github.io/blog/public/debian1.jpeg');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/blog/public/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        無面者小站
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/android/" title="android page">
+              android
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/c/" title="c page">
+              c
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/docker/" title="docker page">
+              docker
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/git/" title="git page">
+              git
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/hugo" title="hugo page">
+              hugo
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/linux" title="linux page">
+              linux
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/math/" title="math page">
+              math
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/network/" title="network page">
+              network
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/opencv/" title="opencv page">
+              opencv
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/python/" title="python page">
+              python
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/secure/" title="secure page">
+              secure
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/vue/" title="vue page">
+              vue
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/" title="更多 page">
+              更多
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/post/" title=" page">
+              
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">ventoy在隨身碟上裝多個作業系統</h1>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        一個凡人的筆記
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://alextrinityblock.github.io/blog/public/post/linux/ventoy%E5%9C%A8%E9%9A%A8%E8%BA%AB%E7%A2%9F%E4%B8%8A%E8%A3%9D%E5%A4%9A%E5%80%8B%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://alextrinityblock.github.io/blog/public/post/linux/ventoy%E5%9C%A8%E9%9A%A8%E8%BA%AB%E7%A2%9F%E4%B8%8A%E8%A3%9D%E5%A4%9A%E5%80%8B%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1/&amp;text=ventoy%e5%9c%a8%e9%9a%a8%e8%ba%ab%e7%a2%9f%e4%b8%8a%e8%a3%9d%e5%a4%9a%e5%80%8b%e4%bd%9c%e6%a5%ad%e7%b3%bb%e7%b5%b1" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://alextrinityblock.github.io/blog/public/post/linux/ventoy%E5%9C%A8%E9%9A%A8%E8%BA%AB%E7%A2%9F%E4%B8%8A%E8%A3%9D%E5%A4%9A%E5%80%8B%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1/&amp;title=ventoy%e5%9c%a8%e9%9a%a8%e8%ba%ab%e7%a2%9f%e4%b8%8a%e8%a3%9d%e5%a4%9a%e5%80%8b%e4%bd%9c%e6%a5%ad%e7%b3%bb%e7%b5%b1" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">ventoy在隨身碟上裝多個作業系統</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-07-08T10:29:36+08:00">July 8, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="傳統隨身碟安裝作業統的方法">傳統隨身碟安裝作業統的方法</h2>
+<p>傳統上，我們會一個隨身碟安裝一個作業系統安裝程式或Live CD。當然也可以採取用分割區的方式，來在單個隨身碟安裝多個系統，但是這樣每安裝一個作業系統都要用dd指令或者是隨身碟寫入軟體，將映像檔慢慢寫入隨身碟。</p>
+<p>這樣會消耗一些時間，並且不太能靈活的切換新的作業系統。</p>
+<h2 id="ventoy是什麼">ventoy是什麼？</h2>
+<p>ventoy是一個開機引導程序，類似Grub，但是有更漂亮的預設選單。</p>
+<p>ventoy寫入隨身碟之後，會產生一個專門裝作業系統映像檔的分割區，只要將ISO映像檔簡單的放入其中即可。</p>
+<p>ventoy的官方網站:<br>
+<a href="https://www.ventoy.net/en/index.html">https://www.ventoy.net/en/index.html</a></p>
+<h2 id="ventoy在linux上頭安裝於隨身碟">ventoy在Linux上頭安裝於隨身碟</h2>
+<p>下載Linux用的ventoy:<br>
+<a href="https://www.ventoy.net/en/download.html">https://www.ventoy.net/en/download.html</a></p>
+<p>下載好之後會有個ventoy-版本-linux.tar.gz檔案，這個時候我們將其解壓縮。</p>
+<p>資料夾架構大概像這樣</p>
+<blockquote>
+<p>ventoy-1.0.46<br>
+├── boot<br>
+├── CreatePersistentImg.sh<br>
+├── ExtendPersistentImg.sh<br>
+├── log.txt<br>
+├── plugin<br>
+├── README<br>
+├── tool<br>
+├── ventoy<br>
+├── Ventoy2Disk.ini<br>
+├── Ventoy2Disk.sh<br>
+├── VentoyWebDeepin.sh<br>
+├── <span style="color:red">VentoyWeb.sh</span><br>
+└── WebUI</p>
+</blockquote>
+<p>解壓縮完畢後，有個VentoyWeb.sh檔案在其中。<br>
+然後用root權限執行:</p>
+<pre><code>sudo ./VentoyWeb.sh
+</code></pre><p>這個時候打開瀏覽器，網頁的圖形化安裝界面就會出現在<br>
+<a href="http://127.0.0.1:24680">http://127.0.0.1:24680</a></p>
+<p>這個時候，如果隨身碟已經插入，就會顯示在畫面上，按下安裝即可。</p>
+<p>安裝好之後，打開隨身碟，將ISO檔案放入其中，開機的時候就可以看到選單了。</p>
+<h2 id="限制">限制</h2>
+<p>某些作業系統或某些隨身碟，使用ventoy時會意外的失敗，原因不明。</p>
+<p>除此之外，已經知道不可行的其中幾個情況包含:</p>
+<ol>
+<li>映像檔是img檔，而不是iso檔。</li>
+<li>映像檔是專門供應給隨身碟用的，而不支持CDrom(因為ventoy會將映像檔模擬成LiveCD)</li>
+<li>特定檢查比較嚴格的作業系統不保證成功，例如Tail的某些版本，還有Android X86的某些版本。</li>
+</ol>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/blog/public/tags/linux" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">linux</a>
+   </li>
+  
+   <li class="list">
+     <a href="/blog/public/tags/ventoy" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ventoy</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">相關內容</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/blog/public/post/linux/%E6%B8%85%E7%90%86apt%E6%9A%AB%E6%99%82%E5%AD%98%E6%AA%94/">清理apt暫時存檔</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/linux/%E5%AE%89%E8%A3%9Dkvm/">安裝KVM</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/linux/curl%E5%9F%B7%E8%A1%8C%E9%81%A0%E7%AB%AFshell/">curl遠端執行shell</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/linux/bashtop%E5%A5%BD%E7%9C%8B%E9%BB%9E%E7%9A%84%E4%B8%BB%E6%A9%9F%E7%8B%80%E6%85%8B%E9%9D%A2%E6%9D%BF/">Bashtop好看點的主機狀態面板</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/linux/linux_mint%E5%8D%A1%E5%9C%A8%E9%96%8B%E5%A7%8Blogo%E7%9A%84%E8%A7%A3%E6%B1%BA/">Linux_mint卡在開始logo的解決</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/linux/%E6%8A%8A%E8%A8%98%E6%86%B6%E9%AB%94%E7%95%B6%E7%A1%AC%E7%A2%9F%E7%94%A8/">把記憶體當硬碟用</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/linux/linux-mint20%E6%9B%B4%E6%8F%9B%E9%96%8B%E6%A9%9F%E5%9C%96%E7%A4%BA/">Linux Mint20更換開機圖示</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/">Linux在SSD上的損耗減少策略2(關閉系統紀錄)</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/">linux在SSD上的損耗減少策略1(佔存檔移入記憶體)</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/">手動連接裝置或磁碟槽（掛載）</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
+    &copy;  無面者小站 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

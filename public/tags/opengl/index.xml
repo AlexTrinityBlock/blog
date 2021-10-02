@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>opengl on 無面者小站</title>
+    <link>https://alextrinityblock.github.io/blog/public/tags/opengl/</link>
+    <description>Recent content in opengl on 無面者小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <lastBuildDate>Wed, 29 Sep 2021 09:00:44 +0800</lastBuildDate>
+    
+	<atom:link href="https://alextrinityblock.github.io/blog/public/tags/opengl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>opengl安裝(Ubuntu)</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/opengl/opengl%E5%AE%89%E8%A3%9Dubuntu/</link>
+      <pubDate>Wed, 29 Sep 2021 09:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/opengl/opengl%E5%AE%89%E8%A3%9Dubuntu/</guid>
+      <description>1.Linux版本 此範例用在Ubuntu20.04 2.apt安裝opengl 安裝OpenGL與相關依賴 sudo apt install cmake make g++ libx11-dev libgl1-mesa-dev libglu1-mesa-dev libxrandr-dev libxext-dev libglew-dev libglfw3 libglfw3-dev freeglut3-dev freeglut3 這邊主</description>
+    </item>
+    
+  </channel>
+</rss>
