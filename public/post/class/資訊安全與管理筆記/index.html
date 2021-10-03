@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>資訊安全與管理筆記 | 無面者小站</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="目錄 第一週 第一週 推薦書 William Stallings. Cryptography and Network Security: Principles and Practice (7th Edition). Prentice Hall, 2017 密碼學(Cryptography)的四大目標 保密性Confidentiality 不讓資料的">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+      
+	  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    
+
+  
+  
+    <link rel="stylesheet" href="/blog/public/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css" >
+  
+
+
+
+
+    
+      
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+
+
+    
+
+    
+    
+    <meta property="og:title" content="資訊安全與管理筆記" />
+<meta property="og:description" content="目錄 第一週 第一週 推薦書 William Stallings. Cryptography and Network Security: Principles and Practice (7th Edition). Prentice Hall, 2017 密碼學(Cryptography)的四大目標 保密性Confidentiality 不讓資料的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/class/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E8%88%87%E7%AE%A1%E7%90%86%E7%AD%86%E8%A8%98/" />
+<meta property="article:published_time" content="2021-10-03T22:00:49+08:00" />
+<meta property="article:modified_time" content="2021-10-03T22:00:49+08:00" />
+<meta itemprop="name" content="資訊安全與管理筆記">
+<meta itemprop="description" content="目錄 第一週 第一週 推薦書 William Stallings. Cryptography and Network Security: Principles and Practice (7th Edition). Prentice Hall, 2017 密碼學(Cryptography)的四大目標 保密性Confidentiality 不讓資料的">
+<meta itemprop="datePublished" content="2021-10-03T22:00:49&#43;08:00" />
+<meta itemprop="dateModified" content="2021-10-03T22:00:49&#43;08:00" />
+<meta itemprop="wordCount" content="906">
+
+
+
+<meta itemprop="keywords" content="secure,資安,課堂筆記,資訊安全與管理," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="資訊安全與管理筆記"/>
+<meta name="twitter:description" content="目錄 第一週 第一週 推薦書 William Stallings. Cryptography and Network Security: Principles and Practice (7th Edition). Prentice Hall, 2017 密碼學(Cryptography)的四大目標 保密性Confidentiality 不讓資料的"/>
+
+	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://alextrinityblock.github.io/blog/public/secure.jpg');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/blog/public/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        無面者小站
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/android/" title="android page">
+              android
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/c/" title="c page">
+              c
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/docker/" title="docker page">
+              docker
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/git/" title="git page">
+              git
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/hugo" title="hugo page">
+              hugo
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/linux" title="linux page">
+              linux
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/math/" title="math page">
+              math
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/network/" title="network page">
+              network
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/opencv/" title="opencv page">
+              opencv
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/python/" title="python page">
+              python
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/secure/" title="secure page">
+              secure
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/vue/" title="vue page">
+              vue
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/" title="更多 page">
+              更多
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/post/" title=" page">
+              
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">資訊安全與管理筆記</h1>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://alextrinityblock.github.io/blog/public/post/class/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E8%88%87%E7%AE%A1%E7%90%86%E7%AD%86%E8%A8%98/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://alextrinityblock.github.io/blog/public/post/class/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E8%88%87%E7%AE%A1%E7%90%86%E7%AD%86%E8%A8%98/&amp;text=%e8%b3%87%e8%a8%8a%e5%ae%89%e5%85%a8%e8%88%87%e7%ae%a1%e7%90%86%e7%ad%86%e8%a8%98" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://alextrinityblock.github.io/blog/public/post/class/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E8%88%87%E7%AE%A1%E7%90%86%E7%AD%86%E8%A8%98/&amp;title=%e8%b3%87%e8%a8%8a%e5%ae%89%e5%85%a8%e8%88%87%e7%ae%a1%e7%90%86%e7%ad%86%e8%a8%98" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">資訊安全與管理筆記</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-10-03T22:00:49+08:00">October 3, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="目錄">目錄</h1>
+<p><a href="#week1">第一週</a></p>
+<p><span id="week1"></span></p>
+<h1 id="第一週">第一週</h1>
+<h2 id="推薦書">推薦書</h2>
+<p>William Stallings. Cryptography and Network Security: Principles and Practice (7th Edition). Prentice Hall, 2017</p>
+<h2 id="密碼學cryptography的四大目標">密碼學(Cryptography)的四大目標</h2>
+<h3 id="保密性confidentiality">保密性Confidentiality</h3>
+<p>不讓資料的內容被攻擊者知悉。</p>
+<h3 id="完整性integrity">完整性Integrity</h3>
+<p>確保資料沒有被蓄意重複,插入,修改,重新編排,或重放。</p>
+<h3 id="認證authentication">認證Authentication</h3>
+<p>確保訊息是來自正確來源，而非仿冒者。</p>
+<h3 id="不可否認性nonrepudiation">不可否認性Nonrepudiation</h3>
+<p>個體傳出的訊息，不可以否認自己傳出訊息的事實。例如某個文件上方有自己的數位簽章，此人就很難否認自己沒有簽署過該文件。</p>
+<h3 id="可用性avaliability">可用性Avaliability</h3>
+<p>可以維持服務的能力，例如該伺服器在被Dos的情況下仍能維持服務的能力。</p>
+<h2 id="安全事件">安全事件</h2>
+<h3 id="密碼竊取password-stealing">密碼竊取Password stealing</h3>
+<h3 id="病毒或特洛伊木馬viruses--trojan-horsesg">病毒或特洛伊木馬Viruses &amp; Trojan Horsesg</h3>
+<h3 id="蠕蟲worm">蠕蟲Worm</h3>
+<h3 id="拒絕服務攻擊denial-of-service-dos">拒絕服務攻擊Denial of Service (DOS)</h3>
+<p>&hellip;不勝枚舉，仍可添加。</p>
+<h2 id="安全威脅security-threats">安全威脅Security Threats</h2>
+<p>此處列舉出資料外洩的四種形式。</p>
+<h3 id="1中斷-interruption">1.中斷 Interruption</h3>
+<p>訊息傳輸被阻斷。此種攻擊針對服務的可用性()Avaliability)。</p>
+<h3 id="2攔截-interception">2.攔截 Interception</h3>
+<p>訊息在傳輸過程中被擷取並且被解密，例如：戰爭時間諜找到機會抄錄到軍情相關紙條，儘管紙條還是傳到前線，但是軍情仍被竊取。</p>
+<h3 id="3修改-modification">3.修改 Modification</h3>
+<p>訊息被攔截並且加以修改。此種攻擊針對資料的完整性(Integrity)。</p>
+<h3 id="4-捏造fabrication">4. 捏造Fabrication</h3>
+<p>攻擊者宣稱自己是合法的訊息傳播者，偽裝成某個人與他人進行通信。此種攻擊針對資料的認證()Authentication)。</p>
+<h2 id="被動式威脅passive-threats">被動式威脅Passive Threats</h2>
+<p>攔截(Interception)訊息，並洩漏訊息內容(release of message contents)。甚至無法解開訊息內容時，也可以進行 流量分析(Traffic Analysis)，像是每天早上某個IP都會傳訊息到某企業的網站，這可能代表這個用戶是企業員工。</p>
+<p>攻擊者目標是發掘傳輸中的資訊內容。</p>
+<p>此種攻擊方式很難被發現，但是可以進行防範。</p>
+<h2 id="主動式威脅active-threats">主動式威脅Active Threats</h2>
+<p>此種攻擊針對修改數據傳輸，或者製造假的傳輸，例如重放。<br>
+這類攻擊容易偵測，但是難以防範。</p>
+<h3 id="主動攻擊的四種型態">主動攻擊的四種型態</h3>
+<ol>
+<li>偽裝(成某個使用者)masquerade</li>
+<li>重放replay</li>
+<li>修改訊息modification of messages</li>
+<li>拒絕服務(例如:DDos)denial of service</li>
+</ol>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/blog/public/tags/secure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">secure</a>
+   </li>
+  
+   <li class="list">
+     <a href="/blog/public/tags/%E8%B3%87%E5%AE%89" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">資安</a>
+   </li>
+  
+   <li class="list">
+     <a href="/blog/public/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">課堂筆記</a>
+   </li>
+  
+   <li class="list">
+     <a href="/blog/public/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E8%88%87%E7%AE%A1%E7%90%86" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">資訊安全與管理</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">相關內容</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/blog/public/post/secure/mac%E4%BD%8D%E5%9D%80%E6%8E%A9%E8%94%BD/">MAC位址掩蔽</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/secure/%E7%94%A8ufw%E5%9C%A8ping%E4%B8%8B%E9%9A%B1%E8%97%8F%E8%87%AA%E5%B7%B1/">用UFW在ping下隱藏自己</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/secure/%E5%85%AC%E5%85%B1wifi%E7%B6%B2%E8%B7%AF%E5%97%85%E6%8E%A2/">公共WIFI網路嗅探</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/secure/apparmor%E7%A0%94%E7%A9%B6_1/">AppArmor研究_1</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/secure/%E4%B8%AD%E6%96%B7%E7%84%A1%E7%B7%9A%E7%B6%B2%E8%B7%AF%E7%9A%84%E6%96%B9%E6%B3%95/">中斷無線網路的方法</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/secure/%E6%AA%A2%E6%9F%A5%E4%B8%8B%E8%BC%89%E6%AA%94%E6%98%AF%E5%90%A6%E8%A2%AB%E8%AA%BF%E5%8C%85/">檢查下載檔是否被調包</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/class/%E5%BD%B1%E5%83%8F%E8%AD%98%E5%88%A5%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98/">影像識別課程筆記</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E8%88%87%E5%AE%89%E5%85%A8%E8%AE%80%E6%9B%B8%E5%BF%83%E5%BE%97/">python網路與安全閱讀心得</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/secure/suricata%E5%85%A5%E4%BE%B5%E9%98%B2%E7%A6%A6%E7%B3%BB%E7%B5%B1ips/">suricata入侵防禦系統(IPS)</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/secure/%E4%B8%80%E7%AF%87cc%E6%94%BB%E6%93%8A%E8%85%B3%E6%9C%AC%E5%88%86%E6%9E%90/">一篇CC攻擊腳本分析</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
+    &copy;  無面者小站 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
