@@ -81,5 +81,21 @@ gcc main.cpp  -o OutPut -lGL -lGLU -lglut
 ./OutPut
 ```
 
+## 6.可能的錯誤
+
+### 錯誤情況1
+
+```
+/usr/bin/ld: /tmp/cc5TTO9z.o: undefined reference to symbol 'sqrt@@GLIBC_2.2.5'
+/usr/bin/ld: /lib/x86_64-linux-gnu/libm.so.6: error adding symbols: DSO missing from command line
+collect2: error: ld returned 1 exit status
+
+```
+解決方式：
+編譯指令增加-lm
+
+```
+gcc ./main.c  -o OutPut -lGL -lGLU -lglut -lm
+```
 
 

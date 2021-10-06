@@ -43,7 +43,7 @@
 <meta itemprop="description" content="1.Linux版本 此範例用在Ubuntu20.04 2.apt安裝opengl 安裝OpenGL與相關依賴 sudo apt install cmake make g&#43;&#43; libx11-dev libgl1-mesa-dev libglu1-mesa-dev libxrandr-dev libxext-dev libglew-dev libglfw3 libglfw3-dev freeglut3-dev freeglut3 這邊主">
 <meta itemprop="datePublished" content="2021-09-29T09:00:44&#43;08:00" />
 <meta itemprop="dateModified" content="2021-09-29T09:00:44&#43;08:00" />
-<meta itemprop="wordCount" content="632">
+<meta itemprop="wordCount" content="690">
 
 
 
@@ -294,6 +294,15 @@
 <pre><code>gcc main.cpp  -o OutPut -lGL -lGLU -lglut
 </code></pre><h2 id="5執行">5.執行</h2>
 <pre><code>./OutPut
+</code></pre><h2 id="6可能的錯誤">6.可能的錯誤</h2>
+<h3 id="錯誤情況1">錯誤情況1</h3>
+<pre><code>/usr/bin/ld: /tmp/cc5TTO9z.o: undefined reference to symbol 'sqrt@@GLIBC_2.2.5'
+/usr/bin/ld: /lib/x86_64-linux-gnu/libm.so.6: error adding symbols: DSO missing from command line
+collect2: error: ld returned 1 exit status
+
+</code></pre><p>解決方式：
+編譯指令增加-lm</p>
+<pre><code>gcc ./main.c  -o OutPut -lGL -lGLU -lglut -lm
 </code></pre><ul class="pa0">
   
    <li class="list">
