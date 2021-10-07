@@ -6,7 +6,7 @@
     
     <title>資訊安全與管理筆記 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="目錄 第一週 第一週 推薦書 William Stallings. Cryptography and Network Security: Principles and Practice (7th Edition). Prentice Hall, 2017 密碼學(Cryptography)的四大目標 保密性Confidentiality 不讓資料的">
+    <meta name="description" content="目錄 第一週 第二週 第一週 推薦書 William Stallings. Cryptography and Network Security: Principles and Practice (7th Edition). Prentice Hall, 2017 密碼學(Cryptography)的四大目標 保密性Confidentiality 不讓">
     <meta name="generator" content="Hugo 0.68.3" />
     
     
@@ -34,22 +34,22 @@
     
     
     <meta property="og:title" content="資訊安全與管理筆記" />
-<meta property="og:description" content="目錄 第一週 第一週 推薦書 William Stallings. Cryptography and Network Security: Principles and Practice (7th Edition). Prentice Hall, 2017 密碼學(Cryptography)的四大目標 保密性Confidentiality 不讓資料的" />
+<meta property="og:description" content="目錄 第一週 第二週 第一週 推薦書 William Stallings. Cryptography and Network Security: Principles and Practice (7th Edition). Prentice Hall, 2017 密碼學(Cryptography)的四大目標 保密性Confidentiality 不讓" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/class/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E8%88%87%E7%AE%A1%E7%90%86%E7%AD%86%E8%A8%98/" />
 <meta property="article:published_time" content="2021-10-03T22:00:49+08:00" />
 <meta property="article:modified_time" content="2021-10-03T22:00:49+08:00" />
 <meta itemprop="name" content="資訊安全與管理筆記">
-<meta itemprop="description" content="目錄 第一週 第一週 推薦書 William Stallings. Cryptography and Network Security: Principles and Practice (7th Edition). Prentice Hall, 2017 密碼學(Cryptography)的四大目標 保密性Confidentiality 不讓資料的">
+<meta itemprop="description" content="目錄 第一週 第二週 第一週 推薦書 William Stallings. Cryptography and Network Security: Principles and Practice (7th Edition). Prentice Hall, 2017 密碼學(Cryptography)的四大目標 保密性Confidentiality 不讓">
 <meta itemprop="datePublished" content="2021-10-03T22:00:49&#43;08:00" />
 <meta itemprop="dateModified" content="2021-10-03T22:00:49&#43;08:00" />
-<meta itemprop="wordCount" content="906">
+<meta itemprop="wordCount" content="1671">
 
 
 
 <meta itemprop="keywords" content="secure,資安,課堂筆記,資訊安全與管理," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="資訊安全與管理筆記"/>
-<meta name="twitter:description" content="目錄 第一週 第一週 推薦書 William Stallings. Cryptography and Network Security: Principles and Practice (7th Edition). Prentice Hall, 2017 密碼學(Cryptography)的四大目標 保密性Confidentiality 不讓資料的"/>
+<meta name="twitter:description" content="目錄 第一週 第二週 第一週 推薦書 William Stallings. Cryptography and Network Security: Principles and Practice (7th Edition). Prentice Hall, 2017 密碼學(Cryptography)的四大目標 保密性Confidentiality 不讓"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
 
@@ -243,7 +243,8 @@
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="目錄">目錄</h1>
-<p><a href="#week1">第一週</a></p>
+<p><a href="#week1">第一週</a><br>
+<a href="#week2">第二週</a></p>
 <p><span id="week1"></span></p>
 <h1 id="第一週">第一週</h1>
 <h2 id="推薦書">推薦書</h2>
@@ -289,6 +290,68 @@
 <li>修改訊息modification of messages</li>
 <li>拒絕服務(例如:DDos)denial of service</li>
 </ol>
+<p><span id="week2"></span></p>
+<h1 id="第二週">第二週</h1>
+<h1 id="加密標準">加密標準</h1>
+<h2 id="cmvp-from-nist">CMVP from NIST</h2>
+<p>國家標準暨技術研究院(NIST)(美國組織)
+加密驗證模塊程序(CMVP)</p>
+<p>NIST特別出版品800-140C(NIST Special Publication 800-140C)
+其中記載了現代主要的加密驗證模塊的標準CMVP。</p>
+<p>該內容包含了</p>
+<ol>
+<li>
+<p>對稱加密
+AES,TDES,SKIPJACK</p>
+</li>
+<li>
+<p>數位簽章
+DSA,RSA,ECDSA</p>
+</li>
+<li>
+<p>安全Hash標準(SHS)</p>
+</li>
+<li>
+<p>SHA-3標準</p>
+</li>
+<li>
+<p>訊息驗證(Triple-DES,AES and HMAC)</p>
+</li>
+</ol>
+<h2 id="fips-140-2">FIPS 140-2</h2>
+<p>聯邦資訊處理標準 (FIPS)出版了，FIPS 140-2，提供了加密模組的一些設計與管理標準。
+如果一個加密通訊系統可以滿足FIPS 140-2，則代表可以達到一定的安全標準。</p>
+<h2 id="pgp">PGP</h2>
+<p>PGP公司於1997年測試用Brute-force破解密碼的時間長短。</p>
+<p>當密碼40bits時，兩秒即可破解。</p>
+<p>但是當70bits時則需要700個世紀。</p>
+<p>128bits時需要10^16個千年。</p>
+<p>所以金鑰長度非常重要。</p>
+<p>密碼長度為26個字母重新排列時，共有26!個可能，共有2*(10^26)，就算一次嘗試只需要1us，也需要6.4*10^6 年，來嘗試出答案。</p>
+<h1 id="傳統加密技術">傳統加密技術</h1>
+<h2 id="subsitution-替代法">Subsitution 替代法</h2>
+<h3 id="凱撒加密">凱撒加密</h3>
+<p>明文:meet me after the toga paety</p>
+<p>所有字母往移動三位得到密文，超過Z則會從A開始。</p>
+<p>密文:PHHW PH DIWHU WKH WRJD SDUMB</p>
+<p>數學表示法：
+C = E(p) = (p+3) mod (26)
+P = E(c) = (p-3) mod (26)</p>
+<p>這種方式非常容易被Brute-force</p>
+<p>嘗試26次以內就能猜到答案。</p>
+<h3 id="monoalphabetic-ciphers">Monoalphabetic Ciphers</h3>
+<p>每個英文字母都對應到某個另外一個字母，例如A變成M，B變成E。
+此種加密可能性有26!，也就是26的階乘。</p>
+<p>但破解的方式，可以使用單字的出現頻率來破解，例如:E在一段文章中出現的頻率約12.702%。<br>
+這樣我們就能猜測，出現最多的密文字母可能是E。</p>
+<p>Z在一段文章中出現的頻率約11.67%。，所以密文中出現頻率第二高的字母可是Z。</p>
+<h3 id="playfair-cipher">Playfair Cipher</h3>
+<p>兩個字一組去對應另外一個字，用列表示的方式對應。</p>
+<p>詳細請參考:<br>
+<a href="https://zh.wikipedia.org/wiki/%E6%B3%A2%E9%9B%B7%E8%B2%BB%E5%AF%86%E7%A2%BC">https://zh.wikipedia.org/wiki/%E6%B3%A2%E9%9B%B7%E8%B2%BB%E5%AF%86%E7%A2%BC</a></p>
+<p>此種方式在第一次世界大戰廣泛被使用，但是此種方法的變化亮還是有限。</p>
+<h3 id="polyalphabetic-ciphers">Polyalphabetic Ciphers</h3>
+<h3 id="vignere-cipher">Vignere Cipher</h3>
 <ul class="pa0">
   
    <li class="list">
