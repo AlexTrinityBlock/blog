@@ -10,8 +10,6 @@ featured_image: "/secure.jpg"
 # 目錄
 
 <a href="#week1">第一週</a>  
-<a href="#week2">第二週</a>  
-<a href="#week2">第三週</a>  
 
 # 推薦書
 
@@ -621,6 +619,148 @@ void displayMe(void)
 //--------------------------------------
 
     glFlush();
+}
+
+void init()
+{          
+     glMatrixMode(GL_PROJECTION);
+     glLoadIdentity();
+     glOrtho(-50.0, 50.0, -50.0, 50.0, 0.0, 1.0);
+	 glMatrixMode(GL_MODELVIEW);
+}
+
+int main(int argc, char** argv)
+{
+    glutInit(&argc, argv);
+    glutInitWindowSize(500, 500);
+    glutCreateWindow("Is a window");
+    glutDisplayFunc(displayMe);
+    init();
+    glutMainLoop();
+    return 0;
+}
+```
+
+## 相黏的矩形組 GL_QUAD_STRIP
+
+GL_QUAD_STRIP這個形狀，會將數個不同的座標視為黏合在一起的矩形。  
+所以我們建立兩個矩形之後，中間會產生兩條線段，將其連接。  
+
+```cpp
+#include <GL/glut.h>
+
+void displayMe(void)
+{
+    glClearColor(0.0f,0.0f,0.0f,0.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
+
+    glLineWidth(50.0);
+
+//--------------------------------------
+
+    glBegin(GL_QUAD_STRIP);
+
+        //QUAD 1
+        glColor3f(1.0f, 0.0f, 0.0f);
+        glVertex2f(-10,10);
+
+        glColor3f(0.0f, 1.0f, 0.0f);
+        glVertex2f(-10,-10);
+
+        glColor3f(1.0f, 0.0f, 1.0f);
+        glVertex2f(10,10);
+
+        glColor3f(0.0f, 0.0f, 1.0f);
+        glVertex2f(10,-10);
+
+        //--------------------------
+        //QUAD 2
+
+        glColor3f(1.0f, 0.0f, 0.0f);
+        glVertex2f(15,20);
+
+        glColor3f(0.0f, 1.0f, 0.0f);
+        glVertex2f(15,0);
+
+        glColor3f(1.0f, 0.0f, 1.0f);
+        glVertex2f(35,20);
+
+        glColor3f(0.0f, 0.0f, 1.0f);
+        glVertex2f(35,0);
+
+
+    glEnd();
+
+
+    glFlush();
+//--------------------------------------
+}
+
+void init()
+{          
+     glMatrixMode(GL_PROJECTION);
+     glLoadIdentity();
+     glOrtho(-50.0, 50.0, -50.0, 50.0, 0.0, 1.0);
+	 glMatrixMode(GL_MODELVIEW);
+}
+
+int main(int argc, char** argv)
+{
+    glutInit(&argc, argv);
+    glutInitWindowSize(500, 500);
+    glutCreateWindow("Is a window");
+    glutDisplayFunc(displayMe);
+    init();
+    glutMainLoop();
+    return 0;
+}
+```
+
+## 多邊形 GL_POLYGON
+
+會按照順序，將選到的點串成多邊形。
+
+```cpp
+#include <GL/glut.h>
+
+void displayMe(void)
+{
+    glClearColor(0.0f,0.0f,0.0f,0.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
+
+    glLineWidth(50.0);
+
+//--------------------------------------
+
+    glBegin(GL_POLYGON);
+
+        glColor3f(1.0f, 0.0f, 0.0f);
+        glVertex2f(-10,10);
+
+        glColor3f(0.0f, 1.0f, 0.0f);
+        glVertex2f(-10,-10);
+
+        glColor3f(0.0f, 0.0f, 1.0f);
+        glVertex2f(10,-10);
+
+        glColor3f(0.0f, 1.0f, 0.0f);
+        glVertex2f(15,0);
+
+        glColor3f(0.0f, 0.0f, 1.0f);
+        glVertex2f(35,0);
+
+        glColor3f(1.0f, 0.0f, 1.0f);
+        glVertex2f(35,20);
+
+    glEnd();
+
+
+    glFlush();
+//--------------------------------------
 }
 
 void init()
