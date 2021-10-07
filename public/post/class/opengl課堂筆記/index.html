@@ -43,7 +43,7 @@
 <meta itemprop="description" content="目錄 第一週 第二週 第三週 推薦書 Edward Angel and Dave Shreiner, Interactive Computer Graphics: A Top-Down Approach With Shader-Based Opengl, 6th Edition, Addison-Wesley Pub. Co., April 10, 2011. ISBN：978-0132545235. Edward Angel and Dave Shreiner, Interactive Computer Graphics: A Top-Down Approach Using WebGL, 7th">
 <meta itemprop="datePublished" content="2021-10-07T10:00:49&#43;08:00" />
 <meta itemprop="dateModified" content="2021-10-07T10:00:49&#43;08:00" />
-<meta itemprop="wordCount" content="1802">
+<meta itemprop="wordCount" content="1939">
 
 
 
@@ -681,6 +681,83 @@ GL_TRIANGLE_STRIP則可以將每個點視為相黏的三角形，進而創造複
 
     glEnd();
 
+    glFlush();
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">init</span>()
+{          
+     glMatrixMode(GL_PROJECTION);
+     glLoadIdentity();
+     glOrtho(<span style="color:#f92672">-</span><span style="color:#ae81ff">50.0</span>, <span style="color:#ae81ff">50.0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">50.0</span>, <span style="color:#ae81ff">50.0</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>);
+	 glMatrixMode(GL_MODELVIEW);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">**</span> argv)
+{
+    glutInit(<span style="color:#f92672">&amp;</span>argc, argv);
+    glutInitWindowSize(<span style="color:#ae81ff">500</span>, <span style="color:#ae81ff">500</span>);
+    glutCreateWindow(<span style="color:#e6db74">&#34;Is a window&#34;</span>);
+    glutDisplayFunc(displayMe);
+    init();
+    glutMainLoop();
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h2 id="混合線條與分離的矩形">混合線條與分離的矩形</h2>
+<p>似乎可以用不同的 <strong>glBegin()</strong> 與 <strong>glEnd()</strong> 來繪製出混何不同形狀的產物。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">//sudo apt-get install freeglut3-dev freeglut3
+</span><span style="color:#75715e">//gcc main.cpp  -o OutPut -lGL -lGLU -lglut
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">displayMe</span>(<span style="color:#66d9ef">void</span>)
+{
+    glClearColor(<span style="color:#ae81ff">0.0f</span>,<span style="color:#ae81ff">0.0f</span>,<span style="color:#ae81ff">0.0f</span>,<span style="color:#ae81ff">0.0f</span>);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
+
+    glLineWidth(<span style="color:#ae81ff">50.0</span>);
+
+<span style="color:#75715e">//--------------------------------------
+</span><span style="color:#75715e"></span>
+    glBegin(GL_QUADS);
+        glColor3f(<span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.0f</span>, <span style="color:#ae81ff">0.0f</span>);
+        glVertex2f(<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">10</span>);
+
+        glColor3f(<span style="color:#ae81ff">0.0f</span>, <span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.0f</span>);
+        glVertex2f(<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>);
+
+        glColor3f(<span style="color:#ae81ff">0.0f</span>, <span style="color:#ae81ff">0.0f</span>, <span style="color:#ae81ff">1.0f</span>);
+        glVertex2f(<span style="color:#ae81ff">10</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>);
+
+        glColor3f(<span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.0f</span>, <span style="color:#ae81ff">1.0f</span>);
+        glVertex2f(<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">10</span>);
+
+
+
+        glColor3f(<span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.0f</span>, <span style="color:#ae81ff">0.0f</span>);
+        glVertex2f(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">10</span>);
+
+        glColor3f(<span style="color:#ae81ff">0.0f</span>, <span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.0f</span>);
+        glVertex2f(<span style="color:#ae81ff">15</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>);
+
+        glColor3f(<span style="color:#ae81ff">0.0f</span>, <span style="color:#ae81ff">0.0f</span>, <span style="color:#ae81ff">1.0f</span>);
+        glVertex2f(<span style="color:#ae81ff">35</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>);
+
+        glColor3f(<span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.0f</span>, <span style="color:#ae81ff">1.0f</span>);
+        glVertex2f(<span style="color:#ae81ff">35</span>,<span style="color:#ae81ff">10</span>);
+    glEnd();
+
+<span style="color:#75715e">//--------------------------------------
+</span><span style="color:#75715e"></span>
+    glBegin(GL_LINES);
+        glColor3f(<span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.0f</span>, <span style="color:#ae81ff">0.0f</span>);
+        glVertex2f(<span style="color:#f92672">-</span><span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">10</span>);
+        glColor3f(<span style="color:#ae81ff">0.0f</span>, <span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.0f</span>);
+        glVertex2f(<span style="color:#f92672">-</span><span style="color:#ae81ff">15</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>);
+    glEnd();
+
+<span style="color:#75715e">//--------------------------------------
+</span><span style="color:#75715e"></span>
     glFlush();
 }
 

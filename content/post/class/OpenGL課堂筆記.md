@@ -561,6 +561,88 @@ int main(int argc, char** argv)
 }
 ```
 
+## 混合線條與分離的矩形
+
+似乎可以用不同的 **glBegin()** 與 **glEnd()** 來繪製出混何不同形狀的產物。
+
+```cpp
+//sudo apt-get install freeglut3-dev freeglut3
+//gcc main.cpp  -o OutPut -lGL -lGLU -lglut
+#include <GL/glut.h>
+
+void displayMe(void)
+{
+    glClearColor(0.0f,0.0f,0.0f,0.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
+
+    glLineWidth(50.0);
+
+//--------------------------------------
+
+    glBegin(GL_QUADS);
+        glColor3f(1.0f, 0.0f, 0.0f);
+        glVertex2f(-10,10);
+
+        glColor3f(0.0f, 1.0f, 0.0f);
+        glVertex2f(-10,-10);
+
+        glColor3f(0.0f, 0.0f, 1.0f);
+        glVertex2f(10,-10);
+
+        glColor3f(1.0f, 0.0f, 1.0f);
+        glVertex2f(10,10);
+
+
+
+        glColor3f(1.0f, 0.0f, 0.0f);
+        glVertex2f(15,10);
+
+        glColor3f(0.0f, 1.0f, 0.0f);
+        glVertex2f(15,-10);
+
+        glColor3f(0.0f, 0.0f, 1.0f);
+        glVertex2f(35,-10);
+
+        glColor3f(1.0f, 0.0f, 1.0f);
+        glVertex2f(35,10);
+    glEnd();
+
+//--------------------------------------
+
+    glBegin(GL_LINES);
+        glColor3f(1.0f, 0.0f, 0.0f);
+        glVertex2f(-15,10);
+        glColor3f(0.0f, 1.0f, 0.0f);
+        glVertex2f(-15,-10);
+    glEnd();
+
+//--------------------------------------
+
+    glFlush();
+}
+
+void init()
+{          
+     glMatrixMode(GL_PROJECTION);
+     glLoadIdentity();
+     glOrtho(-50.0, 50.0, -50.0, 50.0, 0.0, 1.0);
+	 glMatrixMode(GL_MODELVIEW);
+}
+
+int main(int argc, char** argv)
+{
+    glutInit(&argc, argv);
+    glutInitWindowSize(500, 500);
+    glutCreateWindow("Is a window");
+    glutDisplayFunc(displayMe);
+    init();
+    glutMainLoop();
+    return 0;
+}
+```
+
 <a href="#menu">回到目錄</a>  
 
 
