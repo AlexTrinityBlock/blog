@@ -6,10 +6,19 @@
     <description>Recent content in Tags on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Thu, 07 Oct 2021 10:00:49 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 12 Oct 2021 09:00:49 +0800</lastBuildDate>
     
 	<atom:link href="https://alextrinityblock.github.io/blog/public/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NS2</title>
+      <link>https://alextrinityblock.github.io/blog/public/tags/ns2/</link>
+      <pubDate>Tue, 12 Oct 2021 09:00:49 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/tags/ns2/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>OpenGL</title>
