@@ -14,6 +14,7 @@ featured_image: "/secure.jpg"
 <a href="#ReadFile">閱讀檔案</a>  
 <a href="#expressions">判斷與表示</a>  
 <a href="#ControlFlow">流程控制</a>  
+<a href="#procedures">程序(類似函數)</a>  
 
 <span id="Intro"></span>
 # NS2使用什麼語言
@@ -161,4 +162,41 @@ incr i 1
 ```
 指的是每次i+1
 
+## foreach迴圈
+
+foreach會遍歷所有元素
+```tcl
+foreach var {m a g i c } {
+    puts "$var !"
+}
+```
+結果為
+```
+m !
+a !
+g !
+i !
+c !
+```
+
+<a href="#menu">回到目錄</a>  
+
+<span id="procedures"></span>
+# 程序(類似函數)
+
+兩數相加的函數
+
+```tcl
+proc sum {a b} {
+    return [expr $a + $b]
+}
+
+set var1 1
+set var2 1
+
+set result [sum $var1 $var2]
+
+puts "Sum is $result"
+```
+我們可以注意到，函數輸出的數值，通常還是都要放入另外一個變數中。  
 
