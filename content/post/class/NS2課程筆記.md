@@ -13,6 +13,7 @@ featured_image: "/secure.jpg"
 <a href="#var">變數</a>  
 <a href="#ReadFile">閱讀檔案</a>  
 <a href="#expressions">判斷與表示</a>  
+<a href="#ControlFlow">流程控制</a>  
 
 <span id="Intro"></span>
 # NS2使用什麼語言
@@ -71,5 +72,93 @@ puts $testfile "hello1"
 
 <span id="expressions"></span>
 # 判斷與表示
+
+## 布林判斷
+表達式用於達到類似if/else的效果。常常用於判斷一個數值是否等於另外一個。  
+
+以下我們故意產生一個必定為flase的內容。  
+
+```tcl
+set value [expr 0==1 ]
+puts $value
+```
+當我們顯示出$value的結果時必然會是0  
+<br/>
+接著我們稍微改一下，結果就會是1了。  
+```tcl
+set value [expr 1==1 ]
+puts $value
+```
+
+## 數學加法
+
+expr也可以執行數學加法。
+
+```tcl
+set value [expr 2+2]
+puts $value
+```
+這樣的結果會是4。  
+除此之外，在[]裡頭的內容也可插入在字串裡頭。  
+
+
+<span id="ControlFlow"></span>
+# 流程控制
+
+## if判斷式
+
+```tcl
+set var1 10
+
+if {$var1 == 10} {
+puts "var is 10"
+}
+```
+這樣當if判斷為10時會顯示10。  
+
+另外一個範例
+
+```tcl
+set temp 10
+
+if {$temp > 5} {
+    puts "Temp bigger than 5."
+}
+```
+這時候會顯示Temp bigger than 5。  
+
+## switch判斷式
+
+```tcl
+set var 2
+
+switch $num_legs {
+     1 {puts "Var is 1"}
+     2 {puts "Var is 2"}
+     default {puts "Var is not 1 or 2"}
+}
+```
+結果會印出Var is 2
+
+## for迴圈
+
+```tcl
+for {set i 0} {$i < 5} {incr i 1} {
+    puts "i :$i"
+}
+```
+這樣的結果會顯示
+```
+i :0
+i :1
+i :2
+i :3
+i :4
+```
+其中的
+```
+incr i 1
+```
+指的是每次i+1
 
 
