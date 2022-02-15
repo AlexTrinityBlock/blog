@@ -89,6 +89,12 @@ SectionPagesMenu = "main" #上排標籤選單
     url = "/tags/Node.js/"
     weight = 1
 [[menu.main]]
+    identifier = "ASP.net"
+    name = "ASP.net"
+    title = "ASP.net"
+    url = "/tags/ASP.net/"
+    weight = 1
+[[menu.main]]
     identifier = "tags"
     name = "更多"
     title = "tags"
