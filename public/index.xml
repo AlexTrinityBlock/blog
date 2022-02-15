@@ -12,6 +12,33 @@
     
     
     <item>
+      <title>ASP.net架構簡介</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/asp.net/asp.net%E6%9E%B6%E6%A7%8B%E7%B0%A1%E4%BB%8B/</link>
+      <pubDate>Tue, 15 Feb 2022 12:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/asp.net/asp.net%E6%9E%B6%E6%A7%8B%E7%B0%A1%E4%BB%8B/</guid>
+      <description>ASP.net初探 這只是隨意概括的淺談ASP.net的架構。 在這邊展示的是ASP.net的MVC架構網站的一個概括模型。 進入點與外層資料夾結</description>
+    </item>
+    
+    <item>
+      <title>NPM安裝</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/node.js/npm%E5%AE%89%E8%A3%9D/</link>
+      <pubDate>Tue, 15 Feb 2022 12:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/node.js/npm%E5%AE%89%E8%A3%9D/</guid>
+      <description>NPM是啥？ node.js就像是一個登山客，沒有任何裝備時能作到的事情不多，而NPM就如同他的背包，可以讓node.js裝上許多不同的模塊。</description>
+    </item>
+    
+    <item>
+      <title>html筆記</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/html/html%E7%AD%86%E8%A8%98/</link>
+      <pubDate>Mon, 14 Feb 2022 15:00:03 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/html/html%E7%AD%86%E8%A8%98/</guid>
+      <description>1.簡介 這只是HTML的複習與助記 2.</description>
+    </item>
+    
+    <item>
       <title>NS2課程筆記</title>
       <link>https://alextrinityblock.github.io/blog/public/post/class/ns2%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98/</link>
       <pubDate>Tue, 12 Oct 2021 09:00:49 +0800</pubDate>

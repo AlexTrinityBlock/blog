@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ASP.net on 無面者小站</title>
+    <link>https://alextrinityblock.github.io/blog/public/tags/asp.net/</link>
+    <description>Recent content in ASP.net on 無面者小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <lastBuildDate>Tue, 15 Feb 2022 12:00:44 +0800</lastBuildDate>
+    
+	<atom:link href="https://alextrinityblock.github.io/blog/public/tags/asp.net/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ASP.net架構簡介</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/asp.net/asp.net%E6%9E%B6%E6%A7%8B%E7%B0%A1%E4%BB%8B/</link>
+      <pubDate>Tue, 15 Feb 2022 12:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/asp.net/asp.net%E6%9E%B6%E6%A7%8B%E7%B0%A1%E4%BB%8B/</guid>
+      <description>ASP.net初探 這只是隨意概括的淺談ASP.net的架構。 在這邊展示的是ASP.net的MVC架構網站的一個概括模型。 進入點與外層資料夾結</description>
+    </item>
+    
+  </channel>
+</rss>

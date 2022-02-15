@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Node.js on 無面者小站</title>
+    <link>https://alextrinityblock.github.io/blog/public/tags/node.js/</link>
+    <description>Recent content in Node.js on 無面者小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <lastBuildDate>Tue, 15 Feb 2022 12:00:44 +0800</lastBuildDate>
+    
+	<atom:link href="https://alextrinityblock.github.io/blog/public/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NPM安裝</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/node.js/npm%E5%AE%89%E8%A3%9D/</link>
+      <pubDate>Tue, 15 Feb 2022 12:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/node.js/npm%E5%AE%89%E8%A3%9D/</guid>
+      <description>NPM是啥？ node.js就像是一個登山客，沒有任何裝備時能作到的事情不多，而NPM就如同他的背包，可以讓node.js裝上許多不同的模塊。</description>
+    </item>
+    
+  </channel>
+</rss>
