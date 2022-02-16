@@ -92,7 +92,7 @@ cd web1
 ## 安裝
 
 ```
-npm install -g express-generator
+npm install express-generator
 ```
 
 ## 執行express-generator
@@ -107,20 +107,38 @@ npm install -g express-generator
 
 ```
 app/                                     
-├── app.js                               
-├── bin                                  
+├── app.js                               #網站主要的進入點js
+├── bin                                  #裡頭有個www二進位檔
 │   └── www                              
-├── package.json                         
-├── public                               
+├── package.json                         #npm需要安裝的清單
+├── public                               #放置圖片與css,js等靜態檔案
 │   ├── images                           
 │   ├── javascripts                      
 │   └── stylesheets                      
 │       └── style.css                    
-├── routes                               
+├── routes                               #路由路徑資料夾
 │   ├── index.js                         
 │   └── users.js                         
-└── views                                
+└── views                                #jade模板引擎
     ├── error.jade                       
     ├── index.jade                       
     └── layout.jade  
+```
+
+## 進入app資料夾
+
+```
+cd app
+```
+
+## 安裝索需要的套件
+
+```
+npm install
+```
+
+## 執行專案
+
+```
+npm start
 ```
