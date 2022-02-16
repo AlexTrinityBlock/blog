@@ -4,8 +4,36 @@
   
   <url>
     <loc>https://alextrinityblock.github.io/blog/public/post/</loc>
-    <lastmod>2022-02-15T12:00:44+08:00</lastmod>
+    <lastmod>2022-02-16T13:00:44+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://alextrinityblock.github.io/blog/public/tags/node.js/</loc>
+    <lastmod>2022-02-16T13:00:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alextrinityblock.github.io/blog/public/tags/</loc>
+    <lastmod>2022-02-16T13:00:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alextrinityblock.github.io/blog/public/post/node.js/%E4%BD%BF%E7%94%A8express/</loc>
+    <lastmod>2022-02-16T13:00:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alextrinityblock.github.io/blog/public/post/node.js/%E5%9F%B7%E8%A1%8C%E4%B8%80%E5%80%8B%E7%B0%A1%E5%96%AE%E7%9A%84node.js%E7%A8%8B%E5%BC%8F-copy/</loc>
+    <lastmod>2022-02-16T12:00:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>2</priority>
   </url>
   
   <url>
@@ -23,21 +51,7 @@
   </url>
   
   <url>
-    <loc>https://alextrinityblock.github.io/blog/public/tags/node.js/</loc>
-    <lastmod>2022-02-15T12:00:44+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>2</priority>
-  </url>
-  
-  <url>
     <loc>https://alextrinityblock.github.io/blog/public/post/node.js/npm%E5%AE%89%E8%A3%9D/</loc>
-    <lastmod>2022-02-15T12:00:44+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>2</priority>
-  </url>
-  
-  <url>
-    <loc>https://alextrinityblock.github.io/blog/public/tags/</loc>
     <lastmod>2022-02-15T12:00:44+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>2</priority>

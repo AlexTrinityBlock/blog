@@ -6,10 +6,28 @@
     <description>Recent content on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Tue, 15 Feb 2022 12:00:44 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 16 Feb 2022 13:00:44 +0800</lastBuildDate>
     
 	<atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用Express</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/node.js/%E4%BD%BF%E7%94%A8express/</link>
+      <pubDate>Wed, 16 Feb 2022 13:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/node.js/%E4%BD%BF%E7%94%A8express/</guid>
+      <description>原生的安裝方式 建立一個資料夾稱為web mkdir web 進入資料夾 cd web 安裝express 完整語法 npm install express --save 也可以安裝為開發者模式 npm install express --save-dev 簡化語法 一般模式 npm i</description>
+    </item>
+    
+    <item>
+      <title>執行一個簡單的node.js程式</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/node.js/%E5%9F%B7%E8%A1%8C%E4%B8%80%E5%80%8B%E7%B0%A1%E5%96%AE%E7%9A%84node.js%E7%A8%8B%E5%BC%8F-copy/</link>
+      <pubDate>Wed, 16 Feb 2022 12:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/node.js/%E5%9F%B7%E8%A1%8C%E4%B8%80%E5%80%8B%E7%B0%A1%E5%96%AE%E7%9A%84node.js%E7%A8%8B%E5%BC%8F-copy/</guid>
+      <description>Node.js一句話陳述 用javascript在非瀏覽器的本機環境用的直譯器。 一個簡單的javascript的程式 檔案名稱: main.js console.log(&amp;#34;Hello world&amp;#34;); 直接執行 node</description>
+    </item>
     
     <item>
       <title>ASP.net架構簡介</title>
