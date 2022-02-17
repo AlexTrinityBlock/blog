@@ -12,6 +12,24 @@
     
     
     <item>
+      <title>Express-generator使用與理解</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/node.js/express-generator%E4%BD%BF%E7%94%A8%E8%88%87%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Thu, 17 Feb 2022 13:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/node.js/express-generator%E4%BD%BF%E7%94%A8%E8%88%87%E7%90%86%E8%A7%A3/</guid>
+      <description>目錄 1.先備知識 2.專案進入點/bin/www 3.理解package.json 4.理解app.js 5.調整Morgan的log格式 6.模塊(</description>
+    </item>
+    
+    <item>
+      <title>用Express-generator建立專案</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/node.js/%E7%94%A8express-generator%E5%BB%BA%E7%AB%8B%E5%B0%88%E6%A1%88/</link>
+      <pubDate>Wed, 16 Feb 2022 14:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/node.js/%E7%94%A8express-generator%E5%BB%BA%E7%AB%8B%E5%B0%88%E6%A1%88/</guid>
+      <description>建立一個資料夾稱為web mkdir web 進入資料夾 cd web 安裝express 完整語法 npm install express --save 也可以安裝為開發者模式 npm install express --save-dev 簡化語法 一般模式 npm i express 也可以安裝為</description>
+    </item>
+    
+    <item>
       <title>使用Express</title>
       <link>https://alextrinityblock.github.io/blog/public/post/node.js/%E4%BD%BF%E7%94%A8express/</link>
       <pubDate>Wed, 16 Feb 2022 13:00:44 +0800</pubDate>

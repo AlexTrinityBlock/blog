@@ -310,4 +310,107 @@ app.use(logger('tiny'));
 
 # 模塊(Module)機制說明
 
+模塊(Module)機制是node.js中的一個關鍵機制，與其他近代語言如同Python一般，可以將類別或函數分別撰寫在不同檔案，最後進行呼叫與代碼重用和組織，以方便管理。
+
+我們此處示範建立一個測試用的模組，其資料夾路徑如下。
+
+```
+app/
+└── models
+        └── test.js
+```
+
+## 模塊的內容撰寫
+test.js
+```javascript
+function test(){
+    return "This is Test"
+}
+
+module.exports = test; //一定要有這一行，才能在使用時引用上頭的test函數或其他物件
+```
+
+## 修改在routes中的內容
+
+我們可以在routes目錄下看到index.js，這個資料夾用於，當我們在網頁根路徑/時，引出的對應反應。
+
+```
+app/
+└── routes
+        └── index.js
+```
+
+我們將剛剛自製的模塊引入app/routes/index.js
+
+```javascript
+var express = require('express');
+var test = require('../models/test');
+
+var router = express.Router();
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: test() });
+});
+
+module.exports = router;
+```
+
+這時候我們就能引用自己撰寫的test()的內容了。
+
+順代一提，如果沒有名稱重複，強烈建議在routes,自製模組的檔名,函數與類別的名稱，非常建議要一致。否則容易忘記或搞混。
+
+## 複數函數或物件的模塊引用
+
+如果我們的一個檔案裡頭有一個以上的函數或類別，可以用以下方式導出。
+
+test.js
+```javascript
+function test1(){
+    return "This is Test1"
+}
+
+function test2(){
+    return "This is Test2"
+}
+
+module.exports = {
+    test1:test1,
+    test2:test2
+};
+```
+
+或者
+
+test.js
+```javascript
+function test1(){
+    return "This is Test1"
+}
+
+function test2(){
+    return "This is Test2"
+}
+
+module.exports = {test1,test2};
+```
+
+然後在引用時要這樣
+
+routes/index.js
+```javascript
+var express = require('express');
+var test = require('../models/test');
+
+var router = express.Router();
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  // res.render('index', { title: 'Express' });
+  res.render('index', { title: test.test1()+test.test2() });
+});
+
+module.exports = router;
+```
+
 [回到目錄](#目錄)

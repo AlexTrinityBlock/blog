@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Express-generator使用與理解 | 無面者小站</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="目錄 1.先備知識 2.專案進入點/bin/www 3.理解package.json 4.理解app.js 5.調整Morgan的log格式 6.模塊(">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+      
+	  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    
+
+  
+  
+    <link rel="stylesheet" href="/blog/public/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css" >
+  
+
+
+
+
+    
+      
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+
+
+    
+
+    
+    
+    <meta property="og:title" content="Express-generator使用與理解" />
+<meta property="og:description" content="目錄 1.先備知識 2.專案進入點/bin/www 3.理解package.json 4.理解app.js 5.調整Morgan的log格式 6.模塊(" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/node.js/express-generator%E4%BD%BF%E7%94%A8%E8%88%87%E7%90%86%E8%A7%A3/" />
+<meta property="article:published_time" content="2022-02-17T13:00:44+08:00" />
+<meta property="article:modified_time" content="2022-02-17T13:00:44+08:00" />
+<meta itemprop="name" content="Express-generator使用與理解">
+<meta itemprop="description" content="目錄 1.先備知識 2.專案進入點/bin/www 3.理解package.json 4.理解app.js 5.調整Morgan的log格式 6.模塊(">
+<meta itemprop="datePublished" content="2022-02-17T13:00:44&#43;08:00" />
+<meta itemprop="dateModified" content="2022-02-17T13:00:44&#43;08:00" />
+<meta itemprop="wordCount" content="2754">
+
+
+
+<meta itemprop="keywords" content="Node.js," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Express-generator使用與理解"/>
+<meta name="twitter:description" content="目錄 1.先備知識 2.專案進入點/bin/www 3.理解package.json 4.理解app.js 5.調整Morgan的log格式 6.模塊("/>
+
+	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://alextrinityblock.github.io/blog/public/nodejs.jpg');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/blog/public/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        無面者小站
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/android/" title="android page">
+              android
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/asp.net/" title="ASP.net page">
+              ASP.net
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/c/" title="c page">
+              c
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/docker/" title="docker page">
+              docker
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/git/" title="git page">
+              git
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/html/" title="html page">
+              html
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/hugo" title="hugo page">
+              hugo
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/linux" title="linux page">
+              linux
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/math/" title="math page">
+              math
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/network/" title="network page">
+              network
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/node.js/" title="Node.js page">
+              Node.js
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/python/" title="python page">
+              python
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/secure/" title="secure page">
+              secure
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/" title="更多 page">
+              更多
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/post/" title=" page">
+              
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Express-generator使用與理解</h1>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://alextrinityblock.github.io/blog/public/post/node.js/express-generator%E4%BD%BF%E7%94%A8%E8%88%87%E7%90%86%E8%A7%A3/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://alextrinityblock.github.io/blog/public/post/node.js/express-generator%E4%BD%BF%E7%94%A8%E8%88%87%E7%90%86%E8%A7%A3/&amp;text=Express-generator%e4%bd%bf%e7%94%a8%e8%88%87%e7%90%86%e8%a7%a3" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://alextrinityblock.github.io/blog/public/post/node.js/express-generator%E4%BD%BF%E7%94%A8%E8%88%87%E7%90%86%E8%A7%A3/&amp;title=Express-generator%e4%bd%bf%e7%94%a8%e8%88%87%e7%90%86%e8%a7%a3" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Express-generator使用與理解</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2022-02-17T13:00:44+08:00">February 17, 2022</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="目錄">目錄</h1>
+<p><a href="#%E5%85%88%E5%82%99%E7%9F%A5%E8%AD%98">1.先備知識</a></p>
+<p><a href="#%E5%B0%88%E6%A1%88%E9%80%B2%E5%85%A5%E9%BB%9Ebinwww">2.專案進入點/bin/www</a></p>
+<p><a href="#%E7%90%86%E8%A7%A3packagejson">3.理解package.json</a></p>
+<p><a href="#%E7%90%86%E8%A7%A3appjs">4.理解app.js</a></p>
+<p><a href="#%E8%AA%BF%E6%95%B4morgan%E7%9A%84log%E6%A0%BC%E5%BC%8F">5.調整Morgan的log格式</a></p>
+<p><a href="#%E6%A8%A1%E5%A1%8Amodule%E6%A9%9F%E5%88%B6%E8%AA%AA%E6%98%8E">6.模塊(Module)機制說明</a></p>
+<h1 id="先備知識">先備知識</h1>
+<p><a href="/blog/public/post/node.js/npm%E5%AE%89%E8%A3%9D/">學會安裝NPM</a></p>
+<p><a href="/blog/public/post/node.js/%E7%94%A8express-generator%E5%BB%BA%E7%AB%8B%E5%B0%88%E6%A1%88/">用Express-generator建立專案</a></p>
+<p><a href="#%E7%9B%AE%E9%8C%84">回到目錄</a></p>
+<h1 id="專案進入點binwww">專案進入點/bin/www</h1>
+<p>當我們輸入</p>
+<pre><code>npm start
+</code></pre><p>就會第一個觸發該js程式，我們可以看看裡頭的檔案配置。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">#!/usr/bin/env node
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * 引入必要模塊
+</span><span style="color:#75715e"> */</span>
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;../app&#39;</span>);<span style="color:#75715e">//引入我們自己寫的app.js
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">debug</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;debug&#39;</span>)(<span style="color:#e6db74">&#39;app:server&#39;</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">http</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;http&#39;</span>);
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * 把port傳入app裡頭，沒有預設環境變數時，預設3000port，可以手動修改成別的。
+</span><span style="color:#75715e"> */</span>
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">port</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">normalizePort</span>(<span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">PORT</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;3000&#39;</span>);
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;port&#39;</span>, <span style="color:#a6e22e">port</span>);
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * 建立node.js HTTP 伺服器
+</span><span style="color:#75715e"> */</span>
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">server</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">createServer</span>(<span style="color:#a6e22e">app</span>);
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * HTTP 伺服器　偵聽特定port並且在出錯時啟用我們自製的錯誤處理函數
+</span><span style="color:#75715e"> */</span>
+
+<span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#a6e22e">port</span>);
+<span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;error&#39;</span>, <span style="color:#a6e22e">onError</span>);
+<span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;listening&#39;</span>, <span style="color:#a6e22e">onListening</span>);
+
+...
+
+</code></pre></div><p><a href="#%E7%9B%AE%E9%8C%84">回到目錄</a></p>
+<h1 id="理解packagejson">理解package.json</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;app&#34;</span>,<span style="color:#960050;background-color:#1e0010">//npm專案名稱</span>
+  <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;0.0.0&#34;</span>,<span style="color:#960050;background-color:#1e0010">//版本</span>
+  <span style="color:#f92672">&#34;private&#34;</span>: <span style="color:#66d9ef">true</span>,<span style="color:#960050;background-color:#1e0010">//私有專案</span>
+  <span style="color:#f92672">&#34;scripts&#34;</span>: {
+    <span style="color:#f92672">&#34;start&#34;</span>: <span style="color:#e6db74">&#34;node ./bin/www&#34;</span>　<span style="color:#960050;background-color:#1e0010">//輸入NPM</span> <span style="color:#960050;background-color:#1e0010">start時，會執行node</span> <span style="color:#960050;background-color:#1e0010">./bin/www，用js執行</span> <span style="color:#960050;background-color:#1e0010">www啟動腳本</span>
+  },
+  <span style="color:#f92672">&#34;dependencies&#34;</span>: { <span style="color:#960050;background-color:#1e0010">//專案依賴套件</span>
+    <span style="color:#f92672">&#34;cookie-parser&#34;</span>: <span style="color:#e6db74">&#34;~1.4.4&#34;</span>,<span style="color:#960050;background-color:#1e0010">//Cookie解析模塊</span>
+    <span style="color:#f92672">&#34;debug&#34;</span>: <span style="color:#e6db74">&#34;~2.6.9&#34;</span>,
+    <span style="color:#f92672">&#34;express&#34;</span>: <span style="color:#e6db74">&#34;~4.16.1&#34;</span>,<span style="color:#960050;background-color:#1e0010">//Express網頁模塊</span>
+    <span style="color:#f92672">&#34;http-errors&#34;</span>: <span style="color:#e6db74">&#34;~1.6.3&#34;</span>,<span style="color:#960050;background-color:#1e0010">//HTTP錯誤處理模塊</span>
+    <span style="color:#f92672">&#34;jade&#34;</span>: <span style="color:#e6db74">&#34;~1.11.0&#34;</span>,<span style="color:#960050;background-color:#1e0010">//前端模板引擎</span>
+    <span style="color:#f92672">&#34;morgan&#34;</span>: <span style="color:#e6db74">&#34;~1.9.1&#34;</span><span style="color:#960050;background-color:#1e0010">//log紀錄檔模塊</span>
+  }
+}
+</code></pre></div><p>順代一提，如果要新增package.json裡頭npm模塊，需要使用這個指令:</p>
+<pre><code>npm install &lt;模塊名稱&gt;
+</code></pre><p>不過在低版本的npm5.0以前，如果沒有加入如下的&ndash;save參數，是不會紀錄到package.json中的。</p>
+<p>因此，需要用以下指令:</p>
+<pre><code>npm install &lt;模塊名稱&gt; --save
+</code></pre><p>刪除則是</p>
+<pre><code>npm uninstall &lt;模塊名稱&gt;
+</code></pre><p>如果為了快速移動專案資料夾，可以刪除掉node_modules</p>
+<p>移動到新的環境時，用以下指令安裝所有需要的模塊</p>
+<pre><code>npm install
+</code></pre><p><a href="#%E7%9B%AE%E9%8C%84">回到目錄</a></p>
+<h1 id="理解appjs">理解app.js</h1>
+<p>app.js</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">createError</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;http-errors&#39;</span>);<span style="color:#75715e">//建立錯誤頁面物件
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);<span style="color:#75715e">//導入主要express物件
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;path&#39;</span>);<span style="color:#75715e">//路徑物件
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cookieParser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;cookie-parser&#39;</span>);<span style="color:#75715e">//cookie檢視物件
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">logger</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;morgan&#39;</span>);<span style="color:#75715e">//紀錄log物件，我們在終端機上看到的GET / 200 6.923 ms - 170等存取紀錄就是來自這個模塊。如果要的話，可以寫入某個特定文件。
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//取得路由物件
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">indexRouter</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;./routes/index&#39;</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">usersRouter</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;./routes/users&#39;</span>);
+
+<span style="color:#75715e">//app物件由express建構子回傳
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>();
+
+<span style="color:#75715e">// 設定前端使用jade模板引擎
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;views&#39;</span>, <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">__dirname</span>, <span style="color:#e6db74">&#39;views&#39;</span>));
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;view engine&#39;</span>, <span style="color:#e6db74">&#39;jade&#39;</span>);
+
+<span style="color:#75715e">//導入各項功能
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">logger</span>(<span style="color:#e6db74">&#39;dev&#39;</span>));<span style="color:#75715e">//log紀錄
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">json</span>());<span style="color:#75715e">//json
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">urlencoded</span>({ <span style="color:#a6e22e">extended</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span> }));<span style="color:#75715e">//URL 編碼
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">cookieParser</span>());<span style="color:#75715e">//Cookie 解析器
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">express</span>.<span style="color:#66d9ef">static</span>(<span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">__dirname</span>, <span style="color:#e6db74">&#39;public&#39;</span>)));<span style="color:#75715e">//靜態檔案資料夾
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//將路由物件對應到不同網頁路徑，例如http://127.0.0.1:3000/users
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#a6e22e">indexRouter</span>);<span style="color:#75715e">//設定http://127.0.0.1:3000/路徑的路由自製模塊
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#e6db74">&#39;/users&#39;</span>, <span style="color:#a6e22e">usersRouter</span>);<span style="color:#75715e">//設定http://127.0.0.1:3000/users路徑的路由自製模塊
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//設置頁面不存在時的檔案
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
+  <span style="color:#a6e22e">next</span>(<span style="color:#a6e22e">createError</span>(<span style="color:#ae81ff">404</span>));
+});
+
+<span style="color:#75715e">//當網頁程式有誤時展示錯誤頁面
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
+  <span style="color:#75715e">// set locals, only providing error in development
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">locals</span>.<span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">message</span>;
+  <span style="color:#75715e">//如果是development開發狀態時，回應錯誤訊息
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">locals</span>.<span style="color:#a6e22e">error</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;env&#39;</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;development&#39;</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:</span> {};
+
+  <span style="color:#75715e">//渲染錯誤頁面，並且回應500
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">500</span>);
+  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">render</span>(<span style="color:#e6db74">&#39;error&#39;</span>);
+});
+
+<span style="color:#75715e">//當別的模塊require這個檔案時，導出我們建構好的app物件
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">app</span>;
+</code></pre></div><p><a href="#%E7%9B%AE%E9%8C%84">回到目錄</a></p>
+<h1 id="調整morgan的log格式">調整Morgan的log格式</h1>
+<h2 id="自訂mogrgan輸出">自訂Mogrgan輸出</h2>
+<p>到app.js中調整Morgan的一些基本設置，就能夠自訂log輸出格式。</p>
+<p>其中有各種類型的log內容，例如顯示用戶輸入的url時可以用這樣</p>
+<pre><code>:url
+</code></pre><p>例如我們改成這樣</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">format</span>(<span style="color:#e6db74">&#39;test-log&#39;</span>,<span style="color:#e6db74">&#39;This is log :method :url :status :response-time&#39;</span>);
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">logger</span>(<span style="color:#e6db74">&#39;test-log&#39;</span>));
+</code></pre></div><p>輸出就會變成這樣</p>
+<pre><code>This is log GET /stylesheets/style.css 200 3.463
+</code></pre><p>以下是各種內容介紹</p>
+<pre><code>:date[format]
+The current date and time in UTC. The available formats are:
+
+clf for the common log format (&quot;10/Oct/2000:13:55:36 +0000&quot;)
+iso for the common ISO 8601 date time format (2000-10-10T13:55:36.000Z)
+web for the common RFC 1123 date time format (Tue, 10 Oct 2000 13:55:36 GMT)
+If no format is given, then the default is web.
+
+:http-version
+The HTTP version of the request.
+
+:method
+The HTTP method of the request.
+
+:referrer
+The Referrer header of the request. This will use the standard mis-spelled Referer header if exists, otherwise Referrer.
+
+:remote-addr
+The remote address of the request. This will use req.ip, otherwise the standard req.connection.remoteAddress value (socket address).
+
+:remote-user
+The user authenticated as part of Basic auth for the request.
+
+:req[header]
+The given header of the request. If the header is not present, the value will be displayed as &quot;-&quot; in the log.
+
+:res[header]
+The given header of the response. If the header is not present, the value will be displayed as &quot;-&quot; in the log.
+
+:response-time[digits]
+The time between the request coming into morgan and when the response headers are written, in milliseconds.
+
+The digits argument is a number that specifies the number of digits to include on the number, defaulting to 3, which provides microsecond precision.
+
+:status
+The status code of the response.
+
+If the request/response cycle completes before a response was sent to the client (for example, the TCP socket closed prematurely by a client aborting the request), then the status will be empty (displayed as &quot;-&quot; in the log).
+
+:total-time[digits]
+The time between the request coming into morgan and when the response has finished being written out to the connection, in milliseconds.
+
+The digits argument is a number that specifies the number of digits to include on the number, defaulting to 3, which provides microsecond precision.
+
+:url
+The URL of the request. This will use req.originalUrl if exists, otherwise req.url.
+
+:user-agent
+The contents of the User-Agent header of the request.
+</code></pre><p>至於更多細節可以參閱</p>
+<p><a href="https://www.npmjs.com/package/morgan">https://www.npmjs.com/package/morgan</a></p>
+<h2 id="mogrgan預設輸出">Mogrgan預設輸出</h2>
+<p>到app.js中調整Morgan的一些基本設置，套用幾種預設的輸出格式。</p>
+<h3 id="dev">dev</h3>
+<p>在終端機裡頭會改變顏色，請求成功是綠色，好看又方便觀察。</p>
+<p>等同</p>
+<pre><code>:method :url :status :response-time ms - :res[content-length]
+</code></pre><p>使用時將app.js改為</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">logger</span>(<span style="color:#e6db74">&#39;dev&#39;</span>));
+</code></pre></div><h3 id="combined與common">combined　與　common</h3>
+<p>Apache的標準log格式，方便其他log解讀軟體閱讀，combined多了user-agent比較詳細，十分建議。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">logger</span>(<span style="color:#e6db74">&#39;combined&#39;</span>));
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">logger</span>(<span style="color:#e6db74">&#39;common&#39;</span>));
+</code></pre></div><h3 id="short-與tiny">short 與　tiny</h3>
+<p>比預設輸出更短。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">logger</span>(<span style="color:#e6db74">&#39;short&#39;</span>));
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">logger</span>(<span style="color:#e6db74">&#39;tiny&#39;</span>));
+</code></pre></div><p><a href="#%E7%9B%AE%E9%8C%84">回到目錄</a></p>
+<h1 id="模塊module機制說明">模塊(Module)機制說明</h1>
+<p>模塊(Module)機制是node.js中的一個關鍵機制，與其他近代語言如同Python一般，可以將類別或函數分別撰寫在不同檔案，最後進行呼叫與代碼重用和組織，以方便管理。</p>
+<p>我們此處示範建立一個測試用的模組，其資料夾路徑如下。</p>
+<pre><code>app/
+└── models
+        └── test.js
+</code></pre><h2 id="模塊的內容撰寫">模塊的內容撰寫</h2>
+<p>test.js</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test</span>(){
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;This is Test&#34;</span>
+}
+
+<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">test</span>; <span style="color:#75715e">//一定要有這一行，才能在使用時引用上頭的test函數或其他物件
+</span></code></pre></div><h2 id="修改在routes中的內容">修改在routes中的內容</h2>
+<p>我們可以在routes目錄下看到index.js，這個資料夾用於，當我們在網頁根路徑/時，引出的對應反應。</p>
+<pre><code>app/
+└── routes
+        └── index.js
+</code></pre><p>我們將剛剛自製的模塊引入app/routes/index.js</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">test</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;../models/test&#39;</span>);
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
+
+<span style="color:#75715e">/* GET home page. */</span>
+<span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
+  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">render</span>(<span style="color:#e6db74">&#39;index&#39;</span>, { <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">test</span>() });
+});
+
+<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">router</span>;
+</code></pre></div><p>這時候我們就能引用自己撰寫的test()的內容了。</p>
+<p>順代一提，如果沒有名稱重複，強烈建議在routes,自製模組的檔名,函數與類別的名稱，非常建議要一致。否則容易忘記或搞混。</p>
+<h2 id="複數函數或物件的模塊引用">複數函數或物件的模塊引用</h2>
+<p>如果我們的一個檔案裡頭有一個以上的函數或類別，可以用以下方式導出。</p>
+<p>test.js</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test1</span>(){
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;This is Test1&#34;</span>
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test2</span>(){
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;This is Test2&#34;</span>
+}
+
+<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">test1</span><span style="color:#f92672">:</span><span style="color:#a6e22e">test1</span>,
+    <span style="color:#a6e22e">test2</span><span style="color:#f92672">:</span><span style="color:#a6e22e">test2</span>
+};
+</code></pre></div><p>或者</p>
+<p>test.js</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test1</span>(){
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;This is Test1&#34;</span>
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test2</span>(){
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;This is Test2&#34;</span>
+}
+
+<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">test1</span>,<span style="color:#a6e22e">test2</span>};
+</code></pre></div><p>然後在引用時要這樣</p>
+<p>routes/index.js</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">test</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;../models/test&#39;</span>);
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
+
+<span style="color:#75715e">/* GET home page. */</span>
+<span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
+  <span style="color:#75715e">// res.render(&#39;index&#39;, { title: &#39;Express&#39; });
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">render</span>(<span style="color:#e6db74">&#39;index&#39;</span>, { <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">test1</span>()<span style="color:#f92672">+</span><span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">test2</span>() });
+});
+
+<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">router</span>;
+</code></pre></div><p><a href="#%E7%9B%AE%E9%8C%84">回到目錄</a></p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/blog/public/tags/node.js" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Node.js</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">相關內容</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/blog/public/post/node.js/%E7%94%A8express-generator%E5%BB%BA%E7%AB%8B%E5%B0%88%E6%A1%88/">用Express-generator建立專案</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/node.js/%E4%BD%BF%E7%94%A8express/">使用Express</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/node.js/%E5%9F%B7%E8%A1%8C%E4%B8%80%E5%80%8B%E7%B0%A1%E5%96%AE%E7%9A%84node.js%E7%A8%8B%E5%BC%8F-copy/">執行一個簡單的node.js程式</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/node.js/npm%E5%AE%89%E8%A3%9D/">NPM安裝</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
+    &copy;  無面者小站 2022 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
