@@ -18,6 +18,8 @@ tags: ["Node.js"]
 
 [5.調整Morgan的log格式](#調整morgan的log格式)
 
+[6.模塊(Module)機制說明](#模塊module機制說明)
+
 # 先備知識
 
 [學會安裝NPM](/blog/public/post/node.js/npm安裝/)
@@ -306,3 +308,6 @@ app.use(logger('tiny'));
 
 [回到目錄](#目錄)
 
+# 模塊(Module)機制說明
+
+[回到目錄](#目錄)
