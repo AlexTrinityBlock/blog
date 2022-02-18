@@ -43,7 +43,7 @@
 <meta itemprop="description" content="目錄 1.先備知識 2.專案進入點/bin/www 3.理解package.json 4.理解app.js 5.調整Morgan的log格式 6.模塊(">
 <meta itemprop="datePublished" content="2022-02-17T13:00:44&#43;08:00" />
 <meta itemprop="dateModified" content="2022-02-17T13:00:44&#43;08:00" />
-<meta itemprop="wordCount" content="2760">
+<meta itemprop="wordCount" content="2989">
 
 
 
@@ -255,6 +255,8 @@
 <p><a href="#%E7%90%86%E8%A7%A3appjs">4.理解app.js</a></p>
 <p><a href="#%E8%AA%BF%E6%95%B4morgan%E7%9A%84log%E6%A0%BC%E5%BC%8F">5.調整Morgan的log格式</a></p>
 <p><a href="#%E6%A8%A1%E5%A1%8Amodule%E6%A9%9F%E5%88%B6%E8%AA%AA%E6%98%8E">6.模塊(Module)機制說明</a></p>
+<p><a href="#http%E8%AB%8B%E6%B1%82">7.HTTP請求</a></p>
+<p><a href="#express%E4%B8%AD%E7%9A%84%E8%B7%AF%E7%94%B1%E6%84%8F%E7%BE%A9">8.Express中的路由意義</a></p>
 <h1 id="先備知識">先備知識</h1>
 <p><a href="/blog/public/post/node.js/npm%E5%AE%89%E8%A3%9D/">學會安裝NPM</a></p>
 <p><a href="/blog/public/post/node.js/%E7%94%A8express-generator%E5%BB%BA%E7%AB%8B%E5%B0%88%E6%A1%88/">用Express-generator建立專案</a></p>
@@ -526,7 +528,23 @@ The contents of the User-Agent header of the request.
 });
 
 <span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">router</span>;
-</code></pre></div><p>書籤:4-5</p>
+</code></pre></div><p><a href="#%E7%9B%AE%E9%8C%84">回到目錄</a></p>
+<h1 id="http請求">HTTP請求</h1>
+<h2 id="論http請求中的header與body">論HTTP請求中的Header與Body</h2>
+<p><strong>GET</strong></p>
+<p>在GET中，請求的內容通通在header中，從另外一個角度來看，請求的內容通通在網址中。</p>
+<p>GET沒有body，主要用於取得資料。</p>
+<p>例如我們用GET對伺服器發出color為red的請求會長成:</p>
+<pre><code>網址?color=red
+</code></pre><p><strong>POST</strong></p>
+<p>POST中則是請求的格式細節在header中，而請求內容放在body。
+用於新增資料。</p>
+<p><strong>PUT</strong></p>
+<p>用於修改資料。</p>
+<p><strong>DELETE</strong></p>
+<p>用於刪除資料。</p>
+<p><a href="#%E7%9B%AE%E9%8C%84">回到目錄</a></p>
+<h1 id="express中的路由意義">Express中的路由意義</h1>
 <p><a href="#%E7%9B%AE%E9%8C%84">回到目錄</a></p>
 <ul class="pa0">
   

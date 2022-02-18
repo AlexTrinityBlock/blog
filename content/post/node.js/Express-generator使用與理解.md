@@ -20,6 +20,10 @@ tags: ["Node.js"]
 
 [6.模塊(Module)機制說明](#模塊module機制說明)
 
+[7.HTTP請求](#http請求)
+
+[8.Express中的路由意義](#express中的路由意義)
+
 # 先備知識
 
 [學會安裝NPM](/blog/public/post/node.js/npm安裝/)
@@ -413,6 +417,39 @@ router.get('/', function(req, res, next) {
 module.exports = router;
 ```
 
-書籤:4-5
+[回到目錄](#目錄)
+
+# HTTP請求
+
+## 論HTTP請求中的Header與Body
+
+**GET**
+
+在GET中，請求的內容通通在header中，從另外一個角度來看，請求的內容通通在網址中。
+
+GET沒有body，主要用於取得資料。
+
+例如我們用GET對伺服器發出color為red的請求會長成:
+
+```
+網址?color=red
+```
+
+**POST**
+
+POST中則是請求的格式細節在header中，而請求內容放在body。
+用於新增資料。
+
+**PUT**
+
+用於修改資料。
+
+**DELETE**
+
+用於刪除資料。
+
+[回到目錄](#目錄)
+
+# Express中的路由意義
 
 [回到目錄](#目錄)
