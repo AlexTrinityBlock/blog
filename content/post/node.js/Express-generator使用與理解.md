@@ -24,6 +24,10 @@ tags: ["Node.js"]
 
 [8.Express中的路由意義](#express中的路由意義)
 
+[9.Express中的路由參數傳遞](#express中的路由參數傳遞)
+
+[10.Express中的回應客戶的方法](#express中的回應客戶的方法)
+
 # 先備知識
 
 [學會安裝NPM](/blog/public/post/node.js/npm安裝/)
@@ -451,5 +455,220 @@ POST中則是請求的格式細節在header中，而請求內容放在body。
 [回到目錄](#目錄)
 
 # Express中的路由意義
+
+我們觀察routes/index.js
+
+```javascript
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+module.exports = router;
+```
+
+其中就隱含了node.js中最簡單回應客戶請求的方式，我們可以看到下方的範本:
+
+## GET
+
+```javascript
+var router = express.Router();
+
+router.get('/', function(req, res, next) {
+  res.send('要回應給客戶的內容');
+});
+```
+
+## POST
+
+```javascript
+var router = express.Router();
+
+router.post('/', function(req, res, next) {
+  res.send('要回應給客戶的內容');
+});
+```
+
+## PUT
+
+```javascript
+var router = express.Router();
+
+router.put('/', function(req, res, next) {
+  res.send('要回應給客戶的內容');
+});
+```
+
+## DELETE
+
+```javascript
+var router = express.Router();
+
+router.delete('/', function(req, res, next) {
+  res.send('要回應給客戶的內容');
+});
+```
+
+## 設定特定的網頁路徑
+
+例如我們要用
+
+```
+網址/home/test
+```
+來當作我們的路徑，路由可以這樣寫:
+
+```javascript
+var router = express.Router();
+
+router.get('/home/test', function(req, res, next) {
+  res.send('要回應給客戶的內容');
+});
+```
+
+[回到目錄](#目錄)
+
+# Express中的路由參數傳遞
+
+## 取得在URL路徑中的參數傳遞
+
+假如我們要買書，並且要買001號書，在一般的get參數傳遞會是這樣:
+
+```
+網址?book=001
+```
+
+但如果我們希望可以用路徑式的方式來傳遞參數
+
+```
+網址/book/001
+```
+
+就可以用以下的方式。
+
+我們首先修改routes/index.js
+
+```javascript
+var express = require('express');
+var router = express.Router();
+
+router.get('/book/:parameter1', function(req, res, next) {
+  res.send("你輸入的是"+req.params.parameter1);
+});
+
+module.exports = router;
+
+```
+
+其中
+
+```
+req.params.parameter1
+```
+
+會回傳我們在網址列路徑中輸入的參數
+
+這時候我們存取這個網址
+
+```
+http://127.0.0.1:3000/book/001
+```
+
+就可以看到
+
+```
+你輸入的是001
+```
+
+## 取得傳統的GET/POST參數
+
+若要用GET方式傳遞參數，整段程式都不用改，如下即可。
+
+routes/index.js
+```javascript
+var express = require('express');
+var router = express.Router();
+
+router.get('/book/:parameter1', function(req, res, next) {
+  res.send("你輸入的是"+req.params.parameter1);
+});
+
+module.exports = router;
+
+```
+
+而參數傳遞時則用
+
+```
+http://127.0.0.1:3000?book=001
+```
+
+而POST亦然，只是請求方式改成POST而已。
+
+## Express中取得參數的幾種方法
+
+| 語法 | 描述 |
+| :----: | :----: |
+| req.body | POST中主要資訊於body中的內容。 |
+| req.query | GET/POST中的參數。 |
+| req.params | GET/POST與URL路徑式的參數傳遞的內容。 |
+
+[回到目錄](#目錄)
+
+# Express中的回應客戶的方法
+
+## res.send
+
+這種方法可以回傳字串與陣列
+
+### 字串
+
+routes/index.js
+```javascript
+var express = require('express');
+var router = express.Router();
+
+router.get('/', function(req, res, next) {
+  res.send("天氣晴朗");
+});
+
+module.exports = router;
+```
+
+### 陣列
+
+routes/index.js
+```javascript
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.send(["天氣","晴朗"])
+});
+
+module.exports = router;
+```
+
+## res.json
+
+這種方法用於回應json格式，非常適合在設計API時使用。
+
+routes/index.js
+```javascript
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.json({"狗狗":"汪汪","貓咪":"喵喵"})
+});
+
+module.exports = router;
+```
+
 
 [回到目錄](#目錄)
