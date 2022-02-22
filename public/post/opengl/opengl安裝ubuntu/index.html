@@ -7,7 +7,7 @@
     <title>opengl安裝(Ubuntu) | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="1.Linux版本 此範例用在Ubuntu20.04 2.apt安裝opengl 安裝OpenGL與相關依賴 sudo apt install cmake make g&#43;&#43; libx11-dev libgl1-mesa-dev libglu1-mesa-dev libxrandr-dev libxext-dev libglew-dev libglfw3 libglfw3-dev freeglut3-dev freeglut3 這邊主">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="opengl安裝(Ubuntu)" />
 <meta property="og:description" content="1.Linux版本 此範例用在Ubuntu20.04 2.apt安裝opengl 安裝OpenGL與相關依賴 sudo apt install cmake make g&#43;&#43; libx11-dev libgl1-mesa-dev libglu1-mesa-dev libxrandr-dev libxext-dev libglew-dev libglfw3 libglfw3-dev freeglut3-dev freeglut3 這邊主" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/opengl/opengl%E5%AE%89%E8%A3%9Dubuntu/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/opengl/opengl%E5%AE%89%E8%A3%9Dubuntu/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-09-29T09:00:44+08:00" />
 <meta property="article:modified_time" content="2021-09-29T09:00:44+08:00" />
+
 <meta itemprop="name" content="opengl安裝(Ubuntu)">
-<meta itemprop="description" content="1.Linux版本 此範例用在Ubuntu20.04 2.apt安裝opengl 安裝OpenGL與相關依賴 sudo apt install cmake make g&#43;&#43; libx11-dev libgl1-mesa-dev libglu1-mesa-dev libxrandr-dev libxext-dev libglew-dev libglfw3 libglfw3-dev freeglut3-dev freeglut3 這邊主">
-<meta itemprop="datePublished" content="2021-09-29T09:00:44&#43;08:00" />
-<meta itemprop="dateModified" content="2021-09-29T09:00:44&#43;08:00" />
+<meta itemprop="description" content="1.Linux版本 此範例用在Ubuntu20.04 2.apt安裝opengl 安裝OpenGL與相關依賴 sudo apt install cmake make g&#43;&#43; libx11-dev libgl1-mesa-dev libglu1-mesa-dev libxrandr-dev libxext-dev libglew-dev libglfw3 libglfw3-dev freeglut3-dev freeglut3 這邊主"><meta itemprop="datePublished" content="2021-09-29T09:00:44+08:00" />
+<meta itemprop="dateModified" content="2021-09-29T09:00:44+08:00" />
 <meta itemprop="wordCount" content="690">
-
-
-
 <meta itemprop="keywords" content="opengl," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="opengl安裝(Ubuntu)"/>
 <meta name="twitter:description" content="1.Linux版本 此範例用在Ubuntu20.04 2.apt安裝opengl 安裝OpenGL與相關依賴 sudo apt install cmake make g&#43;&#43; libx11-dev libgl1-mesa-dev libglu1-mesa-dev libxrandr-dev libxext-dev libglew-dev libglfw3 libglfw3-dev freeglut3-dev freeglut3 這邊主"/>
@@ -252,11 +249,11 @@
 <p>此範例用在Ubuntu20.04</p>
 <h2 id="2apt安裝opengl">2.apt安裝opengl</h2>
 <p>安裝OpenGL與相關依賴</p>
-<pre><code>sudo apt install cmake make g++ libx11-dev libgl1-mesa-dev libglu1-mesa-dev libxrandr-dev libxext-dev  libglew-dev libglfw3 libglfw3-dev freeglut3-dev freeglut3
+<pre tabindex="0"><code>sudo apt install cmake make g++ libx11-dev libgl1-mesa-dev libglu1-mesa-dev libxrandr-dev libxext-dev  libglew-dev libglfw3 libglfw3-dev freeglut3-dev freeglut3
 </code></pre><p>這邊主要使用的是glut<br>
 如果確定需要的套件都有的話<br>
 可以只輸入下列指令即可</p>
-<pre><code>sudo apt install  freeglut3-dev freeglut3
+<pre tabindex="0"><code>sudo apt install  freeglut3-dev freeglut3
 </code></pre><p>此處附上維基百科的解釋</p>
 <blockquote>
 <p>GLUT（英文全寫：OpenGL Utility Toolkit）是一個處理OpenGL程式的工具庫，負責處理和底層作業系統的呼叫以及I/O，並包括了以下常見的功能：
@@ -267,7 +264,7 @@
 </blockquote>
 <h2 id="3畫出一個視窗裡頭有正方形">3.畫出一個視窗裡頭有正方形</h2>
 <h3 id="maincpp">main.cpp</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">//sudo apt-get install freeglut3-dev freeglut3
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">//sudo apt-get install freeglut3-dev freeglut3
 </span><span style="color:#75715e">//gcc main.cpp  -o OutPut -lGL -lGLU -lglut
 </span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
@@ -297,18 +294,18 @@
 
 </code></pre></div><h2 id="4編譯指令">4.編譯指令</h2>
 <p>編譯完畢後檔名是OutPut</p>
-<pre><code>gcc main.cpp  -o OutPut -lGL -lGLU -lglut
+<pre tabindex="0"><code>gcc main.cpp  -o OutPut -lGL -lGLU -lglut
 </code></pre><h2 id="5執行">5.執行</h2>
-<pre><code>./OutPut
+<pre tabindex="0"><code>./OutPut
 </code></pre><h2 id="6可能的錯誤">6.可能的錯誤</h2>
 <h3 id="錯誤情況1">錯誤情況1</h3>
-<pre><code>/usr/bin/ld: /tmp/cc5TTO9z.o: undefined reference to symbol 'sqrt@@GLIBC_2.2.5'
+<pre tabindex="0"><code>/usr/bin/ld: /tmp/cc5TTO9z.o: undefined reference to symbol 'sqrt@@GLIBC_2.2.5'
 /usr/bin/ld: /lib/x86_64-linux-gnu/libm.so.6: error adding symbols: DSO missing from command line
 collect2: error: ld returned 1 exit status
 
 </code></pre><p>解決方式：
 編譯指令增加-lm</p>
-<pre><code>gcc ./main.c  -o OutPut -lGL -lGLU -lglut -lm
+<pre tabindex="0"><code>gcc ./main.c  -o OutPut -lGL -lGLU -lglut -lm
 </code></pre><ul class="pa0">
   
    <li class="list">

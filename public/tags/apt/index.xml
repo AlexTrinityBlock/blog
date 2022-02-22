@@ -6,11 +6,7 @@
     <description>Recent content in apt on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Wed, 02 Jun 2021 13:29:36 +0800</lastBuildDate>
-    
-	<atom:link href="https://alextrinityblock.github.io/blog/public/tags/apt/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 02 Jun 2021 13:29:36 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/apt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>清理apt暫時存檔</title>
       <link>https://alextrinityblock.github.io/blog/public/post/linux/%E6%B8%85%E7%90%86apt%E6%9A%AB%E6%99%82%E5%AD%98%E6%AA%94/</link>

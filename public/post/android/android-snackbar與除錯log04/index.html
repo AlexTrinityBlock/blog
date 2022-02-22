@@ -7,7 +7,7 @@
     <title>Android snackbar與除錯log04 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="1.目標 各種程式語言在執行的時候都可以看到一些log，方便我們除錯與對程式進行調整。 Android上也存在著顯示log的工具。 除此之外，還有">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="Android snackbar與除錯log04" />
 <meta property="og:description" content="1.目標 各種程式語言在執行的時候都可以看到一些log，方便我們除錯與對程式進行調整。 Android上也存在著顯示log的工具。 除此之外，還有" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/android/android-snackbar%E8%88%87%E9%99%A4%E9%8C%AFlog04/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/android/android-snackbar%E8%88%87%E9%99%A4%E9%8C%AFlog04/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-09-10T09:00:44+08:00" />
 <meta property="article:modified_time" content="2021-09-10T09:00:44+08:00" />
+
 <meta itemprop="name" content="Android snackbar與除錯log04">
-<meta itemprop="description" content="1.目標 各種程式語言在執行的時候都可以看到一些log，方便我們除錯與對程式進行調整。 Android上也存在著顯示log的工具。 除此之外，還有">
-<meta itemprop="datePublished" content="2021-09-10T09:00:44&#43;08:00" />
-<meta itemprop="dateModified" content="2021-09-10T09:00:44&#43;08:00" />
+<meta itemprop="description" content="1.目標 各種程式語言在執行的時候都可以看到一些log，方便我們除錯與對程式進行調整。 Android上也存在著顯示log的工具。 除此之外，還有"><meta itemprop="datePublished" content="2021-09-10T09:00:44+08:00" />
+<meta itemprop="dateModified" content="2021-09-10T09:00:44+08:00" />
 <meta itemprop="wordCount" content="337">
-
-
-
 <meta itemprop="keywords" content="android," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Android snackbar與除錯log04"/>
 <meta name="twitter:description" content="1.目標 各種程式語言在執行的時候都可以看到一些log，方便我們除錯與對程式進行調整。 Android上也存在著顯示log的工具。 除此之外，還有"/>
@@ -255,7 +252,7 @@ Android上也存在著顯示log的工具。</p>
 這個功能稱為snackbar。</p>
 <h1 id="2log">2.log</h1>
 <p>log需要引入的類別：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> android.util.Log<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> android.util.Log<span style="color:#f92672">;</span>
 </code></pre></div><p>log分為幾種：</p>
 <ol>
 <li>Log.v():詳細模式</li>
@@ -265,9 +262,9 @@ Android上也存在著顯示log的工具。</p>
 <li>Log.e():錯誤顯示</li>
 </ol>
 <p>函數的參數有</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Log<span style="color:#f92672">.</span><span style="color:#a6e22e">i</span><span style="color:#f92672">(&lt;</span>標籤<span style="color:#960050;background-color:#1e0010">，</span>隨便取名<span style="color:#f92672">&gt;,&lt;</span>想要顯示的log訊息<span style="color:#f92672">&gt;);</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Log<span style="color:#f92672">.</span><span style="color:#a6e22e">i</span><span style="color:#f92672">(&lt;</span>標籤<span style="color:#960050;background-color:#1e0010">，</span>隨便取名<span style="color:#f92672">&gt;,&lt;</span>想要顯示的log訊息<span style="color:#f92672">&gt;);</span>
 </code></pre></div><p>實際應用</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.example.test1<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.example.test1<span style="color:#f92672">;</span>
 
 <span style="color:#f92672">import</span> androidx.appcompat.app.AppCompatActivity<span style="color:#f92672">;</span>
 
@@ -290,9 +287,9 @@ Android上也存在著顯示log的工具。</p>
 <span style="color:#f92672">}</span>
 </code></pre></div><h1 id="3snackbar">3.Snackbar</h1>
 <p>引入類別</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> com.google.android.material.snackbar.Snackbar<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> com.google.android.material.snackbar.Snackbar<span style="color:#f92672">;</span>
 </code></pre></div><p>具體使用方式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.example.test1<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.example.test1<span style="color:#f92672">;</span>
 
 <span style="color:#f92672">import</span> androidx.appcompat.app.AppCompatActivity<span style="color:#f92672">;</span>
 

@@ -7,7 +7,7 @@
     <title>Android長期保存資料於SharedPreferences03 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="1.目標 將資料存入Android的SharedPreferences，進行長期保存 官方文檔 https://developer.android.com/reference/android/content/SharedPreferences 2.前端 欄位： 文字輸入欄位(將資料存入Share">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="Android長期保存資料於SharedPreferences03" />
 <meta property="og:description" content="1.目標 將資料存入Android的SharedPreferences，進行長期保存 官方文檔 https://developer.android.com/reference/android/content/SharedPreferences 2.前端 欄位： 文字輸入欄位(將資料存入Share" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/android/android%E9%95%B7%E6%9C%9F%E4%BF%9D%E5%AD%98%E8%B3%87%E6%96%99%E6%96%BCsharedpreferences03/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/android/android%E9%95%B7%E6%9C%9F%E4%BF%9D%E5%AD%98%E8%B3%87%E6%96%99%E6%96%BCsharedpreferences03/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-09-09T15:00:44+08:00" />
 <meta property="article:modified_time" content="2021-09-09T15:00:44+08:00" />
+
 <meta itemprop="name" content="Android長期保存資料於SharedPreferences03">
-<meta itemprop="description" content="1.目標 將資料存入Android的SharedPreferences，進行長期保存 官方文檔 https://developer.android.com/reference/android/content/SharedPreferences 2.前端 欄位： 文字輸入欄位(將資料存入Share">
-<meta itemprop="datePublished" content="2021-09-09T15:00:44&#43;08:00" />
-<meta itemprop="dateModified" content="2021-09-09T15:00:44&#43;08:00" />
+<meta itemprop="description" content="1.目標 將資料存入Android的SharedPreferences，進行長期保存 官方文檔 https://developer.android.com/reference/android/content/SharedPreferences 2.前端 欄位： 文字輸入欄位(將資料存入Share"><meta itemprop="datePublished" content="2021-09-09T15:00:44+08:00" />
+<meta itemprop="dateModified" content="2021-09-09T15:00:44+08:00" />
 <meta itemprop="wordCount" content="1196">
-
-
-
 <meta itemprop="keywords" content="android," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Android長期保存資料於SharedPreferences03"/>
 <meta name="twitter:description" content="1.目標 將資料存入Android的SharedPreferences，進行長期保存 官方文檔 https://developer.android.com/reference/android/content/SharedPreferences 2.前端 欄位： 文字輸入欄位(將資料存入Share"/>
@@ -265,7 +262,7 @@
 <li>targetText</li>
 <li>button</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
 <span style="color:#f92672">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
     <span style="color:#a6e22e">xmlns:app=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
     <span style="color:#a6e22e">xmlns:tools=</span><span style="color:#e6db74">&#34;http://schemas.android.com/tools&#34;</span>
@@ -313,7 +310,7 @@
 
 </code></pre></div><h1 id="3後端">3.後端</h1>
 <p>之後是後端的實踐，其中有幾個點是要注意的，特別是權限：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.example.frontback<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.example.frontback<span style="color:#f92672">;</span>
 
 <span style="color:#f92672">import</span> androidx.appcompat.app.AppCompatActivity<span style="color:#f92672">;</span>
 
@@ -368,19 +365,19 @@
 <p>一般來說下載過Android Studio之後會一併下載Android SDK，而adb這個安卓調適工具就在Android SDK裡頭<br>
 至於具體adb在哪裡，請參考官方文檔</p>
 <p><a href="https://developer.android.com/studio/command-line/adb">https://developer.android.com/studio/command-line/adb</a></p>
-<pre><code>cd adb資料夾
+<pre tabindex="0"><code>cd adb資料夾
 </code></pre><p>由於我們剛剛是使用私有權限進行儲存的，所以需要先root才能看得到:</p>
-<pre><code>./adb root
+<pre tabindex="0"><code>./adb root
 </code></pre><p>取得權限之後登入設備</p>
-<pre><code>./adb shell
+<pre tabindex="0"><code>./adb shell
 </code></pre><p>如果有多台裝置，可以先調出裝置列表</p>
-<pre><code>adb devices 
+<pre tabindex="0"><code>adb devices 
 </code></pre><p>然後在進行登入</p>
-<pre><code>./adb -s &lt;剛剛看到的裝置名稱&gt; shell
+<pre tabindex="0"><code>./adb -s &lt;剛剛看到的裝置名稱&gt; shell
 </code></pre><p>我們來看看剛剛的檔案</p>
-<pre><code>cat /data/data/com.example.frontback/shared_prefs/exampleTester.xml                                                    
+<pre tabindex="0"><code>cat /data/data/com.example.frontback/shared_prefs/exampleTester.xml                                                    
 </code></pre><p>以下結果：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39; standalone=&#39;yes&#39; ?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39; standalone=&#39;yes&#39; ?&gt;</span>
 <span style="color:#f92672">&lt;map&gt;</span>
     <span style="color:#f92672">&lt;string</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Data&#34;</span><span style="color:#f92672">&gt;</span>I am data1<span style="color:#f92672">&lt;/string&gt;</span>
 <span style="color:#f92672">&lt;/map&gt;</span>

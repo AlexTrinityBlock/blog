@@ -7,7 +7,7 @@
     <title>opencv的第一個程式 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="1.要求 需要看懂，建議去看基礎的C&#43;&#43;教學。 2.main.cpp 我們首先建立一個檔案，稱為main.cpp 內含我們主要的C&#43;&#43;檔案 #include &lt;stdio.h&gt;#include &lt;opencv2/opencv.hpp&gt; using namespace cv; int main(int argc, char* argv[]) { // 檢">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="opencv的第一個程式" />
 <meta property="og:description" content="1.要求 需要看懂，建議去看基礎的C&#43;&#43;教學。 2.main.cpp 我們首先建立一個檔案，稱為main.cpp 內含我們主要的C&#43;&#43;檔案 #include &lt;stdio.h&gt;#include &lt;opencv2/opencv.hpp&gt; using namespace cv; int main(int argc, char* argv[]) { // 檢" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/opencv/opencv%E7%9A%84%E7%AC%AC%E4%B8%80%E5%80%8B%E7%A8%8B%E5%BC%8F/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/opencv/opencv%E7%9A%84%E7%AC%AC%E4%B8%80%E5%80%8B%E7%A8%8B%E5%BC%8F/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-09-22T09:10:44+08:00" />
 <meta property="article:modified_time" content="2021-09-22T09:10:44+08:00" />
+
 <meta itemprop="name" content="opencv的第一個程式">
-<meta itemprop="description" content="1.要求 需要看懂，建議去看基礎的C&#43;&#43;教學。 2.main.cpp 我們首先建立一個檔案，稱為main.cpp 內含我們主要的C&#43;&#43;檔案 #include &lt;stdio.h&gt;#include &lt;opencv2/opencv.hpp&gt; using namespace cv; int main(int argc, char* argv[]) { // 檢">
-<meta itemprop="datePublished" content="2021-09-22T09:10:44&#43;08:00" />
-<meta itemprop="dateModified" content="2021-09-22T09:10:44&#43;08:00" />
+<meta itemprop="description" content="1.要求 需要看懂，建議去看基礎的C&#43;&#43;教學。 2.main.cpp 我們首先建立一個檔案，稱為main.cpp 內含我們主要的C&#43;&#43;檔案 #include &lt;stdio.h&gt;#include &lt;opencv2/opencv.hpp&gt; using namespace cv; int main(int argc, char* argv[]) { // 檢"><meta itemprop="datePublished" content="2021-09-22T09:10:44+08:00" />
+<meta itemprop="dateModified" content="2021-09-22T09:10:44+08:00" />
 <meta itemprop="wordCount" content="476">
-
-
-
 <meta itemprop="keywords" content="opencv," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="opencv的第一個程式"/>
 <meta name="twitter:description" content="1.要求 需要看懂，建議去看基礎的C&#43;&#43;教學。 2.main.cpp 我們首先建立一個檔案，稱為main.cpp 內含我們主要的C&#43;&#43;檔案 #include &lt;stdio.h&gt;#include &lt;opencv2/opencv.hpp&gt; using namespace cv; int main(int argc, char* argv[]) { // 檢"/>
@@ -253,7 +250,7 @@
 <h2 id="2maincpp">2.main.cpp</h2>
 <p>我們首先建立一個檔案，稱為main.cpp
 內含我們主要的C++檔案</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;opencv2/opencv.hpp&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> cv;
@@ -292,24 +289,24 @@
 <p>當沒有CMake編譯工具的時候，最困擾我們的是，我們要用C++導入某個函數庫時，需要輸入長長一串g++指令，<br>
 並且會隨著編譯環境的差別(例如不同版本linux)，而出現差異。<br>
 我們首先可以安裝好CMake編譯工具。</p>
-<pre><code>sudo apt install cmake
+<pre tabindex="0"><code>sudo apt install cmake
 </code></pre><p>然後建立下列這個名為CMakeLists.txt的編譯文件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CMake" data-lang="CMake">cmake_minimum_required(<span style="color:#e6db74">VERSION</span> <span style="color:#e6db74">2.8</span>)<span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CMake" data-lang="CMake">cmake_minimum_required(<span style="color:#e6db74">VERSION</span> <span style="color:#e6db74">2.8</span>)<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>project( <span style="color:#e6db74">DisplayImage</span> )<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>find_package( <span style="color:#e6db74">OpenCV</span> <span style="color:#e6db74">REQUIRED</span> )<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>add_executable( <span style="color:#e6db74">Displayer</span> <span style="color:#e6db74">main.cpp</span> )<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>target_link_libraries( <span style="color:#e6db74">Displayer</span> <span style="color:#f92672">${</span>OpenCV_LIBS<span style="color:#f92672">}</span> )<span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>加上解釋版</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CMake" data-lang="CMake">cmake_minimum_required(<span style="color:#e6db74">VERSION</span> <span style="color:#e6db74">2.8</span>) <span style="color:#75715e">#最低要求版本
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CMake" data-lang="CMake">cmake_minimum_required(<span style="color:#e6db74">VERSION</span> <span style="color:#e6db74">2.8</span>) <span style="color:#75715e">#最低要求版本
 </span><span style="color:#75715e"></span>project( <span style="color:#e6db74">Displayer</span> ) <span style="color:#75715e">#專案名稱，稱為Displayer
 </span><span style="color:#75715e"></span>find_package( <span style="color:#e6db74">OpenCV</span> <span style="color:#e6db74">REQUIRED</span> ) <span style="color:#75715e">#尋找套件
 </span><span style="color:#75715e"></span>add_executable( <span style="color:#e6db74">Displayer</span> <span style="color:#e6db74">main.cpp</span> ) <span style="color:#75715e">#編譯後的檔案名稱稱為Displayer，來自main.cpp
 </span><span style="color:#75715e"></span>target_link_libraries( <span style="color:#e6db74">Displayer</span> <span style="color:#f92672">${</span>OpenCV_LIBS<span style="color:#f92672">}</span> )<span style="color:#75715e">#將檔案連結到OpenCV函數庫
 </span></code></pre></div><h2 id="4編譯指令">4.編譯指令</h2>
 <p>進入裝有檔案的資料夾</p>
-<pre><code>cmake . 
+<pre tabindex="0"><code>cmake . 
 </code></pre><p>進行編譯</p>
-<pre><code>make 
+<pre tabindex="0"><code>make 
 </code></pre><ul class="pa0">
   
    <li class="list">
