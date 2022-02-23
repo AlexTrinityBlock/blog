@@ -7,7 +7,7 @@
     <title>Vue筆記8.簡單使用組件 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Vue筆記8.簡單使用組件 vue框架對於重複使用網頁部件（例如按鈕，分隔線）提出了解決方案 這類重複使用部件內容有些複雜 以下先用最簡單但是無法">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.68.3" />
     
     
       
@@ -36,14 +36,17 @@
     <meta property="og:title" content="Vue筆記8.簡單使用組件" />
 <meta property="og:description" content="Vue筆記8.簡單使用組件 vue框架對於重複使用網頁部件（例如按鈕，分隔線）提出了解決方案 這類重複使用部件內容有些複雜 以下先用最簡單但是無法" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%988.%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8%E7%B5%84%E4%BB%B6/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%988.%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8%E7%B5%84%E4%BB%B6/" />
 <meta property="article:published_time" content="2021-03-16T00:45:10+08:00" />
 <meta property="article:modified_time" content="2021-03-16T00:45:10+08:00" />
-
 <meta itemprop="name" content="Vue筆記8.簡單使用組件">
-<meta itemprop="description" content="Vue筆記8.簡單使用組件 vue框架對於重複使用網頁部件（例如按鈕，分隔線）提出了解決方案 這類重複使用部件內容有些複雜 以下先用最簡單但是無法"><meta itemprop="datePublished" content="2021-03-16T00:45:10+08:00" />
-<meta itemprop="dateModified" content="2021-03-16T00:45:10+08:00" />
+<meta itemprop="description" content="Vue筆記8.簡單使用組件 vue框架對於重複使用網頁部件（例如按鈕，分隔線）提出了解決方案 這類重複使用部件內容有些複雜 以下先用最簡單但是無法">
+<meta itemprop="datePublished" content="2021-03-16T00:45:10&#43;08:00" />
+<meta itemprop="dateModified" content="2021-03-16T00:45:10&#43;08:00" />
 <meta itemprop="wordCount" content="386">
+
+
+
 <meta itemprop="keywords" content="vue,前端," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vue筆記8.簡單使用組件"/>
 <meta name="twitter:description" content="Vue筆記8.簡單使用組件 vue框架對於重複使用網頁部件（例如按鈕，分隔線）提出了解決方案 這類重複使用部件內容有些複雜 以下先用最簡單但是無法"/>
@@ -90,6 +93,12 @@
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/c/" title="c page">
               c
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/cicd/" title="CICD page">
+              CICD
             </a>
           </li>
           
@@ -250,7 +259,7 @@
 這類重複使用部件內容有些複雜<br>
 以下先用最簡單但是無法更改內容的方式展現<br>
 下個章節會提及如何動態改變內容</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;zh-hant-TW&#34;</span>&gt;
 
 &lt;<span style="color:#f92672">head</span>&gt;

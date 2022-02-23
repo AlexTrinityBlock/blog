@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CICD on 無面者小站</title>
+    <link>https://alextrinityblock.github.io/blog/public/tags/cicd/</link>
+    <description>Recent content in CICD on 無面者小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <lastBuildDate>Wed, 23 Feb 2022 00:00:44 +0800</lastBuildDate>
+    
+	<atom:link href="https://alextrinityblock.github.io/blog/public/tags/cicd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jenkins的docker容器</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/cicd/jenkins%E7%9A%84docker%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Wed, 23 Feb 2022 00:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/cicd/jenkins%E7%9A%84docker%E5%AE%B9%E5%99%A8/</guid>
+      <description>建立Jenkins容器 建立一個可以跟jenkins容器內部互通資料夾，我們稱為jenkins_volume mkdir jenkins_volume 下載jenkins的docke</description>
+    </item>
+    
+  </channel>
+</rss>

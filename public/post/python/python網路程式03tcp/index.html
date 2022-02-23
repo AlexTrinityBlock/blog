@@ -7,7 +7,7 @@
     <title>python網路程式03:tcp | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="本篇引用自Foundations of Python Network Programming一書 1.tcp通訊 import argparse, socket #如果長度不符預期，則發出錯誤提示 def recvall(sock, length): data = b&#39;&#39; while len(data) &lt; length: more">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.68.3" />
     
     
       
@@ -36,14 +36,17 @@
     <meta property="og:title" content="python網路程式03:tcp" />
 <meta property="og:description" content="本篇引用自Foundations of Python Network Programming一書 1.tcp通訊 import argparse, socket #如果長度不符預期，則發出錯誤提示 def recvall(sock, length): data = b&#39;&#39; while len(data) &lt; length: more" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F03tcp/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F03tcp/" />
 <meta property="article:published_time" content="2021-04-29T23:15:44+08:00" />
 <meta property="article:modified_time" content="2021-04-29T23:15:44+08:00" />
-
 <meta itemprop="name" content="python網路程式03:tcp">
-<meta itemprop="description" content="本篇引用自Foundations of Python Network Programming一書 1.tcp通訊 import argparse, socket #如果長度不符預期，則發出錯誤提示 def recvall(sock, length): data = b&#39;&#39; while len(data) &lt; length: more"><meta itemprop="datePublished" content="2021-04-29T23:15:44+08:00" />
-<meta itemprop="dateModified" content="2021-04-29T23:15:44+08:00" />
+<meta itemprop="description" content="本篇引用自Foundations of Python Network Programming一書 1.tcp通訊 import argparse, socket #如果長度不符預期，則發出錯誤提示 def recvall(sock, length): data = b&#39;&#39; while len(data) &lt; length: more">
+<meta itemprop="datePublished" content="2021-04-29T23:15:44&#43;08:00" />
+<meta itemprop="dateModified" content="2021-04-29T23:15:44&#43;08:00" />
 <meta itemprop="wordCount" content="400">
+
+
+
 <meta itemprop="keywords" content="python,network," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python網路程式03:tcp"/>
 <meta name="twitter:description" content="本篇引用自Foundations of Python Network Programming一書 1.tcp通訊 import argparse, socket #如果長度不符預期，則發出錯誤提示 def recvall(sock, length): data = b&#39;&#39; while len(data) &lt; length: more"/>
@@ -90,6 +93,12 @@
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/c/" title="c page">
               c
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/cicd/" title="CICD page">
+              CICD
             </a>
           </li>
           
@@ -247,7 +256,7 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>本篇引用自Foundations of Python Network Programming一書</p>
 <h1 id="1tcp通訊">1.tcp通訊</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> argparse<span style="color:#f92672">,</span> socket
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> argparse<span style="color:#f92672">,</span> socket
 
 <span style="color:#75715e">#如果長度不符預期，則發出錯誤提示</span>
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">recvall</span>(sock, length):
@@ -266,26 +275,26 @@
     sock<span style="color:#f92672">.</span>setsockopt(socket<span style="color:#f92672">.</span>SOL_SOCKET, socket<span style="color:#f92672">.</span>SO_REUSEADDR, <span style="color:#ae81ff">1</span>)
     sock<span style="color:#f92672">.</span>bind((interface, port))
     sock<span style="color:#f92672">.</span>listen(<span style="color:#ae81ff">1</span>)
-    print(<span style="color:#e6db74">&#39;Listening at&#39;</span>, sock<span style="color:#f92672">.</span>getsockname())
-    <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
-        print(<span style="color:#e6db74">&#39;Waiting to accept a new connection&#39;</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Listening at&#39;</span>, sock<span style="color:#f92672">.</span>getsockname())
+    <span style="color:#66d9ef">while</span> True:
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Waiting to accept a new connection&#39;</span>)
         sc, sockname <span style="color:#f92672">=</span> sock<span style="color:#f92672">.</span>accept()<span style="color:#75715e">#client的tcp同意了我們的連接</span>
-        print(<span style="color:#e6db74">&#39;We have accepted a connection from&#39;</span>, sockname)
-        print(<span style="color:#e6db74">&#39;  Socket name:&#39;</span>, sc<span style="color:#f92672">.</span>getsockname())
-        print(<span style="color:#e6db74">&#39;  Socket peer:&#39;</span>, sc<span style="color:#f92672">.</span>getpeername())
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;We have accepted a connection from&#39;</span>, sockname)
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;  Socket name:&#39;</span>, sc<span style="color:#f92672">.</span>getsockname())
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;  Socket peer:&#39;</span>, sc<span style="color:#f92672">.</span>getpeername())
         message <span style="color:#f92672">=</span> recvall(sc, <span style="color:#ae81ff">16</span>)<span style="color:#75715e">#接收傳輸內容16個bytes</span>
-        print(<span style="color:#e6db74">&#39;  Incoming sixteen-octet message:&#39;</span>, repr(message))<span style="color:#75715e">#顯示字串時同時顯示型態類別</span>
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;  Incoming sixteen-octet message:&#39;</span>, repr(message))<span style="color:#75715e">#顯示字串時同時顯示型態類別</span>
         sc<span style="color:#f92672">.</span>sendall(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;Farewell, client&#39;</span>)
         sc<span style="color:#f92672">.</span>close()<span style="color:#75715e">#關閉連線</span>
-        print(<span style="color:#e6db74">&#39;  Reply sent, socket closed&#39;</span>)
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;  Reply sent, socket closed&#39;</span>)
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">client</span>(host, port):
     sock <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span>socket(socket<span style="color:#f92672">.</span>AF_INET, socket<span style="color:#f92672">.</span>SOCK_STREAM)
     sock<span style="color:#f92672">.</span>connect((host, port))
-    print(<span style="color:#e6db74">&#39;Client has been assigned socket name&#39;</span>, sock<span style="color:#f92672">.</span>getsockname())
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Client has been assigned socket name&#39;</span>, sock<span style="color:#f92672">.</span>getsockname())
     sock<span style="color:#f92672">.</span>sendall(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;Hi there, server&#39;</span>)<span style="color:#75715e">#寄送內容</span>
     reply <span style="color:#f92672">=</span> recvall(sock, <span style="color:#ae81ff">16</span>)<span style="color:#75715e">#接收傳輸內容16個bytes</span>
-    print(<span style="color:#e6db74">&#39;The server said&#39;</span>, repr(reply))<span style="color:#75715e">#顯示字串時同時顯示型態類別</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;The server said&#39;</span>, repr(reply))<span style="color:#75715e">#顯示字串時同時顯示型態類別</span>
     sock<span style="color:#f92672">.</span>close()<span style="color:#75715e">#關閉連線</span>
 
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:

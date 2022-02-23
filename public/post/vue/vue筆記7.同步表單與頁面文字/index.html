@@ -7,7 +7,7 @@
     <title>Vue筆記7.同步表單與頁面文字 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Vue筆記7.同步表單與頁面文字 可以藉由v-model來同步輸入框與物件內的資料 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&l">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.68.3" />
     
     
       
@@ -36,14 +36,17 @@
     <meta property="og:title" content="Vue筆記7.同步表單與頁面文字" />
 <meta property="og:description" content="Vue筆記7.同步表單與頁面文字 可以藉由v-model來同步輸入框與物件內的資料 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&l" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%987.%E5%90%8C%E6%AD%A5%E8%A1%A8%E5%96%AE%E8%88%87%E9%A0%81%E9%9D%A2%E6%96%87%E5%AD%97/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%987.%E5%90%8C%E6%AD%A5%E8%A1%A8%E5%96%AE%E8%88%87%E9%A0%81%E9%9D%A2%E6%96%87%E5%AD%97/" />
 <meta property="article:published_time" content="2021-03-16T00:06:55+08:00" />
 <meta property="article:modified_time" content="2021-03-16T00:06:55+08:00" />
-
 <meta itemprop="name" content="Vue筆記7.同步表單與頁面文字">
-<meta itemprop="description" content="Vue筆記7.同步表單與頁面文字 可以藉由v-model來同步輸入框與物件內的資料 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&l"><meta itemprop="datePublished" content="2021-03-16T00:06:55+08:00" />
-<meta itemprop="dateModified" content="2021-03-16T00:06:55+08:00" />
+<meta itemprop="description" content="Vue筆記7.同步表單與頁面文字 可以藉由v-model來同步輸入框與物件內的資料 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&l">
+<meta itemprop="datePublished" content="2021-03-16T00:06:55&#43;08:00" />
+<meta itemprop="dateModified" content="2021-03-16T00:06:55&#43;08:00" />
 <meta itemprop="wordCount" content="179">
+
+
+
 <meta itemprop="keywords" content="vue,前端," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vue筆記7.同步表單與頁面文字"/>
 <meta name="twitter:description" content="Vue筆記7.同步表單與頁面文字 可以藉由v-model來同步輸入框與物件內的資料 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&l"/>
@@ -90,6 +93,12 @@
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/c/" title="c page">
               c
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/cicd/" title="CICD page">
+              CICD
             </a>
           </li>
           
@@ -247,7 +256,7 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="vue筆記7同步表單與頁面文字">Vue筆記7.同步表單與頁面文字</h1>
 <p>可以藉由v-model來同步輸入框與物件內的資料</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;zh-hant-TW&#34;</span>&gt;
 
 &lt;<span style="color:#f92672">head</span>&gt;

@@ -6,7 +6,11 @@
     <description>Recent content in ssd on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Mon, 01 Mar 2021 11:24:26 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/ssd/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Mar 2021 11:24:26 +0800</lastBuildDate>
+    
+	<atom:link href="https://alextrinityblock.github.io/blog/public/tags/ssd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Linux在SSD上的損耗減少策略2(關閉系統紀錄)</title>
       <link>https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/</link>

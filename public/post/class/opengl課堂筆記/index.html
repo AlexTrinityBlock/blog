@@ -7,7 +7,7 @@
     <title>OpenGL課堂筆記 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="目錄 第一週 推薦書 Edward Angel and Dave Shreiner, Interactive Computer Graphics: A Top-Down Approach With Shader-Based Opengl, 6th Edition, Addison-Wesley Pub. Co., April 10, 2011. ISBN：978-0132545235. Edward Angel and Dave Shreiner, Interactive Computer Graphics: A Top-Down Approach Using WebGL, 7th Edition, Addison-Wesley Pub. Co., March 10,">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.68.3" />
     
     
       
@@ -36,14 +36,17 @@
     <meta property="og:title" content="OpenGL課堂筆記" />
 <meta property="og:description" content="目錄 第一週 推薦書 Edward Angel and Dave Shreiner, Interactive Computer Graphics: A Top-Down Approach With Shader-Based Opengl, 6th Edition, Addison-Wesley Pub. Co., April 10, 2011. ISBN：978-0132545235. Edward Angel and Dave Shreiner, Interactive Computer Graphics: A Top-Down Approach Using WebGL, 7th Edition, Addison-Wesley Pub. Co., March 10," />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/class/opengl%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/class/opengl%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/" />
 <meta property="article:published_time" content="2021-10-07T10:00:49+08:00" />
 <meta property="article:modified_time" content="2021-10-07T10:00:49+08:00" />
-
 <meta itemprop="name" content="OpenGL課堂筆記">
-<meta itemprop="description" content="目錄 第一週 推薦書 Edward Angel and Dave Shreiner, Interactive Computer Graphics: A Top-Down Approach With Shader-Based Opengl, 6th Edition, Addison-Wesley Pub. Co., April 10, 2011. ISBN：978-0132545235. Edward Angel and Dave Shreiner, Interactive Computer Graphics: A Top-Down Approach Using WebGL, 7th Edition, Addison-Wesley Pub. Co., March 10,"><meta itemprop="datePublished" content="2021-10-07T10:00:49+08:00" />
-<meta itemprop="dateModified" content="2021-10-07T10:00:49+08:00" />
+<meta itemprop="description" content="目錄 第一週 推薦書 Edward Angel and Dave Shreiner, Interactive Computer Graphics: A Top-Down Approach With Shader-Based Opengl, 6th Edition, Addison-Wesley Pub. Co., April 10, 2011. ISBN：978-0132545235. Edward Angel and Dave Shreiner, Interactive Computer Graphics: A Top-Down Approach Using WebGL, 7th Edition, Addison-Wesley Pub. Co., March 10,">
+<meta itemprop="datePublished" content="2021-10-07T10:00:49&#43;08:00" />
+<meta itemprop="dateModified" content="2021-10-07T10:00:49&#43;08:00" />
 <meta itemprop="wordCount" content="2182">
+
+
+
 <meta itemprop="keywords" content="OpenGL," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="OpenGL課堂筆記"/>
 <meta name="twitter:description" content="目錄 第一週 推薦書 Edward Angel and Dave Shreiner, Interactive Computer Graphics: A Top-Down Approach With Shader-Based Opengl, 6th Edition, Addison-Wesley Pub. Co., April 10, 2011. ISBN：978-0132545235. Edward Angel and Dave Shreiner, Interactive Computer Graphics: A Top-Down Approach Using WebGL, 7th Edition, Addison-Wesley Pub. Co., March 10,"/>
@@ -90,6 +93,12 @@
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/c/" title="c page">
               c
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/cicd/" title="CICD page">
+              CICD
             </a>
           </li>
           
@@ -259,11 +268,11 @@
 <h1 id="第一週">第一週</h1>
 <h2 id="畫出四個點">畫出四個點</h2>
 <p>Ubuntu上頭安裝OpenGL的指令。</p>
-<pre tabindex="0"><code>sudo apt-get install freeglut3-dev freeglut3
+<pre><code>sudo apt-get install freeglut3-dev freeglut3
 </code></pre><h4 id="主程式">主程式</h4>
 <p>繪製出四個點的程式<br>
 main.cpp</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">displayMe</span>(<span style="color:#66d9ef">void</span>)
 {
@@ -306,27 +315,27 @@ main.cpp</p>
 }
 </code></pre></div><p>接著我會分段說明，這四個點的繪製相關原理。</p>
 <p>當要開始繪製時，要先用</p>
-<pre tabindex="0"><code>glBegin(GL_POINTS);
+<pre><code>glBegin(GL_POINTS);
 &lt;要畫的內容&gt;
 glEnd();
 </code></pre><h4 id="顏色與點座標">顏色與點座標</h4>
 <p>左上角的那個點是綠色，所以我們將顏色進行賦予。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glColor3f(<span style="color:#ae81ff">0.0f</span>, <span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.0f</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glColor3f(<span style="color:#ae81ff">0.0f</span>, <span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.0f</span>);
 </code></pre></div><p>並且座標是(-10,-10)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glVertex2f(<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glVertex2f(<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>);
 </code></pre></div><h4 id="攝影機左右邊界">攝影機左右邊界</h4>
 <p>由於沒有特別設置下，攝影機會離目標物體非常近，所以我們將攝影機拍攝範圍拉大。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glOrtho(<span style="color:#960050;background-color:#1e0010">攝影機從中心點到左邊的距離</span>,<span style="color:#960050;background-color:#1e0010">中心點到左邊的距離</span>,<span style="color:#960050;background-color:#1e0010">中心點到下面的距離</span>,<span style="color:#960050;background-color:#1e0010">中心點到上面的距離</span>,<span style="color:#960050;background-color:#1e0010">近</span>,<span style="color:#960050;background-color:#1e0010">遠</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glOrtho(<span style="color:#960050;background-color:#1e0010">攝影機從中心點到左邊的距離</span>,<span style="color:#960050;background-color:#1e0010">中心點到左邊的距離</span>,<span style="color:#960050;background-color:#1e0010">中心點到下面的距離</span>,<span style="color:#960050;background-color:#1e0010">中心點到上面的距離</span>,<span style="color:#960050;background-color:#1e0010">近</span>,<span style="color:#960050;background-color:#1e0010">遠</span>);
 </code></pre></div><p>由於我們是個2D圖形，所以遠近中，只要遠不要是0，則可以輸入任意數值，不會發生改變。</p>
 <p>我們如果將右側攝影機派社範圍調整成0，就是能拍攝到左側的影像，所以只會有兩個點:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"> glOrtho(<span style="color:#f92672">-</span><span style="color:#ae81ff">20.0</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">20.0</span>, <span style="color:#ae81ff">20.0</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"> glOrtho(<span style="color:#f92672">-</span><span style="color:#ae81ff">20.0</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">20.0</span>, <span style="color:#ae81ff">20.0</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>);
 </code></pre></div><p>我們如果將左側攝影機派社範圍調整成0，就是能拍攝到右側的影像，所以也只會有右邊兩個點:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"> glOrtho(<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">20.0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">20.0</span>, <span style="color:#ae81ff">20.0</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"> glOrtho(<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">20.0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">20.0</span>, <span style="color:#ae81ff">20.0</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>);
 </code></pre></div><p>上下側的攝影機也是同樣道理。</p>
 <h2 id="繪製線條gl_lines">繪製線條GL_LINES</h2>
 <p>我們接著來繪製一條線條<br>
 GL_LINES會將美兩個座標視為一條線。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">displayMe</span>(<span style="color:#66d9ef">void</span>)
 {
@@ -363,20 +372,20 @@ GL_LINES會將美兩個座標視為一條線。</p>
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
 </code></pre></div><p>在繪製線條之前我們記得先定義好線條的寬度，在這裡設置50</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glLineWidth(<span style="color:#ae81ff">50.0</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glLineWidth(<span style="color:#ae81ff">50.0</span>);
 </code></pre></div><p>並且我們在開始繪製的地方，聲明要進行線條繪製</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glBegin(GL_LINES);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glBegin(GL_LINES);
 </code></pre></div><p>由於線條是由兩個點構成的，所以繪製線條的方式，就是定義兩個點，然後中先的線條與顏色就會自動補上。<br>
 此處我們第一個點設置紅色，位置在(0,10)<br>
 此處我們第二個點設置紅色，位置在(0,-10)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glColor3f(<span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.0f</span>, <span style="color:#ae81ff">0.0f</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glColor3f(<span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.0f</span>, <span style="color:#ae81ff">0.0f</span>);
 glVertex2f(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">10</span>);
 glColor3f(<span style="color:#ae81ff">0.0f</span>, <span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.0f</span>);
 glVertex2f(<span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>);
 </code></pre></div><p>這樣就會在畫面中央出現一條，由上(y=10)到下方(y=-10)，位於畫面中央(x=0)，由紅色漸變為綠色的線條了。</p>
 <h2 id="繪製線條gl_line_strip">繪製線條GL_LINE_STRIP</h2>
 <p>GL_LINE_STRIP與LINES有點類似，但是不同在於，當輸入第三個座標點時，GL_LINE_STRIP會將其解釋為一連串的點連線，而LINE則需要再定義一個點才能夠完成兩點連線。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">displayMe</span>(<span style="color:#66d9ef">void</span>)
 {
@@ -417,7 +426,7 @@ glVertex2f(<span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</s
 
 </code></pre></div><h2 id="繪製線條gl_line_loop">繪製線條GL_LINE_LOOP</h2>
 <p>GL_LINE_LOOP會將所以的點進行連線，形成一個環形的物體，例如我們下方定義三個點，他將會被圍起來組成一個三角形。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">//sudo apt-get install freeglut3-dev freeglut3
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">//sudo apt-get install freeglut3-dev freeglut3
 </span><span style="color:#75715e">//gcc main.cpp  -o OutPut -lGL -lGLU -lglut
 </span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
@@ -460,7 +469,7 @@ glVertex2f(<span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</s
 </code></pre></div><h2 id="繪製點狀線條-gl_line_stipple">繪製點狀線條 GL_LINE_STIPPLE</h2>
 <p>Stipple 就是點畫的意思。
 我們可以對於圖形啟動點畫功能。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">displayMe</span>(<span style="color:#66d9ef">void</span>)
 {
@@ -503,7 +512,7 @@ glVertex2f(<span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</s
 }
 </code></pre></div><h2 id="繪製三角形-gl_triangles">繪製三角形 GL_TRIANGLES</h2>
 <p>給三個座標點即可繪製三角形。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">displayMe</span>(<span style="color:#66d9ef">void</span>)
 {
@@ -546,7 +555,7 @@ glVertex2f(<span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</s
 </code></pre></div><h2 id="繪製相黏折疊的三角形-gl_triangle_strip">繪製相黏折疊的三角形 GL_TRIANGLE_STRIP</h2>
 <p>當我們輸入四個點，但是卻用GL_TRIANGLES的三角行時，第四個點會被忽略。
 GL_TRIANGLE_STRIP則可以將每個點視為相黏的三角形，進而創造複雜的三角形圖形。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">displayMe</span>(<span style="color:#66d9ef">void</span>)
 {
@@ -592,8 +601,8 @@ GL_TRIANGLE_STRIP則可以將每個點視為相黏的三角形，進而創造複
 </code></pre></div><h2 id="繪製相黏的扇狀三角形-gl_triangle_fan">繪製相黏的扇狀三角形 GL_TRIANGLE_FAN</h2>
 <p>這個功能與上一篇的GL_TRIANGLE_STRIP有點類似，但是同樣的點，生成三角形的模式不太一樣，GL_TRIANGLE_FAN將會蒐集每個點生成扇形的三角形。</p>
 <p>我們此處特地簍空來看看它的扇形三角形的結構，以下為簍空的函數。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">displayMe</span>(<span style="color:#66d9ef">void</span>)
 {
@@ -643,7 +652,7 @@ GL_TRIANGLE_STRIP則可以將每個點視為相黏的三角形，進而創造複
 }
 </code></pre></div><h2 id="繪製數個分離的矩形-gl_quads">繪製數個分離的矩形 GL_QUADS</h2>
 <p>GL_QUADS會將每四個解釋為一個矩形，進而會出多個矩形。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">displayMe</span>(<span style="color:#66d9ef">void</span>)
 {
@@ -705,7 +714,7 @@ GL_TRIANGLE_STRIP則可以將每個點視為相黏的三角形，進而創造複
 }
 </code></pre></div><h2 id="混合線條與分離的矩形">混合線條與分離的矩形</h2>
 <p>似乎可以用不同的 <strong>glBegin()</strong> 與 <strong>glEnd()</strong> 來繪製出混何不同形狀的產物。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">//sudo apt-get install freeglut3-dev freeglut3
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">//sudo apt-get install freeglut3-dev freeglut3
 </span><span style="color:#75715e">//gcc main.cpp  -o OutPut -lGL -lGLU -lglut
 </span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
@@ -783,7 +792,7 @@ GL_TRIANGLE_STRIP則可以將每個點視為相黏的三角形，進而創造複
 </code></pre></div><h2 id="相黏的矩形組-gl_quad_strip">相黏的矩形組 GL_QUAD_STRIP</h2>
 <p>GL_QUAD_STRIP這個形狀，會將數個不同的座標視為黏合在一起的矩形。<br>
 所以我們建立兩個矩形之後，中間會產生兩條線段，將其連接。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">displayMe</span>(<span style="color:#66d9ef">void</span>)
 {
@@ -854,7 +863,7 @@ GL_TRIANGLE_STRIP則可以將每個點視為相黏的三角形，進而創造複
 }
 </code></pre></div><h2 id="多邊形-gl_polygon">多邊形 GL_POLYGON</h2>
 <p>會按照順序，將選到的點串成多邊形。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">displayMe</span>(<span style="color:#66d9ef">void</span>)
 {

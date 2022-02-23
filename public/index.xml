@@ -6,7 +6,20 @@
     <description>Recent content in 一個凡人的筆記 on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Fri, 26 Feb 2021 17:04:06 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Feb 2021 17:04:06 +0800</lastBuildDate>
+    
+	<atom:link href="https://alextrinityblock.github.io/blog/public/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jenkins的docker容器</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/cicd/jenkins%E7%9A%84docker%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Wed, 23 Feb 2022 00:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/cicd/jenkins%E7%9A%84docker%E5%AE%B9%E5%99%A8/</guid>
+      <description>建立Jenkins容器 建立一個可以跟jenkins容器內部互通資料夾，我們稱為jenkins_volume mkdir jenkins_volume 下載jenkins的docke</description>
+    </item>
+    
     <item>
       <title>將ASP.net部屬到Azure的AppService</title>
       <link>https://alextrinityblock.github.io/blog/public/post/asp.net/%E5%B0%87asp.net%E9%83%A8%E5%B1%AC%E5%88%B0azure%E7%9A%84appservice/</link>

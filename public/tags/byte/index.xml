@@ -6,7 +6,11 @@
     <description>Recent content in byte on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Sat, 15 May 2021 00:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/byte/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 May 2021 00:00:44 +0800</lastBuildDate>
+    
+	<atom:link href="https://alextrinityblock.github.io/blog/public/tags/byte/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>python與byte串與網路</title>
       <link>https://alextrinityblock.github.io/blog/public/post/python/python%E8%88%87%E5%AD%97%E5%85%83%E4%B8%B2/</link>

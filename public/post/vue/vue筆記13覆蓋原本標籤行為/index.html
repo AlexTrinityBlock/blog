@@ -7,7 +7,7 @@
     <title>Vue筆記13覆蓋原本標籤行為 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Vue筆記13覆蓋原本標籤行為 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;tag01&#34;&gt; &lt;div&gt; {{ message01 }}&lt;/div&gt; &lt;!">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.68.3" />
     
     
       
@@ -36,14 +36,17 @@
     <meta property="og:title" content="Vue筆記13覆蓋原本標籤行為" />
 <meta property="og:description" content="Vue筆記13覆蓋原本標籤行為 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;tag01&#34;&gt; &lt;div&gt; {{ message01 }}&lt;/div&gt; &lt;!" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9813%E8%A6%86%E8%93%8B%E5%8E%9F%E6%9C%AC%E6%A8%99%E7%B1%A4%E8%A1%8C%E7%82%BA/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9813%E8%A6%86%E8%93%8B%E5%8E%9F%E6%9C%AC%E6%A8%99%E7%B1%A4%E8%A1%8C%E7%82%BA/" />
 <meta property="article:published_time" content="2021-03-18T20:50:44+08:00" />
 <meta property="article:modified_time" content="2021-03-18T20:50:44+08:00" />
-
 <meta itemprop="name" content="Vue筆記13覆蓋原本標籤行為">
-<meta itemprop="description" content="Vue筆記13覆蓋原本標籤行為 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;tag01&#34;&gt; &lt;div&gt; {{ message01 }}&lt;/div&gt; &lt;!"><meta itemprop="datePublished" content="2021-03-18T20:50:44+08:00" />
-<meta itemprop="dateModified" content="2021-03-18T20:50:44+08:00" />
+<meta itemprop="description" content="Vue筆記13覆蓋原本標籤行為 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;tag01&#34;&gt; &lt;div&gt; {{ message01 }}&lt;/div&gt; &lt;!">
+<meta itemprop="datePublished" content="2021-03-18T20:50:44&#43;08:00" />
+<meta itemprop="dateModified" content="2021-03-18T20:50:44&#43;08:00" />
 <meta itemprop="wordCount" content="180">
+
+
+
 <meta itemprop="keywords" content="vue,前端," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vue筆記13覆蓋原本標籤行為"/>
 <meta name="twitter:description" content="Vue筆記13覆蓋原本標籤行為 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-hant-TW&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;title&gt;簡化版Vue學習&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;tag01&#34;&gt; &lt;div&gt; {{ message01 }}&lt;/div&gt; &lt;!"/>
@@ -90,6 +93,12 @@
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/c/" title="c page">
               c
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/cicd/" title="CICD page">
+              CICD
             </a>
           </li>
           
@@ -246,7 +255,7 @@
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="vue筆記13覆蓋原本標籤行為">Vue筆記13覆蓋原本標籤行為</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;zh-hant-TW&#34;</span>&gt;
 
 &lt;<span style="color:#f92672">head</span>&gt;
