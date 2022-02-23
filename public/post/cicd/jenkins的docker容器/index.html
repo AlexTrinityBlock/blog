@@ -43,7 +43,7 @@
 <meta itemprop="description" content="建立Jenkins容器 運作docker容器 docker run \ -u root \ -p 8080:8080 \ -v jenkins-data:/var/jenkins_home \ -v /var/run/docker.sock:/var/run/docker.sock \ -v &#34;$HOME&#34;:/home \ jenkinsci/blueocean 取得Jenkins密碼 檢查容器id docker ps 結果 CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES 038da061a3dd">
 <meta itemprop="datePublished" content="2022-02-23T00:00:44&#43;08:00" />
 <meta itemprop="dateModified" content="2022-02-23T00:00:44&#43;08:00" />
-<meta itemprop="wordCount" content="255">
+<meta itemprop="wordCount" content="252">
 
 
 
@@ -268,7 +268,7 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> docker ps
 </code></pre></div><p>結果</p>
 <pre><code>CONTAINER ID   IMAGE             COMMAND                  CREATED              STATUS              PORTS                                                                                      NAMES
-038da061a3dd   jenkins/jenkins   &quot;/sbin/tini -- /usr/…&quot;   About a minute ago   Up About a minute   0.0.0.0:8080-&gt;8080/tcp, :::8080-&gt;8080/tcp, 0.0.0.0:50000-&gt;50000/tcp, :::50000-&gt;50000/tcp   nifty_liskov
+038da061a3dd   jenkins/jenkins   &quot;/sbin/tini -- /usr/…&quot;   About a minute ago   Up About a minute   0.0.0.0:8080-&gt;8080/tcp, :::8080-&gt;8080/tcp.....
 </code></pre><p>我們可以知道容器的id是038da061a3dd，所以我們用以下指令登入容器。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker exec -it 038da061a3dd bash
 </code></pre></div><p><strong>後頭的bash是指，使用bash shell來接收我們的輸入</strong></p>

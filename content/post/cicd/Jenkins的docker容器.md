@@ -32,7 +32,7 @@ docker run \
 
 ```
 CONTAINER ID   IMAGE             COMMAND                  CREATED              STATUS              PORTS                                                                                      NAMES
-038da061a3dd   jenkins/jenkins   "/sbin/tini -- /usr/…"   About a minute ago   Up About a minute   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp, 0.0.0.0:50000->50000/tcp, :::50000->50000/tcp   nifty_liskov
+038da061a3dd   jenkins/jenkins   "/sbin/tini -- /usr/…"   About a minute ago   Up About a minute   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp.....
 ```
 
 我們可以知道容器的id是038da061a3dd，所以我們用以下指令登入容器。
