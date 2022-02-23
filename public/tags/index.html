@@ -619,7 +619,7 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      建立Jenkins容器 建立一個可以跟jenkins容器內部互通資料夾，我們稱為jenkins_volume mkdir jenkins_volume 下載jenkins的docke
+      建立Jenkins容器 運作docker容器 docker run \ -u root \ -p 8080:8080 \ -v jenkins-data:/var/jenkins_home \ -v /var/run/docker.sock:/var/run/docker.sock \ -v &#34;$HOME&#34;:/home \ jenkinsci/blueocean 取得Jenkins密碼 檢查容器id docker ps 結果 CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES 038da061a3dd
     </div>
   </div>
 </div>

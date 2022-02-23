@@ -8,22 +8,16 @@ tags: ["CICD"]
 
 # 建立Jenkins容器
 
-建立一個可以跟jenkins容器內部互通資料夾，我們稱為jenkins_volume
-
-```bash
-mkdir jenkins_volume
-```
-
-下載jenkins的docker映像檔
-
-```bash
-docker pull jenkins/jenkins
-```
-
 運作docker容器
 
 ```bash
-docker run -p 8080:8080 -p 50000:50000 -v /home/alex/桌面/jenkins_volume:/jenkins_volume jenkins/jenkins
+docker run \
+  -u root \
+  -p 8080:8080 \
+  -v jenkins-data:/var/jenkins_home \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v "$HOME":/home \
+  jenkinsci/blueocean
 ```
 
 # 取得Jenkins密碼
