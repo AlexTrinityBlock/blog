@@ -6,7 +6,7 @@
     
     <title>Jenkins的docker容器 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="建立Jenkins容器 運作docker容器 docker run \ -u root \ -p 8080:8080 \ -v jenkins-data:/var/jenkins_home \ -v /var/run/docker.sock:/var/run/docker.sock \ -v &#34;$HOME&#34;:/home \ jenkinsci/blueocean 取得Jenkins密碼 檢查容器id docker ps 結果 CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES 038da061a3dd">
+    <meta name="description" content="一次性快速使用Jenkins docker run \ --rm \ -u root \ -p 8080:8080 \ -v jenkins-data:/var/jenkins_home \ -v /var/run/docker.sock:/var/run/docker.sock \ -v &#34;$HOME&#34;:/home \ jenkinsci/blueocean 趁密碼出現時，從終端機上頭複製下來 用複製到的密碼解鎖 http://127.0.0.1:8080/ 長期保存的Jen">
     <meta name="generator" content="Hugo 0.68.3" />
     
     
@@ -34,22 +34,22 @@
     
     
     <meta property="og:title" content="Jenkins的docker容器" />
-<meta property="og:description" content="建立Jenkins容器 運作docker容器 docker run \ -u root \ -p 8080:8080 \ -v jenkins-data:/var/jenkins_home \ -v /var/run/docker.sock:/var/run/docker.sock \ -v &#34;$HOME&#34;:/home \ jenkinsci/blueocean 取得Jenkins密碼 檢查容器id docker ps 結果 CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES 038da061a3dd" />
+<meta property="og:description" content="一次性快速使用Jenkins docker run \ --rm \ -u root \ -p 8080:8080 \ -v jenkins-data:/var/jenkins_home \ -v /var/run/docker.sock:/var/run/docker.sock \ -v &#34;$HOME&#34;:/home \ jenkinsci/blueocean 趁密碼出現時，從終端機上頭複製下來 用複製到的密碼解鎖 http://127.0.0.1:8080/ 長期保存的Jen" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/cicd/jenkins%E7%9A%84docker%E5%AE%B9%E5%99%A8/" />
 <meta property="article:published_time" content="2022-02-23T00:00:44+08:00" />
 <meta property="article:modified_time" content="2022-02-23T00:00:44+08:00" />
 <meta itemprop="name" content="Jenkins的docker容器">
-<meta itemprop="description" content="建立Jenkins容器 運作docker容器 docker run \ -u root \ -p 8080:8080 \ -v jenkins-data:/var/jenkins_home \ -v /var/run/docker.sock:/var/run/docker.sock \ -v &#34;$HOME&#34;:/home \ jenkinsci/blueocean 取得Jenkins密碼 檢查容器id docker ps 結果 CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES 038da061a3dd">
+<meta itemprop="description" content="一次性快速使用Jenkins docker run \ --rm \ -u root \ -p 8080:8080 \ -v jenkins-data:/var/jenkins_home \ -v /var/run/docker.sock:/var/run/docker.sock \ -v &#34;$HOME&#34;:/home \ jenkinsci/blueocean 趁密碼出現時，從終端機上頭複製下來 用複製到的密碼解鎖 http://127.0.0.1:8080/ 長期保存的Jen">
 <meta itemprop="datePublished" content="2022-02-23T00:00:44&#43;08:00" />
 <meta itemprop="dateModified" content="2022-02-23T00:00:44&#43;08:00" />
-<meta itemprop="wordCount" content="252">
+<meta itemprop="wordCount" content="326">
 
 
 
 <meta itemprop="keywords" content="CICD," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jenkins的docker容器"/>
-<meta name="twitter:description" content="建立Jenkins容器 運作docker容器 docker run \ -u root \ -p 8080:8080 \ -v jenkins-data:/var/jenkins_home \ -v /var/run/docker.sock:/var/run/docker.sock \ -v &#34;$HOME&#34;:/home \ jenkinsci/blueocean 取得Jenkins密碼 檢查容器id docker ps 結果 CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES 038da061a3dd"/>
+<meta name="twitter:description" content="一次性快速使用Jenkins docker run \ --rm \ -u root \ -p 8080:8080 \ -v jenkins-data:/var/jenkins_home \ -v /var/run/docker.sock:/var/run/docker.sock \ -v &#34;$HOME&#34;:/home \ jenkinsci/blueocean 趁密碼出現時，從終端機上頭複製下來 用複製到的密碼解鎖 http://127.0.0.1:8080/ 長期保存的Jen"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
 
@@ -254,7 +254,20 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="建立jenkins容器">建立Jenkins容器</h1>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="一次性快速使用jenkins">一次性快速使用Jenkins</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --rm <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -u root <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -p 8080:8080 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -v jenkins-data:/var/jenkins_home <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -v /var/run/docker.sock:/var/run/docker.sock <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -v <span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">&#34;</span>:/home <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  jenkinsci/blueocean
+</code></pre></div><p>趁密碼出現時，從終端機上頭複製下來</p>
+<p>用複製到的密碼解鎖</p>
+<p><a href="http://127.0.0.1:8080/">http://127.0.0.1:8080/</a></p>
+<h1 id="長期保存的jenkins">長期保存的Jenkins</h1>
+<h2 id="建立jenkins容器">建立Jenkins容器</h2>
 <p>運作docker容器</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -u root <span style="color:#ae81ff">\
@@ -263,7 +276,7 @@
 </span><span style="color:#ae81ff"></span>  -v /var/run/docker.sock:/var/run/docker.sock <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -v <span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">&#34;</span>:/home <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  jenkinsci/blueocean
-</code></pre></div><h1 id="取得jenkins密碼">取得Jenkins密碼</h1>
+</code></pre></div><h2 id="取得jenkins密碼">取得Jenkins密碼</h2>
 <p>檢查容器id</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> docker ps
 </code></pre></div><p>結果</p>

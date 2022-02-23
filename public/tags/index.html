@@ -619,7 +619,7 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      建立Jenkins容器 運作docker容器 docker run \ -u root \ -p 8080:8080 \ -v jenkins-data:/var/jenkins_home \ -v /var/run/docker.sock:/var/run/docker.sock \ -v &#34;$HOME&#34;:/home \ jenkinsci/blueocean 取得Jenkins密碼 檢查容器id docker ps 結果 CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES 038da061a3dd
+      一次性快速使用Jenkins docker run \ --rm \ -u root \ -p 8080:8080 \ -v jenkins-data:/var/jenkins_home \ -v /var/run/docker.sock:/var/run/docker.sock \ -v &#34;$HOME&#34;:/home \ jenkinsci/blueocean 趁密碼出現時，從終端機上頭複製下來 用複製到的密碼解鎖 http://127.0.0.1:8080/ 長期保存的Jen
     </div>
   </div>
 </div>

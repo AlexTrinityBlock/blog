@@ -6,7 +6,28 @@ featured_image: "/cicd.png"
 tags: ["CICD"]
 ---
 
-# 建立Jenkins容器
+# 一次性快速使用Jenkins
+
+```bash
+docker run \
+  --rm \
+  -u root \
+  -p 8080:8080 \
+  -v jenkins-data:/var/jenkins_home \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v "$HOME":/home \
+  jenkinsci/blueocean
+```
+
+趁密碼出現時，從終端機上頭複製下來
+
+用複製到的密碼解鎖
+
+[http://127.0.0.1:8080/](http://127.0.0.1:8080/)
+
+# 長期保存的Jenkins
+
+## 建立Jenkins容器
 
 運作docker容器
 
@@ -20,7 +41,7 @@ docker run \
   jenkinsci/blueocean
 ```
 
-# 取得Jenkins密碼
+## 取得Jenkins密碼
 
 檢查容器id
 

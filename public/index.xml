@@ -71,7 +71,7 @@
       <pubDate>Wed, 23 Feb 2022 00:00:44 +0800</pubDate>
       
       <guid>https://alextrinityblock.github.io/blog/public/post/cicd/jenkins%E7%9A%84docker%E5%AE%B9%E5%99%A8/</guid>
-      <description>建立Jenkins容器 運作docker容器 docker run \ -u root \ -p 8080:8080 \ -v jenkins-data:/var/jenkins_home \ -v /var/run/docker.sock:/var/run/docker.sock \ -v &amp;#34;$HOME&amp;#34;:/home \ jenkinsci/blueocean 取得Jenkins密碼 檢查容器id docker ps 結果 CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES 038da061a3dd</description>
+      <description>一次性快速使用Jenkins docker run \ --rm \ -u root \ -p 8080:8080 \ -v jenkins-data:/var/jenkins_home \ -v /var/run/docker.sock:/var/run/docker.sock \ -v &amp;#34;$HOME&amp;#34;:/home \ jenkinsci/blueocean 趁密碼出現時，從終端機上頭複製下來 用複製到的密碼解鎖 http://127.0.0.1:8080/ 長期保存的Jen</description>
     </item>
     
     <item>
