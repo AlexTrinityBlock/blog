@@ -6,10 +6,19 @@
     <description>Recent content in git on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Wed, 19 May 2021 00:05:03 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Feb 2022 00:01:44 +0800</lastBuildDate>
     
 	<atom:link href="https://alextrinityblock.github.io/blog/public/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>如何用22port以外連上Git Server</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/git/%E5%A6%82%E4%BD%95%E7%94%A822port%E4%BB%A5%E5%A4%96%E9%80%A3%E4%B8%8Agitserver/</link>
+      <pubDate>Wed, 23 Feb 2022 00:01:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/git/%E5%A6%82%E4%BD%95%E7%94%A822port%E4%BB%A5%E5%A4%96%E9%80%A3%E4%B8%8Agitserver/</guid>
+      <description>Git伺服器的SSH port 基本上來說，git server所使用的ssh port就是22 port。 為何會有例外 由於自己架設的Git Server，2</description>
+    </item>
     
     <item>
       <title>github免密碼上傳與RSA金鑰產生</title>
