@@ -6,7 +6,7 @@
     <description>Recent content in Tags on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Wed, 23 Feb 2022 00:01:44 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Feb 2022 00:02:44 +0800</lastBuildDate>
     
 	<atom:link href="https://alextrinityblock.github.io/blog/public/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>git</title>
       <link>https://alextrinityblock.github.io/blog/public/tags/git/</link>
-      <pubDate>Wed, 23 Feb 2022 00:01:44 +0800</pubDate>
+      <pubDate>Wed, 23 Feb 2022 00:02:44 +0800</pubDate>
       
       <guid>https://alextrinityblock.github.io/blog/public/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git server</title>
+      <link>https://alextrinityblock.github.io/blog/public/tags/git-server/</link>
+      <pubDate>Wed, 23 Feb 2022 00:02:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/tags/git-server/</guid>
       <description></description>
     </item>
     

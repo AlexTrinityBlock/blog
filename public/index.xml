@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>用Gogs自己架設Git Server</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/git/%E7%94%A8gogs%E8%87%AA%E5%B7%B1%E6%9E%B6%E8%A8%ADgitserver/</link>
+      <pubDate>Wed, 23 Feb 2022 00:02:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/git/%E7%94%A8gogs%E8%87%AA%E5%B7%B1%E6%9E%B6%E8%A8%ADgitserver/</guid>
+      <description>Gogs是啥？ 由go語言撰寫而成，一個輕量化方便部屬的Git伺服器。 需要的部件 Docker: 一個能夠建立容器，快速部屬環境的半虛擬化工具。 Gogs: 輕量化Git</description>
+    </item>
+    
+    <item>
       <title>如何用22port以外連上Git Server</title>
       <link>https://alextrinityblock.github.io/blog/public/post/git/%E5%A6%82%E4%BD%95%E7%94%A822port%E4%BB%A5%E5%A4%96%E9%80%A3%E4%B8%8Agitserver/</link>
       <pubDate>Wed, 23 Feb 2022 00:01:44 +0800</pubDate>
