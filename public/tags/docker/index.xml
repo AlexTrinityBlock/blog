@@ -6,11 +6,7 @@
     <description>Recent content in docker on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Sat, 17 Jul 2021 10:05:03 +0800</lastBuildDate>
-    
-	<atom:link href="https://alextrinityblock.github.io/blog/public/tags/docker/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 17 Jul 2021 10:05:03 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>讓firefox跑在docker-compose裡頭的正確腳本</title>
       <link>https://alextrinityblock.github.io/blog/public/post/docker/%E8%AE%93firefox%E8%B7%91%E5%9C%A8docker-compose%E8%A3%A1%E9%A0%AD%E7%9A%84%E6%AD%A3%E7%A2%BA%E8%85%B3%E6%9C%AC/</link>

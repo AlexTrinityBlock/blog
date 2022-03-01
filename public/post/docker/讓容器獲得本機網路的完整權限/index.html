@@ -7,7 +7,7 @@
     <title>讓容器獲得本機網路的完整權限 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="docker run指令的對外網開放端口選項 我們如果想讓容器與本機使用同一個網路，並且能建立像是網頁伺服器一類的對外開放端口， 可以將網路設置為host。">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="讓容器獲得本機網路的完整權限" />
 <meta property="og:description" content="docker run指令的對外網開放端口選項 我們如果想讓容器與本機使用同一個網路，並且能建立像是網頁伺服器一類的對外開放端口， 可以將網路設置為host。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/docker/%E8%AE%93%E5%AE%B9%E5%99%A8%E7%8D%B2%E5%BE%97%E6%9C%AC%E6%A9%9F%E7%B6%B2%E8%B7%AF%E7%9A%84%E5%AE%8C%E6%95%B4%E6%AC%8A%E9%99%90/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/docker/%E8%AE%93%E5%AE%B9%E5%99%A8%E7%8D%B2%E5%BE%97%E6%9C%AC%E6%A9%9F%E7%B6%B2%E8%B7%AF%E7%9A%84%E5%AE%8C%E6%95%B4%E6%AC%8A%E9%99%90/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-06-12T00:05:03+08:00" />
 <meta property="article:modified_time" content="2021-06-12T00:05:03+08:00" />
+
 <meta itemprop="name" content="讓容器獲得本機網路的完整權限">
-<meta itemprop="description" content="docker run指令的對外網開放端口選項 我們如果想讓容器與本機使用同一個網路，並且能建立像是網頁伺服器一類的對外開放端口， 可以將網路設置為host。">
-<meta itemprop="datePublished" content="2021-06-12T00:05:03&#43;08:00" />
-<meta itemprop="dateModified" content="2021-06-12T00:05:03&#43;08:00" />
-<meta itemprop="wordCount" content="640">
-
-
-
+<meta itemprop="description" content="docker run指令的對外網開放端口選項 我們如果想讓容器與本機使用同一個網路，並且能建立像是網頁伺服器一類的對外開放端口， 可以將網路設置為host。"><meta itemprop="datePublished" content="2021-06-12T00:05:03+08:00" />
+<meta itemprop="dateModified" content="2021-06-12T00:05:03+08:00" />
+<meta itemprop="wordCount" content="639">
 <meta itemprop="keywords" content="docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="讓容器獲得本機網路的完整權限"/>
 <meta name="twitter:description" content="docker run指令的對外網開放端口選項 我們如果想讓容器與本機使用同一個網路，並且能建立像是網頁伺服器一類的對外開放端口， 可以將網路設置為host。"/>
@@ -257,51 +254,51 @@
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="docker-run指令的對外網開放端口選項">docker run指令的對外網開放端口選項</h2>
 <p>我們如果想讓容器與本機使用同一個網路，並且能建立像是網頁伺服器一類的對外開放端口，<br>
 可以將網路設置為host。</p>
-<pre><code>docker run -it -p 80:80 --net=host ubuntu:20.04 bash
+<pre tabindex="0"><code>docker run -it -p 80:80 --net=host ubuntu:20.04 bash
 </code></pre><h2 id="docker-compose的對外開放端口選項">docker-compose的對外開放端口選項</h2>
 <p>docker-compose中也可以這樣來設置，這樣就可以對外開放80port了。<br>
 網路一樣設置根本機相同的host。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">version</span>: <span style="color:#e6db74">&#34;3.4&#34;</span>
-<span style="color:#66d9ef">services</span>:
-  <span style="color:#66d9ef">ubuntu-server</span>:
-    <span style="color:#66d9ef">ports</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3.4&#34;</span>
+<span style="color:#f92672">services</span>:
+  <span style="color:#f92672">ubuntu-server</span>:
+    <span style="color:#f92672">ports</span>:
       -<span style="color:#ae81ff">80</span>:<span style="color:#ae81ff">80</span>
-    <span style="color:#66d9ef">image</span>: ubuntu:<span style="color:#ae81ff">20.04</span>
-    <span style="color:#66d9ef">network_mode</span>: host
-    <span style="color:#66d9ef">tty</span>: <span style="color:#66d9ef">true</span>
+    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">ubuntu:20.04</span>
+    <span style="color:#f92672">network_mode</span>: <span style="color:#ae81ff">host</span>
+    <span style="color:#f92672">tty</span>: <span style="color:#66d9ef">true</span>
 </code></pre></div><h2 id="docker-compose添加網路嗅探與更多操作網卡的功能">docker-compose添加網路嗅探與更多操作網卡的功能</h2>
 <p>雖然網路設置為host可以開啟了用docker當成伺服器的功能，但是像是網路嗅探與其他進階網卡的操作，權限上還是被禁止的。</p>
 <p>所以這個時候要用更進一步的解決方案。</p>
 <p>在linux裡頭有一種權限稱為capability(能力)，也就是某個process能夠操作電腦硬體到什麼程度。</p>
-<p>雖然docker的process沒特別設置下，預設為root權限的process，但為了安全起見所以並沒有太多的capability，像是網路嗅探就需要完整的&quot;使用網路的capability&rdquo;。</p>
+<p>雖然docker的process沒特別設置下，預設為root權限的process，但為了安全起見所以並沒有太多的capability，像是網路嗅探就需要完整的&quot;使用網路的capability&quot;。</p>
 <h3 id="wireshark在capability的能力配置範例">wireshark在capability的能力配置範例</h3>
 <p>這是個wireshark的映像檔，其中有調整了capability參數，來取得網路嗅探的能力。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">version</span>: <span style="color:#e6db74">&#34;2.1&#34;</span>
-<span style="color:#66d9ef">services</span>:
-  <span style="color:#66d9ef">wireshark</span>:
-    <span style="color:#66d9ef">image</span>: ghcr.io/linuxserver/wireshark
-    <span style="color:#66d9ef">container_name</span>: wireshark
-    <span style="color:#66d9ef">cap_add</span>:
-      - NET_ADMIN
-    <span style="color:#66d9ef">network_mode</span>: host
-    <span style="color:#66d9ef">environment</span>:
-      - PUID=<span style="color:#ae81ff">1000</span>
-      - PGID=<span style="color:#ae81ff">1000</span>
-      - TZ=Europe/London
-    <span style="color:#66d9ef">volumes</span>:
-      - ./config:/config
-    <span style="color:#66d9ef">ports</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;2.1&#34;</span>
+<span style="color:#f92672">services</span>:
+  <span style="color:#f92672">wireshark</span>:
+    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">ghcr.io/linuxserver/wireshark</span>
+    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">wireshark</span>
+    <span style="color:#f92672">cap_add</span>:
+      - <span style="color:#ae81ff">NET_ADMIN</span>
+    <span style="color:#f92672">network_mode</span>: <span style="color:#ae81ff">host</span>
+    <span style="color:#f92672">environment</span>:
+      - <span style="color:#ae81ff">PUID=1000</span>
+      - <span style="color:#ae81ff">PGID=1000</span>
+      - <span style="color:#ae81ff">TZ=Europe/London</span>
+    <span style="color:#f92672">volumes</span>:
+      - <span style="color:#ae81ff">./config:/config</span>
+    <span style="color:#f92672">ports</span>:
       - <span style="color:#ae81ff">3000</span>:<span style="color:#ae81ff">3000</span> <span style="color:#75715e">#optional</span>
-    <span style="color:#66d9ef">restart</span>: unless-stopped
+    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">unless-stopped</span>
 </code></pre></div><p>我們注意到下列一段，它取得了網路管理員的身份。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#66d9ef">cap_add</span>:
-      - NET_ADMIN
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">cap_add</span>:
+      - <span style="color:#ae81ff">NET_ADMIN</span>
 </code></pre></div><p>並且不讓這個容器取得root權限，而是取得使用者編號1000的權限。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#66d9ef">environment</span>:
-      - PUID=<span style="color:#ae81ff">1000</span>
-      - PGID=<span style="color:#ae81ff">1000</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">environment</span>:
+      - <span style="color:#ae81ff">PUID=1000</span>
+      - <span style="color:#ae81ff">PGID=1000</span>
 </code></pre></div><p>要了解capability的意義可以查看man文檔</p>
-<pre><code>man 7 capability
+<pre tabindex="0"><code>man 7 capability
 </code></pre><ul class="pa0">
   
    <li class="list">

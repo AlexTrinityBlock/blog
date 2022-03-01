@@ -7,7 +7,7 @@
     <title>關於DNS相關的問題 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="王教授您好，我是阿維: 感謝您播出時間，來回答我的問題。 我在閱讀您的推薦書關於python network security， 讀到關於DNS的篇章時育上了一個">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="關於DNS相關的問題" />
 <meta property="og:description" content="王教授您好，我是阿維: 感謝您播出時間，來回答我的問題。 我在閱讀您的推薦書關於python network security， 讀到關於DNS的篇章時育上了一個" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/temp/6%E6%9C%887%E6%97%A5%E5%95%8F%E9%A1%8C/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/temp/6%E6%9C%887%E6%97%A5%E5%95%8F%E9%A1%8C/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-06-07T09:00:44+08:00" />
 <meta property="article:modified_time" content="2021-06-07T09:00:44+08:00" />
+
 <meta itemprop="name" content="關於DNS相關的問題">
-<meta itemprop="description" content="王教授您好，我是阿維: 感謝您播出時間，來回答我的問題。 我在閱讀您的推薦書關於python network security， 讀到關於DNS的篇章時育上了一個">
-<meta itemprop="datePublished" content="2021-06-07T09:00:44&#43;08:00" />
-<meta itemprop="dateModified" content="2021-06-07T09:00:44&#43;08:00" />
+<meta itemprop="description" content="王教授您好，我是阿維: 感謝您播出時間，來回答我的問題。 我在閱讀您的推薦書關於python network security， 讀到關於DNS的篇章時育上了一個"><meta itemprop="datePublished" content="2021-06-07T09:00:44+08:00" />
+<meta itemprop="dateModified" content="2021-06-07T09:00:44+08:00" />
 <meta itemprop="wordCount" content="279">
-
-
-
 <meta itemprop="keywords" content="python,network," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="關於DNS相關的問題"/>
 <meta name="twitter:description" content="王教授您好，我是阿維: 感謝您播出時間，來回答我的問題。 我在閱讀您的推薦書關於python network security， 讀到關於DNS的篇章時育上了一個"/>
@@ -264,7 +261,7 @@
 <p>我對於維基百科進行DNS正反查詢結果卻發生不同<br>
 我以維基百科的網址去查詢DNS，得到103.102.166.224的IP位址<br>
 但反過來以這個IP查詢卻得到text-lb.eqsin.wikimedia.org一個略為不同的網址</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> socket<span style="color:#f92672">.</span>gethostbyname(<span style="color:#e6db74">&#39;zh.wikipedia.org&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> socket<span style="color:#f92672">.</span>gethostbyname(<span style="color:#e6db74">&#39;zh.wikipedia.org&#39;</span>)
 <span style="color:#e6db74">&#39;103.102.166.224&#39;</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> socket<span style="color:#f92672">.</span>gethostbyaddr(<span style="color:#e6db74">&#39;103.102.166.224&#39;</span>)
 (<span style="color:#e6db74">&#39;text-lb.eqsin.wikimedia.org&#39;</span>, [], [<span style="color:#e6db74">&#39;103.102.166.224&#39;</span>])

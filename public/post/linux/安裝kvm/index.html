@@ -7,7 +7,7 @@
     <title>安裝KVM | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="本篇討論在linux mint上頭安裝kvm虛擬機的方法。 檢查CPU相容性 cpu檢查工具 sudo apt install cpu-checker 檢查 sudo kvm-ok apt 套件安裝 sudo apt install -y qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager ovmf 啟動虛">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="安裝KVM" />
 <meta property="og:description" content="本篇討論在linux mint上頭安裝kvm虛擬機的方法。 檢查CPU相容性 cpu檢查工具 sudo apt install cpu-checker 檢查 sudo kvm-ok apt 套件安裝 sudo apt install -y qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager ovmf 啟動虛" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/linux/%E5%AE%89%E8%A3%9Dkvm/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/linux/%E5%AE%89%E8%A3%9Dkvm/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-05-28T13:29:36+08:00" />
 <meta property="article:modified_time" content="2021-05-28T13:29:36+08:00" />
+
 <meta itemprop="name" content="安裝KVM">
-<meta itemprop="description" content="本篇討論在linux mint上頭安裝kvm虛擬機的方法。 檢查CPU相容性 cpu檢查工具 sudo apt install cpu-checker 檢查 sudo kvm-ok apt 套件安裝 sudo apt install -y qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager ovmf 啟動虛">
-<meta itemprop="datePublished" content="2021-05-28T13:29:36&#43;08:00" />
-<meta itemprop="dateModified" content="2021-05-28T13:29:36&#43;08:00" />
+<meta itemprop="description" content="本篇討論在linux mint上頭安裝kvm虛擬機的方法。 檢查CPU相容性 cpu檢查工具 sudo apt install cpu-checker 檢查 sudo kvm-ok apt 套件安裝 sudo apt install -y qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager ovmf 啟動虛"><meta itemprop="datePublished" content="2021-05-28T13:29:36+08:00" />
+<meta itemprop="dateModified" content="2021-05-28T13:29:36+08:00" />
 <meta itemprop="wordCount" content="116">
-
-
-
 <meta itemprop="keywords" content="linux,kvm," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="安裝KVM"/>
 <meta name="twitter:description" content="本篇討論在linux mint上頭安裝kvm虛擬機的方法。 檢查CPU相容性 cpu檢查工具 sudo apt install cpu-checker 檢查 sudo kvm-ok apt 套件安裝 sudo apt install -y qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager ovmf 啟動虛"/>
@@ -257,13 +254,13 @@
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>本篇討論在linux mint上頭安裝kvm虛擬機的方法。</p>
 <h2 id="檢查cpu相容性">檢查CPU相容性</h2>
 <p>cpu檢查工具</p>
-<pre><code>sudo apt install cpu-checker
+<pre tabindex="0"><code>sudo apt install cpu-checker
 </code></pre><p>檢查</p>
-<pre><code>sudo kvm-ok
+<pre tabindex="0"><code>sudo kvm-ok
 </code></pre><h2 id="apt-套件安裝">apt 套件安裝</h2>
-<pre><code> sudo apt install -y qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager ovmf
+<pre tabindex="0"><code> sudo apt install -y qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager ovmf
 </code></pre><h2 id="啟動虛擬化守護進程">啟動虛擬化守護進程</h2>
-<pre><code> sudo systemctl enable --now libvirtd
+<pre tabindex="0"><code> sudo systemctl enable --now libvirtd
 </code></pre><p>剛安裝完畢時可能會無法連接qemu server，重新啟動或登出登入即可</p>
 <ul class="pa0">
   

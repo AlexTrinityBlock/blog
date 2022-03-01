@@ -7,7 +7,7 @@
     <title>手動連接裝置或磁碟槽（掛載） | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="假設今天，你的硬碟同時存在linux與windows 你啟動linux後希望存取windows的D槽 此時D槽被標記為 /dev/sda2 這時你可以先建立資料夾 /media/MyDisk">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="手動連接裝置或磁碟槽（掛載）" />
 <meta property="og:description" content="假設今天，你的硬碟同時存在linux與windows 你啟動linux後希望存取windows的D槽 此時D槽被標記為 /dev/sda2 這時你可以先建立資料夾 /media/MyDisk" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-02-28T00:46:22+08:00" />
 <meta property="article:modified_time" content="2021-02-28T00:46:22+08:00" />
+
 <meta itemprop="name" content="手動連接裝置或磁碟槽（掛載）">
-<meta itemprop="description" content="假設今天，你的硬碟同時存在linux與windows 你啟動linux後希望存取windows的D槽 此時D槽被標記為 /dev/sda2 這時你可以先建立資料夾 /media/MyDisk">
-<meta itemprop="datePublished" content="2021-02-28T00:46:22&#43;08:00" />
-<meta itemprop="dateModified" content="2021-02-28T00:46:22&#43;08:00" />
+<meta itemprop="description" content="假設今天，你的硬碟同時存在linux與windows 你啟動linux後希望存取windows的D槽 此時D槽被標記為 /dev/sda2 這時你可以先建立資料夾 /media/MyDisk"><meta itemprop="datePublished" content="2021-02-28T00:46:22+08:00" />
+<meta itemprop="dateModified" content="2021-02-28T00:46:22+08:00" />
 <meta itemprop="wordCount" content="146">
-
-
-
 <meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="手動連接裝置或磁碟槽（掛載）"/>
 <meta name="twitter:description" content="假設今天，你的硬碟同時存在linux與windows 你啟動linux後希望存取windows的D槽 此時D槽被標記為 /dev/sda2 這時你可以先建立資料夾 /media/MyDisk"/>
@@ -257,11 +254,11 @@
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>假設今天，你的硬碟同時存在linux與windows<br>
 你啟動linux後希望存取windows的D槽<br>
 此時D槽被標記為</p>
-<pre><code>/dev/sda2 
+<pre tabindex="0"><code>/dev/sda2 
 </code></pre><p>這時你可以先建立資料夾</p>
-<pre><code>/media/MyDisk
+<pre tabindex="0"><code>/media/MyDisk
 </code></pre><p>然後將D槽也就是 /dev/sda2 用下列指令掛載到/media/MyDsik上頭</p>
-<pre><code>sudo mount /dev/sda2  /media/MyDisk/
+<pre tabindex="0"><code>sudo mount /dev/sda2  /media/MyDisk/
 </code></pre><p>只後當你從linux進入/media/MyDisk/<br>
 就可以從中看到你的D槽文件了</p>
 <ul class="pa0">

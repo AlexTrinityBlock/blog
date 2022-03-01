@@ -7,7 +7,7 @@
     <title>Git整合過去Commit | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="如果說有多條commit要合併成一條 就需要使用 git rebase 1 首先，在git 中最新的一個commit 稱為 Head 所以git rebase的一個常用指令就是 git rebase">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="Git整合過去Commit" />
 <meta property="og:description" content="如果說有多條commit要合併成一條 就需要使用 git rebase 1 首先，在git 中最新的一個commit 稱為 Head 所以git rebase的一個常用指令就是 git rebase" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/git/git%E6%95%B4%E5%90%88%E9%81%8E%E5%8E%BBcommit/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/git/git%E6%95%B4%E5%90%88%E9%81%8E%E5%8E%BBcommit/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-02-23T00:04:44+08:00" />
 <meta property="article:modified_time" content="2022-02-23T00:04:44+08:00" />
+
 <meta itemprop="name" content="Git整合過去Commit">
-<meta itemprop="description" content="如果說有多條commit要合併成一條 就需要使用 git rebase 1 首先，在git 中最新的一個commit 稱為 Head 所以git rebase的一個常用指令就是 git rebase">
-<meta itemprop="datePublished" content="2022-02-23T00:04:44&#43;08:00" />
-<meta itemprop="dateModified" content="2022-02-23T00:04:44&#43;08:00" />
+<meta itemprop="description" content="如果說有多條commit要合併成一條 就需要使用 git rebase 1 首先，在git 中最新的一個commit 稱為 Head 所以git rebase的一個常用指令就是 git rebase"><meta itemprop="datePublished" content="2022-02-23T00:04:44+08:00" />
+<meta itemprop="dateModified" content="2022-02-23T00:04:44+08:00" />
 <meta itemprop="wordCount" content="208">
-
-
-
 <meta itemprop="keywords" content="git,github," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git整合過去Commit"/>
 <meta name="twitter:description" content="如果說有多條commit要合併成一條 就需要使用 git rebase 1 首先，在git 中最新的一個commit 稱為 Head 所以git rebase的一個常用指令就是 git rebase"/>
@@ -256,11 +253,11 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>如果說有多條commit要合併成一條</p>
 <p>就需要使用</p>
-<pre><code>git rebase
+<pre tabindex="0"><code>git rebase
 </code></pre><h1 id="1">1</h1>
 <p>首先，在git 中最新的一個commit 稱為 Head</p>
 <p>所以git rebase的一個常用指令就是</p>
-<pre><code>git rebase -i Head~~ 
+<pre tabindex="0"><code>git rebase -i Head~~ 
 </code></pre><p>將目前為止的commit進行合併</p>
 <h1 id="2">2</h1>
 <p>這個指令下達之後，會展示一個vim文字編輯器</p>

@@ -7,7 +7,7 @@
     <title>清理apt暫時存檔 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="下載套件的暫存路徑清除 當apt套件管理工具在安裝套件時，會先對套件進行下載。 下載完畢尚未安裝的套件會被儲存在以下路徑: /var/cache/apt/archives 當這個目錄裡頭的東西">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="清理apt暫時存檔" />
 <meta property="og:description" content="下載套件的暫存路徑清除 當apt套件管理工具在安裝套件時，會先對套件進行下載。 下載完畢尚未安裝的套件會被儲存在以下路徑: /var/cache/apt/archives 當這個目錄裡頭的東西" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/linux/%E6%B8%85%E7%90%86apt%E6%9A%AB%E6%99%82%E5%AD%98%E6%AA%94/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/linux/%E6%B8%85%E7%90%86apt%E6%9A%AB%E6%99%82%E5%AD%98%E6%AA%94/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-06-02T13:29:36+08:00" />
 <meta property="article:modified_time" content="2021-06-02T13:29:36+08:00" />
+
 <meta itemprop="name" content="清理apt暫時存檔">
-<meta itemprop="description" content="下載套件的暫存路徑清除 當apt套件管理工具在安裝套件時，會先對套件進行下載。 下載完畢尚未安裝的套件會被儲存在以下路徑: /var/cache/apt/archives 當這個目錄裡頭的東西">
-<meta itemprop="datePublished" content="2021-06-02T13:29:36&#43;08:00" />
-<meta itemprop="dateModified" content="2021-06-02T13:29:36&#43;08:00" />
+<meta itemprop="description" content="下載套件的暫存路徑清除 當apt套件管理工具在安裝套件時，會先對套件進行下載。 下載完畢尚未安裝的套件會被儲存在以下路徑: /var/cache/apt/archives 當這個目錄裡頭的東西"><meta itemprop="datePublished" content="2021-06-02T13:29:36+08:00" />
+<meta itemprop="dateModified" content="2021-06-02T13:29:36+08:00" />
 <meta itemprop="wordCount" content="159">
-
-
-
 <meta itemprop="keywords" content="linux,apt," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="清理apt暫時存檔"/>
 <meta name="twitter:description" content="下載套件的暫存路徑清除 當apt套件管理工具在安裝套件時，會先對套件進行下載。 下載完畢尚未安裝的套件會被儲存在以下路徑: /var/cache/apt/archives 當這個目錄裡頭的東西"/>
@@ -257,14 +254,14 @@
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="下載套件的暫存路徑清除">下載套件的暫存路徑清除</h2>
 <p>當apt套件管理工具在安裝套件時，會先對套件進行下載。<br>
 下載完畢尚未安裝的套件會被儲存在以下路徑:</p>
-<pre><code>/var/cache/apt/archives
+<pre tabindex="0"><code>/var/cache/apt/archives
 </code></pre><p>當這個目錄裡頭的東西過多時，可以用指令刪除暫存檔案：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get autoclean
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get autoclean
 sudo apt-get clean
 </code></pre></div><h2 id="不用的相依賴套件刪除">不用的相依賴套件刪除</h2>
 <p>當我們下載某個套件時，這個套件可能會因為依賴其他套件，而裝了許多套件。<br>
 這種時刻，我們可以刪除不用的依賴套件:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get autoremove
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get autoremove
 </code></pre></div><ul class="pa0">
   
    <li class="list">

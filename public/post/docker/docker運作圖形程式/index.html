@@ -7,7 +7,7 @@
     <title>docker運作圖形程式 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="本篇我們以在docker上頭運作firefox程式為案例。 但也可應用在其他的軟體。 知識 連線檔案 由於在linux上頭連socket連線都是以檔">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="docker運作圖形程式" />
 <meta property="og:description" content="本篇我們以在docker上頭運作firefox程式為案例。 但也可應用在其他的軟體。 知識 連線檔案 由於在linux上頭連socket連線都是以檔" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/docker/docker%E9%81%8B%E4%BD%9C%E5%9C%96%E5%BD%A2%E7%A8%8B%E5%BC%8F/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/docker/docker%E9%81%8B%E4%BD%9C%E5%9C%96%E5%BD%A2%E7%A8%8B%E5%BC%8F/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-06-08T00:05:03+08:00" />
 <meta property="article:modified_time" content="2021-06-08T00:05:03+08:00" />
+
 <meta itemprop="name" content="docker運作圖形程式">
-<meta itemprop="description" content="本篇我們以在docker上頭運作firefox程式為案例。 但也可應用在其他的軟體。 知識 連線檔案 由於在linux上頭連socket連線都是以檔">
-<meta itemprop="datePublished" content="2021-06-08T00:05:03&#43;08:00" />
-<meta itemprop="dateModified" content="2021-06-08T00:05:03&#43;08:00" />
+<meta itemprop="description" content="本篇我們以在docker上頭運作firefox程式為案例。 但也可應用在其他的軟體。 知識 連線檔案 由於在linux上頭連socket連線都是以檔"><meta itemprop="datePublished" content="2021-06-08T00:05:03+08:00" />
+<meta itemprop="dateModified" content="2021-06-08T00:05:03+08:00" />
 <meta itemprop="wordCount" content="1083">
-
-
-
 <meta itemprop="keywords" content="docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="docker運作圖形程式"/>
 <meta name="twitter:description" content="本篇我們以在docker上頭運作firefox程式為案例。 但也可應用在其他的軟體。 知識 連線檔案 由於在linux上頭連socket連線都是以檔"/>
@@ -259,14 +256,14 @@
 <h2 id="知識">知識</h2>
 <h3 id="連線檔案">連線檔案</h3>
 <p>由於在linux上頭連socket連線都是以檔案的形式出現，所以我們要將主機對桌面的連線之檔案複製一份到docker裡頭。這個代表連線的檔案位置如下。</p>
-<pre><code>/tmp/.X11-unix 
+<pre tabindex="0"><code>/tmp/.X11-unix 
 </code></pre><h3 id="連線認證cookie">連線認證cookie</h3>
 <p>一開始 X window 圖形界面建立的時候，就考慮到可以透過網路轉發桌面，為了確認是合法的使用者。所以每個使用者連上圖形環境時會取得一個cookie，我們的目標之一就是將cookie複製一份到docker裡頭，讓本機的桌面可以接受來自docker的連線。</p>
 <p>順帶一題，這個認證軟體稱為xauth。</p>
 <p>以下為取得認證cookie的方式。(在主機輸入)</p>
-<pre><code>xauth list
+<pre tabindex="0"><code>xauth list
 </code></pre><p>由於docker容器不一定會預先裝上xauth提供認證，所以我們可能要手動安裝。</p>
-<pre><code>apt install xauth
+<pre tabindex="0"><code>apt install xauth
 </code></pre><h3 id="display環境變數">DISPLAY環境變數</h3>
 <p>這個變數告訴x window圖形系統，我們的圖形程式該播放在哪個桌面(一個電腦確實可以有多個桌面)<br>
 與一些必要的資訊。</p>
@@ -275,18 +272,18 @@
 <p>如果沒有採取UTF-8編碼，是無法顯示英文以外的字體的。<br>
 我們進入bash時，bash的設定檔會即時載入設定，我們可以在這個時候將系統字體編碼設置為UTF-8。</p>
 <p>先找到這個bash設定檔</p>
-<pre><code>/etc/bash.bashrc
+<pre tabindex="0"><code>/etc/bash.bashrc
 </code></pre><p>然後在最後一行加入</p>
-<pre><code>export LANG=C.UTF-8
+<pre tabindex="0"><code>export LANG=C.UTF-8
 </code></pre><p>啟動bash的瞬間環境變數就被改成UTF-8編碼了。<br>
 而我們進入docker容器通常都會用bash</p>
 <h3 id="安裝中文字體">安裝中文字體</h3>
 <p>如果沒裝中文字體，firefox或其他圖形程式直接亂碼給你看<br>
 所以我們要在docker裡頭安裝中文字體</p>
-<pre><code>apt-get update
+<pre tabindex="0"><code>apt-get update
 apt-get install  ttf-arphic-ukai ttf-arphic-uming ttf-arphic-newsung
 </code></pre><p>如果上述不管用也可以裝裝看這個</p>
-<pre><code>apt-get update
+<pre tabindex="0"><code>apt-get update
 apt-get install ttf-wqy-microhei
 </code></pre><p>裝完字體之後，實際測試要重新啟動容器才會生效。</p>
 <h2 id="來動手做吧">來動手做吧</h2>
@@ -297,39 +294,39 @@ apt-get install ttf-wqy-microhei
 檔案通透:	/tmp/.X11-unix<br>
 作業系統:	ubuntu:20.04<br>
 Shell:		bash</p>
-<pre><code>docker run -it  --name firefoxforme --net=host -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix  ubuntu:20.04  bash
+<pre tabindex="0"><code>docker run -it  --name firefoxforme --net=host -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix  ubuntu:20.04  bash
 </code></pre><p>如果&ndash;net不是host的話，X window不會允許以root身份連進圖形， <br>
 這樣就必須在docker裡頭建一個不是root的使用者進行連線。</p>
 <h3 id="取得主機的圖形界面認證碼">取得主機的圖形界面認證碼</h3>
 <p>在主機輸入</p>
-<pre><code>xauth list
+<pre tabindex="0"><code>xauth list
 </code></pre><p>得到的結果為</p>
-<pre><code>alex/unix:0  MIT-MAGIC-COOKIE-1  dc9c4ddef8da6bf1e390f48f0dc2a2c5
+<pre tabindex="0"><code>alex/unix:0  MIT-MAGIC-COOKIE-1  dc9c4ddef8da6bf1e390f48f0dc2a2c5
 </code></pre><p>我們將這串複製下來等等放入容器。<br>
 進到容器</p>
-<pre><code>docker exec -it firefoxforme
+<pre tabindex="0"><code>docker exec -it firefoxforme
 </code></pre><p>然後下載xauth認證程式</p>
-<pre><code>apt install xauth
+<pre tabindex="0"><code>apt install xauth
 </code></pre><p>然後加入剛剛的認證碼</p>
-<pre><code>xauth add alex/unix:0  MIT-MAGIC-COOKIE-1  dc9c4ddef8da6bf1e390f48f0dc2a2c5 
+<pre tabindex="0"><code>xauth add alex/unix:0  MIT-MAGIC-COOKIE-1  dc9c4ddef8da6bf1e390f48f0dc2a2c5 
 </code></pre><h3 id="下載文字編輯器">下載文字編輯器</h3>
-<pre><code>apt install nano
+<pre tabindex="0"><code>apt install nano
 </code></pre><h3 id="調整文字編碼">調整文字編碼</h3>
 <p>在docker</p>
-<pre><code>nano /etc/bash.bashrc
+<pre tabindex="0"><code>nano /etc/bash.bashrc
 </code></pre><p>整段都別更改別刪除，在最後空白處加上</p>
-<pre><code>export LANG=C.UTF-8
+<pre tabindex="0"><code>export LANG=C.UTF-8
 </code></pre><h3 id="安裝中文字體-1">安裝中文字體</h3>
-<pre><code>apt-get update
+<pre tabindex="0"><code>apt-get update
 apt-get install ttf-wqy-microhei
 </code></pre><h3 id="退出容器">退出容器</h3>
-<pre><code>exit
+<pre tabindex="0"><code>exit
 </code></pre><h3 id="重新啟動容器">重新啟動容器</h3>
-<pre><code>docker firefoxforme  restart 
+<pre tabindex="0"><code>docker firefoxforme  restart 
 </code></pre><h3 id="進入容器">進入容器</h3>
-<pre><code>docker exec -it firefoxforme
+<pre tabindex="0"><code>docker exec -it firefoxforme
 </code></pre><h3 id="打開火狐瀏覽器">打開火狐瀏覽器</h3>
-<pre><code>firefox
+<pre tabindex="0"><code>firefox
 </code></pre><p>打開之後，如果你想要可以在setting選項，把字體調整中文字體。<br>
 其他的圖形程式也可以用同樣的方式運作唷～～</p>
 <ul class="pa0">

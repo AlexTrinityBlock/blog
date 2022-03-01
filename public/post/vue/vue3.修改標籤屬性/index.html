@@ -7,7 +7,7 @@
     <title>Vue筆記 3:動態修改標籤屬性 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Vue筆記 3:動態修改標籤屬性 稍微提到一下，如果這篇教學對你有幫助，請不要吝嗇教導你周圍的同事，我可以保證你一定會過得更快樂 HTMl標籤存在">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="Vue筆記 3:動態修改標籤屬性" />
 <meta property="og:description" content="Vue筆記 3:動態修改標籤屬性 稍微提到一下，如果這篇教學對你有幫助，請不要吝嗇教導你周圍的同事，我可以保證你一定會過得更快樂 HTMl標籤存在" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/vue/vue3.%E4%BF%AE%E6%94%B9%E6%A8%99%E7%B1%A4%E5%B1%AC%E6%80%A7/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/vue/vue3.%E4%BF%AE%E6%94%B9%E6%A8%99%E7%B1%A4%E5%B1%AC%E6%80%A7/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-03-11T14:52:38+08:00" />
 <meta property="article:modified_time" content="2021-03-11T14:52:38+08:00" />
+
 <meta itemprop="name" content="Vue筆記 3:動態修改標籤屬性">
-<meta itemprop="description" content="Vue筆記 3:動態修改標籤屬性 稍微提到一下，如果這篇教學對你有幫助，請不要吝嗇教導你周圍的同事，我可以保證你一定會過得更快樂 HTMl標籤存在">
-<meta itemprop="datePublished" content="2021-03-11T14:52:38&#43;08:00" />
-<meta itemprop="dateModified" content="2021-03-11T14:52:38&#43;08:00" />
-<meta itemprop="wordCount" content="473">
-
-
-
+<meta itemprop="description" content="Vue筆記 3:動態修改標籤屬性 稍微提到一下，如果這篇教學對你有幫助，請不要吝嗇教導你周圍的同事，我可以保證你一定會過得更快樂 HTMl標籤存在"><meta itemprop="datePublished" content="2021-03-11T14:52:38+08:00" />
+<meta itemprop="dateModified" content="2021-03-11T14:52:38+08:00" />
+<meta itemprop="wordCount" content="475">
 <meta itemprop="keywords" content="vue,前端," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vue筆記 3:動態修改標籤屬性"/>
 <meta name="twitter:description" content="Vue筆記 3:動態修改標籤屬性 稍微提到一下，如果這篇教學對你有幫助，請不要吝嗇教導你周圍的同事，我可以保證你一定會過得更快樂 HTMl標籤存在"/>
@@ -260,9 +257,9 @@
 <p>例如style屬性可以修改文字的顏色大小，基本上就是css<br>
 還有title屬性，滑鼠停在該標籤上頭時會顯示出來的文字</p>
 <h2 id="使用v-bind來動態修改屬性">使用v-bind來動態修改屬性</h2>
-<p>v-bind:title=&quot;title_text&quot;可以綁定title屬性到 title_text<br>
-v-bind:style=&quot;text_color&quot;可以綁定style屬性到text_color</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">
+<p>v-bind:title=&ldquo;title_text&quot;可以綁定title屬性到 title_text<br>
+v-bind:style=&ldquo;text_color&quot;可以綁定style屬性到text_color</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">
 <span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;zh-hant-TW&#34;</span>&gt;
 

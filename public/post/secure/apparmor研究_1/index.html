@@ -7,7 +7,7 @@
     <title>AppArmor研究_1 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="AppArmor 是一款附帶在Ubuntu linux裡頭的核心安全模組，是用來進行強制存取控制(MAC)的。 假定我們今天運作著PHP網頁伺服器，而裡頭某個漏">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="AppArmor研究_1" />
 <meta property="og:description" content="AppArmor 是一款附帶在Ubuntu linux裡頭的核心安全模組，是用來進行強制存取控制(MAC)的。 假定我們今天運作著PHP網頁伺服器，而裡頭某個漏" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/secure/apparmor%E7%A0%94%E7%A9%B6_1/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/secure/apparmor%E7%A0%94%E7%A9%B6_1/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-06-16T10:01:49+08:00" />
 <meta property="article:modified_time" content="2021-06-16T10:01:49+08:00" />
+
 <meta itemprop="name" content="AppArmor研究_1">
-<meta itemprop="description" content="AppArmor 是一款附帶在Ubuntu linux裡頭的核心安全模組，是用來進行強制存取控制(MAC)的。 假定我們今天運作著PHP網頁伺服器，而裡頭某個漏">
-<meta itemprop="datePublished" content="2021-06-16T10:01:49&#43;08:00" />
-<meta itemprop="dateModified" content="2021-06-16T10:01:49&#43;08:00" />
+<meta itemprop="description" content="AppArmor 是一款附帶在Ubuntu linux裡頭的核心安全模組，是用來進行強制存取控制(MAC)的。 假定我們今天運作著PHP網頁伺服器，而裡頭某個漏"><meta itemprop="datePublished" content="2021-06-16T10:01:49+08:00" />
+<meta itemprop="dateModified" content="2021-06-16T10:01:49+08:00" />
 <meta itemprop="wordCount" content="1508">
-
-
-
 <meta itemprop="keywords" content="secure,AppArmor,資安,auditd," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AppArmor研究_1"/>
 <meta name="twitter:description" content="AppArmor 是一款附帶在Ubuntu linux裡頭的核心安全模組，是用來進行強制存取控制(MAC)的。 假定我們今天運作著PHP網頁伺服器，而裡頭某個漏"/>
@@ -261,27 +258,27 @@
 <p>而AppArmor的特色在於，他是以程式為權限劃分，例如：我的文字編輯器可以設置為，只能讀取寫入/home底下的檔案。這種權限劃分方式，稱為MAC(mandatory access control)。</p>
 <p>與AppArmor類似的有SElinux，不過AppArmor的授權條款是自由的GNU。</p>
 <p>AppArmor設定檔的位置在</p>
-<pre><code>/etc/apparmor.d/
+<pre tabindex="0"><code>/etc/apparmor.d/
 </code></pre><p>而且設定檔有特別的命名規則，參考如下
 我們要設定這個檔案的權限</p>
-<pre><code>/usr/bin/certspotter
+<pre tabindex="0"><code>/usr/bin/certspotter
 </code></pre><p>我們的設定檔的名稱與路徑</p>
-<pre><code>/etc/apparmor.d/usr.bin.certspotter
+<pre tabindex="0"><code>/etc/apparmor.d/usr.bin.certspotter
 </code></pre><h2 id="檢查狀態">檢查狀態</h2>
 <p>以下這個指令可以查看目前有哪些程式處於抱怨模式，哪些程式處於強制模式。</p>
-<pre><code>sudo apparmor_status
+<pre tabindex="0"><code>sudo apparmor_status
 </code></pre><h2 id="開始練習">開始練習</h2>
 <p>我們以/usr/bin/certspotter為練習目標。</p>
 <p>安裝設定檔生成工具:</p>
-<pre><code>sudo apt install apparmor-easyprof apparmor-notify apparmor-utils
+<pre tabindex="0"><code>sudo apt install apparmor-easyprof apparmor-notify apparmor-utils
 </code></pre><p>(安裝後aa-logprof程式可以讓我們更輕鬆的知道，哪些程式跨越權限，或被阻止存取。)</p>
 <p>安裝測試用的程式</p>
-<pre><code>sudo apt install certspotter
+<pre tabindex="0"><code>sudo apt install certspotter
 </code></pre><h2 id="生成certspotter的設定檔">生成certspotter的設定檔</h2>
 <p>由於從頭開始手打certspotter設定檔及其麻煩，所以我們可以用這個小工具生成設定檔。</p>
-<pre><code>aa-easyprof /usr/bin/certspotter
+<pre tabindex="0"><code>aa-easyprof /usr/bin/certspotter
 </code></pre><p>這會產生一個設定檔的骨架，看起來向下面這個樣子:</p>
-<pre><code># vim:syntax=apparmor
+<pre tabindex="0"><code># vim:syntax=apparmor
 # AppArmor policy for certspotter
 # ###AUTHOR###
 # ###COPYRIGHT###
@@ -303,46 +300,46 @@
 # No write paths specified
 }
 </code></pre><p>真正的把設定檔寫進硬碟</p>
-<pre><code>aa-easyprof /usr/bin/certspotter &gt; usr.bin.certspotter
+<pre tabindex="0"><code>aa-easyprof /usr/bin/certspotter &gt; usr.bin.certspotter
 </code></pre><p>這個時候在目前的資料夾下頭會產生一個usr.bin.certspotter檔案<br>
 我們將這個檔案移動到設定檔的資料夾裡頭</p>
-<pre><code>sudo mv usr.bin.certspotter /etc/apparmor.d
+<pre tabindex="0"><code>sudo mv usr.bin.certspotter /etc/apparmor.d
 </code></pre><h2 id="將certspotter設定檔寫入kernel">將certspotter設定檔寫入kernel</h2>
-<pre><code>sudo apparmor_parser -r /etc/apparmor.d/usr.bin.certspotter
+<pre tabindex="0"><code>sudo apparmor_parser -r /etc/apparmor.d/usr.bin.certspotter
 </code></pre><h2 id="執行certspotter">執行certspotter</h2>
 <p>由於我們剛剛沒有給它存取任何檔案的權限，所以一旦它開始執行時，要讀寫任何檔案時會立即崩潰。</p>
-<pre><code>certspotter
+<pre tabindex="0"><code>certspotter
 </code></pre><p>執行失敗</p>
-<pre><code>certspotter: /home/testuser/.certspotter/watchlist: open /home/testuser/.certspotter/watchlist permission denied
+<pre tabindex="0"><code>certspotter: /home/testuser/.certspotter/watchlist: open /home/testuser/.certspotter/watchlist permission denied
 </code></pre><p>我們注意到這個程式試圖建立某種設定檔在/home/testuser/.certspotter/watchlist<br>
 但是權限不足，這個就是AppArmor的效果。</p>
 <h2 id="檢查log">檢查log</h2>
 <p>一般來說，如果程式執行被阻擋，都會被記載在底下的這個位置</p>
-<pre><code>/var/log/syslog
+<pre tabindex="0"><code>/var/log/syslog
 </code></pre><p>(也可能是/var/log/syslog.1)<br>
 但隨著不同發行版也會多少有不同</p>
 <p>由於kernel會限制AppArmor紀錄下拒絕紀錄的頻率。<br>
 如果要避免這個情況發生，可以安裝一個稱為auditd的軟體</p>
 <p>如果有裝，可能會將拒絕紀錄存在以下路徑</p>
-<pre><code>/var/log/audit/audit.log 
+<pre tabindex="0"><code>/var/log/audit/audit.log 
 </code></pre><p>可以嘗試找找看</p>
 <p>如果不希望kernel限制AppArmor拒絕紀錄的頻率，可以調整設置。</p>
-<pre><code>sudo sysctl -w kernel.printk_ratelimit=0
+<pre tabindex="0"><code>sudo sysctl -w kernel.printk_ratelimit=0
 </code></pre><h2 id="進階檢查log的方式">進階檢查log的方式</h2>
 <p>我們可以使用以下程式(如果沒有自行安裝)</p>
-<pre><code>aa-notify
+<pre tabindex="0"><code>aa-notify
 </code></pre><p>它會根據syslog或audit.log找出AppArmor的拒絕紀錄。</p>
 <p>範例，檢查昨天的拒絕紀錄:</p>
-<pre><code>/usr/bin/aa-notify -s 1 -v
+<pre tabindex="0"><code>/usr/bin/aa-notify -s 1 -v
 </code></pre><p>接著我們將用簡單的方式檢查log</p>
-<pre><code>aa-logpr
+<pre tabindex="0"><code>aa-logpr
 </code></pre><h2 id="將certspotter從強制模式改為抱怨模式">將certspotter從強制模式改為抱怨模式</h2>
 <p>抱怨模式只會留下紀錄，但是不會阻止該程式寫入允許範圍外的檔案。</p>
-<pre><code>sudo aa-complain certspotter
+<pre tabindex="0"><code>sudo aa-complain certspotter
 </code></pre><p>然後再執行一次</p>
-<pre><code>certspotter
+<pre tabindex="0"><code>certspotter
 </code></pre><p>我們在log裡頭發現了報錯，但是卻沒有在執行時被阻止</p>
-<pre><code>Feb 23 13:34:24 tutorials audit[18643]: AVC apparmor=&quot;ALLOWED&quot; operation=&quot;recvmsg&quot; profile=&quot;/usr/bin/certspotter&quot; pid=18643 comm=&quot;certspotter&quot; laddr=10.0.2.15 lport=46314 faddr=10.0.2.16 fport=443 family=&quot;inet&quot; sock_type=&quot;stream&quot; protocol=6 requested_mast=&quot;receive&quot; denied_mask=&quot;receive&quot;
+<pre tabindex="0"><code>Feb 23 13:34:24 tutorials audit[18643]: AVC apparmor=&quot;ALLOWED&quot; operation=&quot;recvmsg&quot; profile=&quot;/usr/bin/certspotter&quot; pid=18643 comm=&quot;certspotter&quot; laddr=10.0.2.15 lport=46314 faddr=10.0.2.16 fport=443 family=&quot;inet&quot; sock_type=&quot;stream&quot; protocol=6 requested_mast=&quot;receive&quot; denied_mask=&quot;receive&quot;
 </code></pre><p>上面的紀錄我們看見了，這個程式存取網路的事情被記錄下來，因為我們在規則裡頭沒有允許它存取網路。</p>
 <p>(&hellip;待續)</p>
 <h2 id="參考文件">參考文件</h2>

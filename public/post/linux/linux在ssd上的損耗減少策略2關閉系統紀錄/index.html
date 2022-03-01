@@ -7,7 +7,7 @@
     <title>Linux在SSD上的損耗減少策略2(關閉系統紀錄) | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="在linux中，為了明確清楚電腦曾經發生過什麼，所以會將一切紀錄記載在以下資料夾 /var/log 但是這樣終究會損耗SSD的寫入次數 而且紀錄檔會越來越大 如果">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="Linux在SSD上的損耗減少策略2(關閉系統紀錄)" />
 <meta property="og:description" content="在linux中，為了明確清楚電腦曾經發生過什麼，所以會將一切紀錄記載在以下資料夾 /var/log 但是這樣終究會損耗SSD的寫入次數 而且紀錄檔會越來越大 如果" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-03-01T11:24:26+08:00" />
 <meta property="article:modified_time" content="2021-03-01T11:24:26+08:00" />
+
 <meta itemprop="name" content="Linux在SSD上的損耗減少策略2(關閉系統紀錄)">
-<meta itemprop="description" content="在linux中，為了明確清楚電腦曾經發生過什麼，所以會將一切紀錄記載在以下資料夾 /var/log 但是這樣終究會損耗SSD的寫入次數 而且紀錄檔會越來越大 如果">
-<meta itemprop="datePublished" content="2021-03-01T11:24:26&#43;08:00" />
-<meta itemprop="dateModified" content="2021-03-01T11:24:26&#43;08:00" />
+<meta itemprop="description" content="在linux中，為了明確清楚電腦曾經發生過什麼，所以會將一切紀錄記載在以下資料夾 /var/log 但是這樣終究會損耗SSD的寫入次數 而且紀錄檔會越來越大 如果"><meta itemprop="datePublished" content="2021-03-01T11:24:26+08:00" />
+<meta itemprop="dateModified" content="2021-03-01T11:24:26+08:00" />
 <meta itemprop="wordCount" content="163">
-
-
-
 <meta itemprop="keywords" content="linux,ssd," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux在SSD上的損耗減少策略2(關閉系統紀錄)"/>
 <meta name="twitter:description" content="在linux中，為了明確清楚電腦曾經發生過什麼，所以會將一切紀錄記載在以下資料夾 /var/log 但是這樣終究會損耗SSD的寫入次數 而且紀錄檔會越來越大 如果"/>
@@ -255,14 +252,14 @@
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>在linux中，為了明確清楚電腦曾經發生過什麼，所以會將一切紀錄記載在以下資料夾</p>
-<pre><code>/var/log
+<pre tabindex="0"><code>/var/log
 </code></pre><p>但是這樣終究會損耗SSD的寫入次數<br>
 而且紀錄檔會越來越大<br>
 如果沒有意圖要紀錄linux中發生的大小事時<br>
 可以這樣操作</p>
 <h3 id="關閉紀錄程式">關閉紀錄程式</h3>
 <p>紀錄程式的名稱稱為 rsyslog，以下是關閉的指令：</p>
-<pre><code>sudo systemctl disable rsyslog
+<pre tabindex="0"><code>sudo systemctl disable rsyslog
 </code></pre><p>systemctl適用於調整開機時自動執行的程式<br>
 disable 關閉 / emable 啟動</p>
 <ul class="pa0">
