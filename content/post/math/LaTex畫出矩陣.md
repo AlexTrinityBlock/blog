@@ -6,7 +6,7 @@ featured_image: "/secure.jpg"
 tags: ["math"]
 ---
 
-# 繪製出普聽的矩陣
+# 繪製出普通的矩陣
 
 ```latex
 \documentclass{article}

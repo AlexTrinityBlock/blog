@@ -17,7 +17,7 @@
       <pubDate>Thu, 03 Mar 2022 14:43:44 +0800</pubDate>
       
       <guid>https://alextrinityblock.github.io/blog/public/post/math/latex%E7%95%AB%E5%87%BA%E7%9F%A9%E9%99%A3/</guid>
-      <description>繪製出普聽的矩陣 \documentclass{article} \usepackage{amsmath} \begin{document} $\begin{bmatrix} a &amp;amp; b &amp;amp; d\\ c &amp;amp; d &amp;amp; d \end{bmatrix}$ \end{document} $\begin{bmatrix} a &amp; b &amp; d\\ c &amp; d &amp; d \end{bmatrix}$ 繪製出有線的矩陣 \documentclass{article} \usepackage{amsmath} \begin{document} $\begin{bmatrix} \begin{array}{cc|c} a &amp;amp; b &amp;amp; d\\ c &amp;amp; d &amp;amp; d \end{array} \end{bmatrix}$ \end{document} $\begin{bmatrix} \begin{array}{cc|c} a &amp; b &amp; d\\ c</description>
+      <description>繪製出普通的矩陣 \documentclass{article} \usepackage{amsmath} \begin{document} $\begin{bmatrix} a &amp;amp; b &amp;amp; d\\ c &amp;amp; d &amp;amp; d \end{bmatrix}$ \end{document} $\begin{bmatrix} a &amp; b &amp; d\\ c &amp; d &amp; d \end{bmatrix}$ 繪製出有線的矩陣 \documentclass{article} \usepackage{amsmath} \begin{document} $\begin{bmatrix} \begin{array}{cc|c} a &amp;amp; b &amp;amp; d\\ c &amp;amp; d &amp;amp; d \end{array} \end{bmatrix}$ \end{document} $\begin{bmatrix} \begin{array}{cc|c} a &amp; b &amp; d\\ c</description>
     </item>
     
     <item>
