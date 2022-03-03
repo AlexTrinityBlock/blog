@@ -7,7 +7,7 @@
     <title>Git選擇分支 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="1.什麼是分支? 當我們在開發某個東西時，總存在著測試和開發中，無法正常上線的狀態之版本 而多人合力開發時，也有很多的細節需要整合 這時候就會使用">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.68.3" />
     
     
       
@@ -36,14 +36,17 @@
     <meta property="og:title" content="Git選擇分支" />
 <meta property="og:description" content="1.什麼是分支? 當我們在開發某個東西時，總存在著測試和開發中，無法正常上線的狀態之版本 而多人合力開發時，也有很多的細節需要整合 這時候就會使用" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/git/git%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/git/git%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C/" />
 <meta property="article:published_time" content="2022-02-23T00:04:44+08:00" />
 <meta property="article:modified_time" content="2022-02-23T00:04:44+08:00" />
-
 <meta itemprop="name" content="Git選擇分支">
-<meta itemprop="description" content="1.什麼是分支? 當我們在開發某個東西時，總存在著測試和開發中，無法正常上線的狀態之版本 而多人合力開發時，也有很多的細節需要整合 這時候就會使用"><meta itemprop="datePublished" content="2022-02-23T00:04:44+08:00" />
-<meta itemprop="dateModified" content="2022-02-23T00:04:44+08:00" />
+<meta itemprop="description" content="1.什麼是分支? 當我們在開發某個東西時，總存在著測試和開發中，無法正常上線的狀態之版本 而多人合力開發時，也有很多的細節需要整合 這時候就會使用">
+<meta itemprop="datePublished" content="2022-02-23T00:04:44&#43;08:00" />
+<meta itemprop="dateModified" content="2022-02-23T00:04:44&#43;08:00" />
 <meta itemprop="wordCount" content="222">
+
+
+
 <meta itemprop="keywords" content="git,github," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git選擇分支"/>
 <meta name="twitter:description" content="1.什麼是分支? 當我們在開發某個東西時，總存在著測試和開發中，無法正常上線的狀態之版本 而多人合力開發時，也有很多的細節需要整合 這時候就會使用"/>
@@ -258,21 +261,21 @@
 在此個部分，我們先來討論如何選擇分支進行開發。</p>
 <h1 id="2選擇分支的指令">2.選擇分支的指令</h1>
 <p>選擇主分支</p>
-<pre tabindex="0"><code>git checkout master
+<pre><code>git checkout master
 </code></pre><p>選擇其他分支
 git checkout 分支名稱
 例如:我們的分支叫new_feature</p>
-<pre tabindex="0"><code>git checkout new_feature
+<pre><code>git checkout new_feature
 </code></pre><h1 id="3建立新分支">3.建立新分支</h1>
 <p>建立分支new_branch</p>
-<pre tabindex="0"><code>git branch new_branch
+<pre><code>git branch new_branch
 </code></pre><h1 id="4合併分支">4.合併分支</h1>
 <p>把new_branch合併回主幹</p>
-<pre tabindex="0"><code>git checkout master
+<pre><code>git checkout master
 git merge new_branch
 </code></pre><h1 id="5刪除分支">5.刪除分支</h1>
 <p>刪除new_branche</p>
-<pre tabindex="0"><code>git branch new_branche -D
+<pre><code>git branch new_branche -D
 </code></pre><ul class="pa0">
   
    <li class="list">

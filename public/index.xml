@@ -6,7 +6,20 @@
     <description>Recent content in 一個凡人的筆記 on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Fri, 26 Feb 2021 17:04:06 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Feb 2021 17:04:06 +0800</lastBuildDate>
+    
+	<atom:link href="https://alextrinityblock.github.io/blog/public/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LaTex畫出矩陣</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/math/latex%E7%95%AB%E5%87%BA%E7%9F%A9%E9%99%A3/</link>
+      <pubDate>Thu, 03 Mar 2022 14:43:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/math/latex%E7%95%AB%E5%87%BA%E7%9F%A9%E9%99%A3/</guid>
+      <description>繪製出普聽的矩陣 \documentclass{article} \usepackage{amsmath} \begin{document} $\begin{bmatrix} a &amp;amp; b &amp;amp; d\\ c &amp;amp; d &amp;amp; d \end{bmatrix}$ \end{document} $\begin{bmatrix} a &amp; b &amp; d\\ c &amp; d &amp; d \end{bmatrix}$ 繪製出有線的矩陣 \documentclass{article} \usepackage{amsmath} \begin{document} $\begin{bmatrix} \begin{array}{cc|c} a &amp;amp; b &amp;amp; d\\ c &amp;amp; d &amp;amp; d \end{array} \end{bmatrix}$ \end{document} $\begin{bmatrix} \begin{array}{cc|c} a &amp; b &amp; d\\ c</description>
+    </item>
+    
     <item>
       <title>ASP.net找不到csc.exe</title>
       <link>https://alextrinityblock.github.io/blog/public/post/asp.net/asp.net%E6%89%BE%E4%B8%8D%E5%88%B0csc.exe/</link>

@@ -7,7 +7,7 @@
     <title>Express-generator使用與理解 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="目錄 1.先備知識 2.專案進入點/bin/www 3.理解package.json 4.理解app.js 5.調整Morgan的log格式 6.模塊(">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.68.3" />
     
     
       
@@ -36,14 +36,17 @@
     <meta property="og:title" content="Express-generator使用與理解" />
 <meta property="og:description" content="目錄 1.先備知識 2.專案進入點/bin/www 3.理解package.json 4.理解app.js 5.調整Morgan的log格式 6.模塊(" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/node.js/express-generator%E4%BD%BF%E7%94%A8%E8%88%87%E7%90%86%E8%A7%A3/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/node.js/express-generator%E4%BD%BF%E7%94%A8%E8%88%87%E7%90%86%E8%A7%A3/" />
 <meta property="article:published_time" content="2022-02-17T13:00:44+08:00" />
 <meta property="article:modified_time" content="2022-02-17T13:00:44+08:00" />
-
 <meta itemprop="name" content="Express-generator使用與理解">
-<meta itemprop="description" content="目錄 1.先備知識 2.專案進入點/bin/www 3.理解package.json 4.理解app.js 5.調整Morgan的log格式 6.模塊("><meta itemprop="datePublished" content="2022-02-17T13:00:44+08:00" />
-<meta itemprop="dateModified" content="2022-02-17T13:00:44+08:00" />
+<meta itemprop="description" content="目錄 1.先備知識 2.專案進入點/bin/www 3.理解package.json 4.理解app.js 5.調整Morgan的log格式 6.模塊(">
+<meta itemprop="datePublished" content="2022-02-17T13:00:44&#43;08:00" />
+<meta itemprop="dateModified" content="2022-02-17T13:00:44&#43;08:00" />
 <meta itemprop="wordCount" content="4086">
+
+
+
 <meta itemprop="keywords" content="Node.js," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Express-generator使用與理解"/>
 <meta name="twitter:description" content="目錄 1.先備知識 2.專案進入點/bin/www 3.理解package.json 4.理解app.js 5.調整Morgan的log格式 6.模塊("/>
@@ -268,9 +271,9 @@
 <p><a href="#%E7%9B%AE%E9%8C%84">回到目錄</a></p>
 <h1 id="專案進入點binwww">專案進入點/bin/www</h1>
 <p>當我們輸入</p>
-<pre tabindex="0"><code>npm start
+<pre><code>npm start
 </code></pre><p>就會第一個觸發該js程式，我們可以看看裡頭的檔案配置。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">#!/usr/bin/env node
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">#!/usr/bin/env node
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">/**
 </span><span style="color:#75715e"> * 引入必要模塊
@@ -305,36 +308,36 @@
 
 </code></pre></div><p><a href="#%E7%9B%AE%E9%8C%84">回到目錄</a></p>
 <h1 id="理解packagejson">理解package.json</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;app&#34;</span>,<span style="color:#75715e">//npm專案名稱
-</span><span style="color:#75715e"></span>  <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;0.0.0&#34;</span>,<span style="color:#75715e">//版本
-</span><span style="color:#75715e"></span>  <span style="color:#f92672">&#34;private&#34;</span>: <span style="color:#66d9ef">true</span>,<span style="color:#75715e">//私有專案
-</span><span style="color:#75715e"></span>  <span style="color:#f92672">&#34;scripts&#34;</span>: {
-    <span style="color:#f92672">&#34;start&#34;</span>: <span style="color:#e6db74">&#34;node ./bin/www&#34;</span>　<span style="color:#75715e">//輸入NPM start時，會執行node ./bin/www，用js執行 www啟動腳本
-</span><span style="color:#75715e"></span>  },
-  <span style="color:#f92672">&#34;dependencies&#34;</span>: { <span style="color:#75715e">//專案依賴套件
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;cookie-parser&#34;</span>: <span style="color:#e6db74">&#34;~1.4.4&#34;</span>,<span style="color:#75715e">//Cookie解析模塊
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;debug&#34;</span>: <span style="color:#e6db74">&#34;~2.6.9&#34;</span>,
-    <span style="color:#f92672">&#34;express&#34;</span>: <span style="color:#e6db74">&#34;~4.16.1&#34;</span>,<span style="color:#75715e">//Express網頁模塊
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;http-errors&#34;</span>: <span style="color:#e6db74">&#34;~1.6.3&#34;</span>,<span style="color:#75715e">//HTTP錯誤處理模塊
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;jade&#34;</span>: <span style="color:#e6db74">&#34;~1.11.0&#34;</span>,<span style="color:#75715e">//前端模板引擎
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;morgan&#34;</span>: <span style="color:#e6db74">&#34;~1.9.1&#34;</span><span style="color:#75715e">//log紀錄檔模塊
-</span><span style="color:#75715e"></span>  }
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;app&#34;</span>,<span style="color:#960050;background-color:#1e0010">//npm專案名稱</span>
+  <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;0.0.0&#34;</span>,<span style="color:#960050;background-color:#1e0010">//版本</span>
+  <span style="color:#f92672">&#34;private&#34;</span>: <span style="color:#66d9ef">true</span>,<span style="color:#960050;background-color:#1e0010">//私有專案</span>
+  <span style="color:#f92672">&#34;scripts&#34;</span>: {
+    <span style="color:#f92672">&#34;start&#34;</span>: <span style="color:#e6db74">&#34;node ./bin/www&#34;</span>　<span style="color:#960050;background-color:#1e0010">//輸入NPM</span> <span style="color:#960050;background-color:#1e0010">start時，會執行node</span> <span style="color:#960050;background-color:#1e0010">./bin/www，用js執行</span> <span style="color:#960050;background-color:#1e0010">www啟動腳本</span>
+  },
+  <span style="color:#f92672">&#34;dependencies&#34;</span>: { <span style="color:#960050;background-color:#1e0010">//專案依賴套件</span>
+    <span style="color:#f92672">&#34;cookie-parser&#34;</span>: <span style="color:#e6db74">&#34;~1.4.4&#34;</span>,<span style="color:#960050;background-color:#1e0010">//Cookie解析模塊</span>
+    <span style="color:#f92672">&#34;debug&#34;</span>: <span style="color:#e6db74">&#34;~2.6.9&#34;</span>,
+    <span style="color:#f92672">&#34;express&#34;</span>: <span style="color:#e6db74">&#34;~4.16.1&#34;</span>,<span style="color:#960050;background-color:#1e0010">//Express網頁模塊</span>
+    <span style="color:#f92672">&#34;http-errors&#34;</span>: <span style="color:#e6db74">&#34;~1.6.3&#34;</span>,<span style="color:#960050;background-color:#1e0010">//HTTP錯誤處理模塊</span>
+    <span style="color:#f92672">&#34;jade&#34;</span>: <span style="color:#e6db74">&#34;~1.11.0&#34;</span>,<span style="color:#960050;background-color:#1e0010">//前端模板引擎</span>
+    <span style="color:#f92672">&#34;morgan&#34;</span>: <span style="color:#e6db74">&#34;~1.9.1&#34;</span><span style="color:#960050;background-color:#1e0010">//log紀錄檔模塊</span>
+  }
 }
 </code></pre></div><p>順代一提，如果要新增package.json裡頭npm模塊，需要使用這個指令:</p>
-<pre tabindex="0"><code>npm install &lt;模塊名稱&gt;
+<pre><code>npm install &lt;模塊名稱&gt;
 </code></pre><p>不過在低版本的npm5.0以前，如果沒有加入如下的&ndash;save參數，是不會紀錄到package.json中的。</p>
 <p>因此，需要用以下指令:</p>
-<pre tabindex="0"><code>npm install &lt;模塊名稱&gt; --save
+<pre><code>npm install &lt;模塊名稱&gt; --save
 </code></pre><p>刪除則是</p>
-<pre tabindex="0"><code>npm uninstall &lt;模塊名稱&gt;
+<pre><code>npm uninstall &lt;模塊名稱&gt;
 </code></pre><p>如果為了快速移動專案資料夾，可以刪除掉node_modules</p>
 <p>移動到新的環境時，用以下指令安裝所有需要的模塊</p>
-<pre tabindex="0"><code>npm install
+<pre><code>npm install
 </code></pre><p><a href="#%E7%9B%AE%E9%8C%84">回到目錄</a></p>
 <h1 id="理解appjs">理解app.js</h1>
 <p>app.js</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">createError</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;http-errors&#39;</span>);<span style="color:#75715e">//建立錯誤頁面物件
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">createError</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;http-errors&#39;</span>);<span style="color:#75715e">//建立錯誤頁面物件
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);<span style="color:#75715e">//導入主要express物件
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;path&#39;</span>);<span style="color:#75715e">//路徑物件
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cookieParser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;cookie-parser&#39;</span>);<span style="color:#75715e">//cookie檢視物件
@@ -386,14 +389,14 @@
 <h2 id="自訂mogrgan輸出">自訂Mogrgan輸出</h2>
 <p>到app.js中調整Morgan的一些基本設置，就能夠自訂log輸出格式。</p>
 <p>其中有各種類型的log內容，例如顯示用戶輸入的url時可以用這樣</p>
-<pre tabindex="0"><code>:url
+<pre><code>:url
 </code></pre><p>例如我們改成這樣</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">format</span>(<span style="color:#e6db74">&#39;test-log&#39;</span>,<span style="color:#e6db74">&#39;This is log :method :url :status :response-time&#39;</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">format</span>(<span style="color:#e6db74">&#39;test-log&#39;</span>,<span style="color:#e6db74">&#39;This is log :method :url :status :response-time&#39;</span>);
 <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">logger</span>(<span style="color:#e6db74">&#39;test-log&#39;</span>));
 </code></pre></div><p>輸出就會變成這樣</p>
-<pre tabindex="0"><code>This is log GET /stylesheets/style.css 200 3.463
+<pre><code>This is log GET /stylesheets/style.css 200 3.463
 </code></pre><p>以下是各種內容介紹</p>
-<pre tabindex="0"><code>:date[format]
+<pre><code>:date[format]
 The current date and time in UTC. The available formats are:
 
 clf for the common log format (&quot;10/Oct/2000:13:55:36 +0000&quot;)
@@ -449,38 +452,38 @@ The contents of the User-Agent header of the request.
 <h3 id="dev">dev</h3>
 <p>在終端機裡頭會改變顏色，請求成功是綠色，好看又方便觀察。</p>
 <p>等同</p>
-<pre tabindex="0"><code>:method :url :status :response-time ms - :res[content-length]
+<pre><code>:method :url :status :response-time ms - :res[content-length]
 </code></pre><p>使用時將app.js改為</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">logger</span>(<span style="color:#e6db74">&#39;dev&#39;</span>));
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">logger</span>(<span style="color:#e6db74">&#39;dev&#39;</span>));
 </code></pre></div><h3 id="combined與common">combined　與　common</h3>
 <p>Apache的標準log格式，方便其他log解讀軟體閱讀，combined多了user-agent比較詳細，十分建議。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">logger</span>(<span style="color:#e6db74">&#39;combined&#39;</span>));
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">logger</span>(<span style="color:#e6db74">&#39;common&#39;</span>));
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">logger</span>(<span style="color:#e6db74">&#39;combined&#39;</span>));
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">logger</span>(<span style="color:#e6db74">&#39;common&#39;</span>));
 </code></pre></div><h3 id="short-與tiny">short 與　tiny</h3>
 <p>比預設輸出更短。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">logger</span>(<span style="color:#e6db74">&#39;short&#39;</span>));
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">logger</span>(<span style="color:#e6db74">&#39;tiny&#39;</span>));
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">logger</span>(<span style="color:#e6db74">&#39;short&#39;</span>));
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">logger</span>(<span style="color:#e6db74">&#39;tiny&#39;</span>));
 </code></pre></div><p><a href="#%E7%9B%AE%E9%8C%84">回到目錄</a></p>
 <h1 id="模塊module機制說明">模塊(Module)機制說明</h1>
 <p>模塊(Module)機制是node.js中的一個關鍵機制，與其他近代語言如同Python一般，可以將類別或函數分別撰寫在不同檔案，最後進行呼叫與代碼重用和組織，以方便管理。</p>
 <p>我們此處示範建立一個測試用的模組，其資料夾路徑如下。</p>
-<pre tabindex="0"><code>app/
+<pre><code>app/
 └── models
         └── test.js
 </code></pre><h2 id="模塊的內容撰寫">模塊的內容撰寫</h2>
 <p>test.js</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test</span>(){
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test</span>(){
     <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;This is Test&#34;</span>
 }
 
 <span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">test</span>; <span style="color:#75715e">//一定要有這一行，才能在使用時引用上頭的test函數或其他物件
 </span></code></pre></div><h2 id="修改在routes中的內容">修改在routes中的內容</h2>
 <p>我們可以在routes目錄下看到index.js，這個資料夾用於，當我們在網頁根路徑/時，引出的對應反應。</p>
-<pre tabindex="0"><code>app/
+<pre><code>app/
 └── routes
         └── index.js
 </code></pre><p>我們將剛剛自製的模塊引入app/routes/index.js</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">test</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;../models/test&#39;</span>);
 
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
@@ -496,7 +499,7 @@ The contents of the User-Agent header of the request.
 <h2 id="複數函數或物件的模塊引用">複數函數或物件的模塊引用</h2>
 <p>如果我們的一個檔案裡頭有一個以上的函數或類別，可以用以下方式導出。</p>
 <p>test.js</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test1</span>(){
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test1</span>(){
     <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;This is Test1&#34;</span>
 }
 
@@ -510,7 +513,7 @@ The contents of the User-Agent header of the request.
 };
 </code></pre></div><p>或者</p>
 <p>test.js</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test1</span>(){
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test1</span>(){
     <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;This is Test1&#34;</span>
 }
 
@@ -521,7 +524,7 @@ The contents of the User-Agent header of the request.
 <span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">test1</span>,<span style="color:#a6e22e">test2</span>};
 </code></pre></div><p>然後在引用時要這樣</p>
 <p>routes/index.js</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">test</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;../models/test&#39;</span>);
 
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
@@ -540,7 +543,7 @@ The contents of the User-Agent header of the request.
 <p>在GET中，請求的內容通通在header中，從另外一個角度來看，請求的內容通通在網址中。</p>
 <p>GET沒有body，主要用於取得資料。</p>
 <p>例如我們用GET對伺服器發出color為red的請求會長成:</p>
-<pre tabindex="0"><code>網址?color=red
+<pre><code>網址?color=red
 </code></pre><p><strong>POST</strong></p>
 <p>POST中則是請求的格式細節在header中，而請求內容放在body。
 用於新增資料。</p>
@@ -551,7 +554,7 @@ The contents of the User-Agent header of the request.
 <p><a href="#%E7%9B%AE%E9%8C%84">回到目錄</a></p>
 <h1 id="express中的路由意義">Express中的路由意義</h1>
 <p>我們觀察routes/index.js</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
 
 <span style="color:#75715e">/* GET home page. */</span>
@@ -562,34 +565,34 @@ The contents of the User-Agent header of the request.
 <span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">router</span>;
 </code></pre></div><p>其中就隱含了node.js中最簡單回應客戶請求的方式，我們可以看到下方的範本:</p>
 <h2 id="get">GET</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
 
 <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
   <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#39;要回應給客戶的內容&#39;</span>);
 });
 </code></pre></div><h2 id="post">POST</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
 
 <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
   <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#39;要回應給客戶的內容&#39;</span>);
 });
 </code></pre></div><h2 id="put">PUT</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
 
 <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
   <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#39;要回應給客戶的內容&#39;</span>);
 });
 </code></pre></div><h2 id="delete">DELETE</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
 
 <span style="color:#a6e22e">router</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
   <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#39;要回應給客戶的內容&#39;</span>);
 });
 </code></pre></div><h2 id="設定特定的網頁路徑">設定特定的網頁路徑</h2>
 <p>例如我們要用</p>
-<pre tabindex="0"><code>網址/home/test
+<pre><code>網址/home/test
 </code></pre><p>來當作我們的路徑，路由可以這樣寫:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
 
 <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/home/test&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
   <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#39;要回應給客戶的內容&#39;</span>);
@@ -598,12 +601,12 @@ The contents of the User-Agent header of the request.
 <h1 id="express中的路由參數傳遞">Express中的路由參數傳遞</h1>
 <h2 id="取得在url路徑中的參數傳遞">取得在URL路徑中的參數傳遞</h2>
 <p>假如我們要買書，並且要買001號書，在一般的get參數傳遞會是這樣:</p>
-<pre tabindex="0"><code>網址?book=001
+<pre><code>網址?book=001
 </code></pre><p>但如果我們希望可以用路徑式的方式來傳遞參數</p>
-<pre tabindex="0"><code>網址/book/001
+<pre><code>網址/book/001
 </code></pre><p>就可以用以下的方式。</p>
 <p>我們首先修改routes/index.js</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
 
 <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/book/:parameter1&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
@@ -613,16 +616,16 @@ The contents of the User-Agent header of the request.
 <span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">router</span>;
 
 </code></pre></div><p>其中</p>
-<pre tabindex="0"><code>req.params.parameter1
+<pre><code>req.params.parameter1
 </code></pre><p>會回傳我們在網址列路徑中輸入的參數</p>
 <p>這時候我們存取這個網址</p>
-<pre tabindex="0"><code>http://127.0.0.1:3000/book/001
+<pre><code>http://127.0.0.1:3000/book/001
 </code></pre><p>就可以看到</p>
-<pre tabindex="0"><code>你輸入的是001
+<pre><code>你輸入的是001
 </code></pre><h2 id="取得傳統的getpost參數">取得傳統的GET/POST參數</h2>
 <p>若要用GET方式傳遞參數，整段程式都不用改，如下即可。</p>
 <p>routes/index.js</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
 
 <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/book/:parameter1&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
@@ -632,28 +635,28 @@ The contents of the User-Agent header of the request.
 <span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">router</span>;
 
 </code></pre></div><p>而參數傳遞時則用</p>
-<pre tabindex="0"><code>http://127.0.0.1:3000?book=001
+<pre><code>http://127.0.0.1:3000?book=001
 </code></pre><p>而POST亦然，只是請求方式改成POST而已。</p>
 <h2 id="express中取得參數的幾種方法">Express中取得參數的幾種方法</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">語法</th>
-<th style="text-align:center">描述</th>
+<th align="center">語法</th>
+<th align="center">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">req.body</td>
-<td style="text-align:center">POST中主要資訊於body中的內容。</td>
+<td align="center">req.body</td>
+<td align="center">POST中主要資訊於body中的內容。</td>
 </tr>
 <tr>
-<td style="text-align:center">req.query</td>
-<td style="text-align:center">GET/POST中的參數。</td>
+<td align="center">req.query</td>
+<td align="center">GET/POST中的參數。</td>
 </tr>
 <tr>
-<td style="text-align:center">req.params</td>
-<td style="text-align:center">GET/POST與URL路徑式的參數傳遞的內容。</td>
+<td align="center">req.params</td>
+<td align="center">GET/POST與URL路徑式的參數傳遞的內容。</td>
 </tr>
 </tbody>
 </table>
@@ -663,7 +666,7 @@ The contents of the User-Agent header of the request.
 <p>這種方法可以回傳字串與陣列</p>
 <h3 id="字串">字串</h3>
 <p>routes/index.js</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
 
 <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
@@ -673,7 +676,7 @@ The contents of the User-Agent header of the request.
 <span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">router</span>;
 </code></pre></div><h3 id="陣列">陣列</h3>
 <p>routes/index.js</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
 
 <span style="color:#75715e">/* GET home page. */</span>
@@ -685,7 +688,7 @@ The contents of the User-Agent header of the request.
 </code></pre></div><h2 id="resjson">res.json</h2>
 <p>這種方法用於回應json格式，非常適合在設計API時使用。</p>
 <p>routes/index.js</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
 
 <span style="color:#75715e">/* GET home page. */</span>

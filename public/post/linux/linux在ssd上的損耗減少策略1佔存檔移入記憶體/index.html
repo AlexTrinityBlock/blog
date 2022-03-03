@@ -7,7 +7,7 @@
     <title>linux在SSD上的損耗減少策略1(佔存檔移入記憶體) | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="概述 固態硬碟SSD存在著寫入次數限制 而linux上頭各應用程式 暫時存在的檔案通常會放在 /tmp 目錄之中 我們該如何減少/tmp 中頻繁的擦寫帶來的損耗">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.68.3" />
     
     
       
@@ -36,14 +36,17 @@
     <meta property="og:title" content="linux在SSD上的損耗減少策略1(佔存檔移入記憶體)" />
 <meta property="og:description" content="概述 固態硬碟SSD存在著寫入次數限制 而linux上頭各應用程式 暫時存在的檔案通常會放在 /tmp 目錄之中 我們該如何減少/tmp 中頻繁的擦寫帶來的損耗" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/" />
 <meta property="article:published_time" content="2021-03-01T01:04:15+08:00" />
 <meta property="article:modified_time" content="2021-03-01T01:04:15+08:00" />
-
 <meta itemprop="name" content="linux在SSD上的損耗減少策略1(佔存檔移入記憶體)">
-<meta itemprop="description" content="概述 固態硬碟SSD存在著寫入次數限制 而linux上頭各應用程式 暫時存在的檔案通常會放在 /tmp 目錄之中 我們該如何減少/tmp 中頻繁的擦寫帶來的損耗"><meta itemprop="datePublished" content="2021-03-01T01:04:15+08:00" />
-<meta itemprop="dateModified" content="2021-03-01T01:04:15+08:00" />
+<meta itemprop="description" content="概述 固態硬碟SSD存在著寫入次數限制 而linux上頭各應用程式 暫時存在的檔案通常會放在 /tmp 目錄之中 我們該如何減少/tmp 中頻繁的擦寫帶來的損耗">
+<meta itemprop="datePublished" content="2021-03-01T01:04:15&#43;08:00" />
+<meta itemprop="dateModified" content="2021-03-01T01:04:15&#43;08:00" />
 <meta itemprop="wordCount" content="207">
+
+
+
 <meta itemprop="keywords" content="linux,ssd," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="linux在SSD上的損耗減少策略1(佔存檔移入記憶體)"/>
 <meta name="twitter:description" content="概述 固態硬碟SSD存在著寫入次數限制 而linux上頭各應用程式 暫時存在的檔案通常會放在 /tmp 目錄之中 我們該如何減少/tmp 中頻繁的擦寫帶來的損耗"/>
@@ -255,7 +258,7 @@
 <p>固態硬碟SSD存在著寫入次數限制<br>
 而linux上頭各應用程式<br>
 暫時存在的檔案通常會放在</p>
-<pre tabindex="0"><code>/tmp
+<pre><code>/tmp
 </code></pre><p>目錄之中<br>
 我們該如何減少/tmp 中頻繁的擦寫帶來的損耗呢？</p>
 <h3 id="linux-mint-中的解決方案">linux mint 中的解決方案</h3>
@@ -263,9 +266,9 @@
 也就是Ram中的程式<br>
 雖然可以直接操控，但是為求簡便linux mint中預設某個可用的服務，可以直接達成此目標<br>
 打開終端機</p>
-<pre tabindex="0"><code>sudo cp /usr/share/systemd/tmp.mount /etc/systemd/system/tmp.mount
+<pre><code>sudo cp /usr/share/systemd/tmp.mount /etc/systemd/system/tmp.mount
 </code></pre><p>將沒被啟用的服務檔案tmp.mount複製到正在使用的服務檔案資料夾</p>
-<pre tabindex="0"><code>sudo systemctl enable tmp.mount
+<pre><code>sudo systemctl enable tmp.mount
 </code></pre><p>啟用服務，完成！</p>
 <ul class="pa0">
   

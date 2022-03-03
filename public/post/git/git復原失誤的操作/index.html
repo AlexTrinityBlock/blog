@@ -7,7 +7,7 @@
     <title>Git復原失誤的操作 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="以Revert復原已經提交的變更 每次的變更都會留下雜湊質值 git log 可以查看 要復原變更可以以雜湊值復原 git revert acc6af6 如果復原時跳出UNIX式的VI編輯器介">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.68.3" />
     
     
       
@@ -36,14 +36,17 @@
     <meta property="og:title" content="Git復原失誤的操作" />
 <meta property="og:description" content="以Revert復原已經提交的變更 每次的變更都會留下雜湊質值 git log 可以查看 要復原變更可以以雜湊值復原 git revert acc6af6 如果復原時跳出UNIX式的VI編輯器介" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/" />
 <meta property="article:published_time" content="2022-02-23T00:03:44+08:00" />
 <meta property="article:modified_time" content="2022-02-23T00:03:44+08:00" />
-
 <meta itemprop="name" content="Git復原失誤的操作">
-<meta itemprop="description" content="以Revert復原已經提交的變更 每次的變更都會留下雜湊質值 git log 可以查看 要復原變更可以以雜湊值復原 git revert acc6af6 如果復原時跳出UNIX式的VI編輯器介"><meta itemprop="datePublished" content="2022-02-23T00:03:44+08:00" />
-<meta itemprop="dateModified" content="2022-02-23T00:03:44+08:00" />
+<meta itemprop="description" content="以Revert復原已經提交的變更 每次的變更都會留下雜湊質值 git log 可以查看 要復原變更可以以雜湊值復原 git revert acc6af6 如果復原時跳出UNIX式的VI編輯器介">
+<meta itemprop="datePublished" content="2022-02-23T00:03:44&#43;08:00" />
+<meta itemprop="dateModified" content="2022-02-23T00:03:44&#43;08:00" />
 <meta itemprop="wordCount" content="196">
+
+
+
 <meta itemprop="keywords" content="git,github," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git復原失誤的操作"/>
 <meta name="twitter:description" content="以Revert復原已經提交的變更 每次的變更都會留下雜湊質值 git log 可以查看 要復原變更可以以雜湊值復原 git revert acc6af6 如果復原時跳出UNIX式的VI編輯器介"/>
@@ -253,20 +256,20 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="以revert復原已經提交的變更">以Revert復原已經提交的變更</h1>
 <p>每次的變更都會留下雜湊質值</p>
-<pre tabindex="0"><code>git log 
+<pre><code>git log 
 </code></pre><p>可以查看
 要復原變更可以以雜湊值復原</p>
-<pre tabindex="0"><code>git revert acc6af6 
+<pre><code>git revert acc6af6 
 </code></pre><p>如果復原時跳出UNIX式的VI編輯器介面
 請按 ESC
 然後輸入 :wq</p>
 <h1 id="以reset復原尚未提交的變更">以Reset復原尚未提交的變更</h1>
 <p>在commit之前復原，當前的文件也會回歸pull 下來的狀態,commit被丟棄</p>
-<pre tabindex="0"><code>git reset --hard 
+<pre><code>git reset --hard 
 </code></pre><p>在commit之前復原，暫存區清空(add 的部分消失),commit被跑到工作目錄</p>
-<pre tabindex="0"><code>git reset --mixed 
+<pre><code>git reset --mixed 
 </code></pre><p>commit被跑到暫存區</p>
-<pre tabindex="0"><code>git reset --soft 
+<pre><code>git reset --soft 
 </code></pre><ul class="pa0">
   
    <li class="list">

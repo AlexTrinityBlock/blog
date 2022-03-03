@@ -7,7 +7,7 @@
     <title>docker.sock錯誤處理 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="docker.sock的錯誤 剛裝好docker時常常會跳出此種錯誤 Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/json: dial unix /var/run/docker.sock: connect: permission denied docker.sock的功能 簡">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.68.3" />
     
     
       
@@ -36,14 +36,17 @@
     <meta property="og:title" content="docker.sock錯誤處理" />
 <meta property="og:description" content="docker.sock的錯誤 剛裝好docker時常常會跳出此種錯誤 Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/json: dial unix /var/run/docker.sock: connect: permission denied docker.sock的功能 簡" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/docker/docker%E7%A7%92%E9%80%80%E7%9A%84%E5%95%8F%E9%A1%8C/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/docker/docker%E7%A7%92%E9%80%80%E7%9A%84%E5%95%8F%E9%A1%8C/" />
 <meta property="article:published_time" content="2021-05-01T23:05:03+08:00" />
 <meta property="article:modified_time" content="2021-05-01T23:05:03+08:00" />
-
 <meta itemprop="name" content="docker.sock錯誤處理">
-<meta itemprop="description" content="docker.sock的錯誤 剛裝好docker時常常會跳出此種錯誤 Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/json: dial unix /var/run/docker.sock: connect: permission denied docker.sock的功能 簡"><meta itemprop="datePublished" content="2021-05-01T23:05:03+08:00" />
-<meta itemprop="dateModified" content="2021-05-01T23:05:03+08:00" />
+<meta itemprop="description" content="docker.sock的錯誤 剛裝好docker時常常會跳出此種錯誤 Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/json: dial unix /var/run/docker.sock: connect: permission denied docker.sock的功能 簡">
+<meta itemprop="datePublished" content="2021-05-01T23:05:03&#43;08:00" />
+<meta itemprop="dateModified" content="2021-05-01T23:05:03&#43;08:00" />
 <meta itemprop="wordCount" content="141">
+
+
+
 <meta itemprop="keywords" content="docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="docker.sock錯誤處理"/>
 <meta name="twitter:description" content="docker.sock的錯誤 剛裝好docker時常常會跳出此種錯誤 Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/json: dial unix /var/run/docker.sock: connect: permission denied docker.sock的功能 簡"/>
@@ -253,7 +256,7 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h3 id="dockersock的錯誤">docker.sock的錯誤</h3>
 <p>剛裝好docker時常常會跳出此種錯誤</p>
-<pre tabindex="0"><code>Got permission denied while trying to connect 
+<pre><code>Got permission denied while trying to connect 
 to the Docker daemon socket at 
 unix:///var/run/docker.sock: 
 Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/json: 
@@ -262,11 +265,11 @@ dial unix /var/run/docker.sock: connect: permission denied
 <p>簡單來說就是連通容器與外部主機</p>
 <h3 id="解決">解決</h3>
 <p>建立docker權限群組</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo groupadd docker
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo groupadd docker
 </code></pre></div><p>將使用者加入權限群組</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo usermod -aG docker $USER
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo usermod -aG docker $USER
 </code></pre></div><p>切換到docker權限群組</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">newgrp docker 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">newgrp docker 
 </code></pre></div><p>這樣就不會跳出錯誤了</p>
 <ul class="pa0">
   
