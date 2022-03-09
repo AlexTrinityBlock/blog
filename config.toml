@@ -77,12 +77,6 @@ SectionPagesMenu = "main" #上排標籤選單
     url = "/tags/android/"
     weight = 1
 [[menu.main]]
-    identifier = "html"
-    name = "html"
-    title = "html"
-    url = "/tags/html/"
-    weight = 1
-[[menu.main]]
     identifier = "Node.js"
     name = "Node.js"
     title = "Node.js"
@@ -99,6 +93,12 @@ SectionPagesMenu = "main" #上排標籤選單
     name = "CICD"
     title = "CICD"
     url = "/tags/CICD/"
+    weight = 1
+[[menu.main]]
+    identifier = "Azure"
+    name = "Azure"
+    title = "Azure"
+    url = "/tags/Azure/"
     weight = 1
 [[menu.main]]
     identifier = "tags"
