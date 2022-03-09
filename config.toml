@@ -29,22 +29,10 @@ SectionPagesMenu = "main" #上排標籤選單
     url = "/tags/hugo"
     weight = 1
 [[menu.main]]
-    identifier = "c"
-    name = "c"
-    title = "c"
-    url = "/tags/c/"
-    weight = 1
-[[menu.main]]
     identifier = "docker"
     name = "docker"
     title = "docker"
     url = "/tags/docker/"
-    weight = 1
-[[menu.main]]
-    identifier = "network"
-    name = "network"
-    title = "network"
-    url = "/tags/network/"
     weight = 1
 [[menu.main]]
     identifier = "secure"
