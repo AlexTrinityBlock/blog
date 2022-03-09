@@ -3,7 +3,7 @@ title: "將ASP.net部屬到Azure的AppService"
 date: 2022-02-23T00:00:44+08:00
 draft: true
 featured_image: "/asp_net.png"
-tags: ["ASP.net"]
+tags: ["ASP.net","Azure"]
 ---
 
 # 啥是Azure的App Service服務?
