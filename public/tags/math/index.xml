@@ -6,10 +6,19 @@
     <description>Recent content in math on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Thu, 03 Mar 2022 14:43:44 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 09 Mar 2022 14:30:44 +0800</lastBuildDate>
     
 	<atom:link href="https://alextrinityblock.github.io/blog/public/tags/math/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mermaid畫出流程圖</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/math/mermaid%E7%95%AB%E5%87%BA%E6%B5%81%E7%A8%8B%E5%9C%96/</link>
+      <pubDate>Wed, 09 Mar 2022 14:30:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/math/mermaid%E7%95%AB%E5%87%BA%E6%B5%81%E7%A8%8B%E5%9C%96/</guid>
+      <description>我們可以用Mermaid這個Javascript函數庫來繪製出流程圖。 graph TD A(程式開始) -- B{A1 and B=0} B --|True| D(Y=A) B --|False| E{A=2 or x1} D -- E{A=2 or x1} E{A=2 or x1} -- |False| G(程式</description>
+    </item>
     
     <item>
       <title>LaTex畫出矩陣</title>
