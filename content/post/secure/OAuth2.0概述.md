@@ -97,6 +97,8 @@ Authorization: Bearer 1/mZ1edKKACtPAb7zGlwSzvs72PvhAbGmB8K1ZrGxpcNM
 
 # 關於OAuth2.0的安全問題參考資料
 
+[OAuth2.0中文參考資料(極度推薦)](https://blog.yorkxin.org/posts/oauth2-1-introduction.html)
+
 [PortSwigger部落格的OAuth2.0文章](https://portswigger.net/web-security/oauth)
 
 [參考於RFC 6749關於OAuth2.0的規格](https://datatracker.ietf.org/doc/html/rfc6749)
