@@ -6,7 +6,7 @@
     
     <title>VirtualBox虛擬機作為伺服器 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="作業系統 本篇文章使用的作業系統是Linux Mint但沒意外的話Ubuntu與Debian也都可以用此種方法操作。 安裝VirtualBox 輸入">
+    <meta name="description" content="如果我們今天想要架設一個小小的服務，或者網頁，甚至只是想在一個乾淨的環境開發網站，不希望開發完畢後電腦裡頭還留下一大堆網頁開發的程式，這個時">
     <meta name="generator" content="Hugo 0.68.3" />
     
     
@@ -34,22 +34,22 @@
     
     
     <meta property="og:title" content="VirtualBox虛擬機作為伺服器" />
-<meta property="og:description" content="作業系統 本篇文章使用的作業系統是Linux Mint但沒意外的話Ubuntu與Debian也都可以用此種方法操作。 安裝VirtualBox 輸入" />
+<meta property="og:description" content="如果我們今天想要架設一個小小的服務，或者網頁，甚至只是想在一個乾淨的環境開發網站，不希望開發完畢後電腦裡頭還留下一大堆網頁開發的程式，這個時" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/linux/virtualbox%E8%99%9B%E6%93%AC%E6%A9%9F%E4%BD%9C%E7%82%BA%E4%BC%BA%E6%9C%8D%E5%99%A8/" />
 <meta property="article:published_time" content="2022-03-14T15:00:36+08:00" />
 <meta property="article:modified_time" content="2022-03-14T15:00:36+08:00" />
 <meta itemprop="name" content="VirtualBox虛擬機作為伺服器">
-<meta itemprop="description" content="作業系統 本篇文章使用的作業系統是Linux Mint但沒意外的話Ubuntu與Debian也都可以用此種方法操作。 安裝VirtualBox 輸入">
+<meta itemprop="description" content="如果我們今天想要架設一個小小的服務，或者網頁，甚至只是想在一個乾淨的環境開發網站，不希望開發完畢後電腦裡頭還留下一大堆網頁開發的程式，這個時">
 <meta itemprop="datePublished" content="2022-03-14T15:00:36&#43;08:00" />
 <meta itemprop="dateModified" content="2022-03-14T15:00:36&#43;08:00" />
-<meta itemprop="wordCount" content="173">
+<meta itemprop="wordCount" content="626">
 
 
 
 <meta itemprop="keywords" content="linux,VirtualBox,virtualbox," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="VirtualBox虛擬機作為伺服器"/>
-<meta name="twitter:description" content="作業系統 本篇文章使用的作業系統是Linux Mint但沒意外的話Ubuntu與Debian也都可以用此種方法操作。 安裝VirtualBox 輸入"/>
+<meta name="twitter:description" content="如果我們今天想要架設一個小小的服務，或者網頁，甚至只是想在一個乾淨的環境開發網站，不希望開發完畢後電腦裡頭還留下一大堆網頁開發的程式，這個時"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
 
@@ -230,7 +230,12 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="作業系統">作業系統</h1>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>如果我們今天想要架設一個小小的服務，或者網頁，甚至只是想在一個乾淨的環境開發網站，不希望開發完畢後電腦裡頭還留下一大堆網頁開發的程式，這個時候我們就可以用虛擬機作為我們架設網頁伺服器的地方。</p>
+<p>從安全的角度來看，虛擬機一般而言對於黑客是難以突破的，所以在上頭架設網站也是更加安全的。</p>
+<p>但有個小問題，如果同事，或者服務的使用者要透過外網連入我們的虛擬機，要如何做到呢？</p>
+<p><strong>在KVM上頭的設置是相對困難的</strong>，不過呢，在VirtualBox上則容易許多。</p>
+<p>因此，我們目前先在VirtualBox上頭進行。</p>
+<h1 id="作業系統">作業系統</h1>
 <p>本篇文章使用的作業系統是Linux Mint但沒意外的話Ubuntu與Debian也都可以用此種方法操作。</p>
 <h1 id="安裝virtualbox">安裝VirtualBox</h1>
 <p>輸入以下指令安裝VirtualBox</p>
@@ -241,7 +246,16 @@ sudo apt install virtualbox
 <h1 id="開啟virtualbox">開啟VirtualBox</h1>
 <pre><code>virtualbox
 </code></pre><h1 id="調整虛擬機網路">調整虛擬機網路</h1>
-<p><img src="/blog/public/2022-03-14/" alt="img"></p>
+<p>1.點擊設定</p>
+<p><img src="/blog/public/2022-03-14/1.png" alt="img"></p>
+<p>2.設置網路</p>
+<p>選擇網路&gt;附加到NAT&gt;介面卡類型:半虛擬化網路</p>
+<p><img src="/blog/public/2022-03-14/2.png" alt="img"></p>
+<p>然後點擊&quot;連接埠轉送&rdquo;</p>
+<p>我們在下圖進行設置。</p>
+<p>這樣的意思是，不指定特別的IP，然後真實電腦的8080 port會對應到虛擬機的80 port。</p>
+<p><span style="color:red">注意!在Ubuntu上頭真實電腦的防火牆UFW可能會預設鎖住80 port，所以我在耗費無數的失敗時間後，認為如果可以的話，調整防火牆設置，或者直接在真實電腦上改開動8080 port。</span></p>
+<p><img src="/blog/public/2022-03-14/3.png" alt="img"></p>
 <ul class="pa0">
   
    <li class="list">
