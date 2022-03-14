@@ -6,10 +6,19 @@
     <description>Recent content in linux on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Fri, 16 Jul 2021 10:29:36 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 14 Mar 2022 13:29:36 +0800</lastBuildDate>
     
 	<atom:link href="https://alextrinityblock.github.io/blog/public/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>好用的linux工作管理員</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/linux/%E5%A5%BD%E7%94%A8%E7%9A%84linux%E5%B7%A5%E4%BD%9C%E7%AE%A1%E7%90%86%E5%93%A1/</link>
+      <pubDate>Mon, 14 Mar 2022 13:29:36 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/linux/%E5%A5%BD%E7%94%A8%E7%9A%84linux%E5%B7%A5%E4%BD%9C%E7%AE%A1%E7%90%86%E5%93%A1/</guid>
+      <description>這是一款非常好用的整合linux工作管理員。 跟Bashtop,Gotop這類的終端機管理員比起來，可以用滑鼠操作的GUI是一大亮點。 除此之外</description>
+    </item>
     
     <item>
       <title>linux下了解自己的連線與port狀態</title>
