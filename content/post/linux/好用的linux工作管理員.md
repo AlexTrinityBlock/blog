@@ -20,7 +20,7 @@ tags: ["linux","monitor","system-monitoring-center"]
 
 請點擊以下連結，下載system-monitoring-center_<版本>_all.deb檔案
 
-[Ubuntu,Debian下載在這裡](https://github.com/hakandundar34coding/system-monitoring-center/releases)
+[Ubuntu,Debian,Mint下載在這裡](https://github.com/hakandundar34coding/system-monitoring-center/releases)
 
 然後輸入以下指令
 
