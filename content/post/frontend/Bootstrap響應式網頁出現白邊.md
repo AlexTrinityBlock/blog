@@ -94,6 +94,19 @@ width:100vw;
 
 ## 4.Javascript手動修正
 
+***　這種方法沒有經過驗證適用於所有裝置，除非別無選擇，否則建議方法2優先。 ***
+
+```javascript
+const scrollbarWidth = window.innerWidth - document.body.clientWidth
+document.body.setProperty("--scrollbarWidth", `${scrollbarWidth}px`)
+```
+
+```css
+:root {
+	--viewportWidth: calc(100vw - var(--scrollbarWidth));
+}
+```
+
 參見下列網誌:
 
 [https://destroytoday.com/blog/100vw-and-the-horizontal-overflow-you-probably-didnt-know-about](https://destroytoday.com/blog/100vw-and-the-horizontal-overflow-you-probably-didnt-know-about)
