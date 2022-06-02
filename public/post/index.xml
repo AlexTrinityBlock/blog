@@ -6,10 +6,19 @@
     <description>Recent content on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Thu, 02 Jun 2022 09:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jun 2022 12:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>按照比例縮放元素的vh與vw</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/frontend/%E6%8C%89%E7%85%A7%E6%AF%94%E4%BE%8B%E7%B8%AE%E6%94%BE%E5%85%83%E7%B4%A0%E7%9A%84vh%E8%88%87vw/</link>
+      <pubDate>Thu, 02 Jun 2022 12:00:00 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/frontend/%E6%8C%89%E7%85%A7%E6%AF%94%E4%BE%8B%E7%B8%AE%E6%94%BE%E5%85%83%E7%B4%A0%E7%9A%84vh%E8%88%87vw/</guid>
+      <description>當我們想按照畫面比例縮放一個元素時</description>
+    </item>
     
     <item>
       <title>Bootstrap響應式網頁出現白邊</title>
