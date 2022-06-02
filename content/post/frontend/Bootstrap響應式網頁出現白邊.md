@@ -91,3 +91,9 @@ width:100vw;
 但是實際測試的結果來看，<span style='color:red'>不一定所有瀏覽器都穩定支持vw與vh。</span>
 
 所以建議兩者都嘗試，如果仍然無解的話，請嘗試上面的方式，封鎖瀏覽器縮放。
+
+## 4.Javascript手動修正
+
+參見下列網誌:
+
+[https://destroytoday.com/blog/100vw-and-the-horizontal-overflow-you-probably-didnt-know-about](https://destroytoday.com/blog/100vw-and-the-horizontal-overflow-you-probably-didnt-know-about)
