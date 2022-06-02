@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>frontend on 無面者小站</title>
+    <link>https://alextrinityblock.github.io/blog/public/tags/frontend/</link>
+    <description>Recent content in frontend on 無面者小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <lastBuildDate>Thu, 02 Jun 2022 09:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://alextrinityblock.github.io/blog/public/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bootstrap響應式網頁出現白邊</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/frontend/bootstrap%E9%9F%BF%E6%87%89%E5%BC%8F%E7%B6%B2%E9%A0%81%E5%87%BA%E7%8F%BE%E7%99%BD%E9%82%8A/</link>
+      <pubDate>Thu, 02 Jun 2022 09:00:00 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/frontend/bootstrap%E9%9F%BF%E6%87%89%E5%BC%8F%E7%B6%B2%E9%A0%81%E5%87%BA%E7%8F%BE%E7%99%BD%E9%82%8A/</guid>
+      <description>問題 在使用Bootstrap時，響應式網頁在手機上出現了白色的邊框。 雖然已經使用.container或者.container-fluid了，</description>
+    </item>
+    
+  </channel>
+</rss>
