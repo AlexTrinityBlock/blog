@@ -17,7 +17,7 @@
       <pubDate>Thu, 02 Jun 2022 12:00:00 +0800</pubDate>
       
       <guid>https://alextrinityblock.github.io/blog/public/post/frontend/%E6%8C%89%E7%85%A7%E6%AF%94%E4%BE%8B%E7%B8%AE%E6%94%BE%E5%85%83%E7%B4%A0%E7%9A%84vh%E8%88%87vw/</guid>
-      <description>當我們想按照畫面比例縮放一個元素時</description>
+      <description>當我們想按照畫面比例縮放一個元素時 我們可以用以下兩種方式 %比例 width: 30%; 這個元素為父元素寬度的30%。 vw,vh比例 width: 100vw; 這個元素為瀏覽網頁的裝置的</description>
     </item>
     
     <item>
