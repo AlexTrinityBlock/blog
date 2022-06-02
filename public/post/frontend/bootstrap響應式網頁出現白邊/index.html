@@ -43,7 +43,7 @@
 <meta itemprop="description" content="問題 在使用Bootstrap時，響應式網頁在手機上出現了白色的邊框。 雖然已經使用.container或者.container-fluid了，">
 <meta itemprop="datePublished" content="2022-06-02T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-06-02T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="266">
+<meta itemprop="wordCount" content="438">
 
 
 
@@ -257,7 +257,20 @@
     <span style="color:#66d9ef">padding-left</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
     <span style="color:#66d9ef">padding-right</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
 }
-</code></pre></div><ul class="pa0">
+</code></pre></div><h3 id="我用了很多動畫特效上述的方法不管用">我用了很多動畫特效，上述的方法不管用。</h3>
+<p>如果你用了</p>
+<ol>
+<li>大量動畫特效</li>
+<li>fixed滿版元素</li>
+<li>各式載入畫面</li>
+<li>其他會動態影響畫面大小的操作</li>
+</ol>
+<p>導致手機上頭畫面出現意外的白色邊框之類的，這種情況可以使用</p>
+<p><em><strong>禁止手機的縮放</strong></em>的方式來彌補。</p>
+<p>使用以下標籤，會禁止所有手機網頁的縮放，但有無法放大文字的缺點。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&#34;</span>&gt;
+</code></pre></div><p>但也沒關係，可以靠各種巧思，或者圖片另外連接來放大，來進行替代。</p>
+<ul class="pa0">
   
    <li class="list">
      <a href="/blog/public/tags/frontend" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">frontend</a>
