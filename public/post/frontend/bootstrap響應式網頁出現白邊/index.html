@@ -43,7 +43,7 @@
 <meta itemprop="description" content="問題 在使用Bootstrap時，響應式網頁在手機上出現了白色的邊框。 雖然已經使用.container或者.container-fluid了，">
 <meta itemprop="datePublished" content="2022-06-02T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-06-02T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="758">
+<meta itemprop="wordCount" content="779">
 
 
 
@@ -282,10 +282,17 @@
 <p>所以建議兩者都嘗試，如果仍然無解的話，請嘗試上面的方式，封鎖瀏覽器縮放。</p>
 <h2 id="4javascript手動修正">4.Javascript手動修正</h2>
 <p>***　這種方法沒有經過驗證適用於所有裝置，除非別無選擇，否則建議方法2優先。 ***</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scrollbarWidth</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">innerWidth</span> <span style="color:#f92672">-</span> document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">clientWidth</span>
-document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">setProperty</span>(<span style="color:#e6db74">&#34;--scrollbarWidth&#34;</span>, <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">scrollbarWidth</span><span style="color:#e6db74">}</span><span style="color:#e6db74">px`</span>)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">:<span style="color:#a6e22e">root</span> {
-	--viewportWidth: calc(<span style="color:#ae81ff">100</span><span style="color:#66d9ef">vw</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>scrollbarWidth));
+<p>設置JS</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setVw</span>() {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vw</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientWidth</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">100</span>;
+  document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">setProperty</span>(<span style="color:#e6db74">&#39;--vw&#39;</span>, <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">vw</span><span style="color:#e6db74">}</span><span style="color:#e6db74">px`</span>);
+}
+
+<span style="color:#a6e22e">setVw</span>();
+window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;resize&#39;</span>, <span style="color:#a6e22e">setVw</span>);
+</code></pre></div><p>使用的CSS如下:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span> {
+    <span style="color:#66d9ef">width</span>: calc(<span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>vw, <span style="color:#ae81ff">1</span><span style="color:#66d9ef">vw</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>);
 }
 </code></pre></div><p>參見下列網誌:</p>
 <p><a href="https://destroytoday.com/blog/100vw-and-the-horizontal-overflow-you-probably-didnt-know-about">https://destroytoday.com/blog/100vw-and-the-horizontal-overflow-you-probably-didnt-know-about</a></p>

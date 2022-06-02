@@ -96,14 +96,23 @@ width:100vw;
 
 ***　這種方法沒有經過驗證適用於所有裝置，除非別無選擇，否則建議方法2優先。 ***
 
+設置JS
+
 ```javascript
-const scrollbarWidth = window.innerWidth - document.body.clientWidth
-document.body.setProperty("--scrollbarWidth", `${scrollbarWidth}px`)
+function setVw() {
+  let vw = document.documentElement.clientWidth / 100;
+  document.documentElement.style.setProperty('--vw', `${vw}px`);
+}
+
+setVw();
+window.addEventListener('resize', setVw);
 ```
 
+使用的CSS如下:
+
 ```css
-:root {
-	--viewportWidth: calc(100vw - var(--scrollbarWidth));
+div {
+    width: calc(var(--vw, 1vw) * 100);
 }
 ```
 
