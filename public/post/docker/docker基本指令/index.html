@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Docker概念 半虛擬化 比一般虛擬機快 檔案大小很小 不用完全模擬到硬體層級 實用只指令 1.運作一個nginx網頁伺服器 run: 下載映像檔同時執行。 -d: 第">
 <meta itemprop="datePublished" content="2022-07-06T09:00:03&#43;08:00" />
 <meta itemprop="dateModified" content="2022-07-06T09:00:03&#43;08:00" />
-<meta itemprop="wordCount" content="462">
+<meta itemprop="wordCount" content="557">
 
 
 
@@ -308,6 +308,27 @@
 </li>
 </ul>
 <pre><code>docker run -it  -m 300M --cpuset-cpus=&quot;0-2&quot; ubuntu:20.04 /bin/bash
+</code></pre><h3 id="7建立docker可以使用的硬碟空間volume">7.建立Docker可以使用的硬碟空間Volume</h3>
+<p>暫存於Ram的空間。</p>
+<ul>
+<li>
+<p>type=tmpfs: 建立臨時檔案系統。</p>
+</li>
+<li>
+<p>device=tmpfs: 路徑位於/tmpfs。</p>
+</li>
+<li>
+<p>o=size=100m: 最大容量100MB。</p>
+</li>
+<li>
+<p>uid=1000: 使用者為一般使用者。</p>
+</li>
+</ul>
+<pre><code>docker volume create --driver local \
+    --opt type=tmpfs \
+    --opt device=/tmpfs \
+    --opt o=size=100m,uid=1000 \
+    foo
 </code></pre><ul class="pa0">
   
    <li class="list">
