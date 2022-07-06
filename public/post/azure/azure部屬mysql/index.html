@@ -43,7 +43,7 @@
 <meta itemprop="description" content="1.適用於 MySQL 的 Azure 資料庫 點選『適用於 MySQL 的 Azure 資料庫』 如果沒有的話，可以在上排選單。 2.建立 3.單一伺服器 4.建立MySQL伺服器 以下有幾個一定要">
 <meta itemprop="datePublished" content="2022-03-09T10:00:44&#43;08:00" />
 <meta itemprop="dateModified" content="2022-03-09T10:00:44&#43;08:00" />
-<meta itemprop="wordCount" content="642">
+<meta itemprop="wordCount" content="640">
 
 
 
@@ -265,9 +265,9 @@
 <p><img src="/blog/public/2022-03-08/az10.png" alt="img"></p>
 <h2 id="11登入mysql">11.登入MySQL</h2>
 <p>在Azure終端機輸入下列指令:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql --host<span style="color:#f92672">=</span>&lt;伺服器名稱&gt;.mysql.database.azure.com --user<span style="color:#f92672">=</span>&lt;管理使正者名稱&gt;@&lt;伺服器名稱&gt; –p
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql --host<span style="color:#f92672">=</span>&lt;伺服器名稱&gt;.mysql.database.azure.com --user<span style="color:#f92672">=</span>&lt;管理使正者名稱&gt;@&lt;伺服器名稱&gt; -p
 </code></pre></div><p>例如下面這樣:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql --host<span style="color:#f92672">=</span>imserver123.mysql.database.azure.com --user<span style="color:#f92672">=</span>imuser123@imserver123 –p
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql --host<span style="color:#f92672">=</span>imserver123.mysql.database.azure.com --user<span style="color:#f92672">=</span>imuser123@imserver123 -p
 </code></pre></div><p><img src="/blog/public/2022-03-08/az11.png" alt="img"></p>
 <h2 id="12嘗試插入mysql語法">12.嘗試插入MySQL語法</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#75715e">/*建立資料庫名稱為mvcdb*/</span>

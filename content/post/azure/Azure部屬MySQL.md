@@ -70,13 +70,13 @@ tags: ["Azure"]
 在Azure終端機輸入下列指令:
 
 ```bash
-mysql --host=<伺服器名稱>.mysql.database.azure.com --user=<管理使正者名稱>@<伺服器名稱> –p
+mysql --host=<伺服器名稱>.mysql.database.azure.com --user=<管理使正者名稱>@<伺服器名稱> -p
 ```
 
 例如下面這樣:
 
 ```bash
-mysql --host=imserver123.mysql.database.azure.com --user=imuser123@imserver123 –p
+mysql --host=imserver123.mysql.database.azure.com --user=imuser123@imserver123 -p
 ```
 
 ![img](/blog/public/2022-03-08/az11.png)
