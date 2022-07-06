@@ -6,10 +6,19 @@
     <description>Recent content on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Tue, 05 Jul 2022 09:00:36 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 06 Jul 2022 09:00:03 +0800</lastBuildDate>
     
 	<atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker基本指令</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/docker/docker%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/</link>
+      <pubDate>Wed, 06 Jul 2022 09:00:03 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/docker/docker%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/</guid>
+      <description>Docker概念 半虛擬化 比一般虛擬機快 檔案大小很小 不用完全模擬到硬體層級 實用只指令 1.運作一個nginx網頁伺服器 run: 下載映像檔同時執行。 -d: 第</description>
+    </item>
     
     <item>
       <title>按照比例縮放元素的vh與vw</title>
@@ -454,10 +463,10 @@
     
     <item>
       <title>讓容器獲得本機網路的完整權限</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/docker/%E8%AE%93%E5%AE%B9%E5%99%A8%E7%8D%B2%E5%BE%97%E6%9C%AC%E6%A9%9F%E7%B6%B2%E8%B7%AF%E7%9A%84%E5%AE%8C%E6%95%B4%E6%AC%8A%E9%99%90/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/docker/%E8%AE%93%E5%AE%B9%E5%99%A8%E7%8D%B2%E5%BE%97%E6%9C%AC%E6%A9%9F%E7%B6%B2%E8%B7%AF%E7%9A%84%E5%AE%8C%E6%95%B4%E6%AC%8A%E9%99%90-copy/</link>
       <pubDate>Sat, 12 Jun 2021 00:05:03 +0800</pubDate>
       
-      <guid>https://alextrinityblock.github.io/blog/public/post/docker/%E8%AE%93%E5%AE%B9%E5%99%A8%E7%8D%B2%E5%BE%97%E6%9C%AC%E6%A9%9F%E7%B6%B2%E8%B7%AF%E7%9A%84%E5%AE%8C%E6%95%B4%E6%AC%8A%E9%99%90/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/docker/%E8%AE%93%E5%AE%B9%E5%99%A8%E7%8D%B2%E5%BE%97%E6%9C%AC%E6%A9%9F%E7%B6%B2%E8%B7%AF%E7%9A%84%E5%AE%8C%E6%95%B4%E6%AC%8A%E9%99%90-copy/</guid>
       <description>docker run指令的對外網開放端口選項 我們如果想讓容器與本機使用同一個網路，並且能建立像是網頁伺服器一類的對外開放端口， 可以將網路設置為host。</description>
     </item>
     
