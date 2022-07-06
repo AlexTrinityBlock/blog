@@ -82,22 +82,16 @@ docker run --restart=always mysql
 docker run -it  -m 300M --cpuset-cpus="0-2" ubuntu:20.04 /bin/bash
 ```
 
-### 7.建立Docker可以使用的硬碟空間Volume
+### 7.開啟容器命令行
 
-暫存於Ram的空間。
+* exec: 執行容器內程式。
 
-* type=tmpfs: 建立臨時檔案系統。
+* -it: 交互模式。
 
-* device=tmpfs: 路徑位於/tmpfs。
+* ubuntu:容器名稱。
 
-* o=size=100m: 最大容量100MB。
-
-* uid=1000: 使用者為一般使用者。
+* bash: 終端程式。
 
 ```
-docker volume create --driver local \
-    --opt type=tmpfs \
-    --opt device=/tmpfs \
-    --opt o=size=100m,uid=1000 \
-    foo
+docker exec -it ubuntu bash
 ```
