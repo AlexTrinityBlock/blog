@@ -324,6 +324,10 @@ Layer 7 層級，例如Http協定的負載平衡器。
 
 * 可以導向多個Target Group。
 
+### 跨越負載平衡器後，如何知道客戶端的IP呢？
+
+客戶的IP在通過負載平衡器後會被存入HTTP Header禮頭的X-Forwarded-For裡頭，並且也可以看到客戶端的Port (X-Forwarded-Port)與協定(X-Forwarded-Proto)
+
 ## CLB(Classic Load Balancers)
 
 * 支援HTTP, HTTPS, TCP and SSL listens。

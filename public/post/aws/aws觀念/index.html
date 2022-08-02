@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="3532">
+<meta itemprop="wordCount" content="3657">
 
 
 
@@ -561,6 +561,8 @@
 <p>可以導向多個Target Group。</p>
 </li>
 </ul>
+<h3 id="跨越負載平衡器後如何知道客戶端的ip呢">跨越負載平衡器後，如何知道客戶端的IP呢？</h3>
+<p>客戶的IP在通過負載平衡器後會被存入HTTP Header禮頭的X-Forwarded-For裡頭，並且也可以看到客戶端的Port (X-Forwarded-Port)與協定(X-Forwarded-Proto)</p>
 <h2 id="clbclassic-load-balancers">CLB(Classic Load Balancers)</h2>
 <ul>
 <li>
