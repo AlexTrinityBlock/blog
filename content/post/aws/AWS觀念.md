@@ -2,7 +2,7 @@
 title: "AWS觀念"
 date: 2022-08-01T09:00:00+08:00
 draft: true
-featured_image: "/aws.png"
+featured_image: "/aws.jpeg"
 tags: ["AWS"]
 ---
 
