@@ -306,7 +306,7 @@ Layer 7 層級，例如Http協定的負載平衡器。
 
 透過 Target Group來分配流量，不需要僅綁定IP。也就是說可以用伺服器的功能或者名稱來分配流量。
 
-也可以分配流量在同一台機器上的不同Container。
+也可以分配流量在同一台機器上的不同Container，如Docker。
 
 *  On-Premises、EC2、Lambda 可作為 Target。
 
