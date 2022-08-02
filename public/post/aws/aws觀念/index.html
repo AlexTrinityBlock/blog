@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="4124">
+<meta itemprop="wordCount" content="4267">
 
 
 
@@ -658,6 +658,21 @@
 </li>
 <li>
 <p>使用CLB時cookie名稱為AWSELB。</p>
+</li>
+</ul>
+<h2 id="cross-zone-load-balancing">Cross-Zone Load Balancing</h2>
+<p>跨AZ的負載平衡。</p>
+<p>該方法假設美國西部有8個EC2實體，東京有2個，則每個EC2實體都會被分配到10%流量。</p>
+<p>如果沒有特別跨AZ就會簡單的美國50%流量，東京50%流量，而不考慮EC2實體數量。</p>
+<ul>
+<li>
+<p>ALB: 自帶跨區，不能取消。</p>
+</li>
+<li>
+<p>NLB: 不會預設啟動，每個AZ啟動要加錢。</p>
+</li>
+<li>
+<p>CLB: 不會預設啟動，但啟動不會加錢。</p>
 </li>
 </ul>
 <ul class="pa0">
