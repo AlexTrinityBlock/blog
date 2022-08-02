@@ -304,7 +304,7 @@ ALB (Application Load Balancer)
 
 Layer 7 層級，例如Http協定的負載平衡器。
 
-透過 Target Group來分配流量，不需要僅綁定IP。也就是說可以用伺服器的功能或者名稱來分配流量。
+透過Target Group來分配流量，不需要僅綁定IP。也就是說可以用伺服器的功能或者名稱來分配流量。
 
 也可以分配流量在同一台機器上的不同Container，如Docker。
 
@@ -321,6 +321,8 @@ Layer 7 層級，例如Http協定的負載平衡器。
 * 可以用URL, 網址, 請求參數，來將流量導向不同的主機。例如:網址路徑為搜尋服務時，會導向網路流量擴充的實體。或者運算服務時，會導向運算能力優化的實體。
 
 * 可以重導向不同的Port。
+
+* 可以導向多個Target Group。
 
 ## CLB(Classic Load Balancers)
 

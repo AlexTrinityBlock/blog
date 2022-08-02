@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="3509">
+<meta itemprop="wordCount" content="3532">
 
 
 
@@ -533,7 +533,7 @@
 <h2 id="alb">ALB</h2>
 <p>ALB (Application Load Balancer)</p>
 <p>Layer 7 層級，例如Http協定的負載平衡器。</p>
-<p>透過 Target Group來分配流量，不需要僅綁定IP。也就是說可以用伺服器的功能或者名稱來分配流量。</p>
+<p>透過Target Group來分配流量，不需要僅綁定IP。也就是說可以用伺服器的功能或者名稱來分配流量。</p>
 <p>也可以分配流量在同一台機器上的不同Container，如Docker。</p>
 <ul>
 <li>
@@ -556,6 +556,9 @@
 </li>
 <li>
 <p>可以重導向不同的Port。</p>
+</li>
+<li>
+<p>可以導向多個Target Group。</p>
 </li>
 </ul>
 <h2 id="clbclassic-load-balancers">CLB(Classic Load Balancers)</h2>
