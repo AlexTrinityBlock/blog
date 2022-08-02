@@ -282,7 +282,7 @@ ELB有下列種類:
 
 * 可將SSL憑證賦予在負載平衡器上。
 
-* Health Checks: 即時檢查某實體的健康，例如檢查某實體80 port的index.html是否運作。
+* Health Checks: 即時檢查某實體的健康，例如檢查某實體80 port的HTTP協定index.html是否運作。
 
 ## Sticky Sessions(這是概念，不是AWS服務)
 
