@@ -344,7 +344,13 @@ Layer 7 層級，例如Http協定的負載平衡器。
 
 ## NLB
 
+Network Load Balancer，在每個AZ有一個IP，並且可以額外附加Elastic IP。
+
 * 支援TCP, TLS, UDP。
+
+* 高效能，最小耗時為100ms，非常快速。
+
+* 每個NLB
 
 ## GWLB
 
