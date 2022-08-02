@@ -508,8 +508,9 @@ CloudWatch Alarms 可以設置為平均CPU使用量或者客戶自訂的指標(m
 ## ASG的Dynamic Scaling Policies
 
 * Target Tracking Scaling
-    * 簡單的設置
+    * 簡單的設置，追蹤某個指標。
     * 例如：努力維持在每個實體CPU耗用率為 40%。
+    * 例如：努力維持在每個實體最大連線數量為1000以下。
 * Simple / Step Scaling
     * 例如:當CloudWatch alarm 於平均CPU耗用大於 70%時被觸發時，增加2個實體。
     * 例如:當CloudWatch alarm 於平均CPU耗用小於 30%時被觸發時，減少1個實體。
