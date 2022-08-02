@@ -565,4 +565,7 @@ stress -c 4
 
 > 簡單來說，如果ASG要自動關閉實體，它會挑選實體數量最多的AZ，並且選擇最早啟動的那個。
 
-> 實體在啟動階段但尚未啟動完全稱為Pending status，
+> 實體在啟動階段但尚未啟動完全稱為Pending status，啟動完畢後轉進InService狀態。Pending status時可以用選項添加自訂的額外軟體安裝，或者腳本執行。
+
+![img](/blog/public/2022-08-03/lifecycle_hooks.png)
+

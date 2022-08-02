@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="5672">
+<meta itemprop="wordCount" content="5729">
 
 
 
@@ -838,8 +838,9 @@ sudo yum install stress -y
 <p>簡單來說，如果ASG要自動關閉實體，它會挑選實體數量最多的AZ，並且選擇最早啟動的那個。</p>
 </blockquote>
 <blockquote>
-<p>實體在啟動階段但尚未啟動完全稱為Pending status，</p>
+<p>實體在啟動階段但尚未啟動完全稱為Pending status，啟動完畢後轉進InService狀態。Pending status時可以用選項添加自訂的額外軟體安裝，或者腳本執行。</p>
 </blockquote>
+<p><img src="/blog/public/2022-08-03/lifecycle_hooks.png" alt="img"></p>
 <ul class="pa0">
   
    <li class="list">
