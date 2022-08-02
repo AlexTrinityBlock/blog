@@ -520,7 +520,7 @@ CloudWatch Alarms 可以設置為平均CPU使用量或者客戶自訂的指標(m
     * 持續預測負載，預先擴展。
     * 根據歷史紀錄以 Machine Learning 進行預測
 
-## 預測指標 (Metric)
+## ASG 預測指標 (Metric)
 
 * CPU Utilization: 平均所有的CPU的使用率。
 
@@ -529,3 +529,5 @@ CloudWatch Alarms 可以設置為平均CPU使用量或者客戶自訂的指標(m
 * Average Network In/Out: 平均網路I/負載，如果要使用這個，建議用在高網路流量的服務，有時CPU仍有剩餘，但網路流量不夠用的那類服務。
 
 * 其他CLoudWatch可以偵測到的指標。
+
+## ASG 
