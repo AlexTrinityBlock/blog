@@ -352,6 +352,10 @@ Network Load Balancer，在每個AZ有一個IP，並且可以額外附加Elastic
 
 * 用於高速TCP, UDP轉發。
 
+* Target Group可以有EC2, IP(私有IP), 另外一個ALB。
+
+
+
 ## GWLB
 
 * Layer3 IP協定。
