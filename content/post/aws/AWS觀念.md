@@ -318,6 +318,8 @@ Layer 7 層級，例如Http協定的負載平衡器。
 
 * 可以將HTTP重導向到HTTPS。
 
+* 可以用URL, 網址, 請求參數，來將流量導向不同的主機。
+
 ## CLB(Classic Load Balancers)
 
 * 支援HTTP, HTTPS, TCP and SSL listens。
