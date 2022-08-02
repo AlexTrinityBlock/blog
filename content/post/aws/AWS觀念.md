@@ -366,3 +366,35 @@ Gateway Load Balancer。
 
 * Layer3 IP協定。
 
+* 同時有轉送與負載平衡兩種功能。
+
+* 可以轉送給EC2, 與特定IP。
+
+## Sticky Sessions 又稱為 Session Affinity (AWS上的)
+
+AWS上頭的實踐方法是，將同個客戶的IP的請求，轉送到同一台的EC2實體。
+
+### Application-based cookies
+
+* 客戶自訂cookie
+
+    * 可以包含客戶自訂的cookie內容。
+    
+    * cookie名稱要有別於Target Group。
+
+    * 別用AWS關鍵字。
+
+* Application cookies
+
+    * 由Load balancer生成
+
+    * Cookie 名稱是 AWSALBAPP
+
+### Duration-based Cookies
+
+* 由Load balancer生成
+
+* 使用ALB時Cookie 名稱為 AWSALB。
+
+* 使用CLB時cookie名稱為AWSELB。
+

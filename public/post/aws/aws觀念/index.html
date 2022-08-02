@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="3897">
+<meta itemprop="wordCount" content="4124">
 
 
 
@@ -608,7 +608,57 @@
 <p>有辦法在AWS管理第三方網路虛擬應用程式。</p>
 <p>例如部屬第三方供應商的防火牆，入侵偵測系統，深度封包檢測(檢查封包的IDS的一種)。</p>
 <ul>
-<li>Layer3 IP協定。</li>
+<li>
+<p>Layer3 IP協定。</p>
+</li>
+<li>
+<p>同時有轉送與負載平衡兩種功能。</p>
+</li>
+<li>
+<p>可以轉送給EC2, 與特定IP。</p>
+</li>
+</ul>
+<h2 id="sticky-sessions-又稱為-session-affinity-aws上的">Sticky Sessions 又稱為 Session Affinity (AWS上的)</h2>
+<p>AWS上頭的實踐方法是，將同個客戶的IP的請求，轉送到同一台的EC2實體。</p>
+<h3 id="application-based-cookies">Application-based cookies</h3>
+<ul>
+<li>
+<p>客戶自訂cookie</p>
+<ul>
+<li>
+<p>可以包含客戶自訂的cookie內容。</p>
+</li>
+<li>
+<p>cookie名稱要有別於Target Group。</p>
+</li>
+<li>
+<p>別用AWS關鍵字。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Application cookies</p>
+<ul>
+<li>
+<p>由Load balancer生成</p>
+</li>
+<li>
+<p>Cookie 名稱是 AWSALBAPP</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="duration-based-cookies">Duration-based Cookies</h3>
+<ul>
+<li>
+<p>由Load balancer生成</p>
+</li>
+<li>
+<p>使用ALB時Cookie 名稱為 AWSALB。</p>
+</li>
+<li>
+<p>使用CLB時cookie名稱為AWSELB。</p>
+</li>
 </ul>
 <ul class="pa0">
   
