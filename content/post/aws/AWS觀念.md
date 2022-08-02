@@ -350,7 +350,7 @@ Network Load Balancer，在每個AZ有一個IP，並且可以額外附加Elastic
 
 * 高效能，最小耗時為100ms，非常快速。
 
-* 每個NLB
+* 用於高速TCP, UDP轉發。
 
 ## GWLB
 
