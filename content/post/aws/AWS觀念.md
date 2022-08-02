@@ -266,6 +266,14 @@ ELB有下列種類:
 
 * Classic Load Balancer: Layer 4/7。
 
+除此之外，還有附帶3個重要功能:
+
+* 如果其中某些伺服器失效了，可以將流量導向可用伺服器。
+
+* 可以暴露單一的IP給DNS。
+
+* 可將SSL憑證僅賦予在覆載平衡器上。
+
 ## ALB
 
 ALB (Application Load Balancer)
@@ -286,7 +294,7 @@ Layer 7 層級，例如Http協定的負載平衡器。
 
 * 支援 Sticky sessions (cookies)
 
-# NLB
+## NLB
 
-# GWLB
+## GWLB
 
