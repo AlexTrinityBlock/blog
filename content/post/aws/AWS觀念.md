@@ -358,5 +358,9 @@ Network Load Balancer，在每個AZ有一個IP，並且可以額外附加Elastic
 
 ## GWLB
 
+有辦法在AWS管理第三方網路虛擬應用程式。
+
+例如部屬第三方供應商的防火牆，入侵偵測系統，深度封包檢測(檢查封包的IDS的一種)。
+
 * Layer3 IP協定。
 
