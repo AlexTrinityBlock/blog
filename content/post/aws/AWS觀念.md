@@ -466,5 +466,7 @@ Connection Draining 中文直譯為連結耗盡，也就是當一個實體已經
 
 * Maximum Capacity: 最大的實體數量。
 
+ASG也可以注意到實體健康狀態。
+
 
 
