@@ -306,6 +306,8 @@ Layer 7 層級，例如Http協定的負載平衡器。
 
 透過 Target Group來分配流量，不需要僅綁定IP。也就是說可以用伺服器的功能或者名稱來分配流量。
 
+也可以分配流量在同一台機器上的不同Container。
+
 *  On-Premises、EC2、Lambda 可作為 Target。
 
 * 支援使用 AWS WAF，內建 AWS shield緩解DOos。
@@ -313,6 +315,8 @@ Layer 7 層級，例如Http協定的負載平衡器。
 * 比CLB便宜，但不能進行純TCP轉送。
 
 * HTTP, HTTPS, Web Socket。
+
+* 可以將HTTP重導向到HTTPS。
 
 ## CLB(Classic Load Balancers)
 
@@ -335,6 +339,4 @@ Layer 7 層級，例如Http協定的負載平衡器。
 ## GWLB
 
 * Layer3 IP協定。
-
-
 
