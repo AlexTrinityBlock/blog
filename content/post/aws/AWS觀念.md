@@ -422,3 +422,9 @@ SSL Certificate可以在很多網站上申請到，有的免費有的付費，�
 
 * ACM (AWS Certificate Manager): 可以用來管理SSL certificate。
 
+* HTTPS listener: ELB用來處理與客戶加密流量的功能。
+
+* SNI(Server Name Indication): 支援同一個IP上頭有幾個不同的網站，並且每個網站都有獨立的憑證，類似虛擬主機。使用者需要配備支援該協定的瀏覽器。
+
+
+
