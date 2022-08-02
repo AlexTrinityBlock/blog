@@ -256,10 +256,6 @@ EBS某個時間的上的快照，也就是某種存檔。
 
 * One Zone: 一個AZ並且可以加入EFS-IA的能力。
 
-# Auto Scaling Group
-
-當一個EC2實體不足時，會自動啟動更多的實體和架構，雖然要付更多費用，但可以讓尖峰客戶流量時段，得以緩解。
-
 # ELB
 
 Elastic Load Balancing (ELB) 將流量分配到不同的實體，支援內外部網路。
@@ -449,4 +445,10 @@ Connection Draining 中文直譯為連結耗盡，也就是當一個實體已經
 * Deregistration Delay: ALB & NLB
 
 可以設定時間，1-3600秒之間，設置0為取消。
+
+# Auto Scaling Group
+
+當一個EC2實體不足時，會自動啟動更多的實體和架構，雖然要付更多費用，但可以讓尖峰客戶流量時段，得以緩解。
+
+
 
