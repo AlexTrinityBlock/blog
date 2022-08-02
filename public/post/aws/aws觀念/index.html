@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="5479">
+<meta itemprop="wordCount" content="5579">
 
 
 
@@ -821,6 +821,18 @@
 <ul>
 <li>可以使用Ready-to-use AMI映像檔來加快啟動實體速度和減少冷卻時間。</li>
 </ul>
+<h2 id="測試負載平衡測試">測試負載平衡測試</h2>
+<p>Google 搜尋:</p>
+<pre><code>install amazon stress linux 2
+</code></pre><p>然後下載測試工具，當前安裝指令是，連入EC2終端後輸入下列指令:</p>
+<pre><code>sudo amazon-linux-extras install epel -y
+sudo yum install stress -y
+</code></pre><p>啟動CPU壓力測試</p>
+<ul>
+<li>-c 4: 4個CPU核心。</li>
+</ul>
+<pre><code>stress -c 4
+</code></pre><p>該舉動會產生CPU運作 100%的效果。</p>
 <ul class="pa0">
   
    <li class="list">

@@ -536,3 +536,28 @@ CloudWatch Alarms 可以設置為平均CPU使用量或者客戶自訂的指標(m
 
 * 可以使用Ready-to-use AMI映像檔來加快啟動實體速度和減少冷卻時間。
 
+## 測試負載平衡測試
+
+Google 搜尋:
+
+```
+install amazon stress linux 2
+```
+
+然後下載測試工具，當前安裝指令是，連入EC2終端後輸入下列指令:
+
+```
+sudo amazon-linux-extras install epel -y
+sudo yum install stress -y
+```
+
+啟動CPU壓力測試
+
+* -c 4: 4個CPU核心。
+
+```
+stress -c 4
+```
+
+該舉動會產生CPU運作 100%的效果。
+
