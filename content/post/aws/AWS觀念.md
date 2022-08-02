@@ -162,6 +162,14 @@ EBS根目錄的內容是加密的。
 
 只有少數較為便宜的EC2實體類型，沒有以外，多數的EC2實體都使用Nitro硬體技術。
 
+# Security Group
+
+指定一個EC2實例要開放哪一個Port，然後該Port使用哪個協定，類似簡易防火牆。但只能封閉不用的Port，卻沒辦法阻擋SQL injection或其他細緻的入侵。
+
+* 選擇開放的Port(也可以是一個範圍的port)與該Port的協定，如80 port開放 HTTP協定，443 port開放HTTPS協定。
+
+* 允許特定的來源IP。
+
 # EBS
 
 在CCP雲端從業人員等級，一個EC2只能附加一個EBS。
@@ -254,7 +262,7 @@ EBS某個時間的上的快照，也就是某種存檔。
 
 # ELB
 
-Elastic Load Balancing (ELB) 將流量分配到不同的實體。
+Elastic Load Balancing (ELB) 將流量分配到不同的實體，支援內外部網路。
 
 ELB有下列種類:
 
@@ -266,13 +274,29 @@ ELB有下列種類:
 
 * Classic Load Balancer: Layer 4/7。
 
-除此之外，還有附帶3個重要功能:
+除此之外，還有附帶4個重要功能:
 
 * 如果其中某些伺服器失效了，可以將流量導向可用伺服器。
 
 * 可以暴露單一的IP給DNS。
 
-* 可將SSL憑證僅賦予在覆載平衡器上。
+* 可將SSL憑證賦予在負載平衡器上。
+
+* Health Checks: 即時檢查某實體的健康。
+
+## Sticky Sessions(這是概念，不是AWS服務)
+
+除此之外，還需要進行Sticky Sessions或者Sticky cookies，這是什麽呢？
+
+>如果我們有三台網頁伺服器，我們在第一台登入成功了，不過第二次我們被分配到第二台，結果就必須要第二台伺服器重新登入一次。因為只有第一台紀錄著我們的Session。
+
+1. 根據IP來決定要分配到哪一台主機，這樣主機固定不變，就不會有Session無法紀錄的問題。免費的Nginx就可以實現。
+
+2. 資料庫存放Session，存取速度慢，適合低流量時使用，但可以簡單的共享Session key。
+
+3. NFS，網路文件系統，類似共享一個磁碟系統，但是存取速度也十分慢。
+
+4. Memory Cache: 常見的如memcached、Redis，類似資料庫，但是內容儲存在RAM中，響應速度快，是個好方法，不過如果電源斷電無法保存(但可以用異地除存來緩解)。
 
 ## ALB
 
@@ -288,13 +312,21 @@ Layer 7 層級，例如Http協定的負載平衡器。
 
 * 比CLB便宜，但不能進行純TCP轉送。
 
+* HTTP, HTTPS, Web Socket。
+
 ## CLB
 
-* 支援 TCP and SSL listens。
+* 支援HTTP, HTTPS, TCP and SSL listens。
 
 * 支援 Sticky sessions (cookies)
 
 ## NLB
 
+* 支援TCP, TLS, UDP。
+
 ## GWLB
+
+* Layer3 IP協定。
+
+
 

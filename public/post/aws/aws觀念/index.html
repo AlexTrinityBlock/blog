@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="2715">
+<meta itemprop="wordCount" content="3295">
 
 
 
@@ -362,6 +362,16 @@
 <p>不能直接使用，他是EC2底層的硬體與虛擬化技術。</p>
 <p>提供更好的效能與安全。</p>
 <p>只有少數較為便宜的EC2實體類型，沒有以外，多數的EC2實體都使用Nitro硬體技術。</p>
+<h1 id="security-group">Security Group</h1>
+<p>指定一個EC2實例要開放哪一個Port，然後該Port使用哪個協定，類似簡易防火牆。但只能封閉不用的Port，卻沒辦法阻擋SQL injection或其他細緻的入侵。</p>
+<ul>
+<li>
+<p>選擇開放的Port(也可以是一個範圍的port)與該Port的協定，如80 port開放 HTTP協定，443 port開放HTTPS協定。</p>
+</li>
+<li>
+<p>允許特定的來源IP。</p>
+</li>
+</ul>
 <h1 id="ebs">EBS</h1>
 <p>在CCP雲端從業人員等級，一個EC2只能附加一個EBS。</p>
 <p>如有需要可以在中止EC2後保存資料(但要在建立時特別標注)。</p>
@@ -470,7 +480,7 @@
 <h1 id="auto-scaling-group">Auto Scaling Group</h1>
 <p>當一個EC2實體不足時，會自動啟動更多的實體和架構，雖然要付更多費用，但可以讓尖峰客戶流量時段，得以緩解。</p>
 <h1 id="elb">ELB</h1>
-<p>Elastic Load Balancing (ELB) 將流量分配到不同的實體。</p>
+<p>Elastic Load Balancing (ELB) 將流量分配到不同的實體，支援內外部網路。</p>
 <p>ELB有下列種類:</p>
 <ul>
 <li>
@@ -486,7 +496,7 @@
 <p>Classic Load Balancer: Layer 4/7。</p>
 </li>
 </ul>
-<p>除此之外，還有附帶3個重要功能:</p>
+<p>除此之外，還有附帶4個重要功能:</p>
 <ul>
 <li>
 <p>如果其中某些伺服器失效了，可以將流量導向可用伺服器。</p>
@@ -495,9 +505,31 @@
 <p>可以暴露單一的IP給DNS。</p>
 </li>
 <li>
-<p>可將SSL憑證僅賦予在覆載平衡器上。</p>
+<p>可將SSL憑證賦予在負載平衡器上。</p>
+</li>
+<li>
+<p>Health Checks: 即時檢查某實體的健康。</p>
 </li>
 </ul>
+<h2 id="sticky-sessions這是概念不是aws服務">Sticky Sessions(這是概念，不是AWS服務)</h2>
+<p>除此之外，還需要進行Sticky Sessions或者Sticky cookies，這是什麽呢？</p>
+<blockquote>
+<p>如果我們有三台網頁伺服器，我們在第一台登入成功了，不過第二次我們被分配到第二台，結果就必須要第二台伺服器重新登入一次。因為只有第一台紀錄著我們的Session。</p>
+</blockquote>
+<ol>
+<li>
+<p>根據IP來決定要分配到哪一台主機，這樣主機固定不變，就不會有Session無法紀錄的問題。免費的Nginx就可以實現。</p>
+</li>
+<li>
+<p>資料庫存放Session，存取速度慢，適合低流量時使用，但可以簡單的共享Session key。</p>
+</li>
+<li>
+<p>NFS，網路文件系統，類似共享一個磁碟系統，但是存取速度也十分慢。</p>
+</li>
+<li>
+<p>Memory Cache: 常見的如memcached、Redis，類似資料庫，但是內容儲存在RAM中，響應速度快，是個好方法，不過如果電源斷電無法保存(但可以用異地除存來緩解)。</p>
+</li>
+</ol>
 <h2 id="alb">ALB</h2>
 <p>ALB (Application Load Balancer)</p>
 <p>Layer 7 層級，例如Http協定的負載平衡器。</p>
@@ -512,18 +544,27 @@
 <li>
 <p>比CLB便宜，但不能進行純TCP轉送。</p>
 </li>
+<li>
+<p>HTTP, HTTPS, Web Socket。</p>
+</li>
 </ul>
 <h2 id="clb">CLB</h2>
 <ul>
 <li>
-<p>支援 TCP and SSL listens。</p>
+<p>支援HTTP, HTTPS, TCP and SSL listens。</p>
 </li>
 <li>
 <p>支援 Sticky sessions (cookies)</p>
 </li>
 </ul>
 <h2 id="nlb">NLB</h2>
+<ul>
+<li>支援TCP, TLS, UDP。</li>
+</ul>
 <h2 id="gwlb">GWLB</h2>
+<ul>
+<li>Layer3 IP協定。</li>
+</ul>
 <ul class="pa0">
   
    <li class="list">
