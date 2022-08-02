@@ -448,5 +448,5 @@ Connection Draining 中文直譯為連結耗盡，也就是當一個實體已經
 
 * Deregistration Delay: ALB & NLB
 
-可以設定時間。
+可以設定時間，1-3600秒之間，設置0為取消。
 
