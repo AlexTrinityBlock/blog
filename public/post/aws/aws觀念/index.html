@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="2465">
+<meta itemprop="wordCount" content="2585">
 
 
 
@@ -467,7 +467,24 @@
 <p>One Zone: 一個AZ並且可以加入EFS-IA的能力。</p>
 </li>
 </ul>
-<h1 id="alb">ALB</h1>
+<h1 id="elb">ELB</h1>
+<p>Elastic Load Balancing (ELB) 將流量分配到不同的實體。</p>
+<p>ELB有下列種類:</p>
+<ul>
+<li>
+<p>Application Load Balancer: Layer 7，IP、執行個體、Lambda。</p>
+</li>
+<li>
+<p>Network Load Balancer: Layer 4。用於IP、執行個體、Application Load Balancer。</p>
+</li>
+<li>
+<p>Gateway Load Balancer: Layer 3 閘道 + Layer 4 負載平衡。用於IP、執行個體。</p>
+</li>
+<li>
+<p>Classic Load Balancer: Layer 4/7。</p>
+</li>
+</ul>
+<h2 id="alb">ALB</h2>
 <p>ALB (Application Load Balancer)</p>
 <p>Layer 7 層級，例如Http協定的負載平衡器。</p>
 <p>透過 Target Group來分配流量，不需要僅綁定IP。也就是說可以用伺服器的功能或者名稱來分配流量。</p>
@@ -482,9 +499,17 @@
 <p>比CLB便宜，但不能進行純TCP轉送。</p>
 </li>
 </ul>
-<h1 id="clb">CLB</h1>
-<h1 id="elb">ELB</h1>
-<p>Elastic Load Balancing (ELB) 將流量分配到不同的實體。</p>
+<h2 id="clb">CLB</h2>
+<ul>
+<li>
+<p>支援 TCP and SSL listens。</p>
+</li>
+<li>
+<p>支援 Sticky sessions (cookies)</p>
+</li>
+</ul>
+<h1 id="nlb">NLB</h1>
+<h1 id="gwlb">GWLB</h1>
 <ul class="pa0">
   
    <li class="list">

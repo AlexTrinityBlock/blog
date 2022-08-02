@@ -248,7 +248,21 @@ EBS某個時間的上的快照，也就是某種存檔。
 
 * One Zone: 一個AZ並且可以加入EFS-IA的能力。
 
-# ALB
+# ELB
+
+Elastic Load Balancing (ELB) 將流量分配到不同的實體。
+
+ELB有下列種類:
+
+* Application Load Balancer: Layer 7，IP、執行個體、Lambda。
+
+* Network Load Balancer: Layer 4。用於IP、執行個體、Application Load Balancer。
+
+* Gateway Load Balancer: Layer 3 閘道 + Layer 4 負載平衡。用於IP、執行個體。
+
+* Classic Load Balancer: Layer 4/7。
+
+## ALB
 
 ALB (Application Load Balancer)
 
@@ -262,11 +276,12 @@ Layer 7 層級，例如Http協定的負載平衡器。
 
 * 比CLB便宜，但不能進行純TCP轉送。
 
-# CLB
+## CLB
 
+* 支援 TCP and SSL listens。
 
+* 支援 Sticky sessions (cookies)
 
-# ELB
+# NLB
 
-Elastic Load Balancing (ELB) 將流量分配到不同的實體。
-
+# GWLB
