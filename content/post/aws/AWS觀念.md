@@ -530,4 +530,7 @@ CloudWatch Alarms 可以設置為平均CPU使用量或者客戶自訂的指標(m
 
 * 其他CLoudWatch可以偵測到的指標。
 
-## ASG 
+## ASG - Cooldown Period
+
+冷卻時間，每次啟動負載平衡時，都會重置冷卻時間，預設為300秒。
+
