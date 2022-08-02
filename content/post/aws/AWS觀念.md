@@ -583,3 +583,5 @@ stress -c 4
 
 > Application Load Balancer 與 Classic Load Balancer僅提供一個 static DNS name (網址)但不提供靜態IP。
 
+> Auto Scaling Group 發現有實體處於不健康狀態時，就會先建立新的實體，然後結束掉舊的實體。
+
