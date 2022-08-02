@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="3295">
+<meta itemprop="wordCount" content="3326">
 
 
 
@@ -548,13 +548,22 @@
 <p>HTTP, HTTPS, Web Socket。</p>
 </li>
 </ul>
-<h2 id="clb">CLB</h2>
+<h2 id="clbclassic-load-balancers">CLB(Classic Load Balancers)</h2>
 <ul>
 <li>
 <p>支援HTTP, HTTPS, TCP and SSL listens。</p>
 </li>
 <li>
 <p>支援 Sticky sessions (cookies)</p>
+</li>
+<li>
+<p>只能在同一個網址下運作。</p>
+</li>
+<li>
+<p>通用性高但昂貴。</p>
+</li>
+<li>
+<p>可以在VPC裡頭。</p>
 </li>
 </ul>
 <h2 id="nlb">NLB</h2>

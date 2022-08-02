@@ -314,11 +314,17 @@ Layer 7 層級，例如Http協定的負載平衡器。
 
 * HTTP, HTTPS, Web Socket。
 
-## CLB
+## CLB(Classic Load Balancers)
 
 * 支援HTTP, HTTPS, TCP and SSL listens。
 
 * 支援 Sticky sessions (cookies)
+
+* 只能在同一個網址下運作。
+
+* 通用性高但昂貴。
+
+* 可以在VPC裡頭。
 
 ## NLB
 
