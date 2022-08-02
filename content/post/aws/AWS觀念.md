@@ -567,5 +567,19 @@ stress -c 4
 
 > 實體在啟動階段但尚未啟動完全稱為Pending status，啟動完畢後轉進InService狀態。Pending status時可以用選項添加自訂的額外軟體安裝，或者腳本執行。
 
+> 實體正在結束時稱為terminating status，也可以添加一些額外動做。 
+
 ![img](/blog/public/2022-08-03/lifecycle_hooks.png)
+
+> 建立實體的必要條件有AMI, Instance Type, Key Pair (用來訪問實體) ,Security Groups，與其他參數。
+
+> 在過去AWS運作一個實體要使用Launch Configuration。
+
+> 較新的實體運作方法為Launch Template，撰寫好可以繼承重用的模板，可以用在 On-Demand 與 Spot Instance 實體的創見。
+
+> T2 unlimited burst，其功能是如果CPU超量使用，則可以額外付費提供更高的運算能力。
+
+> Network Load Balancer 提供一個 static DNS name (網址) 與 static IP (靜態IP)
+
+> Application Load Balancer 僅提供一個 static DNS name (網址)但不提供靜態IP。
 
