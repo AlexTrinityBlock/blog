@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>AWS觀念 | 無面者小站</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+      
+	  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    
+
+  
+  
+    <link rel="stylesheet" href="/blog/public/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css" >
+  
+
+
+
+
+    
+      
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+
+
+    
+
+    
+    
+    <meta property="og:title" content="AWS觀念" />
+<meta property="og:description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/aws/aws%E8%A7%80%E5%BF%B5/" />
+<meta property="article:published_time" content="2022-08-01T09:00:00+08:00" />
+<meta property="article:modified_time" content="2022-08-01T09:00:00+08:00" />
+<meta itemprop="name" content="AWS觀念">
+<meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
+<meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="2300">
+
+
+
+<meta itemprop="keywords" content="AWS," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="AWS觀念"/>
+<meta name="twitter:description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"/>
+
+	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://alextrinityblock.github.io/blog/public/aws.png');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/blog/public/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        無面者小站
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/android/" title="android page">
+              android
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/aws/" title="AWS page">
+              AWS
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/azure/" title="Azure page">
+              Azure
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/cicd/" title="CICD page">
+              CICD
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/git/" title="git page">
+              git
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/linux" title="linux page">
+              linux
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/node.js/" title="Node.js page">
+              Node.js
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/python/" title="python page">
+              python
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/secure/" title="secure page">
+              secure
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/frontend/" title="網頁前端 page">
+              網頁前端
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/" title="更多 page">
+              更多
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/post/" title=" page">
+              
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">AWS觀念</h1>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://alextrinityblock.github.io/blog/public/post/aws/aws%E8%A7%80%E5%BF%B5/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://alextrinityblock.github.io/blog/public/post/aws/aws%E8%A7%80%E5%BF%B5/&amp;text=AWS%e8%a7%80%e5%bf%b5" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://alextrinityblock.github.io/blog/public/post/aws/aws%E8%A7%80%E5%BF%B5/&amp;title=AWS%e8%a7%80%e5%bf%b5" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">AWS觀念</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2022-08-01T09:00:00+08:00">August 1, 2022</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="region">Region</h1>
+<p>區域，例如美國東部，或者東京&hellip;</p>
+<h1 id="availability-zones">Availability Zones</h1>
+<p>簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。</p>
+<h1 id="iam">IAM</h1>
+<p>權限控管機制</p>
+<h1 id="aws-cli">AWS CLI</h1>
+<p>AWS的命令行工具，可以遠端登入連線。</p>
+<h1 id="ec2">EC2</h1>
+<p>Elastic Compute Cloud(彈性運算雲)，一種雲端的虛擬機服務。</p>
+<p>不過也有非虛擬機的運算實體，例如<code>u-6tb1.metal</code>這種後頭有metal的就是。</p>
+<h2 id="ec2-user-data">EC2 User data</h2>
+<p>啟動腳本，一個實例啟動時會自動執行。</p>
+<p>可以用來安裝Python套件, NPM, 其他伺服器軟體等。</p>
+<h2 id="ec2的ip">EC2的IP</h2>
+<p>每個EC2實體都會有個公共IP與私有IP。</p>
+<p>EC2重啟或暫停時都會更換公共IP，並且用戶無法從外側存取私有IP，那屬於AWS私有網路。</p>
+<h1 id="ec2-instance-store">EC2 Instance Store</h1>
+<p>由於EBS要跨越網路，EC2 Instance Store則是連接在實體主機上的高速I/O儲存區，所以很適合Buffer, Cache, Scratch data等任務。</p>
+<ul>
+<li>
+<p>實體刪除就會消失</p>
+</li>
+<li>
+<p>硬體主機故障可能會消失</p>
+</li>
+<li>
+<p>高速I/O</p>
+</li>
+<li>
+<p>請自行備份</p>
+</li>
+</ul>
+<h1 id="elastic-block-store">Elastic Block Store</h1>
+<p>可以長期保存EC2實體的類似硬碟儲存空間。</p>
+<p>EC2有兩種狀態:</p>
+<ul>
+<li>
+<p>Stop: EBS中的內容持續到下次啟動。</p>
+</li>
+<li>
+<p>Terminate: EBS中的內容刪除。</p>
+</li>
+</ul>
+<p>其中種類有</p>
+<ol>
+<li>gp2, gp3: 通用功能SSD。1GiB~16TiB。gp3快於gp2。</li>
+<li>io1/io2: 高效能SSD。4GiB~16TiB。</li>
+<li>io2 Block Express: 高效能SSD。4GiB~64TiB。</li>
+<li>st1: HDD，但適合頻繁存取(不可用來開機)。</li>
+<li>sc1: HDD，適合低頻率存取(不可用來開機)。</li>
+</ol>
+<h1 id="elastic-block-store-multi-attach">Elastic Block Store Multi-Attach</h1>
+<p>普通的情況EBS一次只能附加在一個EC2上頭。</p>
+<p>io1/io2則可以使用同一個EBS附加到不同的EC2上頭。</p>
+<h1 id="elastic-block-store-encryption">Elastic Block Store Encryption</h1>
+<p>當你製作了一個加密的EBS時，所有資料在傳輸與儲存的時候都是加密的。</p>
+<ul>
+<li>
+<p>低延遲</p>
+</li>
+<li>
+<p>EBS加密的金鑰保管在KMS，金鑰為AES-256金鑰。</p>
+</li>
+<li>
+<p>EBS建立Snapshot的時候可以加密。</p>
+</li>
+<li>
+<p>如果Snapshot是加密的，則建立EBS時也是加密的。</p>
+</li>
+</ul>
+<h1 id="ami">AMI</h1>
+<p>Amazon Machine Image (AMI)由AWS負責維護的作業系統映像檔。</p>
+<p>可以更快的配置跟啟動，因為AMI已經事先打包成映像檔了。</p>
+<ul>
+<li>
+<p>Public AMI: AWS提供的映像檔，不果你也可以自己建立，或者到AWS Marketplace AMI去購買。</p>
+</li>
+<li>
+<p>一個Region的AMI只能用在同一個Region。</p>
+</li>
+</ul>
+<h1 id="ec2-optimizing-cpu-options">EC2 Optimizing CPU options</h1>
+<p>可以在CPU最佳化選項中，取消多執行緒來增加單一執行緒的運算效能，或者減少CPU並換成更多的Ram，並且減低或者維持成本。</p>
+<h1 id="ec2-cpacity-reservation">EC2 Cpacity Reservation</h1>
+<p>容量預留，可以在某個AZ預留需要使用的EC2資源。</p>
+<h1 id="elastic-ip">Elastic IP</h1>
+<p>AWS的固定公開IP租借，沒有特別要求的情況下，一個用戶最多租借5個，也可以要求更多。</p>
+<p>這類的固定IP可以連到EC2實體上頭。</p>
+<p>不過最建議的方式還是，EC2實體搭配Route52的DNS服務，雖然EC2實體IP可能會在重啟時改變，但是無論如何同一個網址仍然會導向新的IP。</p>
+<p>使用方式是將一個IP附加到任意EC2實體。</p>
+<h1 id="ec2-placement-groups">EC2 Placement Groups</h1>
+<p>有辦法策略的啟動EC2實體群集，共有3種策略。</p>
+<ul>
+<li>
+<p>Cluster: 在同一個AZ裡頭建立一個網路低延遲的主機叢集，甚至在同一個機櫃上。每個實體間有高達10Gbps的網路速度。</p>
+</li>
+<li>
+<p>Spread: 主機不一定在同AZ，就算在同AZ，也不會在同一個實體機器上，避免風險。每個AZ最多7個實體。</p>
+</li>
+<li>
+<p>Partition: 折衷辦法，數個實體為一組(partition)，每一個AZ最多7組，不同partition不會被分配到同一個，機櫃(Rack)。</p>
+</li>
+</ul>
+<h1 id="elastic-network-interfaceeni">Elastic Network Interface(ENI)</h1>
+<p>能賦予EC2某種虛擬網卡。</p>
+<p>有著單一的MAC address，但是可以讓實體有多個Private IP，在AWS的VPC中奏效。</p>
+<p>可以用於故障轉移(failover)，例如當192.168.0.5的實體失效時，可以將該IP附加到另外一個有效的實體。</p>
+<p>注意，只能在同一個AZ。</p>
+<h1 id="hibernate">Hibernate</h1>
+<p>讓EC2實體休眠。</p>
+<p>將EC2的RAM中的內容儲存到EBS空間中，根目錄。</p>
+<p>解除休眠後的啟動速度比完全重新啟動EC2更快。</p>
+<p>EBS根目錄的內容是加密的。</p>
+<ul>
+<li>
+<p>需要小於150GB的Ram才可以。</p>
+</li>
+<li>
+<p>可用於On-Demand, Reserved, Spot。</p>
+</li>
+<li>
+<p>休眠不可大於60天</p>
+</li>
+<li>
+<p>EBS儲存空間一定要夠大，大於Ram大小，並且加密的。</p>
+</li>
+</ul>
+<h1 id="ec2-nitro">EC2 Nitro</h1>
+<p>不能直接使用，他是EC2底層的硬體與虛擬化技術。</p>
+<p>提供更好的效能與安全。</p>
+<p>只有少數較為便宜的EC2實體類型，沒有以外，多數的EC2實體都使用Nitro硬體技術。</p>
+<h1 id="ebs">EBS</h1>
+<p>在CCP雲端從業人員等級，一個EC2只能附加一個EBS。</p>
+<p>如有需要可以在中止EC2後保存資料(但要在建立時特別標注)。</p>
+<p>可以視為某種在網路上的USB隨身碟。</p>
+<ul>
+<li>
+<p>綁定某個AZ。</p>
+</li>
+<li>
+<p>可以快速的卸載或附加到某EC2上頭。</p>
+</li>
+<li>
+<p>需要標注大小與IO速度。</p>
+</li>
+</ul>
+<h2 id="ebs的自動刪除機制">EBS的自動刪除機制</h2>
+<ul>
+<li>
+<p>Root volume type: 預設情況下會隨著EC2關閉而結束。</p>
+</li>
+<li>
+<p>Other EBS volume types: 預設不會隨關閉結束。</p>
+</li>
+</ul>
+<h1 id="ebs-snapshots">EBS Snapshots</h1>
+<p>EBS某個時間的上的快照，也就是某種存檔。</p>
+<p>有辦法跨越AZ。</p>
+<h2 id="ebs-snapshot-archive">EBS Snapshot Archive</h2>
+<p>將Snapshot移動到不同的Archive Tier，減少存取速度，可以便宜75%。</p>
+<p>24~72小時復原。</p>
+<h2 id="recycle-bin-for-ebs-snapshot">Recycle Bin for EBS Snapshot</h2>
+<p>資源回收桶，可在一定的時間內復原刪除的Snapshot。</p>
+<h1 id="efselastic-file-system">EFS(Elastic File System)</h1>
+<ul>
+<li>
+<p>也是儲存空間的一種，可以同時附加到多個EC2實體。</p>
+</li>
+<li>
+<p>可以由多個不同AZ的實體分享檔案。</p>
+</li>
+<li>
+<p>高可用性，不容易下線，可擴展，但是價格是三倍的gp2。</p>
+</li>
+<li>
+<p>NFSv4協定。</p>
+</li>
+<li>
+<p>用Security group控制EFS存取。</p>
+</li>
+<li>
+<p>Linux為基礎的AMI。</p>
+</li>
+<li>
+<p>不使用時用KMS加密。</p>
+</li>
+<li>
+<p>POSIX標準檔案API。</p>
+</li>
+<li>
+<p>使用才計費。</p>
+</li>
+<li>
+<p>同時1000個用戶，10GB吞吐量。</p>
+</li>
+<li>
+<p>最大可以存取到PB等級。</p>
+</li>
+</ul>
+<h2 id="efs效能模式設定performance-mode">EFS效能模式設定(Performance mode)</h2>
+<ul>
+<li>
+<p>General purpose: 預設，低延遲。</p>
+</li>
+<li>
+<p>Max I/O: 延遲略高，但吞吐量與平行化效果更好。</p>
+</li>
+</ul>
+<h2 id="efs吞吐量模式設定throughput-mode">EFS吞吐量模式設定(Throughput mode)</h2>
+<ul>
+<li>
+<p>Bursting: 50MiB/s可以爆發到100MiB/s。</p>
+</li>
+<li>
+<p>Provisioned: 考慮吞吐量，但不考慮除存容量的大小，例如吞吐量為1GiB/s，但作用在1TB的容量上。</p>
+</li>
+</ul>
+<h2 id="efs-storage-classes">EFS Storage Classes</h2>
+<h3 id="storage-tiers">Storage Tiers</h3>
+<ul>
+<li>
+<p>Standard: 時常存取的檔案</p>
+</li>
+<li>
+<p>Infrequent access(EFS-IA): 比較便宜，但較少存取時會恢復的更慢。</p>
+</li>
+</ul>
+<h3 id="availability-and-durability">Availability and durability</h3>
+<ul>
+<li>
+<p>Standard: 多個AZ。</p>
+</li>
+<li>
+<p>One Zone: 一個AZ並且可以加入EFS-IA的能力。</p>
+</li>
+</ul>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/blog/public/tags/aws" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">AWS</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
+    &copy;  無面者小站 2022 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

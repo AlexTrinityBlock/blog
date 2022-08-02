@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>AWS觀念</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/aws/aws%E8%A7%80%E5%BF%B5/</link>
+      <pubDate>Mon, 01 Aug 2022 09:00:00 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/aws/aws%E8%A7%80%E5%BF%B5/</guid>
+      <description>Region 區域，例如美國東部，或者東京&amp;hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管</description>
+    </item>
+    
+    <item>
       <title>Docker基本指令</title>
       <link>https://alextrinityblock.github.io/blog/public/post/docker/docker%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/</link>
       <pubDate>Wed, 06 Jul 2022 09:00:03 +0800</pubDate>

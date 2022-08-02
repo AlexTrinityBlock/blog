@@ -1,0 +1,250 @@
+---
+title: "AWS觀念"
+date: 2022-08-01T09:00:00+08:00
+draft: true
+featured_image: "/aws.png"
+tags: ["AWS"]
+---
+
+# Region
+
+區域，例如美國東部，或者東京...
+
+# Availability Zones
+
+簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。
+
+# IAM
+
+權限控管機制
+
+# AWS CLI
+
+AWS的命令行工具，可以遠端登入連線。
+
+# EC2
+
+Elastic Compute Cloud(彈性運算雲)，一種雲端的虛擬機服務。
+
+不過也有非虛擬機的運算實體，例如`u-6tb1.metal`這種後頭有metal的就是。
+
+## EC2 User data
+
+啟動腳本，一個實例啟動時會自動執行。
+
+可以用來安裝Python套件, NPM, 其他伺服器軟體等。
+
+## EC2的IP
+
+每個EC2實體都會有個公共IP與私有IP。
+
+EC2重啟或暫停時都會更換公共IP，並且用戶無法從外側存取私有IP，那屬於AWS私有網路。
+
+# EC2 Instance Store
+
+由於EBS要跨越網路，EC2 Instance Store則是連接在實體主機上的高速I/O儲存區，所以很適合Buffer, Cache, Scratch data等任務。
+
+* 實體刪除就會消失
+
+* 硬體主機故障可能會消失
+
+* 高速I/O
+
+* 請自行備份
+
+# Elastic Block Store
+
+可以長期保存EC2實體的類似硬碟儲存空間。
+
+EC2有兩種狀態:
+
+* Stop: EBS中的內容持續到下次啟動。
+
+* Terminate: EBS中的內容刪除。
+
+其中種類有
+
+1. gp2, gp3: 通用功能SSD。1GiB~16TiB。gp3快於gp2。
+2. io1/io2: 高效能SSD。4GiB~16TiB。
+3. io2 Block Express: 高效能SSD。4GiB~64TiB。
+4. st1: HDD，但適合頻繁存取(不可用來開機)。
+5. sc1: HDD，適合低頻率存取(不可用來開機)。
+
+# Elastic Block Store Multi-Attach
+
+普通的情況EBS一次只能附加在一個EC2上頭。
+
+io1/io2則可以使用同一個EBS附加到不同的EC2上頭。
+
+# Elastic Block Store Encryption
+
+當你製作了一個加密的EBS時，所有資料在傳輸與儲存的時候都是加密的。
+
+* 低延遲
+
+* EBS加密的金鑰保管在KMS，金鑰為AES-256金鑰。
+
+* EBS建立Snapshot的時候可以加密。
+
+* 如果Snapshot是加密的，則建立EBS時也是加密的。
+
+# AMI
+
+Amazon Machine Image (AMI)由AWS負責維護的作業系統映像檔。
+
+可以更快的配置跟啟動，因為AMI已經事先打包成映像檔了。
+
+* Public AMI: AWS提供的映像檔，不果你也可以自己建立，或者到AWS Marketplace AMI去購買。
+
+* 一個Region的AMI只能用在同一個Region。
+
+# EC2 Optimizing CPU options
+
+可以在CPU最佳化選項中，取消多執行緒來增加單一執行緒的運算效能，或者減少CPU並換成更多的Ram，並且減低或者維持成本。
+
+# EC2 Cpacity Reservation
+
+容量預留，可以在某個AZ預留需要使用的EC2資源。
+
+# Elastic IP
+
+AWS的固定公開IP租借，沒有特別要求的情況下，一個用戶最多租借5個，也可以要求更多。
+
+這類的固定IP可以連到EC2實體上頭。
+
+不過最建議的方式還是，EC2實體搭配Route52的DNS服務，雖然EC2實體IP可能會在重啟時改變，但是無論如何同一個網址仍然會導向新的IP。
+
+使用方式是將一個IP附加到任意EC2實體。
+
+# EC2 Placement Groups
+
+有辦法策略的啟動EC2實體群集，共有3種策略。
+
+* Cluster: 在同一個AZ裡頭建立一個網路低延遲的主機叢集，甚至在同一個機櫃上。每個實體間有高達10Gbps的網路速度。
+
+* Spread: 主機不一定在同AZ，就算在同AZ，也不會在同一個實體機器上，避免風險。每個AZ最多7個實體。
+
+* Partition: 折衷辦法，數個實體為一組(partition)，每一個AZ最多7組，不同partition不會被分配到同一個，機櫃(Rack)。
+
+# Elastic Network Interface(ENI)
+
+能賦予EC2某種虛擬網卡。
+
+有著單一的MAC address，但是可以讓實體有多個Private IP，在AWS的VPC中奏效。
+
+可以用於故障轉移(failover)，例如當192.168.0.5的實體失效時，可以將該IP附加到另外一個有效的實體。
+
+注意，只能在同一個AZ。
+
+# Hibernate
+
+讓EC2實體休眠。
+
+將EC2的RAM中的內容儲存到EBS空間中，根目錄。
+
+解除休眠後的啟動速度比完全重新啟動EC2更快。
+
+EBS根目錄的內容是加密的。
+
+* 需要小於150GB的Ram才可以。
+
+* 可用於On-Demand, Reserved, Spot。
+
+* 休眠不可大於60天
+
+* EBS儲存空間一定要夠大，大於Ram大小，並且加密的。
+
+# EC2 Nitro
+
+不能直接使用，他是EC2底層的硬體與虛擬化技術。
+
+提供更好的效能與安全。
+
+只有少數較為便宜的EC2實體類型，沒有以外，多數的EC2實體都使用Nitro硬體技術。
+
+# EBS
+
+在CCP雲端從業人員等級，一個EC2只能附加一個EBS。
+
+如有需要可以在中止EC2後保存資料(但要在建立時特別標注)。
+
+可以視為某種在網路上的USB隨身碟。
+
+* 綁定某個AZ。
+
+* 可以快速的卸載或附加到某EC2上頭。
+
+* 需要標注大小與IO速度。
+
+## EBS的自動刪除機制
+
+* Root volume type: 預設情況下會隨著EC2關閉而結束。
+
+* Other EBS volume types: 預設不會隨關閉結束。
+
+# EBS Snapshots
+
+EBS某個時間的上的快照，也就是某種存檔。
+
+有辦法跨越AZ。
+
+## EBS Snapshot Archive
+
+將Snapshot移動到不同的Archive Tier，減少存取速度，可以便宜75%。
+
+24~72小時復原。
+
+## Recycle Bin for EBS Snapshot
+
+資源回收桶，可在一定的時間內復原刪除的Snapshot。
+
+# EFS(Elastic File System)
+
+* 也是儲存空間的一種，可以同時附加到多個EC2實體。
+
+* 可以由多個不同AZ的實體分享檔案。
+
+* 高可用性，不容易下線，可擴展，但是價格是三倍的gp2。
+
+* NFSv4協定。
+
+* 用Security group控制EFS存取。
+
+* Linux為基礎的AMI。
+
+* 不使用時用KMS加密。
+
+* POSIX標準檔案API。
+
+* 使用才計費。
+
+* 同時1000個用戶，10GB吞吐量。
+
+* 最大可以存取到PB等級。
+
+## EFS效能模式設定(Performance mode)
+
+* General purpose: 預設，低延遲。
+
+* Max I/O: 延遲略高，但吞吐量與平行化效果更好。
+
+## EFS吞吐量模式設定(Throughput mode)
+
+* Bursting: 50MiB/s可以爆發到100MiB/s。
+
+* Provisioned: 考慮吞吐量，但不考慮除存容量的大小，例如吞吐量為1GiB/s，但作用在1TB的容量上。
+
+## EFS Storage Classes
+
+### Storage Tiers
+
+* Standard: 時常存取的檔案
+
+* Infrequent access(EFS-IA): 比較便宜，但較少存取時會恢復的更慢。 
+
+### Availability and durability
+
+* Standard: 多個AZ。
+
+* One Zone: 一個AZ並且可以加入EFS-IA的能力。
+
