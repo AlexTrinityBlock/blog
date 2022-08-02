@@ -354,7 +354,7 @@ Network Load Balancer，在每個AZ有一個IP，並且可以額外附加Elastic
 
 * Target Group可以有EC2, IP(私有IP), 另外一個ALB。
 
-
+* 從目標實體的角度，透過NLB的傳輸看起來會很像客戶從外部網路進行連線，所以某些情況Security Group要開放外部IP。
 
 ## GWLB
 

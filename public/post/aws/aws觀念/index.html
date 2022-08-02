@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="3761">
+<meta itemprop="wordCount" content="3823">
 
 
 
@@ -598,6 +598,9 @@
 </li>
 <li>
 <p>Target Group可以有EC2, IP(私有IP), 另外一個ALB。</p>
+</li>
+<li>
+<p>從目標實體的角度，透過NLB的傳輸看起來會很像客戶從外部網路進行連線，所以某些情況Security Group要開放外部IP。</p>
 </li>
 </ul>
 <h2 id="gwlb">GWLB</h2>
