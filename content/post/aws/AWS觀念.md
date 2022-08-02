@@ -426,5 +426,7 @@ SSL Certificate可以在很多網站上申請到，有的免費有的付費，�
 
 * SNI(Server Name Indication): 支援同一個IP上頭有幾個不同的網站，並且每個網站都有獨立的憑證，類似虛擬主機。使用者需要配備支援該協定的瀏覽器。
 
+* SNI 服務只支援，ALB, NLB, CloudFront。
+
 
 
