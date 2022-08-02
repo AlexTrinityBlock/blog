@@ -412,6 +412,12 @@ AWS上頭的實踐方法是，將同個客戶的IP的請求，轉送到同一台
 
 * CLB: 不會預設啟動，但啟動不會加錢。
 
+## ELB與SSL和TLS
+
+可以在負載平衡器上添加SSL Certificate。
+
+SSL是Secure Socket Layer，TLS比較新為 Transport Layer Security。
+
 
 
 
