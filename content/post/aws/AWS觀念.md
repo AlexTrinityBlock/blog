@@ -505,3 +505,8 @@ VPCZoneIdentifier: subnet-5ea0c127,subnet-6194ea3b,subnet-c934b782
 CloudWatch Alarms 可以設置為平均CPU使用量或者客戶自訂的指標(metric)，當CPU負載過高時自動增加EC2實體。
 
 
+## ASG的Dynamic Scaling Policies
+
+* Target Tracking Scaling
+    * 簡單的設置
+    * 例如：努力維持在每個實體CPU耗用率為 40%。

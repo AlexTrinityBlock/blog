@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="5075">
+<meta itemprop="wordCount" content="5119">
 
 
 
@@ -774,6 +774,15 @@
 <span style="color:#66d9ef">VPCZoneIdentifier</span>: subnet-5ea0c127,subnet-6194ea3b,subnet-c934b782
 </code></pre></div><h2 id="asg-與cloudwatch-alarms">ASG 與CloudWatch Alarms</h2>
 <p>CloudWatch Alarms 可以設置為平均CPU使用量或者客戶自訂的指標(metric)，當CPU負載過高時自動增加EC2實體。</p>
+<h2 id="asg的dynamic-scaling-policies">ASG的Dynamic Scaling Policies</h2>
+<ul>
+<li>Target Tracking Scaling
+<ul>
+<li>簡單的設置</li>
+<li>例如：努力維持在每個實體CPU耗用率為 40%。</li>
+</ul>
+</li>
+</ul>
 <ul class="pa0">
   
    <li class="list">
