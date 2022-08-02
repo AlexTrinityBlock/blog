@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="5119">
+<meta itemprop="wordCount" content="5246">
 
 
 
@@ -780,6 +780,18 @@
 <ul>
 <li>簡單的設置</li>
 <li>例如：努力維持在每個實體CPU耗用率為 40%。</li>
+</ul>
+</li>
+<li>Simple / Step Scaling
+<ul>
+<li>例如:當CloudWatch alarm 於平均CPU耗用大於 70%時被觸發時，增加2個實體。</li>
+<li>例如:當CloudWatch alarm 於平均CPU耗用小於 30%時被觸發時，減少1個實體。</li>
+</ul>
+</li>
+<li>Scheduled Action
+<ul>
+<li>根據過去的使用模式，進行調整。</li>
+<li>例如: 每週5下午5點，增加最少實體數量到10個。</li>
 </ul>
 </li>
 </ul>

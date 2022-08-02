@@ -510,3 +510,9 @@ CloudWatch Alarms 可以設置為平均CPU使用量或者客戶自訂的指標(m
 * Target Tracking Scaling
     * 簡單的設置
     * 例如：努力維持在每個實體CPU耗用率為 40%。
+* Simple / Step Scaling
+    * 例如:當CloudWatch alarm 於平均CPU耗用大於 70%時被觸發時，增加2個實體。
+    * 例如:當CloudWatch alarm 於平均CPU耗用小於 30%時被觸發時，減少1個實體。
+* Scheduled Action
+    * 根據過去的使用模式，進行調整。
+    * 例如: 每週5下午5點，增加最少實體數量到10個。
