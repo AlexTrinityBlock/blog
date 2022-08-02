@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="4384">
+<meta itemprop="wordCount" content="4430">
 
 
 
@@ -678,7 +678,10 @@
 <h2 id="elb與ssl和tls">ELB與SSL和TLS</h2>
 <p>可以在負載平衡器上添加SSL Certificate。</p>
 <p>SSL是Secure Socket Layer，TLS比較新為 Transport Layer Security。</p>
-<p>SSL Certificate可以在很多網站上申請到，有的免費有的付費，並且會在一段時間後過期。</p>
+<p>SSL Certificate可以在很多網站上申請到，有的免費有的付費，並且會在一段時間後過期。也可稱為X509 certificates。</p>
+<ul>
+<li>ACM (AWS Certificate Manager): 可以用來管理SSL certificate。</li>
+</ul>
 <ul class="pa0">
   
    <li class="list">

@@ -418,5 +418,7 @@ AWS上頭的實踐方法是，將同個客戶的IP的請求，轉送到同一台
 
 SSL是Secure Socket Layer，TLS比較新為 Transport Layer Security。
 
-SSL Certificate可以在很多網站上申請到，有的免費有的付費，並且會在一段時間後過期。
+SSL Certificate可以在很多網站上申請到，有的免費有的付費，並且會在一段時間後過期。也可稱為X509 certificates。
+
+* ACM (AWS Certificate Manager): 可以用來管理SSL certificate。
 
