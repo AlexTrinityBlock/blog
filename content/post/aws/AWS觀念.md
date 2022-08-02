@@ -468,7 +468,40 @@ Connection Draining 中文直譯為連結耗盡，也就是當一個實體已經
 
 ASG也可以注意到實體健康狀態。
 
-* ASG Launch Template: 可以事先撰寫好的腳本，類似Docker-compose.yaml或k8s的風格，來定義AMI, 實體種類, EBS, Security Groups, SSH key pair。
+## ASG Launch Template
+可以事先撰寫好的腳本，類似Docker-compose.yaml或k8s的風格，來定義AMI, 實體種類數量, EBS, Security Groups, SSH key pair, IAM, 網路設置與ELB。
 
+類似下方:
+
+```yaml
+---
+AutoScalingGroupName: my-asg
+MixedInstancesPolicy:
+  LaunchTemplate:
+    LaunchTemplateSpecification:
+      LaunchTemplateName: my-launch-template
+      Version: $Default
+    Overrides:
+    - InstanceType: c5.large
+    - InstanceType: c5a.large
+    - InstanceType: m5.large
+    - InstanceType: m5a.large
+    - InstanceType: c4.large
+    - InstanceType: m4.large
+    - InstanceType: c3.large
+    - InstanceType: m3.large
+  InstancesDistribution:
+    OnDemandBaseCapacity: 1
+    OnDemandPercentageAboveBaseCapacity: 0
+    SpotAllocationStrategy: capacity-optimized
+MinSize: 1
+MaxSize: 5
+DesiredCapacity: 3
+VPCZoneIdentifier: subnet-5ea0c127,subnet-6194ea3b,subnet-c934b782
+```
+
+## ASG 與CloudWatch Alarms
+
+CloudWatch Alarms 可以設置為平均CPU使用量或者客戶自訂的指標(metric)。
 
 

@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="4947">
+<meta itemprop="wordCount" content="5056">
 
 
 
@@ -745,9 +745,35 @@
 </li>
 </ul>
 <p>ASG也可以注意到實體健康狀態。</p>
-<ul>
-<li>ASG Launch Template: 可以事先撰寫好的腳本，類似Docker-compose.yaml或k8s的風格，來定義AMI, 實體種類, EBS, Security Groups, SSH key pair。</li>
-</ul>
+<h2 id="asg-launch-template">ASG Launch Template</h2>
+<p>可以事先撰寫好的腳本，類似Docker-compose.yaml或k8s的風格，來定義AMI, 實體種類數量, EBS, Security Groups, SSH key pair, IAM, 網路設置與ELB。</p>
+<p>類似下方:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#66d9ef">AutoScalingGroupName</span>: my-asg
+<span style="color:#66d9ef">MixedInstancesPolicy</span>:
+  <span style="color:#66d9ef">LaunchTemplate</span>:
+    <span style="color:#66d9ef">LaunchTemplateSpecification</span>:
+      <span style="color:#66d9ef">LaunchTemplateName</span>: my-launch-template
+      <span style="color:#66d9ef">Version</span>: $Default
+    <span style="color:#66d9ef">Overrides</span>:
+    - <span style="color:#66d9ef">InstanceType</span>: c5.large
+    - <span style="color:#66d9ef">InstanceType</span>: c5a.large
+    - <span style="color:#66d9ef">InstanceType</span>: m5.large
+    - <span style="color:#66d9ef">InstanceType</span>: m5a.large
+    - <span style="color:#66d9ef">InstanceType</span>: c4.large
+    - <span style="color:#66d9ef">InstanceType</span>: m4.large
+    - <span style="color:#66d9ef">InstanceType</span>: c3.large
+    - <span style="color:#66d9ef">InstanceType</span>: m3.large
+  <span style="color:#66d9ef">InstancesDistribution</span>:
+    <span style="color:#66d9ef">OnDemandBaseCapacity</span>: <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">OnDemandPercentageAboveBaseCapacity</span>: <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">SpotAllocationStrategy</span>: capacity-optimized
+<span style="color:#66d9ef">MinSize</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">MaxSize</span>: <span style="color:#ae81ff">5</span>
+<span style="color:#66d9ef">DesiredCapacity</span>: <span style="color:#ae81ff">3</span>
+<span style="color:#66d9ef">VPCZoneIdentifier</span>: subnet-5ea0c127,subnet-6194ea3b,subnet-c934b782
+</code></pre></div><h2 id="asg-與cloudwatch-alarms">ASG 與CloudWatch Alarms</h2>
+<p>CloudWatch Alarms 可以設置為平均CPU使用量或者客戶自訂的指標(metric)。</p>
 <ul class="pa0">
   
    <li class="list">
