@@ -248,3 +248,25 @@ EBS某個時間的上的快照，也就是某種存檔。
 
 * One Zone: 一個AZ並且可以加入EFS-IA的能力。
 
+# ALB
+
+ALB (Application Load Balancer)
+
+Layer 7 層級，例如Http協定的負載平衡器。
+
+透過 Target Group來分配流量，不需要僅綁定IP。也就是說可以用伺服器的功能或者名稱來分配流量。
+
+*  On-Premises、EC2、Lambda 可作為 Target。
+
+* 支援使用 AWS WAF，內建 AWS shield緩解DOos。
+
+* 比CLB便宜，但不能進行純TCP轉送。
+
+# CLB
+
+
+
+# ELB
+
+Elastic Load Balancing (ELB) 將流量分配到不同的實體。
+

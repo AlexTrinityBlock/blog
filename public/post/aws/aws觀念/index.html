@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="2300">
+<meta itemprop="wordCount" content="2465">
 
 
 
@@ -467,6 +467,24 @@
 <p>One Zone: 一個AZ並且可以加入EFS-IA的能力。</p>
 </li>
 </ul>
+<h1 id="alb">ALB</h1>
+<p>ALB (Application Load Balancer)</p>
+<p>Layer 7 層級，例如Http協定的負載平衡器。</p>
+<p>透過 Target Group來分配流量，不需要僅綁定IP。也就是說可以用伺服器的功能或者名稱來分配流量。</p>
+<ul>
+<li>
+<p>On-Premises、EC2、Lambda 可作為 Target。</p>
+</li>
+<li>
+<p>支援使用 AWS WAF，內建 AWS shield緩解DOos。</p>
+</li>
+<li>
+<p>比CLB便宜，但不能進行純TCP轉送。</p>
+</li>
+</ul>
+<h1 id="clb">CLB</h1>
+<h1 id="elb">ELB</h1>
+<p>Elastic Load Balancing (ELB) 將流量分配到不同的實體。</p>
 <ul class="pa0">
   
    <li class="list">
