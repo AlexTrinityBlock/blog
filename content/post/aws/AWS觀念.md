@@ -458,4 +458,13 @@ Connection Draining 中文直譯為連結耗盡，也就是當一個實體已經
 
 * ASG 是免費服務。
 
+有分為三個數量:
+
+* Minimum Capacity: 最少至少啟動的實體數量。
+
+* Desired Capacity: 希望維持的實體數。
+
+* Maximum Capacity: 最大的實體數量。
+
+
 
