@@ -468,5 +468,7 @@ Connection Draining 中文直譯為連結耗盡，也就是當一個實體已經
 
 ASG也可以注意到實體健康狀態。
 
+* ASG Launch Template: 可以事先撰寫好的腳本，類似Docker-compose.yaml或k8s的風格，來定義AMI, 實體種類, EBS, Security Groups, SSH key pair。
+
 
 
