@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="4600">
+<meta itemprop="wordCount" content="4762">
 
 
 
@@ -696,6 +696,30 @@
 <p>這意味著只要1個ELB就可以服務多個網站(網址不同的前提)，並且該ELB要儲存多個憑證。不用更多成本來設置很多個ALB。</p>
 </li>
 </ul>
+<p>我們可以從下列比較:</p>
+<ul>
+<li>
+<p>CLB: 只能有一個憑證。</p>
+</li>
+<li>
+<p>ALB: 可以有多個憑證，多個HTTPS listener，以SNI協定實現。</p>
+</li>
+<li>
+<p>NLB: 可以有多個憑證，多個HTTPS listener，以SNI協定實現。</p>
+</li>
+</ul>
+<h2 id="elb-中的-connection-draining">ELB 中的 Connection Draining</h2>
+<p>Connection Draining 中文直譯為連結耗盡，也就是當一個實體已經許久沒有回應時，將不再把連線流量交給該實體。</p>
+<p>在不同ELB中的名稱:</p>
+<ul>
+<li>
+<p>CLB: Connection Draining</p>
+</li>
+<li>
+<p>Deregistration Delay: ALB &amp; NLB</p>
+</li>
+</ul>
+<p>可以設定時間。</p>
 <ul class="pa0">
   
    <li class="list">

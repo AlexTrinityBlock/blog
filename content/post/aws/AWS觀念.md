@@ -430,3 +430,23 @@ SSL Certificate可以在很多網站上申請到，有的免費有的付費，�
 
 * 這意味著只要1個ELB就可以服務多個網站(網址不同的前提)，並且該ELB要儲存多個憑證。不用更多成本來設置很多個ALB。
 
+我們可以從下列比較:
+
+* CLB: 只能有一個憑證。
+
+* ALB: 可以有多個憑證，多個HTTPS listener，以SNI協定實現。
+
+* NLB: 可以有多個憑證，多個HTTPS listener，以SNI協定實現。
+
+## ELB 中的 Connection Draining 
+
+Connection Draining 中文直譯為連結耗盡，也就是當一個實體已經許久沒有回應時，將不再把連線流量交給該實體。
+
+在不同ELB中的名稱:
+
+* CLB: Connection Draining
+
+* Deregistration Delay: ALB & NLB
+
+可以設定時間。
+
