@@ -581,5 +581,5 @@ stress -c 4
 
 > Network Load Balancer 提供一個 static DNS name (網址) 與 static IP (靜態IP)
 
-> Application Load Balancer 僅提供一個 static DNS name (網址)但不提供靜態IP。
+> Application Load Balancer 與 Classic Load Balancer僅提供一個 static DNS name (網址)但不提供靜態IP。
 
