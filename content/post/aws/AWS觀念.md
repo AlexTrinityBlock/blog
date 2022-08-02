@@ -516,3 +516,5 @@ CloudWatch Alarms 可以設置為平均CPU使用量或者客戶自訂的指標(m
 * Scheduled Action
     * 根據過去的使用模式，進行調整。
     * 例如: 每週5下午5點，增加最少實體數量到10個。
+* Predictive scalling
+    * 持續預測負載，預先擴展。
