@@ -795,3 +795,7 @@ Aurora是AWS自產的一種資料庫類型，可以相容MySQL與PostgreSQL，�
 
 * 多個Aurora 使用Proxy群來分配給每個資料庫實體的流量，由Aurrora來管理。
 
+## Aurora Multi-Master
+
+每個資料庫節點都可以進行讀寫操作。
+
