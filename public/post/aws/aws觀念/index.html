@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="8874">
+<meta itemprop="wordCount" content="9041">
 
 
 
@@ -1311,6 +1311,19 @@ sudo yum install stress -y
 </ul>
 </li>
 </ul>
+<h2 id="在ssa考試中的elasticcache">在SSA考試中的ElasticCache</h2>
+<blockquote>
+<p>ElasticCache不支援IAM登入。 IAM只支援AWS API-level的安全。</p>
+</blockquote>
+<blockquote>
+<p>Redis AUTH: 當建立叢集時，可以設置Redis的密碼。這樣可以增加安全性。一定要追加Security Groups。</p>
+</blockquote>
+<blockquote>
+<p>支援SSL於flight encryption。</p>
+</blockquote>
+<blockquote>
+<p>Memcached支援SASL-based authentication (建議使用)。</p>
+</blockquote>
 <ul class="pa0">
   
    <li class="list">
