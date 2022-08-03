@@ -624,7 +624,7 @@ RDS 的優點如下:
 
 * 不能自己用SSH去連結到資料庫運作的實體。
 
-## RDS 備份
+## RDS Backups
 
 * Automated backups
     * 每日完整備份資料庫
@@ -639,4 +639,7 @@ RDS 的優點如下:
     * 由使用者自己觸發。
     * 可以根據你的需求決定保存時間。
 
+## RDS - Storage Auto Scaling
+
+可以自動隨著需求擴大 RDS 容量。
 
