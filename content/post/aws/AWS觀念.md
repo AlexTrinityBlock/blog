@@ -823,3 +823,12 @@ Aurora是AWS自產的一種資料庫類型，可以相容MySQL與PostgreSQL，�
         * Amazon SageMaker: 使用 ML model。
 
         * Amazon Comprehend: 用ML進行情感分析。
+
+# Amazon ElasticCache Overview
+
+* 管理 Redis 或者 Memcached。
+
+* 高存取速度。
+
+* 可以減輕資料庫負擔。
+
