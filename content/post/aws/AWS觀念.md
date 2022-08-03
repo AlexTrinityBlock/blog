@@ -845,3 +845,35 @@ Aurora是AWS自產的一種資料庫類型，可以相容MySQL與PostgreSQL，�
 * Session保存
 
     * 用來紀錄Session內容與Session Key。
+
+## Redis 與 Memcached 簡述(不只在AWS)
+
+* Redis
+
+    * AOF(Append Only File): Redis的每一個操作，在Redis下線後可重新啟動，不過檔案比較大，檔案太大時可以重建。
+
+    * RDB(Redis Database): 資料庫，每隔一定的時間紀錄Redis裡頭的內容。
+
+* Memcached
+
+    * 支援 multi-threaded
+
+    * 無下線後的功能。
+
+## Redis 與 Memcached 在AWS中
+
+* Redis
+
+    * 支持多AZ，並且支持故障復原。
+
+    * 可以有 Read Replicas 來擃充使用者讀取的流量。並且防止其中一台下線。
+
+    * AOF資料復原。
+
+    * Backup and restore 保存與回復。
+
+* Memcached
+
+    * Multi-node: 多個節點來分散資料。
+
+    * 沒有 Replication ， 風險較高。

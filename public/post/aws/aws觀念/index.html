@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="8678">
+<meta itemprop="wordCount" content="8868">
 
 
 
@@ -1249,6 +1249,62 @@ sudo yum install stress -y
 <p>Session保存</p>
 <ul>
 <li>用來紀錄Session內容與Session Key。</li>
+</ul>
+</li>
+</ul>
+<h2 id="redis-與-memcached-簡述不只在aws">Redis 與 Memcached 簡述(不只在AWS)</h2>
+<ul>
+<li>
+<p>Redis</p>
+<ul>
+<li>
+<p>AOF(Append Only File): Redis的每一個操作，在Redis下線後可重新啟動，不過檔案比較大，檔案太大時可以重建。</p>
+</li>
+<li>
+<p>RDB(Redis Database): 資料庫，每隔一定的時間紀錄Redis裡頭的內容。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Memcached</p>
+<ul>
+<li>
+<p>支援 multi-threaded</p>
+</li>
+<li>
+<p>無下線後的功能。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="redis-與-memcached-在aws中">Redis 與 Memcached 在AWS中</h2>
+<ul>
+<li>
+<p>Redis</p>
+<ul>
+<li>
+<p>支持多AZ，並且支持故障復原。</p>
+</li>
+<li>
+<p>可以有 Read Replicas 來擃充使用者讀取的流量。並且防止其中一台下線。</p>
+</li>
+<li>
+<p>AOF資料復原。</p>
+</li>
+<li>
+<p>Backup and restore 保存與回復。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Memcached</p>
+<ul>
+<li>
+<p>Multi-node: 多個節點來分散資料。</p>
+</li>
+<li>
+<p>沒有 Replication ， 風險較高。</p>
+</li>
 </ul>
 </li>
 </ul>
