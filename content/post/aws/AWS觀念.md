@@ -657,4 +657,6 @@ RDS 的優點如下:
 
 * 適用於所有類型的 RDS 關聯資料庫。
 
+## RDS Read Replicas for read scalability
+
 
