@@ -699,3 +699,25 @@ RDS 的優點如下:
 
 * 兩資料庫建立同步。
 
+## RDS Security - Encryption
+
+關於RDS的加密:
+
+* At rest encryption
+    * 使用AWS KMS 的 AES-256進行加密。
+    * 如果主要RDS沒有加密，則RDS的replicas無法被加密。
+    * Transparent Data Encryption (TDE)在Oracle與SQL server上可以使用。該技術是指，在資料寫入硬碟之前就完成加解密，也就是說就算小偷取得硬碟，也無法從中獲得明文資料。
+* In-flight encryption
+    * SSL certificates用於加密RDS資料於In-flight(我猜是指在網路傳輸的過程是加密的)。
+    * 提供SSL certificate 選項，當你連線到資料庫時。
+    * 可以強制所有SQL的客戶端要使用SSL。
+
+## RDS Security Operations
+
+* 加密RDS備份
+    * RDS是否加密會影響到Snapshot是否加密。
+    * 可以複製一個Snapshot時將其改成加密的。
+* 加密一個沒有加密的RDS
+    1. 取得Snapshot並在多複製一個時選擇加密。
+    2. 用加密的Snapshot來還原出一個加密的資料庫。
+    3. 將用應用程式遷移到新的資料庫，然後刪除舊的。

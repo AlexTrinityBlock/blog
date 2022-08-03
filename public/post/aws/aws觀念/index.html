@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="7174">
+<meta itemprop="wordCount" content="7549">
 
 
 
@@ -1021,6 +1021,40 @@ sudo yum install stress -y
 </li>
 <li>
 <p>兩資料庫建立同步。</p>
+</li>
+</ul>
+<h2 id="rds-security---encryption">RDS Security - Encryption</h2>
+<p>關於RDS的加密:</p>
+<ul>
+<li>At rest encryption
+<ul>
+<li>使用AWS KMS 的 AES-256進行加密。</li>
+<li>如果主要RDS沒有加密，則RDS的replicas無法被加密。</li>
+<li>Transparent Data Encryption (TDE)在Oracle與SQL server上可以使用。該技術是指，在資料寫入硬碟之前就完成加解密，也就是說就算小偷取得硬碟，也無法從中獲得明文資料。</li>
+</ul>
+</li>
+<li>In-flight encryption
+<ul>
+<li>SSL certificates用於加密RDS資料於In-flight(我猜是指在網路傳輸的過程是加密的)。</li>
+<li>提供SSL certificate 選項，當你連線到資料庫時。</li>
+<li>可以強制所有SQL的客戶端要使用SSL。</li>
+</ul>
+</li>
+</ul>
+<h2 id="rds-security-operations">RDS Security Operations</h2>
+<ul>
+<li>加密RDS備份
+<ul>
+<li>RDS是否加密會影響到Snapshot是否加密。</li>
+<li>可以複製一個Snapshot時將其改成加密的。</li>
+</ul>
+</li>
+<li>加密一個沒有加密的RDS
+<ol>
+<li>取得Snapshot並在多複製一個時選擇加密。</li>
+<li>用加密的Snapshot來還原出一個加密的資料庫。</li>
+<li>將用應用程式遷移到新的資料庫，然後刪除舊的。</li>
+</ol>
 </li>
 </ul>
 <ul class="pa0">
