@@ -877,3 +877,5 @@ Aurora是AWS自產的一種資料庫類型，可以相容MySQL與PostgreSQL，�
     * Multi-node: 多個節點來分散資料。
 
     * 沒有 Replication ， 風險較高。
+
+    * 沒有 Backup and restore 。
