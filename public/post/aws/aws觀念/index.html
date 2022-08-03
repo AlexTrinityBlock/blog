@@ -1026,34 +1026,60 @@ sudo yum install stress -y
 <h2 id="rds-security---encryption">RDS Security - Encryption</h2>
 <p>關於RDS的加密:</p>
 <ul>
-<li>At rest encryption
+<li>
+<p>At rest encryption</p>
 <ul>
-<li>使用AWS KMS 的 AES-256進行加密。</li>
-<li>如果主要RDS沒有加密，則RDS的replicas無法被加密。</li>
-<li>Transparent Data Encryption (TDE)在Oracle與SQL server上可以使用。該技術是指，在資料寫入硬碟之前就完成加解密，也就是說就算小偷取得硬碟，也無法從中獲得明文資料。</li>
+<li>
+<p>使用AWS KMS 的 AES-256進行加密。</p>
+</li>
+<li>
+<p>如果主要RDS沒有加密，則RDS的replicas無法被加密。</p>
+</li>
+<li>
+<p>Transparent Data Encryption (TDE)在Oracle與SQL server上可以使用。該技術是指，在資料寫入硬碟之前就完成加解密，也就是說就算小偷取得硬碟，也無法從中獲得明文資料。</p>
+</li>
 </ul>
 </li>
-<li>In-flight encryption
+<li>
+<p>In-flight encryption</p>
 <ul>
-<li>SSL certificates用於加密RDS資料於In-flight(我猜是指在網路傳輸的過程是加密的)。</li>
-<li>提供SSL certificate 選項，當你連線到資料庫時。</li>
-<li>可以強制所有SQL的客戶端要使用SSL。</li>
+<li>
+<p>SSL certificates用於加密RDS資料於In-flight(我猜是指在網路傳輸的過程是加密的)。</p>
+</li>
+<li>
+<p>提供SSL certificate 選項，當你連線到資料庫時。</p>
+</li>
+<li>
+<p>可以強制所有SQL的客戶端要使用SSL。</p>
+</li>
 </ul>
 </li>
 </ul>
 <h2 id="rds-security-operations">RDS Security Operations</h2>
 <ul>
-<li>加密RDS備份
+<li>
+<p>加密RDS備份</p>
 <ul>
-<li>RDS是否加密會影響到Snapshot是否加密。</li>
-<li>可以複製一個Snapshot時將其改成加密的。</li>
+<li>
+<p>RDS是否加密會影響到Snapshot是否加密。</p>
+</li>
+<li>
+<p>可以複製一個Snapshot時將其改成加密的。</p>
+</li>
 </ul>
 </li>
-<li>加密一個沒有加密的RDS
+<li>
+<p>加密一個沒有加密的RDS</p>
 <ol>
-<li>取得Snapshot並在多複製一個時選擇加密。</li>
-<li>用加密的Snapshot來還原出一個加密的資料庫。</li>
-<li>將用應用程式遷移到新的資料庫，然後刪除舊的。</li>
+<li>
+<p>取得Snapshot並在多複製一個時選擇加密。</p>
+</li>
+<li>
+<p>用加密的Snapshot來還原出一個加密的資料庫。</p>
+</li>
+<li>
+<p>將用應用程式遷移到新的資料庫，然後刪除舊的。</p>
+</li>
 </ol>
 </li>
 </ul>
