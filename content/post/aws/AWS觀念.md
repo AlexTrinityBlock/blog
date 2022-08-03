@@ -785,3 +785,11 @@ Aurora是AWS自產的一種資料庫類型，可以相容MySQL與PostgreSQL，�
 
     此外也可以有客戶自訂的節點，可以自選更好的EC2實體類型，稱為 **Customer Endpoint**
 
+## Aurora Serverless
+
+* 可以自動隨著使用量擴展。適合用在低頻率與不可預測工作量時。
+
+* 不需要手動進行容量設置。
+
+* 以秒來進行支付。
+
