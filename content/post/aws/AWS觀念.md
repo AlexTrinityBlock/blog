@@ -879,3 +879,6 @@ Aurora是AWS自產的一種資料庫類型，可以相容MySQL與PostgreSQL，�
     * 沒有 Replication ， 風險較高。
 
     * 沒有 Backup and restore 。
+
+## 在SSA考試中的ElasticCache
+
