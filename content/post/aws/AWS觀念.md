@@ -746,5 +746,8 @@ RDS 的優點如下:
 
     * IAM-based authentication 也可以用來登入 RDS MySQL 與 PostgreSQL。
 
-    
+    * 如果單純使用 RDS API 與 IAM 進行登入，就不需要密碼(如某個EC2實體有一個設定成可以登入MySQL的IAM Role，就不需要額外的密碼，該實體會用IAM Role取得　
+    一個Auth Token 然後用該Token 加密SSL連線)。
+
+    * Auth token 的存活時間為 15 分鐘。
 

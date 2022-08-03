@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="7648">
+<meta itemprop="wordCount" content="7763">
 
 
 
@@ -1099,6 +1099,13 @@ sudo yum install stress -y
 </li>
 <li>
 <p>IAM-based authentication 也可以用來登入 RDS MySQL 與 PostgreSQL。</p>
+</li>
+<li>
+<p>如果單純使用 RDS API 與 IAM 進行登入，就不需要密碼(如某個EC2實體有一個設定成可以登入MySQL的IAM Role，就不需要額外的密碼，該實體會用IAM Role取得　
+一個Auth Token 然後用該Token 加密SSL連線)。</p>
+</li>
+<li>
+<p>Auth token 的存活時間為 15 分鐘。</p>
 </li>
 </ul>
 </li>
