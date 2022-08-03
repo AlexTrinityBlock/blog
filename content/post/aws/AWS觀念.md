@@ -895,3 +895,5 @@ Aurora是AWS自產的一種資料庫類型，可以相容MySQL與PostgreSQL，�
     * Lazy loading: 儲存資料時，不存入快取，只放入資料庫。但當資料被使用者存取一次之後放入快取。
 
     * Write Through:  儲存資料時，同時放入資料庫與快取。
+
+    * Session Store: 儲存Session，並且使用TTL(持續生存時間機制)。
