@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="8375">
+<meta itemprop="wordCount" content="8438">
 
 
 
@@ -1189,7 +1189,16 @@ sudo yum install stress -y
 <p>1個 Primary Region，讀寫都可以。</p>
 </li>
 <li>
-<p>5個次要 read-only 區域，Replication的延遲少於 1 秒。</p>
+<p>5個次要的 secondary read-only regions 區域，Replication的延遲少於 1 秒。</p>
+</li>
+<li>
+<p>每個次要區 secondary regions 有16個 Read Replicas。</p>
+</li>
+<li>
+<p>有效減少延遲。</p>
+</li>
+<li>
+<p>可以從不同區域進行資料復原。RTO 復原時間目標，基本上小於1秒。</p>
 </li>
 </ul>
 </li>

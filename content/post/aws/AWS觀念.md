@@ -808,4 +808,12 @@ Aurora是AWS自產的一種資料庫類型，可以相容MySQL與PostgreSQL，�
 
     * 1個 Primary Region，讀寫都可以。
 
-    * 5個次要 read-only 區域，Replication的延遲少於 1 秒。
+    * 5個次要的 secondary read-only regions 區域，Replication的延遲少於 1 秒。
+
+    * 每個次要區 secondary regions 有16個 Read Replicas。
+
+    * 有效減少延遲。
+
+    * 可以從不同區域進行資料復原。RTO 復原時間目標，基本上小於1秒。
+
+    
