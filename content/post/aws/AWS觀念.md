@@ -904,7 +904,7 @@ Aurora是AWS自產的一種資料庫類型，可以相容MySQL與PostgreSQL，�
 
 * Multi-AZ使用時不用手動更改SQL的URL。
 
-* 
+* RDS的replicas最大5個。
 
 # 常見的Port助記
 
