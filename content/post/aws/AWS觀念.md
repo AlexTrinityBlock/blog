@@ -628,6 +628,8 @@ RDS 的優點如下:
 
 * 需要自己選擇EC2的實體等級，例如儲存空間優化的，或者RAM優化的，會有不同價格。
 
+* 選擇儲存用的硬體類型，類似EBS的選項，例如選擇SSD或HDD。
+
 ## RDS Backups
 
 * Automated backups
