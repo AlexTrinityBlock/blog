@@ -669,7 +669,7 @@ RDS 的優點如下:
 
 ## RDS Muti AZ (Disaster Recovery)
 
-在不同AZ建立災害防止的RDS備份。
+在不同AZ建立災害復原的RDS備份。
 
 * SYN replication: 同步複製。
 
