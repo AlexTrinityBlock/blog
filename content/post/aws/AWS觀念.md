@@ -775,11 +775,13 @@ Aurora是AWS自產的一種資料庫類型，可以相容MySQL與PostgreSQL，�
 
 * 15個Read replicas，並且可擴展。
 
-Aurora的架構:
+* Aurora的架構:
 
-下列兩種節點的數量可能會不一樣。
+    下列兩種節點的數量可能會不一樣。
 
-* Writer Endpoint: 用來寫入的資料庫節點。
+    * Writer Endpoint: 用來寫入的資料庫節點。
 
-* Reader Endpoint: 用來讀取的資料庫節點。
+    * Reader Endpoint: 用來讀取的資料庫節點。
+
+    此外也可以有客戶自訂的節點，可以自選更好的EC2實體類型，稱為 **Customer Endpoint**
 
