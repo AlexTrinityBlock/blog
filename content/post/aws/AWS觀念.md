@@ -897,3 +897,33 @@ Aurora是AWS自產的一種資料庫類型，可以相容MySQL與PostgreSQL，�
     * Write Through:  儲存資料時，同時放入資料庫與快取。
 
     * Session Store: 儲存Session，並且使用TTL(持續生存時間機制)。
+
+    mportant ports:
+
+# 常見的Port助記
+
+重要Port
+
+* FTP: 21
+
+* SSH: 22
+
+* SFTP: 22 (same as SSH)
+
+* HTTP: 80
+
+* HTTPS: 443
+
+RDS Databases ports:
+
+* PostgreSQL: 5432
+
+* MySQL: 3306
+
+* Oracle RDS: 1521
+
+* MSSQL Server: 1433
+
+* MariaDB: 3306 (same as MySQL)
+
+* Aurora: 5432 (if PostgreSQL compatible) or 3306 (if MySQL compatible)
