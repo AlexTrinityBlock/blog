@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="7082">
+<meta itemprop="wordCount" content="7142">
 
 
 
@@ -917,6 +917,10 @@ sudo yum install stress -y
 <ul>
 <li>不能自己用SSH去連結到資料庫運作的實體。</li>
 </ul>
+<p>此外，建立RDS時:</p>
+<ul>
+<li>需要自己選擇EC2的實體等級，例如儲存空間優化的，或者RAM優化的，會有不同價格。</li>
+</ul>
 <h2 id="rds-backups">RDS Backups</h2>
 <ul>
 <li>Automated backups
@@ -1009,6 +1013,9 @@ sudo yum install stress -y
 </li>
 <li>
 <p>將Snapshot還原到另外一個AZ。</p>
+</li>
+<li>
+<p>兩資料庫建立同步。</p>
 </li>
 </ul>
 <ul class="pa0">
