@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="6754">
+<meta itemprop="wordCount" content="6953">
 
 
 
@@ -971,6 +971,27 @@ sudo yum install stress -y
 <h2 id="rds-read-replicas-for-read-scalability">RDS Read Replicas for read scalability</h2>
 <p>資料從 Main RDS 複製到 Read RDS Replicas上頭，然後用戶就可以從多個RDS取得資料，加快速度。(不過只有在讀取的時後)</p>
 <p>但這種方法只能保持 <strong>最終一致性(eventually consistent)</strong> 也就是說，Replicas RDS終究會更新到最新資料，但不代表每次讀取時資料都是新的。也就是非同步的(ASYNC)。</p>
+<ul>
+<li>
+<p>不同AZ間的資料傳輸是需要額外費用的。</p>
+</li>
+<li>
+<p>但是有個例外，在不同AZ但同一個Region時，RDS Replicas的傳輸不需要額外付費。但如果跨Region需要額外收取傳輸費用。</p>
+</li>
+</ul>
+<h2 id="rds-muti-az-disaster-recovery">RDS Muti AZ (Disaster Recovery)</h2>
+<p>在不同AZ建立災害防止的RDS備份。</p>
+<ul>
+<li>
+<p>SYN replication: 同步複製。</p>
+</li>
+<li>
+<p>One DNS name: 兩個資料庫同一個網址，會自動在一個資料庫伺服器損毀時將應用程式轉移連結到另外一個資料庫伺服器。</p>
+</li>
+<li>
+<p>不可用來給用戶讀取，這種類型的備份，就只是一直等待著預防故障發生。</p>
+</li>
+</ul>
 <ul class="pa0">
   
    <li class="list">

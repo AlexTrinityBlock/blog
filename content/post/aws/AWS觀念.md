@@ -663,3 +663,18 @@ RDS 的優點如下:
 
 但這種方法只能保持 **最終一致性(eventually consistent)** 也就是說，Replicas RDS終究會更新到最新資料，但不代表每次讀取時資料都是新的。也就是非同步的(ASYNC)。
 
+* 不同AZ間的資料傳輸是需要額外費用的。
+
+* 但是有個例外，在不同AZ但同一個Region時，RDS Replicas的傳輸不需要額外付費。但如果跨Region需要額外收取傳輸費用。
+
+## RDS Muti AZ (Disaster Recovery)
+
+在不同AZ建立災害防止的RDS備份。
+
+* SYN replication: 同步複製。
+
+* One DNS name: 兩個資料庫同一個網址，會自動在一個資料庫伺服器損毀時將應用程式轉移連結到另外一個資料庫伺服器。
+
+* 不可用來給用戶讀取，這種類型的備份，就只是一直等待著預防故障發生。
+
+
