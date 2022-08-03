@@ -838,5 +838,5 @@ Aurora是AWS自產的一種資料庫類型，可以相容MySQL與PostgreSQL，�
 
 * 當更新RDS的資料時，刪除ElasticCache中的舊資料。
 
-* 但是如果要使用的話，應用程式就會由先存取資料庫，改成先存取ElasticCache。
+* 但是如果要使用的話，應用程式就會由先存取資料庫，改成先存取ElasticCache，如果Cache沒有稱為Cache Miss，這個時候就將RDS的內容寫到Cache中。
 

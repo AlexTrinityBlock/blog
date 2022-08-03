@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="8598">
+<meta itemprop="wordCount" content="8640">
 
 
 
@@ -1238,7 +1238,7 @@ sudo yum install stress -y
 <p>當更新RDS的資料時，刪除ElasticCache中的舊資料。</p>
 </li>
 <li>
-<p>但是如果要使用的話，應用程式就會由先存取資料庫，改成先存取ElasticCache。</p>
+<p>但是如果要使用的話，應用程式就會由先存取資料庫，改成先存取ElasticCache，如果Cache沒有稱為Cache Miss，這個時候就將RDS的內容寫到Cache中。</p>
 </li>
 </ul>
 <ul class="pa0">
