@@ -586,3 +586,31 @@ stress -c 4
 
 > Auto Scaling Group 發現有實體處於不健康狀態時，就會先建立新的實體，然後結束掉舊的實體。
 
+# RDS
+
+RDS (Amazon Relational Database Service) 是個關聯式資料庫服務。使用SQL query 語法呼叫。
+
+可以建立以下類型的資料庫:
+
+* PostgreSQL
+
+* MySQL
+
+* MariaDB
+
+* Oracle
+
+* Microsoft SQL Server
+
+* Aurora: AWS自製的資料庫類別。
+
+RDS 的優點如下:
+
+* 不用自己管理 Server 。
+
+* 基底作業系統會由AWS自動更新。
+
+* 持續的進行備份，並且可以復原回某個時間點。
+
+* 提供Read replicas，也就是可以複製當前的資料庫為幾個一模一樣的複製體，讓客戶讀取資料時，可以從多個資料庫讀取，不會所有資料庫讀取流量都在同一個資料庫。可以達成讀取加速。
+

@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="6063">
+<meta itemprop="wordCount" content="6265">
 
 
 
@@ -866,6 +866,44 @@ sudo yum install stress -y
 <blockquote>
 <p>Auto Scaling Group 發現有實體處於不健康狀態時，就會先建立新的實體，然後結束掉舊的實體。</p>
 </blockquote>
+<h1 id="rds">RDS</h1>
+<p>RDS (Amazon Relational Database Service) 是個關聯式資料庫服務。使用SQL query 語法呼叫。</p>
+<p>可以建立以下類型的資料庫:</p>
+<ul>
+<li>
+<p>PostgreSQL</p>
+</li>
+<li>
+<p>MySQL</p>
+</li>
+<li>
+<p>MariaDB</p>
+</li>
+<li>
+<p>Oracle</p>
+</li>
+<li>
+<p>Microsoft SQL Server</p>
+</li>
+<li>
+<p>Aurora: AWS自製的資料庫類別。</p>
+</li>
+</ul>
+<p>RDS 的優點如下:</p>
+<ul>
+<li>
+<p>不用自己管理 Server 。</p>
+</li>
+<li>
+<p>基底作業系統會由AWS自動更新。</p>
+</li>
+<li>
+<p>持續的進行備份，並且可以復原回某個時間點。</p>
+</li>
+<li>
+<p>提供Read replicas，也就是可以複製當前的資料庫為幾個一模一樣的複製體，讓客戶讀取資料時，可以從多個資料庫讀取，不會所有資料庫讀取流量都在同一個資料庫。可以達成讀取加速。</p>
+</li>
+</ul>
 <ul class="pa0">
   
    <li class="list">
