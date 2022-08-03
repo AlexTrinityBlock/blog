@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="8274">
+<meta itemprop="wordCount" content="8375">
 
 
 
@@ -1175,7 +1175,25 @@ sudo yum install stress -y
 </li>
 </ul>
 <h2 id="aurora-multi-master">Aurora Multi-Master</h2>
-<p>每個資料庫節點都可以進行讀寫操作。</p>
+<p>每個資料庫節點都可以進行讀寫操作，多個主節點，可以用
+故障轉移。</p>
+<h2 id="global-aurrora">Global Aurrora</h2>
+<ul>
+<li>
+<p>Aurrora Cross Region Read Replicas: 實用的故障轉移與故障復原功能，因為有多個備份。</p>
+</li>
+<li>
+<p>Aurrora Global Database(推薦)</p>
+<ul>
+<li>
+<p>1個 Primary Region，讀寫都可以。</p>
+</li>
+<li>
+<p>5個次要 read-only 區域，Replication的延遲少於 1 秒。</p>
+</li>
+</ul>
+</li>
+</ul>
 <ul class="pa0">
   
    <li class="list">

@@ -797,5 +797,15 @@ Aurora是AWS自產的一種資料庫類型，可以相容MySQL與PostgreSQL，�
 
 ## Aurora Multi-Master
 
-每個資料庫節點都可以進行讀寫操作。
+每個資料庫節點都可以進行讀寫操作，多個主節點，可以用
+故障轉移。
 
+## Global Aurrora
+
+* Aurrora Cross Region Read Replicas: 實用的故障轉移與故障復原功能，因為有多個備份。
+
+* Aurrora Global Database(推薦)
+
+    * 1個 Primary Region，讀寫都可以。
+
+    * 5個次要 read-only 區域，Replication的延遲少於 1 秒。
