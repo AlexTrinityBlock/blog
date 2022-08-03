@@ -773,3 +773,5 @@ Aurora是AWS自產的一種資料庫類型，同時可以相容MySQL與PostgreSQ
 
 * 當主要資料庫節點失效，30秒內會被其他節點替代。
 
+* 15個Read replicas。
+
