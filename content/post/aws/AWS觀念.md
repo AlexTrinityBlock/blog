@@ -677,4 +677,8 @@ RDS 的優點如下:
 
 * 不可用來給用戶讀取，這種類型的備份，就只是一直等待著預防故障發生。
 
+## RDS - From single AZ to  Multi AZ
 
+從原本的一個AZ的RDS，擴展到多個AZ時:
+
+* 中間不會導致資料庫下線(Zero downtime)
