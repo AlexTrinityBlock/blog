@@ -882,11 +882,16 @@ Aurora是AWS自產的一種資料庫類型，可以相容MySQL與PostgreSQL，�
 
 ## 在SSA考試中的ElasticCache
 
-> ElasticCache不支援IAM登入。 IAM只支援AWS API-level的安全。
+* ElasticCache不支援IAM登入。 IAM只支援AWS API-level的安全。
 
-> Redis AUTH: 當建立叢集時，可以設置Redis的密碼。這樣可以增加安全性。一定要追加Security Groups。
+* Redis AUTH: 當建立叢集時，可以設置Redis的密碼。這樣可以增加安全性。一定要追加Security Groups。
 
-> 支援SSL於flight encryption。
+* 支援SSL於flight encryption。
 
-> Memcached支援SASL-based authentication (建議使用)。
+* Memcached支援SASL-based authentication (建議使用)。
 
+* 兩種ElasticCache的使用模式：
+
+    * Lazy loading: 儲存資料時，不存入快取，只放入資料庫。但當資料被使用者存取一次之後放入快取。
+
+    * Write Through:  儲存資料時，同時放入資料庫與快取。
