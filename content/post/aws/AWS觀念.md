@@ -816,4 +816,10 @@ Aurora是AWS自產的一種資料庫類型，可以相容MySQL與PostgreSQL，�
 
     * 可以從不同區域進行資料復原。RTO 復原時間目標，基本上小於1秒。
 
-    
+    ## Aurora Machine Learning
+
+    * 通過 SQL 語法來調用 ML 服務。
+
+        * Amazon SageMaker: 使用 ML model。
+
+        * Amazon Comprehend: 用ML進行情感分析。
