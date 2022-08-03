@@ -920,7 +920,7 @@ Aurora是AWS自產的一種資料庫類型，可以相容MySQL與PostgreSQL，�
 
 * HTTPS: 443
 
-RDS Databases ports:
+RDS Databases ports
 
 * PostgreSQL: 5432
 
