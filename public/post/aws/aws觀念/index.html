@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="6505">
+<meta itemprop="wordCount" content="6608">
 
 
 
@@ -948,6 +948,24 @@ sudo yum install stress -y
 </li>
 <li>
 <p>當RDS 偵測到你用完免費資料庫儲存容量時，將會自動擴展。</p>
+</li>
+<li>
+<p>Maximum  Storage Threshold: 手動設置限制資料庫的最大擴展容量，否則它將會無限擴展下去。</p>
+</li>
+</ul>
+<p>觸發自動擴展儲存空間的條件:</p>
+<ul>
+<li>
+<p>免費空間少於 10%</p>
+</li>
+<li>
+<p>儲存空間太少，事件發生5分鐘以上。</p>
+</li>
+<li>
+<p>自動調整後6小時內不會再次自動調整。</p>
+</li>
+<li>
+<p>適用於所有類型的 RDS 關聯資料庫。</p>
 </li>
 </ul>
 <ul class="pa0">
