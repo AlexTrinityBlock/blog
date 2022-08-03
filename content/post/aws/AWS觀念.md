@@ -832,3 +832,11 @@ Aurora是AWS自產的一種資料庫類型，可以相容MySQL與PostgreSQL，�
 
 * 可以減輕資料庫負擔。
 
+* Stateless 應用程式非常適合。
+
+使用方式:
+
+* 當更新RDS的資料時，刪除ElasticCache中的舊資料。
+
+* 但是如果要使用的話，應用程式就會由先存取資料庫，改成先存取ElasticCache。
+
