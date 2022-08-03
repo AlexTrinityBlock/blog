@@ -628,3 +628,15 @@ RDS 的優點如下:
 
 * Automated backups
     * 每日完整備份資料庫
+    * Transaction logs 每五分鐘備份。這代表有辦法復原回五分鐘前的資料庫狀態。
+    * 自動備份保留7天，可以付費延長到35天。
+
+> SQL 中的 Transaction 功能用在進行多個 SQL 操作時，如果操作中途中斷，可以使用 ROLLBACK TRANSACTION 來復原資料庫為一連串操作前的狀態。
+
+> Transaction logs 這個紀錄保存著 SQL 的每一筆資料更改。
+
+* DB Snapshot
+    * 由使用者自己觸發。
+    * 可以根據你的需求決定保存時間。
+
+

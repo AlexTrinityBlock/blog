@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="6316">
+<meta itemprop="wordCount" content="6459">
 
 
 
@@ -922,6 +922,22 @@ sudo yum install stress -y
 <li>Automated backups
 <ul>
 <li>每日完整備份資料庫</li>
+<li>Transaction logs 每五分鐘備份。這代表有辦法復原回五分鐘前的資料庫狀態。</li>
+<li>自動備份保留7天，可以付費延長到35天。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>SQL 中的 Transaction 功能用在進行多個 SQL 操作時，如果操作中途中斷，可以使用 ROLLBACK TRANSACTION 來復原資料庫為一連串操作前的狀態。</p>
+</blockquote>
+<blockquote>
+<p>Transaction logs 這個紀錄保存著 SQL 的每一筆資料更改。</p>
+</blockquote>
+<ul>
+<li>DB Snapshot
+<ul>
+<li>由使用者自己觸發。</li>
+<li>可以根據你的需求決定保存時間。</li>
 </ul>
 </li>
 </ul>
