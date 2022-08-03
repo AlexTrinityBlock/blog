@@ -733,3 +733,10 @@ RDS 的優點如下:
     2. 用加密的Snapshot來還原出一個加密的資料庫。
 
     3. 將用應用程式遷移到新的資料庫，然後刪除舊的。
+
+## RDS Network & IAM
+
+* RDS 處於私有子網路，並且受到security group保護。
+
+* IAM 可以幫忙管理 RDS 的使用。
+
