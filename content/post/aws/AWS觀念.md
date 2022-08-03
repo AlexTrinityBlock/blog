@@ -753,7 +753,7 @@ RDS 的優點如下:
 
 ## RDS Aurora
 
-Aurora是AWS自產的一種資料庫類型，同時可以相容MySQL與PostgreSQL兩種指令。並且進行為了雲端的優化，在RDS上有MySQL 5 倍的速度，並且超過PostgreSQL 3 倍的效能。
+Aurora是AWS自產的一種資料庫類型，可以相容MySQL與PostgreSQL，不過在啟動時要先選擇。並且進行為了雲端的優化，在RDS上有MySQL 5 倍的速度，並且超過PostgreSQL 3 倍的效能。
 
 * 會自動擴展大小，從10GB開始，可到達128TB。
 
