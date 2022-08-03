@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="7594">
+<meta itemprop="wordCount" content="7648">
 
 
 
@@ -1086,10 +1086,21 @@ sudo yum install stress -y
 <h2 id="rds-network--iam">RDS Network &amp; IAM</h2>
 <ul>
 <li>
-<p>RDS 處於私有子網路，並且受到security group保護。</p>
+<p>RDS 處於私有子網路，並且受到Security Group保護。</p>
 </li>
 <li>
-<p>IAM 可以幫忙管理 RDS 的使用。</p>
+<p>存取管理</p>
+<ul>
+<li>
+<p>IAM 可以幫忙管理 RDS 的使用，透過RDS API。</p>
+</li>
+<li>
+<p>傳統的帳號密碼也可以用來登入RDS。</p>
+</li>
+<li>
+<p>IAM-based authentication 也可以用來登入 RDS MySQL 與 PostgreSQL。</p>
+</li>
+</ul>
 </li>
 </ul>
 <ul class="pa0">

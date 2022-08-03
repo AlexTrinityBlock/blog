@@ -736,7 +736,15 @@ RDS 的優點如下:
 
 ## RDS Network & IAM
 
-* RDS 處於私有子網路，並且受到security group保護。
+* RDS 處於私有子網路，並且受到Security Group保護。
 
-* IAM 可以幫忙管理 RDS 的使用。
+* 存取管理
+
+    * IAM 可以幫忙管理 RDS 的使用，透過RDS API。
+    
+    * 傳統的帳號密碼也可以用來登入RDS。
+
+    * IAM-based authentication 也可以用來登入 RDS MySQL 與 PostgreSQL。
+
+    
 
