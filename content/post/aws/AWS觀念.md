@@ -659,4 +659,7 @@ RDS 的優點如下:
 
 ## RDS Read Replicas for read scalability
 
+資料從 Main RDS 複製到 Read RDS Replicas上頭，然後用戶就可以從多個RDS取得資料，加快速度。(不過只有在讀取的時後) 
+
+但這種方法只能保持 **最終一致性(eventually consistent)** 也就是說，Replicas RDS終究會更新到最新資料，但不代表每次讀取時資料都是新的。也就是非同步的(ASYNC)。
 

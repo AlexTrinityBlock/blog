@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管">
 <meta itemprop="datePublished" content="2022-08-01T09:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2022-08-01T09:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="6614">
+<meta itemprop="wordCount" content="6754">
 
 
 
@@ -969,6 +969,8 @@ sudo yum install stress -y
 </li>
 </ul>
 <h2 id="rds-read-replicas-for-read-scalability">RDS Read Replicas for read scalability</h2>
+<p>資料從 Main RDS 複製到 Read RDS Replicas上頭，然後用戶就可以從多個RDS取得資料，加快速度。(不過只有在讀取的時後)</p>
+<p>但這種方法只能保持 <strong>最終一致性(eventually consistent)</strong> 也就是說，Replicas RDS終究會更新到最新資料，但不代表每次讀取時資料都是新的。也就是非同步的(ASYNC)。</p>
 <ul class="pa0">
   
    <li class="list">
