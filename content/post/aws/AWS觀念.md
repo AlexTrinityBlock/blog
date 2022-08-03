@@ -900,6 +900,8 @@ Aurora是AWS自產的一種資料庫類型，可以相容MySQL與PostgreSQL，�
 
     mportant ports:
 
+* Read Replicas 沒有辦法進行故障回復。
+
 # 常見的Port助記
 
 重要Port
