@@ -954,6 +954,8 @@ RDS Databases ports
 
 * Subdomain: `api.www.example.com` 中的 `www` 就是Subdomain。
 
+* SOA: 權限開始記錄（縮寫為SOA 記錄）是域名系統(DNS) 中的一種資源記錄，包含有關區域的管理信息，尤其是有關區域傳輸的信息。SOA 記錄格式在 RFC 1035 中指定。
+
 ## DNS的詢問路徑
 
 假設一個公司內部有自己的網址，所以公司內部有一個DNS，這時公司中的某台電腦發出了DNS請求，以下是DNS的查詢路徑:
