@@ -940,7 +940,7 @@ RDS Databases ports
 
 將網址對應到IP的服務
 
-* Domain Registrar: DNS供應商Amazon Route53, GoDaddy。
+* Domain Registrar: DNS網址註冊供應商Amazon Route53, GoDaddy。
 
 * DNS Record: A (IPv4), AAAA (IPv6), CNAME (同一主機的網址別名), NS (指出哪個DNS伺服器對於該網址有權威性)。
 
@@ -963,4 +963,20 @@ RDS Databases ports
 2. 公司內部的Local DNS Server 的找不到該網址，所以將請求轉發到 Root DNS Server ，Root DNS Server 將這則請求轉發到負責`.com`的 TLD DNS Server。
 
 3. TLD DNS Server 接著將請求轉發到負責 `example.com` 的 SLD DNS Server。
+
+## DNS Record
+
+DNS中的網址紀錄
+
+* Domain/Subdomain
+
+* RecordType: A, AAAA
+
+* Value: IP位址，如: 12.34.56.78
+
+* Routing Policy: DNS回應請求的方法。
+
+* TTL: DNS紀錄快取在DNS server的時間。
+
+## AWS 中的 Route53
 
