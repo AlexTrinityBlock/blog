@@ -933,3 +933,34 @@ RDS Databases ports
 * MariaDB: 3306 (same as MySQL)
 
 * Aurora: 5432 (if PostgreSQL compatible) or 3306 (if MySQL compatible)
+
+# Route53
+
+## DNS 基本概念
+
+將網址對應到IP的服務
+
+* Domain Registrar: DNS供應商Amazon Route53, GoDaddy。
+
+* DNS Record: A (IPv4), AAAA (IPv6), CNAME (同一主機的網址別名), NS (指出哪個DNS伺服器對於該網址有權威性)。
+
+* Zone File: 儲存DNS紀錄的檔案。
+
+* Name Server: DNS負責(authoritative)某個網址名稱。
+
+* Top level Domain(TLD): 頂層網址，位於網址的最尾端，如 `google.com` 裏頭的 `.com` 除此之外還有 `.us, .in, .gov, .org`。
+
+* Second Level Domain(SLD): `google.com` 裏頭的 `google`。
+
+* Subdomain: `api.www.example.com` 中的 `www` 就是Subdomain。
+
+## DNS的詢問路徑
+
+假設一個公司內部有自己的網址，所以公司內部有一個DNS，這時公司中的某台電腦發出了DNS請求，以下是DNS的查詢路徑:
+
+1. 公司內的電腦瀏覽網頁 `example.com`，瀏覽器發出DNS請求，請求先送達公司內部的DNS。由於為了使用公司內部的網址，所以所有瀏覽器都被手動設置DNS為公司內部瀏覽器。
+
+2. 公司內部的Local DNS Server 的找不到該網址，所以將請求轉發到 Root DNS Server ，Root DNS Server 將這則請求轉發到負責`.com`的 TLD DNS Server。
+
+3. TLD DNS Server 接著將請求轉發到負責 `example.com` 的 SLD DNS Server。
+
