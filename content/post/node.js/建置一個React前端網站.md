@@ -47,7 +47,7 @@ node -v
 npm -v
 ```
 
-# 建立一個空資料夾
+# 建立React專案
 
 建立一個空資料夾
 
@@ -67,3 +67,25 @@ npm install create-react-app
 ```
 npx create-react-app my-react-app
 ```
+
+# 啟動React專案
+
+進入專案資料夾
+
+```
+cd my-react-app
+``` 
+
+啟動React專案
+
+```
+npm start
+```
+
+啟動後就會自動在預設瀏覽器開啟整個專案了。
+
+# 參考資料
+
+https://tecadmin.net/install-latest-nodejs-npm-on-linux-mint/
+
+https://ithelp.ithome.com.tw/articles/10266770
