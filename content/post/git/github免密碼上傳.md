@@ -19,7 +19,7 @@ tags: ["git","github"]
 ### 建立git郵件帳號
 
 ```
-git config --global user.name "使用者名稱"
+git config --global user.name 使用者名稱
 git config --global user.email 使用者郵件
 ```
 
