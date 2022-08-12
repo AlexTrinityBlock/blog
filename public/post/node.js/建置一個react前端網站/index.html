@@ -43,7 +43,7 @@
 <meta itemprop="name" content="建置一個React前端網站">
 <meta itemprop="description" content="更新Node.js 這段請隨著Node.js的版本更新調整。 本文章撰寫的時候，我希望安裝Node.js 16 版，因為此時需要如此才能順利建置Rea"><meta itemprop="datePublished" content="2022-08-12T09:30:44+08:00" />
 <meta itemprop="dateModified" content="2022-08-12T09:30:44+08:00" />
-<meta itemprop="wordCount" content="288">
+<meta itemprop="wordCount" content="405">
 <meta itemprop="keywords" content="Node.js,React," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="建置一個React前端網站"/>
 <meta name="twitter:description" content="更新Node.js 這段請隨著Node.js的版本更新調整。 本文章撰寫的時候，我希望安裝Node.js 16 版，因為此時需要如此才能順利建置Rea"/>
@@ -258,7 +258,16 @@ cd my-react
 </code></pre><p>啟動React專案</p>
 <pre tabindex="0"><code>npm start
 </code></pre><p>啟動後就會自動在預設瀏覽器開啟整個專案了。</p>
-<h1 id="參考資料">參考資料</h1>
+<h1 id="把專案打包成-html-css-js">把專案打包成 HTML, CSS, JS</h1>
+<p>有個已經設置好的建置指令:</p>
+<pre tabindex="0"><code>npm run build
+</code></pre><p>接著會生成出一個build資料夾，裡頭就有編譯好的 HTML, CSS, JS 了。</p>
+<h1 id="建立伺服器來檢查打包的專案是否能正確執行">建立伺服器來檢查打包的專案是否能正確執行</h1>
+<p>安裝伺服器軟體。</p>
+<pre tabindex="0"><code>npm install -g serve
+</code></pre><p>將剛剛建置好的build資料夾當作靜態網頁根目錄執行。</p>
+<pre tabindex="0"><code>serve -s build
+</code></pre><h1 id="參考資料">參考資料</h1>
 <p><a href="https://tecadmin.net/install-latest-nodejs-npm-on-linux-mint/">https://tecadmin.net/install-latest-nodejs-npm-on-linux-mint/</a></p>
 <p><a href="https://ithelp.ithome.com.tw/articles/10266770">https://ithelp.ithome.com.tw/articles/10266770</a></p>
 <ul class="pa0">

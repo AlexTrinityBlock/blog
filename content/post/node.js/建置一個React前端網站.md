@@ -84,6 +84,30 @@ npm start
 
 啟動後就會自動在預設瀏覽器開啟整個專案了。
 
+# 把專案打包成 HTML, CSS, JS
+
+有個已經設置好的建置指令:
+
+```
+npm run build
+```
+
+接著會生成出一個build資料夾，裡頭就有編譯好的 HTML, CSS, JS 了。
+
+# 建立伺服器來檢查打包的專案是否能正確執行
+
+安裝伺服器軟體。
+
+```
+npm install -g serve
+```
+
+將剛剛建置好的build資料夾當作靜態網頁根目錄執行。
+
+```
+serve -s build
+```
+
 # 參考資料
 
 https://tecadmin.net/install-latest-nodejs-npm-on-linux-mint/
