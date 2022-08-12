@@ -3,20 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://alextrinityblock.github.io/blog/public/post/</loc>
-    <lastmod>2022-08-12T09:00:44+08:00</lastmod>
+    <lastmod>2022-08-12T09:30:44+08:00</lastmod>
     <priority>0</priority>
   </url><url>
     <loc>https://alextrinityblock.github.io/blog/public/tags/node.js/</loc>
-    <lastmod>2022-08-12T09:00:44+08:00</lastmod>
+    <lastmod>2022-08-12T09:30:44+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>2</priority>
   </url><url>
-    <loc>https://alextrinityblock.github.io/blog/public/post/node.js/npm%E5%88%9D%E5%A7%8B%E5%8C%96%E8%B3%87%E6%96%99%E5%A4%BE/</loc>
-    <lastmod>2022-08-12T09:00:44+08:00</lastmod>
+    <loc>https://alextrinityblock.github.io/blog/public/tags/react/</loc>
+    <lastmod>2022-08-12T09:30:44+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>2</priority>
   </url><url>
     <loc>https://alextrinityblock.github.io/blog/public/tags/</loc>
+    <lastmod>2022-08-12T09:30:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>2</priority>
+  </url><url>
+    <loc>https://alextrinityblock.github.io/blog/public/post/node.js/%E5%BB%BA%E7%BD%AE%E4%B8%80%E5%80%8Breact%E5%89%8D%E7%AB%AF%E7%B6%B2%E7%AB%99/</loc>
+    <lastmod>2022-08-12T09:30:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>2</priority>
+  </url><url>
+    <loc>https://alextrinityblock.github.io/blog/public/post/node.js/npm%E5%88%9D%E5%A7%8B%E5%8C%96%E8%B3%87%E6%96%99%E5%A4%BE/</loc>
     <lastmod>2022-08-12T09:00:44+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>2</priority>
