@@ -43,7 +43,7 @@
 <meta itemprop="name" content="NPM初始化資料夾">
 <meta itemprop="description" content="NPM初始化空資料夾 建立一個空資料夾，並且進入資料夾。 mkdir npm-test cd npm-test 輸入npm初始化指令 npm init 然後輸入下列內容: package name: 專案名稱 version: 專案版本 description: 專案介紹 entry point:"><meta itemprop="datePublished" content="2022-08-12T09:00:44+08:00" />
 <meta itemprop="dateModified" content="2022-08-12T09:00:44+08:00" />
-<meta itemprop="wordCount" content="225">
+<meta itemprop="wordCount" content="366">
 <meta itemprop="keywords" content="Node.js," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="NPM初始化資料夾"/>
 <meta name="twitter:description" content="NPM初始化空資料夾 建立一個空資料夾，並且進入資料夾。 mkdir npm-test cd npm-test 輸入npm初始化指令 npm init 然後輸入下列內容: package name: 專案名稱 version: 專案版本 description: 專案介紹 entry point:"/>
@@ -243,8 +243,9 @@ cd npm-test
 <li>license: 授權。</li>
 <li>test command: 測試指令（在建立完整測試程序後可以再補上）。</li>
 </ul>
+<h2 id="建立出-packagejson">建立出 package.json</h2>
 <p>接著就會建立出一個<code>package.json</code>檔案，檔案記載著你剛剛輸入的資訊，與未來添加套件的套件名稱與版本。</p>
-<p>package.json</p>
+<p><code>package.json</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;npm-test&#34;</span>,
   <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.0.0&#34;</span>,
@@ -256,7 +257,21 @@ cd npm-test
   <span style="color:#f92672">&#34;author&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
   <span style="color:#f92672">&#34;license&#34;</span>: <span style="color:#e6db74">&#34;ISC&#34;</span>
 }
-</code></pre></div><ul class="pa0">
+</code></pre></div><h2 id="安裝某個套件">安裝某個套件</h2>
+<p>我們來安裝React建置工具，用<code>npm install</code> 來進行。</p>
+<pre tabindex="0"><code class="language-npm" data-lang="npm">npm install create-react-app
+</code></pre><h2 id="建立出-node_modules-與-package-lockjson">建立出 node_modules 與 package-lock.json</h2>
+<ul>
+<li>
+<p>package-lock.json:
+由於一個create-react-app套件中，有許多的依賴套件，所以在這個檔案中，會列出所有正確版本的依賴套件，以便下次能正確還原。</p>
+</li>
+<li>
+<p>node_modules:
+這個檔案裡頭裝載著所有模組的實際檔案，通常這個檔案會很大。</p>
+</li>
+</ul>
+<ul class="pa0">
   
    <li class="list">
      <a href="/blog/public/tags/node.js" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Node.js</a>
