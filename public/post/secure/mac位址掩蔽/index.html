@@ -7,7 +7,7 @@
     <title>MAC位址掩蔽 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="作者 阿維 環境 Ubuntu 20.04 概念 我們的IP位址，除非申請固定IP否則是會變化的，如果你願意也可以用特定軟體來改變或借用別人的IP位址。 所以既然IP是可以">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="MAC位址掩蔽" />
 <meta property="og:description" content="作者 阿維 環境 Ubuntu 20.04 概念 我們的IP位址，除非申請固定IP否則是會變化的，如果你願意也可以用特定軟體來改變或借用別人的IP位址。 所以既然IP是可以" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/secure/mac%E4%BD%8D%E5%9D%80%E6%8E%A9%E8%94%BD/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/secure/mac%E4%BD%8D%E5%9D%80%E6%8E%A9%E8%94%BD/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-07-21T10:00:49+08:00" />
 <meta property="article:modified_time" content="2021-07-21T10:00:49+08:00" />
+
 <meta itemprop="name" content="MAC位址掩蔽">
-<meta itemprop="description" content="作者 阿維 環境 Ubuntu 20.04 概念 我們的IP位址，除非申請固定IP否則是會變化的，如果你願意也可以用特定軟體來改變或借用別人的IP位址。 所以既然IP是可以">
-<meta itemprop="datePublished" content="2021-07-21T10:00:49&#43;08:00" />
-<meta itemprop="dateModified" content="2021-07-21T10:00:49&#43;08:00" />
+<meta itemprop="description" content="作者 阿維 環境 Ubuntu 20.04 概念 我們的IP位址，除非申請固定IP否則是會變化的，如果你願意也可以用特定軟體來改變或借用別人的IP位址。 所以既然IP是可以"><meta itemprop="datePublished" content="2021-07-21T10:00:49+08:00" />
+<meta itemprop="dateModified" content="2021-07-21T10:00:49+08:00" />
 <meta itemprop="wordCount" content="842">
-
-
-
 <meta itemprop="keywords" content="secure,資安,mac,MAC," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MAC位址掩蔽"/>
 <meta name="twitter:description" content="作者 阿維 環境 Ubuntu 20.04 概念 我們的IP位址，除非申請固定IP否則是會變化的，如果你願意也可以用特定軟體來改變或借用別人的IP位址。 所以既然IP是可以"/>
@@ -241,7 +238,7 @@
 <h2 id="了解mac位址訊息">了解MAC位址訊息</h2>
 <p>有先我們輸入 ifconfig</p>
 <p>列出了下列資訊:</p>
-<pre><code>wlp0s20f3: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+<pre tabindex="0"><code>wlp0s20f3: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
         inet 192.168.199.108  netmask 255.255.255.0  broadcast 192.168.199.255
         ether a0:ff:6b:f3:f7:ac  txqueuelen 1000  (Ethernet)
         RX packets 407132  bytes 534433802 (534.4 MB)
@@ -255,21 +252,21 @@
 <h2 id="不用任何軟體就能暫時修改mac位址">不用任何軟體就能暫時修改MAC位址</h2>
 <p>確實有些軟體可以修改MAC位址，甚至隨機產出MAC位址，但是多數的Linux發行本其實自帶這個功能，所以可能的話不用額外安裝這些軟體。</p>
 <p>基本上修改MAC的指令格式如下:</p>
-<pre><code>sudo ifconfig &lt;網路界面名稱&gt; down #關閉網路界面
+<pre tabindex="0"><code>sudo ifconfig &lt;網路界面名稱&gt; down #關閉網路界面
 sudo ifconfig &lt;網路界面名稱&gt; hw ether &lt;想改成的MAC位址&gt;
 sudo ifconfig &lt;網路界面名稱&gt; up #開啟網路界面
 </code></pre><p>以下範例為我將我的MAC改為<span style="color:red">aa:aa:aa:aa:aa:aa</span></p>
-<pre><code>sudo ifconfig wlp0s20f3 down
+<pre tabindex="0"><code>sudo ifconfig wlp0s20f3 down
 sudo ifconfig wlp0s20f3 hw ether aa:aa:aa:aa:aa:aa
 sudo  ifconfig wlp0s20f3 up
 </code></pre><h2 id="長期修改mac位址">長期修改MAC位址</h2>
 <p>找到這個檔案</p>
-<pre><code>/etc/network/interfaces
+<pre tabindex="0"><code>/etc/network/interfaces
 </code></pre><p>這個檔案會決定網路的一些基本配置</p>
 <p>在末尾加上這一行。</p>
-<pre><code>hwaddress ether &lt;想改成的MAC位址&gt;
+<pre tabindex="0"><code>hwaddress ether &lt;想改成的MAC位址&gt;
 </code></pre><p>例如:</p>
-<pre><code>hwaddress ether aa:aa:aa:aa:aa:aa
+<pre tabindex="0"><code>hwaddress ether aa:aa:aa:aa:aa:aa
 </code></pre><h2 id="偽裝把戲">偽裝把戲</h2>
 <p>如果你把MAC位址調整成與WIFI上的某個其他人的電腦一樣。</p>
 <p>這時後會發生兩種可能:</p>
@@ -283,7 +280,7 @@ sudo  ifconfig wlp0s20f3 up
 <p>不過需要額外的安裝，雖然不多，但仍然是占空間的。</p>
 <p>如果你希望簡單的隨機產生MAC，而不是自己想或手打，可以用用看。</p>
 <p>安裝方式:</p>
-<pre><code>sudo apt installl macchanger
+<pre tabindex="0"><code>sudo apt installl macchanger
 </code></pre><ul class="pa0">
   
    <li class="list">

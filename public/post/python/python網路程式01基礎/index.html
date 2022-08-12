@@ -7,7 +7,7 @@
     <title>python網路程式01:基礎 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="本篇引用自Foundations of Python Network Programming一書 本章討論如何使用python發出http請求 1.用網址取得主機ip import socket if __name__ ==">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="python網路程式01:基礎" />
 <meta property="og:description" content="本篇引用自Foundations of Python Network Programming一書 本章討論如何使用python發出http請求 1.用網址取得主機ip import socket if __name__ ==" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F01%E5%9F%BA%E7%A4%8E/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F01%E5%9F%BA%E7%A4%8E/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-04-29T16:15:44+08:00" />
 <meta property="article:modified_time" content="2021-04-29T16:15:44+08:00" />
+
 <meta itemprop="name" content="python網路程式01:基礎">
-<meta itemprop="description" content="本篇引用自Foundations of Python Network Programming一書 本章討論如何使用python發出http請求 1.用網址取得主機ip import socket if __name__ ==">
-<meta itemprop="datePublished" content="2021-04-29T16:15:44&#43;08:00" />
-<meta itemprop="dateModified" content="2021-04-29T16:15:44&#43;08:00" />
-<meta itemprop="wordCount" content="1318">
-
-
-
+<meta itemprop="description" content="本篇引用自Foundations of Python Network Programming一書 本章討論如何使用python發出http請求 1.用網址取得主機ip import socket if __name__ =="><meta itemprop="datePublished" content="2021-04-29T16:15:44+08:00" />
+<meta itemprop="dateModified" content="2021-04-29T16:15:44+08:00" />
+<meta itemprop="wordCount" content="1319">
 <meta itemprop="keywords" content="python,network,網路," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python網路程式01:基礎"/>
 <meta name="twitter:description" content="本篇引用自Foundations of Python Network Programming一書 本章討論如何使用python發出http請求 1.用網址取得主機ip import socket if __name__ =="/>
@@ -233,15 +230,15 @@
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>本篇引用自Foundations of Python Network Programming一書
 本章討論如何使用python發出http請求</p>
 <h1 id="1用網址取得主機ip">1.用網址取得主機ip</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> socket
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> socket
 
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
     hostname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;maps.google.com&#39;</span> <span style="color:#75715e">#此處是google地圖的網址</span>
     addr <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span>gethostbyname(hostname) <span style="color:#75715e">#放入socket函數中</span>
     <span style="color:#75715e">#最後將結果用format插入字串    </span>
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;網址 {} 的ip位址是 {}&#39;</span><span style="color:#f92672">.</span>format(hostname, addr))
+    print(<span style="color:#e6db74">&#39;網址 </span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> 的ip位址是 </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(hostname, addr))
 </code></pre></div><h1 id="2用nominatim的api查詢地址的座標">2.用Nominatim的API查詢地址的座標</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#引入Nominatim專用函數庫進行座標查詢</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#引入Nominatim專用函數庫進行座標查詢</span>
 <span style="color:#f92672">from</span> geopy.geocoders <span style="color:#f92672">import</span> Nominatim 
 
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
@@ -251,10 +248,10 @@
     <span style="color:#75715e">#伺服器回傳的地理位置會存入location物件中    </span>
     location <span style="color:#f92672">=</span> Nominatim(user_agent<span style="color:#f92672">=</span>user_agent)<span style="color:#f92672">.</span>geocode(address)
     <span style="color:#75715e">#印出緯度與經度    </span>
-    <span style="color:#66d9ef">print</span>(location<span style="color:#f92672">.</span>latitude, location<span style="color:#f92672">.</span>longitude)
+    print(location<span style="color:#f92672">.</span>latitude, location<span style="color:#f92672">.</span>longitude)
 
 </code></pre></div><h1 id="3用requests函數庫發送http請求取得座標">3.用requests函數庫發送http請求，取得座標</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#發送http請求的函數庫</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#發送http請求的函數庫</span>
 <span style="color:#f92672">import</span> requests
 
 
@@ -265,13 +262,13 @@
     headers <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;User-Agent&#39;</span>: user_agent}<span style="color:#75715e">#組合請求header</span>
     response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(base, params<span style="color:#f92672">=</span>parameters, headers<span style="color:#f92672">=</span>headers)<span style="color:#75715e">#發送</span>
     reply <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>json()<span style="color:#75715e">#取得回應的json格式</span>
-    <span style="color:#66d9ef">print</span>(reply[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;lat&#39;</span>], reply[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;lon&#39;</span>])<span style="color:#75715e">#印出內容</span>
+    print(reply[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;lat&#39;</span>], reply[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;lon&#39;</span>])<span style="color:#75715e">#印出內容</span>
 
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
     send_request(<span style="color:#e6db74">&#39;207 N. Defiance St, Archbold, OH&#39;</span>)
 
 </code></pre></div><h1 id="4直接使用http函數庫">4.直接使用http函數庫</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> http.client<span style="color:#75715e">#引入http模塊</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> http.client<span style="color:#75715e">#引入http模塊</span>
 <span style="color:#f92672">import</span> json <span style="color:#75715e">#引入json模塊</span>
 <span style="color:#f92672">from</span> urllib.parse <span style="color:#f92672">import</span> quote_plus <span style="color:#75715e">#引入將文字轉換成url格式的模塊</span>
 
@@ -280,7 +277,7 @@ base <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/sear
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">geocode</span>(address):
     <span style="color:#75715e">#將整個請求組合起來，quote_plus()可以將原本不能放入url的文字轉成url可接受的格式    </span>
-    path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;{}?q={}&amp;format=json&#39;</span><span style="color:#f92672">.</span>format(base, quote_plus(address))
+    path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">?q=</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&amp;format=json&#39;</span><span style="color:#f92672">.</span>format(base, quote_plus(address))
     <span style="color:#75715e">#此處的b是將字串轉換成byte格式，才可經由http傳輸    </span>
     user_agent <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;Foundations of Python Network Programming example search3.py&#39;</span>
     headers <span style="color:#f92672">=</span> {<span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;User-Agent&#39;</span>: user_agent}
@@ -288,24 +285,24 @@ base <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/sear
     connection <span style="color:#f92672">=</span> http<span style="color:#f92672">.</span>client<span style="color:#f92672">.</span>HTTPSConnection(<span style="color:#e6db74">&#39;nominatim.openstreetmap.org&#39;</span>)
     <span style="color:#75715e">#請求的方式主要有get,post,put,delete四種，目前主流是get,post</span>
     <span style="color:#75715e">#單純取得資料一般用get    </span>
-    connection<span style="color:#f92672">.</span>request(<span style="color:#e6db74">&#39;GET&#39;</span>, path, None, headers)
+    connection<span style="color:#f92672">.</span>request(<span style="color:#e6db74">&#39;GET&#39;</span>, path, <span style="color:#66d9ef">None</span>, headers)
     <span style="color:#75715e">#原始的回應</span>
     rawreply <span style="color:#f92672">=</span> connection<span style="color:#f92672">.</span>getresponse()<span style="color:#f92672">.</span>read()
     <span style="color:#75715e">#轉換成json並且以utf-8編碼    </span>
     reply <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(rawreply<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>))
-    <span style="color:#66d9ef">print</span>(reply[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;lat&#39;</span>], reply[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;lon&#39;</span>])
+    print(reply[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;lat&#39;</span>], reply[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;lon&#39;</span>])
 
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
     geocode(<span style="color:#e6db74">&#39;207 N. Defiance St, Archbold, OH&#39;</span>)
 
 </code></pre></div><h1 id="5使用socket發送http字段">5.使用socket發送http字段</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> socket <span style="color:#75715e">#原始的socket連線</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> socket <span style="color:#75715e">#原始的socket連線</span>
 <span style="color:#f92672">import</span> ssl <span style="color:#75715e">#https安全連線模塊（傳輸會加密）</span>
 <span style="color:#f92672">from</span> urllib.parse <span style="color:#f92672">import</span> quote_plus <span style="color:#75715e">#引入將文字轉換成url格式的模塊</span>
 
 <span style="color:#75715e">#從http的角度是個get的請求，從socket的角度就是如下的字串</span>
 request_text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#e6db74">GET /search?q={}&amp;format=json HTTP/1.1</span><span style="color:#ae81ff">\r\n\
+</span><span style="color:#ae81ff"></span><span style="color:#e6db74">GET /search?q=</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&amp;format=json HTTP/1.1</span><span style="color:#ae81ff">\r\n\
 </span><span style="color:#ae81ff"></span><span style="color:#e6db74">Host: nominatim.openstreetmap.org</span><span style="color:#ae81ff">\r\n\
 </span><span style="color:#ae81ff"></span><span style="color:#e6db74">User-Agent: Foundations of Python Network Programming example search4.py</span><span style="color:#ae81ff">\r\n\
 </span><span style="color:#ae81ff"></span><span style="color:#e6db74">Connection: close</span><span style="color:#ae81ff">\r\n\
@@ -325,14 +322,14 @@ request_text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#
     sock<span style="color:#f92672">.</span>sendall(request<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;ascii&#39;</span>))
     <span style="color:#75715e">#得到的原始回應會是byte型態的</span>
     raw_reply <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;&#39;</span>
-    <span style="color:#66d9ef">while</span> True:
+    <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
         <span style="color:#75715e">#一次接收4096個byte</span>
         more <span style="color:#f92672">=</span> sock<span style="color:#f92672">.</span>recv(<span style="color:#ae81ff">4096</span>)
         <span style="color:#75715e">#都接收完後停止迴圈</span>
         <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> more:
             <span style="color:#66d9ef">break</span>
         raw_reply <span style="color:#f92672">+=</span> more
-    <span style="color:#66d9ef">print</span>(raw_reply<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>))
+    print(raw_reply<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>))
 
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
     geocode(<span style="color:#e6db74">&#39;207 N. Defiance St, Archbold, OH&#39;</span>)

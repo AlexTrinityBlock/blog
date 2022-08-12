@@ -7,7 +7,7 @@
     <title>Linux Mint20更換開機圖示 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="下載喜歡的開機圖示 下載開機圖示1 下載開機圖示2 打開圖示資料夾取出最裡層的資料夾 然後將其複製到以下位置 /usr/share/plymouth/themes 修改圖示檔案設定文件 修改預設的開機圖示">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="Linux Mint20更換開機圖示" />
 <meta property="og:description" content="下載喜歡的開機圖示 下載開機圖示1 下載開機圖示2 打開圖示資料夾取出最裡層的資料夾 然後將其複製到以下位置 /usr/share/plymouth/themes 修改圖示檔案設定文件 修改預設的開機圖示" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/linux/linux-mint20%E6%9B%B4%E6%8F%9B%E9%96%8B%E6%A9%9F%E5%9C%96%E7%A4%BA/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/linux/linux-mint20%E6%9B%B4%E6%8F%9B%E9%96%8B%E6%A9%9F%E5%9C%96%E7%A4%BA/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-03-01T13:01:33+08:00" />
 <meta property="article:modified_time" content="2021-03-01T13:01:33+08:00" />
+
 <meta itemprop="name" content="Linux Mint20更換開機圖示">
-<meta itemprop="description" content="下載喜歡的開機圖示 下載開機圖示1 下載開機圖示2 打開圖示資料夾取出最裡層的資料夾 然後將其複製到以下位置 /usr/share/plymouth/themes 修改圖示檔案設定文件 修改預設的開機圖示">
-<meta itemprop="datePublished" content="2021-03-01T13:01:33&#43;08:00" />
-<meta itemprop="dateModified" content="2021-03-01T13:01:33&#43;08:00" />
+<meta itemprop="description" content="下載喜歡的開機圖示 下載開機圖示1 下載開機圖示2 打開圖示資料夾取出最裡層的資料夾 然後將其複製到以下位置 /usr/share/plymouth/themes 修改圖示檔案設定文件 修改預設的開機圖示"><meta itemprop="datePublished" content="2021-03-01T13:01:33+08:00" />
+<meta itemprop="dateModified" content="2021-03-01T13:01:33+08:00" />
 <meta itemprop="wordCount" content="283">
-
-
-
 <meta itemprop="keywords" content="linux,開機,自訂," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux Mint20更換開機圖示"/>
 <meta name="twitter:description" content="下載喜歡的開機圖示 下載開機圖示1 下載開機圖示2 打開圖示資料夾取出最裡層的資料夾 然後將其複製到以下位置 /usr/share/plymouth/themes 修改圖示檔案設定文件 修改預設的開機圖示"/>
@@ -235,10 +232,10 @@
 <a href="https://www.gnome-look.org/browse/cat/108/order/latest/">下載開機圖示2</a></p>
 <p>打開圖示資料夾取出最裡層的資料夾<br>
 然後將其複製到以下位置</p>
-<pre><code>/usr/share/plymouth/themes
+<pre tabindex="0"><code>/usr/share/plymouth/themes
 </code></pre><h3 id="修改圖示檔案設定文件">修改圖示檔案設定文件</h3>
 <p>修改預設的開機圖示檔 default.plymouth</p>
-<pre><code>[Plymouth Theme]
+<pre tabindex="0"><code>[Plymouth Theme]
 Name=Mate Red
 Description=A theme that features an animated Linux Mint logo.
 ModuleName=script
@@ -247,12 +244,12 @@ ModuleName=script
 ImageDir=/usr/share/plymouth/themes/mate_red
 ScriptFile=/usr/share/plymouth/themes/mate_red/mate_red.script
 </code></pre><p>把ImageDir改成你下載的圖示的資料夾</p>
-<pre><code>ImageDir=/usr/share/plymouth/themes/下載圖示的資料夾
+<pre tabindex="0"><code>ImageDir=/usr/share/plymouth/themes/下載圖示的資料夾
 </code></pre><p>然後將執行腳本改成ScriptFile改成下載圖示資料夾中的腳本<br>
 腳本的副檔名通常為script</p>
-<pre><code>ScriptFile=/usr/share/plymouth/themes/下載圖示的資料夾/下載圖示的資料夾.script
+<pre tabindex="0"><code>ScriptFile=/usr/share/plymouth/themes/下載圖示的資料夾/下載圖示的資料夾.script
 </code></pre><p>然後將他編譯成二進制的檔案</p>
-<pre><code>sudo update-initramfs -u
+<pre tabindex="0"><code>sudo update-initramfs -u
 </code></pre><p>完成～！</p>
 <ul class="pa0">
   

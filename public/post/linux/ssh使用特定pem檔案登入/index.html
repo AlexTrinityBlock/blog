@@ -7,7 +7,7 @@
     <title>SSH使用特定PEM檔案登入 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="我們常常使用SSH登入某台主機或電腦，SSH可以用密碼或者金鑰檔案進行登入。 由於金鑰檔案的長度會比人類可以記憶的密碼長的多，所以通常而言更加">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="SSH使用特定PEM檔案登入" />
 <meta property="og:description" content="我們常常使用SSH登入某台主機或電腦，SSH可以用密碼或者金鑰檔案進行登入。 由於金鑰檔案的長度會比人類可以記憶的密碼長的多，所以通常而言更加" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/linux/ssh%E4%BD%BF%E7%94%A8%E7%89%B9%E5%AE%9Apem%E6%AA%94%E6%A1%88%E7%99%BB%E5%85%A5/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/linux/ssh%E4%BD%BF%E7%94%A8%E7%89%B9%E5%AE%9Apem%E6%AA%94%E6%A1%88%E7%99%BB%E5%85%A5/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-07-05T09:00:36+08:00" />
 <meta property="article:modified_time" content="2022-07-05T09:00:36+08:00" />
+
 <meta itemprop="name" content="SSH使用特定PEM檔案登入">
-<meta itemprop="description" content="我們常常使用SSH登入某台主機或電腦，SSH可以用密碼或者金鑰檔案進行登入。 由於金鑰檔案的長度會比人類可以記憶的密碼長的多，所以通常而言更加">
-<meta itemprop="datePublished" content="2022-07-05T09:00:36&#43;08:00" />
-<meta itemprop="dateModified" content="2022-07-05T09:00:36&#43;08:00" />
+<meta itemprop="description" content="我們常常使用SSH登入某台主機或電腦，SSH可以用密碼或者金鑰檔案進行登入。 由於金鑰檔案的長度會比人類可以記憶的密碼長的多，所以通常而言更加"><meta itemprop="datePublished" content="2022-07-05T09:00:36+08:00" />
+<meta itemprop="dateModified" content="2022-07-05T09:00:36+08:00" />
 <meta itemprop="wordCount" content="205">
-
-
-
 <meta itemprop="keywords" content="linux,ssh," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SSH使用特定PEM檔案登入"/>
 <meta name="twitter:description" content="我們常常使用SSH登入某台主機或電腦，SSH可以用密碼或者金鑰檔案進行登入。 由於金鑰檔案的長度會比人類可以記憶的密碼長的多，所以通常而言更加"/>
@@ -233,18 +230,18 @@
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>我們常常使用SSH登入某台主機或電腦，SSH可以用密碼或者金鑰檔案進行登入。</p>
 <p>由於金鑰檔案的長度會比人類可以記憶的密碼長的多，所以通常而言更加安全。</p>
 <p>以下是我們的鑰匙檔案:</p>
-<pre><code>keyfile.pem
+<pre tabindex="0"><code>keyfile.pem
 </code></pre><h2 id="1暫時用pem檔案的方法">1.暫時用PEM檔案的方法</h2>
 <p>假設我們要登入下面的網址:</p>
-<pre><code>domain.com
+<pre tabindex="0"><code>domain.com
 </code></pre><p>並且使用以下的使用者:</p>
-<pre><code>user
+<pre tabindex="0"><code>user
 </code></pre><p>用在pem檔案常常更換的情境下，一次性的使用pem檔案。</p>
 <p>則可以使用下列指令:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -i keyfile.pem user@domain.com
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -i keyfile.pem user@domain.com
 </code></pre></div><h2 id="2永久使用pem檔案的方法">2.永久使用PEM檔案的方法</h2>
 <p>這將會把pem檔案加入現有的pem檔案儲存庫:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-add ~/keyfile.pem
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-add ~/keyfile.pem
 </code></pre></div><ul class="pa0">
   
    <li class="list">

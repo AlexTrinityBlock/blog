@@ -6,10 +6,15 @@
     <description>Recent content on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Mon, 01 Aug 2022 09:00:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Fri, 12 Aug 2022 09:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NPM初始化資料夾</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/node.js/npm%E5%88%9D%E5%A7%8B%E5%8C%96%E8%B3%87%E6%96%99%E5%A4%BE/</link>
+      <pubDate>Fri, 12 Aug 2022 09:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/node.js/npm%E5%88%9D%E5%A7%8B%E5%8C%96%E8%B3%87%E6%96%99%E5%A4%BE/</guid>
+      <description>NPM初始化空資料夾 建立一個空資料夾，並且進入資料夾。 mkdir npm-test cd npm-test 輸入npm初始化指令 npm init 然後輸入下列內容: package name: 專案名稱 version: 專案版本 description: 專案介紹 entry point:</description>
+    </item>
     
     <item>
       <title>AWS觀念</title>

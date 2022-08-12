@@ -7,7 +7,7 @@
     <title>Docker基本指令 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Docker概念 半虛擬化 比一般虛擬機快 檔案大小很小 不用完全模擬到硬體層級 實用只指令 1.運作一個nginx網頁伺服器 run: 下載映像檔同時執行。 -d: 第">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="Docker基本指令" />
 <meta property="og:description" content="Docker概念 半虛擬化 比一般虛擬機快 檔案大小很小 不用完全模擬到硬體層級 實用只指令 1.運作一個nginx網頁伺服器 run: 下載映像檔同時執行。 -d: 第" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/docker/docker%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/docker/docker%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-07-06T09:00:03+08:00" />
 <meta property="article:modified_time" content="2022-07-06T09:00:03+08:00" />
+
 <meta itemprop="name" content="Docker基本指令">
-<meta itemprop="description" content="Docker概念 半虛擬化 比一般虛擬機快 檔案大小很小 不用完全模擬到硬體層級 實用只指令 1.運作一個nginx網頁伺服器 run: 下載映像檔同時執行。 -d: 第">
-<meta itemprop="datePublished" content="2022-07-06T09:00:03&#43;08:00" />
-<meta itemprop="dateModified" content="2022-07-06T09:00:03&#43;08:00" />
+<meta itemprop="description" content="Docker概念 半虛擬化 比一般虛擬機快 檔案大小很小 不用完全模擬到硬體層級 實用只指令 1.運作一個nginx網頁伺服器 run: 下載映像檔同時執行。 -d: 第"><meta itemprop="datePublished" content="2022-07-06T09:00:03+08:00" />
+<meta itemprop="dateModified" content="2022-07-06T09:00:03+08:00" />
 <meta itemprop="wordCount" content="509">
-
-
-
 <meta itemprop="keywords" content="docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker基本指令"/>
 <meta name="twitter:description" content="Docker概念 半虛擬化 比一般虛擬機快 檔案大小很小 不用完全模擬到硬體層級 實用只指令 1.運作一個nginx網頁伺服器 run: 下載映像檔同時執行。 -d: 第"/>
@@ -261,7 +258,7 @@
 <p>nginx: 下載與執行Nginx網頁伺服器容器。</p>
 </li>
 </ul>
-<pre><code> docker run -d -p 8080:80 nginx
+<pre tabindex="0"><code> docker run -d -p 8080:80 nginx
 </code></pre><h3 id="2顯示所有啟動或者關閉的容器">2.顯示所有啟動或者關閉的容器</h3>
 <ul>
 <li>
@@ -271,7 +268,7 @@
 <p>-a: 也一併展示關閉的容器。</p>
 </li>
 </ul>
-<pre><code>docker ps -a
+<pre tabindex="0"><code>docker ps -a
 </code></pre><h3 id="3下載ubuntu的docker映像檔">3.下載Ubuntu的docker映像檔</h3>
 <ul>
 <li>
@@ -281,13 +278,13 @@
 <p>版本: <em><strong>ubuntu:20.04</strong></em> 代表要下載的映像檔是Ubuntu20.04版本的映像檔。</p>
 </li>
 </ul>
-<pre><code>docker pull ubuntu:20.04
+<pre tabindex="0"><code>docker pull ubuntu:20.04
 </code></pre><h3 id="4容器停止運作之後清除容器">4.容器停止運作之後清除容器</h3>
 <p>單次使用的應用程式非常適合該指令，因為在結束運作之後，不會留下殘餘檔案。</p>
 <ul>
 <li>&ndash;rm: 該容器停止運作之後，直接刪除容器檔案。</li>
 </ul>
-<pre><code>docker run --rm ubuntu:20.04
+<pre tabindex="0"><code>docker run --rm ubuntu:20.04
 </code></pre><h3 id="5容器停止後總是重新啟動">5.容器停止後總是重新啟動</h3>
 <ul>
 <li>
@@ -297,7 +294,7 @@
 <p>mysql: 資料庫。</p>
 </li>
 </ul>
-<pre><code>docker run --restart=always mysql
+<pre tabindex="0"><code>docker run --restart=always mysql
 </code></pre><h3 id="6使用ubuntu並且限制只能使用01號cpu">6.使用Ubuntu並且限制只能使用0~1號CPU</h3>
 <ul>
 <li>
@@ -307,7 +304,7 @@
 <p>-m: 給單一容器的記憶體大小，300M代表300MB的空間。</p>
 </li>
 </ul>
-<pre><code>docker run -it  -m 300M --cpuset-cpus=&quot;0-2&quot; ubuntu:20.04 /bin/bash
+<pre tabindex="0"><code>docker run -it  -m 300M --cpuset-cpus=&quot;0-2&quot; ubuntu:20.04 /bin/bash
 </code></pre><h3 id="7開啟容器命令行">7.開啟容器命令行</h3>
 <ul>
 <li>
@@ -323,7 +320,7 @@
 <p>bash: 終端程式。</p>
 </li>
 </ul>
-<pre><code>docker exec -it ubuntu bash
+<pre tabindex="0"><code>docker exec -it ubuntu bash
 </code></pre><ul class="pa0">
   
    <li class="list">

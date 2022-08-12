@@ -7,7 +7,7 @@
     <title>ASP.net中建立Model | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="啥是MVC架構 模型（Model） - 演算法、資料庫&hellip;等等程式操作。 視圖（View） - 圖形介面(此指網頁前端)相關。 控制器（Con">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="ASP.net中建立Model" />
 <meta property="og:description" content="啥是MVC架構 模型（Model） - 演算法、資料庫&hellip;等等程式操作。 視圖（View） - 圖形介面(此指網頁前端)相關。 控制器（Con" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/asp.net/asp.net%E4%B8%AD%E5%BB%BA%E7%AB%8Bmodel/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/asp.net/asp.net%E4%B8%AD%E5%BB%BA%E7%AB%8Bmodel/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-02-22T12:00:44+08:00" />
 <meta property="article:modified_time" content="2022-02-22T12:00:44+08:00" />
+
 <meta itemprop="name" content="ASP.net中建立Model">
-<meta itemprop="description" content="啥是MVC架構 模型（Model） - 演算法、資料庫&hellip;等等程式操作。 視圖（View） - 圖形介面(此指網頁前端)相關。 控制器（Con">
-<meta itemprop="datePublished" content="2022-02-22T12:00:44&#43;08:00" />
-<meta itemprop="dateModified" content="2022-02-22T12:00:44&#43;08:00" />
+<meta itemprop="description" content="啥是MVC架構 模型（Model） - 演算法、資料庫&hellip;等等程式操作。 視圖（View） - 圖形介面(此指網頁前端)相關。 控制器（Con"><meta itemprop="datePublished" content="2022-02-22T12:00:44+08:00" />
+<meta itemprop="dateModified" content="2022-02-22T12:00:44+08:00" />
 <meta itemprop="wordCount" content="1151">
-
-
-
 <meta itemprop="keywords" content="ASP.net," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ASP.net中建立Model"/>
 <meta name="twitter:description" content="啥是MVC架構 模型（Model） - 演算法、資料庫&hellip;等等程式操作。 視圖（View） - 圖形介面(此指網頁前端)相關。 控制器（Con"/>
@@ -244,7 +241,7 @@
 </ol>
 <h1 id="aspnet中的mvc目錄結構">ASP.net中的MVC目錄結構</h1>
 <p>一個典型的MVC架構裡的東西，如果我們在建立ASP.net時有選擇MVC，資料夾就會自動生成，除了Models，所以我們第一個步驟就是建立Models資料夾。</p>
-<pre><code>web(根據你專案的名稱有所不同)
+<pre tabindex="0"><code>web(根據你專案的名稱有所不同)
     ├─Controllers
     ├─Models(這個資料夾要自己創建)
     └─Views
@@ -257,7 +254,7 @@
 <p><img src="/blog/public/2022-02-22/4.png" alt="img"></p>
 <h1 id="撰寫model的內容">撰寫Model的內容</h1>
 <p>Models/Item.cs</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">using</span> System;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">using</span> System;
 <span style="color:#66d9ef">using</span> System.Collections.Generic;
 <span style="color:#66d9ef">using</span> System.Linq;
 <span style="color:#66d9ef">using</span> System.Web;
@@ -281,17 +278,17 @@
         }
 
         <span style="color:#75715e">//當Item創建時若有輸入內容，則將內容更新到類別屬性。
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">public</span> Item(<span style="color:#66d9ef">string</span> _id, <span style="color:#66d9ef">string</span> _location, <span style="color:#66d9ef">int</span> _number)
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">public</span> Item(<span style="color:#66d9ef">string</span> <span style="color:#ae81ff">_</span>id, <span style="color:#66d9ef">string</span> <span style="color:#ae81ff">_l</span>ocation, <span style="color:#66d9ef">int</span> <span style="color:#ae81ff">_</span>number)
         {
-            <span style="color:#66d9ef">this</span>.id = _id;
-            <span style="color:#66d9ef">this</span>.location = _location;
-            <span style="color:#66d9ef">this</span>.number = _number;
+            <span style="color:#66d9ef">this</span>.id = <span style="color:#ae81ff">_</span>id;
+            <span style="color:#66d9ef">this</span>.location = <span style="color:#ae81ff">_l</span>ocation;
+            <span style="color:#66d9ef">this</span>.number = <span style="color:#ae81ff">_</span>number;
         }
     }
 }
 </code></pre></div><h1 id="將model的內容傳遞到前端">將Model的內容傳遞到前端</h1>
 <p>Controllers/HomeController.cs</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">using</span> System;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">using</span> System;
 <span style="color:#66d9ef">using</span> System.Collections.Generic;
 <span style="color:#66d9ef">using</span> System.Linq;
 <span style="color:#66d9ef">using</span> System.Web;
@@ -324,7 +321,7 @@
 }
 </code></pre></div><h1 id="前端接收後端傳來的models">前端接收後端傳來的Models</h1>
 <p>Views/Home/Index.cshtml</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- 這裡頭用var date來接收剛剛的時間ViewBag.Date --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- 這裡頭用var date來接收剛剛的時間ViewBag.Date --&gt;</span>
 @{
     ViewBag.Title = &#34;Home Page&#34;;
     var date = ViewBag.Date;

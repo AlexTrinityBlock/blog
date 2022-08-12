@@ -7,7 +7,7 @@
     <title>python網路程式02:udp協定與port | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="本篇引用自Foundations of Python Network Programming一書 1.port的用途 port其實可以看作在網路傳輸訊息上頭的一個小標籤 用來區分">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="python網路程式02:udp協定與port" />
 <meta property="og:description" content="本篇引用自Foundations of Python Network Programming一書 1.port的用途 port其實可以看作在網路傳輸訊息上頭的一個小標籤 用來區分" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F02udp%E5%8D%94%E5%AE%9A%E8%88%87port/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F02udp%E5%8D%94%E5%AE%9A%E8%88%87port/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-04-29T22:15:44+08:00" />
 <meta property="article:modified_time" content="2021-04-29T22:15:44+08:00" />
+
 <meta itemprop="name" content="python網路程式02:udp協定與port">
-<meta itemprop="description" content="本篇引用自Foundations of Python Network Programming一書 1.port的用途 port其實可以看作在網路傳輸訊息上頭的一個小標籤 用來區分">
-<meta itemprop="datePublished" content="2021-04-29T22:15:44&#43;08:00" />
-<meta itemprop="dateModified" content="2021-04-29T22:15:44&#43;08:00" />
-<meta itemprop="wordCount" content="2643">
-
-
-
+<meta itemprop="description" content="本篇引用自Foundations of Python Network Programming一書 1.port的用途 port其實可以看作在網路傳輸訊息上頭的一個小標籤 用來區分"><meta itemprop="datePublished" content="2021-04-29T22:15:44+08:00" />
+<meta itemprop="dateModified" content="2021-04-29T22:15:44+08:00" />
+<meta itemprop="wordCount" content="2636">
 <meta itemprop="keywords" content="python,network," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python網路程式02:udp協定與port"/>
 <meta name="twitter:description" content="本篇引用自Foundations of Python Network Programming一書 1.port的用途 port其實可以看作在網路傳輸訊息上頭的一個小標籤 用來區分"/>
@@ -243,12 +240,12 @@
 <h1 id="2用udp傳訊息給自己">2.用udp傳訊息給自己</h1>
 <p>使用方式:<br>
 (1)打開一個終端開啟伺服器模式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python3 main.py server
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python3 main.py server
 </code></pre></div><p>(2)打開一個終端開啟客戶模式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python3 main.py client
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python3 main.py client
 </code></pre></div><p>server就會發出一個udp內容給client</p>
 <p>main.py代碼：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> argparse<span style="color:#f92672">,</span> socket <span style="color:#75715e">#引入解析術入參數的函數庫與socket函數庫</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> argparse<span style="color:#f92672">,</span> socket <span style="color:#75715e">#引入解析術入參數的函數庫與socket函數庫</span>
 <span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime <span style="color:#75715e">#引入時間函數庫</span>
 
 MAX_BYTES <span style="color:#f92672">=</span> <span style="color:#ae81ff">65535</span> <span style="color:#75715e">#udp最大的Datagram（數據報）</span>
@@ -257,25 +254,25 @@ MAX_BYTES <span style="color:#f92672">=</span> <span style="color:#ae81ff">65535
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">server</span>(port):
     sock <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span>socket(socket<span style="color:#f92672">.</span>AF_INET, socket<span style="color:#f92672">.</span>SOCK_DGRAM)<span style="color:#75715e">#建立socket物件實例，AF = Address Family，DGRAM=datagrams 數據報模式</span>
     sock<span style="color:#f92672">.</span>bind((<span style="color:#e6db74">&#39;127.0.0.1&#39;</span>, port))<span style="color:#75715e">#綁定本機網路與要接收的port</span>
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Listening at {}&#39;</span><span style="color:#f92672">.</span>format(sock<span style="color:#f92672">.</span>getsockname()))
-    <span style="color:#66d9ef">while</span> True:
+    print(<span style="color:#e6db74">&#39;Listening at </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(sock<span style="color:#f92672">.</span>getsockname()))
+    <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
         data, address <span style="color:#f92672">=</span> sock<span style="color:#f92672">.</span>recvfrom(MAX_BYTES)<span style="color:#75715e">#接收內容時會得到兩個數值（python的return可以兩個數值），接收的數據和數據來源位址</span>
         text <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;ascii&#39;</span>)<span style="color:#75715e">#將收到的數據以ascii解碼</span>
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;The client at {} says {!r}&#39;</span><span style="color:#f92672">.</span>format(address, text))
-        text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Your data was {} bytes long&#39;</span><span style="color:#f92672">.</span>format(len(data))
+        print(<span style="color:#e6db74">&#39;The client at </span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> says </span><span style="color:#e6db74">{!r}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(address, text))
+        text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Your data was </span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> bytes long&#39;</span><span style="color:#f92672">.</span>format(len(data))
         data <span style="color:#f92672">=</span> text<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;ascii&#39;</span>)<span style="color:#75715e">#將要發送的文字轉成ascii格式</span>
         sock<span style="color:#f92672">.</span>sendto(data, address)<span style="color:#75715e">#發送回目標ip位址與port(那個address物件包含ip跟port)</span>
 
 <span style="color:#75715e">#client端函數</span>
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">client</span>(port):
     sock <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span>socket(socket<span style="color:#f92672">.</span>AF_INET, socket<span style="color:#f92672">.</span>SOCK_DGRAM)<span style="color:#75715e">#建立socket物件實例，AF = Address Family，DGRAM=datagrams 數據報模式</span>
-    text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;The time is {}&#39;</span><span style="color:#f92672">.</span>format(datetime<span style="color:#f92672">.</span>now())<span style="color:#75715e">#取得現在時間</span>
+    text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;The time is </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(datetime<span style="color:#f92672">.</span>now())<span style="color:#75715e">#取得現在時間</span>
     data <span style="color:#f92672">=</span> text<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;ascii&#39;</span>)<span style="color:#75715e">#將要發送的文字轉成ascii格式</span>
     sock<span style="color:#f92672">.</span>sendto(data, (<span style="color:#e6db74">&#39;127.0.0.1&#39;</span>, port))<span style="color:#75715e">#發送回目標ip位址與port</span>
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;The OS assigned me the address {}&#39;</span><span style="color:#f92672">.</span>format(sock<span style="color:#f92672">.</span>getsockname()))<span style="color:#75715e">#取得作業系統目前所分配的port號</span>
+    print(<span style="color:#e6db74">&#39;The OS assigned me the address </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(sock<span style="color:#f92672">.</span>getsockname()))<span style="color:#75715e">#取得作業系統目前所分配的port號</span>
     data, address <span style="color:#f92672">=</span> sock<span style="color:#f92672">.</span>recvfrom(MAX_BYTES)  <span style="color:#75715e">#接收回應內容</span>
     text <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;ascii&#39;</span>)<span style="color:#75715e">#將收到的數據以ascii解碼</span>
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;The server {} replied {!r}&#39;</span><span style="color:#f92672">.</span>format(address, text))
+    print(<span style="color:#e6db74">&#39;The server </span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> replied </span><span style="color:#e6db74">{!r}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(address, text))
 
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
     choices <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;client&#39;</span>: client, <span style="color:#e6db74">&#39;server&#39;</span>: server}<span style="color:#75715e">#建立一個字典dictionary，字串的client,server對應到上頭的兩個client,server函數</span>
@@ -289,57 +286,57 @@ MAX_BYTES <span style="color:#f92672">=</span> <span style="color:#ae81ff">65535
 
 </code></pre></div><h1 id="3用上方代碼模擬簡單的中間人攻擊">3.用上方代碼模擬簡單的中間人攻擊</h1>
 <h3 id="伺服器方">伺服器方</h3>
-<pre><code>python3 main.py server
+<pre tabindex="0"><code>python3 main.py server
 </code></pre><p>這時候我們模擬在伺服器老舊，網路速度緩慢<br>
 先按下</p>
 <p><kbd>ctrl</kbd> +<kbd> z </kbd>
 暫停整個伺服器端程式運作</p>
 <h3 id="客戶方">客戶方</h3>
-<pre><code>python3 main.py client
+<pre tabindex="0"><code>python3 main.py client
 </code></pre><p>客戶方這時顯示
 作業系統分配給客戶端40831 port</p>
-<pre><code>The OS assigned me the address ('0.0.0.0', 40831)
+<pre tabindex="0"><code>The OS assigned me the address ('0.0.0.0', 40831)
 </code></pre><p>假定客戶端發送了一個訊息，然後恰巧被攻擊者攔截</p>
 <h3 id="攻擊方">攻擊方</h3>
 <p>攻擊方知道客戶端的port是40831，所以從客戶ip的40831 port偽造伺服器回應</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> socket
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> socket
 sock <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span>socket(socket<span style="color:#f92672">.</span>AF_INET, socket<span style="color:#f92672">.</span>SOCK_DGRAM)
 sock<span style="color:#f92672">.</span>sendto(<span style="color:#e6db74">&#39;fine&#39;</span><span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;ascii&#39;</span>), (<span style="color:#e6db74">&#39;127.0.0.1&#39;</span>, <span style="color:#ae81ff">40831</span>))
 </code></pre></div><h3 id="客戶方收到攻擊者偽造的伺服器回應">客戶方收到攻擊者偽造的伺服器回應</h3>
-<pre><code>The server ('127.0.0.1', 47265) replied 'fine'
+<pre tabindex="0"><code>The server ('127.0.0.1', 47265) replied 'fine'
 </code></pre><p>注意到，其實客戶方稍加檢查就會知道，伺服器的ip跟port不是原本伺服器的ip與port
 但沒有注意與驗證的時候，就可能上當</p>
 <h1 id="4遠端udp需要顧慮的部份">4.遠端udp需要顧慮的部份</h1>
 <p>這個範例中，當server沒有回應時，client會不斷重發請求，但是每次的請求會等待更多時間，因為頻繁的重發請求會引起網路壅塞。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> argparse<span style="color:#f92672">,</span> random<span style="color:#f92672">,</span> socket<span style="color:#f92672">,</span> sys
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> argparse<span style="color:#f92672">,</span> random<span style="color:#f92672">,</span> socket<span style="color:#f92672">,</span> sys
 
 MAX_BYTES <span style="color:#f92672">=</span> <span style="color:#ae81ff">65535</span>
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">server</span>(interface, port):
     sock <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span>socket(socket<span style="color:#f92672">.</span>AF_INET, socket<span style="color:#f92672">.</span>SOCK_DGRAM)<span style="color:#75715e"># DGRAM會傳出udp訊號</span>
     sock<span style="color:#f92672">.</span>bind((interface, port))
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Listening at&#39;</span>, sock<span style="color:#f92672">.</span>getsockname())
-    <span style="color:#66d9ef">while</span> True: <span style="color:#75715e">#持續接收來自client的內容</span>
+    print(<span style="color:#e6db74">&#39;Listening at&#39;</span>, sock<span style="color:#f92672">.</span>getsockname())
+    <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>: <span style="color:#75715e">#持續接收來自client的內容</span>
         data, address <span style="color:#f92672">=</span> sock<span style="color:#f92672">.</span>recvfrom(MAX_BYTES)<span style="color:#75715e">#接收客戶端的來源ip port與內容</span>
         <span style="color:#66d9ef">if</span> random<span style="color:#f92672">.</span>random() <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0.5</span>: <span style="color:#75715e">#為了模擬丟包，所以概率性的不回應客戶</span>
-            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Pretending to drop packet from {}&#39;</span><span style="color:#f92672">.</span>format(address))
+            print(<span style="color:#e6db74">&#39;Pretending to drop packet from </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(address))
             <span style="color:#66d9ef">continue</span>
         text <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;ascii&#39;</span>)<span style="color:#75715e">#收到的訊號以ascii解碼</span>
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;The client at {} says {!r}&#39;</span><span style="color:#f92672">.</span>format(address, text))
-        message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Your data was {} bytes long&#39;</span><span style="color:#f92672">.</span>format(len(data))
+        print(<span style="color:#e6db74">&#39;The client at </span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> says </span><span style="color:#e6db74">{!r}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(address, text))
+        message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Your data was </span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> bytes long&#39;</span><span style="color:#f92672">.</span>format(len(data))
         sock<span style="color:#f92672">.</span>sendto(message<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;ascii&#39;</span>), address)<span style="color:#75715e">#傳送回應訊息</span>
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">client</span>(hostname, port):
     sock <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span>socket(socket<span style="color:#f92672">.</span>AF_INET, socket<span style="color:#f92672">.</span>SOCK_DGRAM)<span style="color:#75715e"># DGRAM會傳出udp訊號</span>
     sock<span style="color:#f92672">.</span>connect((hostname, port))<span style="color:#75715e">#連線connect到特定ip,port方便之後用send重發請求</span>
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Client socket name is {}&#39;</span><span style="color:#f92672">.</span>format(sock<span style="color:#f92672">.</span>getsockname()))
+    print(<span style="color:#e6db74">&#39;Client socket name is </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(sock<span style="color:#f92672">.</span>getsockname()))
 
     delay <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>  <span style="color:#75715e"># 等待秒</span>
     text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;This is another message&#39;</span>
     data <span style="color:#f92672">=</span> text<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;ascii&#39;</span>)
-    <span style="color:#66d9ef">while</span> True:
+    <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
         sock<span style="color:#f92672">.</span>send(data)
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Waiting up to {} seconds for a reply&#39;</span><span style="color:#f92672">.</span>format(delay))
+        print(<span style="color:#e6db74">&#39;Waiting up to </span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> seconds for a reply&#39;</span><span style="color:#f92672">.</span>format(delay))
         sock<span style="color:#f92672">.</span>settimeout(delay)<span style="color:#75715e">#設定sock.recv等待時間</span>
         <span style="color:#66d9ef">try</span>:
             data <span style="color:#f92672">=</span> sock<span style="color:#f92672">.</span>recv(MAX_BYTES)
@@ -350,7 +347,7 @@ MAX_BYTES <span style="color:#f92672">=</span> <span style="color:#ae81ff">65535
         <span style="color:#66d9ef">else</span>:
             <span style="color:#66d9ef">break</span>   <span style="color:#75715e"># 如果什麼都沒發生則離開while迴圈</span>
 
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;The server says {!r}&#39;</span><span style="color:#f92672">.</span>format(data<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;ascii&#39;</span>)))
+    print(<span style="color:#e6db74">&#39;The server says </span><span style="color:#e6db74">{!r}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(data<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;ascii&#39;</span>)))
 
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
     choices <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;client&#39;</span>: client, <span style="color:#e6db74">&#39;server&#39;</span>: server}
@@ -366,18 +363,18 @@ MAX_BYTES <span style="color:#f92672">=</span> <span style="color:#ae81ff">65535
     function(args<span style="color:#f92672">.</span>host, args<span style="color:#f92672">.</span>p)
 </code></pre></div><h1 id="5udp廣播">5.udp廣播</h1>
 <p>如果區域網路還有其他主機server開著同樣的port也會收到</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> argparse<span style="color:#f92672">,</span> socket
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> argparse<span style="color:#f92672">,</span> socket
 
 BUFSIZE <span style="color:#f92672">=</span> <span style="color:#ae81ff">65535</span>
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">server</span>(interface, port):
     sock <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span>socket(socket<span style="color:#f92672">.</span>AF_INET, socket<span style="color:#f92672">.</span>SOCK_DGRAM)
     sock<span style="color:#f92672">.</span>bind((interface, port))
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Listening for datagrams at {}&#39;</span><span style="color:#f92672">.</span>format(sock<span style="color:#f92672">.</span>getsockname()))
-    <span style="color:#66d9ef">while</span> True:
+    print(<span style="color:#e6db74">&#39;Listening for datagrams at </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(sock<span style="color:#f92672">.</span>getsockname()))
+    <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
         data, address <span style="color:#f92672">=</span> sock<span style="color:#f92672">.</span>recvfrom(BUFSIZE)
         text <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;ascii&#39;</span>)
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;The client at {} says: {!r}&#39;</span><span style="color:#f92672">.</span>format(address, text))
+        print(<span style="color:#e6db74">&#39;The client at </span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> says: </span><span style="color:#e6db74">{!r}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(address, text))
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">client</span>(network, port):
     sock <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span>socket(socket<span style="color:#f92672">.</span>AF_INET, socket<span style="color:#f92672">.</span>SOCK_DGRAM)
@@ -398,7 +395,7 @@ BUFSIZE <span style="color:#f92672">=</span> <span style="color:#ae81ff">65535</
     function(args<span style="color:#f92672">.</span>host, args<span style="color:#f92672">.</span>p)
 </code></pre></div><h1 id="mtu最大傳輸單元">MTU最大傳輸單元</h1>
 <p>網路傳輸時，允許把資料分成許多小片，但是每一片段的大小不能太大，如果太大就會無法傳送。這個最大的值稱為MTU(Maximum Transmission Unit)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> argparse<span style="color:#f92672">,</span> socket<span style="color:#f92672">,</span> sys
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> argparse<span style="color:#f92672">,</span> socket<span style="color:#f92672">,</span> sys
 
 <span style="color:#75715e"># Inlined constants, because Python 3.6 has dropped the IN module.</span>
 
@@ -409,7 +406,7 @@ BUFSIZE <span style="color:#f92672">=</span> <span style="color:#ae81ff">65535</
 
 <span style="color:#75715e">#這個程式只能在linux上頭進行</span>
 <span style="color:#66d9ef">if</span> sys<span style="color:#f92672">.</span>platform <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;linux&#39;</span>:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Unsupported: Can only perform MTU discovery on Linux&#39;</span>,
+    print(<span style="color:#e6db74">&#39;Unsupported: Can only perform MTU discovery on Linux&#39;</span>,
           file<span style="color:#f92672">=</span>sys<span style="color:#f92672">.</span>stderr)
     sys<span style="color:#f92672">.</span>exit(<span style="color:#ae81ff">1</span>)
 
@@ -420,11 +417,11 @@ BUFSIZE <span style="color:#f92672">=</span> <span style="color:#ae81ff">65535</
     <span style="color:#66d9ef">try</span>:
         sock<span style="color:#f92672">.</span>send(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;#&#39;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">65536</span>)<span style="color:#75715e">#將會傳送65535個byte字元，數值條下可能就會傳輸成功</span>
     <span style="color:#66d9ef">except</span> socket<span style="color:#f92672">.</span>error:<span style="color:#75715e">#捕捉socket.error錯誤</span>
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Alas, the datagram did not make it&#39;</span>)
+        print(<span style="color:#e6db74">&#39;Alas, the datagram did not make it&#39;</span>)
         max_mtu <span style="color:#f92672">=</span> sock<span style="color:#f92672">.</span>getsockopt(socket<span style="color:#f92672">.</span>IPPROTO_IP, IN<span style="color:#f92672">.</span>IP_MTU)<span style="color:#75715e">#取得最大傳輸單元應該是65535</span>
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Actual MTU: {}&#39;</span><span style="color:#f92672">.</span>format(max_mtu))
+        print(<span style="color:#e6db74">&#39;Actual MTU: </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(max_mtu))
     <span style="color:#66d9ef">else</span>:
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;The big datagram was sent!&#39;</span>)
+        print(<span style="color:#e6db74">&#39;The big datagram was sent!&#39;</span>)
 
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
     parser <span style="color:#f92672">=</span> argparse<span style="color:#f92672">.</span>ArgumentParser(description<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Send UDP packet to get MTU&#39;</span>)

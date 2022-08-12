@@ -16,6 +16,13 @@ tags: ["git","github"]
 建議上網找些資料學習。  
 不過RSA金鑰的用途就算不理解這些也能夠先讀。
 
+### 建立git郵件帳號
+
+```
+git config --global user.name "使用者名稱"
+git config --global user.email 使用者郵件
+```
+
 ### RSA金鑰是啥？
 我們通常想要登入一個帳號，是需要密碼的。  
 無論是windows,linux甚至銀行提款。  

@@ -7,7 +7,7 @@
     <title>Android06客戶端Socket(待修正) | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="本篇未經調整，雖然能運作，但其中命名可能容易混淆，請斟酌參考。 1.開通網路使用權限 AndroidManifest.xml &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt; &lt;manifest xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34; package=&#34;com.example.httpreguests&#34;&gt; &lt;!--這兩行是關鍵內容，可以啟動網路">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="Android06客戶端Socket(待修正)" />
 <meta property="og:description" content="本篇未經調整，雖然能運作，但其中命名可能容易混淆，請斟酌參考。 1.開通網路使用權限 AndroidManifest.xml &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt; &lt;manifest xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34; package=&#34;com.example.httpreguests&#34;&gt; &lt;!--這兩行是關鍵內容，可以啟動網路" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/android/android06%E5%AE%A2%E6%88%B6%E7%AB%AFsocket/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/android/android06%E5%AE%A2%E6%88%B6%E7%AB%AFsocket/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-09-24T21:20:44+08:00" />
 <meta property="article:modified_time" content="2021-09-24T21:20:44+08:00" />
+
 <meta itemprop="name" content="Android06客戶端Socket(待修正)">
-<meta itemprop="description" content="本篇未經調整，雖然能運作，但其中命名可能容易混淆，請斟酌參考。 1.開通網路使用權限 AndroidManifest.xml &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt; &lt;manifest xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34; package=&#34;com.example.httpreguests&#34;&gt; &lt;!--這兩行是關鍵內容，可以啟動網路">
-<meta itemprop="datePublished" content="2021-09-24T21:20:44&#43;08:00" />
-<meta itemprop="dateModified" content="2021-09-24T21:20:44&#43;08:00" />
+<meta itemprop="description" content="本篇未經調整，雖然能運作，但其中命名可能容易混淆，請斟酌參考。 1.開通網路使用權限 AndroidManifest.xml &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt; &lt;manifest xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34; package=&#34;com.example.httpreguests&#34;&gt; &lt;!--這兩行是關鍵內容，可以啟動網路"><meta itemprop="datePublished" content="2021-09-24T21:20:44+08:00" />
+<meta itemprop="dateModified" content="2021-09-24T21:20:44+08:00" />
 <meta itemprop="wordCount" content="333">
-
-
-
 <meta itemprop="keywords" content="android," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Android06客戶端Socket(待修正)"/>
 <meta name="twitter:description" content="本篇未經調整，雖然能運作，但其中命名可能容易混淆，請斟酌參考。 1.開通網路使用權限 AndroidManifest.xml &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt; &lt;manifest xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34; package=&#34;com.example.httpreguests&#34;&gt; &lt;!--這兩行是關鍵內容，可以啟動網路"/>
@@ -233,7 +230,7 @@
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>本篇未經調整，雖然能運作，但其中命名可能容易混淆，請斟酌參考。</p>
 <h1 id="1開通網路使用權限">1.開通網路使用權限</h1>
 <p>AndroidManifest.xml</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
 <span style="color:#f92672">&lt;manifest</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
     <span style="color:#a6e22e">package=</span><span style="color:#e6db74">&#34;com.example.httpreguests&#34;</span><span style="color:#f92672">&gt;</span>
 
@@ -263,7 +260,7 @@
 <span style="color:#f92672">&lt;/manifest&gt;</span>
 </code></pre></div><h1 id="2透過函數庫來啟用http傳輸">2.透過函數庫來啟用Http傳輸</h1>
 <p>MainActivity.java</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.example.httpreguests<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.example.httpreguests<span style="color:#f92672">;</span>
 
 <span style="color:#f92672">import</span> androidx.appcompat.app.AppCompatActivity<span style="color:#f92672">;</span>
 
@@ -329,7 +326,7 @@
 </span><span style="color:#75715e"></span>
 </code></pre></div><h1 id="3前端">3.前端</h1>
 <p>activity_main.xml</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
 <span style="color:#f92672">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
     <span style="color:#a6e22e">xmlns:app=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
     <span style="color:#a6e22e">xmlns:tools=</span><span style="color:#e6db74">&#34;http://schemas.android.com/tools&#34;</span>

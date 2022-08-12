@@ -7,7 +7,7 @@
     <title>把記憶體當硬碟用 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="你希望有個資料夾可以關機之後就徹底清除嗎？ 你感覺某個檔案在硬碟裡的執行速度還是不夠快嗎？ 這時候你可以啟用ramdisk 修改檔案系統表 已roo">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -36,17 +36,14 @@
     <meta property="og:title" content="把記憶體當硬碟用" />
 <meta property="og:description" content="你希望有個資料夾可以關機之後就徹底清除嗎？ 你感覺某個檔案在硬碟裡的執行速度還是不夠快嗎？ 這時候你可以啟用ramdisk 修改檔案系統表 已roo" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/linux/%E6%8A%8A%E8%A8%98%E6%86%B6%E9%AB%94%E7%95%B6%E7%A1%AC%E7%A2%9F%E7%94%A8/" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/linux/%E6%8A%8A%E8%A8%98%E6%86%B6%E9%AB%94%E7%95%B6%E7%A1%AC%E7%A2%9F%E7%94%A8/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-03-01T13:29:36+08:00" />
 <meta property="article:modified_time" content="2021-03-01T13:29:36+08:00" />
+
 <meta itemprop="name" content="把記憶體當硬碟用">
-<meta itemprop="description" content="你希望有個資料夾可以關機之後就徹底清除嗎？ 你感覺某個檔案在硬碟裡的執行速度還是不夠快嗎？ 這時候你可以啟用ramdisk 修改檔案系統表 已roo">
-<meta itemprop="datePublished" content="2021-03-01T13:29:36&#43;08:00" />
-<meta itemprop="dateModified" content="2021-03-01T13:29:36&#43;08:00" />
+<meta itemprop="description" content="你希望有個資料夾可以關機之後就徹底清除嗎？ 你感覺某個檔案在硬碟裡的執行速度還是不夠快嗎？ 這時候你可以啟用ramdisk 修改檔案系統表 已roo"><meta itemprop="datePublished" content="2021-03-01T13:29:36+08:00" />
+<meta itemprop="dateModified" content="2021-03-01T13:29:36+08:00" />
 <meta itemprop="wordCount" content="353">
-
-
-
 <meta itemprop="keywords" content="linux,ramdisk,tmpfs," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="把記憶體當硬碟用"/>
 <meta name="twitter:description" content="你希望有個資料夾可以關機之後就徹底清除嗎？ 你感覺某個檔案在硬碟裡的執行速度還是不夠快嗎？ 這時候你可以啟用ramdisk 修改檔案系統表 已roo"/>
@@ -235,9 +232,9 @@
 這時候你可以啟用ramdisk</p>
 <h3 id="修改檔案系統表">修改檔案系統表</h3>
 <p>已root權限打開這個設定檔</p>
-<pre><code>/etc/fstab
+<pre tabindex="0"><code>/etc/fstab
 </code></pre><p>裡頭長這樣</p>
-<pre><code># /etc/fstab: static file system information.
+<pre tabindex="0"><code># /etc/fstab: static file system information.
 #
 # Use 'blkid' to print the universally unique identifier for a
 # device; this may be used with UUID= as a more robust way to name devices
@@ -250,7 +247,7 @@ UUID=beaf8a82-1495-478f-b85f-951a4670f4d1 /               ext4    errors=remount
 UUID=a773e6bc-3536-4dfc-9e4c-b2128d50feb4 none            swap    sw              0       0
 </code></pre><p>然後假設我們要產生一個50MB的資料夾在/mnt/happyDir<br>
 我們可以在行這個設定檔裡頭加上這後</p>
-<pre><code># /etc/fstab: static file system information.
+<pre tabindex="0"><code># /etc/fstab: static file system information.
 #
 # Use 'blkid' to print the universally unique identifier for a
 # device; this may be used with UUID= as a more robust way to name devices
@@ -266,7 +263,7 @@ UUID=a773e6bc-3536-4dfc-9e4c-b2128d50feb4 none            swap    sw            
 tmpfs /mnt/happyDir tmpfs defaults,noatime,nosuid,nodev,noexec,mode=1777,size=50M 0 0
 
 </code></pre><p>然後測試看看輸入</p>
-<pre><code>sudo mount -a
+<pre tabindex="0"><code>sudo mount -a
 </code></pre><p>如果沒有報錯就成功了
 報錯就改回來～</p>
 <ul class="pa0">
