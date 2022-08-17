@@ -986,3 +986,298 @@ Route53可以支持公有網路，與AWS私有網路VPC的DNS服務。
 
 * 考試的當下，公私有網路都有效的網址是一個月$1美元，公有網路$0.5美元，AWS VPC私有網路$0.5美元。也就是一年12美元。
 
+## Route53 Records TTL(Time To Live)
+
+TTL: Time To Live 持續存活時間，提示發出DNS請求的電腦，這個DNS查詢應該要在該客戶電腦保存多久。
+
+* 短TTL: 假設TTL只有一分鐘，你一旦變更網址，一分鐘內客戶重新向DNS發出請求時，網址就會刷新
+
+    * 網址更新快
+    
+    * 價格昂貴，因為客戶會頻頻向DNS請求，帶來大量費用。
+
+* 長TTL: 假設TTL為一天，則更新網址後，客戶可能要一天後才會察覺。
+
+    * 網址更新慢
+
+    * 便宜
+
+## Route53 NS紀錄與A或AAAA紀錄的差異
+
+假設我們的網址為`example.com`
+
+有子網域`cool1.example.com`與`cool2.example.com`
+
+* NS與SOA紀錄: 通常用在Domain Name上頭，也就是`example.com`。但僅有NS與SOA紀錄時，是無法將網頁導向特定IP的，還要有下方的A或者AAAA紀錄將該網址的子網域導向特定IP。
+
+* A或者AAAA紀錄: 可以將`example.com`下的子網域`cool1.example.com`與`cool2.example.com`，導向不同的IP位址。
+
+## 測試網域是否註冊成功的指令
+
+下列兩個指令在安裝後都可以查詢自己的網址是否對應到正確IP。
+
+```
+nslookup
+```
+
+與
+
+```
+dig
+```
+
+## Route53 中的 CNAME 與 Alias
+
+兩者都是網址的別名，也就是說當你有一個網址時，你可以讓另外兩三個網址都導向這個網址。
+
+不過也存在略為不同之處，例如: Alias 是免費的，CNAME不是，下方會有更詳細的說明。
+
+* CNAME
+
+    例如:`www.example.com`增加一個別名`abc.example.com`
+    
+    * 不可以用根網址轉址，例如: 可以用`www.example.com`轉址，但不可以轉到`example.com`因為它屬於Root Domain。
+
+    * 額外付費。
+
+    * 可以直接用在EC2實體轉址。
+
+* Alias
+
+    * 可以進行網址轉換，如:`www.example.com`增加一個別名`abc.example.com`。
+
+    * 可以轉換到根網址Root Domain，如`www.example.com`增加一個別名`example.com`。
+
+    * 免費。
+
+    * 僅能連接到非EC2的AWS服務，普遍來說如果有多個實體，建議連接到:
+        * 各種ELB類型的服務如:ALB
+        * 靜態網站的CloudFront
+        * 一整組的網站服務Beanstalk
+        * API閘道Amazon API Gateway
+        * 儲存空間S3 Website
+        * 私有網路站點VPC interface Endpoints
+        * 連線加速服務Global Accelerator
+        * 同一個Hostzone下的Route53服務。
+
+## Route53 Health Check
+
+網站健康檢查器，可以自訂要檢查哪些你所擁有的IP位址上的網站，如果該網站失效，它會讓DNS自動挑選健康狀態良好的IP位址，作為DNS回應回饋給用戶。
+
+以下為Health Check可以監控的目標:
+
+* 網站與線上應用程式
+
+* 其他的Health Check: 當某個Health Check報錯時，可以依照規則也跟著報錯，例如:監控3個IP的健康檢查器，同時報告失效時，DNS改變路徑。
+
+* CloudWatch Alarms: 如果我們要監控的目標在VPC內，健康檢查器無法觸及，所以就可以檢查CloudWatch Alarms，如果CloudWatch Alarms報告VPC內的服務失效，就可以做出應變策略。
+
+  可以應用的範圍如下:
+  
+  * 監控RDS
+  * DynamoDB
+  * 其他自訂監控指標
+
+除此之外還有一些特性:
+
+* 全球有15個Health Checker，同時檢查網站的可到達性。
+* 預設30秒檢查一次，如果檢查頻率更高，價格更貴。
+* 大於18%的Health Checker判定網站健康，則視為健康。
+* 回應狀態碼2XX~3XX代表狀態健康。
+* 可檢查前5120 Bytes。
+
+其中有一個功能
+* Caculated Health Checks
+  * 可以同時監控多個Health Checker
+  * 可以設置AND, OR, NOT 功能。
+  * 如: 網站1 AND 網站2 同時失效時，Caculated Health Checks 回報 Unhealth。
+
+## Route53 Routing Policies
+
+DNS是可以選擇回應策略的，例如你希望將網址轉換的IP平均分散到三個IP位址上頭，這是可以的。
+
+但是這不能完全替代Load Balancer，因為如果一個用戶真的執意要以一個特定的IP連上你擁有的伺服器，DNS是會被繞過去的。
+
+但是對於一般正常使用的用戶來說，可以軟性的將負載分散到不同IP上。
+
+以下為幾種不同的DNS Routing Policies:
+
+* Simple
+    最簡單的DNS方案，一個網址通常對應一個IP，但是如果執意要對應多個IP，則會隨機將網址對應到不同IP。
+    
+    * 沒有Health Check，無法確認主機健康狀態。
+    
+* Weighted
+    以不同的百分比，將同一個網址導向不同的IP。例如:有三台主機，可以非配分別為
+    
+    * 主機1的IP:45%
+    * 主機2的IP:45%
+    * 主機3的IP:10%
+
+    雖說主機3的權重比較小，但還是有機會將請求傳送到主機3。
+    * 可附加Health Check，可以避開失效的主機。
+    
+* Latency
+    
+    挑選離用戶網路延遲最短的主機IP回傳給用戶。
+    
+    * 可附加Health Check，可以避開失效的主機。
+
+* Failover
+    
+    原本的伺服器IP以外，多建立一個備用伺服器IP。當原本的伺服器失效，就會自動轉移到替代伺服器。
+    
+    可能需要在該伺服器上頭附加Health Check才可奏效。
+    
+    * Primary: 主要伺服器，一般情況運作該伺服器。
+    * Secondary(Disastar Recovery): 次要伺服器，當主伺服器失效時，會自動移轉到備用伺服器。主伺服器復原時，則會將網址連接回主伺服器。
+
+* Geolocation
+
+    可以在同樣的網址下，設置以客戶離伺服器的地理位置距離，所分配的不同伺服器。
+    
+    例如同一個網址，在亞洲的人連到亞洲伺服器，歐洲人則連到歐洲伺服器。
+    
+* Geoproximity
+
+    這種路由方式類似上方的地理位置路由，但是可以手動擴大某個區域的大小。
+    
+    例如：原本印度的某處被劃分在亞洲，但是我們將歐洲的Bias +30 這時候由於歐洲的劃分位置擴大，所以印度可能會被劃分為歐洲。
+    
+* Traffic flow
+
+    用來編輯DNS流量的服務，可以建立如Geoproximity的複雜流量規則。不過複雜的流DNS設置通常是昂貴的，一個月甚至會收取高達1500台幣的費用。
+    
+* Multi-Value
+
+    有Health Check的一般DNS路由。在dig或者nslookup下會可以一次跳出網址對應的數個可供選擇的IP。
+    
+    當某一個IP的伺服器不健康時，則會自動停止DNS路由。
+
+
+## 用第三方的DNS供應商連接到Route53
+
+由於Domain Registrar可以註冊網址的供應商，不等同有著完整多樣化功能的Route53這種DNS Service。
+
+所以當要同時使用Route53與更便宜的DNS網址供應商時，可以採取以下步驟:
+
+1. Route53 中建立 Hosted Zone
+2. 將第三方 DNS 的 NS 紀錄導向 Route53 的 Name Servers 。
+
+# Elastic Beanstalk
+
+涵蓋一整個網站需要的AWS服務組合包，捆包出租 EC2(伺服器), ELB(負載平衡), Health Check(健康檢查器), Elastic IP, ASG(自動擴展), Route53 ... 等等。
+
+並且會將架構組合好，但每個細節仍然可以自己管理，建立時也可以自訂。
+
+由於多數的網站架構都差不多，所以一般的網站架構用 Elastic Beanstalk 就可以組合出一個網站了。
+
+## Elastic Beanstalk 是個免費整合服務
+
+雖然整合免費，但裡頭的實體與服務都要付錢。
+
+## Elastic Beanstalk 的部份
+
+* Application
+    * Beanstalk中的環境, 版本, 設置
+* Application Version
+    * 客戶的程式碼的版本控制
+* Enviroment
+    * 應用程式的版本與該版本使用的環境設置，一次只能運行一個版本。
+
+## Elastic Beanstalk 支持的程式語言
+
+* Go
+* Java
+* Java Tomcat
+* .Net Core Linux
+* .Net
+* Node.js
+* PHP
+* Python
+* Ruby
+* Packer Builder
+* Single-container docker
+* Multi-container docker
+* Preconfig Docker
+
+## Elastic Beanstalk 中的 Web server Tier 與 Worker Tier
+
+* Web server Tier
+    * ELB+多AZ的ASG的EC2。
+* Worker server Tier
+    * ELB+多AZ的SQS Queue。
+
+## Elastic Beanstalk 節約費用的方法
+
+* 可以使用長期的主機預約，如: 1年到3年期。可以節省部份的費用。
+
+## 共享 Session 與 Token 的正確方法
+
+* 應該儲存在
+    * EFS
+    * Amazon ElastiCache(如: Redis) 儲存 Session。
+    * 加密後儲存在用戶Cookie
+
+* 可能的話不要儲存在EBS也就是虛擬機中的本機儲存，因為如果ELB把用戶分配到不同伺服器時，用戶可能就會直接被登出或者遺失資料。
+
+## Golden AMI 可以快速啟動使用的虛擬機映像
+
+Golden AMI 可以把預先安裝配置好所有軟體服務的虛擬機映像檔 Image，可以立刻開機立刻使用。不用在啟動虛擬機後花漫長的時間安裝編譯套件，最後才能完成自動水平擴展。
+
+# S3
+
+S3是一個類似雲端硬碟的AWS儲存服務。
+
+S3可以:
+
+* 放置靜態網頁公大家瀏覽
+* 放置圖片
+* 儲存私有檔案，並且設置IAM以供特定的使用者使用。
+
+## S3的常見名詞
+
+* Bucket
+    * 桶子，基本上可以當成資料夾的意思。
+    * 設定名稱時，不能與任何其他人設置的Bucket同樣名稱。
+    * 要設置儲存的物理區域Region
+    * 名稱要小寫英文, 無底線, 3-64個字元, 不能是IP。
+    * Versioning:
+        Bucket 這一層要決定裡頭的 Object 是否需要 Versioning (版本控制) 。
+        * 可以復原過去版本的Object檔案。
+        * 沒有啟用版本控制之前，Version ID 為 null。
+        * Suspending Versioning: 不會將新的檔案加入版本控制，但也不會刪除過去的版本。
+        * 
+* Object
+    * 檔案，必須裝在桶子裡頭。
+    * key:
+        可以存取桶子的路徑。
+        * s3://桶子名稱/檔案名稱
+        * s3://桶子名稱前半段/桶子名稱後半段/檔案名稱
+    * 雖然看起來很類似資料夾，但不是資料夾。
+    * 單一檔案最大尺寸5TB。
+    * 假如上傳的檔案大小超過5GB，就必須使用多部份上傳 (multi-part upload)
+    * Metadata: 可以附加檔案的額外訊息，如:版本，說明。
+    * Tags: 可以用Unicode字元，來替檔案上標籤，如某些一批圖檔上可以都上標籤 "水果" 。
+    * Version: 版本號。
+
+## S3 的加密
+
+S3 提供數種加密種類，以 AES-256 為加密演算法。
+
+* SSE-S3
+    * 加密檔案，並且由AWS自動管理Keys，所以用戶甚至不會注意到。
+    * 用AWS API 上傳的話，需要在 HTTP Request header 加上  **"x-amz-server-side-encryption":"AES256"** 來要求上傳後的加密。
+* SSE-KMS
+    * 以AWS Key Management Service (KMS) 進行鑰匙管理。
+    * 用AWS API 上傳的話，需要在 HTTP Request header 加上  **"x-amz-server-side-encryption":"aws:kms"** 來要求上傳後的加密。
+* SSE-C
+    * 自己上傳AES金鑰，AWS不會幫你保存，所以記得自己保存好金鑰。
+    * 由於要傳遞鑰匙，所以強制使用HTTPS。
+* Client Side Encryption
+    * 客戶端自己用 S3 Encryption SDK 加密後上傳。
+
+## S3 安全設置
+
+* 使用者為基礎
+* 
