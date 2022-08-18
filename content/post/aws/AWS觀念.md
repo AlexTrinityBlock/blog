@@ -1343,4 +1343,10 @@ Access-Control-Allow-Origin: 允許的網站位址
     * 這是免費服務。
     * 不會有太大效能衝擊，因為檔案上傳完成到S3更新，只有一瞬間。
 
-* 
+# IAM
+
+IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來定義某個用戶，是否有權限進行某些操作的權限設定。
+
+* Roles
+    IAM 中
+
