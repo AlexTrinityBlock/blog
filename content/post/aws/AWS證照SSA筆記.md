@@ -1422,6 +1422,16 @@ S3 可以設置透過手機認證來保護物件，防止誤刪或者惡意刪�
 * 一般會啟動S3版本控制，把舊版本或者刪除的檔案移轉到便宜的區域。
 * 從便宜的長期儲存區是無法自動移轉回來的，必須手動下載後作為新版本。
 
+## S3 Analytics - Storage Class Analysis
+
+可以分析，需要設置多常的時間把物件從Standard 移轉到 Standard IA 。也就是 Lifecycle 設置。
+
+* 首次啟動需要24~48小時
+
+* 要跟 Lifecycle一起設置，並且根據回報決定要設置如何的 Lifecycle。
+
+
+
 # IAM
 
 IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來定義某個用戶，是否有權限進行某些操作的權限設定。

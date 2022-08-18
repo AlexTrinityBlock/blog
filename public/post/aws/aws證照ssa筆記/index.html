@@ -43,7 +43,7 @@
 <meta itemprop="name" content="AWS證照SSA筆記">
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"><meta itemprop="datePublished" content="2022-08-18T09:00:00+08:00" />
 <meta itemprop="dateModified" content="2022-08-18T09:00:00+08:00" />
-<meta itemprop="wordCount" content="16649">
+<meta itemprop="wordCount" content="16747">
 <meta itemprop="keywords" content="AWS," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AWS證照SSA筆記"/>
 <meta name="twitter:description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"/>
@@ -1958,6 +1958,16 @@ Bucket 這一層要決定裡頭的 Object 是否需要 Versioning (版本控制)
 <li>可以隨著時間把目前不會用到的檔案，移轉到比較便宜儲存區域。</li>
 <li>一般會啟動S3版本控制，把舊版本或者刪除的檔案移轉到便宜的區域。</li>
 <li>從便宜的長期儲存區是無法自動移轉回來的，必須手動下載後作為新版本。</li>
+</ul>
+<h2 id="s3-analytics---storage-class-analysis">S3 Analytics - Storage Class Analysis</h2>
+<p>可以分析，需要設置多常的時間把物件從Standard 移轉到 Standard IA 。也就是 Lifecycle 設置。</p>
+<ul>
+<li>
+<p>首次啟動需要24~48小時</p>
+</li>
+<li>
+<p>要跟 Lifecycle一起設置，並且根據回報決定要設置如何的 Lifecycle。</p>
+</li>
 </ul>
 <h1 id="iam-1">IAM</h1>
 <p>IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來定義某個用戶，是否有權限進行某些操作的權限設定。</p>
