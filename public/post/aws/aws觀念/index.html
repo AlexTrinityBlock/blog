@@ -43,7 +43,7 @@
 <meta itemprop="name" content="AWS觀念">
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"><meta itemprop="datePublished" content="2022-08-18T09:00:00+08:00" />
 <meta itemprop="dateModified" content="2022-08-18T09:00:00+08:00" />
-<meta itemprop="wordCount" content="14854">
+<meta itemprop="wordCount" content="14900">
 <meta itemprop="keywords" content="AWS," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AWS觀念"/>
 <meta name="twitter:description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"/>
@@ -1867,6 +1867,10 @@ IAM 中如果我要開啟某群人有管理S3儲存庫的權限，這時候我�
 <li>列出存在的S3物件</li>
 </ul>
 <p>上述的Police，而每個Police都可以針對某個 AWS 中的物件與服務 (要指定資源的名字，也就是ARN)　進行細部的調整。</p>
+<ul>
+<li>其實有很多預設的Role可以供選擇。</li>
+<li>Policy 不能和預設的Role衝突，例如同時允許和拒絕存取S3。</li>
+</ul>
 </li>
 <li>
 <p>Policy</p>

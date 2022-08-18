@@ -1358,6 +1358,9 @@ IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來�
 
     上述的Police，而每個Police都可以針對某個 AWS 中的物件與服務 (要指定資源的名字，也就是ARN)　進行細部的調整。
 
+    * 其實有很多預設的Role可以供選擇。
+    * Policy 不能和預設的Role衝突，例如同時允許和拒絕存取S3。
+
 * Policy
 
     AWS 中可以賦予每個Role角色的政策
@@ -1365,6 +1368,6 @@ IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來�
     * 指定某個服務或Bucket資料夾或者檔案的存取權限。
     * 建議用 Policy Genetator 生成。
 
-    
+
 
 
