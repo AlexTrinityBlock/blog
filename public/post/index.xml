@@ -6,7 +6,16 @@
     <description>Recent content on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Thu, 18 Aug 2022 09:00:00 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Aug 2022 09:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EJS-一個Javascript模板引擎</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/node.js/ejs-%E4%B8%80%E5%80%8Bjavascript%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</link>
+      <pubDate>Thu, 18 Aug 2022 09:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/node.js/ejs-%E4%B8%80%E5%80%8Bjavascript%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</guid>
+      <description>EJS-一個Javascript模板引擎 EJS是個可以像是PHP或者ASP般，在HTML中嵌入後端變數的模板引擎。 使用的語法是這樣的，我們傳</description>
+    </item>
+    
     <item>
       <title>AWS觀念</title>
       <link>https://alextrinityblock.github.io/blog/public/post/aws/aws%E8%A7%80%E5%BF%B5/</link>

@@ -6,22 +6,22 @@
     <description>Recent content in Tags on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Thu, 18 Aug 2022 09:00:00 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Aug 2022 09:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Node.js</title>
+      <link>https://alextrinityblock.github.io/blog/public/tags/node.js/</link>
+      <pubDate>Thu, 18 Aug 2022 09:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/tags/node.js/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>AWS</title>
       <link>https://alextrinityblock.github.io/blog/public/tags/aws/</link>
       <pubDate>Thu, 18 Aug 2022 09:00:00 +0800</pubDate>
       
       <guid>https://alextrinityblock.github.io/blog/public/tags/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Node.js</title>
-      <link>https://alextrinityblock.github.io/blog/public/tags/node.js/</link>
-      <pubDate>Fri, 12 Aug 2022 09:30:44 +0800</pubDate>
-      
-      <guid>https://alextrinityblock.github.io/blog/public/tags/node.js/</guid>
       <description></description>
     </item>
     

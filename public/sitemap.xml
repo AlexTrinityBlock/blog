@@ -3,8 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://alextrinityblock.github.io/blog/public/post/</loc>
-    <lastmod>2022-08-18T09:00:00+08:00</lastmod>
+    <lastmod>2022-08-18T09:00:44+08:00</lastmod>
     <priority>0</priority>
+  </url><url>
+    <loc>https://alextrinityblock.github.io/blog/public/post/node.js/ejs-%E4%B8%80%E5%80%8Bjavascript%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</loc>
+    <lastmod>2022-08-18T09:00:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>2</priority>
+  </url><url>
+    <loc>https://alextrinityblock.github.io/blog/public/tags/node.js/</loc>
+    <lastmod>2022-08-18T09:00:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>2</priority>
+  </url><url>
+    <loc>https://alextrinityblock.github.io/blog/public/tags/</loc>
+    <lastmod>2022-08-18T09:00:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>2</priority>
   </url><url>
     <loc>https://alextrinityblock.github.io/blog/public/tags/aws/</loc>
     <lastmod>2022-08-18T09:00:00+08:00</lastmod>
@@ -13,16 +28,6 @@
   </url><url>
     <loc>https://alextrinityblock.github.io/blog/public/post/aws/aws%E8%A7%80%E5%BF%B5/</loc>
     <lastmod>2022-08-18T09:00:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>2</priority>
-  </url><url>
-    <loc>https://alextrinityblock.github.io/blog/public/tags/</loc>
-    <lastmod>2022-08-18T09:00:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>2</priority>
-  </url><url>
-    <loc>https://alextrinityblock.github.io/blog/public/tags/node.js/</loc>
-    <lastmod>2022-08-12T09:30:44+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>2</priority>
   </url><url>
