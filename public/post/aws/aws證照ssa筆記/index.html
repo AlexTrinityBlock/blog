@@ -43,7 +43,7 @@
 <meta itemprop="name" content="AWS證照SSA筆記">
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"><meta itemprop="datePublished" content="2022-08-18T09:00:00+08:00" />
 <meta itemprop="dateModified" content="2022-08-18T09:00:00+08:00" />
-<meta itemprop="wordCount" content="16049">
+<meta itemprop="wordCount" content="16552">
 <meta itemprop="keywords" content="AWS," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AWS證照SSA筆記"/>
 <meta name="twitter:description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"/>
@@ -1767,6 +1767,21 @@ Bucket 這一層要決定裡頭的 Object 是否需要 Versioning (版本控制)
 <li>Version: 版本號。</li>
 </ul>
 </li>
+</ul>
+<h2 id="s3-stroage-class-儲存等級">S3 Stroage Class (儲存等級)</h2>
+<ul>
+<li>S3 Standard: 存取速度快，但是最貴。</li>
+<li>S3 Intelligent-Tiering: 根據存取頻率自動將資料移至最具成本效益的存取方案。
+<ul>
+<li>經常、不常和封存即時存取層具有與 S3 Standard 相同的低延遲和高輸送量效能。</li>
+<li>不常存取方案最多可節省 40% 的儲存成本。</li>
+</ul>
+</li>
+<li>S3 Standard-IA: IA 適用於不常存取但需要在必要時進行快速存取的資料。為傳輸中資料提供 SSL 支援以及提供靜態資料加密。</li>
+<li>S3 One Zone-IA: IA 適用於不常存取但需要在必要時進行快速存取的資料。其他 S3 儲存類別會將資料存放到至少三個可用區域 (AZ)，但 S3 單區域 – IA 不一樣，它會將資料存放到單一 AZ 中，而且成本較 S3 標準 – IA 減少 20%。</li>
+<li>S3 Glacier Instant Retrieval: 可為很少存取且需要在幾毫秒內擷取的長期資料提供最低成本的儲存。當您的資料每季度存取一次時，請使用 S3 Glacier Instant Retrieval，相較於使用 S3 Standard-Infrequent Access (S3 Standard-IA) 儲存類別，您最多可節省 68% 的儲存成本。</li>
+<li>S3 Glacier Flexible Retrieval: 針對每年存取 1-2 次且非同步擷取的封存資料提供低成本儲存，成本最多可降低 10% (相較於 S3 Glacier Instant Retrieval)。</li>
+<li>S3 Glacier Deep Archive: 最低成本儲存類別，支援長期保留和數位保留一年存取一或兩次的資料。它專為客戶而設計的 – 特別是那些受到高度監管之產業中的客戶，例如金融服務，醫療保健和公共部門 – 其資料集需要保留 7 到 10 年或更長時間，以符合法規合規要求。</li>
 </ul>
 <h2 id="s3-的加密">S3 的加密</h2>
 <p>S3 提供數種加密種類，以 AES-256 為加密演算法。</p>
