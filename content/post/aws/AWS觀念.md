@@ -1350,4 +1350,21 @@ IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來�
 * Roles(角色)
     IAM 中如果我要開啟某群人有管理S3儲存庫的權限，這時候我可以創造一個Role，稱為"S3 管理員"，然後將這個Role賦予給需要管理S3的人們。
 
+    每個Role底下可以有數個Police，以"S3管理員"為例，他們有:
+
+    * 新增S3物件
+    * 刪除S3物件
+    * 列出存在的S3物件
+
+    上述的Police，而每個Police都可以針對某個 AWS 中的物件與服務 (要指定資源的名字，也就是ARN)　進行細部的調整。
+
+* Policy
+
+    AWS 中可以賦予每個Role角色的政策
+
+    * 指定某個服務或Bucket資料夾或者檔案的存取權限。
+    * 建議用 Policy Genetator 生成。
+
+    
+
 
