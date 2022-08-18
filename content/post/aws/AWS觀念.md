@@ -1287,7 +1287,7 @@ S3 提供數種加密種類，以 AES-256 為加密演算法。
     * Bucket Access Control List: 以Bucket為單位。
     * 建議關閉公共存取。
     * 可以將整個S3放入VPC中。
-    * 可以將一個S3 bucket 存取的紀錄Log放入另外一個 S3 bucket。
+    * 可以將一個S3 bucket 存取的紀錄Log放入另外一個 S3 bucket，也可用Athena來分析這些Log。
     * 對S3的API呼叫，可以放入AWS CloudTrail。
     * 可以使用者設置刪除檔案時採取MFA(雙因子認證)。
     * Pre-Signed URL: 可以短時間存取S3資源的URL。
@@ -1363,6 +1363,11 @@ S3 可以設置透過手機認證來保護物件，防止誤刪或者惡意刪�
 如果在Plicy裡頭設置 "force encryption" 這樣在使用API PUT S3 物件時，如果沒有加上要求加密的Header，就會失敗。
 
 在Bucket設定加入"default encryption"來解決上傳時需要確認加密方式的問題，這樣會按照加密政策自動加密檔案。
+
+## S3 中的 Log
+
+* 請將Log放入另一個S3中，否則會產生Log迴圈，Log加入時的動作引發新Log產生，產生巨量費用。
+* 記錄下來的Log可以交給 AWS Athena 服務分析。
 
 # IAM
 

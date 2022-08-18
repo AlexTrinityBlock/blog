@@ -43,7 +43,7 @@
 <meta itemprop="name" content="AWS觀念">
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"><meta itemprop="datePublished" content="2022-08-18T09:00:00+08:00" />
 <meta itemprop="dateModified" content="2022-08-18T09:00:00+08:00" />
-<meta itemprop="wordCount" content="15489">
+<meta itemprop="wordCount" content="15580">
 <meta itemprop="keywords" content="AWS," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AWS觀念"/>
 <meta name="twitter:description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"/>
@@ -1809,7 +1809,7 @@ Bucket 這一層要決定裡頭的 Object 是否需要 Versioning (版本控制)
 <li>Bucket Access Control List: 以Bucket為單位。</li>
 <li>建議關閉公共存取。</li>
 <li>可以將整個S3放入VPC中。</li>
-<li>可以將一個S3 bucket 存取的紀錄Log放入另外一個 S3 bucket。</li>
+<li>可以將一個S3 bucket 存取的紀錄Log放入另外一個 S3 bucket，也可用Athena來分析這些Log。</li>
 <li>對S3的API呼叫，可以放入AWS CloudTrail。</li>
 <li>可以使用者設置刪除檔案時採取MFA(雙因子認證)。</li>
 <li>Pre-Signed URL: 可以短時間存取S3資源的URL。</li>
@@ -1881,6 +1881,11 @@ Bucket 這一層要決定裡頭的 Object 是否需要 Versioning (版本控制)
 <h2 id="s3-的預設加密">S3 的預設加密</h2>
 <p>如果在Plicy裡頭設置 &ldquo;force encryption&rdquo; 這樣在使用API PUT S3 物件時，如果沒有加上要求加密的Header，就會失敗。</p>
 <p>在Bucket設定加入&quot;default encryption&quot;來解決上傳時需要確認加密方式的問題，這樣會按照加密政策自動加密檔案。</p>
+<h2 id="s3-中的-log">S3 中的 Log</h2>
+<ul>
+<li>請將Log放入另一個S3中，否則會產生Log迴圈，Log加入時的動作引發新Log產生，產生巨量費用。</li>
+<li>記錄下來的Log可以交給 AWS Athena 服務分析。</li>
+</ul>
 <h1 id="iam-1">IAM</h1>
 <p>IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來定義某個用戶，是否有權限進行某些操作的權限設定。</p>
 <ul>
