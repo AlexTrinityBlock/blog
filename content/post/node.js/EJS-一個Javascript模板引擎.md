@@ -12,7 +12,7 @@ EJS是個可以像是PHP或者ASP般，在HTML中嵌入後端變數的模板引�
 
 使用的語法是這樣的，我們傳入JS的變數kindOfDay後，就可以把ejs檔案裡頭的`<%= %>`標籤進行渲染了。
 
-```ejs
+```html
 <h1>It is <%= kindOfDay %>  </h1>
 ```
 
