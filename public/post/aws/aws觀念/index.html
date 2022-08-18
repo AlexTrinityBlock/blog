@@ -37,13 +37,13 @@
 <meta property="og:description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/aws/aws%E8%A7%80%E5%BF%B5/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-08-01T09:00:00+08:00" />
-<meta property="article:modified_time" content="2022-08-01T09:00:00+08:00" />
+<meta property="article:published_time" content="2022-08-18T09:00:00+08:00" />
+<meta property="article:modified_time" content="2022-08-18T09:00:00+08:00" />
 
 <meta itemprop="name" content="AWS觀念">
-<meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"><meta itemprop="datePublished" content="2022-08-01T09:00:00+08:00" />
-<meta itemprop="dateModified" content="2022-08-01T09:00:00+08:00" />
-<meta itemprop="wordCount" content="14095">
+<meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"><meta itemprop="datePublished" content="2022-08-18T09:00:00+08:00" />
+<meta itemprop="dateModified" content="2022-08-18T09:00:00+08:00" />
+<meta itemprop="wordCount" content="14347">
 <meta itemprop="keywords" content="AWS," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AWS觀念"/>
 <meta name="twitter:description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"/>
@@ -222,7 +222,7 @@
       <h1 class="f1 athelas mt3 mb1">AWS觀念</h1>
       
       
-      <time class="f6 mv4 dib tracked" datetime="2022-08-01T09:00:00+08:00">August 1, 2022</time>
+      <time class="f6 mv4 dib tracked" datetime="2022-08-18T09:00:00+08:00">August 18, 2022</time>
 
       
       
@@ -1826,7 +1826,18 @@ Bucket 這一層要決定裡頭的 Object 是否需要 Versioning (版本控制)
 </ol>
 <p>網址為</p>
 <pre tabindex="0"><code> bucket名稱.s3-website-AWS區域.amazonaws.com
-</code></pre><ul class="pa0">
+</code></pre><h2 id="s3-cors-跨來源資源共用">S3 CORS (跨來源資源共用)</h2>
+<h3 id="cors-是啥">CORS 是啥？</h3>
+<p>假如你的網站需要引用來自別人的網站的圖片。(或者你的另個網址不同的網站。)</p>
+<p>如果你從你的網站HTML或後端發送Request去取他的圖片，對方伺服器沒有同意CORS，就會失敗。</p>
+<p>所以，CORS意味著可以跨網站，或者跨主機IP來請求資源或呼叫API。</p>
+<h3 id="cors-header">CORS Header</h3>
+<p>伺服器在回應請求時，會夾帶一個Header，代表已經同意該網站的HTTP請求了。</p>
+<pre tabindex="0"><code>Access-Control-Allow-Origin: 允許的網站位址
+</code></pre><h3 id="s3中的使用方式">S3中的使用方式</h3>
+<p>在S3中允許CORS，就可以讓別人的網頁來存取我們S3中的內容。</p>
+<p>甚至另外一個S3靜態網頁，來存取我們S3中的內容。</p>
+<ul class="pa0">
   
    <li class="list">
      <a href="/blog/public/tags/aws" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">AWS</a>

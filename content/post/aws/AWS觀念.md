@@ -1,6 +1,6 @@
 ---
 title: "AWS觀念"
-date: 2022-08-01T09:00:00+08:00
+date: 2022-08-18T09:00:00+08:00
 draft: true
 featured_image: "/aws.jpeg"
 tags: ["AWS"]
@@ -1306,4 +1306,29 @@ S3 提供數種加密種類，以 AES-256 為加密演算法。
  bucket名稱.s3-website-AWS區域.amazonaws.com
  ```
  
- 
+ ## S3 CORS (跨來源資源共用)
+
+ ### CORS 是啥？
+
+ 假如你的網站需要引用來自別人的網站的圖片。(或者你的另個網址不同的網站。)
+
+ 如果你從你的網站HTML或後端發送Request去取他的圖片，對方伺服器沒有同意CORS，就會失敗。
+
+ 所以，CORS意味著可以跨網站，或者跨主機IP來請求資源或呼叫API。
+
+ ### CORS Header
+
+ 伺服器在回應請求時，會夾帶一個Header，代表已經同意該網站的HTTP請求了。
+
+ ```
+Access-Control-Allow-Origin: 允許的網站位址
+ ```
+
+### S3中的使用方式
+
+在S3中允許CORS，就可以讓別人的網頁來存取我們S3中的內容。
+
+甚至另外一個S3靜態網頁，來存取我們S3中的內容。
+
+
+
