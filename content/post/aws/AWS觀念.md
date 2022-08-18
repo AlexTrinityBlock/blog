@@ -1358,6 +1358,12 @@ S3 可以設置透過手機認證來保護物件，防止誤刪或者惡意刪�
 
 * 目前只能透過CLI設置。
 
+## S3 的預設加密
+
+如果在Plicy裡頭設置 "force encryption" 這樣在使用API PUT S3 物件時，如果沒有加上要求加密的Header，就會失敗。
+
+在Bucket設定加入"default encryption"來解決上傳時需要確認加密方式的問題，這樣會按照加密政策自動加密檔案。
+
 # IAM
 
 IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來定義某個用戶，是否有權限進行某些操作的權限設定。
