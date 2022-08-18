@@ -43,7 +43,7 @@
 <meta itemprop="name" content="AWS觀念">
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"><meta itemprop="datePublished" content="2022-08-18T09:00:00+08:00" />
 <meta itemprop="dateModified" content="2022-08-18T09:00:00+08:00" />
-<meta itemprop="wordCount" content="14414">
+<meta itemprop="wordCount" content="14535">
 <meta itemprop="keywords" content="AWS," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AWS觀念"/>
 <meta name="twitter:description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"/>
@@ -1843,6 +1843,18 @@ Bucket 這一層要決定裡頭的 Object 是否需要 Versioning (版本控制)
 <li>允許CORS。</li>
 </ul>
 <h2 id="s3-一致性模型consistency-model">S3 一致性模型(Consistency Model)</h2>
+<ul>
+<li>
+<p>Strong Consistency
+強一致性，當一個檔案在寫入完成時，所有的讀取暫停或者中止，直到最新版本的檔案上傳完成。再給讀取者使用最新版本的。
+這個好處意味著，任何時刻下載到的檔案版本都是最新的。</p>
+<ul>
+<li>這是免費服務。</li>
+<li>不會有太大效能衝擊，因為檔案上傳完成到S3更新，只有一瞬間。</li>
+</ul>
+</li>
+<li></li>
+</ul>
 <ul class="pa0">
   
    <li class="list">
