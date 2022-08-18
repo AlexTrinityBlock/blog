@@ -1280,4 +1280,30 @@ S3 提供數種加密種類，以 AES-256 為加密演算法。
 ## S3 安全設置
 
 * 使用者為基礎
-* 
+    * 可以到IAM設置允許某些使用者可以存取S3。
+* 資源為基礎(Resource base)
+    * Bucket Policies: S3 console 中選擇使否可以跨帳號存取。以Json格式定義，Allow/Deny為控制選項。
+    * Object Access Control List: 更加細緻的操作，可能是決定某個檔案是否可以被某些用戶存取。
+    * Bucket Access Control List: 以Bucket為單位。
+    * 建議關閉公共存取。
+    * 可以將整個S3放入VPC中。
+    * 可以將一個S3 bucket 存取的紀錄Log放入另外一個 S3 bucket。
+    * 對S3的API呼叫，可以放入AWS CloudTrail。
+    * 可以使用者設置刪除檔案時採取MFA(雙因子認證)。
+    * Pre-Signed URL: 可以短時間存取S3資源的URL。
+    * Policy用ARN(Amazon Resource Name， AWS 資源中獨一無二的名字)來定義要指定哪一個物件。
+
+ ## S3 網頁
+ 
+ S3 服務可以運作靜態網頁，將網頁傳上S3後即可。
+ 
+ 1. 上傳 index.html，與其他的圖片 JS ,CSS等。
+ 2. 上傳 error.html，該頁面會在網頁找不到時顯示。
+ 3. 在Policy中開啟權限，讓所有使用者都可以閱讀。
+ 
+ 網址為
+```
+ bucket名稱.s3-website-AWS區域.amazonaws.com
+ ```
+ 
+ 
