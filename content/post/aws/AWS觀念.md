@@ -1367,6 +1367,8 @@ IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來�
 
     * 指定某個服務或Bucket資料夾或者檔案的存取權限。
     * 建議用 Policy Genetator 生成。
+    * 可以用免費的 IAM Policy Simulator 來檢查Policy是否與預設的Role 衝突。
+
 
 
 
