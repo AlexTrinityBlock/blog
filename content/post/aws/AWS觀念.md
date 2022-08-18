@@ -1334,4 +1334,6 @@ Access-Control-Allow-Origin: 允許的網站位址
 * 記得在建立Bucket的時候設置Static Website enable。
 * 允許CORS。
 
+## S3 一致性模型(Consistency Model)
+
 
