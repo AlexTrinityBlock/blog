@@ -1343,6 +1343,21 @@ Access-Control-Allow-Origin: 允許的網站位址
     * 這是免費服務。
     * 不會有太大效能衝擊，因為檔案上傳完成到S3更新，只有一瞬間。
 
+## S3 MFA 刪除
+
+S3 可以設置透過手機認證來保護物件，防止誤刪或者惡意刪除。
+
+* 只有Root用戶可以設置。
+
+* 可以設置
+    * 刪除特定版本的S3物件。
+    * 凍結版本時。
+* 這些操作不需要MFA
+    * 啟動版本紀錄
+    * 監聽版本的刪除
+
+* 目前只能透過CLI設置。
+
 # IAM
 
 IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來定義某個用戶，是否有權限進行某些操作的權限設定。
@@ -1392,4 +1407,11 @@ curl  http://實體的VPC內網IP/lastest/meta-data/iam/security-credentials/Rol
     * Node.js
     * PHP
     * Python
-    
+    * Go
+    * Ruby
+    * C++
+
+* 當我們使用 DynamoDB 這類高度 AWS 自訂的資料庫時，必須使用 SDK 。
+
+* AWS CLI 也是用 AWS Python SDK 的 Boto3 寫成的。
+
