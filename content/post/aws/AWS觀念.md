@@ -1369,7 +1369,18 @@ IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來�
     * 建議用 Policy Genetator 生成。
     * 可以用免費的 IAM Policy Simulator 來檢查Policy是否與預設的Role 衝突。
 
+## EC2 實體如何知道自己所擁有的IAM Role ?
 
+由於有的帳戶操作功能可以由 AWS EC2 實體來完成，例如新增一個S3或新增另一個EC2, 存取S3中的物件等。
 
+所以有時候會賦予EC2一個自己的Role。
 
+* EC2實體知道自己的Role角色名稱，但是不知道細節的Policy。
+* 可以在AWS的內網，也就是CloudShell或者其他AWS CLI工具登入查看。
+
+查看方式
+
+```bash
+curl  http://實體的VPC內網IP/lastest/meta-data/iam/security-credentials/Role名稱
+```
 

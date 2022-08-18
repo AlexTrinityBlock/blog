@@ -43,7 +43,7 @@
 <meta itemprop="name" content="AWS觀念">
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"><meta itemprop="datePublished" content="2022-08-18T09:00:00+08:00" />
 <meta itemprop="dateModified" content="2022-08-18T09:00:00+08:00" />
-<meta itemprop="wordCount" content="14931">
+<meta itemprop="wordCount" content="15165">
 <meta itemprop="keywords" content="AWS," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AWS觀念"/>
 <meta name="twitter:description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"/>
@@ -1882,7 +1882,16 @@ IAM 中如果我要開啟某群人有管理S3儲存庫的權限，這時候我�
 </ul>
 </li>
 </ul>
-<ul class="pa0">
+<h2 id="ec2-實體如何知道自己所擁有的iam-role-">EC2 實體如何知道自己所擁有的IAM Role ?</h2>
+<p>由於有的帳戶操作功能可以由 AWS EC2 實體來完成，例如新增一個S3或新增另一個EC2, 存取S3中的物件等。</p>
+<p>所以有時候會賦予EC2一個自己的Role。</p>
+<ul>
+<li>EC2實體知道自己的Role角色名稱，但是不知道細節的Policy。</li>
+<li>可以在AWS的內網，也就是CloudShell或者其他AWS CLI工具登入查看。</li>
+</ul>
+<p>查看方式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl  http://實體的VPC內網IP/lastest/meta-data/iam/security-credentials/Role名稱
+</code></pre></div><ul class="pa0">
   
    <li class="list">
      <a href="/blog/public/tags/aws" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">AWS</a>
