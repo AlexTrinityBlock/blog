@@ -43,7 +43,7 @@
 <meta itemprop="name" content="AWS觀念">
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"><meta itemprop="datePublished" content="2022-08-18T09:00:00+08:00" />
 <meta itemprop="dateModified" content="2022-08-18T09:00:00+08:00" />
-<meta itemprop="wordCount" content="14347">
+<meta itemprop="wordCount" content="14395">
 <meta itemprop="keywords" content="AWS," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AWS觀念"/>
 <meta name="twitter:description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"/>
@@ -1820,6 +1820,7 @@ Bucket 這一層要決定裡頭的 Object 是否需要 Versioning (版本控制)
 <h2 id="s3-網頁">S3 網頁</h2>
 <p>S3 服務可以運作靜態網頁，將網頁傳上S3後即可。</p>
 <ol>
+<li>在Bucket中設置。</li>
 <li>上傳 index.html，與其他的圖片 JS ,CSS等。</li>
 <li>上傳 error.html，該頁面會在網頁找不到時顯示。</li>
 <li>在Policy中開啟權限，讓所有使用者都可以閱讀。</li>
@@ -1837,6 +1838,10 @@ Bucket 這一層要決定裡頭的 Object 是否需要 Versioning (版本控制)
 </code></pre><h3 id="s3中的使用方式">S3中的使用方式</h3>
 <p>在S3中允許CORS，就可以讓別人的網頁來存取我們S3中的內容。</p>
 <p>甚至另外一個S3靜態網頁，來存取我們S3中的內容。</p>
+<ul>
+<li>記得在建立Bucket的時候設置Static Website enable。</li>
+<li>允許CORS。</li>
+</ul>
 <ul class="pa0">
   
    <li class="list">

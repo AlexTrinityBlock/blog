@@ -1297,9 +1297,10 @@ S3 提供數種加密種類，以 AES-256 為加密演算法。
  
  S3 服務可以運作靜態網頁，將網頁傳上S3後即可。
  
- 1. 上傳 index.html，與其他的圖片 JS ,CSS等。
- 2. 上傳 error.html，該頁面會在網頁找不到時顯示。
- 3. 在Policy中開啟權限，讓所有使用者都可以閱讀。
+ 1. 在Bucket中設置。
+ 2. 上傳 index.html，與其他的圖片 JS ,CSS等。
+ 3. 上傳 error.html，該頁面會在網頁找不到時顯示。
+ 4. 在Policy中開啟權限，讓所有使用者都可以閱讀。
  
  網址為
 ```
@@ -1330,5 +1331,7 @@ Access-Control-Allow-Origin: 允許的網站位址
 
 甚至另外一個S3靜態網頁，來存取我們S3中的內容。
 
+* 記得在建立Bucket的時候設置Static Website enable。
+* 允許CORS。
 
 
