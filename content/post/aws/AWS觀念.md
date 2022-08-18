@@ -1384,3 +1384,6 @@ IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來�
 curl  http://實體的VPC內網IP/lastest/meta-data/iam/security-credentials/Role名稱
 ```
 
+# AWS SDK (AWS標準開發工具)
+
+* 可以用各種程式語言來購買與建構 AWS 服務的程式碼套件。 
