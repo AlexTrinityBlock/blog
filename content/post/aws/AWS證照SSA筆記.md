@@ -1,5 +1,5 @@
 ---
-title: "AWS觀念"
+title: "AWS證照SSA筆記"
 date: 2022-08-18T09:00:00+08:00
 draft: true
 featured_image: "/aws.jpeg"
