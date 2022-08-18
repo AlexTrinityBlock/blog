@@ -1386,4 +1386,10 @@ curl  http://實體的VPC內網IP/lastest/meta-data/iam/security-credentials/Rol
 
 # AWS SDK (AWS標準開發工具)
 
-* 可以用各種程式語言來購買與建構 AWS 服務的程式碼套件。 
+* 可以用各種程式語言來購買與建構 AWS 服務的程式碼套件。 支援語言有:
+    * java
+    * .NET
+    * Node.js
+    * PHP
+    * Python
+    
