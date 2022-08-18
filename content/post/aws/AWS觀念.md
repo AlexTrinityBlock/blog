@@ -1347,6 +1347,7 @@ Access-Control-Allow-Origin: 允許的網站位址
 
 IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來定義某個用戶，是否有權限進行某些操作的權限設定。
 
-* Roles
-    IAM 中
+* Roles(角色)
+    IAM 中如果我要開啟某群人有管理S3儲存庫的權限，這時候我可以創造一個Role，稱為"S3 管理員"，然後將這個Role賦予給需要管理S3的人們。
+
 
