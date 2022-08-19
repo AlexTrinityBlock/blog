@@ -1521,6 +1521,16 @@ Amazon Event Bridge的功能有:
 * Advance filtering options: JSON 格式限制某些特定事件傳達。如限定某些metadata, name, 檔案大小。
 * 可用事件觸發多種服務
 
+## S3 - Requester Pays
+
+一般而言網路傳輸的費用是由 S3 的持有者來支付。
+
+Requester Pays 的傳輸費用則是由下載你的檔案的 AWS 用戶支付。
+
+# Amazon Athena
+
+
+
 # IAM
 
 IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來定義某個用戶，是否有權限進行某些操作的權限設定。
