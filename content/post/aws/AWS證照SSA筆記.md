@@ -1479,7 +1479,17 @@ S3 傳輸加速器，可以付費透過 AWS 私有網路專線加速 S3 檔案�
 小明, 30
 ```
 
+我們可以用 S3 Select，並且使用SQL語法查詢檔案內容，但是僅限以下的檔案格式:
 
+* CSV
+* JSON
+* Apache Parquet
+*  GZIP 或 BZIP2 壓縮的JSON與CSV檔案
+
+操作時使用:
+
+* AWS CLS
+* QWS API
 
 # IAM
 

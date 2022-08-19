@@ -43,7 +43,7 @@
 <meta itemprop="name" content="AWS證照SSA筆記">
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"><meta itemprop="datePublished" content="2022-08-18T09:00:00+08:00" />
 <meta itemprop="dateModified" content="2022-08-18T09:00:00+08:00" />
-<meta itemprop="wordCount" content="17040">
+<meta itemprop="wordCount" content="17111">
 <meta itemprop="keywords" content="AWS," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AWS證照SSA筆記"/>
 <meta name="twitter:description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"/>
@@ -2001,7 +2001,19 @@ Bucket 這一層要決定裡頭的 Object 是否需要 Versioning (版本控制)
 <p><em><strong>某個檔案.csv</strong></em></p>
 <pre tabindex="0"><code class="language-csv" data-lang="csv">姓名, 年齡
 小明, 30
-</code></pre><h1 id="iam-1">IAM</h1>
+</code></pre><p>我們可以用 S3 Select，並且使用SQL語法查詢檔案內容，但是僅限以下的檔案格式:</p>
+<ul>
+<li>CSV</li>
+<li>JSON</li>
+<li>Apache Parquet</li>
+<li>GZIP 或 BZIP2 壓縮的JSON與CSV檔案</li>
+</ul>
+<p>操作時使用:</p>
+<ul>
+<li>AWS CLS</li>
+<li>QWS API</li>
+</ul>
+<h1 id="iam-1">IAM</h1>
 <p>IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來定義某個用戶，是否有權限進行某些操作的權限設定。</p>
 <ul>
 <li>
