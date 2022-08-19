@@ -1551,7 +1551,27 @@ Requester Pays 的傳輸費用則是由下載你的檔案的 AWS 用戶支付。
 
     可以將各種服務的事件儲存，ELB的Log, CloudTrail, ELB Log, VPC 流量。
 
+## S3 Glacier Vault Lock
 
+如果今天要有一間公司來保證你儲存的資料沒有被更改，那AWS是一個選項。
+
+該服務可以確保存入Glacier的檔案不可能被更改。
+
+屬於WORM(write one read more)儲存一次，讀取多次的模型。
+
+## S3 Object Lock
+
+鎖定S3檔案不會被更改
+
+屬於WORM(write one read more)儲存一次，讀取多次的模型。
+
+* Object Retention 物件的保留
+    * Retention Period: 指定物件保留時間。
+    * Legal Hold: 同樣保留物件不會被更改，但是沒有所謂無法更改的逾期時間，也就是永遠無法被更改。
+* Model 模式
+    * Govermance Mode: 不可覆蓋或刪除資料，正常情況下也無法修改該設定，確保合約等關鍵資料不會被變更。
+    * Compliance Mode: 不可以被覆蓋與刪除，不可變更的狀態不可以調整，甚至連 AWS Root 帳號都不行。不可變更的時間無法提前結束。
+ 
 
 # IAM
 

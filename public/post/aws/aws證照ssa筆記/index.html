@@ -43,7 +43,7 @@
 <meta itemprop="name" content="AWS證照SSA筆記">
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"><meta itemprop="datePublished" content="2022-08-18T09:00:00+08:00" />
 <meta itemprop="dateModified" content="2022-08-18T09:00:00+08:00" />
-<meta itemprop="wordCount" content="17448">
+<meta itemprop="wordCount" content="17744">
 <meta itemprop="keywords" content="AWS," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AWS證照SSA筆記"/>
 <meta name="twitter:description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"/>
@@ -2065,6 +2065,27 @@ Bucket 這一層要決定裡頭的 Object 是否需要 Versioning (版本控制)
 <p>使用時機:</p>
 <pre><code>可以將各種服務的事件儲存，ELB的Log, CloudTrail, ELB Log, VPC 流量。
 </code></pre>
+<h2 id="s3-glacier-vault-lock">S3 Glacier Vault Lock</h2>
+<p>如果今天要有一間公司來保證你儲存的資料沒有被更改，那AWS是一個選項。</p>
+<p>該服務可以確保存入Glacier的檔案不可能被更改。</p>
+<p>屬於WORM(write one read more)儲存一次，讀取多次的模型。</p>
+<h2 id="s3-object-lock">S3 Object Lock</h2>
+<p>鎖定S3檔案不會被更改</p>
+<p>屬於WORM(write one read more)儲存一次，讀取多次的模型。</p>
+<ul>
+<li>Object Retention 物件的保留
+<ul>
+<li>Retention Period: 指定物件保留時間。</li>
+<li>Legal Hold: 同樣保留物件不會被更改，但是沒有所謂無法更改的逾期時間，也就是永遠無法被更改。</li>
+</ul>
+</li>
+<li>Model 模式
+<ul>
+<li>Govermance Mode: 不可覆蓋或刪除資料，正常情況下也無法修改該設定，確保合約等關鍵資料不會被變更。</li>
+<li>Compliance Mode: 不可以被覆蓋與刪除，不可變更的狀態不可以調整，甚至連 AWS Root 帳號都不行。不可變更的時間無法提前結束。</li>
+</ul>
+</li>
+</ul>
 <h1 id="iam-1">IAM</h1>
 <p>IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來定義某個用戶，是否有權限進行某些操作的權限設定。</p>
 <ul>
