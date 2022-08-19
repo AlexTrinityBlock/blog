@@ -43,7 +43,7 @@
 <meta itemprop="name" content="AWS證照SSA筆記">
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"><meta itemprop="datePublished" content="2022-08-18T09:00:00+08:00" />
 <meta itemprop="dateModified" content="2022-08-18T09:00:00+08:00" />
-<meta itemprop="wordCount" content="16921">
+<meta itemprop="wordCount" content="17040">
 <meta itemprop="keywords" content="AWS," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AWS證照SSA筆記"/>
 <meta name="twitter:description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"/>
@@ -1983,14 +1983,25 @@ Bucket 這一層要決定裡頭的 Object 是否需要 Versioning (版本控制)
 <p>S3 傳輸加速器，可以付費透過 AWS 私有網路專線加速 S3 檔案傳輸。</p>
 <h2 id="s3-bytes-range-fetchs">S3 Bytes-Range-Fetchs</h2>
 <p>平行的指定檔案的某一部份進行下載。</p>
-<blockquote>
-<p>例如:
-我們的檔案有3個Bytes。
-我們可以開啟三個連線，
-分別下載第1, 2, 3 個 bytes。
-這樣可以達到更快的速度。</p>
-</blockquote>
-<h1 id="iam-1">IAM</h1>
+<p>例如:</p>
+<p>我們的檔案有3個Bytes。</p>
+<p>我們可以開啟三個連線，</p>
+<p>分別下載第1, 2, 3 個 bytes。</p>
+<p>這樣可以達到更快的速度。</p>
+<h2 id="s3-select">S3 Select</h2>
+<p>如果我們要查詢S3某個檔案的內容時，一定要把檔案整個下載來嗎？</p>
+<p>如果我們要找尋的檔案內容如下:</p>
+<p><em><strong>某個檔案.json</strong></em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">
+{
+    <span style="color:#f92672">&#34;姓名&#34;</span>:<span style="color:#e6db74">&#34;小明&#34;</span>,
+    <span style="color:#f92672">&#34;年齡&#34;</span>:<span style="color:#ae81ff">30</span>
+}
+</code></pre></div><p>或者</p>
+<p><em><strong>某個檔案.csv</strong></em></p>
+<pre tabindex="0"><code class="language-csv" data-lang="csv">姓名, 年齡
+小明, 30
+</code></pre><h1 id="iam-1">IAM</h1>
 <p>IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來定義某個用戶，是否有權限進行某些操作的權限設定。</p>
 <ul>
 <li>
