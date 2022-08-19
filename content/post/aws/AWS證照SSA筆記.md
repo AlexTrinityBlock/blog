@@ -1491,6 +1491,10 @@ S3 傳輸加速器，可以付費透過 AWS 私有網路專線加速 S3 檔案�
 * AWS CLS
 * QWS API
 
+優點:
+
+* 有效減少網路傳輸費用
+
 # IAM
 
 IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來定義某個用戶，是否有權限進行某些操作的權限設定。
