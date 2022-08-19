@@ -1529,6 +1529,28 @@ Requester Pays 的傳輸費用則是由下載你的檔案的 AWS 用戶支付。
 
 # Amazon Athena
 
+可以分析 S3 中的:
+
+* CSV
+* JSON
+* ORC
+* Avro
+* Parquet
+
+費用:
+
+* 每　TB　$5 美金
+
+特點:
+
+* SQL語法
+* Serverless服務
+* 分析完畢後傳遞到 Amazon Quick Sight 進行可視化的儀表板展示。
+
+使用時機:
+
+    可以將各種服務的事件儲存，ELB的Log, CloudTrail, ELB Log, VPC 流量。
+
 
 
 # IAM
