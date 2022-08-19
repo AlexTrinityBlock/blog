@@ -43,7 +43,7 @@
 <meta itemprop="name" content="AWS證照SSA筆記">
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"><meta itemprop="datePublished" content="2022-08-18T09:00:00+08:00" />
 <meta itemprop="dateModified" content="2022-08-18T09:00:00+08:00" />
-<meta itemprop="wordCount" content="16747">
+<meta itemprop="wordCount" content="16921">
 <meta itemprop="keywords" content="AWS," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AWS證照SSA筆記"/>
 <meta name="twitter:description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"/>
@@ -1969,6 +1969,27 @@ Bucket 這一層要決定裡頭的 Object 是否需要 Versioning (版本控制)
 <p>要跟 Lifecycle一起設置，並且根據回報決定要設置如何的 Lifecycle。</p>
 </li>
 </ul>
+<h2 id="s3-multipart-upload">S3 Multipart Upload</h2>
+<p>將檔案切成幾小份<strong>平行</strong>上傳，也就是說當本地網速不是瓶頸時，甚至可以比較快。</p>
+<ul>
+<li>
+<p>當檔案大於 100 MB 建議用此方法。</p>
+</li>
+<li>
+<p>當檔案大於 5 GB 一定要用此方法。</p>
+</li>
+</ul>
+<h2 id="s3-transfer-acceleration">S3 Transfer Acceleration</h2>
+<p>S3 傳輸加速器，可以付費透過 AWS 私有網路專線加速 S3 檔案傳輸。</p>
+<h2 id="s3-bytes-range-fetchs">S3 Bytes-Range-Fetchs</h2>
+<p>平行的指定檔案的某一部份進行下載。</p>
+<blockquote>
+<p>例如:
+我們的檔案有3個Bytes。
+我們可以開啟三個連線，
+分別下載第1, 2, 3 個 bytes。
+這樣可以達到更快的速度。</p>
+</blockquote>
 <h1 id="iam-1">IAM</h1>
 <p>IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來定義某個用戶，是否有權限進行某些操作的權限設定。</p>
 <ul>
