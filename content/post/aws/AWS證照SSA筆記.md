@@ -1516,7 +1516,10 @@ S3 傳輸加速器，可以付費透過 AWS 私有網路專線加速 S3 檔案�
 例如:
     當用戶頭像上傳時，可以觸發S3事件，立刻生成頭像縮圖。
 
+Amazon Event Bridge的功能有:
 
+* Advance filtering options: JSON 格式限制某些特定事件傳達。如限定某些metadata, name, 檔案大小。
+* 可用事件觸發多種服務
 
 # IAM
 
