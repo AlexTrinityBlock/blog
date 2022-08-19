@@ -43,7 +43,7 @@
 <meta itemprop="name" content="AWS證照SSA筆記">
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"><meta itemprop="datePublished" content="2022-08-18T09:00:00+08:00" />
 <meta itemprop="dateModified" content="2022-08-18T09:00:00+08:00" />
-<meta itemprop="wordCount" content="17124">
+<meta itemprop="wordCount" content="17240">
 <meta itemprop="keywords" content="AWS," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AWS證照SSA筆記"/>
 <meta name="twitter:description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"/>
@@ -2017,6 +2017,24 @@ Bucket 這一層要決定裡頭的 Object 是否需要 Versioning (版本控制)
 <ul>
 <li>有效減少網路傳輸費用</li>
 </ul>
+<h2 id="s3-event-notification">S3 Event Notification</h2>
+<p>當發生以下事件時驅動某個動作:</p>
+<ul>
+<li>新增S3檔案</li>
+<li>刪除S3檔案</li>
+<li>修改S3檔案</li>
+<li>查詢S3檔案</li>
+</ul>
+<p>可以觸發的事件有:</p>
+<ul>
+<li>SNS</li>
+<li>Lamdba</li>
+<li>SQS</li>
+<li>更多服務&hellip;</li>
+</ul>
+<p>要透過 *** Amazon Event Bridge *** 來將事件轉送到各種服務。</p>
+<p>例如:
+當用戶頭像上傳時，可以觸發S3事件，立刻生成頭像縮圖。</p>
 <h1 id="iam-1">IAM</h1>
 <p>IAM (Identity and Access Management，識別與存取管理) 是 AWS 中用來定義某個用戶，是否有權限進行某些操作的權限設定。</p>
 <ul>
