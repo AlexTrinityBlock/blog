@@ -1725,3 +1725,35 @@ HTTPS 協定為基礎額外的加密保護。
 加設要傳遞信用卡密碼，當POST資料傳遞到EC2伺服器之前，都無法解開，而唯一的私鑰被放在EC2主機，也就是需要接收資料的伺服器。
 
 就算網路傳輸的中間過程被破解了，破解者也沒有最終伺服器所擁有的私鑰。
+
+# AWS Global Accelerator
+
+使用AWS私有網路線路，來加速AWS服務在網路的傳遞。
+
+## 論Unicast IP 與 Anycast IP
+
+* Unicast IP: 常見情況，一個伺服器有一個IP。
+* Anycast IP: 多個網路上的伺服器有同一個IP。
+
+Anycast IP 可以讓使用者自動選擇距離更近的Global Accelerator節點連上。
+
+## AWS Global Accelerator的特色
+
+* AWS 私有網路
+* 全球性的加速應用程式連線速度
+* Heath Check 檢查健康程度，並且可以接受一個EC2失效時導向另一個EC2。
+* 提供兩個外部IP，可以加入白名單來增加安全性。
+* 自帶 AWS Sheild 的 DDos 保護。
+
+# AWS Global Accelerator 與 CloudFront 的比較
+
+* CloudFront
+    * 加速可以快取的內容。
+    * 動態網頁內容。
+    * 主要用在HTTP協定。
+* Global Accelerator
+    * 可以加速所有的TCP, UDP用途較CloudFront廣泛。
+    * 通過最接近的本地 AWS 專線。
+    * 遊戲與聲音的UDP與IoT物連網的MQTT也可以通行。
+    * 也是適合使用靜態IP的HTTP服務。
+    * 快速的Heath Check 與網路和伺服器的故障轉移。

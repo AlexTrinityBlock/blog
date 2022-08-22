@@ -43,7 +43,7 @@
 <meta itemprop="name" content="AWS證照SSA筆記">
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"><meta itemprop="datePublished" content="2022-08-18T09:00:00+08:00" />
 <meta itemprop="dateModified" content="2022-08-18T09:00:00+08:00" />
-<meta itemprop="wordCount" content="18678">
+<meta itemprop="wordCount" content="19042">
 <meta itemprop="keywords" content="AWS," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AWS證照SSA筆記"/>
 <meta name="twitter:description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"/>
@@ -2220,6 +2220,41 @@ IAM 中如果我要開啟某群人有管理S3儲存庫的權限，這時候我�
 <p>HTTPS 協定為基礎額外的加密保護。</p>
 <p>加設要傳遞信用卡密碼，當POST資料傳遞到EC2伺服器之前，都無法解開，而唯一的私鑰被放在EC2主機，也就是需要接收資料的伺服器。</p>
 <p>就算網路傳輸的中間過程被破解了，破解者也沒有最終伺服器所擁有的私鑰。</p>
+<h1 id="aws-global-accelerator">AWS Global Accelerator</h1>
+<p>使用AWS私有網路線路，來加速AWS服務在網路的傳遞。</p>
+<h2 id="論unicast-ip-與-anycast-ip">論Unicast IP 與 Anycast IP</h2>
+<ul>
+<li>Unicast IP: 常見情況，一個伺服器有一個IP。</li>
+<li>Anycast IP: 多個網路上的伺服器有同一個IP。</li>
+</ul>
+<p>Anycast IP 可以讓使用者自動選擇距離更近的Global Accelerator節點連上。</p>
+<h2 id="aws-global-accelerator的特色">AWS Global Accelerator的特色</h2>
+<ul>
+<li>AWS 私有網路</li>
+<li>全球性的加速應用程式連線速度</li>
+<li>Heath Check 檢查健康程度，並且可以接受一個EC2失效時導向另一個EC2。</li>
+<li>提供兩個外部IP，可以加入白名單來增加安全性。</li>
+<li>自帶 AWS Sheild 的 DDos 保護。</li>
+</ul>
+<h1 id="aws-global-accelerator-與-cloudfront-的比較">AWS Global Accelerator 與 CloudFront 的比較</h1>
+<ul>
+<li>CloudFront
+<ul>
+<li>加速可以快取的內容。</li>
+<li>動態網頁內容。</li>
+<li>主要用在HTTP協定。</li>
+</ul>
+</li>
+<li>Global Accelerator
+<ul>
+<li>可以加速所有的TCP, UDP用途較CloudFront廣泛。</li>
+<li>通過最接近的本地 AWS 專線。</li>
+<li>遊戲與聲音的UDP與IoT物連網的MQTT也可以通行。</li>
+<li>也是適合使用靜態IP的HTTP服務。</li>
+<li>快速的Heath Check 與網路和伺服器的故障轉移。</li>
+</ul>
+</li>
+</ul>
 <ul class="pa0">
   
    <li class="list">
