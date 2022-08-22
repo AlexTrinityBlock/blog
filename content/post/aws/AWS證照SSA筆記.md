@@ -1757,3 +1757,85 @@ Anycast IP 可以讓使用者自動選擇距離更近的Global Accelerator節點
     * 遊戲與聲音的UDP與IoT物連網的MQTT也可以通行。
     * 也是適合使用靜態IP的HTTP服務。
     * 快速的Heath Check 與網路和伺服器的故障轉移。
+
+# AWS Snow Family 概觀
+
+可以租回家的AWS電腦。
+
+* Data migration 資料遷移
+    * Snowcone
+    * Snowball Edge
+    * Snowmobile
+* Edge Computing 邊緣運算
+    * Snowcone
+    * Snowball Edge
+
+## Snowcone
+
+一台可以儲存與運算的小型主機，支付每次寄回去的費用。
+
+* 輕量化。
+* 8 TB。
+* 自己提供電線與電池。
+* DataSync agent: 連網路後可以資料自動同步的程式，已經預裝好了。
+
+## Snowball Edge
+
+一台可以儲存與運算的中型主機，支付每次寄回去的費用。
+
+* Snowball Edge Storage Optimized
+    * 80 TB HDD 容量，S3 儲存區塊。
+* Snowball Edge Compute Optimized
+    * 42 TB HDD 容量，S3 儲存區塊。
+
+* 最多可以到15個儲存節點。
+
+## AWS Snowmobile
+
+* 1 EB = 1000 PB = 1000000TBs
+* 每個 Snowmobile 有 100 PB 的容量。
+* 溫度控制, GPS, 24/7 影像監控。
+* 傳輸超過 10 PB 的資料建議使用。
+* 可以加到EB
+
+## Snow Family 資料的傳遞流程
+
+1. 上AWS租借 Snowball
+2. 安裝 Snowball Client/ AWS OpsHub 到你的伺服器。
+3. Snowball 連接到你的伺服器，然後將檔案從伺服器複製到 Snowball 。
+4. 寄 Snowball 回 AWS。
+5. 資料會被 AWS 上傳 S3 。
+6. Snowball 會被徹底清空。
+
+## Snow Family - Edge Computing
+
+以下皆可運作 EC2 實體與 AWS Lambda function，使用 AWS IoT Greengrass。
+
+* 租用1年或者3年都有降價方案。
+
+實體類別:
+
+* Snowcone
+    * 2CPUs
+    * 4GB RAM
+    * 可以有線與無線連線
+    * USB-C 電源線 或者 可以選的電池
+* Snowball Edge Storage Optimized
+    * 40 CPUs
+    * 80 GB RAM
+    * 80 TB HDD 容量，S3 儲存區塊。
+* Snowball Edge Compute Optimized
+    * 52 CPUs
+    * 208GB RAM
+    * 可以選的 GPU
+    * 42 TB HDD 容量，S3 儲存區塊。
+
+## AWS OpsHub
+
+一個可以裝在自己電腦或筆電上的，可以操作 Snow Family 的 GUI 圖形程式。
+
+* 解鎖或者配置單一或者 Snow Family 叢集。
+* 傳輸檔案。
+* 管理 Snow Family 。
+* 監控各項指標。
+* 在 Snow Family 上運作 EC2, AWS DataSync, NFS 等。

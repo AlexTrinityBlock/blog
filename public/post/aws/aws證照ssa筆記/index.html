@@ -43,7 +43,7 @@
 <meta itemprop="name" content="AWS證照SSA筆記">
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"><meta itemprop="datePublished" content="2022-08-18T09:00:00+08:00" />
 <meta itemprop="dateModified" content="2022-08-18T09:00:00+08:00" />
-<meta itemprop="wordCount" content="19042">
+<meta itemprop="wordCount" content="19560">
 <meta itemprop="keywords" content="AWS," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AWS證照SSA筆記"/>
 <meta name="twitter:description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"/>
@@ -2254,6 +2254,107 @@ IAM 中如果我要開啟某群人有管理S3儲存庫的權限，這時候我�
 <li>快速的Heath Check 與網路和伺服器的故障轉移。</li>
 </ul>
 </li>
+</ul>
+<h1 id="aws-snow-family-概觀">AWS Snow Family 概觀</h1>
+<p>可以租回家的AWS電腦。</p>
+<ul>
+<li>Data migration 資料遷移
+<ul>
+<li>Snowcone</li>
+<li>Snowball Edge</li>
+<li>Snowmobile</li>
+</ul>
+</li>
+<li>Edge Computing 邊緣運算
+<ul>
+<li>Snowcone</li>
+<li>Snowball Edge</li>
+</ul>
+</li>
+</ul>
+<h2 id="snowcone">Snowcone</h2>
+<p>一台可以儲存與運算的小型主機，支付每次寄回去的費用。</p>
+<ul>
+<li>輕量化。</li>
+<li>8 TB。</li>
+<li>自己提供電線與電池。</li>
+<li>DataSync agent: 連網路後可以資料自動同步的程式，已經預裝好了。</li>
+</ul>
+<h2 id="snowball-edge">Snowball Edge</h2>
+<p>一台可以儲存與運算的中型主機，支付每次寄回去的費用。</p>
+<ul>
+<li>
+<p>Snowball Edge Storage Optimized</p>
+<ul>
+<li>80 TB HDD 容量，S3 儲存區塊。</li>
+</ul>
+</li>
+<li>
+<p>Snowball Edge Compute Optimized</p>
+<ul>
+<li>42 TB HDD 容量，S3 儲存區塊。</li>
+</ul>
+</li>
+<li>
+<p>最多可以到15個儲存節點。</p>
+</li>
+</ul>
+<h2 id="aws-snowmobile">AWS Snowmobile</h2>
+<ul>
+<li>1 EB = 1000 PB = 1000000TBs</li>
+<li>每個 Snowmobile 有 100 PB 的容量。</li>
+<li>溫度控制, GPS, 24/7 影像監控。</li>
+<li>傳輸超過 10 PB 的資料建議使用。</li>
+<li>可以加到EB</li>
+</ul>
+<h2 id="snow-family-資料的傳遞流程">Snow Family 資料的傳遞流程</h2>
+<ol>
+<li>上AWS租借 Snowball</li>
+<li>安裝 Snowball Client/ AWS OpsHub 到你的伺服器。</li>
+<li>Snowball 連接到你的伺服器，然後將檔案從伺服器複製到 Snowball 。</li>
+<li>寄 Snowball 回 AWS。</li>
+<li>資料會被 AWS 上傳 S3 。</li>
+<li>Snowball 會被徹底清空。</li>
+</ol>
+<h2 id="snow-family---edge-computing">Snow Family - Edge Computing</h2>
+<p>以下皆可運作 EC2 實體與 AWS Lambda function，使用 AWS IoT Greengrass。</p>
+<ul>
+<li>租用1年或者3年都有降價方案。</li>
+</ul>
+<p>實體類別:</p>
+<ul>
+<li>Snowcone
+<ul>
+<li>2CPUs</li>
+<li>4GB RAM</li>
+<li>可以有線與無線連線</li>
+<li>USB-C 電源線 或者 可以選的電池</li>
+</ul>
+</li>
+<li>Snowball Edge Storage Optimized
+<ul>
+<li>40 CPUs</li>
+<li>80 GB RAM</li>
+<li>80 TB HDD 容量，S3 儲存區塊。</li>
+</ul>
+</li>
+<li>Snowball Edge Compute Optimized
+<ul>
+<li>52 CPUs</li>
+<li>208GB RAM</li>
+<li>可以選的 GPU</li>
+<li>42 TB HDD 容量，S3 儲存區塊。</li>
+</ul>
+</li>
+</ul>
+<h2 id="aws-opshub">AWS OpsHub</h2>
+<p>一個可以裝在自己電腦或筆電上的，可以操作 Snow Family 的 GUI 圖形程式。</p>
+<ul>
+<li>解鎖或者配置單一或者 Snow Family 叢集。</li>
+<li>傳輸檔案。</li>
+<li>管理 Snow Family 。</li>
+<li>監控各項指標。</li>
+<li>在 Snow Family 上運作 EC2, AWS DataSync, NFS 等。</li>
 </ul>
 <ul class="pa0">
   
