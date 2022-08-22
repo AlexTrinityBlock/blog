@@ -1630,3 +1630,98 @@ curl  http://實體的VPC內網IP/lastest/meta-data/iam/security-credentials/Rol
 
 * AWS CLI 也是用 AWS Python SDK 的 Boto3 寫成的。
 
+# Cloud Front
+
+一種稱為CDN (Content Deliver Network) 的快取服務，可以在鄰近用戶的地方，把網頁之前傳輸過的東西保留一份有存在時效的備份。如果該地區有其他使用者，則可以快速的取得檔案，不用大老遠的跑到伺服器要檔案。
+
+* 適合靜態網頁
+
+* 用於 AWS EC2 動態網頁也不是不行，但是功能會比較像是橋接 VPC 私有網路中的 EC2 與公共網路的橋樑。
+
+* 全球有 216 個左右的節點。
+
+* 自帶 AWS WAF 與 AWS shield 可以預防 DDos 與其他攻擊。
+
+* 可以讓內網 VPC 服務與外網溝通。
+
+## Cloud Front 與 S3 bucket
+
+* 可以將內容快取在離用戶較近的位置
+* 可以用 OAI (Origin Access Identity) 提供 Cloud Front 額外的安全。用戶無法直接使用 S3 網址存取物件，只能透過 Cloud Front。
+* 可以作為一個存取S3 bucket 的入口。
+
+
+## Cloud Front 可配合的 HTTP 服務:
+
+* ALB
+* EC2
+* S3 Website
+* 任何 HTTP 後端
+
+## CloudFront Signed URL/Cookie
+
+當你有個希望特定的用戶才能進行下載的S3檔案連結時，這個服務可以派上用場。
+
+CloudFront可以建立特定的URL與Cookie允許存取躲在CDN後頭的S3資源。
+
+### CloudFront Signed URL/Cookie 可以使用的 Policy
+
+* 添加URL連接逾期時間。
+* 允許特定的IP範圍，才能存取此檔案。
+* Trusted Signer(可指定特定的AWS帳號)。
+
+### CloudFront Signed URL/Cookie可存取範圍的差異
+
+* Signed URL
+    分別存取單一的檔案，例如：單一的電影檔案，或者一個音樂mp3檔案。
+* Signed Cookie
+    有這個Cookie時，一次可以存取多個檔案。
+    
+## CloudFront 價格
+
+CloudFront 的 Edge location 分散於全世界，分於散播資源。
+
+不同的資料流出不同地區的Edge location需要支付價格不同的網路費。
+
+### Price Class 不同的價格等級
+
+1. Price Class All:
+    所有區域的CDN都能使用，擁有最佳效能。
+3. Price Class 200:
+    除了最貴的區域外，其他區域都有。
+5. Price Class 100:
+    只有最便宜的一些區域。
+    
+## CloudFront - Multiple Origin
+
+可以將從一個CDN網域，導向不同的內容。
+
+例如:
+
+```
+CloudFront網址/api
+```
+
+導向某個ALB與EC2的組合。
+
+```
+CloudFront網址/file
+```
+
+導向某個S3 bucket。
+
+同一個網址，不同的路徑，但是可以導向不同的 AWS 服務。
+
+## CloudFront Origin Group
+
+可以將一個CloudFront網址導向一個主要的EC2 or S3，和一個次要的EC2 or S3資源。
+
+當主要的EC2 or S3資源失效時，就可以自動切換到次要資源。
+
+## CloudFront Field-Level Encryption
+
+HTTPS 協定為基礎額外的加密保護。
+
+加設要傳遞信用卡密碼，當POST資料傳遞到EC2伺服器之前，都無法解開，而唯一的私鑰被放在EC2主機，也就是需要接收資料的伺服器。
+
+就算網路傳輸的中間過程被破解了，破解者也沒有最終伺服器所擁有的私鑰。
