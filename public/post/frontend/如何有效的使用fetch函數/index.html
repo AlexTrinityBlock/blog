@@ -43,7 +43,7 @@
 <meta itemprop="name" content="如何有效的使用Fetch函數">
 <meta itemprop="description" content="由於當前Fetch這種官方的前端AJAX函數，已經可以簡短的實現，再不換頁的情況下傳送訊息。所以可能的話盡量使用原生的Fetch函數來實現A"><meta itemprop="datePublished" content="2022-08-26T00:00:00+08:00" />
 <meta itemprop="dateModified" content="2022-08-26T00:00:00+08:00" />
-<meta itemprop="wordCount" content="302">
+<meta itemprop="wordCount" content="454">
 <meta itemprop="keywords" content="frontend," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="如何有效的使用Fetch函數"/>
 <meta name="twitter:description" content="由於當前Fetch這種官方的前端AJAX函數，已經可以簡短的實現，再不換頁的情況下傳送訊息。所以可能的話盡量使用原生的Fetch函數來實現A"/>
@@ -244,6 +244,28 @@
 </span><span style="color:#75715e"></span>    <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
         <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;王小明&#34;</span>
     })
+}).<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">response</span>) =&gt; {
+    <span style="color:#75715e">// 將收到的回應轉換成JSON物件
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>();
+}).<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">jsonObj</span>) =&gt; {
+    <span style="color:#75715e">// 印出結果的JSON物件
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">jsonObj</span>);
+});
+</code></pre></div><h2 id="fetch-get-請求範例">Fetch Get 請求範例</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Fetch Get 函數
+</span><span style="color:#75715e">// 不過由於 Get 參數要加在URL裏頭，所以要加問候並且使用URLSearchParams()來轉換。
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;http://localhost:8081/api/get?&#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URLSearchParams</span>({
+    <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;value&#39;</span>,
+}),
+{
+    <span style="color:#75715e">// Get方法
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;get&#34;</span>,
+    <span style="color:#75715e">// Header 一定要加入，否則在Laravel一類的框架可能會接收不到
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
+        <span style="color:#e6db74">&#34;Content-Type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>,
+        <span style="color:#e6db74">&#34;Accept&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>,
+        <span style="color:#e6db74">&#34;X-Requested-With&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;XMLHttpRequest&#34;</span>,
+    }
 }).<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">response</span>) =&gt; {
     <span style="color:#75715e">// 將收到的回應轉換成JSON物件
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>();

@@ -35,3 +35,29 @@ fetch("帶http或https的網址", {
     console.log(jsonObj);
 });
 ```
+
+## Fetch Get 請求範例
+
+```javascript
+// Fetch Get 函數
+// 不過由於 Get 參數要加在URL裏頭，所以要加問候並且使用URLSearchParams()來轉換。
+fetch("http://localhost:8081/api/get?" + new URLSearchParams({
+    foo: 'value',
+}),
+{
+    // Get方法
+    method: "get",
+    // Header 一定要加入，否則在Laravel一類的框架可能會接收不到
+    headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+    }
+}).then((response) => {
+    // 將收到的回應轉換成JSON物件
+    return response.json();
+}).then((jsonObj) => {
+    // 印出結果的JSON物件
+    console.log(jsonObj);
+});
+```
