@@ -6,7 +6,16 @@
     <description>Recent content in Tags on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Thu, 18 Aug 2022 09:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Aug 2022 00:00:00 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>frontend</title>
+      <link>https://alextrinityblock.github.io/blog/public/tags/frontend/</link>
+      <pubDate>Fri, 26 Aug 2022 00:00:00 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/tags/frontend/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Node.js</title>
       <link>https://alextrinityblock.github.io/blog/public/tags/node.js/</link>
@@ -58,15 +67,6 @@
       <pubDate>Tue, 05 Jul 2022 09:00:36 +0800</pubDate>
       
       <guid>https://alextrinityblock.github.io/blog/public/tags/ssh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>frontend</title>
-      <link>https://alextrinityblock.github.io/blog/public/tags/frontend/</link>
-      <pubDate>Thu, 02 Jun 2022 12:00:00 +0800</pubDate>
-      
-      <guid>https://alextrinityblock.github.io/blog/public/tags/frontend/</guid>
       <description></description>
     </item>
     

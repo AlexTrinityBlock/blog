@@ -8,6 +8,15 @@
     <language>zh-hant</language>
     <lastBuildDate>Fri, 26 Feb 2021 17:04:06 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>如何有效的使用Fetch函數</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/frontend/%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E7%9A%84%E4%BD%BF%E7%94%A8fetch%E5%87%BD%E6%95%B8/</link>
+      <pubDate>Fri, 26 Aug 2022 00:00:00 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/frontend/%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E7%9A%84%E4%BD%BF%E7%94%A8fetch%E5%87%BD%E6%95%B8/</guid>
+      <description>由於當前Fetch這種官方的前端AJAX函數，已經可以簡短的實現，再不換頁的情況下傳送訊息。所以可能的話盡量使用原生的Fetch函數來實現A</description>
+    </item>
+    
+    <item>
       <title>EJS-一個Javascript模板引擎</title>
       <link>https://alextrinityblock.github.io/blog/public/post/node.js/ejs-%E4%B8%80%E5%80%8Bjavascript%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</link>
       <pubDate>Thu, 18 Aug 2022 09:00:44 +0800</pubDate>

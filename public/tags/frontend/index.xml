@@ -6,7 +6,16 @@
     <description>Recent content in frontend on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Thu, 02 Jun 2022 12:00:00 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Aug 2022 00:00:00 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何有效的使用Fetch函數</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/frontend/%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E7%9A%84%E4%BD%BF%E7%94%A8fetch%E5%87%BD%E6%95%B8/</link>
+      <pubDate>Fri, 26 Aug 2022 00:00:00 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/frontend/%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E7%9A%84%E4%BD%BF%E7%94%A8fetch%E5%87%BD%E6%95%B8/</guid>
+      <description>由於當前Fetch這種官方的前端AJAX函數，已經可以簡短的實現，再不換頁的情況下傳送訊息。所以可能的話盡量使用原生的Fetch函數來實現A</description>
+    </item>
+    
     <item>
       <title>按照比例縮放元素的vh與vw</title>
       <link>https://alextrinityblock.github.io/blog/public/post/frontend/%E6%8C%89%E7%85%A7%E6%AF%94%E4%BE%8B%E7%B8%AE%E6%94%BE%E5%85%83%E7%B4%A0%E7%9A%84vh%E8%88%87vw/</link>
