@@ -43,7 +43,7 @@
 <meta itemprop="name" content="AWS證照SSA筆記">
 <meta itemprop="description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"><meta itemprop="datePublished" content="2022-08-18T09:00:00+08:00" />
 <meta itemprop="dateModified" content="2022-08-18T09:00:00+08:00" />
-<meta itemprop="wordCount" content="19560">
+<meta itemprop="wordCount" content="19857">
 <meta itemprop="keywords" content="AWS," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AWS證照SSA筆記"/>
 <meta name="twitter:description" content="Region 區域，例如美國東部，或者東京&hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管"/>
@@ -2355,6 +2355,53 @@ IAM 中如果我要開啟某群人有管理S3儲存庫的權限，這時候我�
 <li>管理 Snow Family 。</li>
 <li>監控各項指標。</li>
 <li>在 Snow Family 上運作 EC2, AWS DataSync, NFS 等。</li>
+</ul>
+<h1 id="aws-macie">AWS Macie</h1>
+<p>深度學習，檢查是否有敏感資料外洩。
+可以分析S3，然後將結果傳回 Cload Watch Event bridge。</p>
+<h1 id="cloud-hsm">Cloud HSM</h1>
+<p>Cloud HSM 使用硬體加密。(KMS 使用軟體加密。)</p>
+<ul>
+<li>FIPS I 40-2 Level 3 保障。</li>
+<li>支持 SSL/TLS 鑰匙。</li>
+<li>Redshift 保障。</li>
+<li>多個AZ</li>
+</ul>
+<h1 id="aws-shield">AWS Shield</h1>
+<p>防禦 DDos ，包含</p>
+<ul>
+<li>SYN/UDP flooding</li>
+<li>網路監控</li>
+</ul>
+<h2 id="advance-方案">Advance 方案</h2>
+<ul>
+<li>每個組織，$3000 美元一個月。</li>
+<li>涵蓋Layer 7</li>
+<li>防禦範圍更廣。</li>
+</ul>
+<h1 id="aws-guardduty">AWS GuardDuty</h1>
+<p>用ML偵測容器和虛擬機受到的威脅。</p>
+<p>可用來偵測的內如下:</p>
+<ul>
+<li>CloudTrail Event Logs</li>
+<li>VPC Flow Logs</li>
+<li>DNS Logs</li>
+<li>K8S Audit Logs</li>
+</ul>
+<p>例如: K8S 容器如果被入侵，就可以檢測到。</p>
+<p>檢測流程大概是這樣:</p>
+<p>AWS GuardDuty -&gt; CloudWatch Event -&gt; 觸發 AWS Lamdba 與 SNS 。</p>
+<h1 id="amazon-inspector">Amazon Inspector</h1>
+<p>虛擬機與網路的安全偵測</p>
+<ul>
+<li>檢查非預期的流量。</li>
+<li>檢查運作中的 OS 是否有安全漏洞。</li>
+<li>檢查上傳的容器是否有漏洞。</li>
+</ul>
+<p>可以用來觸發</p>
+<ul>
+<li>Security Hub</li>
+<li>CloudWatch Event Bridge -&gt; 然後接著觸發SNS發email等。</li>
 </ul>
 <ul class="pa0">
   

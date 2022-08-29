@@ -1839,3 +1839,62 @@ Anycast IP 可以讓使用者自動選擇距離更近的Global Accelerator節點
 * 管理 Snow Family 。
 * 監控各項指標。
 * 在 Snow Family 上運作 EC2, AWS DataSync, NFS 等。
+
+# AWS Macie
+
+深度學習，檢查是否有敏感資料外洩。
+可以分析S3，然後將結果傳回 Cload Watch Event bridge。
+
+# Cloud HSM
+
+Cloud HSM 使用硬體加密。(KMS 使用軟體加密。)
+
+* FIPS I 40-2 Level 3 保障。
+* 支持 SSL/TLS 鑰匙。
+* Redshift 保障。
+* 多個AZ
+
+# AWS Shield
+
+防禦 DDos ，包含
+
+* SYN/UDP flooding
+* 網路監控
+
+## Advance 方案
+
+* 每個組織，$3000 美元一個月。
+* 涵蓋Layer 7
+* 防禦範圍更廣。
+
+# AWS GuardDuty
+
+用ML偵測容器和虛擬機受到的威脅。
+
+可用來偵測的內如下:
+
+* CloudTrail Event Logs
+* VPC Flow Logs
+* DNS Logs
+* K8S Audit Logs
+
+例如: K8S 容器如果被入侵，就可以檢測到。
+
+檢測流程大概是這樣:
+
+AWS GuardDuty -> CloudWatch Event -> 觸發 AWS Lamdba 與 SNS 。
+
+
+# Amazon Inspector
+
+虛擬機與網路的安全偵測
+
+* 檢查非預期的流量。
+* 檢查運作中的 OS 是否有安全漏洞。
+* 檢查上傳的容器是否有漏洞。
+
+可以用來觸發
+
+* Security Hub
+* CloudWatch Event Bridge -> 然後接著觸發SNS發email等。
+
