@@ -176,7 +176,7 @@ gcloud compute instance-groups managed rolling-action start-update my-mig --vers
 
 確保至一個 instance 長期健康存在於所有時間。
 
-```
+```bash
 gcloud compute instance-groups managed set-autoscaling my-group --max-numreplicas=1 --min-num-replicas=1
 ```
 
@@ -184,7 +184,7 @@ gcloud compute instance-groups managed set-autoscaling my-group --max-numreplica
 
 更新版本時不希望減少可用 Instance 的數量，並且一次只更新一個 Instance。
 
-```
+```bash
 gcloud compute instance-groups managed rolling-action start-update my-group --version=template=my-v1-template --max-surge 1 --max-unavailable 0
 ```
 
