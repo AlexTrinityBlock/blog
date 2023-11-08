@@ -1,7 +1,7 @@
 ---
 title: "LinuxMint20.1上安裝docker"
 date: 2021-05-19T00:05:03+08:00
-draft: true
+draft: false
 featured_image: "/docker.png"
 tags: ["docker"]
 ---

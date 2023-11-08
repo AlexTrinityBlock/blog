@@ -1,7 +1,7 @@
 ---
 title: "opencv的第一個程式"
 date: 2021-09-22T09:10:44+08:00
-draft: true
+draft: false
 featured_image: "/secure.jpg"
 tags: ["opencv"]
 ---

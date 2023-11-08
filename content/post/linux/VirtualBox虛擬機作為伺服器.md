@@ -1,7 +1,7 @@
 ---
 title: "VirtualBox虛擬機作為伺服器"
 date: 2022-03-14T15:00:36+08:00
-draft: true
+draft: false
 featured_image: "/debian1.jpeg"
 tags: ["linux","VirtualBox","virtualbox"]
 ---

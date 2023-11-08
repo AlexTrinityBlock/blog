@@ -1,7 +1,7 @@
 ---
 title: "Vue筆記17另一種class綁定方式"
 date: 2021-03-19T00:39:05+08:00
-draft: true
+draft: false
 featured_image: "/vue.png"
 tags: ["vue","前端"]
 ---

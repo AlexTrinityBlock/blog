@@ -7,7 +7,7 @@
     <title>linux下了解自己的連線與port狀態 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="大綱 本文章探討兩個可以用來了解當前port狀態的工具，ss與NetHogs。 ss是大多是linux發行版的內建工具。 NetHogs則可以非常">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -76,12 +76,6 @@
         <ul class="pl0 mr3">
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/blog/public/tags/android/" title="android page">
-              android
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/aws/" title="AWS page">
               AWS
             </a>
@@ -94,14 +88,32 @@
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/ccna/" title="CCNA page">
+              CCNA
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/cicd/" title="CICD page">
               CICD
             </a>
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/gcp/" title="GCP page">
+              GCP
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/git/" title="git page">
               git
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/k8s/" title="K8S page">
+              K8S
             </a>
           </li>
           
@@ -114,12 +126,6 @@
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/node.js/" title="Node.js page">
               Node.js
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/blog/public/tags/python/" title="python page">
-              python
             </a>
           </li>
           
@@ -267,7 +273,7 @@ NetHogs則可以非常即時的來觀察目前電腦在進行哪個傳輸。</p>
 </code></pre><pre tabindex="0"><code>sudo ss -6
 </code></pre><h3 id="顯示特定port的內容">顯示特定port的內容</h3>
 <p>以下為顯示22port的內容</p>
-<pre tabindex="0"><code> ss -at '( dport = :22 or sport = :22 )'
+<pre tabindex="0"><code> ss -at &#39;( dport = :22 or sport = :22 )&#39;
 </code></pre><h3 id="監聽與建立的差異">監聽與建立的差異</h3>
 <p>當一個port尚未與遠端建立連線時，這個TCP socket的狀態稱為listen(監聽)。<br>
 當連線已經建立完畢時，這個TCP socket的狀態稱為established。</p>
@@ -293,11 +299,11 @@ NetHogs則可以非常即時的來觀察目前電腦在進行哪個傳輸。</p>
 </code></pre><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/linux" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">linux</a>
+     <a href="/tags/linux" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">linux</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/network" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">network</a>
+     <a href="/tags/network" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">network</a>
    </li>
   
 </ul>
@@ -387,7 +393,7 @@ NetHogs則可以非常即時的來觀察目前電腦在進行哪個傳輸。</p>
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
-    &copy;  無面者小站 2022 
+    &copy;  無面者小站 2023 
   </a>
     <div>
 

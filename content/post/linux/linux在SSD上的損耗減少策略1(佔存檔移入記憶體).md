@@ -1,7 +1,7 @@
 ---
 title: "linux在SSD上的損耗減少策略1(佔存檔移入記憶體)"
 date: 2021-03-01T01:04:15+08:00
-draft: true
+draft: false
 featured_image: "/debian1.jpeg"
 tags: ["linux","ssd"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Hugo建立文章"
 date: 2021-02-26T16:31:03+08:00
-draft: true
+draft: false
 featured_image: "/hugo.png"
 tags: ["hugo"]
 ---

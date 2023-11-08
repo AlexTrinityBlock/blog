@@ -1,7 +1,7 @@
 ---
 title: "linux下了解自己的連線與port狀態"
 date: 2021-07-16T10:29:36+08:00
-draft: true
+draft: false
 featured_image: "/debian1.jpeg"
 tags: ["linux","network"]
 ---

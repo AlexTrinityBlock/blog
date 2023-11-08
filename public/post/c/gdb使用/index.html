@@ -7,7 +7,7 @@
     <title>Gdb使用 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="GDB使用指令 --------------- 提示gcc編譯時記得開啟g選項，編譯出來的產物才不會啟動優化， 同時可以使用gdb除錯 匯入檔案：gdb 檔案名稱 匯入後命令行左邊">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -76,12 +76,6 @@
         <ul class="pl0 mr3">
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/blog/public/tags/android/" title="android page">
-              android
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/aws/" title="AWS page">
               AWS
             </a>
@@ -94,14 +88,32 @@
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/ccna/" title="CCNA page">
+              CCNA
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/cicd/" title="CICD page">
               CICD
             </a>
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/gcp/" title="GCP page">
+              GCP
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/git/" title="git page">
               git
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/k8s/" title="K8S page">
+              K8S
             </a>
           </li>
           
@@ -114,12 +126,6 @@
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/node.js/" title="Node.js page">
               Node.js
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/blog/public/tags/python/" title="python page">
-              python
             </a>
           </li>
           
@@ -276,19 +282,19 @@ gdb 目的檔名
 </code></pre><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/c" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">c</a>
+     <a href="/tags/c" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">c</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/gdb" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">gdb</a>
+     <a href="/tags/gdb" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">gdb</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%80" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">組合語言</a>
+     <a href="/tags/%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%80" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">組合語言</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/%E5%8F%8D%E7%B5%84%E8%AD%AF" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">反組譯</a>
+     <a href="/tags/%E5%8F%8D%E7%B5%84%E8%AD%AF" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">反組譯</a>
    </li>
   
 </ul>
@@ -311,7 +317,7 @@ gdb 目的檔名
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
-    &copy;  無面者小站 2022 
+    &copy;  無面者小站 2023 
   </a>
     <div>
 

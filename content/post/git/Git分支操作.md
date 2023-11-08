@@ -1,7 +1,7 @@
 ---
 title: "Git選擇分支"
 date: 2022-02-23T00:04:44+08:00
-draft: true
+draft: false
 featured_image: "/git.png"
 tags: ["git","github"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "python與byte串與網路"
 date: 2021-05-15T00:00:44+08:00
-draft: true
+draft: false
 featured_image: "/python.jpg"
 tags: ["python","network","byte","bytes"]
 ---

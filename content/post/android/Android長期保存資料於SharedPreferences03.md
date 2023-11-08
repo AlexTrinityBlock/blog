@@ -1,7 +1,6 @@
 ---
 title: "Android長期保存資料於SharedPreferences03"
 date: 2021-09-09T15:00:44+08:00
-draft: true
 featured_image: "/android.jpg"
 tags: ["android"]
 ---

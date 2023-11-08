@@ -1,7 +1,7 @@
 ---
 title: "github免密碼上傳與RSA金鑰產生"
 date: 2021-05-19T00:05:03+08:00
-draft: true
+draft: false
 featured_image: "/git.png"
 tags: ["git","github"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "用UFW在ping下隱藏自己"
 date: 2021-07-13T16:00:49+08:00
-draft: true
+draft: false
 tags: ["secure","防火牆","資安","firewall"]
 featured_image: "/secure.jpg"
 ---

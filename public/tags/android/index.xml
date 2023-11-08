@@ -6,60 +6,49 @@
     <description>Recent content in android on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Fri, 24 Sep 2021 21:20:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Sep 2021 21:20:44 +0800</lastBuildDate>
+    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Android06客戶端Socket(待修正)</title>
       <link>https://alextrinityblock.github.io/blog/public/post/android/android06%E5%AE%A2%E6%88%B6%E7%AB%AFsocket/</link>
       <pubDate>Fri, 24 Sep 2021 21:20:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/android/android06%E5%AE%A2%E6%88%B6%E7%AB%AFsocket/</guid>
       <description>本篇未經調整，雖然能運作，但其中命名可能容易混淆，請斟酌參考。 1.開通網路使用權限 AndroidManifest.xml &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;manifest xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; package=&amp;#34;com.example.httpreguests&amp;#34;&amp;gt; &amp;lt;!--這兩行是關鍵內容，可以啟動網路</description>
     </item>
-    
     <item>
       <title>Android05進行httprequest</title>
       <link>https://alextrinityblock.github.io/blog/public/post/android/android05%E9%80%B2%E8%A1%8Chttprequest/</link>
       <pubDate>Thu, 16 Sep 2021 09:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/android/android05%E9%80%B2%E8%A1%8Chttprequest/</guid>
       <description>1.開通網路使用權限 AndroidManifest.xml &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;manifest xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; package=&amp;#34;com.example.httpreguests&amp;#34;&amp;gt; &amp;lt;!--這兩行是關鍵內容，可以啟動網路使用權限--&amp;gt; &amp;lt;uses-permission android:name=&amp;#34;android.permission.INTERNET&amp;#34;/&amp;gt; &amp;lt;uses-permission android:name=&amp;#34;android.permission.ACCESS_NETWORK_STATE&amp;#34; /&amp;gt; &amp;lt;!--這兩行是關鍵內容，</description>
     </item>
-    
     <item>
       <title>Android snackbar與除錯log04</title>
       <link>https://alextrinityblock.github.io/blog/public/post/android/android-snackbar%E8%88%87%E9%99%A4%E9%8C%AFlog04/</link>
       <pubDate>Fri, 10 Sep 2021 09:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/android/android-snackbar%E8%88%87%E9%99%A4%E9%8C%AFlog04/</guid>
       <description>1.目標 各種程式語言在執行的時候都可以看到一些log，方便我們除錯與對程式進行調整。 Android上也存在著顯示log的工具。 除此之外，還有</description>
     </item>
-    
     <item>
       <title>Android長期保存資料於SharedPreferences03</title>
       <link>https://alextrinityblock.github.io/blog/public/post/android/android%E9%95%B7%E6%9C%9F%E4%BF%9D%E5%AD%98%E8%B3%87%E6%96%99%E6%96%BCsharedpreferences03/</link>
       <pubDate>Thu, 09 Sep 2021 15:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/android/android%E9%95%B7%E6%9C%9F%E4%BF%9D%E5%AD%98%E8%B3%87%E6%96%99%E6%96%BCsharedpreferences03/</guid>
       <description>1.目標 將資料存入Android的SharedPreferences，進行長期保存 官方文檔 https://developer.android.com/reference/android/content/SharedPreferences 2.前端 欄位： 文字輸入欄位(將資料存入Share</description>
     </item>
-    
     <item>
       <title>Android將使用者輸入傳入後端02</title>
       <link>https://alextrinityblock.github.io/blog/public/post/android/android%E5%B0%87%E4%BD%BF%E7%94%A8%E8%80%85%E8%BC%B8%E5%85%A5%E5%82%B3%E5%85%A5%E5%BE%8C%E7%AB%AF02/</link>
       <pubDate>Thu, 09 Sep 2021 14:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/android/android%E5%B0%87%E4%BD%BF%E7%94%A8%E8%80%85%E8%BC%B8%E5%85%A5%E5%82%B3%E5%85%A5%E5%BE%8C%E7%AB%AF02/</guid>
       <description>1.目標 這次的目標是要把前端輸入欄位的內容，接收到後端的java，然後再重新傳回前端。 從前端擷取內容，對於像是帳號密碼登入，輸入金額，或類似</description>
     </item>
-    
     <item>
       <title>Android中的按鈕01</title>
       <link>https://alextrinityblock.github.io/blog/public/post/android/android%E4%B8%AD%E7%9A%84%E6%8C%89%E9%88%9501/</link>
       <pubDate>Thu, 09 Sep 2021 09:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/android/android%E4%B8%AD%E7%9A%84%E6%8C%89%E9%88%9501/</guid>
       <description>1.介紹 當我們要開發安卓App時，第一個步驟就是安裝Android Studio。 可以在官方網站上頭找到下載點。 Android Studio官方網站 https://developer.android.com/studio 2.開</description>
     </item>
-    
   </channel>
 </rss>

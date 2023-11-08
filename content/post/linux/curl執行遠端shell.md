@@ -1,7 +1,7 @@
 ---
 title: "curl遠端執行shell"
 date: 2021-05-01T13:29:36+08:00
-draft: true
+draft: false
 featured_image: "/debian1.jpeg"
 tags: ["linux","curl","shell"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Vue筆記 3:動態修改標籤屬性"
 date: 2021-03-11T14:52:38+08:00
-draft: true
+draft: false
 featured_image: "/vue.png"
 tags: ["vue","前端"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "如何有效的使用Fetch函數"
 date: 2022-08-26T00:00:00+08:00
-draft: true
+draft: false
 featured_image: "/html-css-js.jpg"
 tags: ["frontend"]
 ---

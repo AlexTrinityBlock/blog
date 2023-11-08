@@ -1,7 +1,7 @@
 ---
 title: "Linux Mint20更換開機圖示"
 date: 2021-03-01T13:01:33+08:00
-draft: true
+draft: false
 featured_image: "/debian1.jpeg"
 tags: ["linux","開機","自訂"]
 ---

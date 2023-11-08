@@ -1,7 +1,6 @@
 ---
 title: "ASP.net中建立Model"
 date: 2022-02-22T12:00:44+08:00
-draft: true
 featured_image: "/asp_net.png"
 tags: ["ASP.net"]
 ---

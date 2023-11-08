@@ -1,7 +1,7 @@
 ---
 title: "OpenGL課堂筆記"
 date: 2021-10-07T10:00:49+08:00
-draft: true
+draft: false
 tags: ["OpenGL"]
 featured_image: "/secure.jpg"
 ---

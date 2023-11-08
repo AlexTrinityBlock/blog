@@ -1,7 +1,7 @@
 ---
 title: "Vue:1直接引用"
 date: 2021-03-11T14:43:44+08:00
-draft: true
+draft: false
 featured_image: "/vue.png"
 tags: ["vue","前端"]
 ---

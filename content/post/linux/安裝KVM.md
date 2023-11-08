@@ -1,7 +1,7 @@
 ---
 title: "安裝KVM"
 date: 2021-05-28T13:29:36+08:00
-draft: true
+draft: false
 featured_image: "/debian1.jpeg"
 tags: ["linux","kvm"]
 ---

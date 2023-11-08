@@ -1,7 +1,7 @@
 ---
 title: "清理apt暫時存檔"
 date: 2021-06-02T13:29:36+08:00
-draft: true
+draft: false
 featured_image: "/debian1.jpeg"
 tags: ["linux","apt"]
 ---

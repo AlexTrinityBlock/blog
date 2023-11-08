@@ -1,7 +1,7 @@
 ---
 title: "Jenkins的docker容器"
 date: 2022-02-23T00:00:44+08:00
-draft: true
+draft: false
 featured_image: "/cicd.png"
 tags: ["CICD"]
 ---

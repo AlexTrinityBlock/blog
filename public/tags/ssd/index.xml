@@ -6,24 +6,21 @@
     <description>Recent content in ssd on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Mon, 01 Mar 2021 11:24:26 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/ssd/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Mar 2021 11:24:26 +0800</lastBuildDate>
+    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/ssd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux在SSD上的損耗減少策略2(關閉系統紀錄)</title>
       <link>https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/</link>
       <pubDate>Mon, 01 Mar 2021 11:24:26 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/</guid>
       <description>在linux中，為了明確清楚電腦曾經發生過什麼，所以會將一切紀錄記載在以下資料夾 /var/log 但是這樣終究會損耗SSD的寫入次數 而且紀錄檔會越來越大 如果</description>
     </item>
-    
     <item>
       <title>linux在SSD上的損耗減少策略1(佔存檔移入記憶體)</title>
       <link>https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/</link>
       <pubDate>Mon, 01 Mar 2021 01:04:15 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/</guid>
       <description>概述 固態硬碟SSD存在著寫入次數限制 而linux上頭各應用程式 暫時存在的檔案通常會放在 /tmp 目錄之中 我們該如何減少/tmp 中頻繁的擦寫帶來的損耗</description>
     </item>
-    
   </channel>
 </rss>

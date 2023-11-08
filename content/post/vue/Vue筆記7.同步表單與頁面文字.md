@@ -1,7 +1,7 @@
 ---
 title: "Vue筆記7.同步表單與頁面文字"
 date: 2021-03-16T00:06:55+08:00
-draft: true
+draft: false
 featured_image: "/vue.png"
 tags: ["vue","前端"]
 ---

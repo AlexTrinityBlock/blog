@@ -1,7 +1,7 @@
 ---
 title: "Git復原失誤的操作"
 date: 2022-02-23T00:03:44+08:00
-draft: true
+draft: false
 featured_image: "/git.png"
 tags: ["git","github"]
 ---

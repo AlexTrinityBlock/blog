@@ -1,7 +1,7 @@
 ---
 title: "Vue筆記9.組件基本使用方式"
 date: 2021-03-16T01:20:54+08:00
-draft: true
+draft: false
 featured_image: "/vue.png"
 tags: ["vue","前端"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "opengl安裝(Ubuntu)"
 date: 2021-09-29T09:00:44+08:00
-draft: true
+draft: false
 featured_image: "/secure.jpg"
 tags: ["opengl"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Bootstrap響應式網頁出現白邊"
 date: 2022-06-02T09:00:00+08:00
-draft: true
+draft: false
 featured_image: "/html-css-js.jpg"
 tags: ["frontend"]
 ---

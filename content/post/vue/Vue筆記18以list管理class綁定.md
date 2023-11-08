@@ -1,7 +1,7 @@
 ---
 title: "Vue筆記18以list管理class綁定"
 date: 2021-03-19T00:39:36+08:00
-draft: true
+draft: false
 featured_image: "/vue.png"
 tags: ["vue","前端"]
 ---

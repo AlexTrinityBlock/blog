@@ -7,7 +7,7 @@
     <title>LinuxMint20.1上安裝docker | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Mint安裝docker會遇上的問題 由於Mint目前還沒有專用版本的docker儲存庫， 所以我們必須使用Mint的源頭Ubuntu版本的do">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -43,7 +43,7 @@
 <meta itemprop="name" content="LinuxMint20.1上安裝docker">
 <meta itemprop="description" content="Mint安裝docker會遇上的問題 由於Mint目前還沒有專用版本的docker儲存庫， 所以我們必須使用Mint的源頭Ubuntu版本的do"><meta itemprop="datePublished" content="2021-05-19T00:05:03+08:00" />
 <meta itemprop="dateModified" content="2021-05-19T00:05:03+08:00" />
-<meta itemprop="wordCount" content="474">
+<meta itemprop="wordCount" content="475">
 <meta itemprop="keywords" content="docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="LinuxMint20.1上安裝docker"/>
 <meta name="twitter:description" content="Mint安裝docker會遇上的問題 由於Mint目前還沒有專用版本的docker儲存庫， 所以我們必須使用Mint的源頭Ubuntu版本的do"/>
@@ -76,12 +76,6 @@
         <ul class="pl0 mr3">
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/blog/public/tags/android/" title="android page">
-              android
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/aws/" title="AWS page">
               AWS
             </a>
@@ -94,14 +88,32 @@
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/ccna/" title="CCNA page">
+              CCNA
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/cicd/" title="CICD page">
               CICD
             </a>
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/gcp/" title="GCP page">
+              GCP
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/git/" title="git page">
               git
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/k8s/" title="K8S page">
+              K8S
             </a>
           </li>
           
@@ -114,12 +126,6 @@
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/node.js/" title="Node.js page">
               Node.js
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/blog/public/tags/python/" title="python page">
-              python
             </a>
           </li>
           
@@ -232,13 +238,13 @@
 所以我們必須使用Mint的源頭Ubuntu版本的docker儲存庫<br>
 也就是說，你無法按照官方的文件來進行docker安裝。</p>
 <h3 id="1更新apt清單並且確保下載docker儲存庫所需的資源足夠">1.更新apt清單，並且確保下載docker儲存庫所需的資源足夠</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get update
-sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
-</code></pre></div><h3 id="2下載ubuntu傳輸金鑰">2.下載Ubuntu傳輸金鑰</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-</code></pre></div><h3 id="3下載儲存庫">3.下載儲存庫</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo add-apt-repository <span style="color:#e6db74">&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu </span><span style="color:#66d9ef">$(</span>. /etc/os-release; echo <span style="color:#e6db74">&#34;</span>$UBUNTU_CODENAME<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74"> stable&#34;</span>
-</code></pre></div><p><br></br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
+</span></span></code></pre></div><h3 id="2下載ubuntu傳輸金鑰">2.下載Ubuntu傳輸金鑰</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+</span></span></code></pre></div><h3 id="3下載儲存庫">3.下載儲存庫</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo add-apt-repository <span style="color:#e6db74">&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu </span><span style="color:#66d9ef">$(</span>. /etc/os-release; echo <span style="color:#e6db74">&#34;</span>$UBUNTU_CODENAME<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74"> stable&#34;</span>
+</span></span></code></pre></div><p><br></br>
 注意：<span style='color:red'>沒把握的話本段落以下請忽略!</span><br>
 <span style='color:red'>$(. /etc/os-release; echo &ldquo;$UBUNTU_CODENAME&rdquo;)</span>
 這行的效果會回傳目前的Mint背後的Ubuntu版本<br>
@@ -246,28 +252,28 @@ sudo apt-get -y install apt-transport-https ca-certificates curl software-proper
 <br></br>
 也可以手動編輯儲存庫清單，來修改特定Ubuntu版本的docker下載<br>
 檔案位置：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/etc/apt/sources.list.d/additional-repositories.list
-</code></pre></div><p>打開之後裡頭是這樣</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">deb <span style="color:#f92672">[</span>arch<span style="color:#f92672">=</span>amd64<span style="color:#f92672">]</span> https://download.docker.com/linux/ubuntu 版本名稱 stable
-</code></pre></div><p>把版本名稱改成想要的Ubuntu版本即可
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/etc/apt/sources.list.d/additional-repositories.list
+</span></span></code></pre></div><p>打開之後裡頭是這樣</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>deb <span style="color:#f92672">[</span>arch<span style="color:#f92672">=</span>amd64<span style="color:#f92672">]</span> https://download.docker.com/linux/ubuntu 版本名稱 stable
+</span></span></code></pre></div><p>把版本名稱改成想要的Ubuntu版本即可
 <span style='color:red'>但不確定相容與否時別改 </span>
 <br></br></p>
 <h3 id="4把剛剛添加的儲存庫清單更新進來">4.把剛剛添加的儲存庫清單更新進來</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get update
-</code></pre></div><h3 id="5安裝docker與docker-compose">5.安裝docker與docker-compose</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get -y  install docker-ce docker-compose
-</code></pre></div><h3 id="6解決權限問題">6.解決權限問題</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
+</span></span></code></pre></div><h3 id="5安裝docker與docker-compose">5.安裝docker與docker-compose</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get -y  install docker-ce docker-compose
+</span></span></code></pre></div><h3 id="6解決權限問題">6.解決權限問題</h3>
 <p>建立docker權限群組</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo groupadd docker
-</code></pre></div><p>將使用者加入權限群組</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo usermod -aG docker $USER
-</code></pre></div><p>切換到docker權限群組</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">newgrp docker 
-</code></pre></div><p>這樣就不會跳出錯誤了</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo groupadd docker
+</span></span></code></pre></div><p>將使用者加入權限群組</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo usermod -aG docker $USER
+</span></span></code></pre></div><p>切換到docker權限群組</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>newgrp docker 
+</span></span></code></pre></div><p>這樣就不會跳出錯誤了</p>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/docker" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">docker</a>
+     <a href="/tags/docker" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">docker</a>
    </li>
   
 </ul>
@@ -305,7 +311,7 @@ sudo apt-get -y install apt-transport-https ca-certificates curl software-proper
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
-    &copy;  無面者小站 2022 
+    &copy;  無面者小站 2023 
   </a>
     <div>
 

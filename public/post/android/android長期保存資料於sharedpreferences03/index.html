@@ -7,7 +7,7 @@
     <title>Android長期保存資料於SharedPreferences03 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="1.目標 將資料存入Android的SharedPreferences，進行長期保存 官方文檔 https://developer.android.com/reference/android/content/SharedPreferences 2.前端 欄位： 文字輸入欄位(將資料存入Share">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -76,12 +76,6 @@
         <ul class="pl0 mr3">
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/blog/public/tags/android/" title="android page">
-              android
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/aws/" title="AWS page">
               AWS
             </a>
@@ -94,14 +88,32 @@
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/ccna/" title="CCNA page">
+              CCNA
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/cicd/" title="CICD page">
               CICD
             </a>
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/gcp/" title="GCP page">
+              GCP
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/git/" title="git page">
               git
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/k8s/" title="K8S page">
+              K8S
             </a>
           </li>
           
@@ -114,12 +126,6 @@
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/node.js/" title="Node.js page">
               Node.js
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/blog/public/tags/python/" title="python page">
-              python
             </a>
           </li>
           
@@ -244,106 +250,105 @@
 <li>targetText</li>
 <li>button</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-<span style="color:#f92672">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-    <span style="color:#a6e22e">xmlns:app=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
-    <span style="color:#a6e22e">xmlns:tools=</span><span style="color:#e6db74">&#34;http://schemas.android.com/tools&#34;</span>
-    <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-    <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-    <span style="color:#a6e22e">tools:context=</span><span style="color:#e6db74">&#34;.MainActivity&#34;</span><span style="color:#f92672">&gt;</span>
-
-    <span style="color:#75715e">&lt;!--輸出的文字欄位--&gt;</span>
-    <span style="color:#f92672">&lt;TextView</span>
-        <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/targetText&#34;</span>
-        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
-        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
-        <span style="color:#a6e22e">android:layout_marginTop=</span><span style="color:#e6db74">&#34;200dp&#34;</span>
-        <span style="color:#a6e22e">android:text=</span><span style="color:#e6db74">&#34;Target&#34;</span>
-        <span style="color:#a6e22e">android:textSize=</span><span style="color:#e6db74">&#34;48sp&#34;</span>
-        <span style="color:#a6e22e">app:layout_constraintLeft_toLeftOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-        <span style="color:#a6e22e">app:layout_constraintRight_toRightOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-        <span style="color:#a6e22e">app:layout_constraintTop_toTopOf=</span><span style="color:#e6db74">&#34;parent&#34;</span> <span style="color:#f92672">/&gt;</span>
-
-    <span style="color:#75715e">&lt;!--輸入的文字欄位--&gt;</span>
-    <span style="color:#f92672">&lt;EditText</span>
-        <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/textToTarget&#34;</span>
-        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
-        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
-        <span style="color:#a6e22e">android:layout_marginTop=</span><span style="color:#e6db74">&#34;100dp&#34;</span>
-        <span style="color:#a6e22e">android:ems=</span><span style="color:#e6db74">&#34;10&#34;</span>
-        <span style="color:#a6e22e">android:inputType=</span><span style="color:#e6db74">&#34;textPersonName&#34;</span>
-        <span style="color:#a6e22e">app:layout_constraintEnd_toEndOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-        <span style="color:#a6e22e">app:layout_constraintStart_toStartOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-        <span style="color:#a6e22e">app:layout_constraintTop_toBottomOf=</span><span style="color:#e6db74">&#34;@+id/targetText&#34;</span> <span style="color:#f92672">/&gt;</span>
-
-    <span style="color:#75715e">&lt;!--觸發函數的按鈕--&gt;</span>
-    <span style="color:#f92672">&lt;Button</span>
-        <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/button&#34;</span>
-        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
-        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
-        <span style="color:#a6e22e">android:layout_marginTop=</span><span style="color:#e6db74">&#34;100dp&#34;</span>
-        <span style="color:#a6e22e">android:text=</span><span style="color:#e6db74">&#34;Button&#34;</span>
-        <span style="color:#a6e22e">android:onClick=</span><span style="color:#e6db74">&#34;onBtnClick&#34;</span>
-        <span style="color:#a6e22e">app:layout_constraintEnd_toEndOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-        <span style="color:#a6e22e">app:layout_constraintStart_toStartOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-        <span style="color:#a6e22e">app:layout_constraintTop_toBottomOf=</span><span style="color:#e6db74">&#34;@+id/textToTarget&#34;</span> <span style="color:#f92672">/&gt;</span>
-
-<span style="color:#f92672">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
-
-</code></pre></div><h1 id="3後端">3.後端</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">xmlns:app=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">xmlns:tools=</span><span style="color:#e6db74">&#34;http://schemas.android.com/tools&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tools:context=</span><span style="color:#e6db74">&#34;.MainActivity&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--輸出的文字欄位--&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;TextView</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/targetText&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_marginTop=</span><span style="color:#e6db74">&#34;200dp&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:text=</span><span style="color:#e6db74">&#34;Target&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:textSize=</span><span style="color:#e6db74">&#34;48sp&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintLeft_toLeftOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintRight_toRightOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintTop_toTopOf=</span><span style="color:#e6db74">&#34;parent&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--輸入的文字欄位--&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;EditText</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/textToTarget&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_marginTop=</span><span style="color:#e6db74">&#34;100dp&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:ems=</span><span style="color:#e6db74">&#34;10&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:inputType=</span><span style="color:#e6db74">&#34;textPersonName&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintEnd_toEndOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintStart_toStartOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintTop_toBottomOf=</span><span style="color:#e6db74">&#34;@+id/targetText&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--觸發函數的按鈕--&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;Button</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/button&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_marginTop=</span><span style="color:#e6db74">&#34;100dp&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:text=</span><span style="color:#e6db74">&#34;Button&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:onClick=</span><span style="color:#e6db74">&#34;onBtnClick&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintEnd_toEndOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintStart_toStartOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintTop_toBottomOf=</span><span style="color:#e6db74">&#34;@+id/textToTarget&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
+</span></span></code></pre></div><h1 id="3後端">3.後端</h1>
 <p>之後是後端的實踐，其中有幾個點是要注意的，特別是權限：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.example.frontback<span style="color:#f92672">;</span>
-
-<span style="color:#f92672">import</span> androidx.appcompat.app.AppCompatActivity<span style="color:#f92672">;</span>
-
-<span style="color:#f92672">import</span> android.os.Bundle<span style="color:#f92672">;</span>
-
-<span style="color:#f92672">import</span> android.view.View<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> android.widget.TextView<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> android.widget.EditText<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> android.content.SharedPreferences<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> <span style="color:#66d9ef">extends</span> AppCompatActivity <span style="color:#f92672">{</span>
-
-    <span style="color:#75715e">//應用程式啟動時的函數
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Override</span>
-    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>Bundle savedInstanceState<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">);</span>
-        setContentView<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">activity_main</span><span style="color:#f92672">);</span>
-    <span style="color:#f92672">}</span>
-
-    <span style="color:#75715e">//按鈕壓下去後啟動的函數
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onBtnClick</span><span style="color:#f92672">(</span>View view<span style="color:#f92672">){</span>
-        EditText textToTarget <span style="color:#f92672">=</span>findViewById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">textToTarget</span><span style="color:#f92672">);</span><span style="color:#75715e">//取得文字輸入欄位
-</span><span style="color:#75715e"></span>        String theInputInformation<span style="color:#f92672">=</span>textToTarget<span style="color:#f92672">.</span><span style="color:#a6e22e">getText</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">();</span><span style="color:#75715e">//將輸入內容轉成字串
-</span><span style="color:#75715e"></span>
-        <span style="color:#75715e">/**
-</span><span style="color:#75715e">            SharedPreferences
-</span><span style="color:#75715e">            首先要取得一個SharedPreferences物件
-</span><span style="color:#75715e">            如果這個APP沒有事先建立一個檔案的話會在/data/data/[package.name]/shared_prefs/下建立一個檔案
-</span><span style="color:#75715e">            此處的檔案名稱應該是exampleTester.xml
-</span><span style="color:#75715e">            
-</span><span style="color:#75715e">            該檔案有幾種模式
-</span><span style="color:#75715e">            MODE_PRIVATE:只有這個APP
-</span><span style="color:#75715e">            MODE_WORLD_READABLE:所有APP都看得到
-</span><span style="color:#75715e">            MODE_WORLD_WRITEABLE:所有APP都看得到還能寫入
-</span><span style="color:#75715e">            MODE_MULTI_PROCESS:可以讓多個proccess同時存取
-</span><span style="color:#75715e">                        
-</span><span style="color:#75715e">        **/</span>
-        SharedPreferences pref <span style="color:#f92672">=</span> getSharedPreferences<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;exampleTester&#34;</span><span style="color:#f92672">,</span> MODE_PRIVATE<span style="color:#f92672">);</span>
-
-        <span style="color:#75715e">//將資料存到Preferences裡頭並且這筆資料的名稱叫&#34;Data&#34;資料內容取自變數theInputInformation，commit()是提交儲存。
-</span><span style="color:#75715e"></span>        pref<span style="color:#f92672">.</span><span style="color:#a6e22e">edit</span><span style="color:#f92672">().</span><span style="color:#a6e22e">putString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Data&#34;</span><span style="color:#f92672">,</span> theInputInformation<span style="color:#f92672">).</span><span style="color:#a6e22e">commit</span><span style="color:#f92672">();</span>
-
-        <span style="color:#75715e">//從getSharedPreferences中取出資料，首先要指定儲存庫的檔案名稱exampleTester，然後存取模式，getString(&lt;資料的名稱類似key&gt;,&lt;當沒有資料時預設的回傳數值&gt;)
-</span><span style="color:#75715e"></span>        String dataFromStorge<span style="color:#f92672">=</span>getSharedPreferences<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;exampleTester&#34;</span><span style="color:#f92672">,</span> MODE_PRIVATE<span style="color:#f92672">).</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Data&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">);</span>
-        
-        <span style="color:#75715e">//畫面上顯示資料
-</span><span style="color:#75715e"></span>        TextView targetText <span style="color:#f92672">=</span> findViewById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">targetText</span><span style="color:#f92672">);</span>
-        targetText<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>dataFromStorge<span style="color:#f92672">);</span>
-    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><h1 id="4用adb檢查剛剛儲存的資料">4.用adb檢查剛剛儲存的資料</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.frontback;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> androidx.appcompat.app.AppCompatActivity;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> android.os.Bundle;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> android.view.View;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> android.widget.TextView;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> android.widget.EditText;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> android.content.SharedPreferences;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> <span style="color:#66d9ef">extends</span> AppCompatActivity {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//應用程式啟動時的函數</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onCreate</span>(Bundle savedInstanceState) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">onCreate</span>(savedInstanceState);
+</span></span><span style="display:flex;"><span>        setContentView(R.<span style="color:#a6e22e">layout</span>.<span style="color:#a6e22e">activity_main</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//按鈕壓下去後啟動的函數</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onBtnClick</span>(View view){
+</span></span><span style="display:flex;"><span>        EditText textToTarget <span style="color:#f92672">=</span>findViewById(R.<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">textToTarget</span>);<span style="color:#75715e">//取得文字輸入欄位</span>
+</span></span><span style="display:flex;"><span>        String theInputInformation<span style="color:#f92672">=</span>textToTarget.<span style="color:#a6e22e">getText</span>().<span style="color:#a6e22e">toString</span>();<span style="color:#75715e">//將輸入內容轉成字串</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            SharedPreferences
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            首先要取得一個SharedPreferences物件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            如果這個APP沒有事先建立一個檔案的話會在/data/data/[package.name]/shared_prefs/下建立一個檔案
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            此處的檔案名稱應該是exampleTester.xml
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            該檔案有幾種模式
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            MODE_PRIVATE:只有這個APP
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            MODE_WORLD_READABLE:所有APP都看得到
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            MODE_WORLD_WRITEABLE:所有APP都看得到還能寫入
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            MODE_MULTI_PROCESS:可以讓多個proccess同時存取
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                        
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        **/</span>
+</span></span><span style="display:flex;"><span>        SharedPreferences pref <span style="color:#f92672">=</span> getSharedPreferences(<span style="color:#e6db74">&#34;exampleTester&#34;</span>, MODE_PRIVATE);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//將資料存到Preferences裡頭並且這筆資料的名稱叫&#34;Data&#34;資料內容取自變數theInputInformation，commit()是提交儲存。</span>
+</span></span><span style="display:flex;"><span>        pref.<span style="color:#a6e22e">edit</span>().<span style="color:#a6e22e">putString</span>(<span style="color:#e6db74">&#34;Data&#34;</span>, theInputInformation).<span style="color:#a6e22e">commit</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//從getSharedPreferences中取出資料，首先要指定儲存庫的檔案名稱exampleTester，然後存取模式，getString(&lt;資料的名稱類似key&gt;,&lt;當沒有資料時預設的回傳數值&gt;)</span>
+</span></span><span style="display:flex;"><span>        String dataFromStorge<span style="color:#f92672">=</span>getSharedPreferences(<span style="color:#e6db74">&#34;exampleTester&#34;</span>, MODE_PRIVATE).<span style="color:#a6e22e">getString</span>(<span style="color:#e6db74">&#34;Data&#34;</span>,<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//畫面上顯示資料</span>
+</span></span><span style="display:flex;"><span>        TextView targetText <span style="color:#f92672">=</span> findViewById(R.<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">targetText</span>);
+</span></span><span style="display:flex;"><span>        targetText.<span style="color:#a6e22e">setText</span>(dataFromStorge);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="4用adb檢查剛剛儲存的資料">4.用adb檢查剛剛儲存的資料</h1>
 <p>一般來說下載過Android Studio之後會一併下載Android SDK，而adb這個安卓調適工具就在Android SDK裡頭<br>
 至於具體adb在哪裡，請參考官方文檔</p>
 <p><a href="https://developer.android.com/studio/command-line/adb">https://developer.android.com/studio/command-line/adb</a></p>
@@ -359,15 +364,15 @@
 </code></pre><p>我們來看看剛剛的檔案</p>
 <pre tabindex="0"><code>cat /data/data/com.example.frontback/shared_prefs/exampleTester.xml                                                    
 </code></pre><p>以下結果：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39; standalone=&#39;yes&#39; ?&gt;</span>
-<span style="color:#f92672">&lt;map&gt;</span>
-    <span style="color:#f92672">&lt;string</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Data&#34;</span><span style="color:#f92672">&gt;</span>I am data1<span style="color:#f92672">&lt;/string&gt;</span>
-<span style="color:#f92672">&lt;/map&gt;</span>
-</code></pre></div><p>我們可以看到，在剛剛名為Data的資料下，我們見到裡面儲存了一個&quot;I am data1&quot;字串。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39; standalone=&#39;yes&#39; ?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;map&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;string</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Data&#34;</span><span style="color:#f92672">&gt;</span>I am data1<span style="color:#f92672">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/map&gt;</span>
+</span></span></code></pre></div><p>我們可以看到，在剛剛名為Data的資料下，我們見到裡面儲存了一個&quot;I am data1&quot;字串。</p>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/android" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">android</a>
+     <a href="/tags/android" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">android</a>
    </li>
   
 </ul>
@@ -405,7 +410,7 @@
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
-    &copy;  無面者小站 2022 
+    &copy;  無面者小站 2023 
   </a>
     <div>
 

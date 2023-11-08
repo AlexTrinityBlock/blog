@@ -1,7 +1,7 @@
 ---
 title: "Docker基本指令"
 date: 2022-07-06T09:00:03+08:00
-draft: true
+draft: false
 featured_image: "/docker.png"
 tags: ["docker"]
 ---

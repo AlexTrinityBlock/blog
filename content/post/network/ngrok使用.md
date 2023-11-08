@@ -1,7 +1,7 @@
 ---
 title: "ngrok使用"
 date: 2021-04-24T14:43:44+08:00
-draft: true
+draft: false
 featured_image: "/network.jpg"
 tags: ["ngrok","手機網路","伺服器","network"]
 ---

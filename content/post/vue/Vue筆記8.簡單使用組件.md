@@ -1,7 +1,7 @@
 ---
 title: "Vue筆記8.簡單使用組件"
 date: 2021-03-16T00:45:10+08:00
-draft: true
+draft: false
 featured_image: "/vue.png"
 tags: ["vue","前端"]
 ---

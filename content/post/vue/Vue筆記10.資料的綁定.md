@@ -1,7 +1,7 @@
 ---
 title: "Vue筆記10.資料的綁定"
 date: 2021-03-17T11:02:30+08:00
-draft: true
+draft: false
 featured_image: "/vue.png"
 tags: ["vue","前端"]
 ---

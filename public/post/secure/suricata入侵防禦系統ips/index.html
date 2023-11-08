@@ -7,7 +7,7 @@
     <title>suricata入侵防禦系統(IPS) | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="作者 阿維 環境 拜託，使用Ubuntu吧! 不然要從頭編譯suricata。 雖然可以，但是比較麻煩。 安裝 安裝PPA sudo apt-get update sudo apt-get install software-properties-common sudo add-apt-repository ppa:oisf/suricata-stable sudo apt-get update 安裝s">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -43,7 +43,7 @@
 <meta itemprop="name" content="suricata入侵防禦系統(IPS)">
 <meta itemprop="description" content="作者 阿維 環境 拜託，使用Ubuntu吧! 不然要從頭編譯suricata。 雖然可以，但是比較麻煩。 安裝 安裝PPA sudo apt-get update sudo apt-get install software-properties-common sudo add-apt-repository ppa:oisf/suricata-stable sudo apt-get update 安裝s"><meta itemprop="datePublished" content="2021-07-19T09:00:49+08:00" />
 <meta itemprop="dateModified" content="2021-07-19T09:00:49+08:00" />
-<meta itemprop="wordCount" content="3111">
+<meta itemprop="wordCount" content="3117">
 <meta itemprop="keywords" content="secure,cc,ddos," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="suricata入侵防禦系統(IPS)"/>
 <meta name="twitter:description" content="作者 阿維 環境 拜託，使用Ubuntu吧! 不然要從頭編譯suricata。 雖然可以，但是比較麻煩。 安裝 安裝PPA sudo apt-get update sudo apt-get install software-properties-common sudo add-apt-repository ppa:oisf/suricata-stable sudo apt-get update 安裝s"/>
@@ -76,12 +76,6 @@
         <ul class="pl0 mr3">
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/blog/public/tags/android/" title="android page">
-              android
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/aws/" title="AWS page">
               AWS
             </a>
@@ -94,14 +88,32 @@
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/ccna/" title="CCNA page">
+              CCNA
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/cicd/" title="CICD page">
               CICD
             </a>
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/gcp/" title="GCP page">
+              GCP
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/git/" title="git page">
               git
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/k8s/" title="K8S page">
+              K8S
             </a>
           </li>
           
@@ -114,12 +126,6 @@
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/node.js/" title="Node.js page">
               Node.js
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/blog/public/tags/python/" title="python page">
-              python
             </a>
           </li>
           
@@ -254,56 +260,56 @@ ip 是192.168.122.123</p>
 <p>打開配置檔，路徑如下</p>
 <pre tabindex="0"><code>sudo nano /etc/suricata/suricata.yaml
 </code></pre><p>我們可以看到開頭有段ip範圍</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">vars</span>:
-  <span style="color:#75715e"># more specific is better for alert accuracy and performance</span>
-  <span style="color:#f92672">address-groups</span>:
-    <span style="color:#f92672">HOME_NET</span>: <span style="color:#e6db74">&#34;[192.168.0.0/16,10.0.0.0/8,172.16.0.0/12]&#34;</span>
-</code></pre></div><p>考慮到我們的ip只有一個網段要處理所以改成</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">vars</span>:
-  <span style="color:#75715e"># more specific is better for alert accuracy and performance</span>
-  <span style="color:#f92672">address-groups</span>:
-    <span style="color:#f92672">HOME_NET</span>: <span style="color:#e6db74">&#34;[192.168.0.0/16]&#34;</span>
-</code></pre></div><h3 id="紀錄檔案">紀錄檔案</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">vars</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># more specific is better for alert accuracy and performance</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">address-groups</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">HOME_NET</span>: <span style="color:#e6db74">&#34;[192.168.0.0/16,10.0.0.0/8,172.16.0.0/12]&#34;</span>
+</span></span></code></pre></div><p>考慮到我們的ip只有一個網段要處理所以改成</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">vars</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># more specific is better for alert accuracy and performance</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">address-groups</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">HOME_NET</span>: <span style="color:#e6db74">&#34;[192.168.0.0/16]&#34;</span>
+</span></span></code></pre></div><h3 id="紀錄檔案">紀錄檔案</h3>
 <p>我們往下看可以看到紀錄檔的位置</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">default-log-dir</span>: <span style="color:#ae81ff">/var/log/suricata/</span>
-</code></pre></div><p>接著是紀錄檔案的頻率</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># Global stats configuration</span>
-<span style="color:#f92672">stats</span>:
-  <span style="color:#75715e">#啟動檔案紀錄</span>
-  <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">yes</span>
-  <span style="color:#75715e"># The interval field (in seconds) controls the interval at</span>
-  <span style="color:#75715e"># which stats are updated in the log.</span>
-  <span style="color:#75715e">#紀錄頻率為8秒1次</span>
-  <span style="color:#f92672">interval</span>: <span style="color:#ae81ff">8</span>
-  <span style="color:#75715e"># Add decode events to stats.</span>
-  <span style="color:#75715e">#decoder-events: true</span>
-  <span style="color:#75715e"># Decoder event prefix in stats. Has been &#39;decoder&#39; before, but that leads</span>
-  <span style="color:#75715e"># to missing events in the eve.stats records. See issue #2225.</span>
-  <span style="color:#75715e">#decoder-events-prefix: &#34;decoder.event&#34;</span>
-  <span style="color:#75715e"># Add stream events as stats.</span>
-  <span style="color:#75715e">#stream-events: false</span>
-</code></pre></div><p>紀錄檔案的檔案名稱</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># Configure the type of alert (and other) logging you would like.</span>
-<span style="color:#f92672">outputs</span>:
-  <span style="color:#75715e"># 警報紀錄會存在fast.log檔案裡頭，類似snort</span>
-  - <span style="color:#f92672">fast</span>:
-      <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">yes</span>
-      <span style="color:#f92672">filename</span>: <span style="color:#ae81ff">fast.log</span>
-      <span style="color:#f92672">append</span>: <span style="color:#66d9ef">yes</span>
-</code></pre></div><h3 id="更改af-packet的網路界面">更改af-packet的網路界面</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">default-log-dir</span>: <span style="color:#ae81ff">/var/log/suricata/</span>
+</span></span></code></pre></div><p>接著是紀錄檔案的頻率</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Global stats configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">stats</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">#啟動檔案紀錄</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">yes</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># The interval field (in seconds) controls the interval at</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># which stats are updated in the log.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">#紀錄頻率為8秒1次</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">interval</span>: <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Add decode events to stats.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">#decoder-events: true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Decoder event prefix in stats. Has been &#39;decoder&#39; before, but that leads</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># to missing events in the eve.stats records. See issue #2225.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">#decoder-events-prefix: &#34;decoder.event&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Add stream events as stats.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">#stream-events: false</span>
+</span></span></code></pre></div><p>紀錄檔案的檔案名稱</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Configure the type of alert (and other) logging you would like.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">outputs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 警報紀錄會存在fast.log檔案裡頭，類似snort</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">fast</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">yes</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">filename</span>: <span style="color:#ae81ff">fast.log</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">append</span>: <span style="color:#66d9ef">yes</span>
+</span></span></code></pre></div><h3 id="更改af-packet的網路界面">更改af-packet的網路界面</h3>
 <p>我們剛剛說到我們的網路界面是enp1s0<br>
 所以接著我們要更改af-packet的界面</p>
 <p>af-packet是啥呢？是linux的核心功能，類似接收來自網路的數據包的界面。</p>
 <p>原本是:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">af-packet</span>:
-  - <span style="color:#f92672">interface</span>: <span style="color:#ae81ff">eth0</span>
-</code></pre></div><p>改成:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">af-packet</span>:
-  - <span style="color:#f92672">interface</span>: <span style="color:#ae81ff">enp1s0  </span>
-</code></pre></div><p>底下pcap也順便改成</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">pcap</span>:
-  - <span style="color:#f92672">interface</span>: <span style="color:#ae81ff">enp1s0</span>
-</code></pre></div><h1 id="更新規則集">更新規則集</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">af-packet</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">interface</span>: <span style="color:#ae81ff">eth0</span>
+</span></span></code></pre></div><p>改成:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">af-packet</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">interface</span>: <span style="color:#ae81ff">enp1s0  </span>
+</span></span></code></pre></div><p>底下pcap也順便改成</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">pcap</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">interface</span>: <span style="color:#ae81ff">enp1s0</span>
+</span></span></code></pre></div><h1 id="更新規則集">更新規則集</h1>
 <h3 id="更新規則集來源庫">更新規則集來源庫</h3>
 <p>更新規則集來源庫</p>
 <pre tabindex="0"><code>sudo suricata-update update-sources
@@ -378,12 +384,12 @@ sudo suricata-update enable-source tgreen/hunting
 <pre tabindex="0"><code>curl http://testmynids.org/uid/index.html
 </code></pre><p>接著就能看到警報了</p>
 <h3 id="用漂亮的json格式看到警報">用漂亮的json格式看到警報</h3>
-<pre tabindex="0"><code>sudo tail -f /var/log/suricata/eve.json | jq 'select(.event_type==&quot;alert&quot;)'
+<pre tabindex="0"><code>sudo tail -f /var/log/suricata/eve.json | jq &#39;select(.event_type==&#34;alert&#34;)&#39;
 </code></pre><p>這時候觸發警報就能看見漂亮的json格式顯示</p>
 <h3 id="顯示所有統計數據8秒一次那個">顯示所有統計數據(8秒一次那個):</h3>
-<pre tabindex="0"><code>sudo tail -f /var/log/suricata/eve.json | jq 'select(.event_type==&quot;stats&quot;)'
+<pre tabindex="0"><code>sudo tail -f /var/log/suricata/eve.json | jq &#39;select(.event_type==&#34;stats&#34;)&#39;
 </code></pre><h3 id="顯示內核捕捉的數據包數量">顯示內核捕捉的數據包數量</h3>
-<pre tabindex="0"><code>sudo tail -f /var/log/suricata/eve.json | jq 'select(.event_type==&quot;stats&quot;)|.stats.capture.kernel_packets'
+<pre tabindex="0"><code>sudo tail -f /var/log/suricata/eve.json | jq &#39;select(.event_type==&#34;stats&#34;)|.stats.capture.kernel_packets&#39;
 </code></pre><h1 id="真正將suricata變成ips入侵防禦系統">真正將suricata變成IPS(入侵防禦系統)</h1>
 <p>由於suricata一開始被做成以service的型態運作的程式。</p>
 <p>而預設的suricata運作時並不是以入侵防禦系統(IPS)運作的，而是以入侵偵測系統(IDS)運作。</p>
@@ -450,69 +456,69 @@ sudo suricata-update enable-source tgreen/hunting
 <h3 id="修改啟動腳本">修改啟動腳本</h3>
 <pre tabindex="0"><code>sudo nano /etc/init.d/suricata
 </code></pre><p>下列這段是關於service suricata start的啟動行為</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-<span style="color:#75715e"># See how we were called.</span>
-<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> in
-  start<span style="color:#f92672">)</span>
-       <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f $PIDFILE <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-           PID1<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>cat $PIDFILE<span style="color:#e6db74">`</span>
-           <span style="color:#66d9ef">if</span> kill -0 <span style="color:#e6db74">&#34;</span>$PID1<span style="color:#e6db74">&#34;</span> 2&gt;/dev/null; <span style="color:#66d9ef">then</span>
-               echo <span style="color:#e6db74">&#34;</span>$NAME<span style="color:#e6db74"> is already running with PID </span>$PID1<span style="color:#e6db74">&#34;</span>
-               exit <span style="color:#ae81ff">0</span>
-           <span style="color:#66d9ef">else</span>
-               echo <span style="color:#e6db74">&#34;Likely stale PID `cat </span>$PIDFILE<span style="color:#e6db74">` with </span>$PIDFILE<span style="color:#e6db74"> exists, but process is not running!&#34;</span>
-               echo <span style="color:#e6db74">&#34;Removing stale PID file </span>$PIDFILE<span style="color:#e6db74">&#34;</span>
-               rm -f $PIDFILE
-           <span style="color:#66d9ef">fi</span>
-       <span style="color:#66d9ef">fi</span>
-       check_run_dir
-       echo -n <span style="color:#e6db74">&#34;Starting suricata in </span>$IDMODE<span style="color:#e6db74"> mode...&#34;</span>
-       $DAEMON $SURICATA_OPTIONS &gt; /var/log/suricata/suricata-start.log  2&gt;&amp;<span style="color:#ae81ff">1</span> &amp;
-       echo <span style="color:#e6db74">&#34; done.&#34;</span>
-       ;;
-</code></pre></div><p>按照以下指示插入兩行，改成:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-<span style="color:#75715e"># See how we were called.</span>
-<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> in
-  start<span style="color:#f92672">)</span>
-       <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f $PIDFILE <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-           PID1<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>cat $PIDFILE<span style="color:#e6db74">`</span>
-           <span style="color:#66d9ef">if</span> kill -0 <span style="color:#e6db74">&#34;</span>$PID1<span style="color:#e6db74">&#34;</span> 2&gt;/dev/null; <span style="color:#66d9ef">then</span>
-               echo <span style="color:#e6db74">&#34;</span>$NAME<span style="color:#e6db74"> is already running with PID </span>$PID1<span style="color:#e6db74">&#34;</span>
-               exit <span style="color:#ae81ff">0</span>
-           <span style="color:#66d9ef">else</span>
-               echo <span style="color:#e6db74">&#34;Likely stale PID `cat </span>$PIDFILE<span style="color:#e6db74">` with </span>$PIDFILE<span style="color:#e6db74"> exists, but process is not running!&#34;</span>
-               echo <span style="color:#e6db74">&#34;Removing stale PID file </span>$PIDFILE<span style="color:#e6db74">&#34;</span>
-               rm -f $PIDFILE
-           <span style="color:#66d9ef">fi</span>
-       <span style="color:#66d9ef">fi</span>
-       check_run_dir
-       echo -n <span style="color:#e6db74">&#34;Starting suricata in </span>$IDMODE<span style="color:#e6db74"> mode...&#34;</span>
-
-       <span style="color:#75715e">#mkdir if not exist(如果log資料夾不存在就建立它)</span>
-       mkdir -p /var/log/suricata/
-
-       $DAEMON $SURICATA_OPTIONS &gt; /var/log/suricata/suricata-start.log  2&gt;&amp;<span style="color:#ae81ff">1</span> &amp;
-
-       <span style="color:#75715e">#enable nfqueue(啟動nfqueue讓iptables防火牆將封保檢查工作外包給suricata)</span>
-       iptables -I INPUT -j NFQUEUE
-
-       echo <span style="color:#e6db74">&#34; done.&#34;</span>
-       ;;
-</code></pre></div><h3 id="修改關閉腳本">修改關閉腳本</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># See how we were called.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>  start<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f $PIDFILE <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>           PID1<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>cat $PIDFILE<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">if</span> kill -0 <span style="color:#e6db74">&#34;</span>$PID1<span style="color:#e6db74">&#34;</span> 2&gt;/dev/null; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>               echo <span style="color:#e6db74">&#34;</span>$NAME<span style="color:#e6db74"> is already running with PID </span>$PID1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>               exit <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>               echo <span style="color:#e6db74">&#34;Likely stale PID `cat </span>$PIDFILE<span style="color:#e6db74">` with </span>$PIDFILE<span style="color:#e6db74"> exists, but process is not running!&#34;</span>
+</span></span><span style="display:flex;"><span>               echo <span style="color:#e6db74">&#34;Removing stale PID file </span>$PIDFILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>               rm -f $PIDFILE
+</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>       check_run_dir
+</span></span><span style="display:flex;"><span>       echo -n <span style="color:#e6db74">&#34;Starting suricata in </span>$IDMODE<span style="color:#e6db74"> mode...&#34;</span>
+</span></span><span style="display:flex;"><span>       $DAEMON $SURICATA_OPTIONS &gt; /var/log/suricata/suricata-start.log  2&gt;&amp;<span style="color:#ae81ff">1</span> &amp;
+</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34; done.&#34;</span>
+</span></span><span style="display:flex;"><span>       ;;
+</span></span></code></pre></div><p>按照以下指示插入兩行，改成:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># See how we were called.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>  start<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f $PIDFILE <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>           PID1<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>cat $PIDFILE<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">if</span> kill -0 <span style="color:#e6db74">&#34;</span>$PID1<span style="color:#e6db74">&#34;</span> 2&gt;/dev/null; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>               echo <span style="color:#e6db74">&#34;</span>$NAME<span style="color:#e6db74"> is already running with PID </span>$PID1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>               exit <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>               echo <span style="color:#e6db74">&#34;Likely stale PID `cat </span>$PIDFILE<span style="color:#e6db74">` with </span>$PIDFILE<span style="color:#e6db74"> exists, but process is not running!&#34;</span>
+</span></span><span style="display:flex;"><span>               echo <span style="color:#e6db74">&#34;Removing stale PID file </span>$PIDFILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>               rm -f $PIDFILE
+</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>       check_run_dir
+</span></span><span style="display:flex;"><span>       echo -n <span style="color:#e6db74">&#34;Starting suricata in </span>$IDMODE<span style="color:#e6db74"> mode...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       <span style="color:#75715e">#mkdir if not exist(如果log資料夾不存在就建立它)</span>
+</span></span><span style="display:flex;"><span>       mkdir -p /var/log/suricata/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       $DAEMON $SURICATA_OPTIONS &gt; /var/log/suricata/suricata-start.log  2&gt;&amp;<span style="color:#ae81ff">1</span> &amp;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       <span style="color:#75715e">#enable nfqueue(啟動nfqueue讓iptables防火牆將封保檢查工作外包給suricata)</span>
+</span></span><span style="display:flex;"><span>       iptables -I INPUT -j NFQUEUE
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34; done.&#34;</span>
+</span></span><span style="display:flex;"><span>       ;;
+</span></span></code></pre></div><h3 id="修改關閉腳本">修改關閉腳本</h3>
 <p>同一份文件下我們會看到關閉腳本</p>
 <p>關閉腳本原始的樣子是這樣</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  stop<span style="color:#f92672">)</span>
-       echo -n <span style="color:#e6db74">&#34;Stopping suricata: &#34;</span>
-</code></pre></div><p>在 echo -n &ldquo;Stop &hellip;這段底下插入這個，為了在關閉IPS的時候確實將iptables網路回復原本狀態</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  stop<span style="color:#f92672">)</span>
-       echo -n <span style="color:#e6db74">&#34;Stopping suricata: &#34;</span>
-       <span style="color:#75715e">#disable all NFQUEUE setting(關閉所有NFQUEUE)</span>
-       <span style="color:#66d9ef">while</span> true
-       <span style="color:#66d9ef">do</span>
-           sudo iptables  -D  INPUT -j NFQUEUE  &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> break
-       <span style="color:#66d9ef">done</span>
-</code></pre></div><p>然後重新載入deamon</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>  stop<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>       echo -n <span style="color:#e6db74">&#34;Stopping suricata: &#34;</span>
+</span></span></code></pre></div><p>在 echo -n &ldquo;Stop &hellip;這段底下插入這個，為了在關閉IPS的時候確實將iptables網路回復原本狀態</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>  stop<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>       echo -n <span style="color:#e6db74">&#34;Stopping suricata: &#34;</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#75715e">#disable all NFQUEUE setting(關閉所有NFQUEUE)</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">while</span> true
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>           sudo iptables  -D  INPUT -j NFQUEUE  &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> break
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>然後重新載入deamon</p>
 <pre tabindex="0"><code>sudo systemctl daemon-reload
 </code></pre><p>如果你還有執行其他的NFQUEUE程式，那請修改上述腳本用更精準的方式關閉。</p>
 <p>例如:
@@ -524,37 +530,37 @@ sudo suricata-update enable-source tgreen/hunting
 <p><span style="color:red">這是我個人的作法，請不要未經評估貿然使用，造成損失並不負責(我自己是用的很開心)</span></p>
 <p>啟動腳本<br>
 suricata-guard</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>sudo mkdir /var/log/suricata/
-sudo suricata -q <span style="color:#ae81ff">0</span> &amp;
-sudo iptables -I INPUT -j NFQUEUE
-</code></pre></div><br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>sudo mkdir /var/log/suricata/
+</span></span><span style="display:flex;"><span>sudo suricata -q <span style="color:#ae81ff">0</span> &amp;
+</span></span><span style="display:flex;"><span>sudo iptables -I INPUT -j NFQUEUE
+</span></span></code></pre></div><br>
 <p>關閉腳本<br>
 suricata-stop</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>sudo killall  sudo suricata -q <span style="color:#ae81ff">0</span>
-<span style="color:#66d9ef">while</span> true
-<span style="color:#66d9ef">do</span>
-    sudo iptables  -D  INPUT -j NFQUEUE  &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> break
-<span style="color:#66d9ef">done</span>
-</code></pre></div><br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>sudo killall  sudo suricata -q <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> true
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    sudo iptables  -D  INPUT -j NFQUEUE  &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> break
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><br>
 <p>防止本機被鎖定的規則(請加入suricata.yaml規則清單)</p>
-<pre tabindex="0"><code>pass ip 127.0.0.1 any &lt;&gt; 127.0.0.1 any (msg:&quot;pass local&quot;; sid:10001;)
-pass tcp 127.0.0.1 any &lt;&gt; 127.0.0.1 any (msg:&quot;pass local&quot;; sid:10002;)
-pass udp 127.0.0.1 any &lt;&gt; 127.0.0.1 any (msg:&quot;pass local&quot;; sid:10003;)
-pass icmp 127.0.0.1 any &lt;&gt; 127.0.0.1 any (msg:&quot;pass local&quot;; sid:10004;)
+<pre tabindex="0"><code>pass ip 127.0.0.1 any &lt;&gt; 127.0.0.1 any (msg:&#34;pass local&#34;; sid:10001;)
+pass tcp 127.0.0.1 any &lt;&gt; 127.0.0.1 any (msg:&#34;pass local&#34;; sid:10002;)
+pass udp 127.0.0.1 any &lt;&gt; 127.0.0.1 any (msg:&#34;pass local&#34;; sid:10003;)
+pass icmp 127.0.0.1 any &lt;&gt; 127.0.0.1 any (msg:&#34;pass local&#34;; sid:10004;)
 </code></pre><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/secure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">secure</a>
+     <a href="/tags/secure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">secure</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/cc" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">cc</a>
+     <a href="/tags/cc" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">cc</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/ddos" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ddos</a>
+     <a href="/tags/ddos" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ddos</a>
    </li>
   
 </ul>
@@ -608,7 +614,7 @@ pass icmp 127.0.0.1 any &lt;&gt; 127.0.0.1 any (msg:&quot;pass local&quot;; sid:
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
-    &copy;  無面者小站 2022 
+    &copy;  無面者小站 2023 
   </a>
     <div>
 

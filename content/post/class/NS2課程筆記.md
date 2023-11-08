@@ -1,7 +1,7 @@
 ---
 title: "NS2課程筆記"
 date: 2021-10-12T09:00:49+08:00
-draft: true
+draft: false
 tags: ["NS2"]
 featured_image: "/secure.jpg"
 ---

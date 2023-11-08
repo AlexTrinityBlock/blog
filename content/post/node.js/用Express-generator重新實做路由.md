@@ -1,7 +1,7 @@
 ---
 title: "用Express-generator重新實做路由"
 date: 2022-02-18T10:00:44+08:00
-draft: true
+draft: false
 featured_image: "/nodejs.jpg"
 tags: ["Node.js"]
 ---

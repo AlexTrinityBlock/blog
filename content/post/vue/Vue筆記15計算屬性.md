@@ -1,7 +1,7 @@
 ---
 title: "Vue筆記15計算屬性"
 date: 2021-03-18T20:50:44+08:00
-draft: true
+draft: false
 featured_image: "/vue.png"
 tags: ["vue","前端"]
 ---

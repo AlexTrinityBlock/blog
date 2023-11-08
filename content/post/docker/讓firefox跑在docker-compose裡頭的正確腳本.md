@@ -1,7 +1,7 @@
 ---
 title: "讓firefox跑在docker-compose裡頭的正確腳本"
 date: 2021-07-17T10:05:03+08:00
-draft: true
+draft: false
 featured_image: "/docker.png"
 tags: ["docker","firefox"]
 ---

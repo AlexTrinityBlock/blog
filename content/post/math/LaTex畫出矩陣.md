@@ -1,7 +1,7 @@
 ---
 title: "LaTex畫出矩陣"
 date: 2022-03-03T14:43:44+08:00
-draft: true
+draft: false
 featured_image: "/secure.jpg"
 tags: ["math"]
 ---

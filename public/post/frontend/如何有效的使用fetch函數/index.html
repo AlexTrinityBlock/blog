@@ -7,7 +7,7 @@
     <title>如何有效的使用Fetch函數 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="由於當前Fetch這種官方的前端AJAX函數，已經可以簡短的實現，再不換頁的情況下傳送訊息。所以可能的話盡量使用原生的Fetch函數來實現A">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -76,12 +76,6 @@
         <ul class="pl0 mr3">
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/blog/public/tags/android/" title="android page">
-              android
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/aws/" title="AWS page">
               AWS
             </a>
@@ -94,14 +88,32 @@
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/ccna/" title="CCNA page">
+              CCNA
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/cicd/" title="CICD page">
               CICD
             </a>
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/gcp/" title="GCP page">
+              GCP
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/git/" title="git page">
               git
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/k8s/" title="K8S page">
+              K8S
             </a>
           </li>
           
@@ -114,12 +126,6 @@
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/node.js/" title="Node.js page">
               Node.js
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/blog/public/tags/python/" title="python page">
-              python
             </a>
           </li>
           
@@ -230,53 +236,53 @@
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>由於當前Fetch這種官方的前端AJAX函數，已經可以簡短的實現，再不換頁的情況下傳送訊息。所以可能的話盡量使用原生的Fetch函數來實現AJAX呼叫。</p>
 <h2 id="fetch-的-post-範例">Fetch 的 Post 範例</h2>
 <p>很多時候，Fetch的Post內容會意外的接收不到，這時候就需要用下面的格式加上Header，來生成完整的HTTP請求。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Fetch函數
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;帶http或https的網址&#34;</span>, {
-    <span style="color:#75715e">// 方法為Post
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;post&#34;</span>,
-    <span style="color:#75715e">// Header 一定要加入，否則在Laravel一類的框架可能會接收不到
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
-        <span style="color:#e6db74">&#34;Content-Type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>,
-        <span style="color:#e6db74">&#34;Accept&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>,
-        <span style="color:#e6db74">&#34;X-Requested-With&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;XMLHttpRequest&#34;</span>,
-    },
-    <span style="color:#75715e">// 將要傳送的內容轉換成JSON格式
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
-        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;王小明&#34;</span>
-    })
-}).<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">response</span>) =&gt; {
-    <span style="color:#75715e">// 將收到的回應轉換成JSON物件
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>();
-}).<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">jsonObj</span>) =&gt; {
-    <span style="color:#75715e">// 印出結果的JSON物件
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">jsonObj</span>);
-});
-</code></pre></div><h2 id="fetch-get-請求範例">Fetch Get 請求範例</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Fetch Get 函數
-</span><span style="color:#75715e">// 不過由於 Get 參數要加在URL裏頭，所以要加問候並且使用URLSearchParams()來轉換。
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;http://localhost:8081/api/get?&#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URLSearchParams</span>({
-    <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;value&#39;</span>,
-}),
-{
-    <span style="color:#75715e">// Get方法
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;get&#34;</span>,
-    <span style="color:#75715e">// Header 一定要加入，否則在Laravel一類的框架可能會接收不到
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
-        <span style="color:#e6db74">&#34;Content-Type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>,
-        <span style="color:#e6db74">&#34;Accept&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>,
-        <span style="color:#e6db74">&#34;X-Requested-With&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;XMLHttpRequest&#34;</span>,
-    }
-}).<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">response</span>) =&gt; {
-    <span style="color:#75715e">// 將收到的回應轉換成JSON物件
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>();
-}).<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">jsonObj</span>) =&gt; {
-    <span style="color:#75715e">// 印出結果的JSON物件
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">jsonObj</span>);
-});
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Fetch函數
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;帶http或https的網址&#34;</span>, {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 方法為Post
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;post&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Header 一定要加入，否則在Laravel一類的框架可能會接收不到
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Content-Type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Accept&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;X-Requested-With&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;XMLHttpRequest&#34;</span>,
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 將要傳送的內容轉換成JSON格式
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;王小明&#34;</span>
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>}).<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">response</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 將收到的回應轉換成JSON物件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>();
+</span></span><span style="display:flex;"><span>}).<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">jsonObj</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 印出結果的JSON物件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">jsonObj</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h2 id="fetch-get-請求範例">Fetch Get 請求範例</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Fetch Get 函數
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 不過由於 Get 參數要加在URL裏頭，所以要加問候並且使用URLSearchParams()來轉換。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;http://localhost:8081/api/get?&#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URLSearchParams</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;value&#39;</span>,
+</span></span><span style="display:flex;"><span>}),
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Get方法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;get&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Header 一定要加入，否則在Laravel一類的框架可能會接收不到
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Content-Type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Accept&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;X-Requested-With&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;XMLHttpRequest&#34;</span>,
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}).<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">response</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 將收到的回應轉換成JSON物件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>();
+</span></span><span style="display:flex;"><span>}).<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">jsonObj</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 印出結果的JSON物件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">jsonObj</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/frontend" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">frontend</a>
+     <a href="/tags/frontend" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">frontend</a>
    </li>
   
 </ul>
@@ -314,7 +320,7 @@
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
-    &copy;  無面者小站 2022 
+    &copy;  無面者小站 2023 
   </a>
     <div>
 

@@ -1,7 +1,7 @@
 ---
 title: "EJS-一個Javascript模板引擎"
 date: 2022-08-18T09:00:44+08:00
-draft: true
+draft: false
 featured_image: "/nodejs.jpg"
 tags: ["Node.js"]
 ---

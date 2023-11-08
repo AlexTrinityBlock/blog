@@ -1,7 +1,6 @@
 ---
 title: "Android snackbar與除錯log04"
 date: 2021-09-10T09:00:44+08:00
-draft: true
 featured_image: "/android.jpg"
 tags: ["android"]
 ---

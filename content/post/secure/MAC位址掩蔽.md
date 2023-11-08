@@ -1,7 +1,7 @@
 ---
 title: "MAC位址掩蔽"
 date: 2021-07-21T10:00:49+08:00
-draft: true
+draft: false
 tags: ["secure","資安","mac","MAC"]
 featured_image: "/secure.jpg"
 ---

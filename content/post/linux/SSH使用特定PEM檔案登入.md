@@ -1,7 +1,7 @@
 ---
 title: "SSH使用特定PEM檔案登入"
 date: 2022-07-05T09:00:36+08:00
-draft: true
+draft: false
 featured_image: "/debian1.jpeg"
 tags: ["linux","ssh"]
 ---

@@ -7,7 +7,7 @@
     <title>一個凡人的筆記 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="歡迎來到無面者小站">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -74,12 +74,6 @@
         <ul class="pl0 mr3">
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/blog/public/tags/android/" title="android page">
-              android
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/aws/" title="AWS page">
               AWS
             </a>
@@ -92,14 +86,32 @@
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/ccna/" title="CCNA page">
+              CCNA
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/cicd/" title="CICD page">
               CICD
             </a>
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/gcp/" title="GCP page">
+              GCP
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/git/" title="git page">
               git
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/k8s/" title="K8S page">
+              K8S
             </a>
           </li>
           
@@ -112,12 +124,6 @@
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/public/tags/node.js/" title="Node.js page">
               Node.js
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/blog/public/tags/python/" title="python page">
-              python
             </a>
           </li>
           
@@ -601,7 +607,7 @@
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          假設 假設這是我們今天要測試的程式。 INPUT A,B,X IF (A&gt;1) AND (B=0) THEN Y=A IF (A=2) OR (X&gt;1) THEN Y=X PRINT Y 流程圖 %%{init: {'theme':'dark'}}%% flowchart TD A(程式開始) -- B{A1 and B=0} B --|True| D(Y=A) B --|False| E{A=2 or x1} D -- E{A=2 or x1} E{A=2 or x1} -- |False| G
+          假設 假設這是我們今天要測試的程式。 INPUT A,B,X IF (A&gt;1) AND (B=0) THEN Y=A IF (A=2) OR (X&gt;1) THEN Y=X PRINT Y 流程圖 %%{init: {'theme':'dark'}}%% flowchart TD A(程式開始) --> B{A>1 and B=0} B -->|True| D(Y=A) B -->|False| E{A=2 or x>1} D --> E{A=2 or x>1} E{A=2 or x>1} --> |False| G
         </div>
           <a href="https://alextrinityblock.github.io/blog/public/post/cicd/%E8%BB%9F%E9%AB%94%E6%B8%AC%E8%A9%A6%E7%9A%84%E8%A6%86%E8%93%8B%E6%BA%96%E5%89%87/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
         
@@ -633,7 +639,7 @@
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          我們可以用Mermaid這個Javascript函數庫來繪製出流程圖。 graph TD A(程式開始) -- B{A1 and B=0} B --|True| D(Y=A) B --|False| E{A=2 or x1} D -- E{A=2 or x1} E{A=2 or x1} -- |False| G(程式
+          我們可以用Mermaid這個Javascript函數庫來繪製出流程圖。 graph TD A(程式開始) --> B{A>1 and B=0} B -->|True| D(Y=A) B -->|False| E{A=2 or x>1} D --> E{A=2 or x>1} E{A=2 or x>1} --> |False| G(程式
         </div>
           <a href="https://alextrinityblock.github.io/blog/public/post/math/mermaid%E7%95%AB%E5%87%BA%E6%B5%81%E7%A8%8B%E5%9C%96/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
         
@@ -845,21 +851,21 @@
           
         
         <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/" class="db grow">
-            <img src="https://alextrinityblock.github.io/blog/public/git.png" class="img" alt="image from Git復原失誤的操作">
+          <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E7%9A%84%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/git.png" class="img" alt="image from Git的簡單使用">
           </a>
         </div>
       
       <div class="blah w-100 w-60-ns pl3-ns">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/" class="color-inherit dim link">
-            Git復原失誤的操作
+          <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E7%9A%84%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8/" class="color-inherit dim link">
+            Git的簡單使用
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          以Revert復原已經提交的變更 每次的變更都會留下雜湊質值 git log 可以查看 要復原變更可以以雜湊值復原 git revert acc6af6 如果復原時跳出UNIX式的VI編輯器介
+          1.Git的三個區域 Working tree 工作樹 我們甚麼都還沒做時，資料在這裡 Staging Area 暫存區 我們進行指令add 後資料在這裡 Repository 儲存庫 我們commit時資料進入儲存庫
         </div>
-          <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+          <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E7%9A%84%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
         
       </div>
     </div>
@@ -877,21 +883,21 @@
           
         
         <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E7%9A%84%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8/" class="db grow">
-            <img src="https://alextrinityblock.github.io/blog/public/git.png" class="img" alt="image from Git的簡單使用">
+          <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/git.png" class="img" alt="image from Git復原失誤的操作">
           </a>
         </div>
       
       <div class="blah w-100 w-60-ns pl3-ns">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E7%9A%84%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8/" class="color-inherit dim link">
-            Git的簡單使用
+          <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/" class="color-inherit dim link">
+            Git復原失誤的操作
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          1.Git的三個區域 Working tree 工作樹 我們甚麼都還沒做時，資料在這裡 Staging Area 暫存區 我們進行指令add 後資料在這裡 Repository 儲存庫 我們commit時資料進入儲存庫
+          以Revert復原已經提交的變更 每次的變更都會留下雜湊質值 git log 可以查看 要復原變更可以以雜湊值復原 git revert acc6af6 如果復原時跳出UNIX式的VI編輯器介
         </div>
-          <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E7%9A%84%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+          <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
         
       </div>
     </div>
@@ -1196,7 +1202,7 @@
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
-    &copy;  無面者小站 2022 
+    &copy;  無面者小站 2023 
   </a>
     <div>
 

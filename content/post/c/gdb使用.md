@@ -1,7 +1,7 @@
 ---
 title: "Gdb使用"
 date: 2021-03-24T14:01:49+08:00
-draft: true
+draft: false
 tags: ["c","gdb","組合語言","反組譯"]
 featured_image: "/code.jpg"
 ---

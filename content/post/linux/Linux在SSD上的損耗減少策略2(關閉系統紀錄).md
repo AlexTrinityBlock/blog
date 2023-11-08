@@ -1,7 +1,7 @@
 ---
 title: "Linux在SSD上的損耗減少策略2(關閉系統紀錄)"
 date: 2021-03-01T11:24:26+08:00
-draft: true
+draft: false
 featured_image: "/debian1.jpeg"
 tags: ["linux","ssd"]
 ---

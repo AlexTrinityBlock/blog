@@ -1,7 +1,7 @@
 ---
 title: "用Express-generator建立專案"
 date: 2022-02-16T14:00:44+08:00
-draft: true
+draft: false
 featured_image: "/nodejs.jpg"
 tags: ["Node.js"]
 ---

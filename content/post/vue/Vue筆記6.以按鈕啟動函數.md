@@ -1,7 +1,7 @@
 ---
 title: "Vue筆記6.以按鈕啟動函數"
 date: 2021-03-15T18:52:53+08:00
-draft: true
+draft: false
 featured_image: "/vue.png"
 tags: ["vue","前端"]
 ---

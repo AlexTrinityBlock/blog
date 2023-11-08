@@ -1,7 +1,7 @@
 ---
 title: "Vue筆記5.for迴圈"
 date: 2021-03-15T18:31:39+08:00
-draft: true
+draft: false
 featured_image: "/vue.png"
 tags: ["vue","前端"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "docker運作圖形程式"
 date: 2021-06-08T00:05:03+08:00
-draft: true
+draft: false
 featured_image: "/docker.png"
 tags: ["docker"]
 ---

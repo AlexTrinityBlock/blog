@@ -1,7 +1,7 @@
 ---
 title: "docker秒退的問題"
 date: 2021-04-16T16:31:03+08:00
-draft: true
+draft: false
 featured_image: "/docker.png"
 tags: ["docker"]
 ---

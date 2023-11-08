@@ -1,7 +1,7 @@
 ---
 title: "Linux_mint卡在開始logo的解決"
 date: 2021-03-20T11:07:13+08:00
-draft: true
+draft: false
 featured_image: "/debian1.jpeg"
 tags: ["linux","gpu","開機失敗","grub","modeset","開機"]
 ---

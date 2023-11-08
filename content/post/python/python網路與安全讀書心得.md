@@ -1,7 +1,7 @@
 ---
 title: "python網路與安全閱讀心得"
 date: 2021-07-26T10:00:44+08:00
-draft: true
+draft: false
 featured_image: "/secure.jpg"
 tags: ["secure","python","network"]
 ---

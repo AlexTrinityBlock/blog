@@ -1,7 +1,7 @@
 ---
 title: "AppArmor研究_1"
 date: 2021-06-16T10:01:49+08:00
-draft: true
+draft: false
 tags: ["secure","AppArmor","資安","auditd"]
 featured_image: "/secure.jpg"
 ---

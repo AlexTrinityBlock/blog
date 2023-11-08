@@ -1,7 +1,6 @@
 ---
 title: "Android將使用者輸入傳入後端02"
 date: 2021-09-09T14:00:44+08:00
-draft: true
 featured_image: "/android.jpg"
 tags: ["android"]
 ---

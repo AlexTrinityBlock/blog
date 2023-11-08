@@ -1,7 +1,7 @@
 ---
 title: "python網路程式02:udp協定與port"
 date: 2021-04-29T22:15:44+08:00
-draft: true
+draft: false
 featured_image: "/python.jpg"
 tags: ["python","network"]
 ---

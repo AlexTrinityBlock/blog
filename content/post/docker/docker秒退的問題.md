@@ -1,7 +1,7 @@
 ---
 title: "docker.sock錯誤處理"
 date: 2021-05-01T23:05:03+08:00
-draft: true
+draft: false
 featured_image: "/docker.png"
 tags: ["docker"]
 ---

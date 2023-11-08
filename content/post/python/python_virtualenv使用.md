@@ -1,7 +1,7 @@
 ---
 title: "python_virtualenv使用"
 date: 2021-04-29T14:43:44+08:00
-draft: true
+draft: false
 featured_image: "/python.jpg"
 tags: ["python","virtualenv"]
 ---

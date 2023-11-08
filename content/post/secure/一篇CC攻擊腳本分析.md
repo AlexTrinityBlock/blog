@@ -1,7 +1,7 @@
 ---
 title: "一篇CC攻擊腳本分析"
 date: 2021-06-21T09:00:49+08:00
-draft: true
+draft: false
 tags: ["secure","cc","ddos"]
 featured_image: "/secure.jpg"
 ---

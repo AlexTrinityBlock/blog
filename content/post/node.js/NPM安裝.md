@@ -1,7 +1,7 @@
 ---
 title: "NPM安裝"
 date: 2022-02-15T12:00:44+08:00
-draft: true
+draft: false
 featured_image: "/nodejs.jpg"
 tags: ["Node.js"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Azure部屬MySQL"
 date: 2022-03-09T10:00:44+08:00
-draft: true
+draft: false
 featured_image: "/azure.jpg"
 tags: ["Azure"]
 ---

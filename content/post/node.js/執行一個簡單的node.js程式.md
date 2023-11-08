@@ -1,7 +1,7 @@
 ---
 title: "執行一個簡單的node.js程式"
 date: 2022-02-16T12:00:44+08:00
-draft: true
+draft: false
 featured_image: "/nodejs.jpg"
 tags: ["Node.js"]
 ---

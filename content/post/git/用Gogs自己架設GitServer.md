@@ -1,7 +1,7 @@
 ---
 title: "用Gogs自己架設Git Server"
 date: 2022-02-23T00:02:44+08:00
-draft: true
+draft: false
 featured_image: "/git.png"
 tags: ["git","git server"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "python網路程式01:基礎"
 date: 2021-04-29T16:15:44+08:00
-draft: true
+draft: false
 featured_image: "/python.jpg"
 tags: ["python","network","網路"]
 ---

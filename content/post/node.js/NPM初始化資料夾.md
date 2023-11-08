@@ -1,7 +1,7 @@
 ---
 title: "NPM初始化資料夾"
 date: 2022-08-12T09:00:44+08:00
-draft: true
+draft: false
 featured_image: "/nodejs.jpg"
 tags: ["Node.js"]
 ---
