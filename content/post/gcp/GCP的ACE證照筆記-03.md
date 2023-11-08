@@ -188,4 +188,26 @@ gcloud compute instance-groups managed set-autoscaling my-group --max-numreplica
 gcloud compute instance-groups managed rolling-action start-update my-group --version=template=my-v1-template --max-surge 1 --max-unavailable 0
 ```
 
-(P.69)
+(P.70)
+
+```
+Q: 希望 MIG 可以在整個 Zone 故障時存活怎麼做 ?
+A: 建立 multiple zone MIG or regional MIG
+
+Q: 希望在一個 Group 裏頭建立多個不同 Config 的 VM 怎麼做?
+A: 採用 Un-managed Instance Group
+
+Q: 想在 MIG 儲存  VM 狀態怎麼做?
+A: Stateful MIG，採用 Persistent disk，VM 不見仍然存在。
+
+Q: 希望有高可用性的 MIG 當軟硬體更新時怎麼做?
+A: instance template + automatic restart + on-host maintenance: migrate
+
+Q: 希望不健康的 Instance 自動被刪除。
+A: Health check
+
+Q: 避免過度頻繁的增減VM
+A: Cool-down period/Initial delay
+```
+
+(P.71)
