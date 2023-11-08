@@ -1,5 +1,5 @@
 ---
-title: "GCP的ACE證照筆記-01"
+title: "GCP的ACE證照筆記-01-GCE介紹"
 date: 2022-11-08T10:00:44+08:00
 draft: false
 featured_image: "/gcp.png"

@@ -1,5 +1,5 @@
 ---
-title: "GCP的ACE證照筆記-03"
+title: "GCP的ACE證照筆記-03-Instance Groups"
 date: 2022-11-08T20:48:44+08:00
 draft: false
 featured_image: "/gcp.png"
@@ -123,27 +123,69 @@ gcloud compute instance-groups managed set-autoscaling  my-vm-cluster --max-num-
 gcloud compute instance-groups managed update my-vm-cluster --initial-delay=120
 ```
 
-# 調整虛擬機數量
+## 調整虛擬機數量
 ```bash
 gcloud compute instance-groups managed resize my-vm-cluster --size=5
 ```
 
-# 重建 Instances
+## 重建 Instances
 
 ```bash
 gcloud compute instance-groups managed recreate-instances my-mig --instances=myinstance-1,my-instance-2
 ```
 
-# 更新 Instances
+## 更新 Instances
 
 ```bash
 gcloud compute instance-groups managed update-instances my-mig --instances=my-instance3,my-instance-4
 ```
 
-# 更新 Instances-template
+## 更新 Instances-template
 
 ```bash
 gcloud compute instance-groups managed set-instance-template my-mig --template=v2-template
+```
+
+## 重啟 Instances
+
+```bash
+ gcloud compute instance-groups managed rolling-action restart mymig
+```
+
+## 刪除後重建 Instances
+
+```bash
+gcloud compute instance-groups managed rolling-action replace my-mig
+```
+
+## 用新 template 更新 Instances
+
+### Basic Version 更新全部 Instances
+
+```bash
+gcloud compute instance-groups managed rollingaction start-update my-mig --version=template=v1-template
+```
+
+### Canary Version 更新部分 Instance 到 v2 template
+
+```bash
+gcloud compute instance-groups managed rolling-action start-update my-mig --version=template=v1-template --canary-version=template=v2-template,target-size=10%
+```
+
+### 情境1
+
+確保至一個 instance 長期健康存在於所有時間。
+
+```
+gcloud compute instance-groups managed set-autoscaling my-group --max-numreplicas=1 --min-num-replicas=1
+```
+
+### 情境2
+
+更新版本時不希望減少可用 Instance 的數量，並且一次只更新一個 Instance。
+
+```
+gcloud compute instance-groups managed rolling-action start-update my-group --version=template=my-v1-template --max-surge 1 --max-unavailable 0
 ```
 
 (P.69)

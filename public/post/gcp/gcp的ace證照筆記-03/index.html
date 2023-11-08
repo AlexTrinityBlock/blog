@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>GCP的ACE證照筆記-03 | 無面者小站</title>
+    <title>GCP的ACE證照筆記-03-Instance Groups | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Instance Groups 可以採用數個 VM template 組成一個群組進行管理。 兩種型態的 Instance Groups: Managed: 自動擴展的同一種 template 並且自動修復與自動管理釋放虛擬機。 Unmanaged: 許多不同型態的 template 組成，無法自">
     <meta name="generator" content="Hugo 0.120.3">
@@ -33,19 +33,19 @@
 
     
     
-    <meta property="og:title" content="GCP的ACE證照筆記-03" />
+    <meta property="og:title" content="GCP的ACE證照筆記-03-Instance Groups" />
 <meta property="og:description" content="Instance Groups 可以採用數個 VM template 組成一個群組進行管理。 兩種型態的 Instance Groups: Managed: 自動擴展的同一種 template 並且自動修復與自動管理釋放虛擬機。 Unmanaged: 許多不同型態的 template 組成，無法自" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-03/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-11-08T20:48:44+08:00" />
 <meta property="article:modified_time" content="2022-11-08T20:48:44+08:00" />
 
-<meta itemprop="name" content="GCP的ACE證照筆記-03">
+<meta itemprop="name" content="GCP的ACE證照筆記-03-Instance Groups">
 <meta itemprop="description" content="Instance Groups 可以採用數個 VM template 組成一個群組進行管理。 兩種型態的 Instance Groups: Managed: 自動擴展的同一種 template 並且自動修復與自動管理釋放虛擬機。 Unmanaged: 許多不同型態的 template 組成，無法自"><meta itemprop="datePublished" content="2022-11-08T20:48:44+08:00" />
 <meta itemprop="dateModified" content="2022-11-08T20:48:44+08:00" />
-<meta itemprop="wordCount" content="685">
+<meta itemprop="wordCount" content="827">
 <meta itemprop="keywords" content="GCP," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="GCP的ACE證照筆記-03"/>
+<meta name="twitter:title" content="GCP的ACE證照筆記-03-Instance Groups"/>
 <meta name="twitter:description" content="Instance Groups 可以採用數個 VM template 組成一個群組進行管理。 兩種型態的 Instance Groups: Managed: 自動擴展的同一種 template 並且自動修復與自動管理釋放虛擬機。 Unmanaged: 許多不同型態的 template 組成，無法自"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -177,7 +177,7 @@
 
       <div class="tc-l pv6 ph3 ph4-ns">
         
-          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">GCP的ACE證照筆記-03</h1>
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">GCP的ACE證照筆記-03-Instance Groups</h1>
           
         
       </div>
@@ -210,13 +210,13 @@
 
     
     
-    <a href="https://twitter.com/share?url=https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-03/&amp;text=GCP%e7%9a%84ACE%e8%ad%89%e7%85%a7%e7%ad%86%e8%a8%98-03" class="twitter no-underline" aria-label="share on Twitter">
+    <a href="https://twitter.com/share?url=https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-03/&amp;text=GCP%e7%9a%84ACE%e8%ad%89%e7%85%a7%e7%ad%86%e8%a8%98-03-Instance%20Groups" class="twitter no-underline" aria-label="share on Twitter">
       <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
 
     </a>
 
     
-    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-03/&amp;title=GCP%e7%9a%84ACE%e8%ad%89%e7%85%a7%e7%ad%86%e8%a8%98-03" class="linkedin no-underline" aria-label="share on LinkedIn">
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-03/&amp;title=GCP%e7%9a%84ACE%e8%ad%89%e7%85%a7%e7%ad%86%e8%a8%98-03-Instance%20Groups" class="linkedin no-underline" aria-label="share on LinkedIn">
       <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
 </svg>
@@ -225,7 +225,7 @@
   </div>
 
 
-      <h1 class="f1 athelas mt3 mb1">GCP的ACE證照筆記-03</h1>
+      <h1 class="f1 athelas mt3 mb1">GCP的ACE證照筆記-03-Instance Groups</h1>
       
       
       <time class="f6 mv4 dib tracked" datetime="2022-11-08T20:48:44+08:00">November 8, 2022</time>
@@ -353,15 +353,30 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed set-autoscaling  my-vm-cluster --max-num-replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
 </span></span></code></pre></div><h2 id="更新-policies">更新 Policies</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed update my-vm-cluster --initial-delay<span style="color:#f92672">=</span><span style="color:#ae81ff">120</span>
-</span></span></code></pre></div><h1 id="調整虛擬機數量">調整虛擬機數量</h1>
+</span></span></code></pre></div><h2 id="調整虛擬機數量">調整虛擬機數量</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed resize my-vm-cluster --size<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>
-</span></span></code></pre></div><h1 id="重建-instances">重建 Instances</h1>
+</span></span></code></pre></div><h2 id="重建-instances">重建 Instances</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed recreate-instances my-mig --instances<span style="color:#f92672">=</span>myinstance-1,my-instance-2
-</span></span></code></pre></div><h1 id="更新-instances">更新 Instances</h1>
+</span></span></code></pre></div><h2 id="更新-instances">更新 Instances</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed update-instances my-mig --instances<span style="color:#f92672">=</span>my-instance3,my-instance-4
-</span></span></code></pre></div><h1 id="更新-instances-template">更新 Instances-template</h1>
+</span></span></code></pre></div><h2 id="更新-instances-template">更新 Instances-template</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed set-instance-template my-mig --template<span style="color:#f92672">=</span>v2-template
-</span></span></code></pre></div><p>(P.69)</p>
+</span></span></code></pre></div><h2 id="重啟-instances">重啟 Instances</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> gcloud compute instance-groups managed rolling-action restart mymig
+</span></span></code></pre></div><h2 id="刪除後重建-instances">刪除後重建 Instances</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed rolling-action replace my-mig
+</span></span></code></pre></div><h2 id="用新-template-更新-instances">用新 template 更新 Instances</h2>
+<h3 id="basic-version-更新全部-instances">Basic Version 更新全部 Instances</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed rollingaction start-update my-mig --version<span style="color:#f92672">=</span>template<span style="color:#f92672">=</span>v1-template
+</span></span></code></pre></div><h3 id="canary-version-更新部分-instance-到-v2-template">Canary Version 更新部分 Instance 到 v2 template</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed rolling-action start-update my-mig --version<span style="color:#f92672">=</span>template<span style="color:#f92672">=</span>v1-template --canary-version<span style="color:#f92672">=</span>template<span style="color:#f92672">=</span>v2-template,target-size<span style="color:#f92672">=</span>10%
+</span></span></code></pre></div><h3 id="情境1">情境1</h3>
+<p>確保至一個 instance 長期健康存在於所有時間。</p>
+<pre tabindex="0"><code>gcloud compute instance-groups managed set-autoscaling my-group --max-numreplicas=1 --min-num-replicas=1
+</code></pre><h3 id="情境2">情境2</h3>
+<p>更新版本時不希望減少可用 Instance 的數量，並且一次只更新一個 Instance。</p>
+<pre tabindex="0"><code>gcloud compute instance-groups managed rolling-action start-update my-group --version=template=my-v1-template --max-surge 1 --max-unavailable 0
+</code></pre><p>(P.69)</p>
 <ul class="pa0">
   
    <li class="list">
@@ -385,11 +400,11 @@
     <ul class="pa0 list">
 	   
 	     <li  class="mb2">
-          <a href="/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-02/">GCP的ACE證照筆記-02</a>
+          <a href="/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-02/">GCP的ACE證照筆記-02-Gcloud簡介</a>
         </li>
 	    
 	     <li  class="mb2">
-          <a href="/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-01/">GCP的ACE證照筆記-01</a>
+          <a href="/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-01/">GCP的ACE證照筆記-01-GCE介紹</a>
         </li>
 	    
     </ul>
