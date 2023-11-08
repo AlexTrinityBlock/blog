@@ -1,5 +1,5 @@
 ---
-title: "GCP的ACE證照筆記"
+title: "GCP的ACE證照筆記-01"
 date: 2022-11-08T10:00:44+08:00
 draft: false
 featured_image: "/gcp.png"
@@ -153,11 +153,19 @@ E2, N2, N1 之間可以自訂 CPU, RAM 等數量，決定自己的使用量與�
 
 ---
 
-## Gcloud
+## Gcloud 操作 VM
 
-GCP命令行可裝在本地，提供各式命令行工具
+列出 VM Image。
 
-- Cloud Storage - gsutil
-- Cloud BigQuery - bq
-- Cloud Bigtable - cbt
-- K8S - kubectl
+```
+gcloud compute images list
+```
+
+啟動 VM
+
+```
+gcloud compute instances create VM_NAME \
+    --image=IMAGE \
+    --image-project=IMAGE_PROJECT
+    --machine-type=MACHINE_TYPE
+```

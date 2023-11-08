@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>GCP的ACE證照筆記-03 | 無面者小站</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Instance Groups 可以採用數個 VM template 組成一個群組進行管理。 兩種型態的 Instance Groups: Managed: 自動擴展的同一種 template 並且自動修復與自動管理釋放虛擬機。 Unmanaged: 許多不同型態的 template 組成，無法自">
+    <meta name="generator" content="Hugo 0.120.3">
+    
+    
+      
+	  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    
+
+  
+  
+    <link rel="stylesheet" href="/blog/public/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css" >
+  
+
+
+
+
+    
+      
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+
+
+    
+
+    
+    
+    <meta property="og:title" content="GCP的ACE證照筆記-03" />
+<meta property="og:description" content="Instance Groups 可以採用數個 VM template 組成一個群組進行管理。 兩種型態的 Instance Groups: Managed: 自動擴展的同一種 template 並且自動修復與自動管理釋放虛擬機。 Unmanaged: 許多不同型態的 template 組成，無法自" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-03/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-11-08T20:48:44+08:00" />
+<meta property="article:modified_time" content="2022-11-08T20:48:44+08:00" />
+
+<meta itemprop="name" content="GCP的ACE證照筆記-03">
+<meta itemprop="description" content="Instance Groups 可以採用數個 VM template 組成一個群組進行管理。 兩種型態的 Instance Groups: Managed: 自動擴展的同一種 template 並且自動修復與自動管理釋放虛擬機。 Unmanaged: 許多不同型態的 template 組成，無法自"><meta itemprop="datePublished" content="2022-11-08T20:48:44+08:00" />
+<meta itemprop="dateModified" content="2022-11-08T20:48:44+08:00" />
+<meta itemprop="wordCount" content="685">
+<meta itemprop="keywords" content="GCP," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GCP的ACE證照筆記-03"/>
+<meta name="twitter:description" content="Instance Groups 可以採用數個 VM template 組成一個群組進行管理。 兩種型態的 Instance Groups: Managed: 自動擴展的同一種 template 並且自動修復與自動管理釋放虛擬機。 Unmanaged: 許多不同型態的 template 組成，無法自"/>
+
+	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://alextrinityblock.github.io/blog/public/gcp.png');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/blog/public/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        無面者小站
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/aws/" title="AWS page">
+              AWS
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/azure/" title="Azure page">
+              Azure
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/ccna/" title="CCNA page">
+              CCNA
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/cicd/" title="CICD page">
+              CICD
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/gcp/" title="GCP page">
+              GCP
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/git/" title="git page">
+              git
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/k8s/" title="K8S page">
+              K8S
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/linux" title="linux page">
+              linux
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/node.js/" title="Node.js page">
+              Node.js
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/secure/" title="secure page">
+              secure
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/frontend/" title="網頁前端 page">
+              網頁前端
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/" title="更多 page">
+              更多
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/post/" title=" page">
+              
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">GCP的ACE證照筆記-03</h1>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-03/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-03/&amp;text=GCP%e7%9a%84ACE%e8%ad%89%e7%85%a7%e7%ad%86%e8%a8%98-03" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-03/&amp;title=GCP%e7%9a%84ACE%e8%ad%89%e7%85%a7%e7%ad%86%e8%a8%98-03" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">GCP的ACE證照筆記-03</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2022-11-08T20:48:44+08:00">November 8, 2022</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="instance-groups">Instance Groups</h1>
+<p>可以採用數個 VM template 組成一個群組進行管理。</p>
+<h2 id="兩種型態的-instance-groups">兩種型態的 Instance Groups:</h2>
+<ul>
+<li>
+<p>Managed:</p>
+<p>自動擴展的同一種 template 並且自動修復與自動管理釋放虛擬機。</p>
+</li>
+<li>
+<p>Unmanaged:</p>
+<p>許多不同型態的 template 組成，無法自動擴展修復。</p>
+</li>
+</ul>
+<h2 id="instance-groups-的地區性">Instance Groups 的地區性</h2>
+<p>可基於 Zone 或者 Region。</p>
+<ul>
+<li>
+<p>自動擴充</p>
+<p>如果 instance crash ，會自動重新啟動。</p>
+</li>
+<li>
+<p>Health check</p>
+<p>可以檢查 APP 故障，透過每隔一段時間發送 Request 來偵測。</p>
+</li>
+<li>
+<p>Auto Scaling</p>
+<p>隨著 CPU 用量增加或者減少 VM。</p>
+<ul>
+<li>
+<p>Maximum, Minimum 的 VM 量設置。</p>
+</li>
+<li>
+<p>Autoscaling metrics，自動擴展指標  CPU Utilization 等。</p>
+</li>
+<li>
+<p>Cool-down period，每一次自動縮放之間的時間差異。</p>
+</li>
+<li>
+<p>Scale In Controls，防止虛擬機數量突然下降，例如設置不會突然下降超過 10% ，或者 3 個。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Load Balancer</p>
+<p>自動負載平衡。</p>
+</li>
+<li>
+<p>Multiple zones</p>
+<p>多區域建立 instances。</p>
+</li>
+<li>
+<p>更新 APP 版本</p>
+<ul>
+<li>
+<p>Rolling updates: 滾動式更新。</p>
+</li>
+<li>
+<p>Canary Deployment: 在全面更新之前，先更新部分。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Autohealing</p>
+<p>自動在應用程式失效時，重新開啟虛擬機。</p>
+<p>但需要注意 ! 要設置在剛啟動虛擬機時，先緩緩 (Health check with Initial delay) 不然剛啟動虛擬機時，服務往往尚未啟動。</p>
+</li>
+<li>
+<p>Rolling update</p>
+<p>滾動更新，更新新的虛擬機 template。</p>
+<ul>
+<li>
+<p>Proactive，主動更新虛擬機。</p>
+</li>
+<li>
+<p>Opportunistic，在自動縮放時悄悄更新。</p>
+</li>
+<li>
+<p>Maximum surge，任何時間點增加多少個VM。</p>
+</li>
+<li>
+<p>Maximum unavailable，更新時間最多有多少VM同時不可用。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Rolling Restart/replace</p>
+<p>沒更新 template 下替換掉存在的 VM。同上，仍要設置，Maximum surge 與 Maximum unavailable。</p>
+</li>
+</ul>
+<h2 id="命令行創建-instance-groups">命令行創建 Instance Groups</h2>
+<p>建議 Instance template 可以用 Global 方便找尋，如果採 Region 則要在 Gcloud 輸入包含地區的全稱。</p>
+<p>以下指令為建立一個 instance-groups:</p>
+<ul>
+<li>
+<p>instance-groups 名稱: my-vm-cluster</p>
+</li>
+<li>
+<p>地區: us-central1-a</p>
+</li>
+<li>
+<p>採用的 template: debian-docker</p>
+</li>
+<li>
+<p>instance 數量: 2</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed create my-vm-cluster --zone us-central1-a --template debian-docker --size <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><p>其他可用參數</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>--health-check
+</span></span><span style="display:flex;"><span>--initial-delay
+</span></span><span style="display:flex;"><span>--cool-down-period
+</span></span><span style="display:flex;"><span>--scale-based-on-cpu
+</span></span><span style="display:flex;"><span>--target-cpu-utilization
+</span></span><span style="display:flex;"><span>--min-num-replicas
+</span></span><span style="display:flex;"><span>--initial-delay
+</span></span><span style="display:flex;"><span>--health-check
+</span></span></code></pre></div><h2 id="設置-autoscaling">設置 Autoscaling</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed set-autoscaling  my-vm-cluster --max-num-replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
+</span></span></code></pre></div><h2 id="更新-policies">更新 Policies</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed update my-vm-cluster --initial-delay<span style="color:#f92672">=</span><span style="color:#ae81ff">120</span>
+</span></span></code></pre></div><h1 id="調整虛擬機數量">調整虛擬機數量</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed resize my-vm-cluster --size<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>
+</span></span></code></pre></div><h1 id="重建-instances">重建 Instances</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed recreate-instances my-mig --instances<span style="color:#f92672">=</span>myinstance-1,my-instance-2
+</span></span></code></pre></div><h1 id="更新-instances">更新 Instances</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed update-instances my-mig --instances<span style="color:#f92672">=</span>my-instance3,my-instance-4
+</span></span></code></pre></div><h1 id="更新-instances-template">更新 Instances-template</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed set-instance-template my-mig --template<span style="color:#f92672">=</span>v2-template
+</span></span></code></pre></div><p>(P.69)</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/gcp" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">GCP</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">相關內容</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-02/">GCP的ACE證照筆記-02</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-01/">GCP的ACE證照筆記-01</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
+    &copy;  無面者小站 2023 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
