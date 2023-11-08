@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>daily on 無面者小站</title>
+    <link>https://alextrinityblock.github.io/blog/public/tags/daily/</link>
+    <description>Recent content in daily on 無面者小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <lastBuildDate>Tue, 08 Nov 2022 18:00:44 +0800</lastBuildDate>
+    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/daily/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2023-11-07-面試心得</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/daily/2023-11-07-%E9%9D%A2%E8%A9%A6%E5%BF%83%E5%BE%97/</link>
+      <pubDate>Tue, 08 Nov 2022 18:00:44 +0800</pubDate>
+      <guid>https://alextrinityblock.github.io/blog/public/post/daily/2023-11-07-%E9%9D%A2%E8%A9%A6%E5%BF%83%E5%BE%97/</guid>
+      <description>今天參加的面試是一間網頁公司，面試的是兩個職位。 後端工程師 SRE (Site Reliability Engineering) 網站可靠度工程師 我主要期待的是 SRE 的這份職位。 該公司若面試後超過 7 天沒有回應</description>
+    </item>
+  </channel>
+</rss>
