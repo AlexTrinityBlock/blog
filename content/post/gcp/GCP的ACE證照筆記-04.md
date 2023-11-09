@@ -8,7 +8,9 @@ tags: ["GCP"]
 
 # Cloud Load Balancing
 
-負載平衡，可以單 region 或者 multiple regions。
+負載平衡，可以提供一個IP或者網址後方，放置多台機器。
+
+可以單 region 或者 multiple regions。
 
 增加服務的 Resiliency (彈性)，Auto Scaling，High Availability。
 

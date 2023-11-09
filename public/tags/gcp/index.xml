@@ -9,7 +9,7 @@
     <lastBuildDate>Wed, 09 Nov 2022 11:00:44 +0800</lastBuildDate>
     <atom:link href="https://alextrinityblock.github.io/blog/public/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>GCP的ACE證照筆記-05</title>
+      <title>GCP的ACE證照筆記-05-Managed Services</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-05/</link>
       <pubDate>Wed, 09 Nov 2022 11:00:44 +0800</pubDate>
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-05/</guid>
@@ -20,7 +20,7 @@
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-04/</link>
       <pubDate>Wed, 09 Nov 2022 09:00:44 +0800</pubDate>
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-04/</guid>
-      <description>Cloud Load Balancing 負載平衡，可以單 region 或者 multiple regions。 增加服務的 Resiliency (彈性)，Auto Scaling，High Availability。 重要的服務: Health</description>
+      <description>Cloud Load Balancing 負載平衡，可以提供一個IP或者網址後方，放置多台機器。 可以單 region 或者 multiple regions。 增加服務的 Resiliency (彈性)，Auto Scaling，Hi</description>
     </item>
     <item>
       <title>GCP的ACE證照筆記-03-Instance Groups</title>
