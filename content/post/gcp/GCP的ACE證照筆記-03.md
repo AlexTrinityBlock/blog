@@ -1,6 +1,6 @@
 ---
 title: "GCP的ACE證照筆記-03-Instance Groups"
-date: 2022-11-08T20:48:44+08:00
+date: 2023-11-08T20:48:44+08:00
 draft: false
 featured_image: "/gcp.png"
 tags: ["GCP"]

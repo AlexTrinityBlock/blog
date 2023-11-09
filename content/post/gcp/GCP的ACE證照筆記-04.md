@@ -1,6 +1,6 @@
 ---
 title: "GCP的ACE證照筆記-04-Cloud Load Balancing"
-date: 2022-11-09T09:00:44+08:00
+date: 2023-11-09T09:00:44+08:00
 draft: false
 featured_image: "/gcp.png"
 tags: ["GCP"]

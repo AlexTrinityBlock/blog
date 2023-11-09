@@ -1,6 +1,6 @@
 ---
 title: "GCP的ACE證照筆記-02-Gcloud簡介"
-date: 2022-11-08T20:44:44+08:00
+date: 2023-11-08T20:44:44+08:00
 draft: false
 featured_image: "/gcp.png"
 tags: ["GCP"]
