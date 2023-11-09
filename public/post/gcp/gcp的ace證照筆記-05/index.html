@@ -43,7 +43,7 @@
 <meta itemprop="name" content="GCP的ACE證照筆記-05-Managed Services">
 <meta itemprop="description" content="IAAS (Infrastructure as a Service) 供應商管理硬體，其他可以自訂。 例如 : VM。 需自己更新 OS, APP, APP runtime, Auto scaling, Availability, Load balancing。 PAAS (Platform as a Service) 供應商管理硬體, OS, 網路, APP runtime, Load balancing,"><meta itemprop="datePublished" content="2023-11-09T15:55:44+08:00" />
 <meta itemprop="dateModified" content="2023-11-09T15:55:44+08:00" />
-<meta itemprop="wordCount" content="545">
+<meta itemprop="wordCount" content="803">
 <meta itemprop="keywords" content="GCP," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GCP的ACE證照筆記-05-Managed Services"/>
 <meta name="twitter:description" content="IAAS (Infrastructure as a Service) 供應商管理硬體，其他可以自訂。 例如 : VM。 需自己更新 OS, APP, APP runtime, Auto scaling, Availability, Load balancing。 PAAS (Platform as a Service) 供應商管理硬體, OS, 網路, APP runtime, Load balancing,"/>
@@ -305,6 +305,24 @@
 </li>
 <li>
 <p>Google Functions, AWS Lambda, Azure Functions: 1 + 2 + 3</p>
+</li>
+</ul>
+<h1 id="gcp-managed-services-for-compute">GCP Managed Services for Compute</h1>
+<ul>
+<li>
+<p>Compute Engine: IasS，虛擬機。</p>
+</li>
+<li>
+<p>Google Kubernetes Engine: CaaS，容器與微服務編排，需要進階叢集訪問與監控能力。</p>
+</li>
+<li>
+<p>App Engine: PaaS (CaaS,Serverless)，高擴展性應用程式，並且完全由 GCP 管理，並且採用開源的語言跟工具組成。但有可能沒使用時也存在費率。雖然部署不用手動設置容器，但是對開發環境的控制粒度，Cloud Run 容器可以能好一些。</p>
+</li>
+<li>
+<p>Cloud Functions: FaaS，Serverless，事件驅動的應用程式，採用簡單，單一目標的函數組成。</p>
+</li>
+<li>
+<p>Cloud Run: CaaS，Serverless，自動擴展的容器化服務，網址被呼叫時才運作，根據網友說明，沒用時費率甚至可以降到 0 。</p>
 </li>
 </ul>
 <ul class="pa0">

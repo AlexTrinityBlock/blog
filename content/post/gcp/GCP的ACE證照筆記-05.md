@@ -67,3 +67,14 @@ tags: ["GCP"]
 
 * Google Functions, AWS Lambda, Azure Functions: 1 + 2 + 3
 
+# GCP Managed Services for Compute
+
+* Compute Engine: IasS，虛擬機。
+
+* Google Kubernetes Engine: CaaS，容器與微服務編排，需要進階叢集訪問與監控能力。
+
+* App Engine: PaaS (CaaS,Serverless)，高擴展性應用程式，並且完全由 GCP 管理，並且採用開源的語言跟工具組成。但有可能沒使用時也存在費率。雖然部署不用手動設置容器，但是對開發環境的控制粒度，Cloud Run 容器可以能好一些。
+
+* Cloud Functions: FaaS，Serverless，事件驅動的應用程式，採用簡單，單一目標的函數組成。
+
+* Cloud Run: CaaS，Serverless，自動擴展的容器化服務，網址被呼叫時才運作，根據網友說明，沒用時費率甚至可以降到 0 。
