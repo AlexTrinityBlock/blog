@@ -529,3 +529,5 @@ A: Pod 沒辦法被安排到節點 (scheduled onto node)。 資源不足 (insuff
 Q: 我的  Pod 卡在 waiting。
 A: Pull the image 的時候失敗。
 ```
+
+(P.130)
