@@ -519,4 +519,13 @@ A: 參照上方筆記採用: Pod Autoscaler, Cluster Autoscaler。
 
 Q: 希望執行第三方不被信任的 Code 在  GKE Cluster 上，怎麼做更好?
 A: 建立一個額外 Node pool，然後執行在 GKE Sandbox 中。
+
+Q: 你希望讓微服務只在 Cluster 裏頭通訊，怎麼做?
+A: 建立 ClusterIP。
+
+Q: 我的  Pod 卡在 pending。
+A: Pod 沒辦法被安排到節點 (scheduled onto node)。 資源不足 (insufficient resources)
+
+Q: 我的  Pod 卡在 waiting。
+A: Pull the image 的時候失敗。
 ```
