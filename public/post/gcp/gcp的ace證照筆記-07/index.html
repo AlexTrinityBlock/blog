@@ -6,7 +6,7 @@
     
     <title>GCP的ACE證照筆記-07-Google Kubernetes Engine | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="GKE 簡述 Google 提供的 K8S 服務。 跟典型的 K8S 服務一樣有以下特色: Auto Scaling Service Discovery Load Balancer Self-Healing Zero Downtime Deployment Auto-repair Pod and Cluster Autoscaling 可用 Cloud Logging 與 Cloud Monitoring 監控 由 Google 提供的 Container-Optimized OS 提供 Persistent disks 與 Local SSD。 啟動一">
+    <meta name="description" content="GKE 簡述 (p.111) Google 提供的 K8S 服務。 跟典型的 K8S 服務一樣有以下特色: Auto Scaling Service Discovery Load Balancer Self-Healing Zero Downtime Deployment Auto-repair Pod and Cluster Autoscaling 可用 Cloud Logging 與 Cloud Monitoring 監控 由 Google 提供的 Container-Optimized OS 提供 Persistent disks 與 Local SSD。 啟動">
     <meta name="generator" content="Hugo 0.120.3">
     
     
@@ -34,19 +34,19 @@
     
     
     <meta property="og:title" content="GCP的ACE證照筆記-07-Google Kubernetes Engine" />
-<meta property="og:description" content="GKE 簡述 Google 提供的 K8S 服務。 跟典型的 K8S 服務一樣有以下特色: Auto Scaling Service Discovery Load Balancer Self-Healing Zero Downtime Deployment Auto-repair Pod and Cluster Autoscaling 可用 Cloud Logging 與 Cloud Monitoring 監控 由 Google 提供的 Container-Optimized OS 提供 Persistent disks 與 Local SSD。 啟動一" />
+<meta property="og:description" content="GKE 簡述 (p.111) Google 提供的 K8S 服務。 跟典型的 K8S 服務一樣有以下特色: Auto Scaling Service Discovery Load Balancer Self-Healing Zero Downtime Deployment Auto-repair Pod and Cluster Autoscaling 可用 Cloud Logging 與 Cloud Monitoring 監控 由 Google 提供的 Container-Optimized OS 提供 Persistent disks 與 Local SSD。 啟動" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-07/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-11-11T11:20:44+08:00" />
 <meta property="article:modified_time" content="2023-11-11T11:20:44+08:00" />
 
 <meta itemprop="name" content="GCP的ACE證照筆記-07-Google Kubernetes Engine">
-<meta itemprop="description" content="GKE 簡述 Google 提供的 K8S 服務。 跟典型的 K8S 服務一樣有以下特色: Auto Scaling Service Discovery Load Balancer Self-Healing Zero Downtime Deployment Auto-repair Pod and Cluster Autoscaling 可用 Cloud Logging 與 Cloud Monitoring 監控 由 Google 提供的 Container-Optimized OS 提供 Persistent disks 與 Local SSD。 啟動一"><meta itemprop="datePublished" content="2023-11-11T11:20:44+08:00" />
+<meta itemprop="description" content="GKE 簡述 (p.111) Google 提供的 K8S 服務。 跟典型的 K8S 服務一樣有以下特色: Auto Scaling Service Discovery Load Balancer Self-Healing Zero Downtime Deployment Auto-repair Pod and Cluster Autoscaling 可用 Cloud Logging 與 Cloud Monitoring 監控 由 Google 提供的 Container-Optimized OS 提供 Persistent disks 與 Local SSD。 啟動"><meta itemprop="datePublished" content="2023-11-11T11:20:44+08:00" />
 <meta itemprop="dateModified" content="2023-11-11T11:20:44+08:00" />
-<meta itemprop="wordCount" content="85">
+<meta itemprop="wordCount" content="2254">
 <meta itemprop="keywords" content="GCP," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GCP的ACE證照筆記-07-Google Kubernetes Engine"/>
-<meta name="twitter:description" content="GKE 簡述 Google 提供的 K8S 服務。 跟典型的 K8S 服務一樣有以下特色: Auto Scaling Service Discovery Load Balancer Self-Healing Zero Downtime Deployment Auto-repair Pod and Cluster Autoscaling 可用 Cloud Logging 與 Cloud Monitoring 監控 由 Google 提供的 Container-Optimized OS 提供 Persistent disks 與 Local SSD。 啟動一"/>
+<meta name="twitter:description" content="GKE 簡述 (p.111) Google 提供的 K8S 服務。 跟典型的 K8S 服務一樣有以下特色: Auto Scaling Service Discovery Load Balancer Self-Healing Zero Downtime Deployment Auto-repair Pod and Cluster Autoscaling 可用 Cloud Logging 與 Cloud Monitoring 監控 由 Google 提供的 Container-Optimized OS 提供 Persistent disks 與 Local SSD。 啟動"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
 
@@ -234,6 +234,7 @@
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="gke-簡述">GKE 簡述</h1>
+<p>(p.111)</p>
 <p>Google 提供的 K8S 服務。</p>
 <p>跟典型的 K8S 服務一樣有以下特色:</p>
 <ul>
@@ -270,8 +271,341 @@
 </ul>
 <h1 id="啟動一個-gke">啟動一個 GKE</h1>
 <h3 id="1啟動一個-default-node-pool">1.啟動一個 default node pool</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud container clusters create
-</span></span></code></pre></div><ul class="pa0">
+<p>建立一個名為 <code>my-cluster</code> 的 Cluster，位置在 <code>us-central1-a </code> 。</p>
+<p>由於一般用戶SSD硬碟大小未申請僅有 250 GB ，但 GKE 預設需求 300 GB。要解決可以設置硬碟為<code>pd-ssd</code>，大小為80 GB 預設 3 個節點，這樣就只會消耗 240 GB 硬碟空間。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud container clusters create my-cluster --zone  us-central1-a --disk-size <span style="color:#ae81ff">80</span> --disk-type pd-ssd 
+</span></span></code></pre></div><p>刪除時採用以下指令</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud container clusters delete create my-cluster --zone  us-central1-a 
+</span></span></code></pre></div><h3 id="2連入-cluster">2.連入 Cluster</h3>
+<p>首先取得 credentials 可以視為取得操作 K8S 的憑證。</p>
+<p>這之後就能用 kubectl 設定  Cluster 了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud container clusters get-credentials my-cluster --zone  us-central1-a 
+</span></span></code></pre></div><h3 id="3建立一個服務">3.建立一個服務</h3>
+<p>建立一個服務</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl create deployment hello-world-rest-api --image<span style="color:#f92672">=</span>in28min/hello-world-rest-api:0.0.1.RELEASE
+</span></span></code></pre></div><p>將服務暴露在 8080 port</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl expose deployment hello-world-rest-api --type<span style="color:#f92672">=</span>LoadBalancer --port<span style="color:#f92672">=</span><span style="color:#ae81ff">8080</span>
+</span></span></code></pre></div><p>接著可以在 GKE 的 Services &amp; Ingress 查看具體暴露在哪個 IP/port。</p>
+<h3 id="4建立多個容器複製">4.建立多個容器複製</h3>
+<p>首先，這是在所有 Node 主機，上增加多個 pod。但  Node 主機不會增加。</p>
+<p>首先查看 GKE 的 Workloads，可以發現 pod 預設只有一個。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl scale deployment hello-world-rest-api --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><p>接著發現變成兩個。</p>
+<h3 id="5修改-node-數量">5.修改 Node 數量</h3>
+<p>可以視為開啟更多 VM，增加可以服務的主機。</p>
+<p>不過首先要檢查 Node pool 名稱，可以在 Cluster，點進  Nodes 查看。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud container clusters resize my-cluster --node-pool default-pool --num-nodes <span style="color:#ae81ff">1</span> --zone  us-central1-a 
+</span></span></code></pre></div><h3 id="6設置-microservice-容器-auto-scaling">6.設置 microservice 容器 auto scaling</h3>
+<p>當 CPU 單核運作到 70% 時自動擴展新容器，最大容器數量設置為10。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl autoscale deployment hello-world-rest-api --max<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> --cpu-percent<span style="color:#f92672">=</span><span style="color:#ae81ff">70</span>
+</span></span></code></pre></div><h3 id="7設置-cluster-主機-auto-scaling">7.設置 cluster 主機 auto scaling</h3>
+<p>設置最少主機數跟最大主機數。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud container clusters update my-cluster --enable-autoscaling --min-nodes<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --max-nodes<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> --zone  us-central1-a 
+</span></span></code></pre></div><h3 id="8對微服務設置-application-configuration">8.對微服務設置 application configuration</h3>
+<p>Config Map 可以將環境變數傳入容器中，在手動設置後。</p>
+<p>下方的範例中 <code>RDS_DB_NAME:todos</code> 這個 Key Value 被傳入容器。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl create configmap todo-web-application-config --from-literal<span style="color:#f92672">=</span>RDS_DB_NAME<span style="color:#f92672">=</span>todos
+</span></span></code></pre></div><p>接著進行檢查</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get configmap todo-web-application-config
+</span></span></code></pre></div><p>檢查 configmap 細節。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl describe configmap todo-web-application-config
+</span></span></code></pre></div><p>結果如下:</p>
+<pre tabindex="0"><code>q123717111@cloudshell:~ (idyllic-kiln-405005)$ kubectl describe configmap todo-web-application-config
+Name:         todo-web-application-config
+Namespace:    default
+Labels:       &lt;none&gt;
+Annotations:  &lt;none&gt;
+
+Data
+====
+RDS_DB_NAME:
+----
+todos
+
+BinaryData
+====
+
+Events:  &lt;none&gt;
+</code></pre><p>可以看到 configmap 已經被建立。</p>
+<h3 id="9對微服務設置-secret-來存放敏感資料">9.對微服務設置 Secret 來存放敏感資料</h3>
+<p>Secret 可以存放容器需要的敏感資料，如資料庫密碼。</p>
+<p>下方的範例中 <code>RDS_PASSWORD:dummytodos</code> 這個 Key Value 被傳入容器。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl create secret generic todo-web-application-secrets-1 --from-literal<span style="color:#f92672">=</span>RDS_PASSWORD<span style="color:#f92672">=</span>dummytodos
+</span></span></code></pre></div><p>檢查是否成功創建</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get secret todo-web-application-secrets-1
+</span></span></code></pre></div><p>檢查 secret 細節。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl describe secret todo-web-application-secrets-1
+</span></span></code></pre></div><p>結果如下，不會直接在畫面上顯示</p>
+<pre tabindex="0"><code>q123717111@cloudshell:~ (idyllic-kiln-405005)$ kubectl describe secret todo-web-application-secrets-1
+Name:         todo-web-application-secrets-1
+Namespace:    default
+Labels:       &lt;none&gt;
+Annotations:  &lt;none&gt;
+
+Type:  Opaque
+
+Data
+====
+RDS_PASSWORD:  10 bytes
+</code></pre><h3 id="10檢查當前有哪些-deployment">10.檢查當前有哪些 Deployment</h3>
+<p>檢查當前有哪些 Deployment，也就是當前有哪些容器。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get deployment
+</span></span></code></pre></div><h3 id="11檢查當前有哪些-service">11.檢查當前有哪些 Service</h3>
+<p>容器 pod 也是種服務，而暴露 IP/Port 的 LoadBalancer 也是種服務。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get services
+</span></span></code></pre></div><p>此案例中，輸入上述指令得到的結果如下。</p>
+<pre tabindex="0"><code>q123717111@cloudshell:~ (idyllic-kiln-405005)$ kubectl get services
+NAME                   TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)          AGE
+hello-world-rest-api   LoadBalancer   10.104.1.45   34.67.8.30    8080:32183/TCP   23m
+kubernetes             ClusterIP      10.104.0.1    &lt;none&gt;        443/TCP          25m
+</code></pre><h3 id="12-取得-cluster-發生的事件">12. 取得 Cluster 發生的事件</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get events
+</span></span></code></pre></div><p>結果如下</p>
+<pre tabindex="0"><code>q123717111@cloudshell:~ (idyllic-kiln-405005)$ kubectl get events
+LAST SEEN   TYPE      REASON                                   OBJECT                                           MESSAGE
+43m         Normal    Starting                                 node/gke-my-cluster-default-pool-1e13b58c-8rlc   Starting kubelet.
+...
+19m         Normal    UpdatedLoadBalancer                      service/hello-world-rest-api                     Updated load balancer with new hosts
+</code></pre><h3 id="13-service-跟-ingress-的差別">13. Service 跟 Ingress 的差別</h3>
+<p>Service 是一連串 pods 與 Load blancer ，而 Ingress 是外部 HTTP(S) 路由規則的集合。</p>
+<pre tabindex="0"><code>Services are sets of Pods with a network endpoint that can be used for discovery and load balancing. Ingresses are collections of rules for routing external HTTP(S) traffic to Services.
+</code></pre><p>也可以創造很多 Service 下，用一個 Ingress 提供一個統一的轉送網址。</p>
+<h3 id="14-檢查當前有哪些-pods">14. 檢查當前有哪些 Pods</h3>
+<p>檢查當前有哪些 Pods</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get pods
+</span></span></code></pre></div><pre tabindex="0"><code>q123717111@cloudshell:~ (idyllic-kiln-405005)$ kubectl get pods
+NAME                                    READY   STATUS    RESTARTS   AGE
+hello-world-rest-api-5b78b5c566-8mvtt   1/1     Running   0          2m29s
+hello-world-rest-api-5b78b5c566-9t92s   1/1     Running   0          2m25s
+hello-world-rest-api-5b78b5c566-hs57f   1/1     Running   0          35m
+hello-world-rest-api-5b78b5c566-ksgb9   1/1     Running   0          2m25s
+hello-world-rest-api-5b78b5c566-r8sjv   1/1     Running   0          2m25s
+</code></pre><h3 id="15-手動呼叫自己撰寫的-deploymentyaml">15. 手動呼叫自己撰寫的 deployment.yaml</h3>
+<p>撰寫設置 pod 的 deployment</p>
+<p><strong>deployment.yaml</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Deployment</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">app</span>: <span style="color:#ae81ff">hello-world-rest-api</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">hello-world-rest-api</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">replicas</span>: <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">selector</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">matchLabels</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">app</span>: <span style="color:#ae81ff">hello-world-rest-api</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">template</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">app</span>: <span style="color:#ae81ff">hello-world-rest-api</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>            - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">in28min/hello-world-rest-api:0.0.3.RELEASE</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">name</span>: <span style="color:#ae81ff">hello-world-rest-api</span>
+</span></span></code></pre></div><p>撰寫設置 Service 開放 port 的 yaml。</p>
+<p><strong>serivce.yaml</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Service</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">app</span>: <span style="color:#ae81ff">hello-world-rest-api</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">hello-world-rest-api</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">port</span>: <span style="color:#ae81ff">8080</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">targetPort</span>: <span style="color:#ae81ff">8080</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">selector</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">app</span>: <span style="color:#ae81ff">hello-world-rest-api</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">sessionAffinity</span>: <span style="color:#ae81ff">None</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">LoadBalancer</span>
+</span></span></code></pre></div><p>呼叫剛剛寫的 yaml</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl apply -f deployment.yaml
+</span></span><span style="display:flex;"><span>kubectl apply -f serivce.yaml
+</span></span></code></pre></div><h1 id="gke-概念---cluster">GKE 概念 - Cluster</h1>
+<ul>
+<li>
+<p>Cluster 許多的VM 組成</p>
+<ul>
+<li>Master Node: 管理整個 Cluster。</li>
+<li>Worker Node: 運作  Workload。</li>
+</ul>
+</li>
+<li>
+<p>Master Node</p>
+<ul>
+<li>API Server: 管理整個 K8S 的通訊。</li>
+<li>Scheduler: 份配 pods 所在位置節點，防止 pod 出現在資源不足的節點，確保 pod 均勻分布在 Cluster 中，滿足使用者的手動調度。</li>
+<li>Control Manager: 管理 deployments 與 replicasets，新增刪除 Pod, Service, Deployment, Ingress。</li>
+<li>etcd: 分配資料庫儲存 Cluster 狀態。</li>
+</ul>
+</li>
+<li>
+<p>Worker Node:</p>
+<ul>
+<li>運作 pods</li>
+<li>Kubelet: 管理與 Master Node 的通訊。</li>
+</ul>
+</li>
+</ul>
+<h1 id="gke-cluster-的型態">GKE Cluster 的型態</h1>
+<ul>
+<li>
+<p>Zonal Cluster</p>
+<ul>
+<li>
+<p>Single Zone</p>
+</li>
+<li>
+<p>Multi-zonal</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Regional cluster: 跨越指定 region 多個 zone 。</p>
+</li>
+<li>
+<p>Private cluster: VPC 為基礎的 cluster，節點只有 internal IP。</p>
+</li>
+</ul>
+<h1 id="gke-概念---pod">GKE 概念 - Pod</h1>
+<ul>
+<li>
+<p>K8S 最小單位</p>
+</li>
+<li>
+<p>每個 pod 都有臨時 IP 位址。</p>
+</li>
+<li>
+<p>同 pod 中的容器分享著</p>
+<ul>
+<li>Network</li>
+<li>Storage</li>
+<li>IP</li>
+<li>Ports</li>
+<li>Volumes</li>
+</ul>
+</li>
+<li>
+<p>Pod的狀態</p>
+<ul>
+<li>Running</li>
+<li>Pending</li>
+<li>Succeeded</li>
+<li>Failed</li>
+<li>Unknown</li>
+</ul>
+</li>
+</ul>
+<h1 id="k8s-deployment-與-replica-set">K8S Deployment 與 Replica Set</h1>
+<p>一個 deployment 可能可以有多個版本。</p>
+<ul>
+<li>
+<p>deployment</p>
+<ul>
+<li>Represents (代表) 一個 microservice。</li>
+<li>更新容器版本同時確保沒有斷線時間。</li>
+</ul>
+</li>
+<li>
+<p>Replica set</p>
+<ul>
+<li>確保特定數量的 pod 運作特定的 microservice 版本。</li>
+</ul>
+</li>
+</ul>
+<h1 id="k8s---replica-set-概念驗證">K8S - Replica Set 概念驗證</h1>
+<p>先啟動好 K8S Cluster。</p>
+<p>建立第一版 Container。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl create deployment hello-world-rest-api --image<span style="color:#f92672">=</span>in28min/hello-world-rest-api:0.0.1.RELEASE
+</span></span></code></pre></div><p>建立第二版 Container。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl set image deployment hello-world-rest-api hello-world-rest-api<span style="color:#f92672">=</span>in28min/hello-world-rest-api:0.0.2.RELEASE
+</span></span></code></pre></div><p>然後檢視一下replica set</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get replicasets
+</span></span></code></pre></div><p>我們可以看到兩個版本同時存在</p>
+<pre tabindex="0"><code>q123717111@cloudshell:~ (idyllic-kiln-405005)$ kubectl get replicasets
+NAME                              DESIRED   CURRENT   READY   AGE
+hello-world-rest-api-5b78b5c566   0         0         0       8m3s
+hello-world-rest-api-7dc5897557   3         3         3       108s
+</code></pre><h1 id="k8s---service">K8S - Service</h1>
+<ul>
+<li>
+<p>每個 pod 有自己的 IP，Service 可以用於開放 pod 的特定 port 給外部使用者。</p>
+</li>
+<li>
+<p>當某個 pod 失效，Service 可以自動切換別的 pod。</p>
+</li>
+<li>
+<p>三種型態的 Service</p>
+<ul>
+<li>
+<p>ClusterIP: 讓某個 pod 開放 port 給 cluster 內部的 IP 實體存取。例如一個僅對內部開放的資料庫。</p>
+</li>
+<li>
+<p>LoadBalancer: 開放一個外部可存取的 port。例如網頁服務。</p>
+</li>
+<li>
+<p>NodePort: 開放某個固定 port ，在所有 Node 上，讓外部得以存取。不過也可以用 Ingress 代替。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="google-容器儲存庫">Google 容器儲存庫</h1>
+<p>Google 的 私人版 容器儲存庫，類似 Dockerhub。</p>
+<p>目前被稱為 <strong>Artifact Registry</strong>。</p>
+<p><strong>容器名稱</strong></p>
+<pre tabindex="0"><code>Naming: HostName/ProjectID/Image:Tag
+</code></pre><p>例如:</p>
+<pre tabindex="0"><code>gcr.io/projectname/helloworld:1
+</code></pre><h1 id="列出-gcp-中存放的-image">列出 GCP 中存放的 Image</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud container images list
+</span></span></code></pre></div><h1 id="gke-增加--node-pool">GKE 增加  Node pool</h1>
+<pre tabindex="0"><code>gcloud container node-pools create new-node-pool-name --cluster my-cluster
+</code></pre><h1 id="gke-其他備忘">GKE 其他備忘</h1>
+<ul>
+<li>
+<p>把 master nodes 建立多複製到不同區域，可以達到高可用性。</p>
+</li>
+<li>
+<p>Control Plane 負責安排 node 中 CPU core 的負荷。</p>
+</li>
+<li>
+<p>K8S 支持 Stateful 容器部屬，也就是單一的，長期保存的，與穩定hostname 的。例如: Kafka, Redis, ZooKeeper。</p>
+</li>
+<li>
+<p>是否能運作某種 services 用於蒐集 logs 跟監控，並且每個 Node 都有 ? DaemonSet 可以做到在每個 Node 上佈署同一種 Image。</p>
+</li>
+<li>
+<p>GKE 預設整合 GCP 的  Cloud Monitoring 與 Cloud Logging 服務。</p>
+<ul>
+<li>Cloud Logging 的 System 與 Application Logs 可以導出到 Big Query 與 Pub/Sub。</li>
+</ul>
+</li>
+</ul>
+<h1 id="k8s-其他指令">K8S 其他指令</h1>
+<h3 id="列出podservicesreplicasets">列出pod/services/replicasets</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get pods/services/replicasets
+</span></span></code></pre></div><h3 id="建立-deployment">建立 deployment</h3>
+<p>這個可以用在建立與更新任意 deployment 與 service。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl apply -f deployment.yaml
+</span></span></code></pre></div><p>或者</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl create deployment
+</span></span></code></pre></div><h3 id="刪除-deployment">刪除 deployment</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl delete deployment hello-world
+</span></span></code></pre></div><h3 id="復原剛剛的-deployment">復原剛剛的 Deployment</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl rollout undo deployment hello-world --to-revision<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><h1 id="gke問答">GKE問答</h1>
+<pre tabindex="0"><code>Q: 如何確保低成本與優化GKE實現?
+A: Spot VM, 別用太多 region, Committed use discounts, E2 虛擬機, 適度使用 Node。
+
+Q: 如何高效完整的 auto scaling 下使用 GKE ?
+A: 參照上方筆記採用: Pod Autoscaler, Cluster Autoscaler。
+
+Q: 希望執行第三方不被信任的 Code 在  GKE Cluster 上，怎麼做更好?
+A: 建立一個額外 Node pool，然後執行在 GKE Sandbox 中。
+</code></pre><ul class="pa0">
   
    <li class="list">
      <a href="/tags/gcp" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">GCP</a>
