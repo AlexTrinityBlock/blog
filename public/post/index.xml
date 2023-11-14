@@ -6,8 +6,15 @@
     <description>Recent content on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Sat, 11 Nov 2023 11:20:44 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Nov 2023 09:08:44 +0800</lastBuildDate>
     <atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Serverless真的省錢嗎</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/daily/serverless%E7%9C%9F%E7%9A%84%E7%9C%81%E9%8C%A2%E5%97%8E/</link>
+      <pubDate>Tue, 14 Nov 2023 09:08:44 +0800</pubDate>
+      <guid>https://alextrinityblock.github.io/blog/public/post/daily/serverless%E7%9C%9F%E7%9A%84%E7%9C%81%E9%8C%A2%E5%97%8E/</guid>
+      <description>不一定! 可能更貴。 根據文章 Scaling up the Prime Video audio/video monitoring service and reducing costs by 90% 的研究顯示，某個影像音訊監控服務，在採用各種 AWS Lambda 函數互相交互的時候，花費了大量的資金。 https://www.primevideotech.com/video-streaming/scaling-up-the-prime-video-audio-video-monitoring-service-and-reducing-costs-by-90</description>
+    </item>
     <item>
       <title>GCP的ACE證照筆記-07-Google Kubernetes Engine</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-07/</link>
