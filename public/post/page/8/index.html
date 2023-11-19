@@ -199,6 +199,82 @@
       </div>
     
     <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-05/" class="link black dim">
+        K8S基本操作-05-Service基本使用
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      列出 services kubectl get services 結果如下 controlplane ~ ➜ kubectl get services NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE kubernetes ClusterIP 10.43.0.1 &lt;none&gt; 443/TCP 13m kubernetes 的 ClusterIP 是 K8S 預設的服務。 顯示 service 的細部內容 kubectl describe service kubernetes 結果如下。 controlplane ~ ➜ kubectl describe service kubernetes Name: kubernetes Namespace: default Labels: component=apiserver provider=kubernetes
+    </div>
+  </div>
+
+        </div>
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        November 19, 2023
+      </div>
+    
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-04/" class="link black dim">
+        K8S基本操作-04-namespace基本使用
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      列出 namespaces kubectl get namespaces 列出某 namespaces 裏頭的 pods 例如我們要取得 research namespaces 裏頭的 pod。 kubectl -n research get pods 算出某個 namespaces 裏頭的 pods 數量 kubectl -n research get pods --no-headers | wc -l 手動在某 namespaces 裏頭啟動 pod kubectl -n finance run redis
+    </div>
+  </div>
+
+        </div>
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        November 19, 2023
+      </div>
+    
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-03/" class="link black dim">
+        K8S基本操作-03-Deployment基本使用
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      取得當前有多少 Deployments kubectl get deployments 檢查 Deployments kubectl describe deployment frontend-deployment 用 YAML 執行一個 Deployment 記得 kind: Deployment 開頭要大寫 kubectl apply -f deployment-definition-1.yaml 閱讀 Deployment 官方文檔 kubectl explain deployment
+    </div>
+  </div>
+
+        </div>
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        November 19, 2023
+      </div>
+    
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-02/" class="link black dim">
+        K8S基本操作-02-ReplicaSet基本使用
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      本篇筆記主要談論 ReplicaSet 的基本操作。 列出所有 ReplicaSet kubectl get replicasets 顯示結果類似 NAME DESIRED CURRENT READY AGE new-replica-set 4 4 0 15s 檢查 ReplicaSet 中 pod 的內容 kubectl describe replicaset 檢查 API 版本 kubectl api-resources | grep replicaset 這個 API 版本有可能是第
+    </div>
+  </div>
+
+        </div>
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        November 19, 2023
+      </div>
+    
+    <h1 class="f3 near-black">
       <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-01/" class="link black dim">
         K8S基本操作-01-建立與管理Pod
       </a>
@@ -2571,7 +2647,7 @@
         <a href="/blog/public/post/page/9/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="/blog/public/post/page/18/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/blog/public/post/page/19/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul>
 </article>
