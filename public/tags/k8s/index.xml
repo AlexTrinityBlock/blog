@@ -6,14 +6,14 @@
     <description>Recent content in K8S on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Tue, 08 Nov 2022 18:00:44 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 19 Nov 2023 10:00:44 +0800</lastBuildDate>
     <atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>CKAD證照筆記</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/k8s/ckad%E8%AD%89%E7%85%A7%E8%80%83%E8%A9%A6/</link>
-      <pubDate>Tue, 08 Nov 2022 18:00:44 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/ckad%E8%AD%89%E7%85%A7%E8%80%83%E8%A9%A6/</guid>
-      <description>CKAD證照筆記</description>
+      <title>K8S基本操作-01-建立與管理Pod</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-01/</link>
+      <pubDate>Sun, 19 Nov 2023 10:00:44 +0800</pubDate>
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-01/</guid>
+      <description>本篇筆記主要談論 kubectl 的基本操作。 列出 default namespace 的 pods kubectl get pods 或者 kubectl get pods -n default 手動運作一個 Nginx 的 pod kubectl run nginx --image=nginx 確認 pod 使用哪個 image 用以下指令顯示 pod 完整細節。 例如我們的</description>
     </item>
   </channel>
 </rss>
