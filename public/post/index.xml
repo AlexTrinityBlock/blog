@@ -6,8 +6,15 @@
     <description>Recent content on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Tue, 21 Nov 2023 08:00:44 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 21 Nov 2023 13:00:00 +0800</lastBuildDate>
     <atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS-EKS-建立一個Cluster</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/aws/aws-eks-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8Bcluster/</link>
+      <pubDate>Tue, 21 Nov 2023 13:00:00 +0800</pubDate>
+      <guid>https://alextrinityblock.github.io/blog/public/post/aws/aws-eks-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8Bcluster/</guid>
+      <description>簡述 簡單來說，使用 AWS CLI + eksctl 兩個工具，很快就可以佈署好，並且進行管理了。 比較多步驟的是在新環境中安裝 AWS CLI 。 1.用 Root acount 建立 IAM account 為了乾淨好管理，先</description>
+    </item>
     <item>
       <title>K8S基本操作-07-Ubuntu安裝K8S</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-07/</link>
