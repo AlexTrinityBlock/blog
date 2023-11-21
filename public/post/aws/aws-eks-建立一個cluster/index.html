@@ -43,7 +43,7 @@
 <meta itemprop="name" content="AWS-EKS-建立一個Cluster">
 <meta itemprop="description" content="簡述 簡單來說，使用 AWS CLI &#43; eksctl 兩個工具，很快就可以佈署好，並且進行管理了。 比較多步驟的是在新環境中安裝 AWS CLI 。 1.用 Root acount 建立 IAM account 為了乾淨好管理，先"><meta itemprop="datePublished" content="2023-11-21T13:00:00+08:00" />
 <meta itemprop="dateModified" content="2023-11-21T13:00:00+08:00" />
-<meta itemprop="wordCount" content="501">
+<meta itemprop="wordCount" content="597">
 <meta itemprop="keywords" content="AWS," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AWS-EKS-建立一個Cluster"/>
 <meta name="twitter:description" content="簡述 簡單來說，使用 AWS CLI &#43; eksctl 兩個工具，很快就可以佈署好，並且進行管理了。 比較多步驟的是在新環境中安裝 AWS CLI 。 1.用 Root acount 建立 IAM account 為了乾淨好管理，先"/>
@@ -255,7 +255,7 @@
 <p>可能的話 Windows 推薦用 Chocolatey 或 scoop 安裝。</p>
 <p>或者乾脆用 Docker 裝。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --rm -it public.ecr.aws/eksctl/eksctl version
-</span></span></code></pre></div><h2 id="3輸入各項內容直接啟用群集">3.輸入各項內容，直接啟用群集。</h2>
+</span></span></code></pre></div><h2 id="3-a輸入各項內容直接啟用群集">3-a.輸入各項內容，直接啟用群集</h2>
 <p>注意! us-east-1 可能會發生無法建立路由表的情況，Cluster 建立失敗時，請換 region 。</p>
 <p>我們以下建立的叢集訊息如下:</p>
 <ul>
@@ -268,7 +268,33 @@
 <li>region(所在地區): us-east-2</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>eksctl create cluster --name dev-cluster --nodegroup-name dev-cluster-node-group  --node-type t2.medium --nodes <span style="color:#ae81ff">3</span> --nodes-min <span style="color:#ae81ff">3</span> --nodes-max <span style="color:#ae81ff">7</span> --managed --asg-access --region<span style="color:#f92672">=</span>us-east-2
-</span></span></code></pre></div><h2 id="4直接使用-kubectl">4.直接使用 kubectl</h2>
+</span></span></code></pre></div><h2 id="3-b使用腳本啟用群集">3-b.使用腳本啟用群集</h2>
+<p>建立以下檔案</p>
+<p><strong>cluster.yaml</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">eksctl.io/v1alpha5</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterConfig</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">basic-cluster</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">region</span>: <span style="color:#ae81ff">eu-north-1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">nodeGroups</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ng-1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">instanceType</span>: <span style="color:#ae81ff">m5.large</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">desiredCapacity</span>: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumeSize</span>: <span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ssh</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">allow</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># will use ~/.ssh/id_rsa.pub as the default ssh key</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ng-2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">instanceType</span>: <span style="color:#ae81ff">m5.xlarge</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">desiredCapacity</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumeSize</span>: <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ssh</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">publicKeyPath</span>: <span style="color:#ae81ff">~/.ssh/ec2_id_rsa.pub</span>
+</span></span></code></pre></div><p>(上頭這個範例機器比較大，比較昂貴些，可以減小成 t2.medium)</p>
+<p>參考以下儲存庫</p>
+<p><a href="https://github.com/eksctl-io/eksctl/tree/main/examples">https://github.com/eksctl-io/eksctl/tree/main/examples</a></p>
+<h2 id="4直接使用-kubectl">4.直接使用 kubectl</h2>
 <p>由於 <code>eksctl</code> 會自動連入 AWS VPC，所以以下指令可以直接觀察啟用的 nodes，如果沒有安裝 kubectl 再另行安裝。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get nodes
 </span></span></code></pre></div><ul class="pa0">

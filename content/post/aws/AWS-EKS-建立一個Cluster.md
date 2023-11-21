@@ -43,7 +43,7 @@ tags: ["AWS"]
 docker run --rm -it public.ecr.aws/eksctl/eksctl version
 ```
 
-## 3.輸入各項內容，直接啟用群集。
+## 3-a.輸入各項內容，直接啟用群集
 
 注意! us-east-1 可能會發生無法建立路由表的情況，Cluster 建立失敗時，請換 region 。
 
@@ -60,6 +60,41 @@ docker run --rm -it public.ecr.aws/eksctl/eksctl version
 ```bash
 eksctl create cluster --name dev-cluster --nodegroup-name dev-cluster-node-group  --node-type t2.medium --nodes 3 --nodes-min 3 --nodes-max 7 --managed --asg-access --region=us-east-2
 ```
+
+## 3-b.使用腳本啟用群集
+
+建立以下檔案
+
+**cluster.yaml**
+
+```yaml
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: basic-cluster
+  region: eu-north-1
+
+nodeGroups:
+  - name: ng-1
+    instanceType: m5.large
+    desiredCapacity: 10
+    volumeSize: 80
+    ssh:
+      allow: true # will use ~/.ssh/id_rsa.pub as the default ssh key
+  - name: ng-2
+    instanceType: m5.xlarge
+    desiredCapacity: 2
+    volumeSize: 100
+    ssh:
+      publicKeyPath: ~/.ssh/ec2_id_rsa.pub
+```
+
+(上頭這個範例機器比較大，比較昂貴些，可以減小成 t2.medium)
+
+參考以下儲存庫
+
+[https://github.com/eksctl-io/eksctl/tree/main/examples](https://github.com/eksctl-io/eksctl/tree/main/examples)
 
 ## 4.直接使用 kubectl
 
