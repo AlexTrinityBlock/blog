@@ -6,8 +6,22 @@
     <description>Recent content on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Sun, 19 Nov 2023 18:25:44 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 21 Nov 2023 08:00:44 +0800</lastBuildDate>
     <atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8S基本操作-07-Ubuntu安裝K8S</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-07/</link>
+      <pubDate>Tue, 21 Nov 2023 08:00:44 +0800</pubDate>
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-07/</guid>
+      <description>MicroK8S Ubuntu 官方提供了一個 snap 套件可以超快的安裝 K8S ， 稱為 MicroK8S。 sudo snap install microk8s --classic --channel=1.28 sudo usermod -a -G microk8s $USER sudo chown -f -R $USER ~/.kube su - $USER 安裝後檢查狀態是否安裝完成 microk8s status --wait-ready 使</description>
+    </item>
+    <item>
+      <title>K8S基本操作-06-imperative指令</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-06/</link>
+      <pubDate>Sun, 19 Nov 2023 18:56:44 +0800</pubDate>
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-06/</guid>
+      <description>Imperative imperative command 指令式命令，例如詳細描述每個需要的步驟。 Declarative command 宣告式命令，僅需要描述期待，實現則由程式自行決定。 如 kubectl run nginx-pod --image=nginx:alpine 就屬於 imperative command。</description>
+    </item>
     <item>
       <title>K8S基本操作-05-Service基本使用</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-05/</link>

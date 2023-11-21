@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>K8S基本操作-07-Ubuntu安裝K8S | 無面者小站</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="MicroK8S Ubuntu 官方提供了一個 snap 套件可以超快的安裝 K8S ， 稱為 MicroK8S。 sudo snap install microk8s --classic --channel=1.28 sudo usermod -a -G microk8s $USER sudo chown -f -R $USER ~/.kube su - $USER 安裝後檢查狀態是否安裝完成 microk8s status --wait-ready 使">
+    <meta name="generator" content="Hugo 0.120.3">
+    
+    
+      
+	  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    
+
+  
+  
+    <link rel="stylesheet" href="/blog/public/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css" >
+  
+
+
+
+
+    
+      
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+
+
+    
+
+    
+    
+    <meta property="og:title" content="K8S基本操作-07-Ubuntu安裝K8S" />
+<meta property="og:description" content="MicroK8S Ubuntu 官方提供了一個 snap 套件可以超快的安裝 K8S ， 稱為 MicroK8S。 sudo snap install microk8s --classic --channel=1.28 sudo usermod -a -G microk8s $USER sudo chown -f -R $USER ~/.kube su - $USER 安裝後檢查狀態是否安裝完成 microk8s status --wait-ready 使" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-07/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-11-21T08:00:44+08:00" />
+<meta property="article:modified_time" content="2023-11-21T08:00:44+08:00" />
+
+<meta itemprop="name" content="K8S基本操作-07-Ubuntu安裝K8S">
+<meta itemprop="description" content="MicroK8S Ubuntu 官方提供了一個 snap 套件可以超快的安裝 K8S ， 稱為 MicroK8S。 sudo snap install microk8s --classic --channel=1.28 sudo usermod -a -G microk8s $USER sudo chown -f -R $USER ~/.kube su - $USER 安裝後檢查狀態是否安裝完成 microk8s status --wait-ready 使"><meta itemprop="datePublished" content="2023-11-21T08:00:44+08:00" />
+<meta itemprop="dateModified" content="2023-11-21T08:00:44+08:00" />
+<meta itemprop="wordCount" content="1300">
+<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="K8S基本操作-07-Ubuntu安裝K8S"/>
+<meta name="twitter:description" content="MicroK8S Ubuntu 官方提供了一個 snap 套件可以超快的安裝 K8S ， 稱為 MicroK8S。 sudo snap install microk8s --classic --channel=1.28 sudo usermod -a -G microk8s $USER sudo chown -f -R $USER ~/.kube su - $USER 安裝後檢查狀態是否安裝完成 microk8s status --wait-ready 使"/>
+
+	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://alextrinityblock.github.io/blog/public/k8s.png');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/blog/public/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        無面者小站
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/aws/" title="AWS page">
+              AWS
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/azure/" title="Azure page">
+              Azure
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/ccna/" title="CCNA page">
+              CCNA
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/cicd/" title="CICD page">
+              CICD
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/gcp/" title="GCP page">
+              GCP
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/git/" title="git page">
+              git
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/k8s/" title="K8S page">
+              K8S
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/linux" title="linux page">
+              linux
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/node.js/" title="Node.js page">
+              Node.js
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/secure/" title="secure page">
+              secure
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/frontend/" title="網頁前端 page">
+              網頁前端
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/" title="更多 page">
+              更多
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/post/" title=" page">
+              
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">K8S基本操作-07-Ubuntu安裝K8S</h1>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-07/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-07/&amp;text=K8S%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c-07-Ubuntu%e5%ae%89%e8%a3%9dK8S" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-07/&amp;title=K8S%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c-07-Ubuntu%e5%ae%89%e8%a3%9dK8S" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">K8S基本操作-07-Ubuntu安裝K8S</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2023-11-21T08:00:44+08:00">November 21, 2023</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="microk8s">MicroK8S</h2>
+<p>Ubuntu 官方提供了一個 snap 套件可以超快的安裝 K8S ， 稱為 MicroK8S。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo snap install microk8s --classic --channel<span style="color:#f92672">=</span>1.28
+</span></span><span style="display:flex;"><span>sudo usermod -a -G microk8s $USER
+</span></span><span style="display:flex;"><span>sudo chown -f -R $USER ~/.kube
+</span></span><span style="display:flex;"><span>su - $USER
+</span></span></code></pre></div><p>安裝後檢查狀態是否安裝完成</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>microk8s status --wait-ready
+</span></span></code></pre></div><p>使用 kubectl</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>microk8s kubectl get nodes
+</span></span></code></pre></div><p>啟用額外功能 (Ingress 也要在此額外安裝)，甚至有個 Container registry 存在。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>microk8s enable dns
+</span></span><span style="display:flex;"><span>microk8s enable hostpath-storage
+</span></span><span style="display:flex;"><span>microk8s enable ingress
+</span></span><span style="display:flex;"><span>microk8s enable registry
+</span></span><span style="display:flex;"><span>microk8s enable helm
+</span></span><span style="display:flex;"><span>microk8s enable helm3
+</span></span><span style="display:flex;"><span>microk8s enable cert-manager
+</span></span></code></pre></div><p>更多額外功能:
+<a href="https://microk8s.io/docs/addons#heading--list">https://microk8s.io/docs/addons#heading&ndash;list</a></p>
+<p>開啟與關閉</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>microk8s start
+</span></span><span style="display:flex;"><span>microk8s stop
+</span></span></code></pre></div><p>參見: <a href="https://microk8s.io/docs/getting-started">https://microk8s.io/docs/getting-started</a></p>
+<h2 id="手動安裝官方-k8s">手動安裝官方 K8S</h2>
+<ol>
+<li>啟動橋接模式</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/modules-load.d/k8s.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">br_netfilter
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/sysctl.d/k8s.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">net.bridge.bridge-nf-call-ip6tables = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">net.bridge.bridge-nf-call-iptables = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 立即生效</span>
+</span></span><span style="display:flex;"><span>sudo sysctl --system
+</span></span></code></pre></div><ol start="2">
+<li>安裝必要套件</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 更新套件庫</span>
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 更新安裝 SSL 套件庫</span>
+</span></span><span style="display:flex;"><span>sudo apt-get install -y apt-transport-https ca-certificates curl
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 讓APT keyring 有權限寫入</span>
+</span></span><span style="display:flex;"><span>sudo mkdir -m <span style="color:#ae81ff">755</span> /etc/apt/keyrings
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 下載 keyring</span>
+</span></span><span style="display:flex;"><span>curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.27/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 將 K8S 套件庫寫入 APT 套件</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.27/deb/ /&#39;</span> | sudo tee /etc/apt/sources.list.d/kubernetes.list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 更新套件</span>
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 檢查可安裝的 kubeadm 版本</span>
+</span></span><span style="display:flex;"><span>sudo apt-cache madison kubeadm
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 下載對應版本的 K8S</span>
+</span></span><span style="display:flex;"><span>sudo apt-get install -y kubelet<span style="color:#f92672">=</span>1.27.0-2.1 kubeadm<span style="color:#f92672">=</span>1.27.0-2.1 kubectl<span style="color:#f92672">=</span>1.27.0-2.1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 防止自動更新</span>
+</span></span><span style="display:flex;"><span>sudo apt-mark hold kubelet kubeadm kubectl
+</span></span></code></pre></div><p>但這個時候節點其實沒有啟動，所以仍然還暫時無法放上 Pod 。</p>
+<p>接著輸入以下指令</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 將 eth0 的 IP ，放入 Bash 變數 IP_ADDR</span>
+</span></span><span style="display:flex;"><span>IP_ADDR<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ip addr show eth0 | grep -oP <span style="color:#e6db74">&#39;(?&lt;=inet\s)\d+(\.\d+){3}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 然後用 kubeadm 啟動節點並且設置 無類別區隔路由（CIDR） 。</span>
+</span></span><span style="display:flex;"><span>kubeadm init --apiserver-cert-extra-sans<span style="color:#f92672">=</span>controlplane --apiserver-advertise-address $IP_ADDR --pod-network-cidr<span style="color:#f92672">=</span>10.244.0.0/16
+</span></span></code></pre></div><p>接著畫面會顯示下方輸出</p>
+<pre tabindex="0"><code>controlplane ~ ➜  kubeadm init --apiserver-cert-extra-sans=controlplane --apiserver-advertise-address $IP_ADDR --pod-network-cidr=10.244.0.0/16
+I1120 20:20:25.196365   19305 version.go:256] remote version is much newer: v1.28.4; falling back to: stable-1.27
+[init] Using Kubernetes version: v1.27.8
+[preflight] Running pre-flight checks
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action in beforehand using &#39;kubeadm config images pull&#39;
+W1120 20:20:25.702254   19305 images.go:80] could not find officially supported version of etcd for Kubernetes v1.27.8, falling back to the nearest etcd version (3.5.7-0)
+W1120 20:20:33.820363   19305 checks.go:835] detected that the sandbox image &#34;k8s.gcr.io/pause:3.6&#34; of the container runtime is inconsistent with that used by kubeadm. It is recommended that using &#34;registry.k8s.io/pause:3.9&#34; as the CRI sandbox image.
+[certs] Using certificateDir folder &#34;/etc/kubernetes/pki&#34;
+[certs] Generating &#34;ca&#34; certificate and key
+[certs] Generating &#34;apiserver&#34; certificate and key
+[certs] apiserver serving cert is signed for DNS names [controlplane kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.3.52.3]
+[certs] Generating &#34;apiserver-kubelet-client&#34; certificate and key
+[certs] Generating &#34;front-proxy-ca&#34; certificate and key
+[certs] Generating &#34;front-proxy-client&#34; certificate and key
+[certs] Generating &#34;etcd/ca&#34; certificate and key
+[certs] Generating &#34;etcd/server&#34; certificate and key
+[certs] etcd/server serving cert is signed for DNS names [controlplane localhost] and IPs [192.3.52.3 127.0.0.1 ::1]
+[certs] Generating &#34;etcd/peer&#34; certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [controlplane localhost] and IPs [192.3.52.3 127.0.0.1 ::1]
+[certs] Generating &#34;etcd/healthcheck-client&#34; certificate and key
+[certs] Generating &#34;apiserver-etcd-client&#34; certificate and key
+[certs] Generating &#34;sa&#34; key and public key
+[kubeconfig] Using kubeconfig folder &#34;/etc/kubernetes&#34;
+[kubeconfig] Writing &#34;admin.conf&#34; kubeconfig file
+[kubeconfig] Writing &#34;kubelet.conf&#34; kubeconfig file
+[kubeconfig] Writing &#34;controller-manager.conf&#34; kubeconfig file
+[kubeconfig] Writing &#34;scheduler.conf&#34; kubeconfig file
+[kubelet-start] Writing kubelet environment file with flags to file &#34;/var/lib/kubelet/kubeadm-flags.env&#34;
+[kubelet-start] Writing kubelet configuration to file &#34;/var/lib/kubelet/config.yaml&#34;
+[kubelet-start] Starting the kubelet
+[control-plane] Using manifest folder &#34;/etc/kubernetes/manifests&#34;
+[control-plane] Creating static Pod manifest for &#34;kube-apiserver&#34;
+[control-plane] Creating static Pod manifest for &#34;kube-controller-manager&#34;
+[control-plane] Creating static Pod manifest for &#34;kube-scheduler&#34;
+[etcd] Creating static Pod manifest for local etcd in &#34;/etc/kubernetes/manifests&#34;
+W1120 20:20:38.410133   19305 images.go:80] could not find officially supported version of etcd for Kubernetes v1.27.8, falling back to the nearest etcd version (3.5.7-0)
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory &#34;/etc/kubernetes/manifests&#34;. This can take up to 4m0s
+[apiclient] All control plane components are healthy after 12.502254 seconds
+[upload-config] Storing the configuration used in ConfigMap &#34;kubeadm-config&#34; in the &#34;kube-system&#34; Namespace
+[kubelet] Creating a ConfigMap &#34;kubelet-config&#34; in namespace kube-system with the configuration for the kubelets in the cluster
+[upload-certs] Skipping phase. Please see --upload-certs
+[mark-control-plane] Marking the node controlplane as control-plane by adding the labels: [node-role.kubernetes.io/control-plane node.kubernetes.io/exclude-from-external-load-balancers]
+[mark-control-plane] Marking the node controlplane as control-plane by adding the taints [node-role.kubernetes.io/control-plane:NoSchedule]
+[bootstrap-token] Using token: v7s7co.mkpyly3lu7hf5t54
+[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles
+[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to get nodes
+[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstrap-token] Configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstrap-token] Configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstrap-token] Creating the &#34;cluster-info&#34; ConfigMap in the &#34;kube-public&#34; namespace
+[kubelet-finalize] Updating &#34;/etc/kubernetes/kubelet.conf&#34; to point to a rotatable kubelet client certificate and key
+[addons] Applied essential addon: CoreDNS
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run &#34;kubectl apply -f [podnetwork].yaml&#34; with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 192.3.52.3:6443 --token v7s7co.mkpyly3lu7hf5t54 \
+        --discovery-token-ca-cert-hash sha256:ca60be8a123acded2e0220105b46e293cfd19f1ce8f7a324c5f824728466b76d 
+</code></pre><p>注意上方一大段輸出最後有個</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubeadm join 192.3.52.3:6443 --token v7s7co.mkpyly3lu7hf5t54 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --discovery-token-ca-cert-hash sha256:ca60be8a123acded2e0220105b46e293cfd19f1ce8f7a324c5f824728466b76d 
+</span></span></code></pre></div><p>上面這段輸入要加入其他裝好 K8S 的節點就可以讓其他節點以 Work Node 加入了。</p>
+<p>然後接著採用以下方式把配置檔案放到使用者資料夾，這樣就能使用 kubectl 了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p $HOME/.kube
+</span></span><span style="display:flex;"><span>sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+</span></span><span style="display:flex;"><span>sudo chown <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>:<span style="color:#66d9ef">$(</span>id -g<span style="color:#66d9ef">)</span> $HOME/.kube/config
+</span></span></code></pre></div><p>安裝網路套件 Flannel，需要有這個才能接通每個 Node。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 下載 flannel 的佈署 YAML。</span>
+</span></span><span style="display:flex;"><span>curl -LO https://raw.githubusercontent.com/flannel-io/flannel/v0.20.2/Documentation/kube-flannel.yml
+</span></span></code></pre></div><p>將其中一段加以修改</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>      <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">kube-flannel</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#75715e">#image: flannelcni/flannel:v0.20.2 for ppc64le and m&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">docker.io/rancher/mirrored-flannelcni-flanne&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">command</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">/opt/bin/flanneld</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">args</span>:
+</span></span><span style="display:flex;"><span>        - --<span style="color:#ae81ff">ip-masq</span>
+</span></span><span style="display:flex;"><span>        - --<span style="color:#ae81ff">kube-subnet-mgr</span>
+</span></span></code></pre></div><p>加入一行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>      <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">kube-flannel</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#75715e">#image: flannelcni/flannel:v0.20.2 for ppc64le and m&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">docker.io/rancher/mirrored-flannelcni-flanne&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">command</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">/opt/bin/flanneld</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">args</span>:
+</span></span><span style="display:flex;"><span>        - --<span style="color:#ae81ff">ip-masq</span>
+</span></span><span style="display:flex;"><span>        - --<span style="color:#ae81ff">kube-subnet-mgr</span>
+</span></span><span style="display:flex;"><span>        - --<span style="color:#ae81ff">iface=eth0</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 啟動 Flannel</span>
+</span></span><span style="display:flex;"><span>kubectl apply -f kube-flannel.yml
+</span></span></code></pre></div><p>安裝後要等一段時間，才可看到兩個 Node Ready。</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">相關內容</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-06/">K8S基本操作-06-imperative指令</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-05/">K8S基本操作-05-Service基本使用</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-04/">K8S基本操作-04-namespace基本使用</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-03/">K8S基本操作-03-Deployment基本使用</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-02/">K8S基本操作-02-ReplicaSet基本使用</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-01/">K8S基本操作-01-建立與管理Pod</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
+    &copy;  無面者小站 2023 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
