@@ -1,12 +1,12 @@
 ---
-title: "GCP的ACE證照筆記-09-Cloud function 第二代 (2nd gen)"
+title: "GCP的ACE證照筆記-09-Cloud function 第二代 (2nd gen)(未完成)"
 date: 2023-11-14T11:20:44+08:00
 draft: false
 featured_image: "/gcp.png"
 tags: ["GCP"]
 ---
 
-# Cloud function - 2nd gen
+# Cloud function - 2nd gen (未完成)
 
 * 更長的執行時間 60 分鐘。
 
