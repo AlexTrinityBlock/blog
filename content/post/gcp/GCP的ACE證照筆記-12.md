@@ -36,15 +36,41 @@ tags: ["GCP"]
 
             * 可永久保存，並且作開機硬碟
 
+            * 可以自由選擇與伸縮大小
+
+            * 獨立於虛擬機，可以自由連接與離線於虛擬機
+
+            * Regional: 可以副本於同一個 Region 的兩個 zone。 價格為 Zonal 的兩倍左右
+            
+            * Zonal: 可以在一個 Zone 有多個副本
+
+            * Snapshots: 支持
+
         * Local SSDs
 
-            * 本地的 SSD，可以視為接在虛擬機上
+            * 本地的 SSD，可以視為接在虛擬機上，有著超快的 IOPS (超快硬碟存取)
 
-            * 僅適用於某些機型 c3-standard-88-lssd，結尾有 lssd 的。
+            * 僅適用於某些機型 c3-standard-88-lssd，結尾有 lssd 的
 
             * 僅用於暫存資料，無法永久保存
 
             * 不可作為開機硬碟
+
+            * 支持 live migration，所以機房維修時不影響
+
+            * 自動加密，但無法手動配置
+
+            * 支持 SCSI 與 NVMe 接口
+
+            * NVMe-enabled +  multi-queue SCSI images 可以得到最高效能
+
+            * 用於高速 IO (10 - 100 倍於普通硬碟)
+
+            * 適合 Caches 或者其他暫存資訊
+
+            * 無法連接到其他  VM
+
+            * Snapshots: 不支持
 
 * File Storage: 
 
@@ -57,3 +83,87 @@ tags: ["GCP"]
     * 可以簡單分享給很多個虛擬機，同時可以讀也可以寫。
 
     * GCP 的名稱為 Filestore
+
+# 比較各種 Persistent Disks
+
+* Network block storage
+
+* 可以用在自己維護的資料庫
+
+以下三種可以選擇的硬碟類型
+
+* Standard
+
+    * 機械硬碟
+
+    * pd-standard
+
+    * 順序讀寫效能普通
+
+    * 隨機讀寫效能差
+
+    * 超便宜
+
+    * 適合大量數據冷儲存
+
+* Balanced
+
+    * 固態硬碟
+
+    * pd-balanced
+
+    * 順序讀寫效能好
+
+    * 隨機讀寫效能好
+
+    * 價位中等
+
+* SSD
+
+    * 固態硬碟
+
+    * 順序讀寫效能超好
+
+    * 隨機讀寫效能超好
+
+    * 較貴
+
+    * 適合高速讀寫場景
+
+# Persistent Disks 進行 Snapshots
+
+* 可以用 Snapshots 建立 VM
+
+* Snapshots 可以掛載到 VM 上
+
+* Snapshots 可以是多個 Regional
+
+* Regional 可以跨 Project
+
+* Snapshots 可複製
+
+* Snapshots 是增量儲存，所以可以僅刪除 Snapshots 中最近新增的資料
+
+# Persistent Disks 進行 Snapshots 建議
+
+* 避免太頻繁的 Snapshots ，一個小時別超過一次。
+
+* Snapshots 進行時，虛擬機硬碟效能會下降。 故建議在非尖峰時期進行。
+
+* 從 Disk 進行 Snapshots 更快，從 images 進行 Snapshots 更慢。
+
+* 但用 Image 做出一個新的 Disk 更快， Snapshots 做出一個 Disk 更慢。
+
+* 如果要快速建立很多虛擬機，建議用 Snapshots 建立一個 Image 後，用 Image 建立虛擬機。
+
+* 建議用於虛擬機的 backups, cloning, replication
+
+# 比較表
+
+![image](/blog/public/2023-11-30/imagevssnapshot.png)
+
+# 用 Gcloud 建立硬碟
+
+```bash
+gcloud compute disks create my-disk-1 --zone=asia-east1-a
+```

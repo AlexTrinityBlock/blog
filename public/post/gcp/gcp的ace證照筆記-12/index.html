@@ -43,7 +43,7 @@
 <meta itemprop="name" content="GCP的ACE證照筆記-12-Storage 儲存">
 <meta itemprop="description" content="Storage 儲存分成兩種 Block Storage 類似許多二進位訊息的儲存區塊，可以作為硬碟直接掛上。從一個更高的角度來看，硬碟儲存的是一串 0 與 1 ， 映像檔也是如此。而 Block Storage 不"><meta itemprop="datePublished" content="2023-11-30T16:00:44+08:00" />
 <meta itemprop="dateModified" content="2023-11-30T16:00:44+08:00" />
-<meta itemprop="wordCount" content="459">
+<meta itemprop="wordCount" content="969">
 <meta itemprop="keywords" content="GCP," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GCP的ACE證照筆記-12-Storage 儲存"/>
 <meta name="twitter:description" content="Storage 儲存分成兩種 Block Storage 類似許多二進位訊息的儲存區塊，可以作為硬碟直接掛上。從一個更高的角度來看，硬碟儲存的是一串 0 與 1 ， 映像檔也是如此。而 Block Storage 不"/>
@@ -277,22 +277,61 @@
 <li>
 <p>可永久保存，並且作開機硬碟</p>
 </li>
+<li>
+<p>可以自由選擇與伸縮大小</p>
+</li>
+<li>
+<p>獨立於虛擬機，可以自由連接與離線於虛擬機</p>
+</li>
+<li>
+<p>Regional: 可以副本於同一個 Region 的兩個 zone。 價格為 Zonal 的兩倍左右</p>
+</li>
+<li>
+<p>Zonal: 可以在一個 Zone 有多個副本</p>
+</li>
+<li>
+<p>Snapshots: 支持</p>
+</li>
 </ul>
 </li>
 <li>
 <p>Local SSDs</p>
 <ul>
 <li>
-<p>本地的 SSD，可以視為接在虛擬機上</p>
+<p>本地的 SSD，可以視為接在虛擬機上，有著超快的 IOPS (超快硬碟存取)</p>
 </li>
 <li>
-<p>僅適用於某些機型 c3-standard-88-lssd，結尾有 lssd 的。</p>
+<p>僅適用於某些機型 c3-standard-88-lssd，結尾有 lssd 的</p>
 </li>
 <li>
 <p>僅用於暫存資料，無法永久保存</p>
 </li>
 <li>
 <p>不可作為開機硬碟</p>
+</li>
+<li>
+<p>支持 live migration，所以機房維修時不影響</p>
+</li>
+<li>
+<p>自動加密，但無法手動配置</p>
+</li>
+<li>
+<p>支持 SCSI 與 NVMe 接口</p>
+</li>
+<li>
+<p>NVMe-enabled +  multi-queue SCSI images 可以得到最高效能</p>
+</li>
+<li>
+<p>用於高速 IO (10 - 100 倍於普通硬碟)</p>
+</li>
+<li>
+<p>適合 Caches 或者其他暫存資訊</p>
+</li>
+<li>
+<p>無法連接到其他  VM</p>
+</li>
+<li>
+<p>Snapshots: 不支持</p>
 </li>
 </ul>
 </li>
@@ -321,7 +360,128 @@
 </ul>
 </li>
 </ul>
-<ul class="pa0">
+<h1 id="比較各種-persistent-disks">比較各種 Persistent Disks</h1>
+<ul>
+<li>
+<p>Network block storage</p>
+</li>
+<li>
+<p>可以用在自己維護的資料庫</p>
+</li>
+</ul>
+<p>以下三種可以選擇的硬碟類型</p>
+<ul>
+<li>
+<p>Standard</p>
+<ul>
+<li>
+<p>機械硬碟</p>
+</li>
+<li>
+<p>pd-standard</p>
+</li>
+<li>
+<p>順序讀寫效能普通</p>
+</li>
+<li>
+<p>隨機讀寫效能差</p>
+</li>
+<li>
+<p>超便宜</p>
+</li>
+<li>
+<p>適合大量數據冷儲存</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Balanced</p>
+<ul>
+<li>
+<p>固態硬碟</p>
+</li>
+<li>
+<p>pd-balanced</p>
+</li>
+<li>
+<p>順序讀寫效能好</p>
+</li>
+<li>
+<p>隨機讀寫效能好</p>
+</li>
+<li>
+<p>價位中等</p>
+</li>
+</ul>
+</li>
+<li>
+<p>SSD</p>
+<ul>
+<li>
+<p>固態硬碟</p>
+</li>
+<li>
+<p>順序讀寫效能超好</p>
+</li>
+<li>
+<p>隨機讀寫效能超好</p>
+</li>
+<li>
+<p>較貴</p>
+</li>
+<li>
+<p>適合高速讀寫場景</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="persistent-disks-進行-snapshots">Persistent Disks 進行 Snapshots</h1>
+<ul>
+<li>
+<p>可以用 Snapshots 建立 VM</p>
+</li>
+<li>
+<p>Snapshots 可以掛載到 VM 上</p>
+</li>
+<li>
+<p>Snapshots 可以是多個 Regional</p>
+</li>
+<li>
+<p>Regional 可以跨 Project</p>
+</li>
+<li>
+<p>Snapshots 可複製</p>
+</li>
+<li>
+<p>Snapshots 是增量儲存，所以可以僅刪除 Snapshots 中最近新增的資料</p>
+</li>
+</ul>
+<h1 id="persistent-disks-進行-snapshots-建議">Persistent Disks 進行 Snapshots 建議</h1>
+<ul>
+<li>
+<p>避免太頻繁的 Snapshots ，一個小時別超過一次。</p>
+</li>
+<li>
+<p>Snapshots 進行時，虛擬機硬碟效能會下降。 故建議在非尖峰時期進行。</p>
+</li>
+<li>
+<p>從 Disk 進行 Snapshots 更快，從 images 進行 Snapshots 更慢。</p>
+</li>
+<li>
+<p>但用 Image 做出一個新的 Disk 更快， Snapshots 做出一個 Disk 更慢。</p>
+</li>
+<li>
+<p>如果要快速建立很多虛擬機，建議用 Snapshots 建立一個 Image 後，用 Image 建立虛擬機。</p>
+</li>
+<li>
+<p>建議用於虛擬機的 backups, cloning, replication</p>
+</li>
+</ul>
+<h1 id="比較表">比較表</h1>
+<p><img src="/blog/public/2023-11-30/imagevssnapshot.png" alt="image"></p>
+<h1 id="用-gcloud-建立硬碟">用 Gcloud 建立硬碟</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute disks create my-disk-1 --zone<span style="color:#f92672">=</span>asia-east1-a
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
      <a href="/tags/gcp" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">GCP</a>
