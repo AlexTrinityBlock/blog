@@ -55,3 +55,4 @@ tags: ["GCP"]
     * Customer-managed key (使用從 KMS 來的鑰匙)
     * Customer-supplied key (提供你自己的 Key)
 
+**記得到IAM裏頭將帳號加上 Cloud KMS Admin 這個Role**

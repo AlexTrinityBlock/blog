@@ -6,8 +6,22 @@
     <description>Recent content on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Tue, 21 Nov 2023 13:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Nov 2023 17:00:44 +0800</lastBuildDate>
     <atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GCP的ACE證照筆記-11-Cloud KMS (Cloud Key Management)</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-11/</link>
+      <pubDate>Wed, 29 Nov 2023 17:00:44 +0800</pubDate>
+      <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-11/</guid>
+      <description>Data States 資料狀態 Data at rest: 資料在裝置上使用或者在備份中 Hard disk Database Backups Archives Data in motion (運動中): 資料在網路傳輸中 如資料從本地轉送到雲端儲存 應用程式跟 Database 交互中 兩種型</description>
+    </item>
+    <item>
+      <title>GCP的ACE證照筆記-10-Cloud Run</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-10/</link>
+      <pubDate>Wed, 29 Nov 2023 16:40:44 +0800</pubDate>
+      <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-10/</guid>
+      <description>Cloud Run 基於 Knative，一種自動管理 K8S 的工具，幾乎可以做到全自動擴展。 不須維護基礎設施。 使用時才付費。 Cloud Run for Anthos Cloud Run 是在數秒之內運作一個容器帶</description>
+    </item>
     <item>
       <title>AWS-EKS-建立一個Cluster</title>
       <link>https://alextrinityblock.github.io/blog/public/post/aws/aws-eks-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8Bcluster/</link>
@@ -65,11 +79,11 @@
       <description>本篇筆記主要談論 kubectl 的基本操作。 列出 default namespace 的 pods kubectl get pods 或者 kubectl get pods -n default 手動運作一個 Nginx 的 pod kubectl run nginx --image=nginx 確認 pod 使用哪個 image 用以下指令顯示 pod 完整細節。 例如我們的</description>
     </item>
     <item>
-      <title>GCP的ACE證照筆記-09-Cloud function 第二代 (2nd gen)</title>
+      <title>GCP的ACE證照筆記-09-Cloud function 第二代 (2nd gen)(未完成)</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-09/</link>
       <pubDate>Tue, 14 Nov 2023 11:20:44 +0800</pubDate>
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-09/</guid>
-      <description>Cloud function - 2nd gen 更長的執行時間 60 分鐘。 更大的 VM Size，16 GB RAM，4 vCPU。 Concurrency: 1 個 function 接受同時 1000 個併發。第一代，1 次接受 1 個併發。 Multiple Function Revisions (多版</description>
+      <description>Cloud function - 2nd gen (未完成) 更長的執行時間 60 分鐘。 更大的 VM Size，16 GB RAM，4 vCPU。 Concurrency: 1 個 function 接受同時 1000 個併發。第一代，1 次接受 1 個併發。 Multiple</description>
     </item>
     <item>
       <title>GCP的ACE證照筆記-08-Cloud function 第一代</title>
