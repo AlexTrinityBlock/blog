@@ -43,7 +43,7 @@
 <meta itemprop="name" content="GCP的ACE證照筆記-11-Cloud KMS (Cloud Key Management)">
 <meta itemprop="description" content="Data States 資料狀態 Data at rest: 資料在裝置上使用或者在備份中 Hard disk Database Backups Archives Data in motion (運動中): 資料在網路傳輸中 如資料從本地轉送到雲端儲存 應用程式跟 Database 交互中 兩種型"><meta itemprop="datePublished" content="2023-11-29T17:00:44+08:00" />
 <meta itemprop="dateModified" content="2023-11-29T17:00:44+08:00" />
-<meta itemprop="wordCount" content="271">
+<meta itemprop="wordCount" content="424">
 <meta itemprop="keywords" content="GCP," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GCP的ACE證照筆記-11-Cloud KMS (Cloud Key Management)"/>
 <meta name="twitter:description" content="Data States 資料狀態 Data at rest: 資料在裝置上使用或者在備份中 Hard disk Database Backups Archives Data in motion (運動中): 資料在網路傳輸中 如資料從本地轉送到雲端儲存 應用程式跟 Database 交互中 兩種型"/>
@@ -311,7 +311,14 @@
 </ul>
 </li>
 </ul>
+<h1 id="建立一組屬於自己的-key-ring">建立一組屬於自己的 Key Ring</h1>
 <p><strong>記得到IAM裏頭將帳號加上 Cloud KMS Admin 這個Role</strong></p>
+<p>進入以下這個 Cloud Console 路徑。</p>
+<p>搜尋  KMS &gt; Key management &gt; Create Key Ring &gt; 建立鑰匙圈</p>
+<p>然後選擇鑰匙的形式， Hardware Security Module (HSM) 硬體安全模組的價格非常貴 (儘管超級安全)，練習時可以先用 Software 。</p>
+<p>注意， key Ring 與 Key 無法刪除，除非刪除 Project。</p>
+<h1 id="使用-gce-建立虛擬機加密硬碟">使用 GCE 建立虛擬機加密硬碟</h1>
+<p>VM instances &gt; Create instances &gt; Boot disk &gt; Change &gt; Show Advance Configuration &gt; Encryption &gt; Customer-managed encryption key &gt; 選擇鑰匙 &gt; Grant GCE 可以存取鑰匙。</p>
 <ul class="pa0">
   
    <li class="list">

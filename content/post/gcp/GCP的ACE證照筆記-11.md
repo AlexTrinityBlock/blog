@@ -55,4 +55,19 @@ tags: ["GCP"]
     * Customer-managed key (使用從 KMS 來的鑰匙)
     * Customer-supplied key (提供你自己的 Key)
 
+# 建立一組屬於自己的 Key Ring
+
 **記得到IAM裏頭將帳號加上 Cloud KMS Admin 這個Role**
+
+進入以下這個 Cloud Console 路徑。
+
+搜尋  KMS > Key management > Create Key Ring > 建立鑰匙圈
+
+然後選擇鑰匙的形式， Hardware Security Module (HSM) 硬體安全模組的價格非常貴 (儘管超級安全)，練習時可以先用 Software 。
+
+注意， key Ring 與 Key 無法刪除，除非刪除 Project。
+
+# 使用 GCE 建立虛擬機加密硬碟
+
+VM instances > Create instances > Boot disk > Change > Show Advance Configuration > Encryption > Customer-managed encryption key > 選擇鑰匙 > Grant GCE 可以存取鑰匙。
+
