@@ -6,8 +6,15 @@
     <description>Recent content in GCP on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Wed, 29 Nov 2023 17:00:44 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 Nov 2023 16:00:44 +0800</lastBuildDate>
     <atom:link href="https://alextrinityblock.github.io/blog/public/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GCP的ACE證照筆記-12-Storage 儲存</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-12/</link>
+      <pubDate>Thu, 30 Nov 2023 16:00:44 +0800</pubDate>
+      <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-12/</guid>
+      <description>Storage 儲存分成兩種 Block Storage 類似許多二進位訊息的儲存區塊，可以作為硬碟直接掛上。從一個更高的角度來看，硬碟儲存的是一串 0 與 1 ， 映像檔也是如此。而 Block Storage 不</description>
+    </item>
     <item>
       <title>GCP的ACE證照筆記-11-Cloud KMS (Cloud Key Management)</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-11/</link>
