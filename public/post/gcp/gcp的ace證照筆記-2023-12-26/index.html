@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>GCP的ACE證照筆記-2023-12-26 | 無面者小站</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="GCP ACE 考前模擬題目的小筆記 儲存秘密 GCP Secret Manager 與 Environment variables 的抉擇，兩個都可行，該選哪個? GCP Secret Manager 提供版本控制和日誌記錄功能，可以很容易調查哪個 APP 進行存取，相">
+    <meta name="generator" content="Hugo 0.120.3">
+    
+    
+      
+	  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    
+
+  
+  
+    <link rel="stylesheet" href="/blog/public/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css" >
+  
+
+
+
+
+    
+      
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+
+
+    
+
+    
+    
+    <meta property="og:title" content="GCP的ACE證照筆記-2023-12-26" />
+<meta property="og:description" content="GCP ACE 考前模擬題目的小筆記 儲存秘密 GCP Secret Manager 與 Environment variables 的抉擇，兩個都可行，該選哪個? GCP Secret Manager 提供版本控制和日誌記錄功能，可以很容易調查哪個 APP 進行存取，相" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-2023-12-26/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-12-26T01:00:44+08:00" />
+<meta property="article:modified_time" content="2023-12-26T01:00:44+08:00" />
+
+<meta itemprop="name" content="GCP的ACE證照筆記-2023-12-26">
+<meta itemprop="description" content="GCP ACE 考前模擬題目的小筆記 儲存秘密 GCP Secret Manager 與 Environment variables 的抉擇，兩個都可行，該選哪個? GCP Secret Manager 提供版本控制和日誌記錄功能，可以很容易調查哪個 APP 進行存取，相"><meta itemprop="datePublished" content="2023-12-26T01:00:44+08:00" />
+<meta itemprop="dateModified" content="2023-12-26T01:00:44+08:00" />
+<meta itemprop="wordCount" content="2668">
+<meta itemprop="keywords" content="GCP," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GCP的ACE證照筆記-2023-12-26"/>
+<meta name="twitter:description" content="GCP ACE 考前模擬題目的小筆記 儲存秘密 GCP Secret Manager 與 Environment variables 的抉擇，兩個都可行，該選哪個? GCP Secret Manager 提供版本控制和日誌記錄功能，可以很容易調查哪個 APP 進行存取，相"/>
+
+	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://alextrinityblock.github.io/blog/public/gcp.png');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/blog/public/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        無面者小站
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/aws/" title="AWS page">
+              AWS
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/azure/" title="Azure page">
+              Azure
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/ccna/" title="CCNA page">
+              CCNA
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/cicd/" title="CICD page">
+              CICD
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/gcp/" title="GCP page">
+              GCP
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/git/" title="git page">
+              git
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/k8s/" title="K8S page">
+              K8S
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/linux" title="linux page">
+              linux
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/node.js/" title="Node.js page">
+              Node.js
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/secure/" title="secure page">
+              secure
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/frontend/" title="網頁前端 page">
+              網頁前端
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/tags/" title="更多 page">
+              更多
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/public/post/" title=" page">
+              
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">GCP的ACE證照筆記-2023-12-26</h1>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-2023-12-26/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-2023-12-26/&amp;text=GCP%e7%9a%84ACE%e8%ad%89%e7%85%a7%e7%ad%86%e8%a8%98-2023-12-26" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-2023-12-26/&amp;title=GCP%e7%9a%84ACE%e8%ad%89%e7%85%a7%e7%ad%86%e8%a8%98-2023-12-26" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">GCP的ACE證照筆記-2023-12-26</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2023-12-26T01:00:44+08:00">December 26, 2023</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="gcp-ace-考前模擬題目的小筆記">GCP ACE 考前模擬題目的小筆記</h1>
+<h2 id="儲存秘密">儲存秘密</h2>
+<p>GCP Secret Manager 與 Environment variables 的抉擇，兩個都可行，該選哪個?</p>
+<p>GCP Secret Manager 提供版本控制和日誌記錄功能，可以很容易調查哪個 APP 進行存取，相對好點。</p>
+<h2 id="gcp-的定時運作腳本">GCP 的定時運作腳本</h2>
+<p>GCP Batch 可以透過定時啟動一個 Spot VM 來執行預先撰寫好的 Script。</p>
+<p><a href="https://cloud.google.com/batch/docs/get-started">https://cloud.google.com/batch/docs/get-started</a></p>
+<h2 id="用-gcp-管理-active-directory">用 GCP 管理 Active Directory</h2>
+<p>Cloud Identity 上可以創建與管理員工的帳號，並且跟 Active Directory 同步。</p>
+<p>Google Cloud Directory Sync (GCDS) 也可以把 Google 帳戶跟 Microsoft Active Directory 或 LDAP 伺服器的資料保持同步。</p>
+<p>順帶一提常用的 LDAP 工具是 OpenLDAP 。</p>
+<h2 id="hrms-人資管理系統">HRMS 人資管理系統</h2>
+<p>這個詞只是出現在模擬題目中，以下說明定義。</p>
+<p>HRMS software 是 Human Resource Management Systems 的縮寫，中文意思是人力資源管理系統。它是一種軟體平台，可以整合、管理和自動化組織中的許多常規人力資源流程。它可以執行多種功能，例如組織和管理員工的詳細資料和組織資訊、提供員工自助服務、處理薪資和福利、追蹤員工的出勤、請假、績效、獎勵等，以及提供數據分析和報告等。</p>
+<h2 id="在本地模擬-gcp-cloud-datastore">在本地模擬 GCP Cloud Datastore</h2>
+<p>Cloud Datastore 是個 NoSQL，使用 Key Value 儲存內容， Datastore Emulator 可在本地對其進行模擬。</p>
+<p>Google 提供 Datastore Emulator，模擬遠端的 GCP 資料儲存。</p>
+<p><a href="https://cloud.google.com/datastore/docs/tools/datastore-emulator">https://cloud.google.com/datastore/docs/tools/datastore-emulator</a></p>
+<h2 id="可視化帳單變化">可視化帳單變化</h2>
+<ol>
+<li>把 Billing Data export 到 Big Query</li>
+<li>用 Looker Studio 來進行圖表可視化。</li>
+</ol>
+<h2 id="檢查誰是這個-project-的-owner">檢查誰是這個 Project 的 Owner</h2>
+<p>一行指令檢查所有 IAM</p>
+<pre tabindex="0"><code>gcloud projects get iam policy
+</code></pre><h2 id="設置群組權限">設置群組權限</h2>
+<p>IAM Group 可以一次將某個 Role 賦予到一整群用戶上。</p>
+<h2 id="active-directory-federation-service-是什麼">Active Directory Federation Service 是什麼?</h2>
+<p>是一種可以讓特定 Active Directory（AD）加入的服務。一旦任何的 AD 加入了這個同盟組織，ADFS 伺服器可以立刻的知道。ADFS 的目的是為了解決不同網域的使用者一再輸入認證資料的問題，讓使用者只需通過一次身份驗證後，就可以自由存取網路上其他網域的系統服務而不必再重複身份驗證步驟。ADFS 使用 Windows Identity Foundation（WIF）的架構來建立身分識別，並且提供了一些範本用來建置簡單的 ASP.NET STS，而開發人員可以擴充這些 STS 並且實作適合自己需求的實際 STS。</p>
+<h2 id="saml-是什麼">SAML 是什麼?</h2>
+<p>什麼是安全斷言標記語言 （SAML）？</p>
+<p>SAML 是安全性聲明標記語言 (Security Assertion Markup Language) 的縮寫，是一種用於在身分識別提供者 (IdP) 和服務提供者 (SP) 之間交換驗證和授權資料的開放標準。SAML 是一種 XML 型標記語言，用於傳遞安全性判斷提示，也就是服務提供者用來進行存取控制決策的陳述式。</p>
+<p>SAML 的一個主要用途是實現單一登入 (SSO) 的技術，讓使用者只需一次驗證，就可以存取多個應用程式和服務。使用 SSO 時，使用者不需要向他們使用的每項服務確認他們的身分，而是透過 SAML 宣告來授予他們存取權限。</p>
+<h2 id="cassandra-資料庫">Cassandra 資料庫</h2>
+<p>首先 GCP 的 Cloud Bigtable 與 Cassandra 相容!</p>
+<p>Cassandra 是一種開源的分散式 NoSQL 資料庫系統，它最初由 Facebook 開發，用於儲存簡單格式的資料，例如收件箱。Cassandra 的資料模型參考了 Google 的 BigTable，採用了寬欄儲存模型 (Wide Column Stores)，可以儲存大量的非結構化或半結構化的資料，並支援動態的欄位變化。Cassandra 的分散式架構參考了 Amazon 的 Dynamo，採用了一致性雜湊 (Consistent Hashing) 的方式，將資料分散在多個節點上，並提供高可用性和高延展性的特性。</p>
+<p>以下範例:</p>
+<pre tabindex="0"><code>CREATE TYPE address (
+  street text,
+  city text,
+  state text,
+  zip_code int
+);
+
+CREATE TABLE user (
+  id int PRIMARY KEY,
+  name text,
+  email text,
+  home_address address,
+  work_address address
+);
+</code></pre><p>一句話不準確地說，就是一個表裏頭，還可以藏著幾個表。</p>
+<h2 id="gcp-deployment-manager-用-yaml-部屬資源">GCP Deployment manager 用 YAML 部屬資源</h2>
+<p>GCP Deployment manager 是一種基於雲端的服務，可以讓您使用 YAML 檔案來宣告和自動化 Google Cloud 平台 (GCP) 的資源管理。您可以使用範本和設定檔來定義您想要部署的資源，例如 Cloud Storage, Compute Engine, 和 Cloud SQL，並讓它們協同運作。您也可以使用 Deployment manager 來更新或刪除已部署的資源。</p>
+<p>Deployment manager 的優點是可以提供一致性、可重複性、和可維護性的部署方案，而不需要手動操作每個資源。您也可以使用 Python 或 Jinja2 來撰寫更彈性和強大的範本。</p>
+<h2 id="cloud-source-repositories">Cloud Source Repositories</h2>
+<p>GCP 版 Github。</p>
+<h2 id="gcp-snapshot-schedule">GCP snapshot schedule</h2>
+<p>可以給定排程，自動 Snapshot。</p>
+<h2 id="etl-transformations">ETL transformations</h2>
+<p>將非結構化數據擷取 (extract)、轉換 (transform) 和載入 (load) ，然後放入單一資料庫。</p>
+<h2 id="cloud-dataflow">Cloud Dataflow</h2>
+<p>無伺服器、快速且具成本效益的整合式串流與批次資料處理服務。</p>
+<p>可以事先寫好 &ldquo;要如何處理資料&rdquo; 然後，放在 Dataflow 上執行。</p>
+<h2 id="dataproc">Dataproc</h2>
+<p>可執行 Apache Hadoop、Apache Spark、Apache Flink、Presto 和 30 多種開放原始碼工具和架構。</p>
+<h2 id="ops-agent">Ops Agent</h2>
+<p>可以將 VM 裏頭的 logs 自動回傳到 Cloud logs。</p>
+<p>以下主機自帶:</p>
+<ul>
+<li>App Engin</li>
+<li>App Engine flexible</li>
+<li>Dataflow</li>
+<li>Dataproc</li>
+<li>Google Kubernetes Engine node</li>
+<li>Cloud Run</li>
+</ul>
+<h2 id="如何擴充-gke-主機">如何擴充 GKE 主機?</h2>
+<p>新 Node pool 可以允許新的主機型號加入，選更高配置的即可。</p>
+<h2 id="如何同時查詢-cloud-storage-與-cloud-bigtable-">如何同時查詢 Cloud Storage 與 Cloud Bigtable ?</h2>
+<p>在 Cloud Storage 跟 Cloud Bigtable 上建立 BigQuery external tables。</p>
+<p>然後用 BigQuery join 後查詢。</p>
+<h2 id="gke-ip-不夠用解法">GKE IP 不夠用解法</h2>
+<p>擴展 CIDR range。</p>
+<h2 id="安裝-google-cloud-sdk-datastore-emulator">安裝 google-cloud-sdk-datastore-emulator</h2>
+<p>在 Ubuntu 或者 Debian 上需要用 apt-get 安裝，而非 gcloud。</p>
+<h2 id="需要一個僅能檢視資料夾階層的-role">需要一個僅能檢視資料夾階層的 Role</h2>
+<p>roles/browser role 僅能檢視 Folder，但不能檢視具體 Bucket 裏頭的內容。</p>
+<h2 id="如果要外接如微軟等第三方的-active-directory-該怎麼做">如果要外接如微軟等第三方的 Active Directory 該怎麼做?</h2>
+<p>Cloud Identity 設置 third-party identity。</p>
+<h2 id="同時要看多個-project-的-cpu-用量該怎麼做">同時要看多個 Project 的 CPU 用量該怎麼做?</h2>
+<p>可以將數個 Project 放入同個 Workspaces。</p>
+<p>來監看 CPU, memory, and disk。</p>
+<h2 id="如果一個-project-裏頭有多個執行的網站如何檢查單一個網站花掉的-egress-網關花費">如果一個 Project 裏頭有多個執行的網站，如何檢查單一個網站花掉的 egress 網關花費</h2>
+<p>首先，Billing Alert 只能用在單一的一個 Project 的花費總和。</p>
+<p>這時候只能把 billing data export 到 BigQuery 進行分析，然後寫個 Cloud function 來寄信通知費用超標。</p>
+<h2 id="自動配置-gke-指定資源並且自動調度如-gpu-cpu-等">自動配置 GKE 指定資源，並且自動調度如 GPU, CPU 等</h2>
+<p>GKE 有個 node auto-provisioning 功能，可以用 yaml 定義單個 Node 最大最小的 CPU, RAM, GPU。</p>
+<p>並且可以自動擴展，或者收縮，根據使用量。</p>
+<h2 id="對於已經自帶-https-的應用程式進行-reverse-proxy-轉發">對於已經自帶 HTTPS 的應用程式進行 Reverse Proxy 轉發</h2>
+<p>由於應用程式已經自帶 HTTPS 了，這個時候進行 SSL Proxy Load Balancer。</p>
+<h2 id="bigquery-的定價方式">BigQuery 的定價方式</h2>
+<ul>
+<li>儲存定價: 存多少資料算錢。</li>
+<li>分析定價: 以讀取的資料量作為結果(?)</li>
+</ul>
+<h2 id="將公鑰加入自己的-gcp-帳戶">將公鑰加入自己的 GCP 帳戶</h2>
+<p>用以下指令添加公鑰到 GCP 帳戶，就可以順利的登入 VM 了。 只要同時有 IAM 權限。</p>
+<p><a href="https://cloud.google.com/compute/docs/connect/add-ssh-keys"></a></p>
+<pre tabindex="0"><code>gcloud compute os-login
+</code></pre><h2 id="將同個組織下的-project-統一管帳">將同個組織下的 Project 統一管帳</h2>
+<p>建立一個 billing account，所有的 Project 連結到那個 Billing account。</p>
+<h2 id="cloud-sql-的-binary-logging">Cloud SQL 的 binary logging</h2>
+<p>Cloud SQL (MySQL) with the enable binary logging 是一種在Cloud SQL上啟用二進制日誌（binary log）的功能。二進制日誌是一種記錄MySQL數據庫中所有更改的文件，可以用於數據恢復和複製。啟用二進制日誌可以讓您創建Cloud SQL的讀取副本（read replica），以分擔主實例（primary instance）的讀取負載或分析流量。啟用二進制日誌也可以讓您使用Cloud SQL Proxy來連接Cloud SQL，以提高安全性和可靠性。</p>
+<h2 id="讓-app-engine-快速響應的方法">讓 App Engine 快速響應的方法</h2>
+<p>設置 min_idle_instances。</p>
+<p>保留固定數量空閒的 VM ，可以即時應付巔峰流量。</p>
+<h2 id="cloud-storage-的計時刪除">Cloud Storage 的計時刪除</h2>
+<p>這種稱為 lifecycle management。</p>
+<p>如果要 90 天移動到 Coldline ，365天刪除，就直接設置即可。</p>
+<p>別試圖用 365 - 90 = 275 ，來設置刪除時間，這樣會導致提早刪除。</p>
+<h2 id="合適的儲存時序資料">合適的儲存時序資料</h2>
+<p>用 Bigtable</p>
+<h2 id="如何檢查哪個用戶讀寫過-bucket">如何檢查哪個用戶讀寫過 Bucket</h2>
+<p>GCP Audit log 可以看到。</p>
+<h2 id="跨地區連通-vpc-內網">跨地區連通 VPC 內網</h2>
+<ol>
+<li>建立一個新的VPC</li>
+<li>分別把兩個Sub-net 建立在不同區域</li>
+</ol>
+<h2 id="如何改-app-engine-的地理位置">如何改 App Engine 的地理位置</h2>
+<p>首先一個專案只能有一個 App Engine。</p>
+<p>設置後無法修改位置，只能刪除專案，重新建立一個不同位置的新專案。</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/gcp" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">GCP</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">相關內容</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-12/">GCP的ACE證照筆記-12-Storage 儲存</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-11/">GCP的ACE證照筆記-11-Cloud KMS (Cloud Key Management)</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-10/">GCP的ACE證照筆記-10-Cloud Run</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-09/">GCP的ACE證照筆記-09-Cloud function 第二代 (2nd gen)(未完成)</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-08/">GCP的ACE證照筆記-08-Cloud function 第一代</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-07/">GCP的ACE證照筆記-07-Google Kubernetes Engine</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-06/">GCP的ACE證照筆記-06-App Engine</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-05/">GCP的ACE證照筆記-05-Managed Services</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-04/">GCP的ACE證照筆記-04-Cloud Load Balancing</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-03/">GCP的ACE證照筆記-03-Instance Groups</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-02/">GCP的ACE證照筆記-02-Gcloud簡介</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-01/">GCP的ACE證照筆記-01-GCE介紹</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
+    &copy;  無面者小站 2023 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
