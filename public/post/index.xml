@@ -10,9 +10,9 @@
     <atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GCP的ACE證照筆記-2023-12-26</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-2023-12-26/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-%E8%80%83%E5%89%8D%E7%AD%86%E8%A8%98-2023-12-26/</link>
       <pubDate>Tue, 26 Dec 2023 01:00:44 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-2023-12-26/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-%E8%80%83%E5%89%8D%E7%AD%86%E8%A8%98-2023-12-26/</guid>
       <description>GCP ACE 考前模擬題目的小筆記 儲存秘密 GCP Secret Manager 與 Environment variables 的抉擇，兩個都可行，該選哪個? GCP Secret Manager 提供版本控制和日誌記錄功能，可以很容易調查哪個 APP 進行存取，相</description>
     </item>
     <item>
