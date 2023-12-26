@@ -1,5 +1,5 @@
 ---
-title: "GCP的ACE證照筆記-考前筆記-2023-12-26"
+title: "GCP的ACE證照筆記-考前筆記"
 date: 2023-12-26T01:00:44+08:00
 draft: false
 featured_image: "/gcp.png"
