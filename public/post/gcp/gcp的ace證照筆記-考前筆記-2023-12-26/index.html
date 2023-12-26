@@ -43,7 +43,7 @@
 <meta itemprop="name" content="GCP的ACE證照筆記-考前筆記-2023-12-26">
 <meta itemprop="description" content="GCP ACE 考前模擬題目的小筆記 以下紀錄著模擬考題裏頭的各種超綱題。 儲存秘密 GCP Secret Manager 與 Environment variables 的抉擇，兩個都可行，該選哪個? GCP Secret Manager 提供版本控制和日誌記錄功"><meta itemprop="datePublished" content="2023-12-26T01:00:44+08:00" />
 <meta itemprop="dateModified" content="2023-12-26T01:00:44+08:00" />
-<meta itemprop="wordCount" content="3018">
+<meta itemprop="wordCount" content="3344">
 <meta itemprop="keywords" content="GCP," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GCP的ACE證照筆記-考前筆記-2023-12-26"/>
 <meta name="twitter:description" content="GCP ACE 考前模擬題目的小筆記 以下紀錄著模擬考題裏頭的各種超綱題。 儲存秘密 GCP Secret Manager 與 Environment variables 的抉擇，兩個都可行，該選哪個? GCP Secret Manager 提供版本控制和日誌記錄功"/>
@@ -382,7 +382,9 @@ CREATE TABLE user (
 <p>Memorystore 提供根據使用容量的 Cache 服務，相對運作一個 VM ，有時候更便宜。</p>
 <h2 id="連續讀寫熱點">連續讀寫熱點</h2>
 <p>如果 Cloud Spanner 的 Primary Key 是連續的話，很容易造成某個區域被頻繁讀寫，性能下降。</p>
-<p>不同於某些資料庫，Cloud Spanner 的 Primary Key 用 UUID 效率更高。</p>
+<p>不同於 MySQL 資料庫，Cloud Spanner 的 Primary Key 用 UUID 效率更高。</p>
+<p>使用單調遞增的整數作為主鍵（primary keys）的缺點不只存在於 Google Cloud Spanner，也存在於其他的分散式資料庫系統（distributed database systems），例如 Cassandra、HBase、MongoDB 等。這是因為這種主鍵設計會導致資料的熱點（hotspots），也就是資料的分片（shards）或節點（nodes）不均勻，造成某些分片或節點承受過多的讀寫負載，而影響資料庫的效能和可用性。</p>
+<p>為了避免熱點的產生，建議使用隨機或散列（hash）的主鍵，或者在主鍵中加入一些隨機或散列的元素，以使資料分佈更加均勻。例如，您可以使用 UUID（Universally Unique Identifier，通用唯一識別碼）作為主鍵，或者在主鍵中加入一個隨機的字首或尾碼。</p>
 <h2 id="avro-檔案">Avro 檔案</h2>
 <p>由 Apache Avro 開發的資料序列化格式，常用於 Apache Hadoop 等大數據處理系統中。它可以將資料以一種緊湊的二進位格式儲存和傳輸，並且在 JSON 格式中定義資料的結構和類型。</p>
 <ul class="pa0">
