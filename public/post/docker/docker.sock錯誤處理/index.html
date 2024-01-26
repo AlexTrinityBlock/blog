@@ -7,7 +7,7 @@
     <title>docker秒退的問題 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="docker為何秒退的猜測 這只是猜測，個人實力不足，不能直接斷言問題所在。 當docker中所有的程序（process）都執行完畢時，dock">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -43,7 +43,7 @@
 <meta itemprop="name" content="docker秒退的問題">
 <meta itemprop="description" content="docker為何秒退的猜測 這只是猜測，個人實力不足，不能直接斷言問題所在。 當docker中所有的程序（process）都執行完畢時，dock"><meta itemprop="datePublished" content="2021-04-16T16:31:03+08:00" />
 <meta itemprop="dateModified" content="2021-04-16T16:31:03+08:00" />
-<meta itemprop="wordCount" content="340">
+<meta itemprop="wordCount" content="355">
 <meta itemprop="keywords" content="docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="docker秒退的問題"/>
 <meta name="twitter:description" content="docker為何秒退的猜測 這只是猜測，個人實力不足，不能直接斷言問題所在。 當docker中所有的程序（process）都執行完畢時，dock"/>
@@ -243,15 +243,15 @@
 如果沒有任何一程序被開啟，我猜這就是導致秒退的原因。</p>
 <h3 id="解決方法">解決方法</h3>
 <p>會秒退常常發生在改寫了Dockerfile文件的屬性CMD時</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">CMD</span>  bash MyScript<span style="color:#960050;background-color:#1e0010">
-</span></span></span></code></pre></div><p>在MyScript執行完畢之後，它就會自動秒退了<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">CMD</span>  bash MyScript<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>在MyScript執行完畢之後，它就會自動秒退了<br>
 我們這時可以加入一個閒置的bash程序，讓它持續運作</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">CMD</span>  bash MyScript <span style="color:#f92672">&amp;&amp;</span> /bin/bash<span style="color:#960050;background-color:#1e0010">
-</span></span></span></code></pre></div><p>這樣子bash一直運作著，docker容器就不會自動關閉了</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">CMD</span>  bash MyScript <span style="color:#f92672">&amp;&amp;</span> /bin/bash<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>這樣子bash一直運作著，docker容器就不會自動關閉了</p>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/tags/docker" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">docker</a>
+     <a href="/blog/public/tags/docker" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">docker</a>
    </li>
   
 </ul>
@@ -274,7 +274,7 @@
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
-    &copy;  無面者小站 2023 
+    &copy;  無面者小站 2024 
   </a>
     <div>
 

@@ -7,7 +7,7 @@
     <title>Android05進行httprequest | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="1.開通網路使用權限 AndroidManifest.xml &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt; &lt;manifest xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34; package=&#34;com.example.httpreguests&#34;&gt; &lt;!--這兩行是關鍵內容，可以啟動網路使用權限--&gt; &lt;uses-permission android:name=&#34;android.permission.INTERNET&#34;/&gt; &lt;uses-permission android:name=&#34;android.permission.ACCESS_NETWORK_STATE&#34; /&gt; &lt;!--這兩行是關鍵內容，">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -235,107 +235,107 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="1開通網路使用權限">1.開通網路使用權限</h1>
 <p>AndroidManifest.xml</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;manifest</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">package=</span><span style="color:#e6db74">&#34;com.example.httpreguests&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--這兩行是關鍵內容，可以啟動網路使用權限--&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.INTERNET&#34;</span><span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.ACCESS_NETWORK_STATE&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--這兩行是關鍵內容，可以啟動網路使用權限--&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;application</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:allowBackup=</span><span style="color:#e6db74">&#34;true&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:icon=</span><span style="color:#e6db74">&#34;@mipmap/ic_launcher&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:label=</span><span style="color:#e6db74">&#34;@string/app_name&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:roundIcon=</span><span style="color:#e6db74">&#34;@mipmap/ic_launcher_round&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:supportsRtl=</span><span style="color:#e6db74">&#34;true&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:theme=</span><span style="color:#e6db74">&#34;@style/Theme.HttpReguests&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;activity</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;.MainActivity&#34;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">android:exported=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;intent-filter&gt;</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;action</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.intent.action.MAIN&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;category</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.intent.category.LAUNCHER&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;/intent-filter&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/activity&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/application&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/manifest&gt;</span>
-</span></span></code></pre></div><h1 id="2透過函數庫來啟用http傳輸">2.透過函數庫來啟用Http傳輸</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<span style="color:#f92672">&lt;manifest</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+    <span style="color:#a6e22e">package=</span><span style="color:#e6db74">&#34;com.example.httpreguests&#34;</span><span style="color:#f92672">&gt;</span>
+
+<span style="color:#75715e">&lt;!--這兩行是關鍵內容，可以啟動網路使用權限--&gt;</span>
+<span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.INTERNET&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.ACCESS_NETWORK_STATE&#34;</span> <span style="color:#f92672">/&gt;</span>
+<span style="color:#75715e">&lt;!--這兩行是關鍵內容，可以啟動網路使用權限--&gt;</span>
+
+    <span style="color:#f92672">&lt;application</span>
+        <span style="color:#a6e22e">android:allowBackup=</span><span style="color:#e6db74">&#34;true&#34;</span>
+        <span style="color:#a6e22e">android:icon=</span><span style="color:#e6db74">&#34;@mipmap/ic_launcher&#34;</span>
+        <span style="color:#a6e22e">android:label=</span><span style="color:#e6db74">&#34;@string/app_name&#34;</span>
+        <span style="color:#a6e22e">android:roundIcon=</span><span style="color:#e6db74">&#34;@mipmap/ic_launcher_round&#34;</span>
+        <span style="color:#a6e22e">android:supportsRtl=</span><span style="color:#e6db74">&#34;true&#34;</span>
+        <span style="color:#a6e22e">android:theme=</span><span style="color:#e6db74">&#34;@style/Theme.HttpReguests&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;activity</span>
+            <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;.MainActivity&#34;</span>
+            <span style="color:#a6e22e">android:exported=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;intent-filter&gt;</span>
+                <span style="color:#f92672">&lt;action</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.intent.action.MAIN&#34;</span> <span style="color:#f92672">/&gt;</span>
+
+                <span style="color:#f92672">&lt;category</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.intent.category.LAUNCHER&#34;</span> <span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;/intent-filter&gt;</span>
+        <span style="color:#f92672">&lt;/activity&gt;</span>
+    <span style="color:#f92672">&lt;/application&gt;</span>
+
+<span style="color:#f92672">&lt;/manifest&gt;</span>
+</code></pre></div><h1 id="2透過函數庫來啟用http傳輸">2.透過函數庫來啟用Http傳輸</h1>
 <p>MainActivity.java</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.httpreguests;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> androidx.appcompat.app.AppCompatActivity;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> android.os.Bundle;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> android.util.Log;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> android.view.View;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.android.volley.Request;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.android.volley.RequestQueue;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.android.volley.Response;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.android.volley.VolleyError;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.android.volley.toolbox.StringRequest;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.android.volley.toolbox.Volley;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> <span style="color:#66d9ef">extends</span> AppCompatActivity {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onCreate</span>(Bundle savedInstanceState) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">onCreate</span>(savedInstanceState);
-</span></span><span style="display:flex;"><span>        setContentView(R.<span style="color:#a6e22e">layout</span>.<span style="color:#a6e22e">activity_main</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onBtnClick</span>(View view){
-</span></span><span style="display:flex;"><span>        Log.<span style="color:#a6e22e">d</span>(<span style="color:#e6db74">&#34;ImALabelForLog&#34;</span>,<span style="color:#e6db74">&#34;Send&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        RequestQueue queue <span style="color:#f92672">=</span> Volley.<span style="color:#a6e22e">newRequestQueue</span>(<span style="color:#66d9ef">this</span>);
-</span></span><span style="display:flex;"><span>        String url <span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.google.com&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        StringRequest stringRequest <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> StringRequest(Request.<span style="color:#a6e22e">Method</span>.<span style="color:#a6e22e">GET</span>, url,
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">new</span> Response.<span style="color:#a6e22e">Listener</span><span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span>() {
-</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onResponse</span>(String response) {
-</span></span><span style="display:flex;"><span>                        Log.<span style="color:#a6e22e">d</span>(<span style="color:#e6db74">&#34;sending&#34;</span>,<span style="color:#e6db74">&#34;sending&#34;</span>);
-</span></span><span style="display:flex;"><span>                        Log.<span style="color:#a6e22e">d</span>(<span style="color:#e6db74">&#34;ImALabelForLog&#34;</span>, response.<span style="color:#a6e22e">substring</span>(0,500));
-</span></span><span style="display:flex;"><span>                    }
-</span></span><span style="display:flex;"><span>                }, <span style="color:#66d9ef">new</span> Response.<span style="color:#a6e22e">ErrorListener</span>() {
-</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onErrorResponse</span>(VolleyError error) {
-</span></span><span style="display:flex;"><span>                    Log.<span style="color:#a6e22e">d</span>(<span style="color:#e6db74">&#34;ImALabelForLog&#34;</span>,<span style="color:#e6db74">&#34;fail&#34;</span>);
-</span></span><span style="display:flex;"><span>                    Log.<span style="color:#a6e22e">d</span>(<span style="color:#e6db74">&#34;ImALabelForLog&#34;</span>,error.<span style="color:#a6e22e">toString</span>());
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        });
-</span></span><span style="display:flex;"><span>        queue.<span style="color:#a6e22e">add</span>(stringRequest);
-</span></span><span style="display:flex;"><span>    }<span style="color:#75715e">//End of onclick</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h1 id="3前端">3.前端</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.example.httpreguests<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> androidx.appcompat.app.AppCompatActivity<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.os.Bundle<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.util.Log<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.view.View<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> com.android.volley.Request<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> com.android.volley.RequestQueue<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> com.android.volley.Response<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> com.android.volley.VolleyError<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> com.android.volley.toolbox.StringRequest<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> com.android.volley.toolbox.Volley<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> <span style="color:#66d9ef">extends</span> AppCompatActivity <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>Bundle savedInstanceState<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">);</span>
+        setContentView<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">activity_main</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onBtnClick</span><span style="color:#f92672">(</span>View view<span style="color:#f92672">){</span>
+        Log<span style="color:#f92672">.</span><span style="color:#a6e22e">d</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ImALabelForLog&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;Send&#34;</span><span style="color:#f92672">);</span>
+
+        RequestQueue queue <span style="color:#f92672">=</span> Volley<span style="color:#f92672">.</span><span style="color:#a6e22e">newRequestQueue</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span>
+        String url <span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.google.com&#34;</span><span style="color:#f92672">;</span>
+
+        StringRequest stringRequest <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> StringRequest<span style="color:#f92672">(</span>Request<span style="color:#f92672">.</span><span style="color:#a6e22e">Method</span><span style="color:#f92672">.</span><span style="color:#a6e22e">GET</span><span style="color:#f92672">,</span> url<span style="color:#f92672">,</span>
+                <span style="color:#66d9ef">new</span> Response<span style="color:#f92672">.</span><span style="color:#a6e22e">Listener</span><span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
+                    <span style="color:#a6e22e">@Override</span>
+                    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onResponse</span><span style="color:#f92672">(</span>String response<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                        Log<span style="color:#f92672">.</span><span style="color:#a6e22e">d</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sending&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;sending&#34;</span><span style="color:#f92672">);</span>
+                        Log<span style="color:#f92672">.</span><span style="color:#a6e22e">d</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ImALabelForLog&#34;</span><span style="color:#f92672">,</span> response<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>0<span style="color:#f92672">,</span>500<span style="color:#f92672">));</span>
+                    <span style="color:#f92672">}</span>
+                <span style="color:#f92672">},</span> <span style="color:#66d9ef">new</span> Response<span style="color:#f92672">.</span><span style="color:#a6e22e">ErrorListener</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+                    <span style="color:#a6e22e">@Override</span>
+                    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onErrorResponse</span><span style="color:#f92672">(</span>VolleyError error<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    Log<span style="color:#f92672">.</span><span style="color:#a6e22e">d</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ImALabelForLog&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;fail&#34;</span><span style="color:#f92672">);</span>
+                    Log<span style="color:#f92672">.</span><span style="color:#a6e22e">d</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ImALabelForLog&#34;</span><span style="color:#f92672">,</span>error<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">});</span>
+        queue<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>stringRequest<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span><span style="color:#75715e">//End of onclick
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</code></pre></div><h1 id="3前端">3.前端</h1>
 <p>activity_main.xml</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">xmlns:app=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">xmlns:tools=</span><span style="color:#e6db74">&#34;http://schemas.android.com/tools&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tools:context=</span><span style="color:#e6db74">&#34;.MainActivity&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;Button</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/button&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:onClick=</span><span style="color:#e6db74">&#34;onBtnClick&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:text=</span><span style="color:#e6db74">&#34;clickMe&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintBottom_toBottomOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintEnd_toEndOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintStart_toStartOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintTop_toTopOf=</span><span style="color:#e6db74">&#34;parent&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
-</span></span></code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<span style="color:#f92672">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+    <span style="color:#a6e22e">xmlns:app=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
+    <span style="color:#a6e22e">xmlns:tools=</span><span style="color:#e6db74">&#34;http://schemas.android.com/tools&#34;</span>
+    <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
+    <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
+    <span style="color:#a6e22e">tools:context=</span><span style="color:#e6db74">&#34;.MainActivity&#34;</span><span style="color:#f92672">&gt;</span>
+
+    <span style="color:#f92672">&lt;Button</span>
+        <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/button&#34;</span>
+        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+        <span style="color:#a6e22e">android:onClick=</span><span style="color:#e6db74">&#34;onBtnClick&#34;</span>
+        <span style="color:#a6e22e">android:text=</span><span style="color:#e6db74">&#34;clickMe&#34;</span>
+        <span style="color:#a6e22e">app:layout_constraintBottom_toBottomOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+        <span style="color:#a6e22e">app:layout_constraintEnd_toEndOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+        <span style="color:#a6e22e">app:layout_constraintStart_toStartOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+        <span style="color:#a6e22e">app:layout_constraintTop_toTopOf=</span><span style="color:#e6db74">&#34;parent&#34;</span> <span style="color:#f92672">/&gt;</span>
+
+<span style="color:#f92672">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
+</code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/tags/android" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">android</a>
+     <a href="/blog/public/tags/android" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">android</a>
    </li>
   
 </ul>
@@ -381,7 +381,7 @@
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
-    &copy;  無面者小站 2023 
+    &copy;  無面者小站 2024 
   </a>
     <div>
 

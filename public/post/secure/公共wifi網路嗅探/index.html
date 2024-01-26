@@ -7,7 +7,7 @@
     <title>公共WIFI網路嗅探 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="作者 阿維 同意條款 閱讀本篇文章等同承諾: 不將相關知識用在任何非法用途 不窺探他人隱私 保持誠實與友善 所有安全測試知識只用於維護安全的目的 測試用的器">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -271,6 +271,7 @@ MAC Address: CC:C1:C9:CF:2E:A9 (AzureWave Technology)
 Nmap scan report for alex (192.168.43.108)
 Host is up.
 Nmap done: 256 IP addresses (3 hosts up) scanned in 2.24 seconds
+
 </code></pre><p>我們意識到三個主機:</p>
 <blockquote>
 <ol>
@@ -316,12 +317,14 @@ ARP poisoning victims:
  GROUP 1 : 192.168.43.1 15:16:55:32:77:DA
 
  GROUP 2 : 192.168.43.112 61:31:49:57:7E:C9
+
 </code></pre><p>我們可以看到裡頭有一段，這代表我們成功監聽了兩個主機之間的無線流量了</p>
 <pre tabindex="0"><code>ARP poisoning victims:
 
  GROUP 1 : 192.168.43.1 15:16:55:32:77:DA
 
  GROUP 2 : 192.168.43.112 61:31:49:57:7E:C9
+
 </code></pre><h2 id="4wireshark擷取封包">4.Wireshark擷取封包</h2>
 <p>安裝wireshark</p>
 <pre tabindex="0"><code>apt install wireshark
@@ -338,27 +341,27 @@ ARP poisoning victims:
 <ul class="pa0">
   
    <li class="list">
-     <a href="/tags/secure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">secure</a>
+     <a href="/blog/public/tags/secure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">secure</a>
    </li>
   
    <li class="list">
-     <a href="/tags/ettercap" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ettercap</a>
+     <a href="/blog/public/tags/ettercap" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ettercap</a>
    </li>
   
    <li class="list">
-     <a href="/tags/%E8%B3%87%E5%AE%89" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">資安</a>
+     <a href="/blog/public/tags/%E8%B3%87%E5%AE%89" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">資安</a>
    </li>
   
    <li class="list">
-     <a href="/tags/%E6%AA%A2%E6%9F%A5" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">檢查</a>
+     <a href="/blog/public/tags/%E6%AA%A2%E6%9F%A5" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">檢查</a>
    </li>
   
    <li class="list">
-     <a href="/tags/wifi" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">wifi</a>
+     <a href="/blog/public/tags/wifi" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">wifi</a>
    </li>
   
    <li class="list">
-     <a href="/tags/%E4%B8%AD%E9%96%93%E4%BA%BA%E6%94%BB%E6%93%8A" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">中間人攻擊</a>
+     <a href="/blog/public/tags/%E4%B8%AD%E9%96%93%E4%BA%BA%E6%94%BB%E6%93%8A" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">中間人攻擊</a>
    </li>
   
 </ul>
@@ -404,7 +407,7 @@ ARP poisoning victims:
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
-    &copy;  無面者小站 2023 
+    &copy;  無面者小站 2024 
   </a>
     <div>
 

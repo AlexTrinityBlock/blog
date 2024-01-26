@@ -7,7 +7,7 @@
     <title>AppArmor研究_1 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="AppArmor 是一款附帶在Ubuntu linux裡頭的核心安全模組，是用來進行強制存取控制(MAC)的。 假定我們今天運作著PHP網頁伺服器，而裡頭某個漏">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -270,7 +270,7 @@
 
 # No template variables specified
 
-&#34;/usr/bin/certspotter&#34; {
+&quot;/usr/bin/certspotter&quot; {
 #include &lt;abstractions/base&gt;
 
 # No abstractions specified
@@ -321,7 +321,7 @@
 </code></pre><p>然後再執行一次</p>
 <pre tabindex="0"><code>certspotter
 </code></pre><p>我們在log裡頭發現了報錯，但是卻沒有在執行時被阻止</p>
-<pre tabindex="0"><code>Feb 23 13:34:24 tutorials audit[18643]: AVC apparmor=&#34;ALLOWED&#34; operation=&#34;recvmsg&#34; profile=&#34;/usr/bin/certspotter&#34; pid=18643 comm=&#34;certspotter&#34; laddr=10.0.2.15 lport=46314 faddr=10.0.2.16 fport=443 family=&#34;inet&#34; sock_type=&#34;stream&#34; protocol=6 requested_mast=&#34;receive&#34; denied_mask=&#34;receive&#34;
+<pre tabindex="0"><code>Feb 23 13:34:24 tutorials audit[18643]: AVC apparmor=&quot;ALLOWED&quot; operation=&quot;recvmsg&quot; profile=&quot;/usr/bin/certspotter&quot; pid=18643 comm=&quot;certspotter&quot; laddr=10.0.2.15 lport=46314 faddr=10.0.2.16 fport=443 family=&quot;inet&quot; sock_type=&quot;stream&quot; protocol=6 requested_mast=&quot;receive&quot; denied_mask=&quot;receive&quot;
 </code></pre><p>上面的紀錄我們看見了，這個程式存取網路的事情被記錄下來，因為我們在規則裡頭沒有允許它存取網路。</p>
 <p>(&hellip;待續)</p>
 <h2 id="參考文件">參考文件</h2>
@@ -329,19 +329,19 @@
 <ul class="pa0">
   
    <li class="list">
-     <a href="/tags/secure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">secure</a>
+     <a href="/blog/public/tags/secure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">secure</a>
    </li>
   
    <li class="list">
-     <a href="/tags/apparmor" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">AppArmor</a>
+     <a href="/blog/public/tags/apparmor" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">AppArmor</a>
    </li>
   
    <li class="list">
-     <a href="/tags/%E8%B3%87%E5%AE%89" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">資安</a>
+     <a href="/blog/public/tags/%E8%B3%87%E5%AE%89" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">資安</a>
    </li>
   
    <li class="list">
-     <a href="/tags/auditd" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">auditd</a>
+     <a href="/blog/public/tags/auditd" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">auditd</a>
    </li>
   
 </ul>
@@ -379,7 +379,7 @@
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
-    &copy;  無面者小站 2023 
+    &copy;  無面者小站 2024 
   </a>
     <div>
 

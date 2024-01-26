@@ -7,7 +7,7 @@
     <title>一個凡人的筆記 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="歡迎來到無面者小站">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -191,6 +191,25 @@
 
     </section>
     <aside class="flex-ns flex-wrap justify-around mt5">
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        January 26, 2024
+      </div>
+    
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-08/" class="link black dim">
+        K8S基本操作-08-Scheduling
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Kube-scheduler kube-scheduler 負責監視新創建的或尚未調度（unscheduled）的 Pod，並選擇一個最佳節點來運行這些 Pod。由於 Pod 中的容器和 Pod 本身可能有不同的要求
+    </div>
+  </div>
+
+        </div>
         
         <div class="relative w-100  w-30-l mb4 bg-white">
                <div class="mb3 pa4 mid-gray overflow-hidden">
@@ -946,7 +965,7 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      假設 假設這是我們今天要測試的程式。 INPUT A,B,X IF (A&gt;1) AND (B=0) THEN Y=A IF (A=2) OR (X&gt;1) THEN Y=X PRINT Y 流程圖 %%{init: {'theme':'dark'}}%% flowchart TD A(程式開始) --> B{A>1 and B=0} B -->|True| D(Y=A) B -->|False| E{A=2 or x>1} D --> E{A=2 or x>1} E{A=2 or x>1} --> |False| G
+      假設 假設這是我們今天要測試的程式。 INPUT A,B,X IF (A&gt;1) AND (B=0) THEN Y=A IF (A=2) OR (X&gt;1) THEN Y=X PRINT Y 流程圖 %%{init: {'theme':'dark'}}%% flowchart TD A(程式開始) -- B{A1 and B=0} B --|True| D(Y=A) B --|False| E{A=2 or x1} D -- E{A=2 or x1} E{A=2 or x1} -- |False| G
     </div>
   </div>
 
@@ -965,7 +984,7 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      我們可以用Mermaid這個Javascript函數庫來繪製出流程圖。 graph TD A(程式開始) --> B{A>1 and B=0} B -->|True| D(Y=A) B -->|False| E{A=2 or x>1} D --> E{A=2 or x>1} E{A=2 or x>1} --> |False| G(程式
+      我們可以用Mermaid這個Javascript函數庫來繪製出流程圖。 graph TD A(程式開始) -- B{A1 and B=0} B --|True| D(Y=A) B --|False| E{A=2 or x1} D -- E{A=2 or x1} E{A=2 or x1} -- |False| G(程式
     </div>
   </div>
 
@@ -1093,12 +1112,12 @@
       </div>
     
     <h1 class="f3 near-black">
-      <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E7%9A%84%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8/" class="link black dim">
-        Git的簡單使用
+      <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/" class="link black dim">
+        Git復原失誤的操作
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      1.Git的三個區域 Working tree 工作樹 我們甚麼都還沒做時，資料在這裡 Staging Area 暫存區 我們進行指令add 後資料在這裡 Repository 儲存庫 我們commit時資料進入儲存庫
+      以Revert復原已經提交的變更 每次的變更都會留下雜湊質值 git log 可以查看 要復原變更可以以雜湊值復原 git revert acc6af6 如果復原時跳出UNIX式的VI編輯器介
     </div>
   </div>
 
@@ -1112,12 +1131,12 @@
       </div>
     
     <h1 class="f3 near-black">
-      <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/" class="link black dim">
-        Git復原失誤的操作
+      <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E7%9A%84%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8/" class="link black dim">
+        Git的簡單使用
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      以Revert復原已經提交的變更 每次的變更都會留下雜湊質值 git log 可以查看 要復原變更可以以雜湊值復原 git revert acc6af6 如果復原時跳出UNIX式的VI編輯器介
+      1.Git的三個區域 Working tree 工作樹 我們甚麼都還沒做時，資料在這裡 Staging Area 暫存區 我們進行指令add 後資料在這裡 Repository 儲存庫 我們commit時資料進入儲存庫
     </div>
   </div>
 
@@ -1497,7 +1516,7 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      1.要求 需要看懂，建議去看基礎的C++教學。 2.main.cpp 我們首先建立一個檔案，稱為main.cpp 內含我們主要的C++檔案 #include &lt;stdio.h&gt; #include &lt;opencv2/opencv.hpp&gt; using namespace cv; int main(int argc, char* argv[]) { //
+      1.要求 需要看懂，建議去看基礎的C++教學。 2.main.cpp 我們首先建立一個檔案，稱為main.cpp 內含我們主要的C++檔案 #include &lt;stdio.h&gt;#include &lt;opencv2/opencv.hpp&gt; using namespace cv; int main(int argc, char* argv[]) { // 檢
     </div>
   </div>
 
@@ -2825,7 +2844,7 @@
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
-    &copy;  無面者小站 2023 
+    &copy;  無面者小站 2024 
   </a>
     <div>
 

@@ -7,7 +7,7 @@
     <title>把記憶體當硬碟用 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="你希望有個資料夾可以關機之後就徹底清除嗎？ 你感覺某個檔案在硬碟裡的執行速度還是不夠快嗎？ 這時候你可以啟用ramdisk 修改檔案系統表 已roo">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -242,7 +242,7 @@
 </code></pre><p>裡頭長這樣</p>
 <pre tabindex="0"><code># /etc/fstab: static file system information.
 #
-# Use &#39;blkid&#39; to print the universally unique identifier for a
+# Use 'blkid' to print the universally unique identifier for a
 # device; this may be used with UUID= as a more robust way to name devices
 # that works even if disks are added and removed. See fstab(5).
 #
@@ -255,7 +255,7 @@ UUID=a773e6bc-3536-4dfc-9e4c-b2128d50feb4 none            swap    sw            
 我們可以在行這個設定檔裡頭加上這後</p>
 <pre tabindex="0"><code># /etc/fstab: static file system information.
 #
-# Use &#39;blkid&#39; to print the universally unique identifier for a
+# Use 'blkid' to print the universally unique identifier for a
 # device; this may be used with UUID= as a more robust way to name devices
 # that works even if disks are added and removed. See fstab(5).
 #
@@ -267,6 +267,7 @@ UUID=a773e6bc-3536-4dfc-9e4c-b2128d50feb4 none            swap    sw            
 
 # 將/mnt/happyDir 掛載到 tmpfs
 tmpfs /mnt/happyDir tmpfs defaults,noatime,nosuid,nodev,noexec,mode=1777,size=50M 0 0
+
 </code></pre><p>然後測試看看輸入</p>
 <pre tabindex="0"><code>sudo mount -a
 </code></pre><p>如果沒有報錯就成功了
@@ -274,15 +275,15 @@ tmpfs /mnt/happyDir tmpfs defaults,noatime,nosuid,nodev,noexec,mode=1777,size=50
 <ul class="pa0">
   
    <li class="list">
-     <a href="/tags/linux" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">linux</a>
+     <a href="/blog/public/tags/linux" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">linux</a>
    </li>
   
    <li class="list">
-     <a href="/tags/ramdisk" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ramdisk</a>
+     <a href="/blog/public/tags/ramdisk" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ramdisk</a>
    </li>
   
    <li class="list">
-     <a href="/tags/tmpfs" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">tmpfs</a>
+     <a href="/blog/public/tags/tmpfs" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">tmpfs</a>
    </li>
   
 </ul>
@@ -328,7 +329,7 @@ tmpfs /mnt/happyDir tmpfs defaults,noatime,nosuid,nodev,noexec,mode=1777,size=50
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
-    &copy;  無面者小站 2023 
+    &copy;  無面者小站 2024 
   </a>
     <div>
 

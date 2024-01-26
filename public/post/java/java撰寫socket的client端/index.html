@@ -7,7 +7,7 @@
     <title>java撰寫socket的client端 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="1.緣由 我今天在實驗室跟學長一起研究Java中Socket的撰寫，在此進行筆記以免忘記。 Socket是由server與client組成，有時">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -238,74 +238,74 @@
 Socket是由server與client組成，有時間將會補上Server的程式碼，並且加上註解。<br>
 注意！這個與安卓的略為寫法不同，沒辦法混用。</p>
 <h1 id="2java-socket-client端">2.Java Socket Client端</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.*;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.*;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SocketClient</span> {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String args<span style="color:#f92672">[]</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//IP</span>
-</span></span><span style="display:flex;"><span>        String address <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;127.0.0.1&#34;</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Port號</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> port <span style="color:#f92672">=</span> 8765;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//建立socket物件</span>
-</span></span><span style="display:flex;"><span>        Socket client <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Socket();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//建立&#34;專門儲存ip與port號的物件&#34;</span>
-</span></span><span style="display:flex;"><span>        InetSocketAddress isa <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> InetSocketAddress(address,port);
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//等待10秒，超過就失敗</span>
-</span></span><span style="display:flex;"><span>            client.<span style="color:#a6e22e">connect</span>(isa, 10000);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//建立取得傳輸內容的物件</span>
-</span></span><span style="display:flex;"><span>            BufferedOutputStream out <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedOutputStream(client.<span style="color:#a6e22e">getOutputStream</span>());
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//寫入要傳輸的訊息stream</span>
-</span></span><span style="display:flex;"><span>            out.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#34;傳段訊息試試。瑪莉有個小狗\n&#34;</span>.<span style="color:#a6e22e">getBytes</span>());
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//傳送訊息</span>
-</span></span><span style="display:flex;"><span>            out.<span style="color:#a6e22e">flush</span>();
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//寫入要傳輸的訊息stream</span>
-</span></span><span style="display:flex;"><span>            out.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#34;傳段訊息試試。瑪莉有個小貓\n&#34;</span>.<span style="color:#a6e22e">getBytes</span>());
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//傳送訊息</span>
-</span></span><span style="display:flex;"><span>            out.<span style="color:#a6e22e">flush</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//接收訊息的部份</span>
-</span></span><span style="display:flex;"><span>            String line;
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//建立接收訊息的stream</span>
-</span></span><span style="display:flex;"><span>            InputStream input <span style="color:#f92672">=</span> client.<span style="color:#a6e22e">getInputStream</span>();
-</span></span><span style="display:flex;"><span>            BufferedReader reader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader(<span style="color:#66d9ef">new</span> InputStreamReader(input));
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//            //將接收到的訊息存入line</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//            line = reader.readLine();</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//            //螢幕上顯示</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//            System.out.println(line);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//            如果要持續讀取訊息請這樣</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">while</span> ((line <span style="color:#f92672">=</span> reader.<span style="color:#a6e22e">readLine</span>()) <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
-</span></span><span style="display:flex;"><span>                System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(line);
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//結束輸出與連線</span>
-</span></span><span style="display:flex;"><span>            out.<span style="color:#a6e22e">close</span>();
-</span></span><span style="display:flex;"><span>            client.<span style="color:#a6e22e">close</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//連線失敗，或超過十秒時輸出</span>
-</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (java.<span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">IOException</span> e) {
-</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;連線失敗，原因如下:&#34;</span>);
-</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;IOException :&#34;</span> <span style="color:#f92672">+</span> e.<span style="color:#a6e22e">toString</span>());
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.net.*<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.io.*<span style="color:#f92672">;</span>
+
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SocketClient</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String args<span style="color:#f92672">[])</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">//IP
+</span><span style="color:#75715e"></span>        String address <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;127.0.0.1&#34;</span><span style="color:#f92672">;</span>
+        <span style="color:#75715e">//Port號
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> port <span style="color:#f92672">=</span> 8765<span style="color:#f92672">;</span>
+
+        <span style="color:#75715e">//建立socket物件
+</span><span style="color:#75715e"></span>        Socket client <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Socket<span style="color:#f92672">();</span>
+
+        <span style="color:#75715e">//建立&#34;專門儲存ip與port號的物件&#34;
+</span><span style="color:#75715e"></span>        InetSocketAddress isa <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> InetSocketAddress<span style="color:#f92672">(</span>address<span style="color:#f92672">,</span>port<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">//等待10秒，超過就失敗
+</span><span style="color:#75715e"></span>            client<span style="color:#f92672">.</span><span style="color:#a6e22e">connect</span><span style="color:#f92672">(</span>isa<span style="color:#f92672">,</span> 10000<span style="color:#f92672">);</span>
+
+            <span style="color:#75715e">//建立取得傳輸內容的物件
+</span><span style="color:#75715e"></span>            BufferedOutputStream out <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedOutputStream<span style="color:#f92672">(</span>client<span style="color:#f92672">.</span><span style="color:#a6e22e">getOutputStream</span><span style="color:#f92672">());</span>
+            <span style="color:#75715e">//寫入要傳輸的訊息stream
+</span><span style="color:#75715e"></span>            out<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;傳段訊息試試。瑪莉有個小狗\n&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getBytes</span><span style="color:#f92672">());</span>
+            <span style="color:#75715e">//傳送訊息
+</span><span style="color:#75715e"></span>            out<span style="color:#f92672">.</span><span style="color:#a6e22e">flush</span><span style="color:#f92672">();</span>
+            <span style="color:#75715e">//寫入要傳輸的訊息stream
+</span><span style="color:#75715e"></span>            out<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;傳段訊息試試。瑪莉有個小貓\n&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getBytes</span><span style="color:#f92672">());</span>
+            <span style="color:#75715e">//傳送訊息
+</span><span style="color:#75715e"></span>            out<span style="color:#f92672">.</span><span style="color:#a6e22e">flush</span><span style="color:#f92672">();</span>
+
+
+            <span style="color:#75715e">//接收訊息的部份
+</span><span style="color:#75715e"></span>            String line<span style="color:#f92672">;</span>
+            <span style="color:#75715e">//建立接收訊息的stream
+</span><span style="color:#75715e"></span>            InputStream input <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span><span style="color:#a6e22e">getInputStream</span><span style="color:#f92672">();</span>
+            BufferedReader reader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> InputStreamReader<span style="color:#f92672">(</span>input<span style="color:#f92672">));</span>
+
+<span style="color:#75715e">//            //將接收到的訊息存入line
+</span><span style="color:#75715e">//            line = reader.readLine();
+</span><span style="color:#75715e">//            //螢幕上顯示
+</span><span style="color:#75715e">//            System.out.println(line);
+</span><span style="color:#75715e"></span>
+
+<span style="color:#75715e">//            如果要持續讀取訊息請這樣
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">while</span> <span style="color:#f92672">((</span>line <span style="color:#f92672">=</span> reader<span style="color:#f92672">.</span><span style="color:#a6e22e">readLine</span><span style="color:#f92672">())</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>line<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+
+
+
+            <span style="color:#75715e">//結束輸出與連線
+</span><span style="color:#75715e"></span>            out<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+            client<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+
+        <span style="color:#75715e">//連線失敗，或超過十秒時輸出
+</span><span style="color:#75715e"></span>        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>java<span style="color:#f92672">.</span><span style="color:#a6e22e">io</span><span style="color:#f92672">.</span><span style="color:#a6e22e">IOException</span> e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;連線失敗，原因如下:&#34;</span><span style="color:#f92672">);</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;IOException :&#34;</span> <span style="color:#f92672">+</span> e<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+<span style="color:#f92672">}</span>
+</code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/tags/java" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">java</a>
+     <a href="/blog/public/tags/java" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">java</a>
    </li>
   
 </ul>
@@ -328,7 +328,7 @@ Socket是由server與client組成，有時間將會補上Server的程式碼，�
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
-    &copy;  無面者小站 2023 
+    &copy;  無面者小站 2024 
   </a>
     <div>
 

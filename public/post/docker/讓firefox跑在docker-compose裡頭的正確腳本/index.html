@@ -7,7 +7,7 @@
     <title>讓firefox跑在docker-compose裡頭的正確腳本 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="資料夾結構 firefox ├── docker-compose.yml ├── Dockerfile └── run docker-compose.yml #docker-compose版本 version: &#34;3.4&#34; #服務，不過這裡唯一的服務就是firefox瀏覽器 services: #服務名稱，">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -43,7 +43,7 @@
 <meta itemprop="name" content="讓firefox跑在docker-compose裡頭的正確腳本">
 <meta itemprop="description" content="資料夾結構 firefox ├── docker-compose.yml ├── Dockerfile └── run docker-compose.yml #docker-compose版本 version: &#34;3.4&#34; #服務，不過這裡唯一的服務就是firefox瀏覽器 services: #服務名稱，"><meta itemprop="datePublished" content="2021-07-17T10:05:03+08:00" />
 <meta itemprop="dateModified" content="2021-07-17T10:05:03+08:00" />
-<meta itemprop="wordCount" content="513">
+<meta itemprop="wordCount" content="656">
 <meta itemprop="keywords" content="docker,firefox," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="讓firefox跑在docker-compose裡頭的正確腳本"/>
 <meta name="twitter:description" content="資料夾結構 firefox ├── docker-compose.yml ├── Dockerfile └── run docker-compose.yml #docker-compose版本 version: &#34;3.4&#34; #服務，不過這裡唯一的服務就是firefox瀏覽器 services: #服務名稱，"/>
@@ -239,45 +239,46 @@
 ├── Dockerfile
 └── run
 </code></pre><h2 id="docker-composeyml">docker-compose.yml</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e">#docker-compose版本</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3.4&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#服務，不過這裡唯一的服務就是firefox瀏覽器</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">#服務名稱，如果我們要登入容器是要輸入服務名稱的，隨意取名即可</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">firefox00</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#這個是我們的映像檔名稱，可以自己選擇，當映像檔建立時就會是firefox00版本0.0</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">firefox00:0.0</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#用在這個資料夾下的Dockerfile建立映像檔</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">build</span>: <span style="color:#ae81ff">.</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#網路模式和主機相同，也就是說如果容器開放80port，那主機也會開放80port，這個主要是為了更簡單的讓x window傳送firefox的畫面到主機上</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">network_mode</span>: <span style="color:#ae81ff">host</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#要啟動這個，才能在關閉瀏覽器後仍然繼續運作容器</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">tty</span>: <span style="color:#66d9ef">true</span>
-</span></span></code></pre></div><h2 id="dockerfile">Dockerfile</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#75715e">#基底作業系統</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> ubuntu:20.04</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">#檔案通透，聯繫到x windows傳輸socket</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">VOLUME</span><span style="color:#e6db74"> /tmp/.X11-unix:/tmp/.X11-unix</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">#設置環境變數</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> DISPLAY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:0&#34;</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">#設定輸入法</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> XMODIFIERS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@im=ibus&#34;</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> QT_IM_MODULE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ibus&#34;</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> GTK_IM_MODULE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ibus&#34;</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">#編碼為C.UTF-8避免中文亂碼</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> LANG<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;C.UTF-8&#34;</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">#安裝需要的內容</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get update <span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#75715e">#x window的認證程式</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>	apt-get install xauth -y<span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	apt-get install nano -y <span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#75715e">#安裝中文輸入法</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    apt-get install ttf-wqy-microhei -y <span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    apt-get install firefox -y <span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    apt-get install ffmpeg -y<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">#啟動觸發腳本</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;/bin/bash&#34;</span>]<span style="color:#960050;background-color:#1e0010">
-</span></span></span></code></pre></div><h2 id="run腳本">run腳本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e">#docker-compose版本</span>
+<span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3.4&#34;</span>
+<span style="color:#75715e">#服務，不過這裡唯一的服務就是firefox瀏覽器</span>
+<span style="color:#f92672">services</span>:
+  <span style="color:#75715e">#服務名稱，如果我們要登入容器是要輸入服務名稱的，隨意取名即可</span>
+  <span style="color:#f92672">firefox00</span>:
+    <span style="color:#75715e">#這個是我們的映像檔名稱，可以自己選擇，當映像檔建立時就會是firefox00版本0.0</span>
+    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">firefox00:0.0</span>
+    <span style="color:#75715e">#用在這個資料夾下的Dockerfile建立映像檔</span>
+    <span style="color:#f92672">build</span>: <span style="color:#ae81ff">.</span>
+    <span style="color:#75715e">#網路模式和主機相同，也就是說如果容器開放80port，那主機也會開放80port，這個主要是為了更簡單的讓x window傳送firefox的畫面到主機上</span>
+    <span style="color:#f92672">network_mode</span>: <span style="color:#ae81ff">host</span>
+    <span style="color:#75715e">#要啟動這個，才能在關閉瀏覽器後仍然繼續運作容器</span>
+    <span style="color:#f92672">tty</span>: <span style="color:#66d9ef">true</span>
+
+</code></pre></div><h2 id="dockerfile">Dockerfile</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#75715e">#基底作業系統</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> ubuntu:20.04</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">#檔案通透，聯繫到x windows傳輸socket</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">VOLUME</span><span style="color:#e6db74"> /tmp/.X11-unix:/tmp/.X11-unix</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">#設置環境變數</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> DISPLAY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:0&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">#設定輸入法</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> XMODIFIERS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@im=ibus&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> QT_IM_MODULE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ibus&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> GTK_IM_MODULE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ibus&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">#編碼為C.UTF-8避免中文亂碼</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> LANG<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;C.UTF-8&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">#安裝需要的內容</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get update <span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    <span style="color:#75715e">#x window的認證程式</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>	apt-get install xauth -y<span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>	apt-get install nano -y <span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    <span style="color:#75715e">#安裝中文輸入法</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    apt-get install ttf-wqy-microhei -y <span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    apt-get install firefox -y <span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    apt-get install ffmpeg -y<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">#啟動觸發腳本</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;/bin/bash&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><h2 id="run腳本">run腳本</h2>
 <p>啟動firefox時運作這個腳本，它可以將x cookie傳入容器裡頭，當容器取得x cookie就能在本機的x window server獲得正確認證，然後開啟圖形界面。</p>
 <pre tabindex="0"><code>#!/bin/bash
 docker-compose up -d
@@ -287,11 +288,11 @@ docker-compose exec  firefox00 firefox
 </code></pre><ul class="pa0">
   
    <li class="list">
-     <a href="/tags/docker" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">docker</a>
+     <a href="/blog/public/tags/docker" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">docker</a>
    </li>
   
    <li class="list">
-     <a href="/tags/firefox" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">firefox</a>
+     <a href="/blog/public/tags/firefox" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">firefox</a>
    </li>
   
 </ul>
@@ -341,7 +342,7 @@ docker-compose exec  firefox00 firefox
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
-    &copy;  無面者小站 2023 
+    &copy;  無面者小站 2024 
   </a>
     <div>
 

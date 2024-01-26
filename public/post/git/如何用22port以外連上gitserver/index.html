@@ -7,7 +7,7 @@
     <title>如何用22port以外連上Git Server | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Git伺服器的SSH port 基本上來說，git server所使用的ssh port就是22 port。 為何會有例外 由於自己架設的Git Server，2">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -238,25 +238,25 @@
 <h1 id="為何會有例外">為何會有例外</h1>
 <p>由於自己架設的Git Server，22 port可能被用於其他用途，或者是被禁止，所以我們要到Git 設定檔去調整連入的port。</p>
 <p>設定檔路徑</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/home/你的使用者名稱/.ssh/config
-</span></span></code></pre></div><p>由於很多時候這個檔案不存在，所以需要自己建立。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/home/你的使用者名稱/.ssh/config
+</code></pre></div><p>由於很多時候這個檔案不存在，所以需要自己建立。</p>
 <p>假設我們要針對一個自己架設的伺服器www.xxxooo1122.tw，然後用22022 port來連線Git server的SSH。</p>
 <p>修改內容如下</p>
 <p>/home/你的使用者名稱/.ssh/config</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Host www.xxxooo1122.tw
-</span></span><span style="display:flex;"><span>Port <span style="color:#ae81ff">22022</span>
-</span></span></code></pre></div><p>也就是</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Host <span style="color:#f92672">(</span>你的Git伺服器IP或者網址名稱<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>Port <span style="color:#f92672">(</span>你開啟的port<span style="color:#f92672">)</span>
-</span></span></code></pre></div><p>這樣一來就可以連線到特定的伺服器時，使用特定的port了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Host www.xxxooo1122.tw
+Port <span style="color:#ae81ff">22022</span>
+</code></pre></div><p>也就是</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Host <span style="color:#f92672">(</span>你的Git伺服器IP或者網址名稱<span style="color:#f92672">)</span>
+Port <span style="color:#f92672">(</span>你開啟的port<span style="color:#f92672">)</span>
+</code></pre></div><p>這樣一來就可以連線到特定的伺服器時，使用特定的port了。</p>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/tags/git" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">git</a>
+     <a href="/blog/public/tags/git" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">git</a>
    </li>
   
    <li class="list">
-     <a href="/tags/github" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">github</a>
+     <a href="/blog/public/tags/github" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">github</a>
    </li>
   
 </ul>
@@ -290,7 +290,7 @@
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
-    &copy;  無面者小站 2023 
+    &copy;  無面者小站 2024 
   </a>
     <div>
 

@@ -7,7 +7,7 @@
     <title>檢查下載檔是否被調包 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="1.檢查檔案的方法 今天假設我們下載了一個檔案，叫做 ubuntu-20.04.2-live-server-amd64.iso 我們要如何檢查是否被High客給調包？ （High客：在網路上無時無刻情緒都很high，會">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -235,8 +235,8 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h3 id="1檢查檔案的方法">1.檢查檔案的方法</h3>
 <p>今天假設我們下載了一個檔案，叫做</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ubuntu-20.04.2-live-server-amd64.iso
-</span></span></code></pre></div><p>我們要如何檢查是否被High客給調包？<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ubuntu-20.04.2-live-server-amd64.iso
+</code></pre></div><p>我們要如何檢查是否被High客給調包？<br>
 （High客：在網路上無時無刻情緒都很high，會使用某種魔法偷取別人的比特幣）</p>
 <p>先找到官方往站上提供的sha哈希值</p>
 <pre tabindex="0"><code>d1f2bf834bbe9bb43faf16f9be992a6f3935e65be0edece1dee2aa6eb1767423
@@ -244,7 +244,7 @@
 然後用linux裡頭的程式shasum來進行檔案檢查<br>
 沒有這個程式的同學請自己下載。<br>
 用windows的同學可以找找相關的hash驗證工具。</p>
-<pre tabindex="0"><code>echo &#34;d1f2bf834bbe9bb43faf16f9be992a6f3935e65be0edece1dee2aa6eb1767423 *ubuntu-20.04.2-live-server-amd64.iso&#34; | shasum -a 256 --check
+<pre tabindex="0"><code>echo &quot;d1f2bf834bbe9bb43faf16f9be992a6f3935e65be0edece1dee2aa6eb1767423 *ubuntu-20.04.2-live-server-amd64.iso&quot; | shasum -a 256 --check
 </code></pre><h3 id="2hash哈希值是啥">2.hash(哈希值)是啥？</h3>
 <p>如我我們今天要檢查檔案，一個byte一個byte檢查，那顯然要下載兩份一樣的檔案才可以。</p>
 <p>如果今天有個遊戲大小50G，就要下載100GB的兩個檔案互相比較，才知道有沒有被調包。而且要比較超級久。</p>
@@ -253,19 +253,19 @@
 <ul class="pa0">
   
    <li class="list">
-     <a href="/tags/secure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">secure</a>
+     <a href="/blog/public/tags/secure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">secure</a>
    </li>
   
    <li class="list">
-     <a href="/tags/sha" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">sha</a>
+     <a href="/blog/public/tags/sha" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">sha</a>
    </li>
   
    <li class="list">
-     <a href="/tags/%E8%B3%87%E5%AE%89" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">資安</a>
+     <a href="/blog/public/tags/%E8%B3%87%E5%AE%89" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">資安</a>
    </li>
   
    <li class="list">
-     <a href="/tags/%E6%AA%A2%E6%9F%A5" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">檢查</a>
+     <a href="/blog/public/tags/%E6%AA%A2%E6%9F%A5" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">檢查</a>
    </li>
   
 </ul>
@@ -288,7 +288,7 @@
     <footer class="mid-gray bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://alextrinityblock.github.io/blog/public/" >
-    &copy;  無面者小站 2023 
+    &copy;  無面者小站 2024 
   </a>
     <div>
 

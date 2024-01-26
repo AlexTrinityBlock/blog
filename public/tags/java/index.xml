@@ -6,14 +6,15 @@
     <description>Recent content in java on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Fri, 24 Sep 2021 20:00:44 +0800</lastBuildDate>
-    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Sep 2021 20:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>java撰寫socket的client端</title>
       <link>https://alextrinityblock.github.io/blog/public/post/java/java%E6%92%B0%E5%AF%ABsocket%E7%9A%84client%E7%AB%AF/</link>
       <pubDate>Fri, 24 Sep 2021 20:00:44 +0800</pubDate>
+      
       <guid>https://alextrinityblock.github.io/blog/public/post/java/java%E6%92%B0%E5%AF%ABsocket%E7%9A%84client%E7%AB%AF/</guid>
       <description>1.緣由 我今天在實驗室跟學長一起研究Java中Socket的撰寫，在此進行筆記以免忘記。 Socket是由server與client組成，有時</description>
     </item>
+    
   </channel>
 </rss>
