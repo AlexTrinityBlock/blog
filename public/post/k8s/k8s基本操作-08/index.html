@@ -43,7 +43,7 @@
 <meta itemprop="name" content="K8S基本操作-08-Scheduling">
 <meta itemprop="description" content="Kube-scheduler kube-scheduler 負責監視新創建的或尚未調度（unscheduled）的 Pod，並選擇一個最佳節點來運行這些 Pod。由於 Pod 中的容器和 Pod 本身可能有不同的要求"><meta itemprop="datePublished" content="2024-01-26T08:00:44+08:00" />
 <meta itemprop="dateModified" content="2024-01-26T08:00:44+08:00" />
-<meta itemprop="wordCount" content="538">
+<meta itemprop="wordCount" content="1456">
 <meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="K8S基本操作-08-Scheduling"/>
 <meta name="twitter:description" content="Kube-scheduler kube-scheduler 負責監視新創建的或尚未調度（unscheduled）的 Pod，並選擇一個最佳節點來運行這些 Pod。由於 Pod 中的容器和 Pod 本身可能有不同的要求"/>
@@ -243,6 +243,8 @@
 <li>支持 Pod 的親和性和反親和性規範。</li>
 </ul>
 <h1 id="手動-scheduling">手動 scheduling</h1>
+<p>情境題: 手動scheduling</p>
+<p><em>重點:沒有 scheduler 時，需要手動在 YAML 裡頭設置要把 POD 哪個 Node 。</em></p>
 <p>建立一個 nginx</p>
 <pre tabindex="0"><code>kubectl create -f nginx.yaml
 </code></pre><p>nginx.yaml</p>
@@ -301,7 +303,60 @@ node01         Ready    &lt;none&gt;          45m   v1.27.0
 <pre tabindex="0"><code>controlplane ~ ✖ kubectl get pods -o wide
 NAME    READY   STATUS    RESTARTS   AGE   IP           NODE     NOMINATED NODE   READINESS GATES
 nginx   1/1     Running   0          21s   10.244.1.2   node01   &lt;none&gt;           &lt;none&gt;
-</code></pre><ul class="pa0">
+</code></pre><h1 id="labels-and-selectors">Labels and Selectors</h1>
+<p>Labels 是附加到 Kubernetes 對象（例如 Pod、Deployment、Service 等）上的鍵值對。它們可以用來對對象進行分類和標識，以便於管理和查找。例如，您可以為所有屬於同一應用程序的 Pod 添加一個名為 “app” 的標籤，並為所有在生產環境中運行的 Pod 添加一個名為 “environment” 的標籤。</p>
+<p>Selectors 是一種用於根據標籤過濾 Kubernetes 對象的表達式。它們可以用於在列表、命令和 API 調用中指定要包含或排除的對象。</p>
+<p>選取特定 Label 的指令，例如此處的Label 為 <code>env</code> 其中數值為 <code>dev</code>:</p>
+<pre tabindex="0"><code>kubectl get pods -l env=dev
+</code></pre><p>或者</p>
+<pre tabindex="0"><code>kubectl get pods --selector env=dev
+</code></pre><p>如果要數某個 Label 有多少個可以用以下放是擴充指令。</p>
+<pre tabindex="0"><code>kubectl get pods --selector env=dev --no-headers | wc -l
+</code></pre><p>或者</p>
+<pre tabindex="0"><code>kubectl get pods -l env=dev --no-headers | wc -l
+</code></pre><p>如果要取得各種 Service, Pod, ReplicaSets 的話可以用以下指令</p>
+<pre tabindex="0"><code>kubectl get all
+</code></pre><p>取得所有物件時，也可以加註 Label，如下:</p>
+<pre tabindex="0"><code>kubectl get all --selector env=prod
+</code></pre><p>或者</p>
+<pre tabindex="0"><code>kubectl get all -l env=prod
+</code></pre><p>選擇多個標籤可以採用下列方法</p>
+<pre tabindex="0"><code>kubectl get all --selector env=prod,bu=finance,tier=frontend
+</code></pre><h1 id="taints-and-tolerations">Taints AND Tolerations</h1>
+<p>在 Kubernetes 中，Taints 和 Tolerations 是一種用於控制 Pod 調度到哪些節點上的機制。</p>
+<h3 id="taints">Taints</h3>
+<p>Taint 是一種附加到節點上的鍵值對。它表示該節點不適合運行具有特定容忍度（Toleration）的 Pod。例如，您可以為節點添加一個名為 “dedicated” 的 Taint，並將值設置為 “true”，表示該節點專用於運行特定應用程序的 Pod。</p>
+<h3 id="tolerations">Tolerations</h3>
+<p>Toleration 是一種附加到 Pod 上的鍵值對。它表示該 Pod 可以容忍特定 Taint。例如，您可以為 Pod 添加一個名為 “dedicated” 的 Toleration，並將值設置為 “true”，表示該 Pod 可以運行在具有 “dedicated” Taint 的節點上。</p>
+<p>查看 Taint 的方法，就是用 describe 檢查某個 Node:</p>
+<pre tabindex="0"><code>kubectl describe nodes node01
+</code></pre><p>或者也可以用 grep 輔助。</p>
+<pre tabindex="0"><code>kubectl describe nodes node01 |grep Taints
+</code></pre><p>添加 Taints 的方法，將 node01 加上 spray=mortein 這個 taint ，並且效果為 NoSchedule (Pod 不可被調度到 Node 上)。</p>
+<pre tabindex="0"><code>kubectl taint node node01 spray=mortein:NoSchedule
+</code></pre><p>由於加了 taint 所以一般 Pod 無法放到該 Node ，除非加入 toleration。</p>
+<p>添加 toleration 的方法如下:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">bee</span>
+<span style="color:#f92672">spec</span>:
+  <span style="color:#f92672">containers</span>:
+  - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx</span>
+    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">bee</span>
+  <span style="color:#f92672">tolerations</span>:
+  - <span style="color:#f92672">key</span>: <span style="color:#ae81ff">spray</span>
+    <span style="color:#f92672">value</span>: <span style="color:#ae81ff">mortein</span>
+    <span style="color:#f92672">effect</span>: <span style="color:#ae81ff">NoSchedule</span>
+    <span style="color:#f92672">operator</span>: <span style="color:#ae81ff">Equal</span>
+</code></pre></div><p>如何移除掉 Taints 呢?</p>
+<p>例如我們要移除<code>Taints:             node-role.kubernetes.io/control-plane:NoSchedule</code>，可採用以下指令:</p>
+<pre tabindex="0"><code>kubectl taint node controlplane node-role.kubernetes.io/control-plane:NoSchedule-
+</code></pre><p>也就是在 Taint 後方增加一個減號運算符號 <code>-</code> 。</p>
+<p>移除 Taint 之後，原本無法調度的 Pod 會自動調度過去。</p>
+<h1 id="node-affinitty">Node Affinitty</h1>
+<ul class="pa0">
   
    <li class="list">
      <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
