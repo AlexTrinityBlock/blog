@@ -43,7 +43,7 @@
 <meta itemprop="name" content="K8S基本操作-08-Scheduling">
 <meta itemprop="description" content="Kube-scheduler kube-scheduler 負責監視新創建的或尚未調度（unscheduled）的 Pod，並選擇一個最佳節點來運行這些 Pod。由於 Pod 中的容器和 Pod 本身可能有不同的要求"><meta itemprop="datePublished" content="2024-01-26T08:00:44+08:00" />
 <meta itemprop="dateModified" content="2024-01-26T08:00:44+08:00" />
-<meta itemprop="wordCount" content="1456">
+<meta itemprop="wordCount" content="1743">
 <meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="K8S基本操作-08-Scheduling"/>
 <meta name="twitter:description" content="Kube-scheduler kube-scheduler 負責監視新創建的或尚未調度（unscheduled）的 Pod，並選擇一個最佳節點來運行這些 Pod。由於 Pod 中的容器和 Pod 本身可能有不同的要求"/>
@@ -322,6 +322,8 @@ nginx   1/1     Running   0          21s   10.244.1.2   node01   &lt;none&gt;   
 <pre tabindex="0"><code>kubectl get all -l env=prod
 </code></pre><p>選擇多個標籤可以採用下列方法</p>
 <pre tabindex="0"><code>kubectl get all --selector env=prod,bu=finance,tier=frontend
+</code></pre><p>手動在 Node 添加 label 的方法</p>
+<pre tabindex="0"><code>kubectl label node node01 color=blue
 </code></pre><h1 id="taints-and-tolerations">Taints AND Tolerations</h1>
 <p>在 Kubernetes 中，Taints 和 Tolerations 是一種用於控制 Pod 調度到哪些節點上的機制。</p>
 <h3 id="taints">Taints</h3>
@@ -356,6 +358,44 @@ nginx   1/1     Running   0          21s   10.244.1.2   node01   &lt;none&gt;   
 </code></pre><p>也就是在 Taint 後方增加一個減號運算符號 <code>-</code> 。</p>
 <p>移除 Taint 之後，原本無法調度的 Pod 會自動調度過去。</p>
 <h1 id="node-affinitty">Node Affinitty</h1>
+<p>在 Kubernetes 中，Node affinity（節點親和性）是一種用於控制 Pod 調度到哪些節點上的機制。它允許您根據節點的屬性和標籤，指定 Pod 應該调度到哪些節點上。</p>
+<p>我們先用 <code>Label</code> 在 <code>node01</code> 上頭標記顏色 <code>color=blue</code>:</p>
+<pre tabindex="0"><code>kubectl label node node01 color=blue
+</code></pre><p>接著在 Deployment 的設置上設置 Node affinity:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Deployment</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">blue</span>
+<span style="color:#f92672">spec</span>:
+  <span style="color:#f92672">replicas</span>: <span style="color:#ae81ff">3</span>
+  <span style="color:#f92672">selector</span>:
+    <span style="color:#f92672">matchLabels</span>:
+      <span style="color:#f92672">run</span>: <span style="color:#ae81ff">nginx</span>
+  <span style="color:#f92672">template</span>:
+    <span style="color:#f92672">metadata</span>:
+      <span style="color:#f92672">labels</span>:
+        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">nginx</span>
+    <span style="color:#f92672">spec</span>:
+      <span style="color:#f92672">containers</span>:
+      - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx</span>
+        <span style="color:#f92672">imagePullPolicy</span>: <span style="color:#ae81ff">Always</span>
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+      <span style="color:#f92672">affinity</span>:
+        <span style="color:#f92672">nodeAffinity</span>:
+          <span style="color:#f92672">requiredDuringSchedulingIgnoredDuringExecution</span>:
+            <span style="color:#f92672">nodeSelectorTerms</span>:
+            - <span style="color:#f92672">matchExpressions</span>:
+              - <span style="color:#f92672">key</span>: <span style="color:#ae81ff">color</span>
+                <span style="color:#f92672">operator</span>: <span style="color:#ae81ff">In</span>
+                <span style="color:#f92672">values</span>:
+                - <span style="color:#ae81ff">blue</span>
+</code></pre></div><p>這個 pod 就會優先跑到有 color=blue 的 label 的 Node 上了。</p>
+<h3 id="關於強制調度或者更傾向於調度">關於強制調度，或者更傾向於調度</h3>
+<p>nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution</p>
+<p>此屬性可強制將 Pod 調度到具有匹配標籤的節點上。如果沒有匹配標籤的節點，則 Pod 將無法調度。</p>
+<p>nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution</p>
+<p>此屬性僅使 Pod 更傾向於調度到具有匹配標籤的節點上。如果沒有匹配標籤的節點，Pod 仍會調度到其他節點。</p>
 <ul class="pa0">
   
    <li class="list">
