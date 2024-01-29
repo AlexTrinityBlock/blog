@@ -6,7 +6,25 @@
     <description>Recent content on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Mon, 29 Jan 2024 11:10:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Jan 2024 16:10:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8S基本操作-16-手動自行建設Scheduler</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-16/</link>
+      <pubDate>Mon, 29 Jan 2024 16:10:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-16/</guid>
+      <description>檢查預設的 Scheduler Scheduler 是個 Pod ，位於 kube-system 這個 namespace。 用以下指令查看 Scheduler: kubectl get pod -n kube-system 設置 Service Account 與 Cluster Role 設置如下: ServiceAccount: my-scheduler (kube-system namespace) ClusterRoleBinding: my-scheduler-as-kube-scheduler ClusterRoleBinding: my-scheduler-as-volume-scheduler 同時建立 Config Map 與 Depl</description>
+    </item>
+    
+    <item>
+      <title>K8S基本操作-15-ServiceAccount 和 ClusterRoleBinding</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-15/</link>
+      <pubDate>Mon, 29 Jan 2024 16:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-15/</guid>
+      <description>ServiceAccount 和 ClusterRoleBinding ServiceAccount（服務帳戶） ServiceAccount（服務帳戶） 是一種 Kubernetes 資源，用於為 Pod 提供身份。Pod 可以使用 ServiceAccount 來訪問</description>
+    </item>
+    
     <item>
       <title>K8S基本操作-14-Static pods</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-14/</link>
