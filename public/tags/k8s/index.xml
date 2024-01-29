@@ -6,7 +6,34 @@
     <description>Recent content in K8S on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Mon, 29 Jan 2024 10:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Jan 2024 11:10:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8S基本操作-14-Static pods</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-14/</link>
+      <pubDate>Mon, 29 Jan 2024 11:10:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-14/</guid>
+      <description>Static pods 在 Kubernetes 中，Static Pod 是一種特殊的 Pod，它不像一般的 Pod 由 Deployment 或 DaemonSet 等控制器管理，而是直接由特定節點上的 kubelet 进程管理。Static Pod 的主要特點</description>
+    </item>
+    
+    <item>
+      <title>K8S基本操作-13-Daemonsets</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-13/</link>
+      <pubDate>Mon, 29 Jan 2024 10:10:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-13/</guid>
+      <description>Daemonsets 這類程式常駐於 Node 上，類似程式的守護進程。 可用以下指令檢查所有 Namespace 的 Daemonsets: kubectl get daemonsets --all-namespace 運行叢集守護進程，例如日誌收集、監控、網路代理程式等。 在所有節點</description>
+    </item>
+    
+    <item>
+      <title>K8S基本操作-12-Resource limits</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-12/</link>
+      <pubDate>Mon, 29 Jan 2024 10:05:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-12/</guid>
+      <description>Resource limits 資源限制 我們可以設置一個 Deployment 最少需要多少資源，與最多消耗多少資源。 具體的用法是在 containers 裏頭寫下 requests 與 limits 項目。 官方的範例: --- apiVersion: v1 kind: Pod metadata: name: frontend spec: containers: - name:</description>
+    </item>
+    
     <item>
       <title>K8S基本操作-11-Node Affinitty</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-11/</link>
