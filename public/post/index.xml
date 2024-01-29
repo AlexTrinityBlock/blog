@@ -6,7 +6,16 @@
     <description>Recent content on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Mon, 29 Jan 2024 16:10:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Jan 2024 17:10:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8S基本操作-17-安裝Metrics Server</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-17/</link>
+      <pubDate>Mon, 29 Jan 2024 17:10:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-17/</guid>
+      <description>Metrics Server 可以監控 K8S 的 Cluster 上的每個 Node 的 CPU, RAM 等使用。 安裝 最簡單的方式是參照以下網址，直接一行指令安裝: https://github.com/kubernetes-sigs/metrics-server kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml 使用 可以查看 Node 的 CPU 與 RAM 使用率。 kubectl top node 輸</description>
+    </item>
+    
     <item>
       <title>K8S基本操作-16-手動自行建設Scheduler</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-16/</link>
