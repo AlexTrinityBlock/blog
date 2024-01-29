@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>K8S基本操作-08-Scheduling | 無面者小站</title>
+    <title>K8S基本操作-09-Labels and Selectors | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Kube-scheduler kube-scheduler 負責監視新創建的或尚未調度（unscheduled）的 Pod，並選擇一個最佳節點來運行這些 Pod。由於 Pod 中的容器和 Pod 本身可能有不同的要求">
+    <meta name="description" content="Labels and Selectors Labels 是附加到 Kubernetes 對象（例如 Pod、Deployment、Service 等）上的鍵值對。它們可以用來對對象進行分類和標識，以便於管理和查找。">
     <meta name="generator" content="Hugo 0.92.2" />
     
     
@@ -33,20 +33,20 @@
 
     
     
-    <meta property="og:title" content="K8S基本操作-08-Scheduling" />
-<meta property="og:description" content="Kube-scheduler kube-scheduler 負責監視新創建的或尚未調度（unscheduled）的 Pod，並選擇一個最佳節點來運行這些 Pod。由於 Pod 中的容器和 Pod 本身可能有不同的要求" />
+    <meta property="og:title" content="K8S基本操作-09-Labels and Selectors" />
+<meta property="og:description" content="Labels and Selectors Labels 是附加到 Kubernetes 對象（例如 Pod、Deployment、Service 等）上的鍵值對。它們可以用來對對象進行分類和標識，以便於管理和查找。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-08/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2024-01-26T08:00:44+08:00" />
-<meta property="article:modified_time" content="2024-01-26T08:00:44+08:00" />
+<meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-09/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-01-28T08:00:44+08:00" />
+<meta property="article:modified_time" content="2024-01-28T08:00:44+08:00" />
 
-<meta itemprop="name" content="K8S基本操作-08-Scheduling">
-<meta itemprop="description" content="Kube-scheduler kube-scheduler 負責監視新創建的或尚未調度（unscheduled）的 Pod，並選擇一個最佳節點來運行這些 Pod。由於 Pod 中的容器和 Pod 本身可能有不同的要求"><meta itemprop="datePublished" content="2024-01-26T08:00:44+08:00" />
-<meta itemprop="dateModified" content="2024-01-26T08:00:44+08:00" />
-<meta itemprop="wordCount" content="579">
+<meta itemprop="name" content="K8S基本操作-09-Labels and Selectors">
+<meta itemprop="description" content="Labels and Selectors Labels 是附加到 Kubernetes 對象（例如 Pod、Deployment、Service 等）上的鍵值對。它們可以用來對對象進行分類和標識，以便於管理和查找。"><meta itemprop="datePublished" content="2024-01-28T08:00:44+08:00" />
+<meta itemprop="dateModified" content="2024-01-28T08:00:44+08:00" />
+<meta itemprop="wordCount" content="362">
 <meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="K8S基本操作-08-Scheduling"/>
-<meta name="twitter:description" content="Kube-scheduler kube-scheduler 負責監視新創建的或尚未調度（unscheduled）的 Pod，並選擇一個最佳節點來運行這些 Pod。由於 Pod 中的容器和 Pod 本身可能有不同的要求"/>
+<meta name="twitter:title" content="K8S基本操作-09-Labels and Selectors"/>
+<meta name="twitter:description" content="Labels and Selectors Labels 是附加到 Kubernetes 對象（例如 Pod、Deployment、Service 等）上的鍵值對。它們可以用來對對象進行分類和標識，以便於管理和查找。"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
 
@@ -177,7 +177,7 @@
 
       <div class="tc-l pv6 ph3 ph4-ns">
         
-          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">K8S基本操作-08-Scheduling</h1>
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">K8S基本操作-09-Labels and Selectors</h1>
           
         
       </div>
@@ -203,20 +203,20 @@
   <div id="sharing" class="mt3">
 
     
-    <a href="https://www.facebook.com/sharer.php?u=https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-08/" class="facebook no-underline" aria-label="share on Facebook">
+    <a href="https://www.facebook.com/sharer.php?u=https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-09/" class="facebook no-underline" aria-label="share on Facebook">
       <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
 
     </a>
 
     
     
-    <a href="https://twitter.com/share?url=https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-08/&amp;text=K8S%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c-08-Scheduling" class="twitter no-underline" aria-label="share on Twitter">
+    <a href="https://twitter.com/share?url=https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-09/&amp;text=K8S%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c-09-Labels%20and%20Selectors" class="twitter no-underline" aria-label="share on Twitter">
       <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
 
     </a>
 
     
-    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-08/&amp;title=K8S%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c-08-Scheduling" class="linkedin no-underline" aria-label="share on LinkedIn">
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-09/&amp;title=K8S%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c-09-Labels%20and%20Selectors" class="linkedin no-underline" aria-label="share on LinkedIn">
       <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
 </svg>
@@ -225,84 +225,35 @@
   </div>
 
 
-      <h1 class="f1 athelas mt3 mb1">K8S基本操作-08-Scheduling</h1>
+      <h1 class="f1 athelas mt3 mb1">K8S基本操作-09-Labels and Selectors</h1>
       
       
-      <time class="f6 mv4 dib tracked" datetime="2024-01-26T08:00:44+08:00">January 26, 2024</time>
+      <time class="f6 mv4 dib tracked" datetime="2024-01-28T08:00:44+08:00">January 28, 2024</time>
 
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="kube-scheduler">Kube-scheduler</h1>
-<p>kube-scheduler 負責監視新創建的或尚未調度（unscheduled）的 Pod，並選擇一個最佳節點來運行這些 Pod。由於 Pod 中的容器和 Pod 本身可能有不同的要求，調度程序會過濾掉任何不滿足 Pod 特定調度需求的節點。</p>
-<p>kube-scheduler 的設計上允許你自己編寫一個調度組件並替換原有的 kube-scheduler。</p>
-<p>以下是 kube-scheduler 的部分功能：</p>
-<ul>
-<li>根據 Pod 的資源需求、節點的狀態和調度策略，選擇合適的節點來調度 Pod。</li>
-<li>支持多種調度策略，包括預設調度策略、最小資源調度策略、優先調度策略和污點調度策略。</li>
-<li>支持 Pod 的親和性和反親和性規範。</li>
-</ul>
-<h1 id="手動-scheduling">手動 scheduling</h1>
-<p>情境題: 手動scheduling</p>
-<p><em>重點:沒有 scheduler 時，需要手動在 YAML 裡頭設置要把 POD 哪個 Node 。</em></p>
-<p>建立一個 nginx</p>
-<pre tabindex="0"><code>kubectl create -f nginx.yaml
-</code></pre><p>nginx.yaml</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
-<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">containers</span>:
-  -  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx</span>
-     <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
-</code></pre></div><p>檢查狀態</p>
-<pre tabindex="0"><code>controlplane ~ ✖ kubectl get pod
-NAME    READY   STATUS    RESTARTS   AGE
-nginx   0/1     Pending   0          69s
-</code></pre><p>發現是 pending ，進一步檢查 kube-system 本身。</p>
-<pre tabindex="0"><code>controlplane ~ ➜  kubectl get pods --namespace kube-system
-NAME                                   READY   STATUS    RESTARTS   AGE
-coredns-5d78c9869d-mdvgw               1/1     Running   0          38m
-coredns-5d78c9869d-sft2h               1/1     Running   0          38m
-etcd-controlplane                      1/1     Running   0          38m
-kube-apiserver-controlplane            1/1     Running   0          38m
-kube-controller-manager-controlplane   1/1     Running   0          38m
-kube-proxy-57ftt                       1/1     Running   0          38m
-kube-proxy-94x5r 
-</code></pre><p>結果發現不存在 scheduler。</p>
-<p>手動進行 scheduling。</p>
-<p>先刪除掉失效的 pod。</p>
-<pre tabindex="0"><code>kubectl delete pod nginx
-</code></pre><p>檢查可用的 node</p>
-<pre tabindex="0"><code>kubectl get nodes
-</code></pre><p>發現 node01。</p>
-<pre tabindex="0"><code>controlplane ~ ➜  kubectl get nodes
-NAME           STATUS   ROLES           AGE   VERSION
-controlplane   Ready    control-plane   45m   v1.27.0
-node01         Ready    &lt;none&gt;          45m   v1.27.0
-</code></pre><p>手動將 YAML 檔案中加入指定 node01 。</p>
-<p>nginx.yaml</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
-<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">nodeName</span>: <span style="color:#ae81ff">node01</span>
-  <span style="color:#f92672">containers</span>:
-  -  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx</span>
-     <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
-</code></pre></div><p>建立 pod 。</p>
-<pre tabindex="0"><code>kubectl create -f nginx.yaml
-</code></pre><p>這樣就能建立成功了。</p>
-<p>檢查一下是否正確放到特定 pod ，用 <code>-o wide</code> 可以顯示所在 pod 。</p>
-<pre tabindex="0"><code>kubectl get pods -o wide
-</code></pre><p>結果如下:</p>
-<pre tabindex="0"><code>controlplane ~ ✖ kubectl get pods -o wide
-NAME    READY   STATUS    RESTARTS   AGE   IP           NODE     NOMINATED NODE   READINESS GATES
-nginx   1/1     Running   0          21s   10.244.1.2   node01   &lt;none&gt;           &lt;none&gt;
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="labels-and-selectors">Labels and Selectors</h1>
+<p>Labels 是附加到 Kubernetes 對象（例如 Pod、Deployment、Service 等）上的鍵值對。它們可以用來對對象進行分類和標識，以便於管理和查找。例如，您可以為所有屬於同一應用程序的 Pod 添加一個名為 “app” 的標籤，並為所有在生產環境中運行的 Pod 添加一個名為 “environment” 的標籤。</p>
+<p>Selectors 是一種用於根據標籤過濾 Kubernetes 對象的表達式。它們可以用於在列表、命令和 API 調用中指定要包含或排除的對象。</p>
+<p>選取特定 Label 的指令，例如此處的Label 為 <code>env</code> 其中數值為 <code>dev</code>:</p>
+<pre tabindex="0"><code>kubectl get pods -l env=dev
+</code></pre><p>或者</p>
+<pre tabindex="0"><code>kubectl get pods --selector env=dev
+</code></pre><p>如果要數某個 Label 有多少個可以用以下放是擴充指令。</p>
+<pre tabindex="0"><code>kubectl get pods --selector env=dev --no-headers | wc -l
+</code></pre><p>或者</p>
+<pre tabindex="0"><code>kubectl get pods -l env=dev --no-headers | wc -l
+</code></pre><p>如果要取得各種 Service, Pod, ReplicaSets 的話可以用以下指令</p>
+<pre tabindex="0"><code>kubectl get all
+</code></pre><p>取得所有物件時，也可以加註 Label，如下:</p>
+<pre tabindex="0"><code>kubectl get all --selector env=prod
+</code></pre><p>或者</p>
+<pre tabindex="0"><code>kubectl get all -l env=prod
+</code></pre><p>選擇多個標籤可以採用下列方法</p>
+<pre tabindex="0"><code>kubectl get all --selector env=prod,bu=finance,tier=frontend
+</code></pre><p>手動在 Node 添加 label 的方法</p>
+<pre tabindex="0"><code>kubectl label node node01 color=blue
 </code></pre><ul class="pa0">
   
    <li class="list">
@@ -325,6 +276,10 @@ nginx   1/1     Running   0          21s   10.244.1.2   node01   &lt;none&gt;   
     <p class="f5 b mb3">相關內容</p>
     <ul class="pa0 list">
 	   
+	     <li  class="mb2">
+          <a href="/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-08/">K8S基本操作-08-Scheduling</a>
+        </li>
+	    
 	     <li  class="mb2">
           <a href="/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-07/">K8S基本操作-07-Ubuntu安裝K8S</a>
         </li>

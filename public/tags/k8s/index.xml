@@ -6,7 +6,34 @@
     <description>Recent content in K8S on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Fri, 26 Jan 2024 08:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Jan 2024 08:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8S基本操作-10-Taints AND Tolerations</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-10/</link>
+      <pubDate>Mon, 29 Jan 2024 08:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-10/</guid>
+      <description>Taints AND Tolerations 在 Kubernetes 中，Taints 和 Tolerations 是一種用於控制 Pod 調度到哪些節點上的機制。 Taints Taint 是一種附加到節點上的鍵值對。它表示該節點不適合運行具有特定容忍度（</description>
+    </item>
+    
+    <item>
+      <title>K8S基本操作-11-Node Affinitty</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-11/</link>
+      <pubDate>Mon, 29 Jan 2024 08:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-11/</guid>
+      <description>Node Affinitty 在 Kubernetes 中，Node affinity（節點親和性）是一種用於控制 Pod 調度到哪些節點上的機制。它允許您根據節點的屬性和標籤，指定 Pod 應該调度到哪些</description>
+    </item>
+    
+    <item>
+      <title>K8S基本操作-09-Labels and Selectors</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-09/</link>
+      <pubDate>Sun, 28 Jan 2024 08:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-09/</guid>
+      <description>Labels and Selectors Labels 是附加到 Kubernetes 對象（例如 Pod、Deployment、Service 等）上的鍵值對。它們可以用來對對象進行分類和標識，以便於管理和查找。</description>
+    </item>
+    
     <item>
       <title>K8S基本操作-08-Scheduling</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-08/</link>

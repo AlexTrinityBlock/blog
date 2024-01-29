@@ -3,20 +3,35 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://alextrinityblock.github.io/blog/public/post/</loc>
-    <lastmod>2024-01-26T08:00:44+08:00</lastmod>
+    <lastmod>2024-01-29T08:00:44+08:00</lastmod>
     <priority>0</priority>
   </url><url>
     <loc>https://alextrinityblock.github.io/blog/public/tags/k8s/</loc>
-    <lastmod>2024-01-26T08:00:44+08:00</lastmod>
+    <lastmod>2024-01-29T08:00:44+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>2</priority>
   </url><url>
-    <loc>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-08/</loc>
-    <lastmod>2024-01-26T08:00:44+08:00</lastmod>
+    <loc>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-10/</loc>
+    <lastmod>2024-01-29T08:00:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>2</priority>
+  </url><url>
+    <loc>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-11/</loc>
+    <lastmod>2024-01-29T08:00:44+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>2</priority>
   </url><url>
     <loc>https://alextrinityblock.github.io/blog/public/tags/</loc>
+    <lastmod>2024-01-29T08:00:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>2</priority>
+  </url><url>
+    <loc>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-09/</loc>
+    <lastmod>2024-01-28T08:00:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>2</priority>
+  </url><url>
+    <loc>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-08/</loc>
     <lastmod>2024-01-26T08:00:44+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>2</priority>
