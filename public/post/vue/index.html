@@ -196,6 +196,25 @@
                <div class="mb3 pa4 mid-gray overflow-hidden">
     
       <div class="f6">
+        February 1, 2024
+      </div>
+    
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-20/" class="link black dim">
+        K8S基本操作-20-K8S的YAML的 Command 對 Dockerfile 的 Entrypoint 覆蓋
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      如果 Dockerfile 跟 K8S 的 YAML 配置的 Entrypoint 與 Command 不一樣呢? 實際上執行的指令會是哪一種? FROMpython:3.6-alpineRUN pip install flaskCOPY . /opt/EXPOSE8080WORKDIR/optENTRYPOINT [&#34;python&#34;, &#34;app.py&#34;]CMD [&#34;--color&#34;, &#34;red&#34;]apiVersion: v1 kind: Pod metadata: name: webapp-green labels: name: webapp-green spec: containers: - name: simple-webapp image: kodekloud/webapp-color command: [&#34;python&#34;, &#34;app.py&#34;] args: [&#34;--color&#34;, &#34;pink&#34;] 最後會以 K8S 的
+    </div>
+  </div>
+
+        </div>
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
         January 30, 2024
       </div>
     
