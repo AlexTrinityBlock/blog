@@ -43,7 +43,7 @@
 <meta itemprop="name" content="K8S基本操作-25-Init Containers">
 <meta itemprop="description" content="Init Containers 在 Kubernetes (K8S) 中，Init Containers 是一種特殊的容器，在 Pod 內的應用容器啟動之前運行。 Init Containers 可以包含一些應用鏡像中不存在的實用工具和安裝腳本。 你可以在 Pod 的規"><meta itemprop="datePublished" content="2024-02-02T16:00:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-02T16:00:44+08:00" />
-<meta itemprop="wordCount" content="362">
+<meta itemprop="wordCount" content="370">
 <meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="K8S基本操作-25-Init Containers"/>
 <meta name="twitter:description" content="Init Containers 在 Kubernetes (K8S) 中，Init Containers 是一種特殊的容器，在 Pod 內的應用容器啟動之前運行。 Init Containers 可以包含一些應用鏡像中不存在的實用工具和安裝腳本。 你可以在 Pod 的規"/>
@@ -246,6 +246,7 @@
 <li>總是運行到完成。</li>
 <li>每個都必須在下一個啟動之前成功完成。</li>
 <li>不會影響應用容器的運作。</li>
+<li>可以超過一個 Init Containers</li>
 </ul>
 <h1 id="範例">範例</h1>
 <p>在這個範例中，Init Container init-db 會在應用程式容器 my-app 啟動之前執行。 init-db 容器會執行指令 echo &lsquo;hello world&rsquo; &gt; /data/db.txt，將文字 hello world 寫入到檔案 /data/db.txt 中。 然後，應用容器 my-app 會在啟動時讀取檔案 /data/db.txt 中的內容。</p>
