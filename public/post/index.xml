@@ -6,7 +6,16 @@
     <description>Recent content on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Fri, 02 Feb 2024 11:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Feb 2024 16:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8S基本操作-25-Init Containers</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-25/</link>
+      <pubDate>Fri, 02 Feb 2024 16:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-25/</guid>
+      <description>Init Containers 在 Kubernetes (K8S) 中，Init Containers 是一種特殊的容器，在 Pod 內的應用容器啟動之前運行。 Init Containers 可以包含一些應用鏡像中不存在的實用工具和安裝腳本。 你可以在 Pod 的規</description>
+    </item>
+    
     <item>
       <title>K8S基本操作-22-K8S的Secret</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-22/</link>
