@@ -8,12 +8,12 @@
     <language>zh-hant</language>
     <lastBuildDate>Fri, 26 Feb 2021 17:04:06 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>K8S基本操作-21-K8S的YAML的環境變數</title>
+      <title>K8S基本操作-21-K8S的YAML的環境變數與Config Map</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-21/</link>
       <pubDate>Fri, 02 Feb 2024 10:38:44 +0800</pubDate>
       
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-21/</guid>
-      <description>我們可以採用以下方式設置環境變數: apiVersion: v1 kind: Pod metadata: labels: name: webapp-color name: webapp-color namespace: default spec: containers: - env: - name: APP_COLOR value: pink image: kodekloud/webapp-color imagePullPolicy: Always name: webapp-color 其中的這一段就是了: - env: - name: APP_COLOR value: pink</description>
+      <description>環境變數 我們可以採用以下方式設置環境變數: apiVersion: v1 kind: Pod metadata: labels: name: webapp-color name: webapp-color namespace: default spec: containers: - env: - name: APP_COLOR value: pink image: kodekloud/webapp-color imagePullPolicy: Always name: webapp-color 其中的這一段就是了: - env: - name: APP_COLOR value: pink Config Map 以下是</description>
     </item>
     
     <item>
