@@ -6,7 +6,16 @@
     <description>Recent content in K8S on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Sat, 03 Feb 2024 15:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Feb 2024 16:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8S基本操作-28-檢查ETCD版本</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-28/</link>
+      <pubDate>Sat, 03 Feb 2024 16:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-28/</guid>
+      <description>ETCD 是什麼? K8S 的 ETCD 是一個開源的分散式鍵值儲存系統，用於儲存 Kubernetes 叢集的配置和狀態資料。 它是 Kubernetes 的核心元件之一，為叢集提供以下功能： 共享配置： 儲存 Kubernetes 叢</description>
+    </item>
+    
     <item>
       <title>K8S基本操作-27-更新K8S Cluster</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-27/</link>
