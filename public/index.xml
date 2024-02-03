@@ -8,6 +8,15 @@
     <language>zh-hant</language>
     <lastBuildDate>Fri, 26 Feb 2021 17:04:06 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>K8S基本操作-27-更新K8S Cluster</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-27/</link>
+      <pubDate>Sat, 03 Feb 2024 15:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-27/</guid>
+      <description>基本概念 以下是更新 K8S 需要更新的組件: (以下為同版本的組件) kube-apiserver Controller-manager kube-scheduler kubelet (位於 Worker上) kube-proxy (位於 Worker上) kubectl (以下為不同版本的組件) ETCD</description>
+    </item>
+    
+    <item>
       <title>K8S基本操作-26-Drain</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-26/</link>
       <pubDate>Fri, 02 Feb 2024 23:00:44 +0800</pubDate>
