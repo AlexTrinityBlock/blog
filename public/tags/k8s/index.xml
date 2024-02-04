@@ -6,7 +6,16 @@
     <description>Recent content in K8S on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Sat, 03 Feb 2024 16:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Feb 2024 10:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8S基本操作-28-備份與還原叢集</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-29/</link>
+      <pubDate>Sun, 04 Feb 2024 10:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-29/</guid>
+      <description>備份的幾種方式 Velero 可以簡單佈署在 Docker 上的 K8S 備份工具，還有 Web GUI 。 操作簡單功能完整。 此種方式甚至可以把 Volume 一起打包。 (文章撰寫時)是開源免費的。 https://velero.io/docs/v1.13/ Kubectl 備</description>
+    </item>
+    
     <item>
       <title>K8S基本操作-28-檢查ETCD版本</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-28/</link>
