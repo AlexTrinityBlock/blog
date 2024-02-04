@@ -43,7 +43,7 @@
 <meta itemprop="name" content="K8S基本操作-29-備份與還原叢集">
 <meta itemprop="description" content="備份的幾種方式 Velero 可以簡單佈署在 Docker 上的 K8S 備份工具，還有 Web GUI 。 操作簡單功能完整。 此種方式甚至可以把 Volume 一起打包。 (文章撰寫時)是開源免費的。 https://velero.io/docs/v1.13/ Kubectl 備"><meta itemprop="datePublished" content="2024-02-04T10:00:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-04T10:00:44+08:00" />
-<meta itemprop="wordCount" content="1000">
+<meta itemprop="wordCount" content="981">
 <meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="K8S基本操作-29-備份與還原叢集"/>
 <meta name="twitter:description" content="備份的幾種方式 Velero 可以簡單佈署在 Docker 上的 K8S 備份工具，還有 Web GUI 。 操作簡單功能完整。 此種方式甚至可以把 Volume 一起打包。 (文章撰寫時)是開源免費的。 https://velero.io/docs/v1.13/ Kubectl 備"/>
@@ -370,7 +370,7 @@
 | e63b3fc5| 473353   | 875        | 4.1 MB     |
 + + + + ++ + + + ++ + + + ++ + + + ++ + + + + + +
 </code></pre><h4 id="重新存回備份">重新存回備份</h4>
-<p>接著在回復儲存的配置時，由於不能把儲存的資料放在原本的<code>/var/lib/etcd</code>目錄裡頭(如果真的需要在同目錄的話，請清空這個目錄)所以我們建立一個新的目錄，來裝置備份回覆後的etcd資料<code>/var/lib/etcd-from-backup</code>。</p>
+<p>接著在回復儲存的配置時，由於不能把儲存的資料重複放在原本的<code>/var/lib/etcd</code>目錄裡頭，所以我們建立一個新的目錄，來裝置備份回覆後的etcd資料<code>/var/lib/etcd-from-backup</code>。</p>
 <p>回復儲存:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ETCDCTL_API<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> etcdctl <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>snapshot restore snapshot.db <span style="color:#ae81ff">\
