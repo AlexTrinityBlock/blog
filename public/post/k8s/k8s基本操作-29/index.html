@@ -43,7 +43,7 @@
 <meta itemprop="name" content="K8S基本操作-29-備份與還原叢集">
 <meta itemprop="description" content="備份的幾種方式 Velero 可以簡單佈署在 Docker 上的 K8S 備份工具，還有 Web GUI 。 操作簡單功能完整。 此種方式甚至可以把 Volume 一起打包。 (文章撰寫時)是開源免費的。 https://velero.io/docs/v1.13/ Kubectl 備"><meta itemprop="datePublished" content="2024-02-04T10:00:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-04T10:00:44+08:00" />
-<meta itemprop="wordCount" content="642">
+<meta itemprop="wordCount" content="869">
 <meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="K8S基本操作-29-備份與還原叢集"/>
 <meta name="twitter:description" content="備份的幾種方式 Velero 可以簡單佈署在 Docker 上的 K8S 備份工具，還有 Web GUI 。 操作簡單功能完整。 此種方式甚至可以把 Volume 一起打包。 (文章撰寫時)是開源免費的。 https://velero.io/docs/v1.13/ Kubectl 備"/>
@@ -246,13 +246,117 @@
 </code></pre></div><p>只後再編輯<code>all-deploy-services.yaml</code>直到可以順利 apply 即可。</p>
 <h3 id="etcd-備份法">ETCD 備份法</h3>
 <p>可以備份完整的叢集設置，但無法備份 Volume，但相對上述方式完整些，方法如下。</p>
-<h4 id="備份">備份:</h4>
+<h4 id="分析-etcd-的配置">分析 ETCD 的配置</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n kube-system describe pod etcd-controlplane 
+</code></pre></div><p>結果類似下面:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Name</span>:                 <span style="color:#ae81ff">etcd-controlplane</span>
+<span style="color:#f92672">Namespace</span>:            <span style="color:#ae81ff">kube-system</span>
+<span style="color:#f92672">Priority</span>:             <span style="color:#ae81ff">2000001000</span>
+<span style="color:#f92672">Priority Class Name</span>:  <span style="color:#ae81ff">system-node-critical</span>
+<span style="color:#f92672">Node</span>:                 <span style="color:#ae81ff">controlplane/192.11.251.9</span>
+<span style="color:#f92672">Start Time</span>:           <span style="color:#ae81ff">Sun, 04 Feb 2024 02:43:44 -0500</span>
+<span style="color:#f92672">Labels</span>:               <span style="color:#ae81ff">component=etcd</span>
+                      <span style="color:#ae81ff">tier=control-plane</span>
+<span style="color:#f92672">Annotations:          kubeadm.kubernetes.io/etcd.advertise-client-urls</span>: <span style="color:#ae81ff">https://192.11.251.9:2379</span>
+                      <span style="color:#f92672">kubernetes.io/config.hash</span>: <span style="color:#ae81ff">3b193098c2e7a87da2b294d778e9a27c</span>
+                      <span style="color:#f92672">kubernetes.io/config.mirror</span>: <span style="color:#ae81ff">3b193098c2e7a87da2b294d778e9a27c</span>
+                      <span style="color:#f92672">kubernetes.io/config.seen</span>: <span style="color:#e6db74">2024-02-04T02:43:43.187940375</span><span style="color:#ae81ff">-05</span>:<span style="color:#ae81ff">00</span>
+                      <span style="color:#f92672">kubernetes.io/config.source</span>: <span style="color:#ae81ff">file</span>
+<span style="color:#f92672">Status</span>:               <span style="color:#ae81ff">Running</span>
+<span style="color:#f92672">SeccompProfile</span>:       <span style="color:#ae81ff">RuntimeDefault</span>
+<span style="color:#f92672">IP</span>:                   <span style="color:#ae81ff">192.11.251.9</span>
+<span style="color:#f92672">IPs</span>:
+  <span style="color:#f92672">IP</span>:           <span style="color:#ae81ff">192.11.251.9</span>
+<span style="color:#f92672">Controlled By</span>:  <span style="color:#ae81ff">Node/controlplane</span>
+<span style="color:#f92672">Containers</span>:
+  <span style="color:#f92672">etcd</span>:
+    <span style="color:#f92672">Container ID</span>:  <span style="color:#ae81ff">containerd://f94656df8fd5a33e64029868aec83122508c7c8803519513095d4b7d34e55487</span>
+    <span style="color:#f92672">Image</span>:         <span style="color:#ae81ff">registry.k8s.io/etcd:3.5.7-0</span>
+    <span style="color:#f92672">Image ID</span>:      <span style="color:#ae81ff">registry.k8s.io/etcd@sha256:51eae8381dcb1078289fa7b4f3df2630cdc18d09fb56f8e56b41c40e191d6c83</span>
+    <span style="color:#f92672">Port</span>:          <span style="color:#ae81ff">&lt;none&gt;</span>
+    <span style="color:#f92672">Host Port</span>:     <span style="color:#ae81ff">&lt;none&gt;</span>
+    <span style="color:#f92672">Command</span>:
+      <span style="color:#ae81ff">etcd</span>
+      --<span style="color:#ae81ff">advertise-client-urls=https://192.11.251.9:2379</span>
+      --<span style="color:#ae81ff">cert-file=/etc/kubernetes/pki/etcd/server.crt</span>
+      --<span style="color:#ae81ff">client-cert-auth=true</span>
+      --<span style="color:#ae81ff">data-dir=/var/lib/etcd</span>
+      --<span style="color:#ae81ff">experimental-initial-corrupt-check=true</span>
+      --<span style="color:#ae81ff">experimental-watch-progress-notify-interval=5s</span>
+      --<span style="color:#ae81ff">initial-advertise-peer-urls=https://192.11.251.9:2380</span>
+      --<span style="color:#ae81ff">initial-cluster=controlplane=https://192.11.251.9:2380</span>
+      --<span style="color:#ae81ff">key-file=/etc/kubernetes/pki/etcd/server.key</span>
+      --<span style="color:#ae81ff">listen-client-urls=https://127.0.0.1:2379,https://192.11.251.9:2379</span>
+      --<span style="color:#ae81ff">listen-metrics-urls=http://127.0.0.1:2381</span>
+      --<span style="color:#ae81ff">listen-peer-urls=https://192.11.251.9:2380</span>
+      --<span style="color:#ae81ff">name=controlplane</span>
+      --<span style="color:#ae81ff">peer-cert-file=/etc/kubernetes/pki/etcd/peer.crt</span>
+      --<span style="color:#ae81ff">peer-client-cert-auth=true</span>
+      --<span style="color:#ae81ff">peer-key-file=/etc/kubernetes/pki/etcd/peer.key</span>
+      --<span style="color:#ae81ff">peer-trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt</span>
+      --<span style="color:#ae81ff">snapshot-count=10000</span>
+      --<span style="color:#ae81ff">trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt</span>
+    <span style="color:#f92672">State</span>:          <span style="color:#ae81ff">Running</span>
+      <span style="color:#f92672">Started</span>:      <span style="color:#ae81ff">Sun, 04 Feb 2024 02:43:34 -0500</span>
+    <span style="color:#f92672">Ready</span>:          <span style="color:#66d9ef">True</span>
+    <span style="color:#f92672">Restart Count</span>:  <span style="color:#ae81ff">0</span>
+    <span style="color:#f92672">Requests</span>:
+      <span style="color:#f92672">cpu</span>:        <span style="color:#ae81ff">100m</span>
+      <span style="color:#f92672">memory</span>:     <span style="color:#ae81ff">100Mi</span>
+    <span style="color:#f92672">Liveness</span>:     <span style="color:#ae81ff">http-get http://127.0.0.1:2381/health%3Fexclude=NOSPACE&amp;serializable=true delay=10s timeout=15s period=10s #success=1</span> <span style="color:#75715e">#failure=8</span>
+    <span style="color:#f92672">Startup</span>:      <span style="color:#ae81ff">http-get http://127.0.0.1:2381/health%3Fserializable=false delay=10s timeout=15s period=10s #success=1</span> <span style="color:#75715e">#failure=24</span>
+    <span style="color:#f92672">Environment</span>:  <span style="color:#ae81ff">&lt;none&gt;</span>
+    <span style="color:#f92672">Mounts</span>:
+      <span style="color:#ae81ff">/etc/kubernetes/pki/etcd from etcd-certs (rw)</span>
+      <span style="color:#ae81ff">/var/lib/etcd from etcd-data (rw)</span>
+<span style="color:#f92672">Conditions</span>:
+  <span style="color:#ae81ff">Type              Status</span>
+  <span style="color:#ae81ff">Initialized       True </span>
+  <span style="color:#ae81ff">Ready             True </span>
+  <span style="color:#ae81ff">ContainersReady   True </span>
+  <span style="color:#ae81ff">PodScheduled      True </span>
+<span style="color:#f92672">Volumes</span>:
+  <span style="color:#f92672">etcd-certs</span>:
+    <span style="color:#f92672">Type</span>:          <span style="color:#ae81ff">HostPath (bare host directory volume)</span>
+    <span style="color:#f92672">Path</span>:          <span style="color:#ae81ff">/etc/kubernetes/pki/etcd</span>
+    <span style="color:#f92672">HostPathType</span>:  <span style="color:#ae81ff">DirectoryOrCreate</span>
+  <span style="color:#f92672">etcd-data</span>:
+    <span style="color:#f92672">Type</span>:          <span style="color:#ae81ff">HostPath (bare host directory volume)</span>
+    <span style="color:#f92672">Path</span>:          <span style="color:#ae81ff">/var/lib/etcd</span>
+    <span style="color:#f92672">HostPathType</span>:  <span style="color:#ae81ff">DirectoryOrCreate</span>
+<span style="color:#f92672">QoS Class</span>:         <span style="color:#ae81ff">Burstable</span>
+<span style="color:#f92672">Node-Selectors</span>:    <span style="color:#ae81ff">&lt;none&gt;</span>
+<span style="color:#f92672">Tolerations</span>:       :<span style="color:#ae81ff">NoExecute op=Exists</span>
+<span style="color:#f92672">Events</span>:            <span style="color:#ae81ff">&lt;none&gt;</span>
+</code></pre></div><p>這一段是ETCD執行時的配置:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">Command</span>:
+      <span style="color:#ae81ff">etcd</span>
+      --<span style="color:#ae81ff">advertise-client-urls=https://192.11.251.9:2379</span>
+      --<span style="color:#ae81ff">cert-file=/etc/kubernetes/pki/etcd/server.crt</span>
+      --<span style="color:#ae81ff">client-cert-auth=true</span>
+      --<span style="color:#ae81ff">data-dir=/var/lib/etcd</span>
+      --<span style="color:#ae81ff">experimental-initial-corrupt-check=true</span>
+      --<span style="color:#ae81ff">experimental-watch-progress-notify-interval=5s</span>
+      --<span style="color:#ae81ff">initial-advertise-peer-urls=https://192.11.251.9:2380</span>
+      --<span style="color:#ae81ff">initial-cluster=controlplane=https://192.11.251.9:2380</span>
+      --<span style="color:#ae81ff">key-file=/etc/kubernetes/pki/etcd/server.key</span>
+      --<span style="color:#ae81ff">listen-client-urls=https://127.0.0.1:2379,https://192.11.251.9:2379</span>
+      --<span style="color:#ae81ff">listen-metrics-urls=http://127.0.0.1:2381</span>
+      --<span style="color:#ae81ff">listen-peer-urls=https://192.11.251.9:2380</span>
+      --<span style="color:#ae81ff">name=controlplane</span>
+      --<span style="color:#ae81ff">peer-cert-file=/etc/kubernetes/pki/etcd/peer.crt</span>
+      --<span style="color:#ae81ff">peer-client-cert-auth=true</span>
+      --<span style="color:#ae81ff">peer-key-file=/etc/kubernetes/pki/etcd/peer.key</span>
+      --<span style="color:#ae81ff">peer-trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt</span>
+      --<span style="color:#ae81ff">snapshot-count=10000</span>
+      --<span style="color:#ae81ff">trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt</span>
+</code></pre></div><h4 id="備份">備份:</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ETCDCTL_API<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> etcdctl <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>snapshot save snapshot.db <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>--endpoints<span style="color:#f92672">=</span>https://127.0.0.1:2379 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--cacert<span style="color:#f92672">=</span>/etc/etcd/ca.crt <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--cert<span style="color:#f92672">=</span>/etc/etcd/etcd-server.crt <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--key<span style="color:#f92672">=</span>/etc/etcd/etcd-server.key
+</span><span style="color:#ae81ff"></span>--cacert<span style="color:#f92672">=</span>/etc/kubernetes/pki/etcd/ca.crt <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--cert<span style="color:#f92672">=</span>/etc/kubernetes/pki/etcd/server.crt <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--key<span style="color:#f92672">=</span>/etc/kubernetes/pki/etcd/server.key
 </code></pre></div><p>為何要輸入 <code>--endpoints</code> ?</p>
 <p>因為 etcdctl 這個指令不會直接去搜索本機 K8S ETCD 伺服器的配置，所以要指定 &ldquo;運作在 127.0.0.1 上的 ETCD 伺服器是我們要進行備份的主機來源&rdquo;，接著才能開始備份。</p>
 <p>(但也因為如此，可以用於備份遠端的ETCD主機)</p>
