@@ -6,7 +6,16 @@
     <description>Recent content in K8S on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Sun, 04 Feb 2024 10:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Feb 2024 16:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8S基本操作-30-多個Cluster與Config</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-30/</link>
+      <pubDate>Sun, 04 Feb 2024 16:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-30/</guid>
+      <description>Config不等於Config Map Config 不同 Config 可以用在管理不同 Cluster，並且給予不同的設定與認證金鑰路徑。 以下是個 Config 的範例: apiVersion: v1 clusters: - cluster: certificate-authority: fake-ca-file server:</description>
+    </item>
+    
     <item>
       <title>K8S基本操作-29-備份與還原叢集</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-29/</link>
