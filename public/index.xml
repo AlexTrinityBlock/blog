@@ -31,7 +31,7 @@
       <pubDate>Sat, 03 Feb 2024 15:00:44 +0800</pubDate>
       
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-27/</guid>
-      <description>基本概念 以下是更新 K8S 需要更新的組件: (以下為同版本的組件) kube-apiserver Controller-manager kube-scheduler kubelet (位於 Worker上) kube-proxy (位於 Worker上) kubectl (以下為不同版本的組件) ETCD</description>
+      <description>基本概念 以下是更新 K8S 需要更新的組件: (以下為同版本的組件) kube-apiserver (位於 Master 上) Controller-manager (位於 Master 上) kube-scheduler (位於 Master 上) kubelet (位於 Worker上) kube-proxy (位於 Work</description>
     </item>
     
     <item>
