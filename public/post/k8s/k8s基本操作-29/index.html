@@ -43,7 +43,7 @@
 <meta itemprop="name" content="K8S基本操作-29-備份與還原叢集">
 <meta itemprop="description" content="備份的幾種方式 Velero 可以簡單佈署在 Docker 上的 K8S 備份工具，還有 Web GUI 。 操作簡單功能完整。 此種方式甚至可以把 Volume 一起打包。 (文章撰寫時)是開源免費的。 https://velero.io/docs/v1.13/ Kubectl 備"><meta itemprop="datePublished" content="2024-02-04T10:00:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-04T10:00:44+08:00" />
-<meta itemprop="wordCount" content="385">
+<meta itemprop="wordCount" content="531">
 <meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="K8S基本操作-29-備份與還原叢集"/>
 <meta name="twitter:description" content="備份的幾種方式 Velero 可以簡單佈署在 Docker 上的 K8S 備份工具，還有 Web GUI 。 操作簡單功能完整。 此種方式甚至可以把 Volume 一起打包。 (文章撰寫時)是開源免費的。 https://velero.io/docs/v1.13/ Kubectl 備"/>
@@ -247,8 +247,17 @@
 <h3 id="etcd-備份法">ETCD 備份法</h3>
 <p>可以備份完整的叢集設置，但無法備份 Volume，但相對上述方式完整些，方法如下。</p>
 <h4 id="備份">備份:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ETCDCTL_API<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> etcdctl snapshot save snapshot.db
-</code></pre></div><h4 id="檢查備份內容">檢查備份內容:</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ETCDCTL_API<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> etcdctl <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>snapshot save snapshot.db <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--endpoints<span style="color:#f92672">=</span>https://127.0.0.1:2379 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--cacert<span style="color:#f92672">=</span>/etc/etcd/ca.crt <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--cert<span style="color:#f92672">=</span>/etc/etcd/etcd-server.crt <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--key<span style="color:#f92672">=</span>/etc/etcd/etcd-server.key
+</code></pre></div><p>為何要輸入 <code>--endpoints</code> ?</p>
+<p>因為 etcdctl 這個指令不會直接去搜索本機 K8S ETCD 伺服器的配置，所以要指定 &ldquo;運作在 127.0.0.1 上的 ETCD 伺服器是我們要進行備份的主機來源&rdquo;，接著才能開始備份。</p>
+<p>(但也因為如此，可以用於備份遠端的ETCD主機)</p>
+<p>同時要順利接入 ETCD 主機，必須要提供憑證跟金鑰，才能有效接入。</p>
+<h4 id="檢查備份內容">檢查備份內容:</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">etcdctl snapshot status snapshot.db
 </code></pre></div><p>結果:</p>
 <pre tabindex="0"><code>+ + + + ++ + + + ++ + + + ++ + + + ++ + + + + + +
