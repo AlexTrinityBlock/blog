@@ -211,6 +211,38 @@
           
         
         <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+          <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-33/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/k8s.png" class="img" alt="image from K8S基本操作-33-在 External ETCD server Restore">
+          </a>
+        </div>
+      
+      <div class="blah w-100 w-60-ns pl3-ns">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-33/" class="color-inherit dim link">
+            K8S基本操作-33-在 External ETCD server Restore
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          在外部 ETCD server Restore 回復備份 我們的備份位置: /root/cluster2.db 將要儲存新的 etcd 資料的目錄: /var/lib/etcd-data-new 進行備份回復的指令: ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --cacert=/etc/etcd/pki/ca.pem --cert=/etc/etcd/pki/etcd.pem --key=/etc/etcd/pki/etcd-key.pem snapshot restore /root/cluster2.db --data-dir /var/lib/etcd-data-new 修改 Service 修改以下檔案: /etc/systemd/system/etcd.service 把 ... [Service] User=etcd Type=notify
+        </div>
+          <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-33/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+        </div>
+        
+        <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+          
+        
+        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
           <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-32/" class="db grow">
             <img src="https://alextrinityblock.github.io/blog/public/k8s.png" class="img" alt="image from K8S基本操作-32-檢查ETCD server 上的各種狀態配置">
           </a>
@@ -1130,44 +1162,18 @@
 
         </div>
         
-        <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-          
-        
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-10/" class="db grow">
-            <img src="https://alextrinityblock.github.io/blog/public/gcp.png" class="img" alt="image from GCP的ACE證照筆記-10-Cloud Run">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-10/" class="color-inherit dim link">
-            GCP的ACE證照筆記-10-Cloud Run
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Cloud Run 基於 Knative，一種自動管理 K8S 的工具，幾乎可以做到全自動擴展。 不須維護基礎設施。 使用時才付費。 Cloud Run for Anthos Cloud Run 是在數秒之內運作一個容器帶
-        </div>
-          <a href="https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-10/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-        </div>
-        
     </section>
 
     
     <section class="w-100">
         <h1 class="f3">更多</h1>
          
+        <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-10/" class="link black dim">
+              GCP的ACE證照筆記-10-Cloud Run
+            </a>
+        </h2>
+        
         <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://alextrinityblock.github.io/blog/public/post/linux/nginx%E9%85%8D%E7%BD%AE%E5%A4%9A%E5%80%8Breverse-proxy/" class="link black dim">
               nginx配置多個reverse-proxy
@@ -1183,12 +1189,6 @@
         <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-07/" class="link black dim">
               K8S基本操作-07-Ubuntu安裝K8S
-            </a>
-        </h2>
-        
-        <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-06/" class="link black dim">
-              K8S基本操作-06-imperative指令
             </a>
         </h2>
           
