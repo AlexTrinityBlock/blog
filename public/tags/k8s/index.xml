@@ -6,7 +6,16 @@
     <description>Recent content in K8S on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Mon, 05 Feb 2024 10:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Feb 2024 10:45:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8S基本操作-32-檢查ETCD server 上的各種狀態配置</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-32/</link>
+      <pubDate>Mon, 05 Feb 2024 10:45:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-32/</guid>
+      <description>用 PS 指令檢查 etcd 的各個配置檔案路徑與參數 有些情況 Kubectl 工具未安裝在 etcd server 上，所以必須要手動用 ps 指令檢查參數: ps aux|grep etcd 結果: etcd 808 0.0 0.0 11218624 56044 ? Ssl 01:58 0:44 /usr/local/bin/etcd --name etcd-server --data-dir=/var/lib/etcd-data</description>
+    </item>
+    
     <item>
       <title>K8S基本操作-31-如何檢查Cluster採用的ETCD的IP or URL ?</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-31/</link>
