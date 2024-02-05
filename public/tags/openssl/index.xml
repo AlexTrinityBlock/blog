@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenSSL on 無面者小站</title>
+    <link>https://alextrinityblock.github.io/blog/public/tags/openssl/</link>
+    <description>Recent content in OpenSSL on 無面者小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <lastBuildDate>Mon, 05 Feb 2024 23:00:49 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/openssl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>關於OpenSSL憑證-建立自簽CA憑證與憑證登入授權要素</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/secure/%E9%97%9C%E6%96%BCopenssl%E6%86%91%E8%AD%89-%E5%BB%BA%E7%AB%8B%E8%87%AA%E7%B0%BDca%E6%86%91%E8%AD%89%E8%88%87%E6%86%91%E8%AD%89%E7%99%BB%E5%85%A5%E6%8E%88%E6%AC%8A%E8%A6%81%E7%B4%A0/</link>
+      <pubDate>Mon, 05 Feb 2024 23:00:49 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/secure/%E9%97%9C%E6%96%BCopenssl%E6%86%91%E8%AD%89-%E5%BB%BA%E7%AB%8B%E8%87%AA%E7%B0%BDca%E6%86%91%E8%AD%89%E8%88%87%E6%86%91%E8%AD%89%E7%99%BB%E5%85%A5%E6%8E%88%E6%AC%8A%E8%A6%81%E7%B4%A0/</guid>
+      <description>關於 CA Certificate Authority，也就是 SSL 數位憑證的簽發機構。CA 負責對申請 SSL 憑證的網站進行身份驗證，並為其簽發一個包含公開金鑰和其他資訊的數位憑</description>
+    </item>
+    
+  </channel>
+</rss>
