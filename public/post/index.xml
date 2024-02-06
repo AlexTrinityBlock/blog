@@ -89,12 +89,12 @@
     </item>
     
     <item>
-      <title>K8S基本操作-30-多個Cluster與Config</title>
+      <title>K8S基本操作-30-多個 Cluster 與 KubeConfig</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-30/</link>
       <pubDate>Sun, 04 Feb 2024 16:00:44 +0800</pubDate>
       
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-30/</guid>
-      <description>Config不等於Config Map Config 不同 Config 可以用在管理不同 Cluster，並且給予不同的設定與認證金鑰路徑。 以下是個 Config 的範例: apiVersion: v1 clusters: - cluster: certificate-authority: fake-ca-file server:</description>
+      <description>Config不等於Config Map KubeConfig 為何要使用 KubeConfig ? 由於如果每次使用 kubectl 指令時，都要附上長串的使用者/密碼/憑證路徑，對維運效率的十分有影響的。 如</description>
     </item>
     
     <item>
