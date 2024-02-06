@@ -6,7 +6,16 @@
     <description>Recent content in K8S on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Tue, 06 Feb 2024 15:10:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Feb 2024 15:40:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8S基本操作-37-K8S原生憑證簽署方式</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-37/</link>
+      <pubDate>Tue, 06 Feb 2024 15:40:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-37/</guid>
+      <description>K8S 中哪個 Pod 負責簽署憑證 Controller manager Pod 負責簽署憑證，當 Admin 用戶將需要簽署的憑證傳輸給 K8S 時，由該部件進行簽署。 組成如下: Controller manager CSR-APPROVING CSR-SIGNING 如何進行 K8S 內部憑證申請 akshay 想</description>
+    </item>
+    
     <item>
       <title>K8S基本操作-36-當Kube-API Server 失效時用 CRICTL 檢查錯誤</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-36/</link>
