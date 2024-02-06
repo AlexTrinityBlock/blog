@@ -6,7 +6,16 @@
     <description>Recent content on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Tue, 06 Feb 2024 12:05:49 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Feb 2024 15:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8S基本操作-34-ETCD 的預設 Port</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-35/</link>
+      <pubDate>Tue, 06 Feb 2024 15:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-35/</guid>
+      <description>ETCD 的預設 Port ETCD server 預設使用 2379 port，所以當 Log 發生連線 2379 port 失敗時，可能是與 ETCD server 連線發生問題。</description>
+    </item>
+    
     <item>
       <title>查看OpenSSL憑證指令</title>
       <link>https://alextrinityblock.github.io/blog/public/post/secure/%E6%9F%A5%E7%9C%8Bopenssl%E6%86%91%E8%AD%89%E6%8C%87%E4%BB%A4/</link>
@@ -14,15 +23,6 @@
       
       <guid>https://alextrinityblock.github.io/blog/public/post/secure/%E6%9F%A5%E7%9C%8Bopenssl%E6%86%91%E8%AD%89%E6%8C%87%E4%BB%A4/</guid>
       <description>檢查憑證的指令如下 檢查憑證的指令可以用-text與-noout來查看憑證細節: openssl x509 -in my.crt -text -noout 輸出類似: Certificate: Data: Version: 3 (0x2) Serial Number: 3147495682089747350 (0x2bae26a58f090396) Signature Algorithm: sha256WithRSAEncryption Issuer: CN=kubernetes Validity Not Before: Feb 11 05:39:19</description>
-    </item>
-    
-    <item>
-      <title>K8S基本操作-34-ETCD 的預設 Port</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-35/</link>
-      <pubDate>Tue, 06 Feb 2024 12:00:44 +0800</pubDate>
-      
-      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-35/</guid>
-      <description>ETCD 的預設 Port ETCD server 預設使用 2379 port，所以當 Log 發生連線 2379 port 失敗時，可能是與 ETCD server 連線發生問題。</description>
     </item>
     
     <item>
