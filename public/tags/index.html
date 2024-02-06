@@ -1805,7 +1805,7 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      K8S 中哪個 Pod 負責簽署憑證 Controller manager Pod 負責簽署憑證，當 Admin 用戶將需要簽署的憑證傳輸給 K8S 時，由該部件進行簽署。 組成如下: Controller manager CSR-APPROVING CSR-SIGNING 如何進行 K8S 內部憑證申請 akshay 想
+      K8S 中各部件通訊時如何保障安全 kube-apiserver, kube-controller-manager, kube-scheduler, etcd, kubelet, kube-proxy 都存在著自己的鑰匙與憑證。 具體來說，每個部件都有著: ca.crt ***.crt ***.key 用於部件之間互相傳遞的加密與驗證。 沒意外的
     </div>
   </div>
 </div>
