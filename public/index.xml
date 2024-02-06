@@ -26,6 +26,15 @@
     </item>
     
     <item>
+      <title>K8S基本操作-34-ETCD 的預設 Port</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-35/</link>
+      <pubDate>Tue, 06 Feb 2024 12:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-35/</guid>
+      <description>ETCD 的預設 Port ETCD server 預設使用 2379 port，所以當 Log 發生連線 2379 port 失敗時，可能是與 ETCD server 連線發生問題。</description>
+    </item>
+    
+    <item>
       <title>K8S基本操作-34-檢查 ETCD 登入 Log</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-34/</link>
       <pubDate>Tue, 06 Feb 2024 12:00:44 +0800</pubDate>
