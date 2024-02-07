@@ -13,7 +13,7 @@
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-39/</link>
       <pubDate>Wed, 07 Feb 2024 10:50:44 +0800</pubDate>
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-39/</guid>
-      <description></description>
+      <description>K8S 的權限種類 Node 例如每個 Worker Node 都擁有一個權限身份，設置在 kubelet 用來存取 Kube API。 ABAC (屬性基礎權限控制 Attribute-Based Access Control) 基於屬性的權限身分。 屬性：屬性是描述資源、</description>
     </item>
     <item>
       <title>K8S基本操作-38-K8S API</title>
