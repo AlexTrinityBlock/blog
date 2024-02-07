@@ -6,8 +6,15 @@
     <description>Recent content on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Wed, 07 Feb 2024 10:50:44 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 07 Feb 2024 11:00:44 +0800</lastBuildDate>
     <atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8S基本操作-40-K8S Cluster Role 主機叢集角色</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-40/</link>
+      <pubDate>Wed, 07 Feb 2024 11:00:44 +0800</pubDate>
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-40/</guid>
+      <description>Cluster Role 由於有些資源是綁定某一台主機的，例如: Volume 這種存在硬碟上的資源。 並且這些資源橫跨多個 Namespace 與多個 Node ， 如開發環境跟生產環境都需要 Volume 。 而有時候需要</description>
+    </item>
     <item>
       <title>K8S基本操作-39-K8S 的使用者與權限</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-39/</link>
