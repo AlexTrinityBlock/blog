@@ -7,7 +7,7 @@
     <title>K8S基本操作-40-K8S Cluster Role 主機叢集角色 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Cluster Role 由於有些資源是綁定某一台主機的，例如: Volume 這種存在硬碟上的資源。 並且這些資源橫跨多個 Namespace 與多個 Node ， 如開發環境跟生產環境都需要 Volume 。 而有時候需要">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -248,47 +248,47 @@
 </ul>
 <h2 id="使用範例1">使用範例1</h2>
 <p>設置一個可以存取全 Node 中的 Pod 的角色。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRole</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-cluster-role</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">rules</span>:
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">apiGroups</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">resources</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">pods</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">verbs</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">get</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">list</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">watch</span>
-</span></span></code></pre></div><h2 id="使用範例2">使用範例2</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRole</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-cluster-role</span>
+<span style="color:#f92672">rules</span>:
+- <span style="color:#f92672">apiGroups</span>:
+  - <span style="color:#e6db74">&#34;&#34;</span>
+  <span style="color:#f92672">resources</span>:
+  - <span style="color:#ae81ff">pods</span>
+  <span style="color:#f92672">verbs</span>:
+  - <span style="color:#ae81ff">get</span>
+  - <span style="color:#ae81ff">list</span>
+  - <span style="color:#ae81ff">watch</span>
+</code></pre></div><h2 id="使用範例2">使用範例2</h2>
 <p>設置可以增刪修查 Node 的角色</p>
 <p><em>cluster-admin-role.yaml</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRole</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
-</span></span><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">cluster-administrator</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">rules</span>:
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">apiGroups</span>: [<span style="color:#e6db74">&#34;&#34;</span>]
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">resources</span>: [<span style="color:#e6db74">&#34;nodes&#34;</span>]
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">verbs</span>: [<span style="color:#e6db74">&#34;list&#34;</span>, <span style="color:#e6db74">&#34;get&#34;</span>, <span style="color:#e6db74">&#34;create&#34;</span>, <span style="color:#e6db74">&#34;delete&#34;</span>]
-</span></span></code></pre></div><p><em>cluster-admin-role-binding.yaml</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRoleBinding</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
-</span></span><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">cluster-admin-role-binding</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">subjects</span>:
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">User</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">cluster-admin</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">apiGroup</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">roleRef</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRole</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">cluster-administrator</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">apiGroup</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io</span>
-</span></span></code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRole</span>
+<span style="color:#f92672">metadata</span>:
+<span style="color:#f92672">name</span>: <span style="color:#ae81ff">cluster-administrator</span>
+<span style="color:#f92672">rules</span>:
+- <span style="color:#f92672">apiGroups</span>: [<span style="color:#e6db74">&#34;&#34;</span>]
+  <span style="color:#f92672">resources</span>: [<span style="color:#e6db74">&#34;nodes&#34;</span>]
+  <span style="color:#f92672">verbs</span>: [<span style="color:#e6db74">&#34;list&#34;</span>, <span style="color:#e6db74">&#34;get&#34;</span>, <span style="color:#e6db74">&#34;create&#34;</span>, <span style="color:#e6db74">&#34;delete&#34;</span>]
+</code></pre></div><p><em>cluster-admin-role-binding.yaml</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRoleBinding</span>
+<span style="color:#f92672">metadata</span>:
+<span style="color:#f92672">name</span>: <span style="color:#ae81ff">cluster-admin-role-binding</span>
+<span style="color:#f92672">subjects</span>:
+- <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">User</span>
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">cluster-admin</span>
+  <span style="color:#f92672">apiGroup</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io</span>
+<span style="color:#f92672">roleRef</span>:
+  <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRole</span>
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">cluster-administrator</span>
+  <span style="color:#f92672">apiGroup</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io</span>
+</code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

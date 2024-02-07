@@ -7,7 +7,7 @@
     <title>python_virtualenv使用 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="1.安裝virtualenv虛擬環境 linux mint或ubuntu上頭安裝時可以用apt來進行安裝 sudo apt install virtualenv 或直接用pip3來安裝 pip3 install virtualenv 2.建立虛擬">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -235,33 +235,33 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="1安裝virtualenv虛擬環境">1.安裝virtualenv虛擬環境</h2>
 <p>linux mint或ubuntu上頭安裝時可以用apt來進行安裝</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install virtualenv
-</span></span></code></pre></div><p>或直接用pip3來安裝</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip3 install virtualenv
-</span></span></code></pre></div><h2 id="2建立虛擬環境">2.建立虛擬環境</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install virtualenv
+</code></pre></div><p>或直接用pip3來安裝</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip3 install virtualenv
+</code></pre></div><h2 id="2建立虛擬環境">2.建立虛擬環境</h2>
 <p>我們建立的環境名稱叫 projectenv<br>
 版本用python3</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>virtualenv -p python3 projectenv 
-</span></span></code></pre></div><p>這樣就會生成一個資料夾projectenv</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">virtualenv -p python3 projectenv 
+</code></pre></div><p>這樣就會生成一個資料夾projectenv</p>
 <h2 id="3啟動虛擬環境">3.啟動虛擬環境</h2>
 <p>進入資料夾</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd projectenv
-</span></span></code></pre></div><p>觸發啟動腳本</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>source ./bin/activate
-</span></span></code></pre></div><p>如果你注意到命令行的前頭發生改變多了(projectenv) ，就是成功啟動了<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd projectenv
+</code></pre></div><p>觸發啟動腳本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">source ./bin/activate
+</code></pre></div><p>如果你注意到命令行的前頭發生改變多了(projectenv) ，就是成功啟動了<br>
 接著我們檢查安裝了哪些套件</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip3 list
-</span></span></code></pre></div><p>關閉虛擬環境</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>deactivate
-</span></span></code></pre></div><p>以後安裝套件都會裝在這個projectenv資料夾了</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip3 list
+</code></pre></div><p>關閉虛擬環境</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">deactivate
+</code></pre></div><p>以後安裝套件都會裝在這個projectenv資料夾了</p>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/tags/python" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">python</a>
+     <a href="/blog/public/tags/python" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">python</a>
    </li>
   
    <li class="list">
-     <a href="/tags/virtualenv" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">virtualenv</a>
+     <a href="/blog/public/tags/virtualenv" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">virtualenv</a>
    </li>
   
 </ul>

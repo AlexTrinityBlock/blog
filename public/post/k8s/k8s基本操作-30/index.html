@@ -7,7 +7,7 @@
     <title>K8S基本操作-30-多個 Cluster 與 KubeConfig | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Config不等於Config Map KubeConfig 為何要使用 KubeConfig ? 由於如果每次使用 kubectl 指令時，都要附上長串的使用者/密碼/憑證路徑，對維運效率的十分有影響的。 如">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -242,57 +242,57 @@
 <h1 id="config">Config</h1>
 <p>不同 Config 可以用在管理不同 Cluster，並且給予不同的設定與認證金鑰路徑。</p>
 <p>以下是個 Config 的範例:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Config</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">preferences</span>: {}
-</span></span><span style="display:flex;"><span><span style="color:#f92672">current-context</span>: <span style="color:#ae81ff">development</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">clusters</span>:
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">cluster</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">certificate-authority</span>: <span style="color:#ae81ff">fake-ca-file</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">server</span>: <span style="color:#ae81ff">https://1.2.3.4</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">development</span>
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">cluster</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">insecure-skip-tls-verify</span>: <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">server</span>: <span style="color:#ae81ff">https://5.6.7.8</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">test</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">contexts</span>:
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">context</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">cluster</span>: <span style="color:#ae81ff">development</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">frontend</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">user</span>: <span style="color:#ae81ff">developer</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">dev-frontend</span>
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">context</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">cluster</span>: <span style="color:#ae81ff">development</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">storage</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">user</span>: <span style="color:#ae81ff">developer</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">dev-storage</span>
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">context</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">cluster</span>: <span style="color:#ae81ff">test</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">user</span>: <span style="color:#ae81ff">experimenter</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">exp-test</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">users</span>:
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">developer</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">user</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">client-certificate</span>: <span style="color:#ae81ff">fake-cert-file</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">client-key</span>: <span style="color:#ae81ff">fake-key-file</span>
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">experimenter</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">user</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 不建議將密碼明文儲存</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">password</span>: <span style="color:#ae81ff">some-password</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">username</span>: <span style="color:#ae81ff">exp</span>
-</span></span></code></pre></div><p>我們可以注意到，其中定義了開發與生產兩種不同Cluster。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Config</span>
+<span style="color:#f92672">preferences</span>: {}
+<span style="color:#f92672">current-context</span>: <span style="color:#ae81ff">development</span>
+
+<span style="color:#f92672">clusters</span>:
+- <span style="color:#f92672">cluster</span>:
+    <span style="color:#f92672">certificate-authority</span>: <span style="color:#ae81ff">fake-ca-file</span>
+    <span style="color:#f92672">server</span>: <span style="color:#ae81ff">https://1.2.3.4</span>
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">development</span>
+- <span style="color:#f92672">cluster</span>:
+    <span style="color:#f92672">insecure-skip-tls-verify</span>: <span style="color:#66d9ef">true</span>
+    <span style="color:#f92672">server</span>: <span style="color:#ae81ff">https://5.6.7.8</span>
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">test</span>
+
+<span style="color:#f92672">contexts</span>:
+- <span style="color:#f92672">context</span>:
+    <span style="color:#f92672">cluster</span>: <span style="color:#ae81ff">development</span>
+    <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">frontend</span>
+    <span style="color:#f92672">user</span>: <span style="color:#ae81ff">developer</span>
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">dev-frontend</span>
+- <span style="color:#f92672">context</span>:
+    <span style="color:#f92672">cluster</span>: <span style="color:#ae81ff">development</span>
+    <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">storage</span>
+    <span style="color:#f92672">user</span>: <span style="color:#ae81ff">developer</span>
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">dev-storage</span>
+- <span style="color:#f92672">context</span>:
+    <span style="color:#f92672">cluster</span>: <span style="color:#ae81ff">test</span>
+    <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+    <span style="color:#f92672">user</span>: <span style="color:#ae81ff">experimenter</span>
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">exp-test</span>
+
+<span style="color:#f92672">users</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">developer</span>
+  <span style="color:#f92672">user</span>:
+    <span style="color:#f92672">client-certificate</span>: <span style="color:#ae81ff">fake-cert-file</span>
+    <span style="color:#f92672">client-key</span>: <span style="color:#ae81ff">fake-key-file</span>
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">experimenter</span>
+  <span style="color:#f92672">user</span>:
+    <span style="color:#75715e"># 不建議將密碼明文儲存</span>
+    <span style="color:#f92672">password</span>: <span style="color:#ae81ff">some-password</span>
+    <span style="color:#f92672">username</span>: <span style="color:#ae81ff">exp</span>
+</code></pre></div><p>我們可以注意到，其中定義了開發與生產兩種不同Cluster。</p>
 <p>並且有不同 Context。</p>
 <p>可以用以下指令切換不同 Cluster:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl config use-context &lt;context名稱&gt;
-</span></span></code></pre></div><p>例如:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl config use-context dev-frontend
-</span></span></code></pre></div><h1 id="檢視-config-的指令">檢視 Config 的指令</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl config view 
-</span></span></code></pre></div><h1 id="實際上-config-看起來像這樣">實際上 Config 看起來像這樣</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl config use-context &lt;context名稱&gt;
+</code></pre></div><p>例如:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl config use-context dev-frontend
+</code></pre></div><h1 id="檢視-config-的指令">檢視 Config 的指令</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl config view 
+</code></pre></div><h1 id="實際上-config-看起來像這樣">實際上 Config 看起來像這樣</h1>
 <ol>
 <li>
 <p>我們觀察以下的 Cluster，除了名字與IP與網址Port以外， CA 憑證也是在此處設置的。</p>
@@ -309,34 +309,34 @@
 </ol>
 <p>這個檔案一般位置在 <code>$HOME/.kube/config</code> ， kubectl 會自動讀取此設置。</p>
 <p><em>$HOME/.kube/config</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Config</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">current-context</span>: <span style="color:#ae81ff">admin@production</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">clusters</span>:
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">production</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">cluster</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">certificate-authority</span>: <span style="color:#ae81ff">/etc/kubernetes/pki/ca.crt</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">server</span>: <span style="color:#ae81ff">https://172.17.0.51:6443</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">users</span>:
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">admin</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">user</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">client-certificate</span>: <span style="color:#ae81ff">/etc/kubernetes/pki/users/admin.crt</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">client-key</span>: <span style="color:#ae81ff">/etc/kubernetes/pki/users/admin.key</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">contexts</span>:
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">admin@production</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">context</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">cluster</span>: <span style="color:#ae81ff">production</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">user</span>: <span style="color:#ae81ff">admin</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">finance</span>
-</span></span></code></pre></div><p>使用 Context :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl config use-context admin@production
-</span></span></code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Config</span>
+<span style="color:#f92672">current-context</span>: <span style="color:#ae81ff">admin@production</span>
+
+<span style="color:#f92672">clusters</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">production</span>
+  <span style="color:#f92672">cluster</span>:
+    <span style="color:#f92672">certificate-authority</span>: <span style="color:#ae81ff">/etc/kubernetes/pki/ca.crt</span>
+    <span style="color:#f92672">server</span>: <span style="color:#ae81ff">https://172.17.0.51:6443</span>
+
+<span style="color:#f92672">users</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">admin</span>
+  <span style="color:#f92672">user</span>:
+    <span style="color:#f92672">client-certificate</span>: <span style="color:#ae81ff">/etc/kubernetes/pki/users/admin.crt</span>
+    <span style="color:#f92672">client-key</span>: <span style="color:#ae81ff">/etc/kubernetes/pki/users/admin.key</span>
+
+<span style="color:#f92672">contexts</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">admin@production</span>
+  <span style="color:#f92672">context</span>:
+    <span style="color:#f92672">cluster</span>: <span style="color:#ae81ff">production</span>
+    <span style="color:#f92672">user</span>: <span style="color:#ae81ff">admin</span>
+    <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">finance</span>
+</code></pre></div><p>使用 Context :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl config use-context admin@production
+</code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

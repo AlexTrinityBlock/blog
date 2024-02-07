@@ -7,7 +7,7 @@
     <title>Android將使用者輸入傳入後端02 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="1.目標 這次的目標是要把前端輸入欄位的內容，接收到後端的java，然後再重新傳回前端。 從前端擷取內容，對於像是帳號密碼登入，輸入金額，或類似">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -252,82 +252,82 @@
 <p>按鈕上依附的函數名稱:</p>
 <pre tabindex="0"><code>onBtnClick
 </code></pre><p>完整的前端xml描述：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">xmlns:app=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">xmlns:tools=</span><span style="color:#e6db74">&#34;http://schemas.android.com/tools&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tools:context=</span><span style="color:#e6db74">&#34;.MainActivity&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--輸出的文字欄位--&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;TextView</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/targetText&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_marginTop=</span><span style="color:#e6db74">&#34;200dp&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:text=</span><span style="color:#e6db74">&#34;Target&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:textSize=</span><span style="color:#e6db74">&#34;48sp&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintLeft_toLeftOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintRight_toRightOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintTop_toTopOf=</span><span style="color:#e6db74">&#34;parent&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--輸入的文字欄位--&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;EditText</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/textToTarget&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_marginTop=</span><span style="color:#e6db74">&#34;100dp&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:ems=</span><span style="color:#e6db74">&#34;10&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:inputType=</span><span style="color:#e6db74">&#34;textPersonName&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintEnd_toEndOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintStart_toStartOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintTop_toBottomOf=</span><span style="color:#e6db74">&#34;@+id/targetText&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--觸發函數的按鈕--&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;Button</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/button&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:layout_marginTop=</span><span style="color:#e6db74">&#34;100dp&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:text=</span><span style="color:#e6db74">&#34;Button&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:onClick=</span><span style="color:#e6db74">&#34;onBtnClick&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintEnd_toEndOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintStart_toStartOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">app:layout_constraintTop_toBottomOf=</span><span style="color:#e6db74">&#34;@+id/textToTarget&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
-</span></span></code></pre></div><h1 id="3後端">3.後端</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.frontback;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> androidx.appcompat.app.AppCompatActivity;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> android.os.Bundle;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> android.view.View;<span style="color:#75715e">//調整前端需要用的類別</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> android.widget.TextView;<span style="color:#75715e">//顯示輸出文字的欄位</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> android.widget.EditText;<span style="color:#75715e">//輸入文字的欄位</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> <span style="color:#66d9ef">extends</span> AppCompatActivity {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onCreate</span>(Bundle savedInstanceState) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">onCreate</span>(savedInstanceState);
-</span></span><span style="display:flex;"><span>        setContentView(R.<span style="color:#a6e22e">layout</span>.<span style="color:#a6e22e">activity_main</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onBtnClick</span>(View view){
-</span></span><span style="display:flex;"><span>        EditText textToTarget <span style="color:#f92672">=</span>findViewById(R.<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">textToTarget</span>);<span style="color:#75715e">//取得輸入文字，名為textToTarget</span>
-</span></span><span style="display:flex;"><span>        TextView targetText <span style="color:#f92672">=</span> findViewById(R.<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">targetText</span>);<span style="color:#75715e">//取得輸出文字，名為targetText</span>
-</span></span><span style="display:flex;"><span>        String theInputInformation<span style="color:#f92672">=</span>textToTarget.<span style="color:#a6e22e">getText</span>().<span style="color:#a6e22e">toString</span>();<span style="color:#75715e">//取得輸入文字，將其轉為字串</span>
-</span></span><span style="display:flex;"><span>        targetText.<span style="color:#a6e22e">setText</span>(theInputInformation);<span style="color:#75715e">//將字串放入輸出文字欄位</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<span style="color:#f92672">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+    <span style="color:#a6e22e">xmlns:app=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
+    <span style="color:#a6e22e">xmlns:tools=</span><span style="color:#e6db74">&#34;http://schemas.android.com/tools&#34;</span>
+    <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
+    <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
+    <span style="color:#a6e22e">tools:context=</span><span style="color:#e6db74">&#34;.MainActivity&#34;</span><span style="color:#f92672">&gt;</span>
+
+    <span style="color:#75715e">&lt;!--輸出的文字欄位--&gt;</span>
+    <span style="color:#f92672">&lt;TextView</span>
+        <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/targetText&#34;</span>
+        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+        <span style="color:#a6e22e">android:layout_marginTop=</span><span style="color:#e6db74">&#34;200dp&#34;</span>
+        <span style="color:#a6e22e">android:text=</span><span style="color:#e6db74">&#34;Target&#34;</span>
+        <span style="color:#a6e22e">android:textSize=</span><span style="color:#e6db74">&#34;48sp&#34;</span>
+        <span style="color:#a6e22e">app:layout_constraintLeft_toLeftOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+        <span style="color:#a6e22e">app:layout_constraintRight_toRightOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+        <span style="color:#a6e22e">app:layout_constraintTop_toTopOf=</span><span style="color:#e6db74">&#34;parent&#34;</span> <span style="color:#f92672">/&gt;</span>
+
+    <span style="color:#75715e">&lt;!--輸入的文字欄位--&gt;</span>
+    <span style="color:#f92672">&lt;EditText</span>
+        <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/textToTarget&#34;</span>
+        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+        <span style="color:#a6e22e">android:layout_marginTop=</span><span style="color:#e6db74">&#34;100dp&#34;</span>
+        <span style="color:#a6e22e">android:ems=</span><span style="color:#e6db74">&#34;10&#34;</span>
+        <span style="color:#a6e22e">android:inputType=</span><span style="color:#e6db74">&#34;textPersonName&#34;</span>
+        <span style="color:#a6e22e">app:layout_constraintEnd_toEndOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+        <span style="color:#a6e22e">app:layout_constraintStart_toStartOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+        <span style="color:#a6e22e">app:layout_constraintTop_toBottomOf=</span><span style="color:#e6db74">&#34;@+id/targetText&#34;</span> <span style="color:#f92672">/&gt;</span>
+
+    <span style="color:#75715e">&lt;!--觸發函數的按鈕--&gt;</span>
+    <span style="color:#f92672">&lt;Button</span>
+        <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/button&#34;</span>
+        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+        <span style="color:#a6e22e">android:layout_marginTop=</span><span style="color:#e6db74">&#34;100dp&#34;</span>
+        <span style="color:#a6e22e">android:text=</span><span style="color:#e6db74">&#34;Button&#34;</span>
+        <span style="color:#a6e22e">android:onClick=</span><span style="color:#e6db74">&#34;onBtnClick&#34;</span>
+        <span style="color:#a6e22e">app:layout_constraintEnd_toEndOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+        <span style="color:#a6e22e">app:layout_constraintStart_toStartOf=</span><span style="color:#e6db74">&#34;parent&#34;</span>
+        <span style="color:#a6e22e">app:layout_constraintTop_toBottomOf=</span><span style="color:#e6db74">&#34;@+id/textToTarget&#34;</span> <span style="color:#f92672">/&gt;</span>
+
+<span style="color:#f92672">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
+</code></pre></div><h1 id="3後端">3.後端</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
+<span style="color:#f92672">package</span> com.example.frontback<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> androidx.appcompat.app.AppCompatActivity<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> android.os.Bundle<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> android.view.View<span style="color:#f92672">;</span><span style="color:#75715e">//調整前端需要用的類別
+</span><span style="color:#75715e"></span><span style="color:#f92672">import</span> android.widget.TextView<span style="color:#f92672">;</span><span style="color:#75715e">//顯示輸出文字的欄位
+</span><span style="color:#75715e"></span><span style="color:#f92672">import</span> android.widget.EditText<span style="color:#f92672">;</span><span style="color:#75715e">//輸入文字的欄位
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> <span style="color:#66d9ef">extends</span> AppCompatActivity <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>Bundle savedInstanceState<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">);</span>
+        setContentView<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">activity_main</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onBtnClick</span><span style="color:#f92672">(</span>View view<span style="color:#f92672">){</span>
+        EditText textToTarget <span style="color:#f92672">=</span>findViewById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">textToTarget</span><span style="color:#f92672">);</span><span style="color:#75715e">//取得輸入文字，名為textToTarget
+</span><span style="color:#75715e"></span>        TextView targetText <span style="color:#f92672">=</span> findViewById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">targetText</span><span style="color:#f92672">);</span><span style="color:#75715e">//取得輸出文字，名為targetText
+</span><span style="color:#75715e"></span>        String theInputInformation<span style="color:#f92672">=</span>textToTarget<span style="color:#f92672">.</span><span style="color:#a6e22e">getText</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">();</span><span style="color:#75715e">//取得輸入文字，將其轉為字串
+</span><span style="color:#75715e"></span>        targetText<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>theInputInformation<span style="color:#f92672">);</span><span style="color:#75715e">//將字串放入輸出文字欄位
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/tags/android" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">android</a>
+     <a href="/blog/public/tags/android" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">android</a>
    </li>
   
 </ul>

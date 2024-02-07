@@ -7,7 +7,7 @@
     <title>用UFW在ping下隱藏自己 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="作者 阿維 概念 通常入侵與攻擊的第一步驟，是藉由ICMP(例如ping)或其他開放端口服務發掘主機所在的IP位址。 我們可以嘗試先在ICMP的角度">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -254,7 +254,7 @@
 #   ufw-before-forward
 #
 
-# Don&#39;t delete these required lines, otherwise there will be errors
+# Don't delete these required lines, otherwise there will be errors
 *filter
 :ufw-before-input - [0:0]
 :ufw-before-output - [0:0]
@@ -317,7 +317,7 @@
 # is uncommented)
 -A ufw-before-input -p udp -d 239.255.255.250 --dport 1900 -j ACCEPT
 
-# don&#39;t delete the &#39;COMMIT&#39; line or these rules won&#39;t be processed
+# don't delete the 'COMMIT' line or these rules won't be processed
 COMMIT
 </code></pre><p>要達成本篇文章的目的我們只要注意到兩個關鍵字</p>
 <pre tabindex="0"><code>ACCEPT 與 DROP
@@ -345,19 +345,19 @@ COMMIT
 <ul class="pa0">
   
    <li class="list">
-     <a href="/tags/secure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">secure</a>
+     <a href="/blog/public/tags/secure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">secure</a>
    </li>
   
    <li class="list">
-     <a href="/tags/%E9%98%B2%E7%81%AB%E7%89%86" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">防火牆</a>
+     <a href="/blog/public/tags/%E9%98%B2%E7%81%AB%E7%89%86" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">防火牆</a>
    </li>
   
    <li class="list">
-     <a href="/tags/%E8%B3%87%E5%AE%89" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">資安</a>
+     <a href="/blog/public/tags/%E8%B3%87%E5%AE%89" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">資安</a>
    </li>
   
    <li class="list">
-     <a href="/tags/firewall" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">firewall</a>
+     <a href="/blog/public/tags/firewall" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">firewall</a>
    </li>
   
 </ul>

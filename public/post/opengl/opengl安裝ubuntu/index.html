@@ -7,7 +7,7 @@
     <title>opengl安裝(Ubuntu) | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="1.Linux版本 此範例用在Ubuntu20.04 2.apt安裝opengl 安裝OpenGL與相關依賴 sudo apt install cmake make g&#43;&#43; libx11-dev libgl1-mesa-dev libglu1-mesa-dev libxrandr-dev libxext-dev libglew-dev libglfw3 libglfw3-dev freeglut3-dev freeglut3 這邊主">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -252,50 +252,52 @@
 </blockquote>
 <h2 id="3畫出一個視窗裡頭有正方形">3.畫出一個視窗裡頭有正方形</h2>
 <h3 id="maincpp">main.cpp</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">//sudo apt-get install freeglut3-dev freeglut3
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//gcc main.cpp  -o OutPut -lGL -lGLU -lglut
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">displayMe</span>(<span style="color:#66d9ef">void</span>)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    glClear(GL_COLOR_BUFFER_BIT);
-</span></span><span style="display:flex;"><span>    glBegin(GL_POLYGON);
-</span></span><span style="display:flex;"><span>        glVertex3f(<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.0</span>);<span style="color:#75715e">//x,y,z軸座標
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        glVertex3f(<span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.0</span>);
-</span></span><span style="display:flex;"><span>        glVertex3f(<span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0.0</span>);
-</span></span><span style="display:flex;"><span>        glVertex3f(<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0.0</span>);
-</span></span><span style="display:flex;"><span>    glEnd();
-</span></span><span style="display:flex;"><span>    glFlush();
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">**</span> argv)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    glutInit(<span style="color:#f92672">&amp;</span>argc, argv);
-</span></span><span style="display:flex;"><span>    glutInitDisplayMode(GLUT_SINGLE);<span style="color:#75715e">//顯示模式，GLUT_SINGLE繪圖較慢只有一個緩衝區，常用於靜態圖片。GLUT_DOUBLE則可以用於動畫，繪製速度相對快速。
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    glutInitWindowSize(<span style="color:#ae81ff">300</span>, <span style="color:#ae81ff">300</span>);<span style="color:#75715e">//圖形視窗大小
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    glutInitWindowPosition(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">100</span>);<span style="color:#75715e">//圖形視窗顯示在桌面的位置
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    glutCreateWindow(<span style="color:#e6db74">&#34;Is a window&#34;</span>);<span style="color:#75715e">//圖形視窗標題
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    glutDisplayFunc(displayMe);<span style="color:#75715e">//把上方我們自定義的函數，displayMe的內容顯示於視窗中
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    glutMainLoop();<span style="color:#75715e">//持續運作的主迴圈
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="4編譯指令">4.編譯指令</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">//sudo apt-get install freeglut3-dev freeglut3
+</span><span style="color:#75715e">//gcc main.cpp  -o OutPut -lGL -lGLU -lglut
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GL/glut.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">displayMe</span>(<span style="color:#66d9ef">void</span>)
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    glBegin(GL_POLYGON);
+        glVertex3f(<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.0</span>);<span style="color:#75715e">//x,y,z軸座標
+</span><span style="color:#75715e"></span>        glVertex3f(<span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.0</span>);
+        glVertex3f(<span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0.0</span>);
+        glVertex3f(<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0.0</span>);
+    glEnd();
+    glFlush();
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">**</span> argv)
+{
+    glutInit(<span style="color:#f92672">&amp;</span>argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE);<span style="color:#75715e">//顯示模式，GLUT_SINGLE繪圖較慢只有一個緩衝區，常用於靜態圖片。GLUT_DOUBLE則可以用於動畫，繪製速度相對快速。
+</span><span style="color:#75715e"></span>    glutInitWindowSize(<span style="color:#ae81ff">300</span>, <span style="color:#ae81ff">300</span>);<span style="color:#75715e">//圖形視窗大小
+</span><span style="color:#75715e"></span>    glutInitWindowPosition(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">100</span>);<span style="color:#75715e">//圖形視窗顯示在桌面的位置
+</span><span style="color:#75715e"></span>    glutCreateWindow(<span style="color:#e6db74">&#34;Is a window&#34;</span>);<span style="color:#75715e">//圖形視窗標題
+</span><span style="color:#75715e"></span>    glutDisplayFunc(displayMe);<span style="color:#75715e">//把上方我們自定義的函數，displayMe的內容顯示於視窗中
+</span><span style="color:#75715e"></span>    glutMainLoop();<span style="color:#75715e">//持續運作的主迴圈
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+
+</code></pre></div><h2 id="4編譯指令">4.編譯指令</h2>
 <p>編譯完畢後檔名是OutPut</p>
 <pre tabindex="0"><code>gcc main.cpp  -o OutPut -lGL -lGLU -lglut
 </code></pre><h2 id="5執行">5.執行</h2>
 <pre tabindex="0"><code>./OutPut
 </code></pre><h2 id="6可能的錯誤">6.可能的錯誤</h2>
 <h3 id="錯誤情況1">錯誤情況1</h3>
-<pre tabindex="0"><code>/usr/bin/ld: /tmp/cc5TTO9z.o: undefined reference to symbol &#39;sqrt@@GLIBC_2.2.5&#39;
+<pre tabindex="0"><code>/usr/bin/ld: /tmp/cc5TTO9z.o: undefined reference to symbol 'sqrt@@GLIBC_2.2.5'
 /usr/bin/ld: /lib/x86_64-linux-gnu/libm.so.6: error adding symbols: DSO missing from command line
 collect2: error: ld returned 1 exit status
+
 </code></pre><p>解決方式：
 編譯指令增加-lm</p>
 <pre tabindex="0"><code>gcc ./main.c  -o OutPut -lGL -lGLU -lglut -lm
 </code></pre><ul class="pa0">
   
    <li class="list">
-     <a href="/tags/opengl" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">opengl</a>
+     <a href="/blog/public/tags/opengl" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">opengl</a>
    </li>
   
 </ul>

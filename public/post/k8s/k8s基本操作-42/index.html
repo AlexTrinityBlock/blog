@@ -7,7 +7,7 @@
     <title>K8S基本操作-42-K8S 選擇映像檔來源 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="建立一個 Secret 用於儲存映像檔專用 假定我們映像檔來源如下: Name: private-reg-cred Username: dock_user Password: dock_password Server: myprivateregistry.com:5000 Email: dock_user@myprivateregistry.com 我們以此用以下指令建立一個專用的 secret 儲存映像檔伺服器與登入資訊: kubectl create secret">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -241,57 +241,57 @@ Password: dock_password
 Server: myprivateregistry.com:5000
 Email: dock_user@myprivateregistry.com
 </code></pre><p>我們以此用以下指令建立一個專用的 secret 儲存映像檔伺服器與登入資訊:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl create secret docker-registry private-reg-cred  --docker-username<span style="color:#f92672">=</span>dock_user --docker-password<span style="color:#f92672">=</span>dock_password --docker-server<span style="color:#f92672">=</span>myprivateregistry.com:5000 --docker-email<span style="color:#f92672">=</span>dock_user@myprivateregistry.com
-</span></span></code></pre></div><p>接著就能在建立 Deployment 的時候使用這個設置了:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Deployment</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">annotations</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">deployment.kubernetes.io/revision</span>: <span style="color:#e6db74">&#34;1&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">creationTimestamp</span>: <span style="color:#e6db74">&#34;2024-02-07T07:42:35Z&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">generation</span>: <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">labels</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">app</span>: <span style="color:#ae81ff">web</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">web</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">resourceVersion</span>: <span style="color:#e6db74">&#34;2478&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">uid</span>: <span style="color:#ae81ff">79c83f92-67f5-49bd-a372-25dd2bbd5a5d</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">progressDeadlineSeconds</span>: <span style="color:#ae81ff">600</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">replicas</span>: <span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">revisionHistoryLimit</span>: <span style="color:#ae81ff">10</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">selector</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">matchLabels</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">app</span>: <span style="color:#ae81ff">web</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">strategy</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">rollingUpdate</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">maxSurge</span>: <span style="color:#ae81ff">25</span><span style="color:#ae81ff">%</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">maxUnavailable</span>: <span style="color:#ae81ff">25</span><span style="color:#ae81ff">%</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">RollingUpdate</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">template</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">metadata</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">creationTimestamp</span>: <span style="color:#66d9ef">null</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">labels</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">app</span>: <span style="color:#ae81ff">web</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">spec</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">imagePullSecrets</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">private-reg-cred</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">containers</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx:alpine</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">imagePullPolicy</span>: <span style="color:#ae81ff">IfNotPresent</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">resources</span>: {}
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">terminationMessagePath</span>: <span style="color:#ae81ff">/dev/termination-log</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">terminationMessagePolicy</span>: <span style="color:#ae81ff">File</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">dnsPolicy</span>: <span style="color:#ae81ff">ClusterFirst</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">restartPolicy</span>: <span style="color:#ae81ff">Always</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">schedulerName</span>: <span style="color:#ae81ff">default-scheduler</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">securityContext</span>: {}
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">terminationGracePeriodSeconds</span>: <span style="color:#ae81ff">30</span>
-</span></span></code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create secret docker-registry private-reg-cred  --docker-username<span style="color:#f92672">=</span>dock_user --docker-password<span style="color:#f92672">=</span>dock_password --docker-server<span style="color:#f92672">=</span>myprivateregistry.com:5000 --docker-email<span style="color:#f92672">=</span>dock_user@myprivateregistry.com
+</code></pre></div><p>接著就能在建立 Deployment 的時候使用這個設置了:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Deployment</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">annotations</span>:
+    <span style="color:#f92672">deployment.kubernetes.io/revision</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+  <span style="color:#f92672">creationTimestamp</span>: <span style="color:#e6db74">&#34;2024-02-07T07:42:35Z&#34;</span>
+  <span style="color:#f92672">generation</span>: <span style="color:#ae81ff">1</span>
+  <span style="color:#f92672">labels</span>:
+    <span style="color:#f92672">app</span>: <span style="color:#ae81ff">web</span>
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">web</span>
+  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+  <span style="color:#f92672">resourceVersion</span>: <span style="color:#e6db74">&#34;2478&#34;</span>
+  <span style="color:#f92672">uid</span>: <span style="color:#ae81ff">79c83f92-67f5-49bd-a372-25dd2bbd5a5d</span>
+<span style="color:#f92672">spec</span>:
+  <span style="color:#f92672">progressDeadlineSeconds</span>: <span style="color:#ae81ff">600</span>
+  <span style="color:#f92672">replicas</span>: <span style="color:#ae81ff">2</span>
+  <span style="color:#f92672">revisionHistoryLimit</span>: <span style="color:#ae81ff">10</span>
+  <span style="color:#f92672">selector</span>:
+    <span style="color:#f92672">matchLabels</span>:
+      <span style="color:#f92672">app</span>: <span style="color:#ae81ff">web</span>
+  <span style="color:#f92672">strategy</span>:
+    <span style="color:#f92672">rollingUpdate</span>:
+      <span style="color:#f92672">maxSurge</span>: <span style="color:#ae81ff">25</span><span style="color:#ae81ff">%</span>
+      <span style="color:#f92672">maxUnavailable</span>: <span style="color:#ae81ff">25</span><span style="color:#ae81ff">%</span>
+    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">RollingUpdate</span>
+  <span style="color:#f92672">template</span>:
+    <span style="color:#f92672">metadata</span>:
+      <span style="color:#f92672">creationTimestamp</span>: <span style="color:#66d9ef">null</span>
+      <span style="color:#f92672">labels</span>:
+        <span style="color:#f92672">app</span>: <span style="color:#ae81ff">web</span>
+    <span style="color:#f92672">spec</span>:
+      <span style="color:#f92672">imagePullSecrets</span>:
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">private-reg-cred</span>
+      <span style="color:#f92672">containers</span>:
+      - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx:alpine</span>
+        <span style="color:#f92672">imagePullPolicy</span>: <span style="color:#ae81ff">IfNotPresent</span>
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+        <span style="color:#f92672">resources</span>: {}
+        <span style="color:#f92672">terminationMessagePath</span>: <span style="color:#ae81ff">/dev/termination-log</span>
+        <span style="color:#f92672">terminationMessagePolicy</span>: <span style="color:#ae81ff">File</span>
+      <span style="color:#f92672">dnsPolicy</span>: <span style="color:#ae81ff">ClusterFirst</span>
+      <span style="color:#f92672">restartPolicy</span>: <span style="color:#ae81ff">Always</span>
+      <span style="color:#f92672">schedulerName</span>: <span style="color:#ae81ff">default-scheduler</span>
+      <span style="color:#f92672">securityContext</span>: {}
+      <span style="color:#f92672">terminationGracePeriodSeconds</span>: <span style="color:#ae81ff">30</span>
+</code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

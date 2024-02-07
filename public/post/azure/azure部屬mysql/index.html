@@ -7,7 +7,7 @@
     <title>Azure部屬MySQL | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="1.適用於 MySQL 的 Azure 資料庫 點選『適用於 MySQL 的 Azure 資料庫』 如果沒有的話，可以在上排選單。 2.建立 3.單一伺服器 4.建立MySQL伺服器 以下有幾個一定要">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -268,40 +268,40 @@
 <p><img src="/blog/public/2022-03-08/az10.png" alt="img"></p>
 <h2 id="11登入mysql">11.登入MySQL</h2>
 <p>在Azure終端機輸入下列指令:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql --host<span style="color:#f92672">=</span>&lt;伺服器名稱&gt;.mysql.database.azure.com --user<span style="color:#f92672">=</span>&lt;管理使正者名稱&gt;@&lt;伺服器名稱&gt; -p
-</span></span></code></pre></div><p>例如下面這樣:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql --host<span style="color:#f92672">=</span>imserver123.mysql.database.azure.com --user<span style="color:#f92672">=</span>imuser123@imserver123 -p
-</span></span></code></pre></div><p><img src="/blog/public/2022-03-08/az11.png" alt="img"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql --host<span style="color:#f92672">=</span>&lt;伺服器名稱&gt;.mysql.database.azure.com --user<span style="color:#f92672">=</span>&lt;管理使正者名稱&gt;@&lt;伺服器名稱&gt; -p
+</code></pre></div><p>例如下面這樣:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql --host<span style="color:#f92672">=</span>imserver123.mysql.database.azure.com --user<span style="color:#f92672">=</span>imuser123@imserver123 -p
+</code></pre></div><p><img src="/blog/public/2022-03-08/az11.png" alt="img"></p>
 <h2 id="12嘗試插入mysql語法">12.嘗試插入MySQL語法</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span><span style="color:#75715e">/*建立資料庫名稱為mvcdb*/</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">DATABASE</span> mvcdb;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/*使用資料庫mvcdb*/</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> mvcdb;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/*建立資料表，如果事先沒有同一個名稱的資料表的話，名為item*/</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/*裡頭有三個項目ID,Name,Number*/</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/*VARCHAR可以裝入文字內容，INT則是整數*/</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">EXISTS</span> <span style="color:#a6e22e">item</span> (
-</span></span><span style="display:flex;"><span>  ID <span style="color:#66d9ef">VARCHAR</span>(<span style="color:#ae81ff">50</span>) <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span> ,
-</span></span><span style="display:flex;"><span>  Name <span style="color:#66d9ef">VARCHAR</span>(<span style="color:#ae81ff">50</span>) <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
-</span></span><span style="display:flex;"><span>  Number <span style="color:#66d9ef">INT</span>(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>
-</span></span><span style="display:flex;"><span>) ;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/*顯示資料表*/</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SHOW</span> <span style="color:#66d9ef">TABLES</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/*插入一筆資料ID為A0001，名稱為BKO001，數量12*/</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#a6e22e">item</span>  (ID, Name, Number) <span style="color:#66d9ef">VALUES</span>  (<span style="color:#e6db74">&#34;A001&#34;</span>, <span style="color:#e6db74">&#34;BKO001&#34;</span>, <span style="color:#e6db74">&#34;12&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/*選擇item資料表裡的所有資料*/</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> item;
-</span></span></code></pre></div><p><img src="/blog/public/2022-03-08/az12.png" alt="img">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#75715e">/*建立資料庫名稱為mvcdb*/</span>
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">DATABASE</span> mvcdb;
+
+<span style="color:#75715e">/*使用資料庫mvcdb*/</span>
+<span style="color:#66d9ef">use</span> mvcdb;
+
+<span style="color:#75715e">/*建立資料表，如果事先沒有同一個名稱的資料表的話，名為item*/</span>
+<span style="color:#75715e">/*裡頭有三個項目ID,Name,Number*/</span>
+<span style="color:#75715e">/*VARCHAR可以裝入文字內容，INT則是整數*/</span>
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">EXISTS</span> <span style="color:#a6e22e">item</span> (
+  ID <span style="color:#66d9ef">VARCHAR</span>(<span style="color:#ae81ff">50</span>) <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span> ,
+  Name <span style="color:#66d9ef">VARCHAR</span>(<span style="color:#ae81ff">50</span>) <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+  Number <span style="color:#66d9ef">INT</span>(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>
+) ;
+
+<span style="color:#75715e">/*顯示資料表*/</span>
+<span style="color:#66d9ef">SHOW</span> <span style="color:#66d9ef">TABLES</span>;
+
+<span style="color:#75715e">/*插入一筆資料ID為A0001，名稱為BKO001，數量12*/</span>
+<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#a6e22e">item</span>  (ID, Name, Number) <span style="color:#66d9ef">VALUES</span>  (<span style="color:#e6db74">&#34;A001&#34;</span>, <span style="color:#e6db74">&#34;BKO001&#34;</span>, <span style="color:#e6db74">&#34;12&#34;</span>);
+
+<span style="color:#75715e">/*選擇item資料表裡的所有資料*/</span>
+<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> item;
+</code></pre></div><p><img src="/blog/public/2022-03-08/az12.png" alt="img">
 <img src="/blog/public/2022-03-08/az13.png" alt="img"></p>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/tags/azure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Azure</a>
+     <a href="/blog/public/tags/azure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Azure</a>
    </li>
   
 </ul>

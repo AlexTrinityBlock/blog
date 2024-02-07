@@ -7,7 +7,7 @@
     <title>K8S基本操作-41-K8S Service account | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Service Account 介紹 服務帳戶 (Service Account) 是一種由 Kubernetes 管理的帳戶類型，主要用於為 Pod 中執行的程序提供身分。它可以讓 Pod 訪問 Kubernetes API 和其他資源，而無需使用密碼或其他敏感資訊。">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -250,13 +250,13 @@
 <h1 id="default-service-account">Default Service Account</h1>
 <p>在任何一個 Pod 建立時，如果沒有指定，就會採用 Default Service Account 。</p>
 <h1 id="顯示-service-account">顯示 Service Account</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get serviceaccounts
-</span></span></code></pre></div><h1 id="建立一個-service-account">建立一個 Service Account</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get serviceaccounts
+</code></pre></div><h1 id="建立一個-service-account">建立一個 Service Account</h1>
 <p>我們建立一個稱為<code>app-service-account</code> 的 Service Account:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl create serviceaccount app-service-account
-</span></span></code></pre></div><p>對這個 Service account 建立一個登入用的 Token</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl create token app-service-account
-</span></span></code></pre></div><p>此時會產生一組 Token:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create serviceaccount app-service-account
+</code></pre></div><p>對這個 Service account 建立一個登入用的 Token</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create token app-service-account
+</code></pre></div><p>此時會產生一組 Token:</p>
 <pre tabindex="0"><code>eyJhbGciOiJSUzI1NiIsImtpZCI6ImJvLWNGcWhheEY2WGc5Y0wyS2c1MnNvQUduTkNobUpuSkJWQkFNSGlrbXcifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiLCJrM3MiXSwiZXhwIjoxNzA3MjkyNDEwLCJpYXQiOjE3MDcyODg4MTAsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJkZWZhdWx0Iiwic2VydmljZWFjY291bnQiOnsibmFtZSI6ImRldiIsInVpZCI6IjIwMzJkZDM0LWZiMjYtNDAxMy04MTQ3LTlkOTk5NzhmM2RjNiJ9fSwibmJmIjoxNzA3Mjg4ODEwLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpkZXYifQ.ToEjwVhF9O2Av_llVwbwP76Boe4hABEu4q4Kj8l6gkUe9K1d8GjBU7ziQp3YHLUPAFImer9KpMH9eKhAdlvfBT6KIb9KyvgS89yg2LbSxbV5Za5ssf-cKusp3ostCTNcLW6hAAY-7PFI4eOzU1N3JWWSvz_RisTkhtxsGPHw87XdWKrHpmWkzG7YFjQf6ldew1PpijqVePZOzEyeAzilEiihN0GNCClAkJUsidDlTHvh4GVXjin-EltcxKCstibtzcCCIxK2guKe90I2SNkSxZqxDlDkZMEP0XdZYBlUrRL6sC2XC2WbPc7oHe698Wurs1YvwU1nXtOCqV4XD6ofcA
 </code></pre><h1 id="預設-service-account-的-token-mount-位置">預設 Service Account 的 Token mount 位置</h1>
 <p>以下檔案儲存著 Token。</p>
@@ -278,63 +278,63 @@ ca.crt     namespace  token
 /run/secrets/kubernetes.io/serviceaccount/token
 </code></pre><h1 id="讓-pod-屬於某個-service-account">讓 Pod 屬於某個 Service Account</h1>
 <p>在 spec 欄位中加入 serviceAccountName ，然後寫下 Service account name 即可。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-pod</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">containers</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-container</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">busybox</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">serviceAccountName</span>: <span style="color:#ae81ff">my-service-account</span>
-</span></span></code></pre></div><h1 id="將建立時-service-account-的-cacrt-token-namespace-優雅的放入-secret-中">將建立時 Service Account 的 ca.crt, token, namespace 優雅的放入 Secret 中</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-pod</span>
+<span style="color:#f92672">spec</span>:
+  <span style="color:#f92672">containers</span>:
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-container</span>
+    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">busybox</span>
+  <span style="color:#f92672">serviceAccountName</span>: <span style="color:#ae81ff">my-service-account</span>
+</code></pre></div><h1 id="將建立時-service-account-的-cacrt-token-namespace-優雅的放入-secret-中">將建立時 Service Account 的 ca.crt, token, namespace 優雅的放入 Secret 中</h1>
 <p>建立一個 Service account</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ServiceAccount</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">app-service-account</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">secrets</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">app-service-account-secret</span>
-</span></span></code></pre></div><p>建立一個 Secret</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Secret</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">app-service-account-secret</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">labels</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">kubernetes.io/legacy-token-last-used</span>: <span style="color:#e6db74">2022-10-24</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">kubernetes.io/legacy-token-invalid-since</span>: <span style="color:#e6db74">2030-10-25</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">annotations</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">kubernetes.io/service-account.name</span>: <span style="color:#ae81ff">app-service-account</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">type</span>: <span style="color:#ae81ff">kubernetes.io/service-account-token</span>
-</span></span></code></pre></div><p>這時候這個 Secret 內容為這樣:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">data</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ca.crt</span>: <span style="color:#ae81ff">LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJlRENDQVIyZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQWpNU0V3SHdZRFZRUUREQmhyTTNNdGMyVnkKZG1WeUxXTmhRREUzTURjeU9EZ3lPRE13SGhjTk1qUXdNakEzTURZME5EUXpXaGNOTXpRd01qQTBNRFkwTkRRegpXakFqTVNFd0h3WURWUVFEREJock0zTXRjMlZ5ZG1WeUxXTmhRREUzTURjeU9EZ3lPRE13V1RBVEJnY3Foa2pPClBRSUJCZ2dxaGtqT1BRTUJCd05DQUFTdXEwVUszbU1WQjNWTGt4bTk4U25lWldBSGZCRHQwVUlEKzFTbG9TeG8KaWR0Rm5xbmFQZUcyek5LTll3dGw5dExkZFVFdDZlVzNETVY3dmJzaG11L2NvMEl3UURBT0JnTlZIUThCQWY4RQpCQU1DQXFRd0R3WURWUjBUQVFIL0JBVXdBd0VCL3pBZEJnTlZIUTRFRmdRVXlOcWdhOUNTekxkcjF5SHJtNnRPCk5MRURsTk13Q2dZSUtvWkl6ajBFQXdJRFNRQXdSZ0loQVAwNzFUUStld0liU0FVdFJzbHpJUWlzK0FydlozeVoKVEZKVS9Jc0lrYS9aQWlFQWlnUmtSMFRRbU1ZV05Eb2dSeksxRWJZdVBwZ1lLUXhBN0ZGR1Nwd1Rydjg9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">ZGVmYXVsdA==</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">token</span>: <span style="color:#ae81ff">ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXRwWkNJNkltSnZMV05HY1doaGVFWTJXR2M1WTB3eVMyYzFNbk52UVVkdVRrTm9iVXB1U2tKV1FrRk5TR2xyYlhjaWZRLmV5SnBjM01pT2lKcmRXSmxjbTVsZEdWekwzTmxjblpwWTJWaFkyTnZkVzUwSWl3aWEzVmlaWEp1WlhSbGN5NXBieTl6WlhKMmFXTmxZV05qYjNWdWRDOXVZVzFsYzNCaFkyVWlPaUprWldaaGRXeDBJaXdpYTNWaVpYSnVaWFJsY3k1cGJ5OXpaWEoyYVdObFlXTmpiM1Z1ZEM5elpXTnlaWFF1Ym1GdFpTSTZJbUZ3Y0MxelpYSjJhV05sTFdGalkyOTFiblF0YzJWamNtVjBJaXdpYTNWaVpYSnVaWFJsY3k1cGJ5OXpaWEoyYVdObFlXTmpiM1Z1ZEM5elpYSjJhV05sTFdGalkyOTFiblF1Ym1GdFpTSTZJbUZ3Y0MxelpYSjJhV05sTFdGalkyOTFiblFpTENKcmRXSmxjbTVsZEdWekxtbHZMM05sY25acFkyVmhZMk52ZFc1MEwzTmxjblpwWTJVdFlXTmpiM1Z1ZEM1MWFXUWlPaUkzWlRFNU9HSmtNQzFqWlRjekxUUTNPREV0WVRNeU5TMDJNek0yTXpjeE9UazVOVFlpTENKemRXSWlPaUp6ZVhOMFpXMDZjMlZ5ZG1salpXRmpZMjkxYm5RNlpHVm1ZWFZzZERwaGNIQXRjMlZ5ZG1salpTMWhZMk52ZFc1MEluMC4xbHdiZlFaUmkycUNQQXcwZWxHY3BtYVRtdS1JNEUtbGdKTVNRUVhPZUtOUUxNaWhydW1INVRyMEdpTFJIV0Y5UFRUTnJydjRGMnV0akZJQy1WS3BMYkJjcTUzMDNFa0hSbklpT01WY2lpZUE5QkVRR1lSVTVHc0pwWlFEQTZEZWFYN0RLMWtnb0IxbHJrY3FVa3V2WUNUcTVWWHJGdDhEY093N0FRTWJmaHNSTEd5UUlDczFZbEVteGI0Rmt0QmZuQXc1T3dEX3YwVUI3a09JX0lkUzBDb1oxSHVZNWhDQllQaVJ0QkZCT3YtdXoxcVFhQWp3bHF4bVd2c3lPNlB4OWprRkZJTWRPbzhxUF95bkZKVnM3QkpETXo5QlZqSGZYWUhuZzRDcVNEWnpLUFRHbzZUUzJCNDJkR2hacEdiLWFzWWt2QlN1eEh4bEdVSGpZMnB6RVE=</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Secret</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">annotations</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">kubectl.kubernetes.io/last-applied-configuration</span>: |<span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      {&#34;apiVersion&#34;:&#34;v1&#34;,&#34;kind&#34;:&#34;Secret&#34;,&#34;metadata&#34;:{&#34;annotations&#34;:{&#34;kubernetes.io/service-account.name&#34;:&#34;app-service-account&#34;},&#34;labels&#34;:{&#34;kubernetes.io/legacy-token-invalid-since&#34;:&#34;2030-10-25&#34;,&#34;kubernetes.io/legacy-token-last-used&#34;:&#34;2022-10-24&#34;},&#34;name&#34;:&#34;app-service-account-secret&#34;,&#34;namespace&#34;:&#34;default&#34;},&#34;type&#34;:&#34;kubernetes.io/service-account-token&#34;}</span>      
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">kubernetes.io/service-account.name</span>: <span style="color:#ae81ff">app-service-account</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">kubernetes.io/service-account.uid</span>: <span style="color:#ae81ff">7e198bd0-ce73-4781-a325-633637199956</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">creationTimestamp</span>: <span style="color:#e6db74">&#34;2024-02-07T07:30:25Z&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">labels</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">kubernetes.io/legacy-token-invalid-since</span>: <span style="color:#e6db74">&#34;2030-10-25&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">kubernetes.io/legacy-token-last-used</span>: <span style="color:#e6db74">&#34;2022-10-24&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">app-service-account-secret</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">resourceVersion</span>: <span style="color:#e6db74">&#34;1492&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">uid</span>: <span style="color:#ae81ff">a4d0a148-f2e7-42d8-95e6-7acb541fb28e</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">type</span>: <span style="color:#ae81ff">kubernetes.io/service-account-token</span>
-</span></span></code></pre></div><p>其中就是 Base64 格式的 ca.crt, token, namespace 了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ServiceAccount</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">app-service-account</span>
+  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+<span style="color:#f92672">secrets</span>:
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">app-service-account-secret</span>
+</code></pre></div><p>建立一個 Secret</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Secret</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">app-service-account-secret</span>
+  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+  <span style="color:#f92672">labels</span>:
+    <span style="color:#f92672">kubernetes.io/legacy-token-last-used</span>: <span style="color:#e6db74">2022-10-24</span>
+    <span style="color:#f92672">kubernetes.io/legacy-token-invalid-since</span>: <span style="color:#e6db74">2030-10-25</span>
+  <span style="color:#f92672">annotations</span>:
+    <span style="color:#f92672">kubernetes.io/service-account.name</span>: <span style="color:#ae81ff">app-service-account</span>
+<span style="color:#f92672">type</span>: <span style="color:#ae81ff">kubernetes.io/service-account-token</span>
+</code></pre></div><p>這時候這個 Secret 內容為這樣:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+<span style="color:#f92672">data</span>:
+  <span style="color:#f92672">ca.crt</span>: <span style="color:#ae81ff">LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJlRENDQVIyZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQWpNU0V3SHdZRFZRUUREQmhyTTNNdGMyVnkKZG1WeUxXTmhRREUzTURjeU9EZ3lPRE13SGhjTk1qUXdNakEzTURZME5EUXpXaGNOTXpRd01qQTBNRFkwTkRRegpXakFqTVNFd0h3WURWUVFEREJock0zTXRjMlZ5ZG1WeUxXTmhRREUzTURjeU9EZ3lPRE13V1RBVEJnY3Foa2pPClBRSUJCZ2dxaGtqT1BRTUJCd05DQUFTdXEwVUszbU1WQjNWTGt4bTk4U25lWldBSGZCRHQwVUlEKzFTbG9TeG8KaWR0Rm5xbmFQZUcyek5LTll3dGw5dExkZFVFdDZlVzNETVY3dmJzaG11L2NvMEl3UURBT0JnTlZIUThCQWY4RQpCQU1DQXFRd0R3WURWUjBUQVFIL0JBVXdBd0VCL3pBZEJnTlZIUTRFRmdRVXlOcWdhOUNTekxkcjF5SHJtNnRPCk5MRURsTk13Q2dZSUtvWkl6ajBFQXdJRFNRQXdSZ0loQVAwNzFUUStld0liU0FVdFJzbHpJUWlzK0FydlozeVoKVEZKVS9Jc0lrYS9aQWlFQWlnUmtSMFRRbU1ZV05Eb2dSeksxRWJZdVBwZ1lLUXhBN0ZGR1Nwd1Rydjg9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K</span>
+  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">ZGVmYXVsdA==</span>
+  <span style="color:#f92672">token</span>: <span style="color:#ae81ff">ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXRwWkNJNkltSnZMV05HY1doaGVFWTJXR2M1WTB3eVMyYzFNbk52UVVkdVRrTm9iVXB1U2tKV1FrRk5TR2xyYlhjaWZRLmV5SnBjM01pT2lKcmRXSmxjbTVsZEdWekwzTmxjblpwWTJWaFkyTnZkVzUwSWl3aWEzVmlaWEp1WlhSbGN5NXBieTl6WlhKMmFXTmxZV05qYjNWdWRDOXVZVzFsYzNCaFkyVWlPaUprWldaaGRXeDBJaXdpYTNWaVpYSnVaWFJsY3k1cGJ5OXpaWEoyYVdObFlXTmpiM1Z1ZEM5elpXTnlaWFF1Ym1GdFpTSTZJbUZ3Y0MxelpYSjJhV05sTFdGalkyOTFiblF0YzJWamNtVjBJaXdpYTNWaVpYSnVaWFJsY3k1cGJ5OXpaWEoyYVdObFlXTmpiM1Z1ZEM5elpYSjJhV05sTFdGalkyOTFiblF1Ym1GdFpTSTZJbUZ3Y0MxelpYSjJhV05sTFdGalkyOTFiblFpTENKcmRXSmxjbTVsZEdWekxtbHZMM05sY25acFkyVmhZMk52ZFc1MEwzTmxjblpwWTJVdFlXTmpiM1Z1ZEM1MWFXUWlPaUkzWlRFNU9HSmtNQzFqWlRjekxUUTNPREV0WVRNeU5TMDJNek0yTXpjeE9UazVOVFlpTENKemRXSWlPaUp6ZVhOMFpXMDZjMlZ5ZG1salpXRmpZMjkxYm5RNlpHVm1ZWFZzZERwaGNIQXRjMlZ5ZG1salpTMWhZMk52ZFc1MEluMC4xbHdiZlFaUmkycUNQQXcwZWxHY3BtYVRtdS1JNEUtbGdKTVNRUVhPZUtOUUxNaWhydW1INVRyMEdpTFJIV0Y5UFRUTnJydjRGMnV0akZJQy1WS3BMYkJjcTUzMDNFa0hSbklpT01WY2lpZUE5QkVRR1lSVTVHc0pwWlFEQTZEZWFYN0RLMWtnb0IxbHJrY3FVa3V2WUNUcTVWWHJGdDhEY093N0FRTWJmaHNSTEd5UUlDczFZbEVteGI0Rmt0QmZuQXc1T3dEX3YwVUI3a09JX0lkUzBDb1oxSHVZNWhDQllQaVJ0QkZCT3YtdXoxcVFhQWp3bHF4bVd2c3lPNlB4OWprRkZJTWRPbzhxUF95bkZKVnM3QkpETXo5QlZqSGZYWUhuZzRDcVNEWnpLUFRHbzZUUzJCNDJkR2hacEdiLWFzWWt2QlN1eEh4bEdVSGpZMnB6RVE=</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Secret</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">annotations</span>:
+    <span style="color:#f92672">kubectl.kubernetes.io/last-applied-configuration</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">      </span>      {<span style="color:#e6db74">&#34;apiVersion&#34;</span>:<span style="color:#e6db74">&#34;v1&#34;</span>,<span style="color:#e6db74">&#34;kind&#34;</span>:<span style="color:#e6db74">&#34;Secret&#34;</span>,<span style="color:#e6db74">&#34;metadata&#34;</span>:{<span style="color:#e6db74">&#34;annotations&#34;</span>:{<span style="color:#e6db74">&#34;kubernetes.io/service-account.name&#34;</span>:<span style="color:#e6db74">&#34;app-service-account&#34;</span>},<span style="color:#e6db74">&#34;labels&#34;</span>:{<span style="color:#e6db74">&#34;kubernetes.io/legacy-token-invalid-since&#34;</span>:<span style="color:#e6db74">&#34;2030-10-25&#34;</span>,<span style="color:#e6db74">&#34;kubernetes.io/legacy-token-last-used&#34;</span>:<span style="color:#e6db74">&#34;2022-10-24&#34;</span>},<span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;app-service-account-secret&#34;</span>,<span style="color:#e6db74">&#34;namespace&#34;</span>:<span style="color:#e6db74">&#34;default&#34;</span>},<span style="color:#e6db74">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;kubernetes.io/service-account-token&#34;</span>}
+    <span style="color:#f92672">kubernetes.io/service-account.name</span>: <span style="color:#ae81ff">app-service-account</span>
+    <span style="color:#f92672">kubernetes.io/service-account.uid</span>: <span style="color:#ae81ff">7e198bd0-ce73-4781-a325-633637199956</span>
+  <span style="color:#f92672">creationTimestamp</span>: <span style="color:#e6db74">&#34;2024-02-07T07:30:25Z&#34;</span>
+  <span style="color:#f92672">labels</span>:
+    <span style="color:#f92672">kubernetes.io/legacy-token-invalid-since</span>: <span style="color:#e6db74">&#34;2030-10-25&#34;</span>
+    <span style="color:#f92672">kubernetes.io/legacy-token-last-used</span>: <span style="color:#e6db74">&#34;2022-10-24&#34;</span>
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">app-service-account-secret</span>
+  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+  <span style="color:#f92672">resourceVersion</span>: <span style="color:#e6db74">&#34;1492&#34;</span>
+  <span style="color:#f92672">uid</span>: <span style="color:#ae81ff">a4d0a148-f2e7-42d8-95e6-7acb541fb28e</span>
+<span style="color:#f92672">type</span>: <span style="color:#ae81ff">kubernetes.io/service-account-token</span>
+</code></pre></div><p>其中就是 Base64 格式的 ca.crt, token, namespace 了。</p>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

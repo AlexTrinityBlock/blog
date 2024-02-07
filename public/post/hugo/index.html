@@ -7,7 +7,7 @@
     <title>Hugo | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="歡迎來到無面者小站">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -191,6 +191,25 @@
 
     </section>
     <aside class="flex-ns flex-wrap justify-around mt5">
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        February 7, 2024
+      </div>
+    
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-43/" class="link black dim">
+        K8S基本操作-43-Secure Context 設置容器為 no-root 用戶
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Secure Context 設置容器為 no-root 用戶 我們可以加入以下這段: spec: securityContext: runAsUser: 1010 加完之後狀況如下: --- apiVersion: v1 kind: Pod metadata: name: ubuntu-sleeper namespace: default spec: securityContext: runAsUser: 1010 containers: - command: - sleep - &#34;4800&#34; image: ubuntu name: ubuntu-sleeper 這樣就會以非 Root 的 User ID 1010
+    </div>
+  </div>
+
+        </div>
         
         <div class="relative w-100  w-30-l mb4 bg-white">
                <div class="mb3 pa4 mid-gray overflow-hidden">
@@ -680,7 +699,7 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      如果 Dockerfile 跟 K8S 的 YAML 配置的 Entrypoint 與 Command 不一樣呢? 實際上執行的指令會是哪一種? FROM python:3.6-alpine RUN pip install flask COPY . /opt/ EXPOSE 8080 WORKDIR /opt ENTRYPOINT [&#34;python&#34;, &#34;app.py&#34;] CMD [&#34;--color&#34;, &#34;red&#34;] apiVersion: v1 kind: Pod metadata: name: webapp-green labels: name: webapp-green spec: containers: - name: simple-webapp image: kodekloud/webapp-color command: [&#34;python&#34;,
+      如果 Dockerfile 跟 K8S 的 YAML 配置的 Entrypoint 與 Command 不一樣呢? 實際上執行的指令會是哪一種? FROMpython:3.6-alpineRUN pip install flaskCOPY . /opt/EXPOSE8080WORKDIR/optENTRYPOINT [&#34;python&#34;, &#34;app.py&#34;]CMD [&#34;--color&#34;, &#34;red&#34;]apiVersion: v1 kind: Pod metadata: name: webapp-green labels: name: webapp-green spec: containers: - name: simple-webapp image: kodekloud/webapp-color command: [&#34;python&#34;, &#34;app.py&#34;] args: [&#34;--color&#34;, &#34;pink&#34;] 最後會以 K8S 的
     </div>
   </div>
 
@@ -1668,7 +1687,7 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      假設 假設這是我們今天要測試的程式。 INPUT A,B,X IF (A&gt;1) AND (B=0) THEN Y=A IF (A=2) OR (X&gt;1) THEN Y=X PRINT Y 流程圖 %%{init: {'theme':'dark'}}%% flowchart TD A(程式開始) --> B{A>1 and B=0} B -->|True| D(Y=A) B -->|False| E{A=2 or x>1} D --> E{A=2 or x>1} E{A=2 or x>1} --> |False| G
+      假設 假設這是我們今天要測試的程式。 INPUT A,B,X IF (A&gt;1) AND (B=0) THEN Y=A IF (A=2) OR (X&gt;1) THEN Y=X PRINT Y 流程圖 %%{init: {'theme':'dark'}}%% flowchart TD A(程式開始) -- B{A1 and B=0} B --|True| D(Y=A) B --|False| E{A=2 or x1} D -- E{A=2 or x1} E{A=2 or x1} -- |False| G
     </div>
   </div>
 
@@ -1687,7 +1706,7 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      我們可以用Mermaid這個Javascript函數庫來繪製出流程圖。 graph TD A(程式開始) --> B{A>1 and B=0} B -->|True| D(Y=A) B -->|False| E{A=2 or x>1} D --> E{A=2 or x>1} E{A=2 or x>1} --> |False| G(程式
+      我們可以用Mermaid這個Javascript函數庫來繪製出流程圖。 graph TD A(程式開始) -- B{A1 and B=0} B --|True| D(Y=A) B --|False| E{A=2 or x1} D -- E{A=2 or x1} E{A=2 or x1} -- |False| G(程式
     </div>
   </div>
 
@@ -1815,12 +1834,12 @@
       </div>
     
     <h1 class="f3 near-black">
-      <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E7%9A%84%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8/" class="link black dim">
-        Git的簡單使用
+      <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/" class="link black dim">
+        Git復原失誤的操作
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      1.Git的三個區域 Working tree 工作樹 我們甚麼都還沒做時，資料在這裡 Staging Area 暫存區 我們進行指令add 後資料在這裡 Repository 儲存庫 我們commit時資料進入儲存庫
+      以Revert復原已經提交的變更 每次的變更都會留下雜湊質值 git log 可以查看 要復原變更可以以雜湊值復原 git revert acc6af6 如果復原時跳出UNIX式的VI編輯器介
     </div>
   </div>
 
@@ -1834,12 +1853,12 @@
       </div>
     
     <h1 class="f3 near-black">
-      <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/" class="link black dim">
-        Git復原失誤的操作
+      <a href="https://alextrinityblock.github.io/blog/public/post/git/git%E7%9A%84%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8/" class="link black dim">
+        Git的簡單使用
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      以Revert復原已經提交的變更 每次的變更都會留下雜湊質值 git log 可以查看 要復原變更可以以雜湊值復原 git revert acc6af6 如果復原時跳出UNIX式的VI編輯器介
+      1.Git的三個區域 Working tree 工作樹 我們甚麼都還沒做時，資料在這裡 Staging Area 暫存區 我們進行指令add 後資料在這裡 Repository 儲存庫 我們commit時資料進入儲存庫
     </div>
   </div>
 
@@ -2219,7 +2238,7 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      1.要求 需要看懂，建議去看基礎的C++教學。 2.main.cpp 我們首先建立一個檔案，稱為main.cpp 內含我們主要的C++檔案 #include &lt;stdio.h&gt; #include &lt;opencv2/opencv.hpp&gt; using namespace cv; int main(int argc, char* argv[]) { //
+      1.要求 需要看懂，建議去看基礎的C++教學。 2.main.cpp 我們首先建立一個檔案，稱為main.cpp 內含我們主要的C++檔案 #include &lt;stdio.h&gt;#include &lt;opencv2/opencv.hpp&gt; using namespace cv; int main(int argc, char* argv[]) { // 檢
     </div>
   </div>
 

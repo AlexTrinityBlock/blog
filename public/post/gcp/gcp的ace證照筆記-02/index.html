@@ -7,7 +7,7 @@
     <title>GCP的ACE證照筆記-02-Gcloud簡介 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Gcloud 的常用功能 # 初始化，登入GCP帳號 gcloud init # 列出所有啟動的屬性，可以看到登入帳號與 projuct 名稱 gcloud config list # 列出帳號 gcloud config list account # 列出區域 gcloud config list region # 列出 Project gcloud config">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -234,67 +234,67 @@
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h3 id="gcloud-的常用功能">Gcloud 的常用功能</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 初始化，登入GCP帳號</span>
-</span></span><span style="display:flex;"><span>gcloud init
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 列出所有啟動的屬性，可以看到登入帳號與 projuct 名稱</span>
-</span></span><span style="display:flex;"><span>gcloud config list
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 列出帳號</span>
-</span></span><span style="display:flex;"><span>gcloud config list account
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 列出區域</span>
-</span></span><span style="display:flex;"><span>gcloud config list region
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 列出 Project</span>
-</span></span><span style="display:flex;"><span>gcloud config list project
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 列出 Configurations </span>
-</span></span><span style="display:flex;"><span>gcloud config configurations list
-</span></span><span style="display:flex;"><span>gcloud config configurations activate my-default-configuration
-</span></span><span style="display:flex;"><span>gcloud config list
-</span></span><span style="display:flex;"><span>gcloud config configurations describe my-second-configuration
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#列出虛擬機</span>
-</span></span><span style="display:flex;"><span>gcloud compute instances list
-</span></span><span style="display:flex;"><span>gcloud compute instances create
-</span></span><span style="display:flex;"><span>gcloud compute instances create my-first-instance-from-gcloud
-</span></span><span style="display:flex;"><span>gcloud compute instances describe my-first-instance-from-gcloud
-</span></span><span style="display:flex;"><span>gcloud compute instances delete my-first-instance-from-gcloud
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 列出所有位置的虛擬機</span>
-</span></span><span style="display:flex;"><span>gcloud compute regions list
-</span></span><span style="display:flex;"><span>gcloud compute zones list
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 列出正在使用的虛擬機的位置</span>
-</span></span><span style="display:flex;"><span>gcloud config list compute/region
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>gcloud compute machine-types list
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>gcloud compute machine-types list --filter zone:asia-southeast2-b
-</span></span><span style="display:flex;"><span>gcloud compute machine-types list --filter <span style="color:#e6db74">&#34;zone:(asia-southeast2-b asia-southeast2-c)&#34;</span>
-</span></span><span style="display:flex;"><span>gcloud compute zones list --filter<span style="color:#f92672">=</span>region:us-west2
-</span></span><span style="display:flex;"><span>gcloud compute zones list --sort-by<span style="color:#f92672">=</span>region
-</span></span><span style="display:flex;"><span>gcloud compute zones list --sort-by<span style="color:#f92672">=</span>~region
-</span></span><span style="display:flex;"><span>gcloud compute zones list --uri
-</span></span><span style="display:flex;"><span>gcloud compute regions describe us-west4
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>gcloud compute instance-templates list
-</span></span><span style="display:flex;"><span>gcloud compute instance-templates create instance-template-from-command-line
-</span></span><span style="display:flex;"><span>gcloud compute instance-templates delete instance-template-from-command-line
-</span></span><span style="display:flex;"><span>gcloud compute instance-templates describe my-instance-template-with-custom-image
-</span></span></code></pre></div><h3 id="gcloud-的設置組">Gcloud 的設置組</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 語法為 gcloud config set 大類別/小類別 值 </span>
-</span></span><span style="display:flex;"><span>gcloud config set core/project VALUE
-</span></span><span style="display:flex;"><span>gcloud config set compute/region VALUE
-</span></span><span style="display:flex;"><span>gcloud config set compute/zone VALUE
-</span></span><span style="display:flex;"><span>gcloud config set core/verbosity VALUE
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 可以取消掉剛剛的設置值</span>
-</span></span><span style="display:flex;"><span>gcloud config unset
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 設置Project</span>
-</span></span><span style="display:flex;"><span>gcloud config set project $MY_PROJECT_ID
-</span></span></code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 初始化，登入GCP帳號</span>
+gcloud init
+<span style="color:#75715e"># 列出所有啟動的屬性，可以看到登入帳號與 projuct 名稱</span>
+gcloud config list
+<span style="color:#75715e"># 列出帳號</span>
+gcloud config list account
+<span style="color:#75715e"># 列出區域</span>
+gcloud config list region
+<span style="color:#75715e"># 列出 Project</span>
+gcloud config list project
+
+<span style="color:#75715e"># 列出 Configurations </span>
+gcloud config configurations list
+gcloud config configurations activate my-default-configuration
+gcloud config list
+gcloud config configurations describe my-second-configuration
+
+<span style="color:#75715e">#列出虛擬機</span>
+gcloud compute instances list
+gcloud compute instances create
+gcloud compute instances create my-first-instance-from-gcloud
+gcloud compute instances describe my-first-instance-from-gcloud
+gcloud compute instances delete my-first-instance-from-gcloud
+
+<span style="color:#75715e"># 列出所有位置的虛擬機</span>
+gcloud compute regions list
+gcloud compute zones list
+
+<span style="color:#75715e"># 列出正在使用的虛擬機的位置</span>
+gcloud config list compute/region
+
+gcloud compute machine-types list
+ 
+gcloud compute machine-types list --filter zone:asia-southeast2-b
+gcloud compute machine-types list --filter <span style="color:#e6db74">&#34;zone:(asia-southeast2-b asia-southeast2-c)&#34;</span>
+gcloud compute zones list --filter<span style="color:#f92672">=</span>region:us-west2
+gcloud compute zones list --sort-by<span style="color:#f92672">=</span>region
+gcloud compute zones list --sort-by<span style="color:#f92672">=</span>~region
+gcloud compute zones list --uri
+gcloud compute regions describe us-west4
+ 
+gcloud compute instance-templates list
+gcloud compute instance-templates create instance-template-from-command-line
+gcloud compute instance-templates delete instance-template-from-command-line
+gcloud compute instance-templates describe my-instance-template-with-custom-image
+</code></pre></div><h3 id="gcloud-的設置組">Gcloud 的設置組</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 語法為 gcloud config set 大類別/小類別 值 </span>
+gcloud config set core/project VALUE
+gcloud config set compute/region VALUE
+gcloud config set compute/zone VALUE
+gcloud config set core/verbosity VALUE
+
+<span style="color:#75715e"># 可以取消掉剛剛的設置值</span>
+gcloud config unset
+
+<span style="color:#75715e"># 設置Project</span>
+gcloud config set project $MY_PROJECT_ID
+</code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/tags/gcp" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">GCP</a>
+     <a href="/blog/public/tags/gcp" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">GCP</a>
    </li>
   
 </ul>

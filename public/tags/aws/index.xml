@@ -6,21 +6,24 @@
     <description>Recent content in AWS on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Tue, 21 Nov 2023 13:00:00 +0800</lastBuildDate>
-    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Nov 2023 13:00:00 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AWS-EKS-建立一個Cluster</title>
       <link>https://alextrinityblock.github.io/blog/public/post/aws/aws-eks-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8Bcluster/</link>
       <pubDate>Tue, 21 Nov 2023 13:00:00 +0800</pubDate>
+      
       <guid>https://alextrinityblock.github.io/blog/public/post/aws/aws-eks-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8Bcluster/</guid>
       <description>簡述 簡單來說，使用 AWS CLI + eksctl 兩個工具，很快就可以佈署好，並且進行管理了。 比較多步驟的是在新環境中安裝 AWS CLI 。 1.用 Root acount 建立 IAM account 為了乾淨好管理，先</description>
     </item>
+    
     <item>
       <title>AWS證照SSA筆記</title>
       <link>https://alextrinityblock.github.io/blog/public/post/aws/aws%E8%AD%89%E7%85%A7ssa%E7%AD%86%E8%A8%98/</link>
       <pubDate>Thu, 18 Aug 2022 09:00:00 +0800</pubDate>
+      
       <guid>https://alextrinityblock.github.io/blog/public/post/aws/aws%E8%AD%89%E7%85%A7ssa%E7%AD%86%E8%A8%98/</guid>
       <description>Region 區域，例如美國東部，或者東京&amp;hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管</description>
     </item>
+    
   </channel>
 </rss>

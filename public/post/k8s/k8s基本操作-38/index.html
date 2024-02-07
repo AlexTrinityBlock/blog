@@ -7,7 +7,7 @@
     <title>K8S基本操作-38-K8S API | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="K8S API 如果我們需要為 K8S 設置自訂介面，更加自動化，甚至將 K8S 由大語言模型管理，這時候存取 API 就是個需要的功能了。 常見的 API 我們這邊以不一定真實存在的 URL:">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -248,6 +248,7 @@ https://kube-master:6443/api/v1/namespaces/{namespace}/pods/{Pod名稱}
 
 # 查看 Deployment
 https://kube-master:6443/apis/apps/v1/namespaces/{namespace}/deployments/{name}
+
 </code></pre><p>可以參考以下網址:</p>
 <p><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.29/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.29/</a></p>
 <h1 id="比較好的實踐方式">比較好的實踐方式</h1>
@@ -256,18 +257,18 @@ https://kube-master:6443/apis/apps/v1/namespaces/{namespace}/deployments/{name}
 <p><a href="https://github.com/kubernetes-client">https://github.com/kubernetes-client</a></p>
 <h1 id="如何用-curl-進行呼叫">如何用 CURL 進行呼叫</h1>
 <p>事實上，使用時需要再 CURL 加入你個人登入用的 .crt 與 .key:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl http://localhost:6443 –k --key admin.key --cert admin.crt --cacert ca.crt
-</span></span></code></pre></div><p>假如你已經配置好 kubectl proxy，也可以省去驗證步驟:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 檢查 Kubectl Proxy 使用哪個 Port</span>
-</span></span><span style="display:flex;"><span>kubectl proxy
-</span></span></code></pre></div><p>輸出:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl http://localhost:6443 –k --key admin.key --cert admin.crt --cacert ca.crt
+</code></pre></div><p>假如你已經配置好 kubectl proxy，也可以省去驗證步驟:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 檢查 Kubectl Proxy 使用哪個 Port</span>
+kubectl proxy
+</code></pre></div><p>輸出:</p>
 <pre tabindex="0"><code>Starting to serve on 127.0.0.1:8001
 </code></pre><p>上述這代表我們能在  8001 port 直接使用我們配置給 Kubectl 的憑證與鑰匙呼叫 API:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl http://localhost:8001 -k
-</span></span></code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl http://localhost:8001 -k
+</code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

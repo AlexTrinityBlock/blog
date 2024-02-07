@@ -7,7 +7,7 @@
     <title>一個凡人的筆記 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="歡迎來到無面者小站">
-    <meta name="generator" content="Hugo 0.120.3">
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -202,6 +202,38 @@
 
     <section class="w-100 mw8">
          
+        <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+          
+        
+        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+          <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-43/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/k8s.png" class="img" alt="image from K8S基本操作-43-Secure Context 設置容器為 no-root 用戶">
+          </a>
+        </div>
+      
+      <div class="blah w-100 w-60-ns pl3-ns">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-43/" class="color-inherit dim link">
+            K8S基本操作-43-Secure Context 設置容器為 no-root 用戶
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Secure Context 設置容器為 no-root 用戶 我們可以加入以下這段: spec: securityContext: runAsUser: 1010 加完之後狀況如下: --- apiVersion: v1 kind: Pod metadata: name: ubuntu-sleeper namespace: default spec: securityContext: runAsUser: 1010 containers: - command: - sleep - &#34;4800&#34; image: ubuntu name: ubuntu-sleeper 這樣就會以非 Root 的 User ID 1010
+        </div>
+          <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-43/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+        </div>
+        
         <div class="relative w-100 mb4">
             
 <article class="bb b--black-10">
@@ -1023,7 +1055,7 @@
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          如果 Dockerfile 跟 K8S 的 YAML 配置的 Entrypoint 與 Command 不一樣呢? 實際上執行的指令會是哪一種? FROM python:3.6-alpine RUN pip install flask COPY . /opt/ EXPOSE 8080 WORKDIR /opt ENTRYPOINT [&#34;python&#34;, &#34;app.py&#34;] CMD [&#34;--color&#34;, &#34;red&#34;] apiVersion: v1 kind: Pod metadata: name: webapp-green labels: name: webapp-green spec: containers: - name: simple-webapp image: kodekloud/webapp-color command: [&#34;python&#34;,
+          如果 Dockerfile 跟 K8S 的 YAML 配置的 Entrypoint 與 Command 不一樣呢? 實際上執行的指令會是哪一種? FROMpython:3.6-alpineRUN pip install flaskCOPY . /opt/EXPOSE8080WORKDIR/optENTRYPOINT [&#34;python&#34;, &#34;app.py&#34;]CMD [&#34;--color&#34;, &#34;red&#34;]apiVersion: v1 kind: Pod metadata: name: webapp-green labels: name: webapp-green spec: containers: - name: simple-webapp image: kodekloud/webapp-color command: [&#34;python&#34;, &#34;app.py&#34;] args: [&#34;--color&#34;, &#34;pink&#34;] 最後會以 K8S 的
         </div>
           <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-20/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
         
@@ -1130,44 +1162,18 @@
 
         </div>
         
-        <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-          
-        
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-16/" class="db grow">
-            <img src="https://alextrinityblock.github.io/blog/public/k8s.png" class="img" alt="image from K8S基本操作-16-手動自行建設Scheduler">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-16/" class="color-inherit dim link">
-            K8S基本操作-16-手動自行建設Scheduler
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          檢查預設的 Scheduler Scheduler 是個 Pod ，位於 kube-system 這個 namespace。 用以下指令查看 Scheduler: kubectl get pod -n kube-system 設置 Service Account 與 Cluster Role 設置如下: ServiceAccount: my-scheduler (kube-system namespace) ClusterRoleBinding: my-scheduler-as-kube-scheduler ClusterRoleBinding: my-scheduler-as-volume-scheduler 同時建立 Config Map 與 Depl
-        </div>
-          <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-16/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-        </div>
-        
     </section>
 
     
     <section class="w-100">
         <h1 class="f3">更多</h1>
          
+        <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-16/" class="link black dim">
+              K8S基本操作-16-手動自行建設Scheduler
+            </a>
+        </h2>
+        
         <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-15/" class="link black dim">
               K8S基本操作-15-ServiceAccount 和 ClusterRoleBinding
@@ -1183,12 +1189,6 @@
         <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-13/" class="link black dim">
               K8S基本操作-13-Daemonsets
-            </a>
-        </h2>
-        
-        <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-12/" class="link black dim">
-              K8S基本操作-12-Resource limits
             </a>
         </h2>
           
