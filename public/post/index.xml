@@ -6,7 +6,25 @@
     <description>Recent content on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Wed, 07 Feb 2024 17:40:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Feb 2024 20:10:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8S基本操作-46-</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-46/</link>
+      <pubDate>Wed, 07 Feb 2024 20:10:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-46/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>K8S基本操作-45-Kubectx 和 Kubens </title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-45/</link>
+      <pubDate>Wed, 07 Feb 2024 20:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-45/</guid>
+      <description>Kubectx 和 Kubens 是兩個用於簡化 Kubernetes 集群管理的命令行工具。 Kubectx 允許您快速在不同的 Kubernetes 集群和命名空間之間切換。 Kubens 允許您快速在不同的命名空間之間切換。 這兩個工具都</description>
+    </item>
+    
     <item>
       <title>K8S基本操作-44-Network Policy</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-44/</link>
