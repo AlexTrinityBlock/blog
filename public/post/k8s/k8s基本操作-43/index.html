@@ -43,7 +43,7 @@
 <meta itemprop="name" content="K8S基本操作-43-Secure Context 設置容器為 no-root 用戶與 Capability">
 <meta itemprop="description" content="Secure Context 設置容器為 no-root 用戶 我們可以加入以下這段: spec: securityContext: runAsUser: 1010 加完之後狀況如下: --- apiVersion: v1 kind: Pod metadata: name: ubuntu-sleeper namespace: default spec: securityContext: runAsUser: 1010 containers: - command: - sleep - &#34;4800&#34; image: ubuntu name: ubuntu-sleeper 也可以寫在Contai"><meta itemprop="datePublished" content="2024-02-07T17:00:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-07T17:00:44+08:00" />
-<meta itemprop="wordCount" content="188">
+<meta itemprop="wordCount" content="201">
 <meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="K8S基本操作-43-Secure Context 設置容器為 no-root 用戶與 Capability"/>
 <meta name="twitter:description" content="Secure Context 設置容器為 no-root 用戶 我們可以加入以下這段: spec: securityContext: runAsUser: 1010 加完之後狀況如下: --- apiVersion: v1 kind: Pod metadata: name: ubuntu-sleeper namespace: default spec: securityContext: runAsUser: 1010 containers: - command: - sleep - &#34;4800&#34; image: ubuntu name: ubuntu-sleeper 也可以寫在Contai"/>
@@ -273,11 +273,12 @@
 </code></pre></div><p>這樣就會以非 Root 的 User ID 1010 執行容器了。</p>
 <h1 id="capability">Capability</h1>
 <p>代表容器可對於主機的存取權限。</p>
-<p>我們在下面加上存取主機系統時間的權限如下:</p>
+<p>我們在下面加上存取主機系統時間與網路的權限如下:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">securityContext</span>:
       <span style="color:#f92672">capabilities</span>:
-        <span style="color:#f92672">add</span>: [<span style="color:#e6db74">&#34;SYS_TIME&#34;</span>]
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+        <span style="color:#f92672">add</span>: [<span style="color:#e6db74">&#34;SYS_TIME&#34;</span>,<span style="color:#e6db74">&#34;NET_ADMIN &#34;</span>]
+</code></pre></div><p>整體大致是這樣:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
 <span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
 <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
 <span style="color:#f92672">metadata</span>:
@@ -292,7 +293,7 @@
     <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ubuntu-sleeper</span>
     <span style="color:#f92672">securityContext</span>:
       <span style="color:#f92672">capabilities</span>:
-        <span style="color:#f92672">add</span>: [<span style="color:#e6db74">&#34;SYS_TIME&#34;</span>]
+        <span style="color:#f92672">add</span>: [<span style="color:#e6db74">&#34;SYS_TIME&#34;</span>,<span style="color:#e6db74">&#34;NET_ADMIN &#34;</span>]
 </code></pre></div><ul class="pa0">
   
    <li class="list">
