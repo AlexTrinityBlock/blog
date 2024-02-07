@@ -6,7 +6,16 @@
     <description>Recent content on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Wed, 07 Feb 2024 17:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Feb 2024 17:40:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8S基本操作-44-Network Policy</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-44/</link>
+      <pubDate>Wed, 07 Feb 2024 17:40:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-44/</guid>
+      <description>Network Policy K8S Network Policy 是一種 Kubernetes 的功能，可以讓你控制 Pod 之間或 Pod 與外部網路的通訊規則。你可以使用 Network Policy 來定義哪些 Pod 可以互相連接，或者哪些 Pod 可以存取特定的 IP 或埠</description>
+    </item>
+    
     <item>
       <title>K8S基本操作-43-Secure Context 設置容器為 no-root 用戶與 Capability</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-43/</link>
