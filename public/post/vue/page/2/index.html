@@ -201,11 +201,11 @@
     
     <h1 class="f3 near-black">
       <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-43/" class="link black dim">
-        K8S基本操作-43-Secure Context 設置容器為 no-root 用戶
+        K8S基本操作-43-Secure Context 設置容器為 no-root 用戶與 Capability
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Secure Context 設置容器為 no-root 用戶 我們可以加入以下這段: spec: securityContext: runAsUser: 1010 加完之後狀況如下: --- apiVersion: v1 kind: Pod metadata: name: ubuntu-sleeper namespace: default spec: securityContext: runAsUser: 1010 containers: - command: - sleep - &#34;4800&#34; image: ubuntu name: ubuntu-sleeper 這樣就會以非 Root 的 User ID 1010
+      Secure Context 設置容器為 no-root 用戶 我們可以加入以下這段: spec: securityContext: runAsUser: 1010 加完之後狀況如下: --- apiVersion: v1 kind: Pod metadata: name: ubuntu-sleeper namespace: default spec: securityContext: runAsUser: 1010 containers: - command: - sleep - &#34;4800&#34; image: ubuntu name: ubuntu-sleeper 也可以寫在Contai
     </div>
   </div>
 

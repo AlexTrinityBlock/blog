@@ -212,18 +212,18 @@
         
         <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
           <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-43/" class="db grow">
-            <img src="https://alextrinityblock.github.io/blog/public/k8s.png" class="img" alt="image from K8S基本操作-43-Secure Context 設置容器為 no-root 用戶">
+            <img src="https://alextrinityblock.github.io/blog/public/k8s.png" class="img" alt="image from K8S基本操作-43-Secure Context 設置容器為 no-root 用戶與 Capability">
           </a>
         </div>
       
       <div class="blah w-100 w-60-ns pl3-ns">
         <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-43/" class="color-inherit dim link">
-            K8S基本操作-43-Secure Context 設置容器為 no-root 用戶
+            K8S基本操作-43-Secure Context 設置容器為 no-root 用戶與 Capability
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Secure Context 設置容器為 no-root 用戶 我們可以加入以下這段: spec: securityContext: runAsUser: 1010 加完之後狀況如下: --- apiVersion: v1 kind: Pod metadata: name: ubuntu-sleeper namespace: default spec: securityContext: runAsUser: 1010 containers: - command: - sleep - &#34;4800&#34; image: ubuntu name: ubuntu-sleeper 這樣就會以非 Root 的 User ID 1010
+          Secure Context 設置容器為 no-root 用戶 我們可以加入以下這段: spec: securityContext: runAsUser: 1010 加完之後狀況如下: --- apiVersion: v1 kind: Pod metadata: name: ubuntu-sleeper namespace: default spec: securityContext: runAsUser: 1010 containers: - command: - sleep - &#34;4800&#34; image: ubuntu name: ubuntu-sleeper 也可以寫在Contai
         </div>
           <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-43/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
         
