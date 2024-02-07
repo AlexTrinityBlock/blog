@@ -9,11 +9,11 @@
     <lastBuildDate>Fri, 26 Feb 2021 17:04:06 +0800</lastBuildDate>
     <atom:link href="https://alextrinityblock.github.io/blog/public/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>K8S基本操作-39-K8S 的權限種類</title>
+      <title>K8S基本操作-39-K8S 的使用者與權限</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-39/</link>
       <pubDate>Wed, 07 Feb 2024 10:50:44 +0800</pubDate>
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-39/</guid>
-      <description>K8S 的權限種類 Node 例如每個 Worker Node 都擁有一個權限身份，設置在 kubelet 用來存取 Kube API。 ABAC (屬性基礎權限控制 Attribute-Based Access Control) 基於屬性的權限身分。 屬性：屬性是描述資源、</description>
+      <description>我們先在 K8S 建立使用者 建立使用者 Peter: kubectl create user peter 或者是使用以下 YAML: apiVersion: v1 kind: User metadata: name: user K8S 的權限種類 Node 例如每個 Worker Node 都擁有一個權限身份，設置在 kubelet 用來存取 Kube API</description>
     </item>
     <item>
       <title>K8S基本操作-38-K8S API</title>
