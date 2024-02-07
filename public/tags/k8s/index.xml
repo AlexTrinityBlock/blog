@@ -6,10 +6,17 @@
     <description>Recent content in K8S on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Wed, 07 Feb 2024 13:00:44 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 07 Feb 2024 15:00:44 +0800</lastBuildDate>
     <atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>K8S基本操作-40-K8S Service account</title>
+      <title>K8S基本操作-42-K8S 選擇映像檔來源</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-42/</link>
+      <pubDate>Wed, 07 Feb 2024 15:00:44 +0800</pubDate>
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-42/</guid>
+      <description>建立一個 Secret 用於儲存映像檔專用 假定我們映像檔來源如下: Name: private-reg-cred Username: dock_user Password: dock_password Server: myprivateregistry.com:5000 Email: dock_user@myprivateregistry.com 我們以此用以下指令建立一個專用的 secret 儲存映像檔伺服器與登入資訊: kubectl create secret</description>
+    </item>
+    <item>
+      <title>K8S基本操作-41-K8S Service account</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-41/</link>
       <pubDate>Wed, 07 Feb 2024 13:00:44 +0800</pubDate>
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-41/</guid>
