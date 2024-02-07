@@ -7,7 +7,7 @@
     <title>GCP的ACE證照筆記-06-App Engine | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="App Engine 一個可以簡單部屬可以自動縮放的應用程式。 預設運作環境: Go, Java, .NET, Node.js, PHP, Python, Ruby ，這些語言都有提供運作環境。 客製化作環境: 可採用任何語言。 App Engine 是 Re">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -414,54 +414,54 @@
 <h1 id="啟動一個-app-engine">啟動一個 APP Engine</h1>
 <p>這個 APP Engine 是個基於 Flask 的APP</p>
 <p><strong>app.yaml</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">runtime</span>: <span style="color:#ae81ff">python39</span>
-<span style="color:#f92672">service</span>: <span style="color:#ae81ff">my-first-service</span>
-</code></pre></div><p><strong>main.py</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> Flask
-
-app <span style="color:#f92672">=</span> Flask(__name__)
-
-<span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#39;/&#39;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hello</span>():
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;My Default Service - V1&#39;</span>
-</code></pre></div><p><strong>requirements.txt</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">runtime</span>: <span style="color:#ae81ff">python39</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">service</span>: <span style="color:#ae81ff">my-first-service</span>
+</span></span></code></pre></div><p><strong>main.py</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> Flask
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>app <span style="color:#f92672">=</span> Flask(__name__)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hello</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;My Default Service - V1&#39;</span>
+</span></span></code></pre></div><p><strong>requirements.txt</strong></p>
 <pre tabindex="0"><code>Flask==3.0.0
 </code></pre><p>將上述檔案放到一個資料夾中後，並且啟動專案中的 APP Engine 的權限後，輸入以下指令:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd &lt;資料夾&gt;
-gcloud config set project &lt;專案ID&gt;
-gcloud app deploy
-</code></pre></div><h1 id="app-engine-實用技能">APP Engine 實用技能</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd &lt;資料夾&gt;
+</span></span><span style="display:flex;"><span>gcloud config set project &lt;專案ID&gt;
+</span></span><span style="display:flex;"><span>gcloud app deploy
+</span></span></code></pre></div><h1 id="app-engine-實用技能">APP Engine 實用技能</h1>
 <p><strong>列出services</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app services list
-</code></pre></div><p><strong>列出可用regions</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app regions list
-</code></pre></div><p><strong>列出版本</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app versions list
-</code></pre></div><p><strong>列出執行實體</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app instances list
-</code></pre></div><p><strong>刪除實體</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> gcloud app instances delete &lt;實體ID&gt; --version<span style="color:#f92672">=</span>&lt;實體版本&gt; --service<span style="color:#f92672">=</span>default
-</code></pre></div><p><strong>刪除服務</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app services delete &lt;服務名稱&gt;
-</code></pre></div><p><strong>瀏覽器開啟特定版本APP</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app deploy --version<span style="color:#f92672">=</span>&lt;版本號&gt;
-</code></pre></div><p><strong>啟動APP的網頁Console介面</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app open-console --version<span style="color:#f92672">=</span>&lt;版本號&gt;
-</code></pre></div><p><strong>部署新版本，但仍將流量導入舊版本</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app deploy --no-promote
-</code></pre></div><p><strong>分割不同流量到不同版本APP進行測試</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app services list
+</span></span></code></pre></div><p><strong>列出可用regions</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app regions list
+</span></span></code></pre></div><p><strong>列出版本</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app versions list
+</span></span></code></pre></div><p><strong>列出執行實體</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app instances list
+</span></span></code></pre></div><p><strong>刪除實體</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> gcloud app instances delete &lt;實體ID&gt; --version<span style="color:#f92672">=</span>&lt;實體版本&gt; --service<span style="color:#f92672">=</span>default
+</span></span></code></pre></div><p><strong>刪除服務</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app services delete &lt;服務名稱&gt;
+</span></span></code></pre></div><p><strong>瀏覽器開啟特定版本APP</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app deploy --version<span style="color:#f92672">=</span>&lt;版本號&gt;
+</span></span></code></pre></div><p><strong>啟動APP的網頁Console介面</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app open-console --version<span style="color:#f92672">=</span>&lt;版本號&gt;
+</span></span></code></pre></div><p><strong>部署新版本，但仍將流量導入舊版本</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app deploy --no-promote
+</span></span></code></pre></div><p><strong>分割不同流量到不同版本APP進行測試</strong></p>
 <p>以下例子為，版本號3分配50%，版本號2分配50%。</p>
 <p>但是每個IP該服務會盡量提供同一個版本的 App 提供存取。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app services set-traffic splits<span style="color:#f92672">=</span>v3<span style="color:#f92672">=</span>.5,v2<span style="color:#f92672">=</span>.5
-</code></pre></div><p>若要隨機切換新舊版本，可以採用以下指令。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app services set-traffic splits<span style="color:#f92672">=</span>v3<span style="color:#f92672">=</span>.5,v2<span style="color:#f92672">=</span>.5 --splitby<span style="color:#f92672">=</span>random
-</code></pre></div><p>也可以用 Cookie 來進行切換</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app services set-traffic splits<span style="color:#f92672">=</span>v3<span style="color:#f92672">=</span>.5,v2<span style="color:#f92672">=</span>.5 --splitby<span style="color:#f92672">=</span>cookie
-</code></pre></div><p><strong>部署Docker image</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app services set-traffic splits<span style="color:#f92672">=</span>v3<span style="color:#f92672">=</span>.5,v2<span style="color:#f92672">=</span>.5
+</span></span></code></pre></div><p>若要隨機切換新舊版本，可以採用以下指令。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app services set-traffic splits<span style="color:#f92672">=</span>v3<span style="color:#f92672">=</span>.5,v2<span style="color:#f92672">=</span>.5 --splitby<span style="color:#f92672">=</span>random
+</span></span></code></pre></div><p>也可以用 Cookie 來進行切換</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app services set-traffic splits<span style="color:#f92672">=</span>v3<span style="color:#f92672">=</span>.5,v2<span style="color:#f92672">=</span>.5 --splitby<span style="color:#f92672">=</span>cookie
+</span></span></code></pre></div><p><strong>部署Docker image</strong></p>
 <p>假定我們做了一個Image上傳到 GCP 的 gcr.ip，名為 <code>hello-world-rest-api:0.0.1.RELEASE</code> 我們就可以採用以下方式使用  App Engine 執行。</p>
 <p>(對自訂容器會持續扣錢，無法再不使用時，完全關閉)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app deploy --image-url gcr.io/PROJECT-ID/hello-world-rest-api:0.0.1.RELEASE
-</code></pre></div><h3 id="三種流量拆分方式">三種流量拆分方式</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app deploy --image-url gcr.io/PROJECT-ID/hello-world-rest-api:0.0.1.RELEASE
+</span></span></code></pre></div><h3 id="三種流量拆分方式">三種流量拆分方式</h3>
 <ul>
 <li>
 <p>random</p>
@@ -491,57 +491,57 @@ A: 加上 --migrate
 </code></pre><h1 id="playing-with-app-engine">Playing with App Engine</h1>
 <p><strong>取得某個服務某版本的網址</strong></p>
 <p>這裡取得 myService 的版本 v1 網址。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app browse --service<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myService&#34;</span> --version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;v1&#34;</span>
-</code></pre></div><p><strong>取得某個服務控制台視窗</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app open-console --service<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myService&#34;</span> --version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;v1&#34;</span>
-</code></pre></div><p><strong>取得某個服務控制台log</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app open-console --logs
-</code></pre></div><p><strong>命令行上追蹤某個APP Log</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app logs tail
-</code></pre></div><h1 id="app-engine-背後的-instances">App Engine 背後的 Instances</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app browse --service<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myService&#34;</span> --version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;v1&#34;</span>
+</span></span></code></pre></div><p><strong>取得某個服務控制台視窗</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app open-console --service<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myService&#34;</span> --version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;v1&#34;</span>
+</span></span></code></pre></div><p><strong>取得某個服務控制台log</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app open-console --logs
+</span></span></code></pre></div><p><strong>命令行上追蹤某個APP Log</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app logs tail
+</span></span></code></pre></div><h1 id="app-engine-背後的-instances">App Engine 背後的 Instances</h1>
 <p><strong>列出存在的Instances</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app instances list
-</code></pre></div><p><strong>SSH到特定 Instance</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app instances list
+</span></span></code></pre></div><p><strong>SSH到特定 Instance</strong></p>
 <p>注意，標準的 Standard 更省錢，但不提供 SSH 功能。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app instances ssh &lt;實例ID&gt; --service<span style="color:#f92672">=</span>default --version<span style="color:#f92672">=</span>v1
-</code></pre></div><h1 id="app-engine-的-service">App Engine 的 Service</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app instances ssh &lt;實例ID&gt; --service<span style="color:#f92672">=</span>default --version<span style="color:#f92672">=</span>v1
+</span></span></code></pre></div><h1 id="app-engine-的-service">App Engine 的 Service</h1>
 <p><strong>列出Service</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app services list
-</code></pre></div><p><strong>描述Service</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app services describe &lt;Service名稱&gt;
-</code></pre></div><h1 id="app-engine-的-version">App Engine 的 Version</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app services list
+</span></span></code></pre></div><p><strong>描述Service</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app services describe &lt;Service名稱&gt;
+</span></span></code></pre></div><h1 id="app-engine-的-version">App Engine 的 Version</h1>
 <p><strong>列出版本</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app version list
-</code></pre></div><p><strong>啟動與關閉版本</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud app versions start/stop v1
-</code></pre></div><h1 id="app-engine-的-cron-job-定時任務">App Engine 的 Cron Job 定時任務</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app version list
+</span></span></code></pre></div><p><strong>啟動與關閉版本</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud app versions start/stop v1
+</span></span></code></pre></div><h1 id="app-engine-的-cron-job-定時任務">App Engine 的 Cron Job 定時任務</h1>
 <p>可以每隔一段時間呼叫某個API。</p>
 <p>可以用於自動呼叫某API，寄送郵件。</p>
 <p>建議用 HTTP GET 的 API 。</p>
 <p><strong>cron.yaml</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">cron</span>:
-- <span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;daily summary job&#34;</span>
-<span style="color:#f92672">url</span>: <span style="color:#ae81ff">/tasks/summary</span>
-<span style="color:#f92672">schedule</span>: <span style="color:#ae81ff">every 24 hours</span>
-</code></pre></div><p>呼叫方式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">cron</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;daily summary job&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">url</span>: <span style="color:#ae81ff">/tasks/summary</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">schedule</span>: <span style="color:#ae81ff">every 24 hours</span>
+</span></span></code></pre></div><p>呼叫方式</p>
 <pre tabindex="0"><code>gcloud app deploy cron.yaml
 </code></pre><h1 id="分派不同路徑到不同-service">分派不同路徑到不同 Service</h1>
 <p>這個記得同時修改微服務本身代碼，如 Flask 的路徑，才可完成路由。</p>
 <p><strong>dispatch.yaml</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">dispatch</span>:
-- <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;*/mobile/*&#34;</span>
-<span style="color:#f92672">service</span>: <span style="color:#ae81ff">mobile-frontend</span>
-- <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;*/work/*&#34;</span>
-<span style="color:#f92672">service</span>: <span style="color:#ae81ff">static-backend</span>
-</code></pre></div><h1 id="建立queue任務">建立Queue任務</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">dispatch</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;*/mobile/*&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">service</span>: <span style="color:#ae81ff">mobile-frontend</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;*/work/*&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">service</span>: <span style="color:#ae81ff">static-backend</span>
+</span></span></code></pre></div><h1 id="建立queue任務">建立Queue任務</h1>
 <p><strong>queue.yaml</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">queue</span>:
-- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">fooqueue</span>
-<span style="color:#f92672">rate</span>: <span style="color:#ae81ff">1</span><span style="color:#ae81ff">/s</span>
-<span style="color:#f92672">retry_parameters</span>:
-<span style="color:#f92672">task_retry_limit</span>: <span style="color:#ae81ff">7</span>
-<span style="color:#f92672">task_age_limit</span>: <span style="color:#ae81ff">2d</span>
-</code></pre></div><h1 id="問答-一般問題">問答-一般問題</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">queue</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">fooqueue</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">rate</span>: <span style="color:#ae81ff">1</span><span style="color:#ae81ff">/s</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">retry_parameters</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">task_retry_limit</span>: <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">task_age_limit</span>: <span style="color:#ae81ff">2d</span>
+</span></span></code></pre></div><h1 id="問答-一般問題">問答-一般問題</h1>
 <pre tabindex="0"><code>Q: 我希望在同 project 建立兩個 APP。
 A: 不行，但可以建立多個 Service。
 
@@ -556,7 +556,7 @@ A: gcloud app deploy --nopromote ，然後測試完畢後，再緩緩上線。
 </code></pre><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/gcp" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">GCP</a>
+     <a href="/tags/gcp" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">GCP</a>
    </li>
   
 </ul>

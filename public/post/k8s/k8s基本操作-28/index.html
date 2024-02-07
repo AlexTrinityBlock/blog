@@ -7,7 +7,7 @@
     <title>K8S基本操作-28-檢查ETCD版本 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="ETCD 是什麼? K8S 的 ETCD 是一個開源的分散式鍵值儲存系統，用於儲存 Kubernetes 叢集的配置和狀態資料。 它是 Kubernetes 的核心元件之一，為叢集提供以下功能： 共享配置： 儲存 Kubernetes 叢">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -248,16 +248,16 @@
 </ul>
 <h1 id="檢查-etcd-的版本">檢查 ETCD 的版本</h1>
 <p>我們可以從分析映像檔著手:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n kube-system describe pod etcd-controlplane | grep Image:
-</code></pre></div><h1 id="檢查-etcd-listen-的-port">檢查 ETCD Listen 的 Port</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl -n kube-system describe pod etcd-controlplane | grep Image:
+</span></span></code></pre></div><h1 id="檢查-etcd-listen-的-port">檢查 ETCD Listen 的 Port</h1>
 <p>我們輸入以下指令:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n kube-system  describe pod etcd-controlplane | grep <span style="color:#e6db74">&#39;\--listen-client-urls&#39;</span>
-</code></pre></div><p>大概可以看到這樣的結果:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl -n kube-system  describe pod etcd-controlplane | grep <span style="color:#e6db74">&#39;\--listen-client-urls&#39;</span>
+</span></span></code></pre></div><p>大概可以看到這樣的結果:</p>
 <pre tabindex="0"><code>--listen-client-urls=https://127.0.0.1:2379,https://192.11.71.3:2379
 </code></pre><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

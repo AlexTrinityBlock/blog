@@ -7,7 +7,7 @@
     <title>K8S | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="歡迎來到無面者小站">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -198,12 +198,46 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Post</span>
     <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-39/" class="link black dim">
+        K8S基本操作-39-K8S 的權限種類
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Post</span>
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-38/" class="link black dim">
+        K8S基本操作-38-K8S API
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      K8S API 如果我們需要為 K8S 設置自訂介面，更加自動化，甚至將 K8S 由大語言模型管理，這時候存取 API 就是個需要的功能了。 常見的 API 我們這邊以不一定真實存在的 URL:
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Post</span>
+    <h1 class="f3 near-black">
       <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-37/" class="link black dim">
         K8S基本操作-37-K8S原生憑證簽署方式
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      K8S 中各部件通訊時如何保障安全 kube-apiserver, kube-controller-manager, kube-scheduler, etcd, kubelet, kube-proxy 都存在著自己的鑰匙與憑證。 具體來說，每個部件都有著: ca.crt ***.crt ***.key 用於部件之間互相傳遞的加密與驗證。 沒意外的
+      K8S 中各部件通訊時如何保障安全 kube-apiserver, kube-controller-manager, kube-scheduler, etcd, kubelet, kube-proxy 都存在著自己的鑰匙與憑證。 具體來說，每個部件都有著對應的憑證與Key: # 預設管理員 admin.crt admin.key # KUBE-SCHEDULER scheduler.crt scheduler.key # KUBE-CONTROLLER-MANAGER controllermanager.crt
     </div>
   </div>
 </div>
@@ -492,7 +526,7 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      如果 Dockerfile 跟 K8S 的 YAML 配置的 Entrypoint 與 Command 不一樣呢? 實際上執行的指令會是哪一種? FROMpython:3.6-alpineRUN pip install flaskCOPY . /opt/EXPOSE8080WORKDIR/optENTRYPOINT [&#34;python&#34;, &#34;app.py&#34;]CMD [&#34;--color&#34;, &#34;red&#34;]apiVersion: v1 kind: Pod metadata: name: webapp-green labels: name: webapp-green spec: containers: - name: simple-webapp image: kodekloud/webapp-color command: [&#34;python&#34;, &#34;app.py&#34;] args: [&#34;--color&#34;, &#34;pink&#34;] 最後會以 K8S 的
+      如果 Dockerfile 跟 K8S 的 YAML 配置的 Entrypoint 與 Command 不一樣呢? 實際上執行的指令會是哪一種? FROM python:3.6-alpine RUN pip install flask COPY . /opt/ EXPOSE 8080 WORKDIR /opt ENTRYPOINT [&#34;python&#34;, &#34;app.py&#34;] CMD [&#34;--color&#34;, &#34;red&#34;] apiVersion: v1 kind: Pod metadata: name: webapp-green labels: name: webapp-green spec: containers: - name: simple-webapp image: kodekloud/webapp-color command: [&#34;python&#34;,
     </div>
   </div>
 </div>

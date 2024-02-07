@@ -7,7 +7,7 @@
     <title>K8S基本操作-17-安裝Metrics Server | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Metrics Server 可以監控 K8S 的 Cluster 上的每個 Node 的 CPU, RAM 等使用。 安裝 最簡單的方式是參照以下網址，直接一行指令安裝: https://github.com/kubernetes-sigs/metrics-server kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml 使用 可以查看 Node 的 CPU 與 RAM 使用率。 kubectl top node 輸">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -241,26 +241,26 @@
 <pre tabindex="0"><code>kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 </code></pre><h1 id="使用">使用</h1>
 <p>可以查看 Node 的 CPU 與 RAM 使用率。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl top node
-</code></pre></div><p>輸出為:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">controlplane kubernetes-metrics-server on  master ➜  kubectl top node
-NAME           CPU<span style="color:#f92672">(</span>cores<span style="color:#f92672">)</span>   CPU%   MEMORY<span style="color:#f92672">(</span>bytes<span style="color:#f92672">)</span>   MEMORY%   
-controlplane   291m         0%     1156Mi          0%        
-node01         277m         0%     294Mi           0%
-</code></pre></div><p>或者查看 Pod</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl top pod
-</code></pre></div><p>輸出:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">controlplane kubernetes-metrics-server on  master ➜  kubectl top pod
-NAME       CPU<span style="color:#f92672">(</span>cores<span style="color:#f92672">)</span>   MEMORY<span style="color:#f92672">(</span>bytes<span style="color:#f92672">)</span>   
-elephant   15m          32Mi            
-lion       1m           18Mi            
-rabbit     107m         252Mi  
-</code></pre></div><p>並且可以用 CPU 使用率排序</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl top node --sort-by<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cpu&#39;</span>
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl top node
+</span></span></code></pre></div><p>輸出為:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>controlplane kubernetes-metrics-server on  master ➜  kubectl top node
+</span></span><span style="display:flex;"><span>NAME           CPU<span style="color:#f92672">(</span>cores<span style="color:#f92672">)</span>   CPU%   MEMORY<span style="color:#f92672">(</span>bytes<span style="color:#f92672">)</span>   MEMORY%   
+</span></span><span style="display:flex;"><span>controlplane   291m         0%     1156Mi          0%        
+</span></span><span style="display:flex;"><span>node01         277m         0%     294Mi           0%
+</span></span></code></pre></div><p>或者查看 Pod</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl top pod
+</span></span></code></pre></div><p>輸出:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>controlplane kubernetes-metrics-server on  master ➜  kubectl top pod
+</span></span><span style="display:flex;"><span>NAME       CPU<span style="color:#f92672">(</span>cores<span style="color:#f92672">)</span>   MEMORY<span style="color:#f92672">(</span>bytes<span style="color:#f92672">)</span>   
+</span></span><span style="display:flex;"><span>elephant   15m          32Mi            
+</span></span><span style="display:flex;"><span>lion       1m           18Mi            
+</span></span><span style="display:flex;"><span>rabbit     107m         252Mi  
+</span></span></code></pre></div><p>並且可以用 CPU 使用率排序</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl top node --sort-by<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cpu&#39;</span>
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

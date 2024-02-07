@@ -7,7 +7,7 @@
     <title>GCP的ACE證照筆記-10-Cloud Run | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Cloud Run 基於 Knative，一種自動管理 K8S 的工具，幾乎可以做到全自動擴展。 不須維護基礎設施。 使用時才付費。 Cloud Run for Anthos Cloud Run 是在數秒之內運作一個容器帶">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -268,15 +268,15 @@
 </ul>
 <h1 id="gcloud-與--cloud-run">Gcloud 與  Cloud Run</h1>
 <p>Docker Image 部署到 Cloud Run</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud run deploy SERVICE_NAME --image IMAGE_URL --revision-suffix v1
-</code></pre></div><p>列出可用版本</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud run revisions list
-</code></pre></div><p>不同版本分流。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud run services update-traffic myservice --to-revisions<span style="color:#f92672">=</span>v2<span style="color:#f92672">=</span>10,v1<span style="color:#f92672">=</span><span style="color:#ae81ff">90</span>
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud run deploy SERVICE_NAME --image IMAGE_URL --revision-suffix v1
+</span></span></code></pre></div><p>列出可用版本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud run revisions list
+</span></span></code></pre></div><p>不同版本分流。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud run services update-traffic myservice --to-revisions<span style="color:#f92672">=</span>v2<span style="color:#f92672">=</span>10,v1<span style="color:#f92672">=</span><span style="color:#ae81ff">90</span>
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/gcp" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">GCP</a>
+     <a href="/tags/gcp" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">GCP</a>
    </li>
   
 </ul>

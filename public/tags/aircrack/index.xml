@@ -6,15 +6,14 @@
     <description>Recent content in aircrack on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Mon, 03 May 2021 10:01:49 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/aircrack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 May 2021 10:01:49 +0800</lastBuildDate>
+    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/aircrack/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>中斷無線網路的方法</title>
       <link>https://alextrinityblock.github.io/blog/public/post/secure/%E4%B8%AD%E6%96%B7%E7%84%A1%E7%B7%9A%E7%B6%B2%E8%B7%AF%E7%9A%84%E6%96%B9%E6%B3%95/</link>
       <pubDate>Mon, 03 May 2021 10:01:49 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/secure/%E4%B8%AD%E6%96%B7%E7%84%A1%E7%B7%9A%E7%B6%B2%E8%B7%AF%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
       <description>警告：此方法只能用於自己的無線網路裝置，目的應該是了解無線網路運作，絕對不能造成他人的困擾或損失，我們應該秉持所有人類都是同胞的心態。就算你</description>
     </item>
-    
   </channel>
 </rss>

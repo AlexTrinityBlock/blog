@@ -6,24 +6,21 @@
     <description>Recent content in apt on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Tue, 21 Nov 2023 21:29:36 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/apt/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Nov 2023 21:29:36 +0800</lastBuildDate>
+    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/apt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>nginx配置多個reverse-proxy</title>
       <link>https://alextrinityblock.github.io/blog/public/post/linux/nginx%E9%85%8D%E7%BD%AE%E5%A4%9A%E5%80%8Breverse-proxy/</link>
       <pubDate>Tue, 21 Nov 2023 21:29:36 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/linux/nginx%E9%85%8D%E7%BD%AE%E5%A4%9A%E5%80%8Breverse-proxy/</guid>
       <description>我們可以看到 nginx 的配置檔案位於下面的位置。 /etc/nginx/nginx.conf 我們可以用下列方法來重新導向我們的 Domain name，可以導向容器，或者其他運作中的程式實例。 nginx.conf server { server_name example1.com; location</description>
     </item>
-    
     <item>
       <title>清理apt暫時存檔</title>
       <link>https://alextrinityblock.github.io/blog/public/post/linux/%E6%B8%85%E7%90%86apt%E6%9A%AB%E6%99%82%E5%AD%98%E6%AA%94/</link>
       <pubDate>Wed, 02 Jun 2021 13:29:36 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/linux/%E6%B8%85%E7%90%86apt%E6%9A%AB%E6%99%82%E5%AD%98%E6%AA%94/</guid>
       <description>下載套件的暫存路徑清除 當apt套件管理工具在安裝套件時，會先對套件進行下載。 下載完畢尚未安裝的套件會被儲存在以下路徑: /var/cache/apt/archives 當這個目錄裡頭的東西</description>
     </item>
-    
   </channel>
 </rss>

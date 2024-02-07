@@ -7,7 +7,7 @@
     <title>K8S基本操作-32-檢查ETCD server 上的各種狀態配置 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="用 PS 指令檢查 etcd 的各個配置檔案路徑與參數 有些情況 Kubectl 工具未安裝在 etcd server 上，所以必須要手動用 ps 指令檢查參數: ps aux|grep etcd 結果: etcd 808 0.0 0.0 11218624 56044 ? Ssl 01:58 0:44 /usr/local/bin/etcd --name etcd-server --data-dir=/var/lib/etcd-data">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -235,25 +235,25 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="用-ps-指令檢查-etcd-的各個配置檔案路徑與參數">用 PS 指令檢查 etcd 的各個配置檔案路徑與參數</h1>
 <p>有些情況 Kubectl 工具未安裝在 etcd server 上，所以必須要手動用 ps 指令檢查參數:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ps aux|grep etcd
-</code></pre></div><p>結果:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ps aux|grep etcd
+</span></span></code></pre></div><p>結果:</p>
 <pre tabindex="0"><code>etcd         808  0.0  0.0 11218624 56044 ?      Ssl  01:58   0:44 /usr/local/bin/etcd --name etcd-server --data-dir=/var/lib/etcd-data --cert-file=/etc/etcd/pki/etcd.pem --key-file=/etc/etcd/pki/etcd-key.pem --peer-cert-file=/etc/etcd/pki/etcd.pem --peer-key-file=/etc/etcd/pki/etcd-key.pem --trusted-ca-file=/etc/etcd/pki/ca.pem --peer-trusted-ca-file=/etc/etcd/pki/ca.pem --peer-client-cert-auth --client-cert-auth --initial-advertise-peer-urls https://192.4.181.11:2380 --listen-peer-urls https://192.4.181.11:2380 --advertise-client-urls https://192.4.181.11:2379 --listen-client-urls https://192.4.181.11:2379,https://127.0.0.1:2379 --initial-cluster-token etcd-cluster-1 --initial-cluster etcd-server=https://192.4.181.11:2380 --initial-cluster-state new
 root        1376  0.0  0.0  13444  1072 pts/1    S+   02:54   0:00 grep etcd
 </code></pre><h1 id="etcdctl-觀察分散式-etcd-節點">Etcdctl 觀察分散式 ETCD 節點</h1>
 <p>有時候 ETCD 節點存在好幾個，作為安全起見，可以用以下方式在 ETCD 節點上查看:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ETCDCTL_API<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> etcdctl <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> --endpoints<span style="color:#f92672">=</span>https://127.0.0.1:2379 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> --cacert<span style="color:#f92672">=</span>/etc/etcd/pki/ca.pem <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> --cert<span style="color:#f92672">=</span>/etc/etcd/pki/etcd.pem <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> --key<span style="color:#f92672">=</span>/etc/etcd/pki/etcd-key.pem <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  member list
-</code></pre></div><p>結果:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ETCDCTL_API<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> etcdctl <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --endpoints<span style="color:#f92672">=</span>https://127.0.0.1:2379 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --cacert<span style="color:#f92672">=</span>/etc/etcd/pki/ca.pem <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --cert<span style="color:#f92672">=</span>/etc/etcd/pki/etcd.pem <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --key<span style="color:#f92672">=</span>/etc/etcd/pki/etcd-key.pem <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  member list
+</span></span></code></pre></div><p>結果:</p>
 <pre tabindex="0"><code>4e8233dc38e9a3cd, started, etcd-server, https://192.4.181.11:2380, https://192.4.181.11:2379, false
 </code></pre><p>我們可以看到，只有一個 IP ，這就是一個 Node 。</p>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

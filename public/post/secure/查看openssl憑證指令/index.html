@@ -7,7 +7,7 @@
     <title>查看OpenSSL憑證指令 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="檢查憑證的指令如下 檢查憑證的指令可以用-text與-noout來查看憑證細節: openssl x509 -in my.crt -text -noout 輸出類似: Certificate: Data: Version: 3 (0x2) Serial Number: 3147495682089747350 (0x2bae26a58f090396) Signature Algorithm: sha256WithRSAEncryption Issuer: CN=kubernetes Validity Not Before: Feb 11 05:39:19">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -235,45 +235,45 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="檢查憑證的指令如下">檢查憑證的指令如下</h1>
 <p>檢查憑證的指令可以用<code>-text</code>與<code>-noout</code>來查看憑證細節:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl x509 -in my.crt -text -noout
-</code></pre></div><p>輸出類似:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Certificate</span>:
-<span style="color:#f92672">Data</span>:
-<span style="color:#f92672">Version</span>: <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">(0x2)</span>
-<span style="color:#f92672">Serial Number</span>: <span style="color:#ae81ff">3147495682089747350</span> <span style="color:#ae81ff">(0x2bae26a58f090396)</span>
-<span style="color:#f92672">Signature Algorithm</span>: <span style="color:#ae81ff">sha256WithRSAEncryption</span>
-<span style="color:#f92672">Issuer</span>: <span style="color:#ae81ff">CN=kubernetes</span>
-<span style="color:#ae81ff">Validity</span>
-<span style="color:#f92672">Not Before</span>: <span style="color:#ae81ff">Feb 11 05:39:19 2019 GMT</span>
-<span style="color:#f92672">Not After </span>: <span style="color:#ae81ff">Feb 11 05:39:20 2020 GMT</span>
-<span style="color:#f92672">Subject</span>: <span style="color:#ae81ff">CN=kube-apiserver</span>
-<span style="color:#f92672">Subject Public Key Info</span>:
-<span style="color:#f92672">Public Key Algorithm</span>: <span style="color:#ae81ff">rsaEncryption</span>
-<span style="color:#f92672">Public-Key</span>: <span style="color:#ae81ff">(2048 bit)</span>
-<span style="color:#f92672">Modulus</span>:
-<span style="color:#f92672">00:d9:69:38:80:68:3b:b7:2e:9e:25:00:e8:fd:01</span>:
-<span style="color:#f92672">Exponent</span>: <span style="color:#ae81ff">65537</span> <span style="color:#ae81ff">(0x10001)</span>
-<span style="color:#f92672">X509v3 extensions</span>:
-<span style="color:#f92672">X509v3 Key Usage</span>: <span style="color:#ae81ff">critical</span>
-<span style="color:#ae81ff">Digital Signature, Key Encipherment</span>
-<span style="color:#f92672">X509v3 Extended Key Usage</span>:
-<span style="color:#ae81ff">TLS Web Server Authentication</span>
-<span style="color:#f92672">X509v3 Subject Alternative Name</span>:
-<span style="color:#ae81ff">DNS:master, DNS:kubernetes, DNS:kubernetes.default,</span>
-<span style="color:#ae81ff">DNS:kubernetes.default.svc, DNS:kubernetes.default.svc.cluster.local, IP</span>
-<span style="color:#ae81ff">Address:10.96.0.1, IP Address:172.17.0.27</span>
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl x509 -in my.crt -text -noout
+</span></span></code></pre></div><p>輸出類似:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Certificate</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Data</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Version</span>: <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">(0x2)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Serial Number</span>: <span style="color:#ae81ff">3147495682089747350</span> <span style="color:#ae81ff">(0x2bae26a58f090396)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Signature Algorithm</span>: <span style="color:#ae81ff">sha256WithRSAEncryption</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Issuer</span>: <span style="color:#ae81ff">CN=kubernetes</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">Validity</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Not Before</span>: <span style="color:#ae81ff">Feb 11 05:39:19 2019 GMT</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Not After </span>: <span style="color:#ae81ff">Feb 11 05:39:20 2020 GMT</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Subject</span>: <span style="color:#ae81ff">CN=kube-apiserver</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Subject Public Key Info</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Public Key Algorithm</span>: <span style="color:#ae81ff">rsaEncryption</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Public-Key</span>: <span style="color:#ae81ff">(2048 bit)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Modulus</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">00:d9:69:38:80:68:3b:b7:2e:9e:25:00:e8:fd:01</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Exponent</span>: <span style="color:#ae81ff">65537</span> <span style="color:#ae81ff">(0x10001)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">X509v3 extensions</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">X509v3 Key Usage</span>: <span style="color:#ae81ff">critical</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">Digital Signature, Key Encipherment</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">X509v3 Extended Key Usage</span>:
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">TLS Web Server Authentication</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">X509v3 Subject Alternative Name</span>:
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">DNS:master, DNS:kubernetes, DNS:kubernetes.default,</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">DNS:kubernetes.default.svc, DNS:kubernetes.default.svc.cluster.local, IP</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">Address:10.96.0.1, IP Address:172.17.0.27</span>
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/secure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">secure</a>
+     <a href="/tags/secure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">secure</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/ssl" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">SSL</a>
+     <a href="/tags/ssl" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">SSL</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/openssl" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">OpenSSL</a>
+     <a href="/tags/openssl" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">OpenSSL</a>
    </li>
   
 </ul>

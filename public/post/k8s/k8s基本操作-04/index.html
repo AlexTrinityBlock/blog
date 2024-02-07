@@ -7,7 +7,7 @@
     <title>K8S基本操作-04-namespace基本使用 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="列出 namespaces kubectl get namespaces 列出某 namespaces 裏頭的 pods 例如我們要取得 research namespaces 裏頭的 pod。 kubectl -n research get pods 算出某個 namespaces 裏頭的 pods 數量 kubectl -n research get pods --no-headers | wc -l 手動在某 namespaces 裏頭啟動 pod kubectl -n finance run redis">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -331,8 +331,8 @@ Events:
   Type    Reason     Age   From               Message
   ----    ------     ----  ----               -------
   Normal  Scheduled  27m   default-scheduler  Successfully assigned marketing/redis-db to controlplane
-  Normal  Pulling    27m   kubelet            Pulling image &quot;redis:alpine&quot;
-  Normal  Pulled     27m   kubelet            Successfully pulled image &quot;redis:alpine&quot; in 4.147848894s (4.147858855s including waiting)
+  Normal  Pulling    27m   kubelet            Pulling image &#34;redis:alpine&#34;
+  Normal  Pulled     27m   kubelet            Successfully pulled image &#34;redis:alpine&#34; in 4.147848894s (4.147858855s including waiting)
   Normal  Created    27m   kubelet            Created container redis
   Normal  Started    27m   kubelet            Started container redis
 </code></pre><p>話說，如果要存取 <code>dev</code> namespace 的 <code>db-service</code> 服務可以採用以下的 URL。</p>
@@ -341,7 +341,7 @@ Events:
 <ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

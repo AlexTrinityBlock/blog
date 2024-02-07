@@ -7,7 +7,7 @@
     <title>K8S基本操作-26-Drain | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Drain 與 uncordon 在 Kubernetes (K8S) 中，Drain (有排水的意思) 功能可以將 Pod 轉移到其他的 Node。 方便對某個 Node 進行更新。 排空 node01 由於一般會有 Daemonsets，所">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -238,22 +238,22 @@
 <p>方便對某個 Node 進行更新。</p>
 <p>排空 node01 由於一般會有 Daemonsets，所以必須採用<code>--ignore-daemonsets</code>才不會報錯。</p>
 <p>例如，如果我們的 Node 稱為 node-1，排掉所有 Pod 到其他 Node 的指令為:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl drain node-1 --ignore-daemonsets
-</code></pre></div><pre tabindex="0"><code>注意!必須要有 Replica Set 才可以順利受到 Drain 調度，如果沒有 Replica Set 甚至會報錯。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl drain node-1 --ignore-daemonsets
+</span></span></code></pre></div><pre tabindex="0"><code>注意!必須要有 Replica Set 才可以順利受到 Drain 調度，如果沒有 Replica Set 甚至會報錯。
 雖然加上 --force 可以強制完成 drain ，但沒有 Replica Set 的 Pod 會永久消失。
 </code></pre><p>uncordon 有解除警戒的意思。</p>
 <p>讓所有 Pod 能重新安排到更新好的 Node 的指令為:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl uncrodon node-1
-</code></pre></div><h1 id="防止一個-node-新增新-pod-但不排掉舊-pod">防止一個 Node 新增新 Pod ，但不排掉舊 Pod</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl uncrodon node-1
+</span></span></code></pre></div><h1 id="防止一個-node-新增新-pod-但不排掉舊-pod">防止一個 Node 新增新 Pod ，但不排掉舊 Pod</h1>
 <p>cordon off 有封鎖某區域的意思。</p>
 <p>如果有個關鍵的 Pod 並且不存在於 Replica Set，這時候我們需要用 cordon 來確保新 Pod 不會調度到該 Node 上，之後才進行更新。</p>
 <p>(當然，最好仍是將該Pod轉移到某個 Replica Set 或者 Deployment 上。)</p>
 <p>這種情況可以用以下指令:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl crodon node-1
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl crodon node-1
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

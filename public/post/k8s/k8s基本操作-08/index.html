@@ -7,7 +7,7 @@
     <title>K8S基本操作-08-Scheduling | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Kube-scheduler kube-scheduler 負責監視新創建的或尚未調度（unscheduled）的 Pod，並選擇一個最佳節點來運行這些 Pod。由於 Pod 中的容器和 Pod 本身可能有不同的要求">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -248,16 +248,16 @@
 <p>建立一個 nginx</p>
 <pre tabindex="0"><code>kubectl create -f nginx.yaml
 </code></pre><p>nginx.yaml</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
-<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">containers</span>:
-  -  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx</span>
-     <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
-</code></pre></div><p>檢查狀態</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>  -  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+</span></span></code></pre></div><p>檢查狀態</p>
 <pre tabindex="0"><code>controlplane ~ ✖ kubectl get pod
 NAME    READY   STATUS    RESTARTS   AGE
 nginx   0/1     Pending   0          69s
@@ -284,17 +284,17 @@ controlplane   Ready    control-plane   45m   v1.27.0
 node01         Ready    &lt;none&gt;          45m   v1.27.0
 </code></pre><p>手動將 YAML 檔案中加入指定 node01 。</p>
 <p>nginx.yaml</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
-<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">nodeName</span>: <span style="color:#ae81ff">node01</span>
-  <span style="color:#f92672">containers</span>:
-  -  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx</span>
-     <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
-</code></pre></div><p>建立 pod 。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">nodeName</span>: <span style="color:#ae81ff">node01</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>  -  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+</span></span></code></pre></div><p>建立 pod 。</p>
 <pre tabindex="0"><code>kubectl create -f nginx.yaml
 </code></pre><p>這樣就能建立成功了。</p>
 <p>檢查一下是否正確放到特定 pod ，用 <code>-o wide</code> 可以顯示所在 pod 。</p>
@@ -306,7 +306,7 @@ nginx   1/1     Running   0          21s   10.244.1.2   node01   &lt;none&gt;   
 </code></pre><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

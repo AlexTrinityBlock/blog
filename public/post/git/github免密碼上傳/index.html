@@ -7,7 +7,7 @@
     <title>github免密碼上傳與RSA金鑰產生 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="先決條件 這篇是建立在理解 git基本使用 擁有github帳號 使用linux 上述條件達成才比較能夠理解本篇git的部份， 建議上網找些資料學習。 不">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -268,13 +268,13 @@ RSA的預設長度為2048位元。<br>
 <h3 id="如何在linux上頭使用rsa">如何在Linux上頭使用RSA</h3>
 <p>由於SSH的遠端通訊是採取RSA進行加密通訊。<br>
 所以可以用SSH的功能直接生成一對RSA的公私鑰。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-BASH" data-lang="BASH">ssh-keygen -t rsa
-</code></pre></div><p>接著只要一路按下enter（如果你不考慮各種細節的話）<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-BASH" data-lang="BASH"><span style="display:flex;"><span>ssh-keygen -t rsa
+</span></span></code></pre></div><p>接著只要一路按下enter（如果你不考慮各種細節的話）<br>
 就可以生成一對公私鑰<br>
 而這對生成的鑰匙預設除存在哪裡呢？<br>
 通常是在使用者目錄下方的一個隱藏檔</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/home/使用者名稱/.ssh/
-</code></pre></div><p>而我們打開了該目錄可以看到裡頭有兩個檔案<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/home/使用者名稱/.ssh/
+</span></span></code></pre></div><p>而我們打開了該目錄可以看到裡頭有兩個檔案<br>
 <span style='color:red'>
 id_rsa #私鑰<br>
 id_rsa.pub ＃公鑰<br>
@@ -293,16 +293,16 @@ id_rsa.pub ＃公鑰<br>
 <pre tabindex="0"><code class="language-git" data-lang="git">git clone 複製的ssh網址
 </code></pre><p>完成以後push不再需要輸入密碼了<br>
 git會讀取你</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/home/使用者/.ssh
-</code></pre></div><p>該目錄下方的私鑰進行加解密，同時也能讓github得知你已經擁有編輯檔案的權限</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/home/使用者/.ssh
+</span></span></code></pre></div><p>該目錄下方的私鑰進行加解密，同時也能讓github得知你已經擁有編輯檔案的權限</p>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/git" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">git</a>
+     <a href="/tags/git" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">git</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/github" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">github</a>
+     <a href="/tags/github" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">github</a>
    </li>
   
 </ul>

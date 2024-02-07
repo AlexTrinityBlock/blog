@@ -7,7 +7,7 @@
     <title>清理apt暫時存檔 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="下載套件的暫存路徑清除 當apt套件管理工具在安裝套件時，會先對套件進行下載。 下載完畢尚未安裝的套件會被儲存在以下路徑: /var/cache/apt/archives 當這個目錄裡頭的東西">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -238,20 +238,20 @@
 下載完畢尚未安裝的套件會被儲存在以下路徑:</p>
 <pre tabindex="0"><code>/var/cache/apt/archives
 </code></pre><p>當這個目錄裡頭的東西過多時，可以用指令刪除暫存檔案：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get autoclean
-sudo apt-get clean
-</code></pre></div><h2 id="不用的相依賴套件刪除">不用的相依賴套件刪除</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get autoclean
+</span></span><span style="display:flex;"><span>sudo apt-get clean
+</span></span></code></pre></div><h2 id="不用的相依賴套件刪除">不用的相依賴套件刪除</h2>
 <p>當我們下載某個套件時，這個套件可能會因為依賴其他套件，而裝了許多套件。<br>
 這種時刻，我們可以刪除不用的依賴套件:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get autoremove
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get autoremove
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/linux" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">linux</a>
+     <a href="/tags/linux" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">linux</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/apt" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">apt</a>
+     <a href="/tags/apt" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">apt</a>
    </li>
   
 </ul>

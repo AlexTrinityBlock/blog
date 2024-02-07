@@ -7,7 +7,7 @@
     <title>K8S基本操作-11-Node Affinitty | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Node Affinitty 在 Kubernetes 中，Node affinity（節點親和性）是一種用於控制 Pod 調度到哪些節點上的機制。它允許您根據節點的屬性和標籤，指定 Pod 應該调度到哪些">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -238,35 +238,35 @@
 <p>我們先用 <code>Label</code> 在 <code>node01</code> 上頭標記顏色 <code>color=blue</code>:</p>
 <pre tabindex="0"><code>kubectl label node node01 color=blue
 </code></pre><p>接著在 Deployment 的設置上設置 Node affinity:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
-<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Deployment</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">blue</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">replicas</span>: <span style="color:#ae81ff">3</span>
-  <span style="color:#f92672">selector</span>:
-    <span style="color:#f92672">matchLabels</span>:
-      <span style="color:#f92672">run</span>: <span style="color:#ae81ff">nginx</span>
-  <span style="color:#f92672">template</span>:
-    <span style="color:#f92672">metadata</span>:
-      <span style="color:#f92672">labels</span>:
-        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">nginx</span>
-    <span style="color:#f92672">spec</span>:
-      <span style="color:#f92672">containers</span>:
-      - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx</span>
-        <span style="color:#f92672">imagePullPolicy</span>: <span style="color:#ae81ff">Always</span>
-        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
-      <span style="color:#f92672">affinity</span>:
-        <span style="color:#f92672">nodeAffinity</span>:
-          <span style="color:#f92672">requiredDuringSchedulingIgnoredDuringExecution</span>:
-            <span style="color:#f92672">nodeSelectorTerms</span>:
-            - <span style="color:#f92672">matchExpressions</span>:
-              - <span style="color:#f92672">key</span>: <span style="color:#ae81ff">color</span>
-                <span style="color:#f92672">operator</span>: <span style="color:#ae81ff">In</span>
-                <span style="color:#f92672">values</span>:
-                - <span style="color:#ae81ff">blue</span>
-</code></pre></div><p>這個 pod 就會優先跑到有 color=blue 的 label 的 Node 上了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Deployment</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">blue</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">replicas</span>: <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">selector</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">matchLabels</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">run</span>: <span style="color:#ae81ff">nginx</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">template</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">nginx</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">imagePullPolicy</span>: <span style="color:#ae81ff">Always</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">affinity</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">nodeAffinity</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">requiredDuringSchedulingIgnoredDuringExecution</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">nodeSelectorTerms</span>:
+</span></span><span style="display:flex;"><span>            - <span style="color:#f92672">matchExpressions</span>:
+</span></span><span style="display:flex;"><span>              - <span style="color:#f92672">key</span>: <span style="color:#ae81ff">color</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">operator</span>: <span style="color:#ae81ff">In</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">values</span>:
+</span></span><span style="display:flex;"><span>                - <span style="color:#ae81ff">blue</span>
+</span></span></code></pre></div><p>這個 pod 就會優先跑到有 color=blue 的 label 的 Node 上了。</p>
 <h3 id="關於強制調度或者更傾向於調度">關於強制調度，或者更傾向於調度</h3>
 <p>nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution</p>
 <p>此屬性可強制將 Pod 調度到具有匹配標籤的節點上。如果沒有匹配標籤的節點，則 Pod 將無法調度。</p>
@@ -275,7 +275,7 @@
 <ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

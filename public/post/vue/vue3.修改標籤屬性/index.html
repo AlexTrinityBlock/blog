@@ -7,7 +7,7 @@
     <title>Vue筆記 3:動態修改標籤屬性 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Vue筆記 3:動態修改標籤屬性 稍微提到一下，如果這篇教學對你有幫助，請不要吝嗇教導你周圍的同事，我可以保證你一定會過得更快樂 HTMl標籤存在">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -241,49 +241,49 @@
 <h2 id="使用v-bind來動態修改屬性">使用v-bind來動態修改屬性</h2>
 <p>v-bind:title=&ldquo;title_text&quot;可以綁定title屬性到 title_text<br>
 v-bind:style=&ldquo;text_color&quot;可以綁定style屬性到text_color</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">
-<span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;zh-hant-TW&#34;</span>&gt;
-
-&lt;<span style="color:#f92672">head</span>&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
-    &lt;<span style="color:#f92672">title</span>&gt;簡化版Vue學習&lt;/<span style="color:#f92672">title</span>&gt;
-&lt;/<span style="color:#f92672">head</span>&gt;
-
-&lt;<span style="color:#f92672">body</span>&gt;
-    <span style="color:#75715e">&lt;!--要插入的目標位置--&gt;</span>
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tag01&#34;</span> <span style="color:#a6e22e">v-bind:title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title_text&#34;</span> <span style="color:#a6e22e">v-bind:style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text_color&#34;</span>&gt;
-        若苦難必然會發生，行善受苦，總比行惡受苦好。
-    &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">body</span>&gt;
-<span style="color:#75715e">&lt;!--引入Vue--&gt;</span>
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/vue&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-
-&lt;<span style="color:#f92672">script</span>&gt;
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">object01</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
-        <span style="color:#a6e22e">el</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#tag01&#39;</span>,
-        <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
-            <span style="color:#a6e22e">title_text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
-            <span style="color:#a6e22e">text_color</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>
-        }
-    })
-    <span style="color:#75715e">//此處將title屬性修改，這樣滑鼠停在文字上頭時就會顯示這段英文
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">object01</span>.<span style="color:#a6e22e">title_text</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Be good! You can bear any pain.&#34;</span>
-    <span style="color:#75715e">//這裡，我們動態修改文字顏色
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">object01</span>.<span style="color:#a6e22e">text_color</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;color:gray&#34;</span>
-&lt;/<span style="color:#f92672">script</span>&gt;
-
-&lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><p>這樣的結果就是文字變成灰色<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;zh-hant-TW&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;簡化版Vue學習&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--要插入的目標位置--&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tag01&#34;</span> <span style="color:#a6e22e">v-bind:title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title_text&#34;</span> <span style="color:#a6e22e">v-bind:style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text_color&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        若苦難必然會發生，行善受苦，總比行惡受苦好。
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--引入Vue--&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/vue&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">object01</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">el</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#tag01&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">title_text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">text_color</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//此處將title屬性修改，這樣滑鼠停在文字上頭時就會顯示這段英文
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">object01</span>.<span style="color:#a6e22e">title_text</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Be good! You can bear any pain.&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//這裡，我們動態修改文字顏色
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">object01</span>.<span style="color:#a6e22e">text_color</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;color:gray&#34;</span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p>這樣的結果就是文字變成灰色<br>
 滑鼠停在文字上時顯示 &ldquo;Be good! You can bear any pain.&rdquo;</p>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/vue" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">vue</a>
+     <a href="/tags/vue" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">vue</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/%E5%89%8D%E7%AB%AF" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">前端</a>
+     <a href="/tags/%E5%89%8D%E7%AB%AF" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">前端</a>
    </li>
   
 </ul>

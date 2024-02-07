@@ -6,8 +6,8 @@
     
     <title>K8S基本操作-37-K8S原生憑證簽署方式 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="K8S 中各部件通訊時如何保障安全 kube-apiserver, kube-controller-manager, kube-scheduler, etcd, kubelet, kube-proxy 都存在著自己的鑰匙與憑證。 具體來說，每個部件都有著: ca.crt ***.crt ***.key 用於部件之間互相傳遞的加密與驗證。 沒意外的">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="description" content="K8S 中各部件通訊時如何保障安全 kube-apiserver, kube-controller-manager, kube-scheduler, etcd, kubelet, kube-proxy 都存在著自己的鑰匙與憑證。 具體來說，每個部件都有著對應的憑證與Key: # 預設管理員 admin.crt admin.key # KUBE-SCHEDULER scheduler.crt scheduler.key # KUBE-CONTROLLER-MANAGER controllermanager.crt">
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -34,19 +34,19 @@
     
     
     <meta property="og:title" content="K8S基本操作-37-K8S原生憑證簽署方式" />
-<meta property="og:description" content="K8S 中各部件通訊時如何保障安全 kube-apiserver, kube-controller-manager, kube-scheduler, etcd, kubelet, kube-proxy 都存在著自己的鑰匙與憑證。 具體來說，每個部件都有著: ca.crt ***.crt ***.key 用於部件之間互相傳遞的加密與驗證。 沒意外的" />
+<meta property="og:description" content="K8S 中各部件通訊時如何保障安全 kube-apiserver, kube-controller-manager, kube-scheduler, etcd, kubelet, kube-proxy 都存在著自己的鑰匙與憑證。 具體來說，每個部件都有著對應的憑證與Key: # 預設管理員 admin.crt admin.key # KUBE-SCHEDULER scheduler.crt scheduler.key # KUBE-CONTROLLER-MANAGER controllermanager.crt" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-37/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2024-02-06T15:40:44+08:00" />
 <meta property="article:modified_time" content="2024-02-06T15:40:44+08:00" />
 
 <meta itemprop="name" content="K8S基本操作-37-K8S原生憑證簽署方式">
-<meta itemprop="description" content="K8S 中各部件通訊時如何保障安全 kube-apiserver, kube-controller-manager, kube-scheduler, etcd, kubelet, kube-proxy 都存在著自己的鑰匙與憑證。 具體來說，每個部件都有著: ca.crt ***.crt ***.key 用於部件之間互相傳遞的加密與驗證。 沒意外的"><meta itemprop="datePublished" content="2024-02-06T15:40:44+08:00" />
+<meta itemprop="description" content="K8S 中各部件通訊時如何保障安全 kube-apiserver, kube-controller-manager, kube-scheduler, etcd, kubelet, kube-proxy 都存在著自己的鑰匙與憑證。 具體來說，每個部件都有著對應的憑證與Key: # 預設管理員 admin.crt admin.key # KUBE-SCHEDULER scheduler.crt scheduler.key # KUBE-CONTROLLER-MANAGER controllermanager.crt"><meta itemprop="datePublished" content="2024-02-06T15:40:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-06T15:40:44+08:00" />
-<meta itemprop="wordCount" content="533">
+<meta itemprop="wordCount" content="579">
 <meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="K8S基本操作-37-K8S原生憑證簽署方式"/>
-<meta name="twitter:description" content="K8S 中各部件通訊時如何保障安全 kube-apiserver, kube-controller-manager, kube-scheduler, etcd, kubelet, kube-proxy 都存在著自己的鑰匙與憑證。 具體來說，每個部件都有著: ca.crt ***.crt ***.key 用於部件之間互相傳遞的加密與驗證。 沒意外的"/>
+<meta name="twitter:description" content="K8S 中各部件通訊時如何保障安全 kube-apiserver, kube-controller-manager, kube-scheduler, etcd, kubelet, kube-proxy 都存在著自己的鑰匙與憑證。 具體來說，每個部件都有著對應的憑證與Key: # 預設管理員 admin.crt admin.key # KUBE-SCHEDULER scheduler.crt scheduler.key # KUBE-CONTROLLER-MANAGER controllermanager.crt"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
 
@@ -235,10 +235,38 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="k8s-中各部件通訊時如何保障安全">K8S 中各部件通訊時如何保障安全</h1>
 <p>kube-apiserver, kube-controller-manager, kube-scheduler, etcd, kubelet, kube-proxy 都存在著自己的鑰匙與憑證。</p>
-<p>具體來說，每個部件都有著:</p>
-<pre tabindex="0"><code>ca.crt
-***.crt
-***.key
+<p>具體來說，每個部件都有著對應的憑證與Key:</p>
+<pre tabindex="0"><code># 預設管理員
+admin.crt 
+admin.key
+
+# KUBE-SCHEDULER
+scheduler.crt
+scheduler.key
+
+# KUBE-CONTROLLER-MANAGER
+controllermanager.crt
+controllermanager.key
+
+# KUBE-PROXY
+kube-proxy.crt
+kube-proxy.key
+
+# KUBE-API SERVER
+apiserver-kubeletclient.crt
+apiserver-kubeletclient.key
+
+# KUBE-API SERVER
+apiserver-etcdclient.crt
+apiserver-etcdclient.key
+
+# ETCD SERVER
+etcdserver.crt 
+etcdserver.key
+
+# KUBELET SERVER
+kubelet.crt
+kubelet.key
 </code></pre><p>用於部件之間互相傳遞的加密與驗證。</p>
 <p>沒意外的話，如果 Key 不外洩，在 K8S Cluster 網路中，是相對安全的環境。</p>
 <h1 id="k8s-中哪個-pod-負責簽署憑證">K8S 中哪個 Pod 負責簽署憑證</h1>
@@ -256,79 +284,79 @@
 <p>Akshay 想建立自己的Key，然後生成 K8S 憑證，需要進行以下步驟:</p>
 <h3 id="1生成鑰匙">1.生成鑰匙</h3>
 <p>生個鑰匙 akshay.key:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl genrsa -out akshay.key <span style="color:#ae81ff">2048</span>
-</code></pre></div><h3 id="2生成憑證請求">2.生成憑證請求</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl genrsa -out akshay.key <span style="color:#ae81ff">2048</span>
+</span></span></code></pre></div><h3 id="2生成憑證請求">2.生成憑證請求</h3>
 <p>用鑰匙生成憑證請求:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl req -new -key akshay.key -subj <span style="color:#e6db74">&#34;/CN=jane&#34;</span> -out akshay.csr
-</code></pre></div><p>這個憑證請求用以下指令轉成 Base64 字串:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat akshay.csr | base64 -w <span style="color:#ae81ff">0</span>
-</code></pre></div><p>輸出:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl req -new -key akshay.key -subj <span style="color:#e6db74">&#34;/CN=jane&#34;</span> -out akshay.csr
+</span></span></code></pre></div><p>這個憑證請求用以下指令轉成 Base64 字串:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat akshay.csr | base64 -w <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>輸出:</p>
 <pre tabindex="0"><code>LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSBSRVFVRVNULS0tLS0KTUlJQ1ZqQ0NBVDRDQVFBd0VURVBNQTBHQTFVRUF3d0dZV3R6YUdGNU1JSUJJakFOQmdrcWhraUc5dzBCQVFFRgpBQU9DQVE4QU1JSUJDZ0tDQVFFQXR0MVBjL3NPYnczaUVNTUhRaWYzOG1xTjhwZTRJSTEyaUlCRWxQZXM5SzFrCkdjZGtOd3A3Vit5TnhSRklTRHhhY2JNbGdnQXVrSUNsbmxEQTVvNzNKMWJENlZXTTg0WDJ0bmlXaHp3dVNmNGoKQlFWYVRFRlNPSy81WnIxemlHMElKY3dwKzZ1OHpCS3NsVkpqNHl0NW1mb0dQcXBGaFEyN2UrT1JFV2FGM0J0UwpOSEZRL0hsNU1YOENkeWVRVnU3WWVMWGQ4cTVQRnFPajRRY0lIZ0RRd2crbHpkYTk3NStjS2dtTWpUeVVrSDFjCnp5elBNUVgyNzFqUVE1RlhxNXpqZERpeDA0RGplRnpVMjR0ZDNjWEFXOWNWTDhkalBTOTFJMVQyaWl0V3RWNlgKUXVoZUtybFVnRnRUbUtOTmd5NWhmTmE4MU8vVzVLeEFleFdjTlBndEdRSURBUUFCb0FBd0RRWUpLb1pJaHZjTgpBUUVMQlFBRGdnRUJBRDgvQ29UY0MrU1FhOG1TSmJ1ZlZsYXl3akRmNkMvVTZ4RkxiM0V6bDBnNzZBUEpWaytlCnpCb29ONys1ZCtNYmZ6SGk5YS8ycktuL2lGRGpGN0Q4Z0R0NFRWNlF5Z0NhbjcrTWN5MVNML1VxWFpZOFRHQUwKeVNZbVdqUzhFTmU3WHU5Skk0NU5RdkZiSXVLZ3RXZmJuaGF2c0c5bXZEQTlXUzh6SjR2dlpvY0lsNWh1YkJscApmTm5VZWJySERDS2pZNDZLOCtWOTVlT2dvSGxyOXE0V09yNW9IRFhhWWg1S1JXS0txbDBBeTdMZFp5bFYxQit5Cjl1RjdvRkU4aDV0cXV3L0JNSk05Z1ZRbk5TSkQ1TDB4Z3M1blVtQU1QSUlKQmE3dytpRTVPbnpiZ3FiZFlPMzUKTzRrQUs3MmVUYlQxYkRWNi9TTDduemVqdkcvTEQwYU50a289Ci0tLS0tRU5EIENFUlRJRklDQVRFIFJFUVVFU1QtLS0tLQo=
 </code></pre><p>然後將字串貼入申請用的 YAML 中:</p>
 <p><em>akshay-csr.yaml</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
-<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">certificates.k8s.io/v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">CertificateSigningRequest</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">akshay</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">groups</span>:
-  - <span style="color:#ae81ff">system:authenticated</span>
-  <span style="color:#f92672">request</span>: <span style="color:#ae81ff">LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSBSRVFVRVNULS0tLS0KTUlJQ1ZqQ0NBVDR&gt;</span>
-  <span style="color:#f92672">signerName</span>: <span style="color:#ae81ff">kubernetes.io/kube-apiserver-client</span>
-  <span style="color:#f92672">usages</span>:
-  - <span style="color:#ae81ff">client auth</span>
-</code></pre></div><h3 id="3傳送給有-admin-帳戶的人員然後啟用簽署請求">3.傳送給有 Admin 帳戶的人員然後啟用簽署請求</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">certificates.k8s.io/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">CertificateSigningRequest</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">akshay</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">groups</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">system:authenticated</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">request</span>: <span style="color:#ae81ff">LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSBSRVFVRVNULS0tLS0KTUlJQ1ZqQ0NBVDR&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">signerName</span>: <span style="color:#ae81ff">kubernetes.io/kube-apiserver-client</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">usages</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">client auth</span>
+</span></span></code></pre></div><h3 id="3傳送給有-admin-帳戶的人員然後啟用簽署請求">3.傳送給有 Admin 帳戶的人員然後啟用簽署請求</h3>
 <p>Admin 用戶收到後，用以下指令進行簽署請求:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f akshay-csr.yaml
-</code></pre></div><p>檢查簽署請求:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get csr
-</code></pre></div><p>輸出:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl apply -f akshay-csr.yaml
+</span></span></code></pre></div><p>檢查簽署請求:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get csr
+</span></span></code></pre></div><p>輸出:</p>
 <pre tabindex="0"><code>NAME        AGE     SIGNERNAME                                    REQUESTOR                  REQUESTEDDURATION   CONDITION
 akshay      3m12s   kubernetes.io/kube-apiserver-client           kubernetes-admin           &lt;none&gt;              Pending
 </code></pre><p>簽署:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl certificate approve akshay
-</code></pre></div><p>如果要拒絕則使用以下指令:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl certificate deny &lt;CSR名稱&gt;
-kubectl delete csr &lt;CSR名稱&gt;
-</code></pre></div><h3 id="4導出簽署好的-certification">4.導出簽署好的 Certification</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get csr akshay -o yaml &gt; akshay-crt.yaml
-</code></pre></div><p>檔案如下:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">certificates.k8s.io/v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">CertificateSigningRequest</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">annotations</span>:
-    <span style="color:#f92672">kubectl.kubernetes.io/last-applied-configuration</span>: |<span style="color:#e6db74">
-</span><span style="color:#e6db74">      </span>      {<span style="color:#e6db74">&#34;apiVersion&#34;</span>:<span style="color:#e6db74">&#34;certificates.k8s.io/v1&#34;</span>,<span style="color:#e6db74">&#34;kind&#34;</span>:<span style="color:#e6db74">&#34;CertificateSigningRequest&#34;</span>,<span style="color:#e6db74">&#34;metadata&#34;</span>:{<span style="color:#e6db74">&#34;annotations&#34;</span>:{},<span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;akshay&#34;</span>},<span style="color:#e6db74">&#34;spec&#34;</span>:{<span style="color:#e6db74">&#34;groups&#34;</span>:[<span style="color:#e6db74">&#34;system:authenticated&#34;</span>],<span style="color:#e6db74">&#34;request&#34;</span>:<span style="color:#e6db74">&#34;LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSBSRVFVRVNULS0tLS0KTUlJQ1ZqQ0NBVDRDQVFBd0VURVBNQTBHQTFVRUF3d0dZV3R6YUdGNU1JSUJJakFOQmdrcWhraUc5dzBCQVFFRgpBQU9DQVE4QU1JSUJDZ0tDQVFFQXR0MVBjL3NPYnczaUVNTUhRaWYzOG1xTjhwZTRJSTEyaUlCRWxQZXM5SzFrCkdjZGtOd3A3Vit5TnhSRklTRHhhY2JNbGdnQXVrSUNsbmxEQTVvNzNKMWJENlZXTTg0WDJ0bmlXaHp3dVNmNGoKQlFWYVRFRlNPSy81WnIxemlHMElKY3dwKzZ1OHpCS3NsVkpqNHl0NW1mb0dQcXBGaFEyN2UrT1JFV2FGM0J0UwpOSEZRL0hsNU1YOENkeWVRVnU3WWVMWGQ4cTVQRnFPajRRY0lIZ0RRd2crbHpkYTk3NStjS2dtTWpUeVVrSDFjCnp5elBNUVgyNzFqUVE1RlhxNXpqZERpeDA0RGplRnpVMjR0ZDNjWEFXOWNWTDhkalBTOTFJMVQyaWl0V3RWNlgKUXVoZUtybFVnRnRUbUtOTmd5NWhmTmE4MU8vVzVLeEFleFdjTlBndEdRSURBUUFCb0FBd0RRWUpLb1pJaHZjTgpBUUVMQlFBRGdnRUJBRDgvQ29UY0MrU1FhOG1TSmJ1ZlZsYXl3akRmNkMvVTZ4RkxiM0V6bDBnNzZBUEpWaytlCnpCb29ONys1ZCtNYmZ6SGk5YS8ycktuL2lGRGpGN0Q4Z0R0NFRWNlF5Z0NhbjcrTWN5MVNML1VxWFpZOFRHQUwKeVNZbVdqUzhFTmU3WHU5Skk0NU5RdkZiSXVLZ3RXZmJuaGF2c0c5bXZEQTlXUzh6SjR2dlpvY0lsNWh1YkJscApmTm5VZWJySERDS2pZNDZLOCtWOTVlT2dvSGxyOXE0V09yNW9IRFhhWWg1S1JXS0txbDBBeTdMZFp5bFYxQit5Cjl1RjdvRkU4aDV0cXV3L0JNSk05Z1ZRbk5TSkQ1TDB4Z3M1blVtQU1QSUlKQmE3dytpRTVPbnpiZ3FiZFlPMzUKTzRrQUs3MmVUYlQxYkRWNi9TTDduemVqdkcvTEQwYU50a289Ci0tLS0tRU5EIENFUlRJRklDQVRFIFJFUVVFU1QtLS0tLQo=&#34;</span>,<span style="color:#e6db74">&#34;signerName&#34;</span>:<span style="color:#e6db74">&#34;kubernetes.io/kube-apiserver-client&#34;</span>,<span style="color:#e6db74">&#34;usages&#34;</span>:[<span style="color:#e6db74">&#34;client auth&#34;</span>]}}
-  <span style="color:#f92672">creationTimestamp</span>: <span style="color:#e6db74">&#34;2024-02-06T08:00:33Z&#34;</span>
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">akshay</span>
-  <span style="color:#f92672">resourceVersion</span>: <span style="color:#e6db74">&#34;1660&#34;</span>
-  <span style="color:#f92672">uid</span>: <span style="color:#ae81ff">c26911df-e6da-43b8-a4b4-ef63bdf80289</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">groups</span>:
-  - <span style="color:#ae81ff">system:masters</span>
-  - <span style="color:#ae81ff">system:authenticated</span>
-  <span style="color:#f92672">request</span>: <span style="color:#ae81ff">LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSBSRVFVRVNULS0tLS0KTUlJQ1ZqQ0NBVDRDQVFBd0VURVBNQTBHQTFVRUF3d0dZV3R6YUdGNU1JSUJJakFOQmdrcWhraUc5dzBCQVFFRgpBQU9DQVE4QU1JSUJDZ0tDQVFFQXR0MVBjL3NPYnczaUVNTUhRaWYzOG1xTjhwZTRJSTEyaUlCRWxQZXM5SzFrCkdjZGtOd3A3Vit5TnhSRklTRHhhY2JNbGdnQXVrSUNsbmxEQTVvNzNKMWJENlZXTTg0WDJ0bmlXaHp3dVNmNGoKQlFWYVRFRlNPSy81WnIxemlHMElKY3dwKzZ1OHpCS3NsVkpqNHl0NW1mb0dQcXBGaFEyN2UrT1JFV2FGM0J0UwpOSEZRL0hsNU1YOENkeWVRVnU3WWVMWGQ4cTVQRnFPajRRY0lIZ0RRd2crbHpkYTk3NStjS2dtTWpUeVVrSDFjCnp5elBNUVgyNzFqUVE1RlhxNXpqZERpeDA0RGplRnpVMjR0ZDNjWEFXOWNWTDhkalBTOTFJMVQyaWl0V3RWNlgKUXVoZUtybFVnRnRUbUtOTmd5NWhmTmE4MU8vVzVLeEFleFdjTlBndEdRSURBUUFCb0FBd0RRWUpLb1pJaHZjTgpBUUVMQlFBRGdnRUJBRDgvQ29UY0MrU1FhOG1TSmJ1ZlZsYXl3akRmNkMvVTZ4RkxiM0V6bDBnNzZBUEpWaytlCnpCb29ONys1ZCtNYmZ6SGk5YS8ycktuL2lGRGpGN0Q4Z0R0NFRWNlF5Z0NhbjcrTWN5MVNML1VxWFpZOFRHQUwKeVNZbVdqUzhFTmU3WHU5Skk0NU5RdkZiSXVLZ3RXZmJuaGF2c0c5bXZEQTlXUzh6SjR2dlpvY0lsNWh1YkJscApmTm5VZWJySERDS2pZNDZLOCtWOTVlT2dvSGxyOXE0V09yNW9IRFhhWWg1S1JXS0txbDBBeTdMZFp5bFYxQit5Cjl1RjdvRkU4aDV0cXV3L0JNSk05Z1ZRbk5TSkQ1TDB4Z3M1blVtQU1QSUlKQmE3dytpRTVPbnpiZ3FiZFlPMzUKTzRrQUs3MmVUYlQxYkRWNi9TTDduemVqdkcvTEQwYU50a289Ci0tLS0tRU5EIENFUlRJRklDQVRFIFJFUVVFU1QtLS0tLQo=</span>
-  <span style="color:#f92672">signerName</span>: <span style="color:#ae81ff">kubernetes.io/kube-apiserver-client</span>
-  <span style="color:#f92672">usages</span>:
-  - <span style="color:#ae81ff">client auth</span>
-  <span style="color:#f92672">username</span>: <span style="color:#ae81ff">kubernetes-admin</span>
-<span style="color:#f92672">status</span>:
-  <span style="color:#f92672">certificate</span>: <span style="color:#ae81ff">LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM5ekNDQWQrZ0F3SUJBZ0lSQUtHUHF5aCtQL1lqbmtESTEvR1hzZjB3RFFZSktvWklodmNOQVFFTEJRQXcKRlRFVE1CRUdBMVVFQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TkRBeU1EWXdPREF4TWpCYUZ3MHlOVEF5TURVdwpPREF4TWpCYU1CRXhEekFOQmdOVkJBTVRCbUZyYzJoaGVUQ0NBU0l3RFFZSktvWklodmNOQVFFQkJRQURnZ0VQCkFEQ0NBUW9DZ2dFQkFMYmRUM1A3RG04TjRoRERCMEluOS9KcWpmS1h1Q0NOZG9pQVJKVDNyUFN0WkJuSFpEY0sKZTFmc2pjVVJTRWc4V25HekpZSUFMcENBcFo1UXdPYU85eWRXdytsVmpQT0Y5clo0bG9jOExrbitJd1VGV2t4QgpVaml2K1dhOWM0aHRDQ1hNS2Z1cnZNd1NySlZTWStNcmVabjZCajZxUllVTnUzdmprUkZtaGR3YlVqUnhVUHg1CmVURi9BbmNua0ZidTJIaTEzZkt1VHhham8rRUhDQjRBME1JUHBjM1d2ZStmbkNvSmpJMDhsSkI5WE04c3p6RUYKOXU5WTBFT1JWNnVjNDNRNHNkT0E0M2hjMU51TFhkM0Z3RnZYRlMvSFl6MHZkU05VOW9vclZyVmVsMExvWGlxNQpWSUJiVTVpalRZTXVZWHpXdk5UdjF1U3NRSHNWbkRUNExSa0NBd0VBQWFOR01FUXdFd1lEVlIwbEJBd3dDZ1lJCkt3WUJCUVVIQXdJd0RBWURWUjBUQVFIL0JBSXdBREFmQmdOVkhTTUVHREFXZ0JRcTUrRUV3ZHFOOEhYd0RZVUMKUmpmWmk0VzZuekFOQmdrcWhraUc5dzBCQVFzRkFBT0NBUUVBU1NJNFFacllqU3c2aG0ybVZPSXp6NG1yako2OAplZ01qdjBJSVpPTmU5RzNtZlQwRWlzazVrZGVRcGhSMDl6cmFKamZPSkgrT1RTOWlHaWRnZ1gyTjNLanYycXFhCjhDNnJYWUEyVVVJRk9jZHEydmNWNTJGOEV6Z3RqUFdwU2J0bnNLc05WMzFGVUVPNzY3dThpRmdISGJCVHlHdDYKZ1poaHU0T3psTCt4Z3M4NXE0L0Zra0o2UXVoVExtRnk1S1hTUnNZSW9TeWlpN0R4NnpiMjR4OC9vVTdGdGRXMQpNMTZyYTFiYzI3RjRRaXhSbmtuc256c2EzbVRaNHE3RjRRMDhYN0VRelJLSkxZNlhUSnNvVW95L0RSWnNyakszCnF3c3F1WVlSNUNyaVpaSjZFM2ZaNlJGQ3NnREtVVEpqdlJmRHpHSTlnZE5kR1RNand4azR6bitzVHc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==</span>
-  <span style="color:#f92672">conditions</span>:
-  - <span style="color:#f92672">lastTransitionTime</span>: <span style="color:#e6db74">&#34;2024-02-06T08:06:20Z&#34;</span>
-    <span style="color:#f92672">lastUpdateTime</span>: <span style="color:#e6db74">&#34;2024-02-06T08:06:20Z&#34;</span>
-    <span style="color:#f92672">message</span>: <span style="color:#ae81ff">This CSR was approved by kubectl certificate approve.</span>
-    <span style="color:#f92672">reason</span>: <span style="color:#ae81ff">KubectlApprove</span>
-    <span style="color:#f92672">status</span>: <span style="color:#e6db74">&#34;True&#34;</span>
-    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">Approved</span>
-</code></pre></div><p>用以下指令把其中 certificate 這段 Base64 decode 導出成 akshay.crt:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> kubectl get csr akshay -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.status.certificate}&#39;</span>| base64 -d &gt; akshay.crt
-</code></pre></div><p>把 akshay.crt 寄回去給 Akshay 即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl certificate approve akshay
+</span></span></code></pre></div><p>如果要拒絕則使用以下指令:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl certificate deny &lt;CSR名稱&gt;
+</span></span><span style="display:flex;"><span>kubectl delete csr &lt;CSR名稱&gt;
+</span></span></code></pre></div><h3 id="4導出簽署好的-certification">4.導出簽署好的 Certification</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get csr akshay -o yaml &gt; akshay-crt.yaml
+</span></span></code></pre></div><p>檔案如下:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">certificates.k8s.io/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">CertificateSigningRequest</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">annotations</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">kubectl.kubernetes.io/last-applied-configuration</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      {&#34;apiVersion&#34;:&#34;certificates.k8s.io/v1&#34;,&#34;kind&#34;:&#34;CertificateSigningRequest&#34;,&#34;metadata&#34;:{&#34;annotations&#34;:{},&#34;name&#34;:&#34;akshay&#34;},&#34;spec&#34;:{&#34;groups&#34;:[&#34;system:authenticated&#34;],&#34;request&#34;:&#34;LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSBSRVFVRVNULS0tLS0KTUlJQ1ZqQ0NBVDRDQVFBd0VURVBNQTBHQTFVRUF3d0dZV3R6YUdGNU1JSUJJakFOQmdrcWhraUc5dzBCQVFFRgpBQU9DQVE4QU1JSUJDZ0tDQVFFQXR0MVBjL3NPYnczaUVNTUhRaWYzOG1xTjhwZTRJSTEyaUlCRWxQZXM5SzFrCkdjZGtOd3A3Vit5TnhSRklTRHhhY2JNbGdnQXVrSUNsbmxEQTVvNzNKMWJENlZXTTg0WDJ0bmlXaHp3dVNmNGoKQlFWYVRFRlNPSy81WnIxemlHMElKY3dwKzZ1OHpCS3NsVkpqNHl0NW1mb0dQcXBGaFEyN2UrT1JFV2FGM0J0UwpOSEZRL0hsNU1YOENkeWVRVnU3WWVMWGQ4cTVQRnFPajRRY0lIZ0RRd2crbHpkYTk3NStjS2dtTWpUeVVrSDFjCnp5elBNUVgyNzFqUVE1RlhxNXpqZERpeDA0RGplRnpVMjR0ZDNjWEFXOWNWTDhkalBTOTFJMVQyaWl0V3RWNlgKUXVoZUtybFVnRnRUbUtOTmd5NWhmTmE4MU8vVzVLeEFleFdjTlBndEdRSURBUUFCb0FBd0RRWUpLb1pJaHZjTgpBUUVMQlFBRGdnRUJBRDgvQ29UY0MrU1FhOG1TSmJ1ZlZsYXl3akRmNkMvVTZ4RkxiM0V6bDBnNzZBUEpWaytlCnpCb29ONys1ZCtNYmZ6SGk5YS8ycktuL2lGRGpGN0Q4Z0R0NFRWNlF5Z0NhbjcrTWN5MVNML1VxWFpZOFRHQUwKeVNZbVdqUzhFTmU3WHU5Skk0NU5RdkZiSXVLZ3RXZmJuaGF2c0c5bXZEQTlXUzh6SjR2dlpvY0lsNWh1YkJscApmTm5VZWJySERDS2pZNDZLOCtWOTVlT2dvSGxyOXE0V09yNW9IRFhhWWg1S1JXS0txbDBBeTdMZFp5bFYxQit5Cjl1RjdvRkU4aDV0cXV3L0JNSk05Z1ZRbk5TSkQ1TDB4Z3M1blVtQU1QSUlKQmE3dytpRTVPbnpiZ3FiZFlPMzUKTzRrQUs3MmVUYlQxYkRWNi9TTDduemVqdkcvTEQwYU50a289Ci0tLS0tRU5EIENFUlRJRklDQVRFIFJFUVVFU1QtLS0tLQo=&#34;,&#34;signerName&#34;:&#34;kubernetes.io/kube-apiserver-client&#34;,&#34;usages&#34;:[&#34;client auth&#34;]}}</span>      
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">creationTimestamp</span>: <span style="color:#e6db74">&#34;2024-02-06T08:00:33Z&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">akshay</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">resourceVersion</span>: <span style="color:#e6db74">&#34;1660&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">uid</span>: <span style="color:#ae81ff">c26911df-e6da-43b8-a4b4-ef63bdf80289</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">groups</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">system:masters</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">system:authenticated</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">request</span>: <span style="color:#ae81ff">LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSBSRVFVRVNULS0tLS0KTUlJQ1ZqQ0NBVDRDQVFBd0VURVBNQTBHQTFVRUF3d0dZV3R6YUdGNU1JSUJJakFOQmdrcWhraUc5dzBCQVFFRgpBQU9DQVE4QU1JSUJDZ0tDQVFFQXR0MVBjL3NPYnczaUVNTUhRaWYzOG1xTjhwZTRJSTEyaUlCRWxQZXM5SzFrCkdjZGtOd3A3Vit5TnhSRklTRHhhY2JNbGdnQXVrSUNsbmxEQTVvNzNKMWJENlZXTTg0WDJ0bmlXaHp3dVNmNGoKQlFWYVRFRlNPSy81WnIxemlHMElKY3dwKzZ1OHpCS3NsVkpqNHl0NW1mb0dQcXBGaFEyN2UrT1JFV2FGM0J0UwpOSEZRL0hsNU1YOENkeWVRVnU3WWVMWGQ4cTVQRnFPajRRY0lIZ0RRd2crbHpkYTk3NStjS2dtTWpUeVVrSDFjCnp5elBNUVgyNzFqUVE1RlhxNXpqZERpeDA0RGplRnpVMjR0ZDNjWEFXOWNWTDhkalBTOTFJMVQyaWl0V3RWNlgKUXVoZUtybFVnRnRUbUtOTmd5NWhmTmE4MU8vVzVLeEFleFdjTlBndEdRSURBUUFCb0FBd0RRWUpLb1pJaHZjTgpBUUVMQlFBRGdnRUJBRDgvQ29UY0MrU1FhOG1TSmJ1ZlZsYXl3akRmNkMvVTZ4RkxiM0V6bDBnNzZBUEpWaytlCnpCb29ONys1ZCtNYmZ6SGk5YS8ycktuL2lGRGpGN0Q4Z0R0NFRWNlF5Z0NhbjcrTWN5MVNML1VxWFpZOFRHQUwKeVNZbVdqUzhFTmU3WHU5Skk0NU5RdkZiSXVLZ3RXZmJuaGF2c0c5bXZEQTlXUzh6SjR2dlpvY0lsNWh1YkJscApmTm5VZWJySERDS2pZNDZLOCtWOTVlT2dvSGxyOXE0V09yNW9IRFhhWWg1S1JXS0txbDBBeTdMZFp5bFYxQit5Cjl1RjdvRkU4aDV0cXV3L0JNSk05Z1ZRbk5TSkQ1TDB4Z3M1blVtQU1QSUlKQmE3dytpRTVPbnpiZ3FiZFlPMzUKTzRrQUs3MmVUYlQxYkRWNi9TTDduemVqdkcvTEQwYU50a289Ci0tLS0tRU5EIENFUlRJRklDQVRFIFJFUVVFU1QtLS0tLQo=</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">signerName</span>: <span style="color:#ae81ff">kubernetes.io/kube-apiserver-client</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">usages</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">client auth</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">username</span>: <span style="color:#ae81ff">kubernetes-admin</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">status</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">certificate</span>: <span style="color:#ae81ff">LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM5ekNDQWQrZ0F3SUJBZ0lSQUtHUHF5aCtQL1lqbmtESTEvR1hzZjB3RFFZSktvWklodmNOQVFFTEJRQXcKRlRFVE1CRUdBMVVFQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TkRBeU1EWXdPREF4TWpCYUZ3MHlOVEF5TURVdwpPREF4TWpCYU1CRXhEekFOQmdOVkJBTVRCbUZyYzJoaGVUQ0NBU0l3RFFZSktvWklodmNOQVFFQkJRQURnZ0VQCkFEQ0NBUW9DZ2dFQkFMYmRUM1A3RG04TjRoRERCMEluOS9KcWpmS1h1Q0NOZG9pQVJKVDNyUFN0WkJuSFpEY0sKZTFmc2pjVVJTRWc4V25HekpZSUFMcENBcFo1UXdPYU85eWRXdytsVmpQT0Y5clo0bG9jOExrbitJd1VGV2t4QgpVaml2K1dhOWM0aHRDQ1hNS2Z1cnZNd1NySlZTWStNcmVabjZCajZxUllVTnUzdmprUkZtaGR3YlVqUnhVUHg1CmVURi9BbmNua0ZidTJIaTEzZkt1VHhham8rRUhDQjRBME1JUHBjM1d2ZStmbkNvSmpJMDhsSkI5WE04c3p6RUYKOXU5WTBFT1JWNnVjNDNRNHNkT0E0M2hjMU51TFhkM0Z3RnZYRlMvSFl6MHZkU05VOW9vclZyVmVsMExvWGlxNQpWSUJiVTVpalRZTXVZWHpXdk5UdjF1U3NRSHNWbkRUNExSa0NBd0VBQWFOR01FUXdFd1lEVlIwbEJBd3dDZ1lJCkt3WUJCUVVIQXdJd0RBWURWUjBUQVFIL0JBSXdBREFmQmdOVkhTTUVHREFXZ0JRcTUrRUV3ZHFOOEhYd0RZVUMKUmpmWmk0VzZuekFOQmdrcWhraUc5dzBCQVFzRkFBT0NBUUVBU1NJNFFacllqU3c2aG0ybVZPSXp6NG1yako2OAplZ01qdjBJSVpPTmU5RzNtZlQwRWlzazVrZGVRcGhSMDl6cmFKamZPSkgrT1RTOWlHaWRnZ1gyTjNLanYycXFhCjhDNnJYWUEyVVVJRk9jZHEydmNWNTJGOEV6Z3RqUFdwU2J0bnNLc05WMzFGVUVPNzY3dThpRmdISGJCVHlHdDYKZ1poaHU0T3psTCt4Z3M4NXE0L0Zra0o2UXVoVExtRnk1S1hTUnNZSW9TeWlpN0R4NnpiMjR4OC9vVTdGdGRXMQpNMTZyYTFiYzI3RjRRaXhSbmtuc256c2EzbVRaNHE3RjRRMDhYN0VRelJLSkxZNlhUSnNvVW95L0RSWnNyakszCnF3c3F1WVlSNUNyaVpaSjZFM2ZaNlJGQ3NnREtVVEpqdlJmRHpHSTlnZE5kR1RNand4azR6bitzVHc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">conditions</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">lastTransitionTime</span>: <span style="color:#e6db74">&#34;2024-02-06T08:06:20Z&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">lastUpdateTime</span>: <span style="color:#e6db74">&#34;2024-02-06T08:06:20Z&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">message</span>: <span style="color:#ae81ff">This CSR was approved by kubectl certificate approve.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">reason</span>: <span style="color:#ae81ff">KubectlApprove</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">status</span>: <span style="color:#e6db74">&#34;True&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">Approved</span>
+</span></span></code></pre></div><p>用以下指令把其中 certificate 這段 Base64 decode 導出成 akshay.crt:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> kubectl get csr akshay -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.status.certificate}&#39;</span>| base64 -d &gt; akshay.crt
+</span></span></code></pre></div><p>把 akshay.crt 寄回去給 Akshay 即可。</p>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

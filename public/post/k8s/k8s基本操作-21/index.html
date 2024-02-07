@@ -7,7 +7,7 @@
     <title>K8S基本操作-21-K8S的YAML的環境變數與Config Map | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="環境變數 我們可以採用以下方式設置環境變數: apiVersion: v1 kind: Pod metadata: labels: name: webapp-color name: webapp-color namespace: default spec: containers: - env: - name: APP_COLOR value: pink image: kodekloud/webapp-color imagePullPolicy: Always name: webapp-color 其中的這一段就是了: - env: - name: APP_COLOR value: pink Config Map 以下是">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -235,69 +235,69 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="環境變數">環境變數</h1>
 <p>我們可以採用以下方式設置環境變數:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">labels</span>:
-    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">webapp-color</span>
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">webapp-color</span>
-  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">containers</span>:
-  - <span style="color:#f92672">env</span>:
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">APP_COLOR</span>
-      <span style="color:#f92672">value</span>: <span style="color:#ae81ff">pink</span>
-    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">kodekloud/webapp-color</span>
-    <span style="color:#f92672">imagePullPolicy</span>: <span style="color:#ae81ff">Always</span>
-    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">webapp-color</span>
-</code></pre></div><p>其中的這一段就是了:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  - <span style="color:#f92672">env</span>:
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">APP_COLOR</span>
-      <span style="color:#f92672">value</span>: <span style="color:#ae81ff">pink</span>
-</code></pre></div><h1 id="config-map">Config Map</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">webapp-color</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">webapp-color</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">APP_COLOR</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">value</span>: <span style="color:#ae81ff">pink</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">kodekloud/webapp-color</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">imagePullPolicy</span>: <span style="color:#ae81ff">Always</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">webapp-color</span>
+</span></span></code></pre></div><p>其中的這一段就是了:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  - <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">APP_COLOR</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">value</span>: <span style="color:#ae81ff">pink</span>
+</span></span></code></pre></div><h1 id="config-map">Config Map</h1>
 <p>以下是個資料庫的 Config Map 的設計</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">db-config</span>
-<span style="color:#f92672">data</span>:
-  <span style="color:#f92672">DB_HOST</span>: <span style="color:#ae81ff">SQL01.example.com</span>
-  <span style="color:#f92672">DB_NAME</span>: <span style="color:#ae81ff">SQL01</span>
-  <span style="color:#f92672">DB_PORT</span>: <span style="color:#e6db74">&#34;3306&#34;</span>
-</code></pre></div><p>可以用於存取資料庫的連線資訊。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">db-config</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">data</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">DB_HOST</span>: <span style="color:#ae81ff">SQL01.example.com</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">DB_NAME</span>: <span style="color:#ae81ff">SQL01</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">DB_PORT</span>: <span style="color:#e6db74">&#34;3306&#34;</span>
+</span></span></code></pre></div><p>可以用於存取資料庫的連線資訊。</p>
 <h1 id="環境變數源自於config-map">環境變數源自於Config map</h1>
 <p>可以參考以下方式把環境變數設置為 Config map。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">webapp-config-map</span>
-<span style="color:#f92672">data</span>:
-  <span style="color:#f92672">APP_COLOR</span>: <span style="color:#ae81ff">darkblue</span>
-  <span style="color:#f92672">APP_OTHER</span>: <span style="color:#ae81ff">disregard</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
-<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">labels</span>:
-    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">webapp-color</span>
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">webapp-color</span>
-  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">containers</span>:
-  - <span style="color:#f92672">env</span>:
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">APP_COLOR</span>
-      <span style="color:#f92672">valueFrom</span>:
-        <span style="color:#f92672">configMapKeyRef</span>:
-         <span style="color:#f92672">name</span>: <span style="color:#ae81ff">webapp-config-map</span>
-         <span style="color:#f92672">key</span>: <span style="color:#ae81ff">APP_COLOR</span>
-    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">kodekloud/webapp-color</span>
-    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">webapp-color</span>
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">webapp-config-map</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">data</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">APP_COLOR</span>: <span style="color:#ae81ff">darkblue</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">APP_OTHER</span>: <span style="color:#ae81ff">disregard</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">webapp-color</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">webapp-color</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">APP_COLOR</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">valueFrom</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">configMapKeyRef</span>:
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">name</span>: <span style="color:#ae81ff">webapp-config-map</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">key</span>: <span style="color:#ae81ff">APP_COLOR</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">kodekloud/webapp-color</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">webapp-color</span>
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

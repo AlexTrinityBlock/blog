@@ -7,7 +7,7 @@
     <title>關於OpenSSL憑證-建立自簽CA憑證與憑證登入授權要素 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="關於 CA Certificate Authority，也就是 SSL 數位憑證的簽發機構。CA 負責對申請 SSL 憑證的網站進行身份驗證，並為其簽發一個包含公開金鑰和其他資訊的數位憑">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -239,20 +239,20 @@
 <p>既然在 SSL 中我們需要一個 CA ，我們這就來製作一個 CA 憑證。</p>
 <h3 id="1-憑證金鑰">1. 憑證金鑰</h3>
 <p>首先要有個鑰匙，雖然 ECDSA 也可以，但我們就來個經典 2048 bit 的 RSA 好了:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl genrsa -out ca.key <span style="color:#ae81ff">2048</span>
-</code></pre></div><p>我們目前有:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl genrsa -out ca.key <span style="color:#ae81ff">2048</span>
+</span></span></code></pre></div><p>我們目前有:</p>
 <pre tabindex="0"><code>ca.key: 鑰匙檔案
 </code></pre><h3 id="2-憑證簽署要求certificate-signing-request">2. 憑證簽署要求（Certificate Signing Request）</h3>
 <p>我們接著要生成一個憑證簽署要求（Certificate Signing Request）的CSR檔案，副檔名為 .csr ，在這個階段需要填入 CN (CN 是 Common Name) 平常使用網址，在此處我們用於 K8S ，就稱他為 KUBERNETES-CA 好了。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl req -new -key ca.key -subj <span style="color:#e6db74">&#34;/CN=KUBERNETES-CA&#34;</span> -out ca.csr
-</code></pre></div><p>我們目前有:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl req -new -key ca.key -subj <span style="color:#e6db74">&#34;/CN=KUBERNETES-CA&#34;</span> -out ca.csr
+</span></span></code></pre></div><p>我們目前有:</p>
 <pre tabindex="0"><code>ca.key: 鑰匙檔案
 ca.csr: 憑證簽署要求檔案
 </code></pre><h3 id="3-憑證檔案">3. 憑證檔案</h3>
 <p>接著我們就來生成憑證 (Certificate) 了，一般情況我們是將 .csr 檔案交給 CA 簽署。但既然我們自己要升成一個 CA 憑證，我們自己就是自己的 CA。</p>
 <p>也就是用自己的鑰匙 ca.key ，簽署自己的憑證請求 ca.csr。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl x509 -req -in ca.csr -signkey ca.key -out ca.crt
-</code></pre></div><p>我們目前有:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl x509 -req -in ca.csr -signkey ca.key -out ca.crt
+</span></span></code></pre></div><p>我們目前有:</p>
 <pre tabindex="0"><code>ca.key: 鑰匙檔案
 ca.csr: 憑證簽署要求檔案
 ca.crt: 憑證檔案
@@ -260,32 +260,32 @@ ca.crt: 憑證檔案
 <p>既然我們有了自己的 CA 憑證，就可以用 CA 憑證簽發各種其他憑證了。</p>
 <p>例如我們用 CA 憑證簽發 K8S 的 Admin 憑證:</p>
 <p>生成鑰匙:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl genrsa -out admin.key <span style="color:#ae81ff">2048</span>
-</code></pre></div><p>發出憑證簽署要求，下面 CN 名稱是 kube-admin，OU 是 Organization Unit 的縮寫為 system:masters:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl req -new -key admin.key -subj <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#34;/CN=kube-admin/OU=system:masters&#34;</span> -out admin.csr
-</code></pre></div><p>接著產生憑證，注意此處需要有 CA 憑證與 CA 鑰匙，安全的考慮這個步驟應該發生在 CA 主機上:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl x509 -req -in admin.csr –CA ca.crt -CAkey ca.key -out admin.crt
-</code></pre></div><p>如果要採用這類型的憑證與鑰匙，使用 CURL 發出某個 HTTPS 請求，需要下方 3 要素:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl genrsa -out admin.key <span style="color:#ae81ff">2048</span>
+</span></span></code></pre></div><p>發出憑證簽署要求，下面 CN 名稱是 kube-admin，OU 是 Organization Unit 的縮寫為 system:masters:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl req -new -key admin.key -subj <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#34;/CN=kube-admin/OU=system:masters&#34;</span> -out admin.csr
+</span></span></code></pre></div><p>接著產生憑證，注意此處需要有 CA 憑證與 CA 鑰匙，安全的考慮這個步驟應該發生在 CA 主機上:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl x509 -req -in admin.csr –CA ca.crt -CAkey ca.key -out admin.crt
+</span></span></code></pre></div><p>如果要採用這類型的憑證與鑰匙，使用 CURL 發出某個 HTTPS 請求，需要下方 3 要素:</p>
 <pre tabindex="0"><code>ca.crt: CA 憑證
 admin.crt: 管理員憑證
 admin.key: 管理員鑰匙
 </code></pre><p>具體指令如下:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl https://網址 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--key admin.key --cert admin.crt <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--cacert ca.crt
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl https://網址 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--key admin.key --cert admin.crt <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--cacert ca.crt
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/secure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">secure</a>
+     <a href="/tags/secure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">secure</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/ssl" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">SSL</a>
+     <a href="/tags/ssl" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">SSL</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/openssl" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">OpenSSL</a>
+     <a href="/tags/openssl" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">OpenSSL</a>
    </li>
   
 </ul>

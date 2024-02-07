@@ -6,42 +6,35 @@
     <description>Recent content in math on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Wed, 09 Mar 2022 14:30:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Mar 2022 14:30:44 +0800</lastBuildDate>
+    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/math/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mermaid畫出流程圖</title>
       <link>https://alextrinityblock.github.io/blog/public/post/math/mermaid%E7%95%AB%E5%87%BA%E6%B5%81%E7%A8%8B%E5%9C%96/</link>
       <pubDate>Wed, 09 Mar 2022 14:30:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/math/mermaid%E7%95%AB%E5%87%BA%E6%B5%81%E7%A8%8B%E5%9C%96/</guid>
-      <description>我們可以用Mermaid這個Javascript函數庫來繪製出流程圖。 graph TD A(程式開始) -- B{A1 and B=0} B --|True| D(Y=A) B --|False| E{A=2 or x1} D -- E{A=2 or x1} E{A=2 or x1} -- |False| G(程式</description>
+      <description>我們可以用Mermaid這個Javascript函數庫來繪製出流程圖。 graph TD A(程式開始) --&gt; B{A&gt;1 and B=0} B --&gt;|True| D(Y=A) B --&gt;|False| E{A=2 or x&gt;1} D --&gt; E{A=2 or x&gt;1} E{A=2 or x&gt;1} --&gt; |False| G(程式</description>
     </item>
-    
     <item>
       <title>LaTex畫出矩陣</title>
       <link>https://alextrinityblock.github.io/blog/public/post/math/latex%E7%95%AB%E5%87%BA%E7%9F%A9%E9%99%A3/</link>
       <pubDate>Thu, 03 Mar 2022 14:43:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/math/latex%E7%95%AB%E5%87%BA%E7%9F%A9%E9%99%A3/</guid>
       <description>繪製出普通的矩陣 \documentclass{article} \usepackage{amsmath} \begin{document} $\begin{bmatrix} a &amp;amp; b &amp;amp; d\\ c &amp;amp; d &amp;amp; d \end{bmatrix}$ \end{document} $\begin{bmatrix} a &amp; b &amp; d\\ c &amp; d &amp; d \end{bmatrix}$ 繪製出有線的矩陣 \documentclass{article} \usepackage{amsmath} \begin{document} $\begin{bmatrix} \begin{array}{cc|c} a &amp;amp; b &amp;amp; d\\ c &amp;amp; d &amp;amp; d \end{array} \end{bmatrix}$ \end{document} $\begin{bmatrix} \begin{array}{cc|c} a &amp; b &amp; d\\ c</description>
     </item>
-    
     <item>
       <title>單向函數</title>
       <link>https://alextrinityblock.github.io/blog/public/post/math/%E5%96%AE%E5%90%91%E5%87%BD%E6%95%B8/</link>
       <pubDate>Fri, 20 Aug 2021 14:43:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/math/%E5%96%AE%E5%90%91%E5%87%BD%E6%95%B8/</guid>
       <description>1.簡介 簡單來說，用某個函數將x算成y很容易。 \[ y=f(x) \] 但是反過來的話，將y算回x則十分困難。也就是說，y算回x需要大量的時間，甚至有時候只能將</description>
     </item>
-    
     <item>
       <title>數學符號</title>
       <link>https://alextrinityblock.github.io/blog/public/post/math/%E6%95%B8%E5%AD%B8%E7%AC%A6%E8%99%9F/</link>
       <pubDate>Fri, 20 Aug 2021 14:43:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/math/%E6%95%B8%E5%AD%B8%E7%AC%A6%E8%99%9F/</guid>
       <description>1.連續乘法符號 該符號代表連續成法，是pi的大寫版本。 \[ \prod_{i=1}^{4} {i} = 1\times2\times3\times4=24 \] &amp;lt;script src=&amp;#34;https://polyfill.io/v3/polyfill.min.js?features=es6&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script id=&amp;#34;MathJax-script&amp;#34; async src=&amp;#34;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;p&amp;gt; \[ \prod_{i=1}^{4} {i} = 1\times2\times3\times4 \] &amp;lt;/p&amp;gt;</description>
     </item>
-    
   </channel>
 </rss>

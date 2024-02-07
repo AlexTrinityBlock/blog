@@ -7,7 +7,7 @@
     <title>中斷無線網路的方法 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="警告：此方法只能用於自己的無線網路裝置，目的應該是了解無線網路運作，絕對不能造成他人的困擾或損失，我們應該秉持所有人類都是同胞的心態。就算你">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -240,15 +240,15 @@
 Ubuntu/Debian/Linux mint</p>
 <h2 id="1下載無線網路工具aircrack">1.下載無線網路工具aircrack</h2>
 <p>更新軟體庫</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
-</code></pre></div><p>安裝aircrack-ng軟體</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install aircrack-ng
-</code></pre></div><h2 id="2檢查wifi網路卡名稱">2.檢查wifi網路卡名稱</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span></code></pre></div><p>安裝aircrack-ng軟體</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install aircrack-ng
+</span></span></code></pre></div><h2 id="2檢查wifi網路卡名稱">2.檢查wifi網路卡名稱</h2>
 <p>找到自己的wifi網路卡名稱</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iwconfig
-</code></pre></div><p>以我的筆電來說無線網卡的開頭名稱常常是wl<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>iwconfig
+</span></span></code></pre></div><p>以我的筆電來說無線網卡的開頭名稱常常是wl<br>
 就像這樣(為了安全這裡的數值都更改過，非原數值)</p>
-<pre tabindex="0"><code>wlp3s0    IEEE 802.11  ESSID:&quot;alex&quot;  
+<pre tabindex="0"><code>wlp3s0    IEEE 802.11  ESSID:&#34;alex&#34;  
           Mode:Managed  Frequency:2.462 GHz  Access Point: FF:FF:FF:FF:FF:FF   
           Bit Rate=72.2 Mb/s   Tx-Power=15 dBm   
           Retry short limit:7   RTS thr:off   Fragment thr:off
@@ -256,7 +256,6 @@ Ubuntu/Debian/Linux mint</p>
           Link Quality=52/70  Signal level=-58 dBm  
           Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
           Tx excessive retries:0  Invalid misc:19   Missed beacon:0
-
 </code></pre><p>我的網卡名稱是wlp3s0</p>
 <h2 id="3監聽模式">3.監聽模式</h2>
 <p>把網卡切換成監聽模式</p>
@@ -318,19 +317,19 @@ Peter的電腦網卡MAC位置是CC:CC:CC:CC:CC:CC</p>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/secure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">secure</a>
+     <a href="/tags/secure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">secure</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/aircrack" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">aircrack</a>
+     <a href="/tags/aircrack" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">aircrack</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/%E8%B3%87%E5%AE%89" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">資安</a>
+     <a href="/tags/%E8%B3%87%E5%AE%89" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">資安</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/wifi" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">wifi</a>
+     <a href="/tags/wifi" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">wifi</a>
    </li>
   
 </ul>

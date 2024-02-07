@@ -7,7 +7,7 @@
     <title>K8S基本操作-31-如何檢查Cluster採用的ETCD的IP or URL ? | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="如何檢查Cluster採用的ETCD的IP or URL ? 由於 Kube-API server，記錄著這類的訊息，所以可以調出 Pod 訊息查看 ETCD 的位置。 kubectl -n kube-system describe pod &lt;Kube-API Server 的 Pod 名稱">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.120.3">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -235,52 +235,52 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="如何檢查cluster採用的etcd的ip-or-url-">如何檢查Cluster採用的ETCD的IP or URL ?</h1>
 <p>由於 Kube-API server，記錄著這類的訊息，所以可以調出 Pod 訊息查看 ETCD 的位置。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n kube-system describe pod &lt;Kube-API Server 的 Pod 名稱&gt;
-</code></pre></div><p>結果類似下方:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Name</span>:                 <span style="color:#ae81ff">kube-apiserver-cluster2-controlplane</span>
-<span style="color:#f92672">Namespace</span>:            <span style="color:#ae81ff">kube-system</span>
-<span style="color:#f92672">Priority</span>:             <span style="color:#ae81ff">2000001000</span>
-<span style="color:#f92672">Priority Class Name</span>:  <span style="color:#ae81ff">system-node-critical</span>
-<span style="color:#f92672">Node</span>:                 <span style="color:#ae81ff">cluster2-controlplane/10.1.127.3</span>
-<span style="color:#f92672">Start Time</span>:           <span style="color:#ae81ff">Wed, 31 Aug 2022 05:03:45 +0000</span>
-<span style="color:#f92672">Labels</span>:               <span style="color:#ae81ff">component=kube-apiserver</span>
-                      <span style="color:#ae81ff">tier=control-plane</span>
-<span style="color:#f92672">Annotations:          kubeadm.kubernetes.io/kube-apiserver.advertise-address.endpoint</span>: <span style="color:#ae81ff">10.1.127.3</span>:<span style="color:#ae81ff">6443</span>
-                      <span style="color:#f92672">kubernetes.io/config.hash</span>: <span style="color:#ae81ff">9bd4c04b38b27661e9e7f8b0fc1237b8</span>
-                      <span style="color:#f92672">kubernetes.io/config.mirror</span>: <span style="color:#ae81ff">9bd4c04b38b27661e9e7f8b0fc1237b8</span>
-                      <span style="color:#f92672">kubernetes.io/config.seen</span>: <span style="color:#e6db74">2022-08-31T05:03:28.843162256Z</span>
-                      <span style="color:#f92672">kubernetes.io/config.source</span>: <span style="color:#ae81ff">file</span>
-                      <span style="color:#f92672">seccomp.security.alpha.kubernetes.io/pod</span>: <span style="color:#ae81ff">runtime/default</span>
-<span style="color:#f92672">Status</span>:               <span style="color:#ae81ff">Running</span>
-<span style="color:#f92672">IP</span>:                   <span style="color:#ae81ff">10.1.127.3</span>
-<span style="color:#f92672">IPs</span>:
-  <span style="color:#f92672">IP</span>:           <span style="color:#ae81ff">10.1.127.3</span>
-<span style="color:#f92672">Controlled By</span>:  <span style="color:#ae81ff">Node/cluster2-controlplane</span>
-<span style="color:#f92672">Containers</span>:
-  <span style="color:#f92672">kube-apiserver</span>:
-    <span style="color:#f92672">Container ID</span>:  <span style="color:#ae81ff">containerd://cc64f3649222f24d3fd2eb7d5f0f17db5fca76eb72dc4c17295fb4842c045f1b</span>
-    <span style="color:#f92672">Image</span>:         <span style="color:#ae81ff">k8s.gcr.io/kube-apiserver:v1.24.0</span>
-    <span style="color:#f92672">Image ID</span>:      <span style="color:#ae81ff">k8s.gcr.io/kube-apiserver@sha256:a04522b882e919de6141b47d72393fb01226c78e7388400f966198222558c955</span>
-    <span style="color:#f92672">Port</span>:          <span style="color:#ae81ff">&lt;none&gt;</span>
-    <span style="color:#f92672">Host Port</span>:     <span style="color:#ae81ff">&lt;none&gt;</span>
-    <span style="color:#f92672">Command</span>:
-      <span style="color:#ae81ff">kube-apiserver</span>
-      --<span style="color:#ae81ff">advertise-address=10.1.127.3</span>
-      --<span style="color:#ae81ff">allow-privileged=true</span>
-      --<span style="color:#ae81ff">authorization-mode=Node,RBAC</span>
-      --<span style="color:#ae81ff">client-ca-file=/etc/kubernetes/pki/ca.crt</span>
-      --<span style="color:#ae81ff">enable-admission-plugins=NodeRestriction</span>
-      --<span style="color:#ae81ff">enable-bootstrap-token-auth=true</span>
-      --<span style="color:#ae81ff">etcd-cafile=/etc/kubernetes/pki/etcd/ca.pem</span>
-      --<span style="color:#ae81ff">etcd-certfile=/etc/kubernetes/pki/etcd/etcd.pem</span>
-      --<span style="color:#ae81ff">etcd-keyfile=/etc/kubernetes/pki/etcd/etcd-key.pem</span>
-      --<span style="color:#ae81ff">etcd-servers=https://10.1.127.10:2379</span>
-</code></pre></div><p>上述我們可以看到，ETCD server 位在 <code>10.1.127.10:2379</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl -n kube-system describe pod &lt;Kube-API Server 的 Pod 名稱&gt;
+</span></span></code></pre></div><p>結果類似下方:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Name</span>:                 <span style="color:#ae81ff">kube-apiserver-cluster2-controlplane</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Namespace</span>:            <span style="color:#ae81ff">kube-system</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Priority</span>:             <span style="color:#ae81ff">2000001000</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Priority Class Name</span>:  <span style="color:#ae81ff">system-node-critical</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Node</span>:                 <span style="color:#ae81ff">cluster2-controlplane/10.1.127.3</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Start Time</span>:           <span style="color:#ae81ff">Wed, 31 Aug 2022 05:03:45 +0000</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Labels</span>:               <span style="color:#ae81ff">component=kube-apiserver</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#ae81ff">tier=control-plane</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Annotations:          kubeadm.kubernetes.io/kube-apiserver.advertise-address.endpoint</span>: <span style="color:#ae81ff">10.1.127.3</span>:<span style="color:#ae81ff">6443</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#f92672">kubernetes.io/config.hash</span>: <span style="color:#ae81ff">9bd4c04b38b27661e9e7f8b0fc1237b8</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#f92672">kubernetes.io/config.mirror</span>: <span style="color:#ae81ff">9bd4c04b38b27661e9e7f8b0fc1237b8</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#f92672">kubernetes.io/config.seen</span>: <span style="color:#e6db74">2022-08-31T05:03:28.843162256Z</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#f92672">kubernetes.io/config.source</span>: <span style="color:#ae81ff">file</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#f92672">seccomp.security.alpha.kubernetes.io/pod</span>: <span style="color:#ae81ff">runtime/default</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Status</span>:               <span style="color:#ae81ff">Running</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">IP</span>:                   <span style="color:#ae81ff">10.1.127.3</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">IPs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">IP</span>:           <span style="color:#ae81ff">10.1.127.3</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Controlled By</span>:  <span style="color:#ae81ff">Node/cluster2-controlplane</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Containers</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">kube-apiserver</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Container ID</span>:  <span style="color:#ae81ff">containerd://cc64f3649222f24d3fd2eb7d5f0f17db5fca76eb72dc4c17295fb4842c045f1b</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Image</span>:         <span style="color:#ae81ff">k8s.gcr.io/kube-apiserver:v1.24.0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Image ID</span>:      <span style="color:#ae81ff">k8s.gcr.io/kube-apiserver@sha256:a04522b882e919de6141b47d72393fb01226c78e7388400f966198222558c955</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Port</span>:          <span style="color:#ae81ff">&lt;none&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Host Port</span>:     <span style="color:#ae81ff">&lt;none&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Command</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#ae81ff">kube-apiserver</span>
+</span></span><span style="display:flex;"><span>      --<span style="color:#ae81ff">advertise-address=10.1.127.3</span>
+</span></span><span style="display:flex;"><span>      --<span style="color:#ae81ff">allow-privileged=true</span>
+</span></span><span style="display:flex;"><span>      --<span style="color:#ae81ff">authorization-mode=Node,RBAC</span>
+</span></span><span style="display:flex;"><span>      --<span style="color:#ae81ff">client-ca-file=/etc/kubernetes/pki/ca.crt</span>
+</span></span><span style="display:flex;"><span>      --<span style="color:#ae81ff">enable-admission-plugins=NodeRestriction</span>
+</span></span><span style="display:flex;"><span>      --<span style="color:#ae81ff">enable-bootstrap-token-auth=true</span>
+</span></span><span style="display:flex;"><span>      --<span style="color:#ae81ff">etcd-cafile=/etc/kubernetes/pki/etcd/ca.pem</span>
+</span></span><span style="display:flex;"><span>      --<span style="color:#ae81ff">etcd-certfile=/etc/kubernetes/pki/etcd/etcd.pem</span>
+</span></span><span style="display:flex;"><span>      --<span style="color:#ae81ff">etcd-keyfile=/etc/kubernetes/pki/etcd/etcd-key.pem</span>
+</span></span><span style="display:flex;"><span>      --<span style="color:#ae81ff">etcd-servers=https://10.1.127.10:2379</span>
+</span></span></code></pre></div><p>上述我們可以看到，ETCD server 位在 <code>10.1.127.10:2379</code>:</p>
 <pre tabindex="0"><code>      --etcd-servers=https://10.1.127.10:2379
 </code></pre><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>
