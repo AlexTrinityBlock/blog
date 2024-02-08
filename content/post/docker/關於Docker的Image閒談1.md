@@ -84,3 +84,6 @@ Docker 的 Copy-on-write 特性主要體現在容器和鏡像的分層結構上�
 * RexRay
 * Portworx
 * VMware vSphere Storage
+* AWS EBS
+
+如果直接把 Volume Mount 到雲端供應商的 Driver，就可以實現 Volume 到遠端了。
