@@ -6,7 +6,16 @@
     <description>Recent content in linux on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Tue, 06 Feb 2024 12:01:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Feb 2024 22:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux網路基本指令1</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/linux/linux%E7%B6%B2%E8%B7%AF%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A41/</link>
+      <pubDate>Thu, 08 Feb 2024 22:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/linux/linux%E7%B6%B2%E8%B7%AF%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A41/</guid>
+      <description>ip 類網路指令 以下指令僅在重新啟動前生效，如果要長期保存，需要根據各 Linux 發行版不同實踐調整設定檔案。 # 列出介面 ip link # 查詢個別網卡的資訊 ip addr show eth0 ip</description>
+    </item>
+    
     <item>
       <title>linux查看Journalctl的log</title>
       <link>https://alextrinityblock.github.io/blog/public/post/linux/linux%E6%9F%A5%E7%9C%8B/</link>
