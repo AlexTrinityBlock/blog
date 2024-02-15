@@ -211,6 +211,38 @@
           
         
         <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+          <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-47/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/k8s.png" class="img" alt="image from K8S基本操作-47-K8S 多節點分次更新">
+          </a>
+        </div>
+      
+      <div class="blah w-100 w-60-ns pl3-ns">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-47/" class="color-inherit dim link">
+            K8S基本操作-47-K8S 多節點分次更新
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          節點列表 假定我們有以下兩節點: controlplane node01 更新 Control Plane 主節點 假定我們要更新的目標版本是 1.27.0 ，如果要更新別的版本請手動修改以下版本 排空 controlplane 節點: kubectl drain controlplane --ignore-daemonsets 然後執
+        </div>
+          <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-47/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+        </div>
+        
+        <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+          
+        
+        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
           <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux%E7%B6%B2%E8%B7%AF%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A41/" class="db grow">
             <img src="https://alextrinityblock.github.io/blog/public/debian1.jpeg" class="img" alt="image from Linux網路基本指令1">
           </a>
@@ -1130,44 +1162,18 @@
 
         </div>
         
-        <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-          
-        
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-22/" class="db grow">
-            <img src="https://alextrinityblock.github.io/blog/public/k8s.png" class="img" alt="image from K8S基本操作-22-K8S的Secret">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-22/" class="color-inherit dim link">
-            K8S基本操作-22-K8S的Secret
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          命令建立 Secret 直接採用指令來輸入 Secret 的方法: kubectl create secret generic db-secret --from-literal=DB_Host=sql01 --from-literal=DB_User=root --from-literal=DB_Password=password123 YAML 儲存 Secret 將 Secret 轉換成 YAML 編輯: kubectl create secret generic db-secret --from-literal=DB_Host=sql01 --from-literal=DB_User=root --from-literal=DB_Password=password123 --dry-run=client -o yaml &gt; db-secret.yaml 可以看到 Base64 編碼後的 Secret (防止一眼被人
-        </div>
-          <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-22/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-        </div>
-        
     </section>
 
     
     <section class="w-100">
         <h1 class="f3">更多</h1>
          
+        <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-22/" class="link black dim">
+              K8S基本操作-22-K8S的Secret
+            </a>
+        </h2>
+        
         <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-21/" class="link black dim">
               K8S基本操作-21-K8S的YAML的環境變數與Config Map
@@ -1183,12 +1189,6 @@
         <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-19/" class="link black dim">
               K8S基本操作-19-K8S的 Rolling Update與 Recreate 
-            </a>
-        </h2>
-        
-        <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-18/" class="link black dim">
-              K8S基本操作-18-K8S讀取Log
             </a>
         </h2>
           
