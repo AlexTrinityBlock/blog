@@ -43,7 +43,7 @@
 <meta itemprop="name" content="K8S基本操作-48-K8S與容器網路介面（Container Network Interface）">
 <meta itemprop="description" content="Container Network Interface 容器網路介面 K8S 的 CNI 是指容器網路介面（Container Network Interface），它是一個標準的 API，用於讓 K8S 與不同的網路插件溝通，實現"><meta itemprop="datePublished" content="2024-02-15T13:00:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-15T13:00:44+08:00" />
-<meta itemprop="wordCount" content="792">
+<meta itemprop="wordCount" content="806">
 <meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="K8S基本操作-48-K8S與容器網路介面（Container Network Interface）"/>
 <meta name="twitter:description" content="Container Network Interface 容器網路介面 K8S 的 CNI 是指容器網路介面（Container Network Interface），它是一個標準的 API，用於讓 K8S 與不同的網路插件溝通，實現"/>
@@ -257,7 +257,9 @@
 <pre tabindex="0"><code>/opt/cni/bin/net-script.sh add &lt;容器ID&gt; &lt;命名空間&gt;
 </code></pre><h1 id="k8s-如何連接-cni-的">K8S 如何連接 CNI 的?</h1>
 <p>採用 Kubelete 部件進行連接，也就是說 Kubelete 啟動參數中會有 CNI 的腳本與配置檔案路徑。</p>
-<ul class="pa0">
+<p>可以透過以下指令查詢:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ps aux|grep /usr/bin/kubelet
+</code></pre></div><ul class="pa0">
   
    <li class="list">
      <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>

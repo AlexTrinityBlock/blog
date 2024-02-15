@@ -6,7 +6,7 @@
     
     <title>K8S基本操作-49-K8S內部的DNS與Port | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="K8S 各種服務使用的 Port ETCD: 2379,2380 port Kube-API: 6443 port Kubelete: 10250 port Kube-scheduler: 10259 port Kube-controller-manager: 10257 port 各種 Service 的內部 IP: 30000 - 32767 port">
+    <meta name="description" content="K8S 各種服務使用的 Port ETCD: 2379,2380 port Kube-API: 6443 port Kubelete: 10250 port Kube-scheduler: 10259 port Kube-controller-manager: 10257 port 各種 Service 的內部 IP: 30000 - 32767 port K8S Service 中的 DNS 如果有個 Service 如下: Service Name: web-service Namespace: default 這樣就能用以下三個 URL 來存取 Service: # 同 Namespace">
     <meta name="generator" content="Hugo 0.92.2" />
     
     
@@ -34,19 +34,19 @@
     
     
     <meta property="og:title" content="K8S基本操作-49-K8S內部的DNS與Port" />
-<meta property="og:description" content="K8S 各種服務使用的 Port ETCD: 2379,2380 port Kube-API: 6443 port Kubelete: 10250 port Kube-scheduler: 10259 port Kube-controller-manager: 10257 port 各種 Service 的內部 IP: 30000 - 32767 port" />
+<meta property="og:description" content="K8S 各種服務使用的 Port ETCD: 2379,2380 port Kube-API: 6443 port Kubelete: 10250 port Kube-scheduler: 10259 port Kube-controller-manager: 10257 port 各種 Service 的內部 IP: 30000 - 32767 port K8S Service 中的 DNS 如果有個 Service 如下: Service Name: web-service Namespace: default 這樣就能用以下三個 URL 來存取 Service: # 同 Namespace" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-49/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2024-02-15T15:00:44+08:00" />
 <meta property="article:modified_time" content="2024-02-15T15:00:44+08:00" />
 
 <meta itemprop="name" content="K8S基本操作-49-K8S內部的DNS與Port">
-<meta itemprop="description" content="K8S 各種服務使用的 Port ETCD: 2379,2380 port Kube-API: 6443 port Kubelete: 10250 port Kube-scheduler: 10259 port Kube-controller-manager: 10257 port 各種 Service 的內部 IP: 30000 - 32767 port"><meta itemprop="datePublished" content="2024-02-15T15:00:44+08:00" />
+<meta itemprop="description" content="K8S 各種服務使用的 Port ETCD: 2379,2380 port Kube-API: 6443 port Kubelete: 10250 port Kube-scheduler: 10259 port Kube-controller-manager: 10257 port 各種 Service 的內部 IP: 30000 - 32767 port K8S Service 中的 DNS 如果有個 Service 如下: Service Name: web-service Namespace: default 這樣就能用以下三個 URL 來存取 Service: # 同 Namespace"><meta itemprop="datePublished" content="2024-02-15T15:00:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-15T15:00:44+08:00" />
-<meta itemprop="wordCount" content="35">
+<meta itemprop="wordCount" content="110">
 <meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="K8S基本操作-49-K8S內部的DNS與Port"/>
-<meta name="twitter:description" content="K8S 各種服務使用的 Port ETCD: 2379,2380 port Kube-API: 6443 port Kubelete: 10250 port Kube-scheduler: 10259 port Kube-controller-manager: 10257 port 各種 Service 的內部 IP: 30000 - 32767 port"/>
+<meta name="twitter:description" content="K8S 各種服務使用的 Port ETCD: 2379,2380 port Kube-API: 6443 port Kubelete: 10250 port Kube-scheduler: 10259 port Kube-controller-manager: 10257 port 各種 Service 的內部 IP: 30000 - 32767 port K8S Service 中的 DNS 如果有個 Service 如下: Service Name: web-service Namespace: default 這樣就能用以下三個 URL 來存取 Service: # 同 Namespace"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
 
@@ -242,8 +242,23 @@
 <li>Kube-controller-manager: 10257 port</li>
 <li>各種 Service 的內部 IP: 30000 - 32767 port</li>
 </ul>
-<h1 id="heading"></h1>
-<ul class="pa0">
+<h1 id="k8s-service-中的-dns">K8S Service 中的 DNS</h1>
+<p>如果有個 Service 如下:</p>
+<ul>
+<li>Service Name: web-service</li>
+<li>Namespace: default</li>
+</ul>
+<p>這樣就能用以下三個 URL 來存取 Service:</p>
+<pre tabindex="0"><code># 同 Namespace 時
+web-service
+
+# 不同 Namespace 時 (此處 svc 是 service 的縮寫)
+web-service.default
+web-service.default.svc
+web-service.default.svc.cluster.local
+</code></pre><p>如果某個 Pod IP 是 10.0.0.1 能用以下URL 來存取 Pod:</p>
+<pre tabindex="0"><code>10-0-0-1.default.pod.cluster.local
+</code></pre><ul class="pa0">
   
    <li class="list">
      <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
