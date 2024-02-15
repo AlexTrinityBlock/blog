@@ -6,7 +6,16 @@
     <description>Recent content in K8S on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Thu, 15 Feb 2024 13:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Feb 2024 15:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8S基本操作-49-K8S內部的DNS與Port</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-49/</link>
+      <pubDate>Thu, 15 Feb 2024 15:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-49/</guid>
+      <description>K8S 各種服務使用的 Port ETCD: 2379,2380 port Kube-API: 6443 port Kubelete: 10250 port Kube-scheduler: 10259 port Kube-controller-manager: 10257 port 各種 Service 的內部 IP: 30000 - 32767 port</description>
+    </item>
+    
     <item>
       <title>K8S基本操作-48-K8S與容器網路介面（Container Network Interface）</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-48/</link>
