@@ -292,7 +292,7 @@
       <pubDate>Fri, 02 Feb 2024 11:01:44 +0800</pubDate>
       
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-23/</guid>
-      <description>命令建立 Secret 假定我們的 Pod 稱為 app 。 例如，以下的的指令用來直接看 Pod 中的 Log (當然，這不是好方法，但在一切裝置好之前，也許會用上): kubectl exec -it app cat /log/app.log 或者用</description>
+      <description>Exec 執行 Pod 中的指令 假定我們的 Pod 稱為 app 。 例如，以下的的指令用來直接看 Pod 中的 Log (當然，這不是好方法，但在一切裝置好之前，也許會用上): kubectl exec -it app cat /log/app.log</description>
     </item>
     
     <item>

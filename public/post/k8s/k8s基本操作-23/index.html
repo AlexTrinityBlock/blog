@@ -6,7 +6,7 @@
     
     <title>K8S基本操作-23-Exec 執行 Pod 中的指令 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="命令建立 Secret 假定我們的 Pod 稱為 app 。 例如，以下的的指令用來直接看 Pod 中的 Log (當然，這不是好方法，但在一切裝置好之前，也許會用上): kubectl exec -it app cat /log/app.log 或者用">
+    <meta name="description" content="Exec 執行 Pod 中的指令 假定我們的 Pod 稱為 app 。 例如，以下的的指令用來直接看 Pod 中的 Log (當然，這不是好方法，但在一切裝置好之前，也許會用上): kubectl exec -it app cat /log/app.log">
     <meta name="generator" content="Hugo 0.92.2" />
     
     
@@ -34,19 +34,19 @@
     
     
     <meta property="og:title" content="K8S基本操作-23-Exec 執行 Pod 中的指令" />
-<meta property="og:description" content="命令建立 Secret 假定我們的 Pod 稱為 app 。 例如，以下的的指令用來直接看 Pod 中的 Log (當然，這不是好方法，但在一切裝置好之前，也許會用上): kubectl exec -it app cat /log/app.log 或者用" />
+<meta property="og:description" content="Exec 執行 Pod 中的指令 假定我們的 Pod 稱為 app 。 例如，以下的的指令用來直接看 Pod 中的 Log (當然，這不是好方法，但在一切裝置好之前，也許會用上): kubectl exec -it app cat /log/app.log" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-23/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2024-02-02T11:01:44+08:00" />
 <meta property="article:modified_time" content="2024-02-02T11:01:44+08:00" />
 
 <meta itemprop="name" content="K8S基本操作-23-Exec 執行 Pod 中的指令">
-<meta itemprop="description" content="命令建立 Secret 假定我們的 Pod 稱為 app 。 例如，以下的的指令用來直接看 Pod 中的 Log (當然，這不是好方法，但在一切裝置好之前，也許會用上): kubectl exec -it app cat /log/app.log 或者用"><meta itemprop="datePublished" content="2024-02-02T11:01:44+08:00" />
+<meta itemprop="description" content="Exec 執行 Pod 中的指令 假定我們的 Pod 稱為 app 。 例如，以下的的指令用來直接看 Pod 中的 Log (當然，這不是好方法，但在一切裝置好之前，也許會用上): kubectl exec -it app cat /log/app.log"><meta itemprop="datePublished" content="2024-02-02T11:01:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-02T11:01:44+08:00" />
-<meta itemprop="wordCount" content="84">
+<meta itemprop="wordCount" content="87">
 <meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="K8S基本操作-23-Exec 執行 Pod 中的指令"/>
-<meta name="twitter:description" content="命令建立 Secret 假定我們的 Pod 稱為 app 。 例如，以下的的指令用來直接看 Pod 中的 Log (當然，這不是好方法，但在一切裝置好之前，也許會用上): kubectl exec -it app cat /log/app.log 或者用"/>
+<meta name="twitter:description" content="Exec 執行 Pod 中的指令 假定我們的 Pod 稱為 app 。 例如，以下的的指令用來直接看 Pod 中的 Log (當然，這不是好方法，但在一切裝置好之前，也許會用上): kubectl exec -it app cat /log/app.log"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
 
@@ -233,7 +233,7 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="命令建立-secret">命令建立 Secret</h1>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="exec-執行-pod-中的指令">Exec 執行 Pod 中的指令</h1>
 <p>假定我們的 Pod 稱為 app 。</p>
 <p>例如，以下的的指令用來直接看 Pod 中的 Log (當然，這不是好方法，但在一切裝置好之前，也許會用上):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl exec -it app cat /log/app.log
