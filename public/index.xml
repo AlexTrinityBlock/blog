@@ -553,7 +553,7 @@
       <pubDate>Sun, 19 Nov 2023 12:00:44 +0800</pubDate>
       
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-02/</guid>
-      <description>本篇筆記主要談論 ReplicaSet 的基本操作。 列出所有 ReplicaSet kubectl get replicasets 顯示結果類似 NAME DESIRED CURRENT READY AGE new-replica-set 4 4 0 15s 檢查 ReplicaSet 中 pod 的內容 kubectl describe replicaset 檢查 API 版本 kubectl api-resources | grep replicaset 這個 API 版本有可能是第</description>
+      <description>本篇筆記主要談論 ReplicaSet 的基本操作。 ReplicaSet 只能維持 Pod 的數量，不能實現 Pod 的版本更新。如果要更新 Pod 的映像檔或配置，需要手動刪除舊的 Pod，讓 ReplicaSet 根據模板創建</description>
     </item>
     
     <item>
