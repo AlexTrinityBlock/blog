@@ -8,6 +8,15 @@
     <language>zh-hant</language>
     <lastBuildDate>Fri, 26 Feb 2021 17:04:06 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>K8S基本操作-52-kubectl 操作備忘</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-52/</link>
+      <pubDate>Sat, 17 Feb 2024 16:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-52/</guid>
+      <description>Kubectl 自動補全 # 自動補全腳本 source &amp;lt;(kubectl completion bash) echo &amp;#34;source &amp;lt;(kubectl completion bash)&amp;#34; &amp;gt;&amp;gt; ~/.bashrc # 把 kubectl 簡化成 k alias k=kubectl complete -o default -F __start_kubectl k &amp;ndash;all-namespaces 替代 kubectl -A 建立物件 kubectl apply -f ./my-manifest.yaml # 建立資源 kubectl apply -f ./my1.yaml -f ./my2.yaml # 建立資源從多個</description>
+    </item>
+    
+    <item>
       <title>K8S基本操作-51-K8S kubectl 參數簡寫</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-51/</link>
       <pubDate>Sat, 17 Feb 2024 13:00:44 +0800</pubDate>
