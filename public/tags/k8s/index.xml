@@ -130,7 +130,7 @@
       <pubDate>Wed, 07 Feb 2024 10:50:44 +0800</pubDate>
       
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-39/</guid>
-      <description>我們先在 K8S 建立使用者 建立使用者 Peter: kubectl create user peter 或者是使用以下 YAML: apiVersion: v1 kind: User metadata: name: user K8S 的權限種類 Node 例如每個 Worker Node 都擁有一個權限身份，設置在 kubelet 用來存取 Kube API</description>
+      <description>我們是否能在 K8S 建立使用者 並非直接建立，而是採用 x509 建立使用者鑰匙後建立。 K8S 的權限種類 Node 例如每個 Worker Node 都擁有一個權限身份，設置在 kubelet 用來存取 Kube API</description>
     </item>
     
     <item>
