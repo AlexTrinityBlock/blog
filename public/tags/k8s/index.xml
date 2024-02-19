@@ -6,7 +6,16 @@
     <description>Recent content in K8S on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Sat, 17 Feb 2024 16:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Feb 2024 10:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8S基本操作-52-K8S 一些 CKA 的小筆記</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-53/</link>
+      <pubDate>Mon, 19 Feb 2024 10:00:44 +0800</pubDate>
+      
+      <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-53/</guid>
+      <description>查詢 CIDR CIDR 分配儲存在 API Server 上: cat /etc/kubernetes/manifests/kube-apiserver.yaml | grep range CNI Plugin 配置文件位置 CNI Plugin 配置文件位置在以下位置: /etc/cni/net.d/ 例如: /etc/cni/net.d/10-weave.conflist 列出所有資源名稱 如: pod, deployment, configmap。 kubectl api-resources --namespaced</description>
+    </item>
+    
     <item>
       <title>K8S基本操作-52-kubectl 操作備忘</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-52/</link>
