@@ -43,7 +43,7 @@
 <meta itemprop="name" content="K8S基本操作-52-K8S 一些 CKA 的小筆記">
 <meta itemprop="description" content="查詢 CIDR CIDR 分配儲存在 API Server 上: cat /etc/kubernetes/manifests/kube-apiserver.yaml | grep range CNI Plugin 配置文件位置 CNI Plugin 配置文件位置在以下位置: /etc/cni/net.d/ 例如: /etc/cni/net.d/10-weave.conflist 列出所有資源名稱 如: pod, deployment, configmap。 kubectl api-resources --namespaced"><meta itemprop="datePublished" content="2024-02-19T10:00:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-19T10:00:44+08:00" />
-<meta itemprop="wordCount" content="151">
+<meta itemprop="wordCount" content="180">
 <meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="K8S基本操作-52-K8S 一些 CKA 的小筆記"/>
 <meta name="twitter:description" content="查詢 CIDR CIDR 分配儲存在 API Server 上: cat /etc/kubernetes/manifests/kube-apiserver.yaml | grep range CNI Plugin 配置文件位置 CNI Plugin 配置文件位置在以下位置: /etc/cni/net.d/ 例如: /etc/cni/net.d/10-weave.conflist 列出所有資源名稱 如: pod, deployment, configmap。 kubectl api-resources --namespaced"/>
@@ -254,6 +254,9 @@
 </code></pre></div><p>修正位置後重啟:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl daemon-reload
 service kubelet restart
+</code></pre></div><h1 id="如何在配置時一口氣輸入多個指令">如何在配置時一口氣輸入多個指令?</h1>
+<p>可以採用以下方式:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sh -c <span style="color:#e6db74">&#34;sleep 3600&#34;</span>
 </code></pre></div><ul class="pa0">
   
    <li class="list">
