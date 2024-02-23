@@ -7,7 +7,7 @@
     <title>K8S基本操作-07-Ubuntu安裝K8S | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="MicroK8S Ubuntu 官方提供了一個 snap 套件可以超快的安裝 K8S ， 稱為 MicroK8S。 sudo snap install microk8s --classic --channel=1.28 sudo usermod -a -G microk8s $USER sudo chown -f -R $USER ~/.kube su - $USER 安裝後檢查狀態是否安裝完成 microk8s status --wait-ready 使">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -44,8 +44,7 @@
 <meta itemprop="description" content="MicroK8S Ubuntu 官方提供了一個 snap 套件可以超快的安裝 K8S ， 稱為 MicroK8S。 sudo snap install microk8s --classic --channel=1.28 sudo usermod -a -G microk8s $USER sudo chown -f -R $USER ~/.kube su - $USER 安裝後檢查狀態是否安裝完成 microk8s status --wait-ready 使"><meta itemprop="datePublished" content="2023-11-21T08:00:44+08:00" />
 <meta itemprop="dateModified" content="2023-11-21T08:00:44+08:00" />
 <meta itemprop="wordCount" content="1300">
-<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="K8S基本操作-07-Ubuntu安裝K8S"/>
+<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="K8S基本操作-07-Ubuntu安裝K8S"/>
 <meta name="twitter:description" content="MicroK8S Ubuntu 官方提供了一個 snap 套件可以超快的安裝 K8S ， 稱為 MicroK8S。 sudo snap install microk8s --classic --channel=1.28 sudo usermod -a -G microk8s $USER sudo chown -f -R $USER ~/.kube su - $USER 安裝後檢查狀態是否安裝完成 microk8s status --wait-ready 使"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -235,117 +234,117 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="microk8s">MicroK8S</h2>
 <p>Ubuntu 官方提供了一個 snap 套件可以超快的安裝 K8S ， 稱為 MicroK8S。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo snap install microk8s --classic --channel<span style="color:#f92672">=</span>1.28
-sudo usermod -a -G microk8s $USER
-sudo chown -f -R $USER ~/.kube
-su - $USER
-</code></pre></div><p>安裝後檢查狀態是否安裝完成</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">microk8s status --wait-ready
-</code></pre></div><p>使用 kubectl</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">microk8s kubectl get nodes
-</code></pre></div><p>啟用額外功能 (Ingress 也要在此額外安裝)，甚至有個 Container registry 存在。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">microk8s enable dns
-microk8s enable hostpath-storage
-microk8s enable ingress
-microk8s enable registry
-microk8s enable helm
-microk8s enable helm3
-microk8s enable cert-manager
-</code></pre></div><p>更多額外功能: 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo snap install microk8s --classic --channel<span style="color:#f92672">=</span>1.28
+</span></span><span style="display:flex;"><span>sudo usermod -a -G microk8s $USER
+</span></span><span style="display:flex;"><span>sudo chown -f -R $USER ~/.kube
+</span></span><span style="display:flex;"><span>su - $USER
+</span></span></code></pre></div><p>安裝後檢查狀態是否安裝完成</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>microk8s status --wait-ready
+</span></span></code></pre></div><p>使用 kubectl</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>microk8s kubectl get nodes
+</span></span></code></pre></div><p>啟用額外功能 (Ingress 也要在此額外安裝)，甚至有個 Container registry 存在。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>microk8s enable dns
+</span></span><span style="display:flex;"><span>microk8s enable hostpath-storage
+</span></span><span style="display:flex;"><span>microk8s enable ingress
+</span></span><span style="display:flex;"><span>microk8s enable registry
+</span></span><span style="display:flex;"><span>microk8s enable helm
+</span></span><span style="display:flex;"><span>microk8s enable helm3
+</span></span><span style="display:flex;"><span>microk8s enable cert-manager
+</span></span></code></pre></div><p>更多額外功能:
 <a href="https://microk8s.io/docs/addons#heading--list">https://microk8s.io/docs/addons#heading&ndash;list</a></p>
 <p>開啟與關閉</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">microk8s start
-microk8s stop
-</code></pre></div><p>參見: <a href="https://microk8s.io/docs/getting-started">https://microk8s.io/docs/getting-started</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>microk8s start
+</span></span><span style="display:flex;"><span>microk8s stop
+</span></span></code></pre></div><p>參見: <a href="https://microk8s.io/docs/getting-started">https://microk8s.io/docs/getting-started</a></p>
 <h2 id="手動安裝官方-k8s">手動安裝官方 K8S</h2>
 <ol>
 <li>啟動橋接模式</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/modules-load.d/k8s.conf
-</span><span style="color:#e6db74">br_netfilter
-</span><span style="color:#e6db74">EOF</span>
-
-cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/sysctl.d/k8s.conf
-</span><span style="color:#e6db74">net.bridge.bridge-nf-call-ip6tables = 1
-</span><span style="color:#e6db74">net.bridge.bridge-nf-call-iptables = 1
-</span><span style="color:#e6db74">EOF</span>
-
-<span style="color:#75715e"># 立即生效</span>
-sudo sysctl --system
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/modules-load.d/k8s.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">br_netfilter
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/sysctl.d/k8s.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">net.bridge.bridge-nf-call-ip6tables = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">net.bridge.bridge-nf-call-iptables = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 立即生效</span>
+</span></span><span style="display:flex;"><span>sudo sysctl --system
+</span></span></code></pre></div><ol start="2">
 <li>安裝必要套件</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 更新套件庫</span>
-sudo apt-get update
-<span style="color:#75715e"># 更新安裝 SSL 套件庫</span>
-sudo apt-get install -y apt-transport-https ca-certificates curl
-<span style="color:#75715e"># 讓APT keyring 有權限寫入</span>
-sudo mkdir -m <span style="color:#ae81ff">755</span> /etc/apt/keyrings
-<span style="color:#75715e"># 下載 keyring</span>
-curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.27/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-<span style="color:#75715e"># 將 K8S 套件庫寫入 APT 套件</span>
-echo <span style="color:#e6db74">&#39;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.27/deb/ /&#39;</span> | sudo tee /etc/apt/sources.list.d/kubernetes.list
-
-<span style="color:#75715e"># 更新套件</span>
-sudo apt-get update
-
-<span style="color:#75715e"># 檢查可安裝的 kubeadm 版本</span>
-sudo apt-cache madison kubeadm
-
-<span style="color:#75715e"># 下載對應版本的 K8S</span>
-sudo apt-get install -y kubelet<span style="color:#f92672">=</span>1.27.0-2.1 kubeadm<span style="color:#f92672">=</span>1.27.0-2.1 kubectl<span style="color:#f92672">=</span>1.27.0-2.1
-
-<span style="color:#75715e"># 防止自動更新</span>
-sudo apt-mark hold kubelet kubeadm kubectl
-</code></pre></div><p>但這個時候節點其實沒有啟動，所以仍然還暫時無法放上 Pod 。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 更新套件庫</span>
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 更新安裝 SSL 套件庫</span>
+</span></span><span style="display:flex;"><span>sudo apt-get install -y apt-transport-https ca-certificates curl
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 讓APT keyring 有權限寫入</span>
+</span></span><span style="display:flex;"><span>sudo mkdir -m <span style="color:#ae81ff">755</span> /etc/apt/keyrings
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 下載 keyring</span>
+</span></span><span style="display:flex;"><span>curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.27/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 將 K8S 套件庫寫入 APT 套件</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.27/deb/ /&#39;</span> | sudo tee /etc/apt/sources.list.d/kubernetes.list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 更新套件</span>
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 檢查可安裝的 kubeadm 版本</span>
+</span></span><span style="display:flex;"><span>sudo apt-cache madison kubeadm
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 下載對應版本的 K8S</span>
+</span></span><span style="display:flex;"><span>sudo apt-get install -y kubelet<span style="color:#f92672">=</span>1.27.0-2.1 kubeadm<span style="color:#f92672">=</span>1.27.0-2.1 kubectl<span style="color:#f92672">=</span>1.27.0-2.1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 防止自動更新</span>
+</span></span><span style="display:flex;"><span>sudo apt-mark hold kubelet kubeadm kubectl
+</span></span></code></pre></div><p>但這個時候節點其實沒有啟動，所以仍然還暫時無法放上 Pod 。</p>
 <p>接著輸入以下指令</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 將 eth0 的 IP ，放入 Bash 變數 IP_ADDR</span>
-IP_ADDR<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ip addr show eth0 | grep -oP <span style="color:#e6db74">&#39;(?&lt;=inet\s)\d+(\.\d+){3}&#39;</span><span style="color:#66d9ef">)</span>
-<span style="color:#75715e"># 然後用 kubeadm 啟動節點並且設置 無類別區隔路由（CIDR） 。</span>
-kubeadm init --apiserver-cert-extra-sans<span style="color:#f92672">=</span>controlplane --apiserver-advertise-address $IP_ADDR --pod-network-cidr<span style="color:#f92672">=</span>10.244.0.0/16
-</code></pre></div><p>接著畫面會顯示下方輸出</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 將 eth0 的 IP ，放入 Bash 變數 IP_ADDR</span>
+</span></span><span style="display:flex;"><span>IP_ADDR<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ip addr show eth0 | grep -oP <span style="color:#e6db74">&#39;(?&lt;=inet\s)\d+(\.\d+){3}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 然後用 kubeadm 啟動節點並且設置 無類別區隔路由（CIDR） 。</span>
+</span></span><span style="display:flex;"><span>kubeadm init --apiserver-cert-extra-sans<span style="color:#f92672">=</span>controlplane --apiserver-advertise-address $IP_ADDR --pod-network-cidr<span style="color:#f92672">=</span>10.244.0.0/16
+</span></span></code></pre></div><p>接著畫面會顯示下方輸出</p>
 <pre tabindex="0"><code>controlplane ~ ➜  kubeadm init --apiserver-cert-extra-sans=controlplane --apiserver-advertise-address $IP_ADDR --pod-network-cidr=10.244.0.0/16
 I1120 20:20:25.196365   19305 version.go:256] remote version is much newer: v1.28.4; falling back to: stable-1.27
 [init] Using Kubernetes version: v1.27.8
 [preflight] Running pre-flight checks
 [preflight] Pulling images required for setting up a Kubernetes cluster
 [preflight] This might take a minute or two, depending on the speed of your internet connection
-[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'
+[preflight] You can also perform this action in beforehand using &#39;kubeadm config images pull&#39;
 W1120 20:20:25.702254   19305 images.go:80] could not find officially supported version of etcd for Kubernetes v1.27.8, falling back to the nearest etcd version (3.5.7-0)
-W1120 20:20:33.820363   19305 checks.go:835] detected that the sandbox image &quot;k8s.gcr.io/pause:3.6&quot; of the container runtime is inconsistent with that used by kubeadm. It is recommended that using &quot;registry.k8s.io/pause:3.9&quot; as the CRI sandbox image.
-[certs] Using certificateDir folder &quot;/etc/kubernetes/pki&quot;
-[certs] Generating &quot;ca&quot; certificate and key
-[certs] Generating &quot;apiserver&quot; certificate and key
+W1120 20:20:33.820363   19305 checks.go:835] detected that the sandbox image &#34;k8s.gcr.io/pause:3.6&#34; of the container runtime is inconsistent with that used by kubeadm. It is recommended that using &#34;registry.k8s.io/pause:3.9&#34; as the CRI sandbox image.
+[certs] Using certificateDir folder &#34;/etc/kubernetes/pki&#34;
+[certs] Generating &#34;ca&#34; certificate and key
+[certs] Generating &#34;apiserver&#34; certificate and key
 [certs] apiserver serving cert is signed for DNS names [controlplane kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.3.52.3]
-[certs] Generating &quot;apiserver-kubelet-client&quot; certificate and key
-[certs] Generating &quot;front-proxy-ca&quot; certificate and key
-[certs] Generating &quot;front-proxy-client&quot; certificate and key
-[certs] Generating &quot;etcd/ca&quot; certificate and key
-[certs] Generating &quot;etcd/server&quot; certificate and key
+[certs] Generating &#34;apiserver-kubelet-client&#34; certificate and key
+[certs] Generating &#34;front-proxy-ca&#34; certificate and key
+[certs] Generating &#34;front-proxy-client&#34; certificate and key
+[certs] Generating &#34;etcd/ca&#34; certificate and key
+[certs] Generating &#34;etcd/server&#34; certificate and key
 [certs] etcd/server serving cert is signed for DNS names [controlplane localhost] and IPs [192.3.52.3 127.0.0.1 ::1]
-[certs] Generating &quot;etcd/peer&quot; certificate and key
+[certs] Generating &#34;etcd/peer&#34; certificate and key
 [certs] etcd/peer serving cert is signed for DNS names [controlplane localhost] and IPs [192.3.52.3 127.0.0.1 ::1]
-[certs] Generating &quot;etcd/healthcheck-client&quot; certificate and key
-[certs] Generating &quot;apiserver-etcd-client&quot; certificate and key
-[certs] Generating &quot;sa&quot; key and public key
-[kubeconfig] Using kubeconfig folder &quot;/etc/kubernetes&quot;
-[kubeconfig] Writing &quot;admin.conf&quot; kubeconfig file
-[kubeconfig] Writing &quot;kubelet.conf&quot; kubeconfig file
-[kubeconfig] Writing &quot;controller-manager.conf&quot; kubeconfig file
-[kubeconfig] Writing &quot;scheduler.conf&quot; kubeconfig file
-[kubelet-start] Writing kubelet environment file with flags to file &quot;/var/lib/kubelet/kubeadm-flags.env&quot;
-[kubelet-start] Writing kubelet configuration to file &quot;/var/lib/kubelet/config.yaml&quot;
+[certs] Generating &#34;etcd/healthcheck-client&#34; certificate and key
+[certs] Generating &#34;apiserver-etcd-client&#34; certificate and key
+[certs] Generating &#34;sa&#34; key and public key
+[kubeconfig] Using kubeconfig folder &#34;/etc/kubernetes&#34;
+[kubeconfig] Writing &#34;admin.conf&#34; kubeconfig file
+[kubeconfig] Writing &#34;kubelet.conf&#34; kubeconfig file
+[kubeconfig] Writing &#34;controller-manager.conf&#34; kubeconfig file
+[kubeconfig] Writing &#34;scheduler.conf&#34; kubeconfig file
+[kubelet-start] Writing kubelet environment file with flags to file &#34;/var/lib/kubelet/kubeadm-flags.env&#34;
+[kubelet-start] Writing kubelet configuration to file &#34;/var/lib/kubelet/config.yaml&#34;
 [kubelet-start] Starting the kubelet
-[control-plane] Using manifest folder &quot;/etc/kubernetes/manifests&quot;
-[control-plane] Creating static Pod manifest for &quot;kube-apiserver&quot;
-[control-plane] Creating static Pod manifest for &quot;kube-controller-manager&quot;
-[control-plane] Creating static Pod manifest for &quot;kube-scheduler&quot;
-[etcd] Creating static Pod manifest for local etcd in &quot;/etc/kubernetes/manifests&quot;
+[control-plane] Using manifest folder &#34;/etc/kubernetes/manifests&#34;
+[control-plane] Creating static Pod manifest for &#34;kube-apiserver&#34;
+[control-plane] Creating static Pod manifest for &#34;kube-controller-manager&#34;
+[control-plane] Creating static Pod manifest for &#34;kube-scheduler&#34;
+[etcd] Creating static Pod manifest for local etcd in &#34;/etc/kubernetes/manifests&#34;
 W1120 20:20:38.410133   19305 images.go:80] could not find officially supported version of etcd for Kubernetes v1.27.8, falling back to the nearest etcd version (3.5.7-0)
-[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory &quot;/etc/kubernetes/manifests&quot;. This can take up to 4m0s
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory &#34;/etc/kubernetes/manifests&#34;. This can take up to 4m0s
 [apiclient] All control plane components are healthy after 12.502254 seconds
-[upload-config] Storing the configuration used in ConfigMap &quot;kubeadm-config&quot; in the &quot;kube-system&quot; Namespace
-[kubelet] Creating a ConfigMap &quot;kubelet-config&quot; in namespace kube-system with the configuration for the kubelets in the cluster
+[upload-config] Storing the configuration used in ConfigMap &#34;kubeadm-config&#34; in the &#34;kube-system&#34; Namespace
+[kubelet] Creating a ConfigMap &#34;kubelet-config&#34; in namespace kube-system with the configuration for the kubelets in the cluster
 [upload-certs] Skipping phase. Please see --upload-certs
 [mark-control-plane] Marking the node controlplane as control-plane by adding the labels: [node-role.kubernetes.io/control-plane node.kubernetes.io/exclude-from-external-load-balancers]
 [mark-control-plane] Marking the node controlplane as control-plane by adding the taints [node-role.kubernetes.io/control-plane:NoSchedule]
@@ -355,8 +354,8 @@ W1120 20:20:38.410133   19305 images.go:80] could not find officially supported 
 [bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
 [bootstrap-token] Configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
 [bootstrap-token] Configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
-[bootstrap-token] Creating the &quot;cluster-info&quot; ConfigMap in the &quot;kube-public&quot; namespace
-[kubelet-finalize] Updating &quot;/etc/kubernetes/kubelet.conf&quot; to point to a rotatable kubelet client certificate and key
+[bootstrap-token] Creating the &#34;cluster-info&#34; ConfigMap in the &#34;kube-public&#34; namespace
+[kubelet-finalize] Updating &#34;/etc/kubernetes/kubelet.conf&#34; to point to a rotatable kubelet client certificate and key
 [addons] Applied essential addon: CoreDNS
 [addons] Applied essential addon: kube-proxy
 
@@ -373,54 +372,52 @@ Alternatively, if you are the root user, you can run:
   export KUBECONFIG=/etc/kubernetes/admin.conf
 
 You should now deploy a pod network to the cluster.
-Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of the options listed at:
+Run &#34;kubectl apply -f [podnetwork].yaml&#34; with one of the options listed at:
   https://kubernetes.io/docs/concepts/cluster-administration/addons/
 
 Then you can join any number of worker nodes by running the following on each as root:
 
 kubeadm join 192.3.52.3:6443 --token v7s7co.mkpyly3lu7hf5t54 \
         --discovery-token-ca-cert-hash sha256:ca60be8a123acded2e0220105b46e293cfd19f1ce8f7a324c5f824728466b76d 
-
 </code></pre><p>注意上方一大段輸出最後有個</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubeadm join 192.3.52.3:6443 --token v7s7co.mkpyly3lu7hf5t54 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>        --discovery-token-ca-cert-hash sha256:ca60be8a123acded2e0220105b46e293cfd19f1ce8f7a324c5f824728466b76d 
-</code></pre></div><p>上面這段輸入要加入其他裝好 K8S 的節點就可以讓其他節點以 Work Node 加入了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubeadm join 192.3.52.3:6443 --token v7s7co.mkpyly3lu7hf5t54 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --discovery-token-ca-cert-hash sha256:ca60be8a123acded2e0220105b46e293cfd19f1ce8f7a324c5f824728466b76d 
+</span></span></code></pre></div><p>上面這段輸入要加入其他裝好 K8S 的節點就可以讓其他節點以 Work Node 加入了。</p>
 <p>然後接著採用以下方式把配置檔案放到使用者資料夾，這樣就能使用 kubectl 了。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>:<span style="color:#66d9ef">$(</span>id -g<span style="color:#66d9ef">)</span> $HOME/.kube/config
-</code></pre></div><p>安裝網路套件 Flannel，需要有這個才能接通每個 Node。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 下載 flannel 的佈署 YAML。</span>
-curl -LO https://raw.githubusercontent.com/flannel-io/flannel/v0.20.2/Documentation/kube-flannel.yml
-
-</code></pre></div><p>將其中一段加以修改</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">      <span style="color:#f92672">containers</span>:
-      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">kube-flannel</span>
-       <span style="color:#75715e">#image: flannelcni/flannel:v0.20.2 for ppc64le and m&gt;</span>
-        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">docker.io/rancher/mirrored-flannelcni-flanne&gt;</span>
-        <span style="color:#f92672">command</span>:
-        - <span style="color:#ae81ff">/opt/bin/flanneld</span>
-        <span style="color:#f92672">args</span>:
-        - --<span style="color:#ae81ff">ip-masq</span>
-        - --<span style="color:#ae81ff">kube-subnet-mgr</span>
-</code></pre></div><p>加入一行</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">      <span style="color:#f92672">containers</span>:
-      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">kube-flannel</span>
-       <span style="color:#75715e">#image: flannelcni/flannel:v0.20.2 for ppc64le and m&gt;</span>
-        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">docker.io/rancher/mirrored-flannelcni-flanne&gt;</span>
-        <span style="color:#f92672">command</span>:
-        - <span style="color:#ae81ff">/opt/bin/flanneld</span>
-        <span style="color:#f92672">args</span>:
-        - --<span style="color:#ae81ff">ip-masq</span>
-        - --<span style="color:#ae81ff">kube-subnet-mgr</span>
-        - --<span style="color:#ae81ff">iface=eth0</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 啟動 Flannel</span>
-kubectl apply -f kube-flannel.yml
-</code></pre></div><p>安裝後要等一段時間，才可看到兩個 Node Ready。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p $HOME/.kube
+</span></span><span style="display:flex;"><span>sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+</span></span><span style="display:flex;"><span>sudo chown <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>:<span style="color:#66d9ef">$(</span>id -g<span style="color:#66d9ef">)</span> $HOME/.kube/config
+</span></span></code></pre></div><p>安裝網路套件 Flannel，需要有這個才能接通每個 Node。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 下載 flannel 的佈署 YAML。</span>
+</span></span><span style="display:flex;"><span>curl -LO https://raw.githubusercontent.com/flannel-io/flannel/v0.20.2/Documentation/kube-flannel.yml
+</span></span></code></pre></div><p>將其中一段加以修改</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>      <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">kube-flannel</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#75715e">#image: flannelcni/flannel:v0.20.2 for ppc64le and m&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">docker.io/rancher/mirrored-flannelcni-flanne&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">command</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">/opt/bin/flanneld</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">args</span>:
+</span></span><span style="display:flex;"><span>        - --<span style="color:#ae81ff">ip-masq</span>
+</span></span><span style="display:flex;"><span>        - --<span style="color:#ae81ff">kube-subnet-mgr</span>
+</span></span></code></pre></div><p>加入一行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>      <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">kube-flannel</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#75715e">#image: flannelcni/flannel:v0.20.2 for ppc64le and m&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">docker.io/rancher/mirrored-flannelcni-flanne&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">command</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">/opt/bin/flanneld</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">args</span>:
+</span></span><span style="display:flex;"><span>        - --<span style="color:#ae81ff">ip-masq</span>
+</span></span><span style="display:flex;"><span>        - --<span style="color:#ae81ff">kube-subnet-mgr</span>
+</span></span><span style="display:flex;"><span>        - --<span style="color:#ae81ff">iface=eth0</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 啟動 Flannel</span>
+</span></span><span style="display:flex;"><span>kubectl apply -f kube-flannel.yml
+</span></span></code></pre></div><p>安裝後要等一段時間，才可看到兩個 Node Ready。</p>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

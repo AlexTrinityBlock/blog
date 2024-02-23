@@ -7,7 +7,7 @@
     <title>NPM安裝 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="NPM是啥？ node.js就像是一個登山客，沒有任何裝備時能作到的事情不多，而NPM就如同他的背包，可以讓node.js裝上許多不同的模塊。">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -44,8 +44,7 @@
 <meta itemprop="description" content="NPM是啥？ node.js就像是一個登山客，沒有任何裝備時能作到的事情不多，而NPM就如同他的背包，可以讓node.js裝上許多不同的模塊。"><meta itemprop="datePublished" content="2022-02-15T12:00:44+08:00" />
 <meta itemprop="dateModified" content="2022-02-15T12:00:44+08:00" />
 <meta itemprop="wordCount" content="463">
-<meta itemprop="keywords" content="Node.js," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="NPM安裝"/>
+<meta itemprop="keywords" content="Node.js," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="NPM安裝"/>
 <meta name="twitter:description" content="NPM是啥？ node.js就像是一個登山客，沒有任何裝備時能作到的事情不多，而NPM就如同他的背包，可以讓node.js裝上許多不同的模塊。"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -238,38 +237,38 @@
 <h1 id="npm安裝於ubuntu儲存庫">NPM安裝於Ubuntu(儲存庫)</h1>
 <p>第一種方法是使用Ubuntu儲存庫，裡頭提供穩定版本的node.js，可能會稍微舊一點，但也會穩定一點。</p>
 <p>更新apt儲存庫清單</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
-</code></pre></div><p>安裝npm與nodejs</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install nodejs npm
-</code></pre></div><p>用顯示nodejs版本，來檢查是否成功安裝。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nodejs --version
-</code></pre></div><h1 id="npm安裝於ubuntunvm管理器">NPM安裝於Ubuntu(NVM管理器)</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span></code></pre></div><p>安裝npm與nodejs</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install nodejs npm
+</span></span></code></pre></div><p>用顯示nodejs版本，來檢查是否成功安裝。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nodejs --version
+</span></span></code></pre></div><h1 id="npm安裝於ubuntunvm管理器">NPM安裝於Ubuntu(NVM管理器)</h1>
 <p>第二種方法是使用NVM來安裝，NVM是一種node.js版本管理器，好處是可以安裝多個版本，並且也可以安裝新版本的node.js。</p>
 <p>從儲存庫下載NVM</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-</code></pre></div><p>檢查NVM安裝成功與版本</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nvm --version
-</code></pre></div><p>列出所有Node.js版本</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nvm list-remote
-</code></pre></div><p>安裝最新版本的node.js</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nvm install node
-</code></pre></div><p>安裝完畢後檢查是否安裝成功</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">node --version
-</code></pre></div><p>而且，可以同時安裝好多個版本
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+</span></span></code></pre></div><p>檢查NVM安裝成功與版本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nvm --version
+</span></span></code></pre></div><p>列出所有Node.js版本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nvm list-remote
+</span></span></code></pre></div><p>安裝最新版本的node.js</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nvm install node
+</span></span></code></pre></div><p>安裝完畢後檢查是否安裝成功</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>node --version
+</span></span></code></pre></div><p>而且，可以同時安裝好多個版本
 這裡我們安裝LTS也就是長期支援版與10.9.0版</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nvm install --lts
-nvm install 10.9.0
-</code></pre></div><p>列出已經安裝的node.js版本</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nvm ls
-</code></pre></div><p>顯示出來旁邊有箭頭的是正在使用的版本</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt;      v10.9.0
-       v12.16.3
-</code></pre></div><p>使用特定版本node.js，例如12.16.3</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nvm use 12.16.3
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nvm install --lts
+</span></span><span style="display:flex;"><span>nvm install 10.9.0
+</span></span></code></pre></div><p>列出已經安裝的node.js版本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nvm ls
+</span></span></code></pre></div><p>顯示出來旁邊有箭頭的是正在使用的版本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;      v10.9.0
+</span></span><span style="display:flex;"><span>       v12.16.3
+</span></span></code></pre></div><p>使用特定版本node.js，例如12.16.3</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nvm use 12.16.3
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/node.js" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Node.js</a>
+     <a href="/tags/node.js" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Node.js</a>
    </li>
   
 </ul>

@@ -7,7 +7,7 @@
     <title>K8S基本操作-16-手動自行建設Scheduler | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="檢查預設的 Scheduler Scheduler 是個 Pod ，位於 kube-system 這個 namespace。 用以下指令查看 Scheduler: kubectl get pod -n kube-system 設置 Service Account 與 Cluster Role 設置如下: ServiceAccount: my-scheduler (kube-system namespace) ClusterRoleBinding: my-scheduler-as-kube-scheduler ClusterRoleBinding: my-scheduler-as-volume-scheduler 同時建立 Config Map 與 Depl">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -43,9 +43,8 @@
 <meta itemprop="name" content="K8S基本操作-16-手動自行建設Scheduler">
 <meta itemprop="description" content="檢查預設的 Scheduler Scheduler 是個 Pod ，位於 kube-system 這個 namespace。 用以下指令查看 Scheduler: kubectl get pod -n kube-system 設置 Service Account 與 Cluster Role 設置如下: ServiceAccount: my-scheduler (kube-system namespace) ClusterRoleBinding: my-scheduler-as-kube-scheduler ClusterRoleBinding: my-scheduler-as-volume-scheduler 同時建立 Config Map 與 Depl"><meta itemprop="datePublished" content="2024-01-29T16:10:44+08:00" />
 <meta itemprop="dateModified" content="2024-01-29T16:10:44+08:00" />
-<meta itemprop="wordCount" content="277">
-<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="K8S基本操作-16-手動自行建設Scheduler"/>
+<meta itemprop="wordCount" content="278">
+<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="K8S基本操作-16-手動自行建設Scheduler"/>
 <meta name="twitter:description" content="檢查預設的 Scheduler Scheduler 是個 Pod ，位於 kube-system 這個 namespace。 用以下指令查看 Scheduler: kubectl get pod -n kube-system 設置 Service Account 與 Cluster Role 設置如下: ServiceAccount: my-scheduler (kube-system namespace) ClusterRoleBinding: my-scheduler-as-kube-scheduler ClusterRoleBinding: my-scheduler-as-volume-scheduler 同時建立 Config Map 與 Depl"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -236,8 +235,8 @@
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="檢查預設的-scheduler">檢查預設的 Scheduler</h1>
 <p>Scheduler 是個 Pod ，位於 kube-system 這個 namespace。</p>
 <p>用以下指令查看 Scheduler:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pod -n kube-system
-</code></pre></div><h1 id="設置-service-account-與-cluster-role">設置 Service Account 與 Cluster Role</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get pod -n kube-system
+</span></span></code></pre></div><h1 id="設置-service-account-與-cluster-role">設置 Service Account 與 Cluster Role</h1>
 <p>設置如下:</p>
 <pre tabindex="0"><code>ServiceAccount: my-scheduler (kube-system namespace)
 ClusterRoleBinding: my-scheduler-as-kube-scheduler
@@ -245,123 +244,123 @@ ClusterRoleBinding: my-scheduler-as-volume-scheduler
 </code></pre><p>同時建立 Config Map 與 Deployment。</p>
 <p>設置方法如下:</p>
 <p><em>my-scheduler.yaml</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ServiceAccount</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler</span>
-  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">kube-system</span>
----
-<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRoleBinding</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler-as-kube-scheduler</span>
-<span style="color:#f92672">subjects</span>:
-- <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ServiceAccount</span>
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler</span>
-  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">kube-system</span>
-<span style="color:#f92672">roleRef</span>:
-  <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRole</span>
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">system:kube-scheduler</span>
-  <span style="color:#f92672">apiGroup</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io</span>
----
-<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRoleBinding</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler-as-volume-scheduler</span>
-<span style="color:#f92672">subjects</span>:
-- <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ServiceAccount</span>
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler</span>
-  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">kube-system</span>
-<span style="color:#f92672">roleRef</span>:
-  <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRole</span>
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">system:volume-scheduler</span>
-  <span style="color:#f92672">apiGroup</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io</span>
----
-<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">RoleBinding</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler-extension-apiserver-authentication-reader</span>
-  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">kube-system</span>
-<span style="color:#f92672">roleRef</span>:
-  <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Role</span>
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">extension-apiserver-authentication-reader</span>
-  <span style="color:#f92672">apiGroup</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io</span>
-<span style="color:#f92672">subjects</span>:
-- <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ServiceAccount</span>
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler</span>
-  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">kube-system</span>
----
-<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler-config</span>
-  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">kube-system</span>
-<span style="color:#f92672">data</span>:
-  <span style="color:#f92672">my-scheduler-config.yaml</span>: |<span style="color:#e6db74">
-</span><span style="color:#e6db74">    apiVersion: kubescheduler.config.k8s.io/v1beta2
-</span><span style="color:#e6db74">    kind: KubeSchedulerConfiguration
-</span><span style="color:#e6db74">    profiles:
-</span><span style="color:#e6db74">      - schedulerName: my-scheduler
-</span><span style="color:#e6db74">    leaderElection:
-</span><span style="color:#e6db74">      leaderElect: false    </span>    
----
-<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Deployment</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">labels</span>:
-    <span style="color:#f92672">component</span>: <span style="color:#ae81ff">scheduler</span>
-    <span style="color:#f92672">tier</span>: <span style="color:#ae81ff">control-plane</span>
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler</span>
-  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">kube-system</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">selector</span>:
-    <span style="color:#f92672">matchLabels</span>:
-      <span style="color:#f92672">component</span>: <span style="color:#ae81ff">scheduler</span>
-      <span style="color:#f92672">tier</span>: <span style="color:#ae81ff">control-plane</span>
-  <span style="color:#f92672">replicas</span>: <span style="color:#ae81ff">1</span>
-  <span style="color:#f92672">template</span>:
-    <span style="color:#f92672">metadata</span>:
-      <span style="color:#f92672">labels</span>:
-        <span style="color:#f92672">component</span>: <span style="color:#ae81ff">scheduler</span>
-        <span style="color:#f92672">tier</span>: <span style="color:#ae81ff">control-plane</span>
-        <span style="color:#f92672">version</span>: <span style="color:#ae81ff">second</span>
-    <span style="color:#f92672">spec</span>:
-      <span style="color:#f92672">serviceAccountName</span>: <span style="color:#ae81ff">my-scheduler</span>
-      <span style="color:#f92672">containers</span>:
-      - <span style="color:#f92672">command</span>:
-        - <span style="color:#ae81ff">/usr/local/bin/kube-scheduler</span>
-        - --<span style="color:#ae81ff">config=/etc/kubernetes/my-scheduler/my-scheduler-config.yaml</span>
-        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">gcr.io/my-gcp-project/my-kube-scheduler:1.0</span>
-        <span style="color:#f92672">livenessProbe</span>:
-          <span style="color:#f92672">httpGet</span>:
-            <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/healthz</span>
-            <span style="color:#f92672">port</span>: <span style="color:#ae81ff">10259</span>
-            <span style="color:#f92672">scheme</span>: <span style="color:#ae81ff">HTTPS</span>
-          <span style="color:#f92672">initialDelaySeconds</span>: <span style="color:#ae81ff">15</span>
-        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">kube-second-scheduler</span>
-        <span style="color:#f92672">readinessProbe</span>:
-          <span style="color:#f92672">httpGet</span>:
-            <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/healthz</span>
-            <span style="color:#f92672">port</span>: <span style="color:#ae81ff">10259</span>
-            <span style="color:#f92672">scheme</span>: <span style="color:#ae81ff">HTTPS</span>
-        <span style="color:#f92672">resources</span>:
-          <span style="color:#f92672">requests</span>:
-            <span style="color:#f92672">cpu</span>: <span style="color:#e6db74">&#39;0.1&#39;</span>
-        <span style="color:#f92672">securityContext</span>:
-          <span style="color:#f92672">privileged</span>: <span style="color:#66d9ef">false</span>
-        <span style="color:#f92672">volumeMounts</span>:
-          - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">config-volume</span>
-            <span style="color:#f92672">mountPath</span>: <span style="color:#ae81ff">/etc/kubernetes/my-scheduler</span>
-      <span style="color:#f92672">hostNetwork</span>: <span style="color:#66d9ef">false</span>
-      <span style="color:#f92672">hostPID</span>: <span style="color:#66d9ef">false</span>
-      <span style="color:#f92672">volumes</span>:
-        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">config-volume</span>
-          <span style="color:#f92672">configMap</span>:
-            <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler-config</span>
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ServiceAccount</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">kube-system</span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRoleBinding</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler-as-kube-scheduler</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">subjects</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ServiceAccount</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">kube-system</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">roleRef</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRole</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">system:kube-scheduler</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">apiGroup</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io</span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRoleBinding</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler-as-volume-scheduler</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">subjects</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ServiceAccount</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">kube-system</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">roleRef</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRole</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">system:volume-scheduler</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">apiGroup</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io</span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">RoleBinding</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler-extension-apiserver-authentication-reader</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">kube-system</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">roleRef</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Role</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">extension-apiserver-authentication-reader</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">apiGroup</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">subjects</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ServiceAccount</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">kube-system</span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler-config</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">kube-system</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">data</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">my-scheduler-config.yaml</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    apiVersion: kubescheduler.config.k8s.io/v1beta2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    kind: KubeSchedulerConfiguration
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    profiles:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      - schedulerName: my-scheduler
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    leaderElection:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      leaderElect: false    </span>    
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Deployment</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">component</span>: <span style="color:#ae81ff">scheduler</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">tier</span>: <span style="color:#ae81ff">control-plane</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">kube-system</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">selector</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">matchLabels</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">component</span>: <span style="color:#ae81ff">scheduler</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">tier</span>: <span style="color:#ae81ff">control-plane</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">replicas</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">template</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">component</span>: <span style="color:#ae81ff">scheduler</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">tier</span>: <span style="color:#ae81ff">control-plane</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">version</span>: <span style="color:#ae81ff">second</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">serviceAccountName</span>: <span style="color:#ae81ff">my-scheduler</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">command</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">/usr/local/bin/kube-scheduler</span>
+</span></span><span style="display:flex;"><span>        - --<span style="color:#ae81ff">config=/etc/kubernetes/my-scheduler/my-scheduler-config.yaml</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">gcr.io/my-gcp-project/my-kube-scheduler:1.0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">livenessProbe</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">httpGet</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/healthz</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">port</span>: <span style="color:#ae81ff">10259</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">scheme</span>: <span style="color:#ae81ff">HTTPS</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">initialDelaySeconds</span>: <span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">kube-second-scheduler</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">readinessProbe</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">httpGet</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/healthz</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">port</span>: <span style="color:#ae81ff">10259</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">scheme</span>: <span style="color:#ae81ff">HTTPS</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">resources</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">requests</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">cpu</span>: <span style="color:#e6db74">&#39;0.1&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">securityContext</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">privileged</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">volumeMounts</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">config-volume</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">mountPath</span>: <span style="color:#ae81ff">/etc/kubernetes/my-scheduler</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">hostNetwork</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">hostPID</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">config-volume</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">configMap</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-scheduler-config</span>
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

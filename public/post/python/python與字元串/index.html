@@ -7,7 +7,7 @@
     <title>python與byte串與網路 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="本篇引用自Foundations of Python Network Programming一書 bytes串與網路的關係 在網路傳輸時如socket，是無法直接採取Unico">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -44,8 +44,7 @@
 <meta itemprop="description" content="本篇引用自Foundations of Python Network Programming一書 bytes串與網路的關係 在網路傳輸時如socket，是無法直接採取Unico"><meta itemprop="datePublished" content="2021-05-15T00:00:44+08:00" />
 <meta itemprop="dateModified" content="2021-05-15T00:00:44+08:00" />
 <meta itemprop="wordCount" content="516">
-<meta itemprop="keywords" content="python,network,byte,bytes," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="python與byte串與網路"/>
+<meta itemprop="keywords" content="python,network,byte,bytes," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="python與byte串與網路"/>
 <meta name="twitter:description" content="本篇引用自Foundations of Python Network Programming一書 bytes串與網路的關係 在網路傳輸時如socket，是無法直接採取Unico"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -243,52 +242,52 @@
 <p>在python命令行中直接把二進制轉成十進制<br>
 0b代表是採取二進制表示<br>
 二進制的10代表十進制的數字2</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span><span style="color:#ae81ff">0b10</span>
-<span style="color:#ae81ff">2</span>
-</code></pre></div><h2 id="把list轉成二進制bytes字串">把list轉成二進制bytes字串</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span><span style="color:#ae81ff">0b10</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><h2 id="把list轉成二進制bytes字串">把list轉成二進制bytes字串</h2>
 <p>建立一個list<br>
 [1,0,1,0]<br>
 然後轉換成bytes字串</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> byte_string<span style="color:#f92672">=</span>bytes([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>])
-<span style="color:#f92672">&gt;&gt;&gt;</span> byte_string
-<span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\x01\x00\x01\x00</span><span style="color:#e6db74">&#39;</span>
-<span style="color:#f92672">&gt;&gt;&gt;</span> list(byte_string)
-[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>]
-</code></pre></div><p>最後再轉換回list</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> byte_string<span style="color:#f92672">=</span>bytes([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> byte_string
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\x01\x00\x01\x00</span><span style="color:#e6db74">&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> list(byte_string)
+</span></span><span style="display:flex;"><span>[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>]
+</span></span></code></pre></div><p>最後再轉換回list</p>
 <h2 id="把整數轉換成ascii">把整數轉換成ascii</h2>
 <p>整數35再ascii標準中為#</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> chr(<span style="color:#ae81ff">35</span>)
-<span style="color:#e6db74">&#39;#&#39;</span>
-</code></pre></div><h2 id="將中文轉成byte串">將中文轉成byte串</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> chr(<span style="color:#ae81ff">35</span>)
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;#&#39;</span>
+</span></span></code></pre></div><h2 id="將中文轉成byte串">將中文轉成byte串</h2>
 <p>將中文轉換成utf-8編碼的byte串<br>
 通過網路之後還原，<br>
 就可以達成用網路傳輸中文了</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> chinese_code<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;你好&#34;</span><span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#34;utf-8&#34;</span>)
-<span style="color:#f92672">&gt;&gt;&gt;</span> chinese_code
-<span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\xe4\xbd\xa0\xe5\xa5\xbd</span><span style="color:#e6db74">&#39;</span>
-</code></pre></div><h2 id="一個思考十六進制與縮短字符傳送">一個思考，十六進制與縮短字符傳送</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> chinese_code<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;你好&#34;</span><span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#34;utf-8&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> chinese_code
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\xe4\xbd\xa0\xe5\xa5\xbd</span><span style="color:#e6db74">&#39;</span>
+</span></span></code></pre></div><h2 id="一個思考十六進制與縮短字符傳送">一個思考，十六進制與縮短字符傳送</h2>
 <p>由於在網路傳輸時所有的訊息都是以byte串來傳遞，<br>
 甚至是數字也是。<br>
 那是否可能十進制數字傳成16進位數字來減少傳送的字符量。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> hex(<span style="color:#ae81ff">9999999999</span>)
-<span style="color:#e6db74">&#39;0x2540be3ff&#39;</span>
-</code></pre></div><p>9999999999有十個字元，但是2540be3ff只有九個字元。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> hex(<span style="color:#ae81ff">9999999999</span>)
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;0x2540be3ff&#39;</span>
+</span></span></code></pre></div><p>9999999999有十個字元，但是2540be3ff只有九個字元。</p>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/python" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">python</a>
+     <a href="/tags/python" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">python</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/network" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">network</a>
+     <a href="/tags/network" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">network</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/byte" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">byte</a>
+     <a href="/tags/byte" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">byte</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/bytes" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">bytes</a>
+     <a href="/tags/bytes" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">bytes</a>
    </li>
   
 </ul>

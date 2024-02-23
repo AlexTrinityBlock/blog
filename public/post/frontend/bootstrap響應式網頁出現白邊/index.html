@@ -7,7 +7,7 @@
     <title>Bootstrap響應式網頁出現白邊 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="問題 在使用Bootstrap時，響應式網頁在手機上出現了白色的邊框。 雖然已經使用.container或者.container-fluid了，">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -44,8 +44,7 @@
 <meta itemprop="description" content="問題 在使用Bootstrap時，響應式網頁在手機上出現了白色的邊框。 雖然已經使用.container或者.container-fluid了，"><meta itemprop="datePublished" content="2022-06-02T09:00:00+08:00" />
 <meta itemprop="dateModified" content="2022-06-02T09:00:00+08:00" />
 <meta itemprop="wordCount" content="779">
-<meta itemprop="keywords" content="frontend," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Bootstrap響應式網頁出現白邊"/>
+<meta itemprop="keywords" content="frontend," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Bootstrap響應式網頁出現白邊"/>
 <meta name="twitter:description" content="問題 在使用Bootstrap時，響應式網頁在手機上出現了白色的邊框。 雖然已經使用.container或者.container-fluid了，"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -243,24 +242,24 @@
 <p>因為這樣會破壞掉Bootstrap原本的響應式布局。</p>
 <p>在手機或者電腦的頁面上出現畫面大小錯誤。</p>
 <h3 id="建議用在container的css元素">建議用在container的CSS元素</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span>{
-    <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">margin-bottom</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
-
-    <span style="color:#66d9ef">padding-top</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">padding-bottom</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
-}
-</code></pre></div><h3 id="不建議用在container的css元素會破壞bootstrap布局">不建議用在container的CSS元素(會破壞Bootstrap布局)</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span>{
-    <span style="color:#66d9ef">margin</span>:<span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">margin-left</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">margin-right</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
-
-    <span style="color:#66d9ef">padding</span>:<span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">padding-left</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">padding-right</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
-}
-</code></pre></div><h2 id="2禁止手機瀏覽器縮放">2.禁止手機瀏覽器縮放</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">div</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin-bottom</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding-top</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding-bottom</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="不建議用在container的css元素會破壞bootstrap布局">不建議用在container的CSS元素(會破壞Bootstrap布局)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">div</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin</span>:<span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin-left</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin-right</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>:<span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding-left</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding-right</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="2禁止手機瀏覽器縮放">2.禁止手機瀏覽器縮放</h2>
 <p><em><strong>雖然會造成一些改變，但這個方法極度管用</strong></em></p>
 <p>如果你用了</p>
 <ol>
@@ -272,37 +271,37 @@
 <p>導致手機上頭畫面出現意外的白色邊框之類的，這種情況可以使用</p>
 <p><em><strong>禁止手機的縮放</strong></em>的方式來彌補。</p>
 <p>使用以下標籤，會禁止所有手機網頁的縮放，但有無法放大文字的缺點。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&#34;</span>&gt;
-</code></pre></div><p>但也沒關係，可以靠各種巧思，或者圖片另外連接來放大，來進行替代。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&#34;</span>&gt;
+</span></span></code></pre></div><p>但也沒關係，可以靠各種巧思，或者圖片另外連接來放大，來進行替代。</p>
 <h2 id="3用vwvh帶替設定寬高">3.用vw,vh帶替%設定寬高</h2>
 <p>vh代表閱讀裝置的高度的比例，例如100vh代表裝置高度的百分之百。而vw則是寬度。</p>
 <p>另外一種寬高的表現為%。width:100%，代表這個物體為其父元素的百分之百寬，但<span style='color:red'>不代表裝置的高度百分之百。</span></p>
 <p>所以當你需要一個佔滿整個橫向版面的圖片時可以嘗試以下兩種方式。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">width</span>:<span style="color:#a6e22e">100</span><span style="color:#f92672">%;</span>
-</code></pre></div><p>或者</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">width</span>:<span style="color:#a6e22e">100vw</span><span style="color:#f92672">;</span>
-</code></pre></div><p>但是實際測試的結果來看，<span style='color:red'>不一定所有瀏覽器都穩定支持vw與vh。</span></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">width</span>:<span style="color:#a6e22e">100</span><span style="color:#f92672">%;</span>
+</span></span></code></pre></div><p>或者</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">width</span>:<span style="color:#a6e22e">100vw</span><span style="color:#f92672">;</span>
+</span></span></code></pre></div><p>但是實際測試的結果來看，<span style='color:red'>不一定所有瀏覽器都穩定支持vw與vh。</span></p>
 <p>所以建議兩者都嘗試，如果仍然無解的話，請嘗試上面的方式，封鎖瀏覽器縮放。</p>
 <h2 id="4javascript手動修正">4.Javascript手動修正</h2>
 <p>***　這種方法沒有經過驗證適用於所有裝置，除非別無選擇，否則建議方法2優先。 ***</p>
 <p>設置JS</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setVw</span>() {
-  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vw</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientWidth</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">100</span>;
-  document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">setProperty</span>(<span style="color:#e6db74">&#39;--vw&#39;</span>, <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">vw</span><span style="color:#e6db74">}</span><span style="color:#e6db74">px`</span>);
-}
-
-<span style="color:#a6e22e">setVw</span>();
-window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;resize&#39;</span>, <span style="color:#a6e22e">setVw</span>);
-</code></pre></div><p>使用的CSS如下:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span> {
-    <span style="color:#66d9ef">width</span>: calc(<span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>vw, <span style="color:#ae81ff">1</span><span style="color:#66d9ef">vw</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>);
-}
-</code></pre></div><p>參見下列網誌:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setVw</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vw</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientWidth</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">100</span>;
+</span></span><span style="display:flex;"><span>  document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">setProperty</span>(<span style="color:#e6db74">&#39;--vw&#39;</span>, <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">vw</span><span style="color:#e6db74">}</span><span style="color:#e6db74">px`</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">setVw</span>();
+</span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;resize&#39;</span>, <span style="color:#a6e22e">setVw</span>);
+</span></span></code></pre></div><p>使用的CSS如下:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">div</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">width</span>: calc(<span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>vw, <span style="color:#ae81ff">1</span><span style="color:#66d9ef">vw</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>參見下列網誌:</p>
 <p><a href="https://destroytoday.com/blog/100vw-and-the-horizontal-overflow-you-probably-didnt-know-about">https://destroytoday.com/blog/100vw-and-the-horizontal-overflow-you-probably-didnt-know-about</a></p>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/frontend" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">frontend</a>
+     <a href="/tags/frontend" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">frontend</a>
    </li>
   
 </ul>

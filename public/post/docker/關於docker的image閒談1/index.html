@@ -7,7 +7,7 @@
     <title>關於Docker的Image閒談1 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Docker 的 Volume 與 Image 的具體儲存位置 實際上 Volume 與 Image 在 Linux 上儲存在以下目錄: /var/lib/docker/ /var/lib/docker/containers /var/lib/docker/image /var/lib/docker/volumes 雖然不建議，但純手動來複製 Image 也是可能的。 Docker 或者其他容器技術的 Layer 結構 以下是個">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -43,9 +43,8 @@
 <meta itemprop="name" content="關於Docker的Image閒談1">
 <meta itemprop="description" content="Docker 的 Volume 與 Image 的具體儲存位置 實際上 Volume 與 Image 在 Linux 上儲存在以下目錄: /var/lib/docker/ /var/lib/docker/containers /var/lib/docker/image /var/lib/docker/volumes 雖然不建議，但純手動來複製 Image 也是可能的。 Docker 或者其他容器技術的 Layer 結構 以下是個"><meta itemprop="datePublished" content="2024-02-08T14:10:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-08T14:10:44+08:00" />
-<meta itemprop="wordCount" content="463">
-<meta itemprop="keywords" content="docker," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="關於Docker的Image閒談1"/>
+<meta itemprop="wordCount" content="455">
+<meta itemprop="keywords" content="docker," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="關於Docker的Image閒談1"/>
 <meta name="twitter:description" content="Docker 的 Volume 與 Image 的具體儲存位置 實際上 Volume 與 Image 在 Linux 上儲存在以下目錄: /var/lib/docker/ /var/lib/docker/containers /var/lib/docker/image /var/lib/docker/volumes 雖然不建議，但純手動來複製 Image 也是可能的。 Docker 或者其他容器技術的 Layer 結構 以下是個"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -242,25 +241,24 @@
 </code></pre><p>雖然不建議，但純手動來複製 Image 也是可能的。</p>
 <h1 id="docker-或者其他容器技術的-layer-結構">Docker 或者其他容器技術的 Layer 結構</h1>
 <p>以下是個 Dockerfile:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:3.8</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /app</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install flask<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . /app<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 5000</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;python&#34;</span>, <span style="color:#e6db74">&#34;app.py&#34;</span>]<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>如果我們加一個 <code>RUN pip install requests</code> 在 <code>RUN pip install flask</code>  下時:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:3.8</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /app</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install flask<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>上方這段進行的操作是不會改變的， Docker Image 也只會增加或修改第三行以後的變更。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:3.8</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /app</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install flask<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . /app<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 5000</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;python&#34;</span>, <span style="color:#e6db74">&#34;app.py&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>如果我們加一個 <code>RUN pip install requests</code> 在 <code>RUN pip install flask</code>  下時:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:3.8</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /app</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install flask<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>上方這段進行的操作是不會改變的， Docker Image 也只會增加或修改第三行以後的變更。</p>
 <p>屬於增量儲存。</p>
 <h1 id="copy-on-write">Copy-on-write</h1>
 <p>Docker 的 Copy-on-write 特性主要體現在容器和鏡像的分層結構上。容器最上面是一個可寫的容器層，以及若干只讀的鏡像層組成，容器的數據就存放在這些層中。當在容器中進行數據修改時（比如修改 /etc/hello.conf 文件），Docker 會從上至下依次在各個鏡像層中查找此文件，一旦找到該文件，會立即將其複製到容器層，然後再進行修改操作，其他的操作也是一樣（如添加、讀取、刪除等操作）。</p>
@@ -295,7 +293,7 @@
 <ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/docker" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">docker</a>
+     <a href="/tags/docker" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">docker</a>
    </li>
   
 </ul>

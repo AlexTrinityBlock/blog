@@ -1,65 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>github on 無面者小站</title>
+    <title>Github on 無面者小站</title>
     <link>https://alextrinityblock.github.io/blog/public/tags/github/</link>
-    <description>Recent content in github on 無面者小站</description>
+    <description>Recent content in Github on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Wed, 23 Feb 2022 00:04:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Feb 2022 00:04:44 +0800</lastBuildDate>
+    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git整合過去Commit</title>
       <link>https://alextrinityblock.github.io/blog/public/post/git/git%E6%95%B4%E5%90%88%E9%81%8E%E5%8E%BBcommit/</link>
       <pubDate>Wed, 23 Feb 2022 00:04:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/git/git%E6%95%B4%E5%90%88%E9%81%8E%E5%8E%BBcommit/</guid>
       <description>如果說有多條commit要合併成一條 就需要使用 git rebase 1 首先，在git 中最新的一個commit 稱為 Head 所以git rebase的一個常用指令就是 git rebase</description>
     </item>
-    
     <item>
       <title>Git選擇分支</title>
       <link>https://alextrinityblock.github.io/blog/public/post/git/git%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Wed, 23 Feb 2022 00:04:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/git/git%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C/</guid>
       <description>1.什麼是分支? 當我們在開發某個東西時，總存在著測試和開發中，無法正常上線的狀態之版本 而多人合力開發時，也有很多的細節需要整合 這時候就會使用</description>
     </item>
-    
-    <item>
-      <title>Git復原失誤的操作</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/</link>
-      <pubDate>Wed, 23 Feb 2022 00:03:44 +0800</pubDate>
-      
-      <guid>https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/</guid>
-      <description>以Revert復原已經提交的變更 每次的變更都會留下雜湊質值 git log 可以查看 要復原變更可以以雜湊值復原 git revert acc6af6 如果復原時跳出UNIX式的VI編輯器介</description>
-    </item>
-    
     <item>
       <title>Git的簡單使用</title>
       <link>https://alextrinityblock.github.io/blog/public/post/git/git%E7%9A%84%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 23 Feb 2022 00:03:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/git/git%E7%9A%84%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8/</guid>
       <description>1.Git的三個區域 Working tree 工作樹 我們甚麼都還沒做時，資料在這裡 Staging Area 暫存區 我們進行指令add 後資料在這裡 Repository 儲存庫 我們commit時資料進入儲存庫</description>
     </item>
-    
+    <item>
+      <title>Git復原失誤的操作</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Wed, 23 Feb 2022 00:03:44 +0800</pubDate>
+      <guid>https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/</guid>
+      <description>以Revert復原已經提交的變更 每次的變更都會留下雜湊質值 git log 可以查看 要復原變更可以以雜湊值復原 git revert acc6af6 如果復原時跳出UNIX式的VI編輯器介</description>
+    </item>
     <item>
       <title>如何用22port以外連上Git Server</title>
       <link>https://alextrinityblock.github.io/blog/public/post/git/%E5%A6%82%E4%BD%95%E7%94%A822port%E4%BB%A5%E5%A4%96%E9%80%A3%E4%B8%8Agitserver/</link>
       <pubDate>Wed, 23 Feb 2022 00:01:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/git/%E5%A6%82%E4%BD%95%E7%94%A822port%E4%BB%A5%E5%A4%96%E9%80%A3%E4%B8%8Agitserver/</guid>
       <description>Git伺服器的SSH port 基本上來說，git server所使用的ssh port就是22 port。 為何會有例外 由於自己架設的Git Server，2</description>
     </item>
-    
     <item>
       <title>github免密碼上傳與RSA金鑰產生</title>
       <link>https://alextrinityblock.github.io/blog/public/post/git/github%E5%85%8D%E5%AF%86%E7%A2%BC%E4%B8%8A%E5%82%B3/</link>
       <pubDate>Wed, 19 May 2021 00:05:03 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/git/github%E5%85%8D%E5%AF%86%E7%A2%BC%E4%B8%8A%E5%82%B3/</guid>
       <description>先決條件 這篇是建立在理解 git基本使用 擁有github帳號 使用linux 上述條件達成才比較能夠理解本篇git的部份， 建議上網找些資料學習。 不</description>
     </item>
-    
   </channel>
 </rss>

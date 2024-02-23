@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>CICD | 無面者小站</title>
+    <title>無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="歡迎來到無面者小站">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -44,8 +44,7 @@
 <meta property="og:url" content="https://alextrinityblock.github.io/blog/public/tags/cicd/" />
 
 <meta itemprop="name" content="CICD">
-<meta itemprop="description" content="歡迎來到無面者小站"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="CICD"/>
+<meta itemprop="description" content="歡迎來到無面者小站"><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="CICD"/>
 <meta name="twitter:description" content="歡迎來到無面者小站"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -203,7 +202,7 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      假設 假設這是我們今天要測試的程式。 INPUT A,B,X IF (A&gt;1) AND (B=0) THEN Y=A IF (A=2) OR (X&gt;1) THEN Y=X PRINT Y 流程圖 %%{init: {'theme':'dark'}}%% flowchart TD A(程式開始) -- B{A1 and B=0} B --|True| D(Y=A) B --|False| E{A=2 or x1} D -- E{A=2 or x1} E{A=2 or x1} -- |False| G
+      假設 假設這是我們今天要測試的程式。 INPUT A,B,X IF (A&gt;1) AND (B=0) THEN Y=A IF (A=2) OR (X&gt;1) THEN Y=X PRINT Y 流程圖 %%{init: {'theme':'dark'}}%% flowchart TD A(程式開始) --> B{A>1 and B=0} B -->|True| D(Y=A) B -->|False| E{A=2 or x>1} D --> E{A=2 or x>1} E{A=2 or x>1} --> |False| G
     </div>
   </div>
 </div>

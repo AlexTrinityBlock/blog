@@ -7,7 +7,7 @@
     <title>K8S基本操作-52-kubectl 操作備忘 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Kubectl 自動補全 # 自動補全腳本 source &lt;(kubectl completion bash) echo &#34;source &lt;(kubectl completion bash)&#34; &gt;&gt; ~/.bashrc # 把 kubectl 簡化成 k alias k=kubectl complete -o default -F __start_kubectl k &ndash;all-namespaces 替代 kubectl -A 建立物件 kubectl apply -f ./my-manifest.yaml # 建立資源 kubectl apply -f ./my1.yaml -f ./my2.yaml # 建立資源從多個">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -44,8 +44,7 @@
 <meta itemprop="description" content="Kubectl 自動補全 # 自動補全腳本 source &lt;(kubectl completion bash) echo &#34;source &lt;(kubectl completion bash)&#34; &gt;&gt; ~/.bashrc # 把 kubectl 簡化成 k alias k=kubectl complete -o default -F __start_kubectl k &ndash;all-namespaces 替代 kubectl -A 建立物件 kubectl apply -f ./my-manifest.yaml # 建立資源 kubectl apply -f ./my1.yaml -f ./my2.yaml # 建立資源從多個"><meta itemprop="datePublished" content="2024-02-17T16:00:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-17T16:00:44+08:00" />
 <meta itemprop="wordCount" content="299">
-<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="K8S基本操作-52-kubectl 操作備忘"/>
+<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="K8S基本操作-52-kubectl 操作備忘"/>
 <meta name="twitter:description" content="Kubectl 自動補全 # 自動補全腳本 source &lt;(kubectl completion bash) echo &#34;source &lt;(kubectl completion bash)&#34; &gt;&gt; ~/.bashrc # 把 kubectl 簡化成 k alias k=kubectl complete -o default -F __start_kubectl k &ndash;all-namespaces 替代 kubectl -A 建立物件 kubectl apply -f ./my-manifest.yaml # 建立資源 kubectl apply -f ./my1.yaml -f ./my2.yaml # 建立資源從多個"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -234,77 +233,77 @@
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="kubectl-自動補全">Kubectl 自動補全</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 自動補全腳本</span>
-source &lt;<span style="color:#f92672">(</span>kubectl completion bash<span style="color:#f92672">)</span>
-echo <span style="color:#e6db74">&#34;source &lt;(kubectl completion bash)&#34;</span> &gt;&gt; ~/.bashrc
-
-<span style="color:#75715e"># 把 kubectl 簡化成 k</span>
-alias k<span style="color:#f92672">=</span>kubectl
-complete -o default -F __start_kubectl k
-</code></pre></div><h1 id="--all-namespaces-替代">&ndash;all-namespaces 替代</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -A
-</code></pre></div><h1 id="建立物件">建立物件</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f ./my-manifest.yaml                 <span style="color:#75715e"># 建立資源</span>
-kubectl apply -f ./my1.yaml -f ./my2.yaml           <span style="color:#75715e"># 建立資源從多個檔案</span>
-kubectl apply -f ./dir                              <span style="color:#75715e"># 建立資源從資料夾</span>
-kubectl apply -f https://example.com/manifest.yaml  <span style="color:#75715e"># 建立資源從網路</span>
-kubectl create deployment nginx --image<span style="color:#f92672">=</span>nginx       <span style="color:#75715e"># 建立 nginx deployment</span>
-
-<span style="color:#75715e"># 建立 Job 印出 &#34;Hello World&#34;</span>
-kubectl create job hello --image<span style="color:#f92672">=</span>busybox:1.28 -- echo <span style="color:#e6db74">&#34;Hello World&#34;</span>
-
-<span style="color:#75715e"># 建立 CronJob 印出 &#34;Hello World&#34; 每分鐘</span>
-kubectl create cronjob hello --image<span style="color:#f92672">=</span>busybox:1.28   --schedule<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*/1 * * * *&#34;</span> -- echo <span style="color:#e6db74">&#34;Hello World&#34;</span>
-
-kubectl explain pods <span style="color:#75715e"># 讀 pod 的文件</span>
-
-<span style="color:#75715e"># 從命令行以YAML建立一個物件</span>
-kubectl apply -f - <span style="color:#e6db74">&lt;&lt;EOF
-</span><span style="color:#e6db74">apiVersion: v1
-</span><span style="color:#e6db74">kind: Pod
-</span><span style="color:#e6db74">metadata:
-</span><span style="color:#e6db74">  name: busybox-sleep
-</span><span style="color:#e6db74">spec:
-</span><span style="color:#e6db74">  containers:
-</span><span style="color:#e6db74">  - name: busybox
-</span><span style="color:#e6db74">    image: busybox:1.28
-</span><span style="color:#e6db74">    args:
-</span><span style="color:#e6db74">    - sleep
-</span><span style="color:#e6db74">    - &#34;1000000&#34;
-</span><span style="color:#e6db74">---
-</span><span style="color:#e6db74">apiVersion: v1
-</span><span style="color:#e6db74">kind: Pod
-</span><span style="color:#e6db74">metadata:
-</span><span style="color:#e6db74">  name: busybox-sleep-less
-</span><span style="color:#e6db74">spec:
-</span><span style="color:#e6db74">  containers:
-</span><span style="color:#e6db74">  - name: busybox
-</span><span style="color:#e6db74">    image: busybox:1.28
-</span><span style="color:#e6db74">    args:
-</span><span style="color:#e6db74">    - sleep
-</span><span style="color:#e6db74">    - &#34;1000&#34;
-</span><span style="color:#e6db74">EOF</span>
-
-<span style="color:#75715e"># 從命令行建立 secret</span>
-kubectl apply -f - <span style="color:#e6db74">&lt;&lt;EOF
-</span><span style="color:#e6db74">apiVersion: v1
-</span><span style="color:#e6db74">kind: Secret
-</span><span style="color:#e6db74">metadata:
-</span><span style="color:#e6db74">  name: mysecret
-</span><span style="color:#e6db74">type: Opaque
-</span><span style="color:#e6db74">data:
-</span><span style="color:#e6db74">  password: $(echo -n &#34;s33msi4&#34; | base64 -w0)
-</span><span style="color:#e6db74">  username: $(echo -n &#34;jane&#34; | base64 -w0)
-</span><span style="color:#e6db74">EOF</span>
-</code></pre></div><h1 id="scaling-資源">Scaling 資源</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl scale --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> rs/foo                                 
-kubectl scale --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> -f foo.yaml                            
-kubectl scale --current-replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> deployment/mysql  <span style="color:#75715e"># 假如 deployment mysql&#39;s current size is 2, scale mysql 到 3</span>
-kubectl scale --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span> rc/foo rc/bar rc/baz                   <span style="color:#75715e"># Scale 多個資源</span>
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 自動補全腳本</span>
+</span></span><span style="display:flex;"><span>source &lt;<span style="color:#f92672">(</span>kubectl completion bash<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;source &lt;(kubectl completion bash)&#34;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 把 kubectl 簡化成 k</span>
+</span></span><span style="display:flex;"><span>alias k<span style="color:#f92672">=</span>kubectl
+</span></span><span style="display:flex;"><span>complete -o default -F __start_kubectl k
+</span></span></code></pre></div><h1 id="--all-namespaces-替代">&ndash;all-namespaces 替代</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl -A
+</span></span></code></pre></div><h1 id="建立物件">建立物件</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl apply -f ./my-manifest.yaml                 <span style="color:#75715e"># 建立資源</span>
+</span></span><span style="display:flex;"><span>kubectl apply -f ./my1.yaml -f ./my2.yaml           <span style="color:#75715e"># 建立資源從多個檔案</span>
+</span></span><span style="display:flex;"><span>kubectl apply -f ./dir                              <span style="color:#75715e"># 建立資源從資料夾</span>
+</span></span><span style="display:flex;"><span>kubectl apply -f https://example.com/manifest.yaml  <span style="color:#75715e"># 建立資源從網路</span>
+</span></span><span style="display:flex;"><span>kubectl create deployment nginx --image<span style="color:#f92672">=</span>nginx       <span style="color:#75715e"># 建立 nginx deployment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 建立 Job 印出 &#34;Hello World&#34;</span>
+</span></span><span style="display:flex;"><span>kubectl create job hello --image<span style="color:#f92672">=</span>busybox:1.28 -- echo <span style="color:#e6db74">&#34;Hello World&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 建立 CronJob 印出 &#34;Hello World&#34; 每分鐘</span>
+</span></span><span style="display:flex;"><span>kubectl create cronjob hello --image<span style="color:#f92672">=</span>busybox:1.28   --schedule<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*/1 * * * *&#34;</span> -- echo <span style="color:#e6db74">&#34;Hello World&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kubectl explain pods <span style="color:#75715e"># 讀 pod 的文件</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 從命令行以YAML建立一個物件</span>
+</span></span><span style="display:flex;"><span>kubectl apply -f - <span style="color:#e6db74">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">apiVersion: v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">kind: Pod
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">metadata:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  name: busybox-sleep
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">spec:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  containers:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  - name: busybox
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    image: busybox:1.28
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    args:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    - sleep
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    - &#34;1000000&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">---
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">apiVersion: v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">kind: Pod
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">metadata:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  name: busybox-sleep-less
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">spec:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  containers:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  - name: busybox
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    image: busybox:1.28
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    args:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    - sleep
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    - &#34;1000&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 從命令行建立 secret</span>
+</span></span><span style="display:flex;"><span>kubectl apply -f - <span style="color:#e6db74">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">apiVersion: v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">kind: Secret
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">metadata:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  name: mysecret
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">type: Opaque
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">data:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  password: $(echo -n &#34;s33msi4&#34; | base64 -w0)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  username: $(echo -n &#34;jane&#34; | base64 -w0)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><h1 id="scaling-資源">Scaling 資源</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl scale --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> rs/foo                                 
+</span></span><span style="display:flex;"><span>kubectl scale --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> -f foo.yaml                            
+</span></span><span style="display:flex;"><span>kubectl scale --current-replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> deployment/mysql  <span style="color:#75715e"># 假如 deployment mysql&#39;s current size is 2, scale mysql 到 3</span>
+</span></span><span style="display:flex;"><span>kubectl scale --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span> rc/foo rc/bar rc/baz                   <span style="color:#75715e"># Scale 多個資源</span>
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

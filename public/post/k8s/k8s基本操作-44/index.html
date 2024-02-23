@@ -7,7 +7,7 @@
     <title>K8S基本操作-44-Network Policy | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Network Policy K8S Network Policy 是一種 Kubernetes 的功能，可以讓你控制 Pod 之間或 Pod 與外部網路的通訊規則。你可以使用 Network Policy 來定義哪些 Pod 可以互相連接，或者哪些 Pod 可以存取特定的 IP 或埠">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -44,8 +44,7 @@
 <meta itemprop="description" content="Network Policy K8S Network Policy 是一種 Kubernetes 的功能，可以讓你控制 Pod 之間或 Pod 與外部網路的通訊規則。你可以使用 Network Policy 來定義哪些 Pod 可以互相連接，或者哪些 Pod 可以存取特定的 IP 或埠"><meta itemprop="datePublished" content="2024-02-07T17:40:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-07T17:40:44+08:00" />
 <meta itemprop="wordCount" content="1036">
-<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="K8S基本操作-44-Network Policy"/>
+<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="K8S基本操作-44-Network Policy"/>
 <meta name="twitter:description" content="Network Policy K8S Network Policy 是一種 Kubernetes 的功能，可以讓你控制 Pod 之間或 Pod 與外部網路的通訊規則。你可以使用 Network Policy 來定義哪些 Pod 可以互相連接，或者哪些 Pod 可以存取特定的 IP 或埠"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -254,90 +253,90 @@
 </li>
 </ul>
 <h1 id="network-policy-相關指令">Network Policy 相關指令</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 檢查當前所有 Network Policy</span>
-kubectl get networkpolicies
-
-<span style="color:#75715e"># 輸出成 YAML</span>
-kubectl get networkpolicies payroll-policy -o yaml
-
-<span style="color:#75715e"># 描述 Network Policy 結構</span>
-kubectl describe networkpolicies payroll-policy
-</code></pre></div><h1 id="network-policy-範例1">Network Policy 範例1</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">networking.k8s.io/v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">NetworkPolicy</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">payroll-policy</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">ingress</span>:
-  - <span style="color:#f92672">from</span>:
-    - <span style="color:#f92672">podSelector</span>:
-        <span style="color:#f92672">matchLabels</span>:
-          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">internal</span>
-    <span style="color:#f92672">ports</span>:
-    - <span style="color:#f92672">port</span>: <span style="color:#ae81ff">8080</span>
-      <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
-  <span style="color:#f92672">podSelector</span>:
-    <span style="color:#f92672">matchLabels</span>:
-      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">payroll</span>
-  <span style="color:#f92672">policyTypes</span>:
-  - <span style="color:#ae81ff">Ingress</span>
-</code></pre></div><p>這一段在描述，只有從 Labels: internal，的 Pod 可以而來:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  - <span style="color:#f92672">from</span>:
-    - <span style="color:#f92672">podSelector</span>:
-        <span style="color:#f92672">matchLabels</span>:
-          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">internal</span>
-</code></pre></div><p>到達目標 Port 8080 採用 TCP:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">ports</span>:
-    - <span style="color:#f92672">port</span>: <span style="color:#ae81ff">8080</span>
-      <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
-</code></pre></div><p>該 Policy 僅作用在有 Label: payroll 的  Pod ，型態是由外向內送:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">podSelector</span>:
-    <span style="color:#f92672">matchLabels</span>:
-      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">payroll</span>
-  <span style="color:#f92672">policyTypes</span>:
-  - <span style="color:#ae81ff">Ingress</span>
-</code></pre></div><h1 id="network-policy-範例2">Network Policy 範例2</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">networking.k8s.io/v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">NetworkPolicy</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">internal-policy</span>
-  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">podSelector</span>:
-    <span style="color:#f92672">matchLabels</span>:
-      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">internal</span>
-  <span style="color:#f92672">policyTypes</span>:
-  - <span style="color:#ae81ff">Egress</span>
-  - <span style="color:#ae81ff">Ingress</span>
-  <span style="color:#f92672">ingress</span>:
-    - {}
-  <span style="color:#f92672">egress</span>:
-  - <span style="color:#f92672">to</span>:
-    - <span style="color:#f92672">podSelector</span>:
-        <span style="color:#f92672">matchLabels</span>:
-          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">mysql</span>
-    <span style="color:#f92672">ports</span>:
-    - <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
-      <span style="color:#f92672">port</span>: <span style="color:#ae81ff">3306</span>
-
-  - <span style="color:#f92672">to</span>:
-    - <span style="color:#f92672">podSelector</span>:
-        <span style="color:#f92672">matchLabels</span>:
-          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">payroll</span>
-    <span style="color:#f92672">ports</span>:
-    - <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
-      <span style="color:#f92672">port</span>: <span style="color:#ae81ff">8080</span>
-
-  - <span style="color:#f92672">ports</span>:
-    - <span style="color:#f92672">port</span>: <span style="color:#ae81ff">53</span>
-      <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">UDP</span>
-    - <span style="color:#f92672">port</span>: <span style="color:#ae81ff">53</span>
-      <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
-</code></pre></div><p>spec: policyTypes: - Egress - Ingress 表示這個網路政策包含出站和入站的規則。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 檢查當前所有 Network Policy</span>
+</span></span><span style="display:flex;"><span>kubectl get networkpolicies
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 輸出成 YAML</span>
+</span></span><span style="display:flex;"><span>kubectl get networkpolicies payroll-policy -o yaml
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 描述 Network Policy 結構</span>
+</span></span><span style="display:flex;"><span>kubectl describe networkpolicies payroll-policy
+</span></span></code></pre></div><h1 id="network-policy-範例1">Network Policy 範例1</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">networking.k8s.io/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">NetworkPolicy</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">payroll-policy</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ingress</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">from</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">podSelector</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">matchLabels</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">internal</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">port</span>: <span style="color:#ae81ff">8080</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">podSelector</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">matchLabels</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">payroll</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">policyTypes</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Ingress</span>
+</span></span></code></pre></div><p>這一段在描述，只有從 Labels: internal，的 Pod 可以而來:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  - <span style="color:#f92672">from</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">podSelector</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">matchLabels</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">internal</span>
+</span></span></code></pre></div><p>到達目標 Port 8080 採用 TCP:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">port</span>: <span style="color:#ae81ff">8080</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+</span></span></code></pre></div><p>該 Policy 僅作用在有 Label: payroll 的  Pod ，型態是由外向內送:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">podSelector</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">matchLabels</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">payroll</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">policyTypes</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Ingress</span>
+</span></span></code></pre></div><h1 id="network-policy-範例2">Network Policy 範例2</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">networking.k8s.io/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">NetworkPolicy</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">internal-policy</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">podSelector</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">matchLabels</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">internal</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">policyTypes</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Egress</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Ingress</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ingress</span>:
+</span></span><span style="display:flex;"><span>    - {}
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">egress</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">to</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">podSelector</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">matchLabels</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">mysql</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">port</span>: <span style="color:#ae81ff">3306</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">to</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">podSelector</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">matchLabels</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">payroll</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">port</span>: <span style="color:#ae81ff">8080</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">port</span>: <span style="color:#ae81ff">53</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">UDP</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">port</span>: <span style="color:#ae81ff">53</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+</span></span></code></pre></div><p>spec: policyTypes: - Egress - Ingress 表示這個網路政策包含出站和入站的規則。</p>
 <p>spec: ingress: - {} 表示這個網路政策允許任何來源的入站流量到達目標 Pod。這是一個空的規則，表示沒有任何限制。</p>
 <p>spec: egress: - to: - podSelector: matchLabels: name: mysql ports: - protocol: TCP port: 3306 表示這個網路政策允許目標 Pod 透過 TCP 協定連接到 default 命名空間中標籤為 name: mysql 的 Pod 的 3306 埠。這是一個出站規則，表示只允許特定的目的地和埠。</p>
-<p>spec: egress: - to: - podSelector: matchLabels: name: payroll ports: - protocol: TCP 
+<p>spec: egress: - to: - podSelector: matchLabels: name: payroll ports: - protocol: TCP
 port: 8080 表示這個網路政策允許目標 Pod 透過 TCP 協定連接到 default 命名空間中標籤為 name: payroll 的 Pod 的 8080 埠。這也是一個出站規則，表示只允許特定的目的地和埠。</p>
 <p>spec: egress: - ports: - port: 53 protocol: UDP - port: 53 protocol: TCP 表示這個網路政策允許目標 Pod 透過 UDP 或 TCP 協定連接到任何目的地的 53 埠。這是一個出站規則，表示只允許特定的埠，但不限制目的地。53 埠通常用於 DNS 查詢。</p>
 <p>總結一下，這個網路政策的作用是：</p>
@@ -348,7 +347,7 @@ port: 8080 表示這個網路政策允許目標 Pod 透過 TCP 協定連接到 d
 <ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

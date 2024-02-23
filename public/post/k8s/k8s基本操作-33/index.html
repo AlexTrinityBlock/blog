@@ -7,7 +7,7 @@
     <title>K8S基本操作-33-在 External ETCD server Restore | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="在外部 ETCD server Restore 回復備份 我們的備份位置: /root/cluster2.db 將要儲存新的 etcd 資料的目錄: /var/lib/etcd-data-new 進行備份回復的指令: ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --cacert=/etc/etcd/pki/ca.pem --cert=/etc/etcd/pki/etcd.pem --key=/etc/etcd/pki/etcd-key.pem snapshot restore /root/cluster2.db --data-dir /var/lib/etcd-data-new 修改 Service 修改以下檔案: /etc/systemd/system/etcd.service 把 ... [Service] User=etcd Type=notify">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -44,8 +44,7 @@
 <meta itemprop="description" content="在外部 ETCD server Restore 回復備份 我們的備份位置: /root/cluster2.db 將要儲存新的 etcd 資料的目錄: /var/lib/etcd-data-new 進行備份回復的指令: ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --cacert=/etc/etcd/pki/ca.pem --cert=/etc/etcd/pki/etcd.pem --key=/etc/etcd/pki/etcd-key.pem snapshot restore /root/cluster2.db --data-dir /var/lib/etcd-data-new 修改 Service 修改以下檔案: /etc/systemd/system/etcd.service 把 ... [Service] User=etcd Type=notify"><meta itemprop="datePublished" content="2024-02-05T12:45:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-05T12:45:44+08:00" />
 <meta itemprop="wordCount" content="130">
-<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="K8S基本操作-33-在 External ETCD server Restore"/>
+<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="K8S基本操作-33-在 External ETCD server Restore"/>
 <meta name="twitter:description" content="在外部 ETCD server Restore 回復備份 我們的備份位置: /root/cluster2.db 將要儲存新的 etcd 資料的目錄: /var/lib/etcd-data-new 進行備份回復的指令: ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --cacert=/etc/etcd/pki/ca.pem --cert=/etc/etcd/pki/etcd.pem --key=/etc/etcd/pki/etcd-key.pem snapshot restore /root/cluster2.db --data-dir /var/lib/etcd-data-new 修改 Service 修改以下檔案: /etc/systemd/system/etcd.service 把 ... [Service] User=etcd Type=notify"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -240,8 +239,8 @@
 </code></pre><p>將要儲存新的 etcd 資料的目錄:</p>
 <pre tabindex="0"><code>/var/lib/etcd-data-new
 </code></pre><p>進行備份回復的指令:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ETCDCTL_API<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> etcdctl --endpoints<span style="color:#f92672">=</span>https://127.0.0.1:2379 --cacert<span style="color:#f92672">=</span>/etc/etcd/pki/ca.pem --cert<span style="color:#f92672">=</span>/etc/etcd/pki/etcd.pem --key<span style="color:#f92672">=</span>/etc/etcd/pki/etcd-key.pem snapshot restore /root/cluster2.db --data-dir /var/lib/etcd-data-new
-</code></pre></div><h3 id="修改-service">修改 Service</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ETCDCTL_API<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> etcdctl --endpoints<span style="color:#f92672">=</span>https://127.0.0.1:2379 --cacert<span style="color:#f92672">=</span>/etc/etcd/pki/ca.pem --cert<span style="color:#f92672">=</span>/etc/etcd/pki/etcd.pem --key<span style="color:#f92672">=</span>/etc/etcd/pki/etcd-key.pem snapshot restore /root/cluster2.db --data-dir /var/lib/etcd-data-new
+</span></span></code></pre></div><h3 id="修改-service">修改 Service</h3>
 <p>修改以下檔案:</p>
 <pre tabindex="0"><code>/etc/systemd/system/etcd.service
 </code></pre><p>把</p>
@@ -263,15 +262,15 @@ ExecStart=/usr/local/bin/etcd \
   --data-dir=/var/lib/etcd-data-new \
 ...
 </code></pre><p>如果有必要，允許該資料夾接受 etcd 存取:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chown -R etcd:etcd /var/lib/etcd-data-new
-</code></pre></div><p>重啟系統服務:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl daemon-reload 
-</code></pre></div><p>重啟 etcd:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl restart etcd
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chown -R etcd:etcd /var/lib/etcd-data-new
+</span></span></code></pre></div><p>重啟系統服務:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl daemon-reload 
+</span></span></code></pre></div><p>重啟 etcd:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl restart etcd
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

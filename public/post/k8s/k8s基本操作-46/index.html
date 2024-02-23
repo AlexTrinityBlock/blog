@@ -7,7 +7,7 @@
     <title>K8S基本操作-46-關於儲存與 Volume  | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="K8S 使用的儲存與網路介面 K8S 提供了三種開放的接口規範，分別是 CRI、CNI 和 CSI，用於對接不同的後端，實現計算、網路和存儲資源的管理。 只要符合">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -44,8 +44,7 @@
 <meta itemprop="description" content="K8S 使用的儲存與網路介面 K8S 提供了三種開放的接口規範，分別是 CRI、CNI 和 CSI，用於對接不同的後端，實現計算、網路和存儲資源的管理。 只要符合"><meta itemprop="datePublished" content="2024-02-08T15:00:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-08T15:00:44+08:00" />
 <meta itemprop="wordCount" content="1114">
-<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="K8S基本操作-46-關於儲存與 Volume "/>
+<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="K8S基本操作-46-關於儲存與 Volume "/>
 <meta name="twitter:description" content="K8S 使用的儲存與網路介面 K8S 提供了三種開放的接口規範，分別是 CRI、CNI 和 CSI，用於對接不同的後端，實現計算、網路和存儲資源的管理。 只要符合"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -247,52 +246,52 @@
 <p>K8S Volume 是 Kubernetes 提供的一種存儲抽象，可以將不同類型的存儲資源掛載到容器的文件系統中。K8S Volume 的功能是解決容器中的磁盤文件的非持久化和共享問題。K8S Volume 可以在容器的生命週期之外保留和訪問數據，也可以讓 Pod 中的多個容器共用同一個 Volume。K8S Volume 的類型有很多，例如 emptyDir、hostPath、nfs、awsElasticBlockStore、azureDisk、Ceph、Flocker、Scaleio 等，每種類型的 Volume 有不同的實現方式和特性。</p>
 <h2 id="本地的-volume">本地的 Volume</h2>
 <p>在以下的YAML中，我們在 /opt 中掛載了一個 Volume。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">random-number-generator</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">containers</span>:
-  - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">alpine</span>
-    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">alpine</span>
-    <span style="color:#f92672">command</span>: [<span style="color:#e6db74">&#34;/bin/sh&#34;</span>,<span style="color:#e6db74">&#34;-c&#34;</span>]
-    <span style="color:#f92672">args</span>: [<span style="color:#e6db74">&#34;shuf -i 0-100 -n 1 &gt;&gt; /opt/number.out;&#34;</span>]
-
-  <span style="color:#f92672">volumes</span>:
-  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">data-volume</span>
-    <span style="color:#f92672">hostPath</span>:
-      <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/data</span>
-      <span style="color:#f92672">type</span>: <span style="color:#ae81ff">Directory</span>
-</code></pre></div><p>這段就是一個本地 Volume 的部分:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">volumes</span>:
-  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">data-volume</span>
-    <span style="color:#f92672">hostPath</span>:
-      <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/data</span>
-      <span style="color:#f92672">type</span>: <span style="color:#ae81ff">Directory</span>
-</code></pre></div><h2 id="遠端-volume">遠端 Volume</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">random-number-generator</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">alpine</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">alpine</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: [<span style="color:#e6db74">&#34;/bin/sh&#34;</span>,<span style="color:#e6db74">&#34;-c&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">args</span>: [<span style="color:#e6db74">&#34;shuf -i 0-100 -n 1 &gt;&gt; /opt/number.out;&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">data-volume</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">hostPath</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/data</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">type</span>: <span style="color:#ae81ff">Directory</span>
+</span></span></code></pre></div><p>這段就是一個本地 Volume 的部分:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">data-volume</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">hostPath</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/data</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">type</span>: <span style="color:#ae81ff">Directory</span>
+</span></span></code></pre></div><h2 id="遠端-volume">遠端 Volume</h2>
 <p>我們也可以改成 AWS EBS 上的 Volume:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">volumes</span>:
-  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">data-volume</span>
-    <span style="color:#f92672">awsElasticBlockStore</span>:
-      <span style="color:#f92672">volumeID</span>: <span style="color:#ae81ff">&lt;AWS volume ID&gt;</span>
-      <span style="color:#f92672">fsType</span>: <span style="color:#ae81ff">ext4</span>
-</code></pre></div><h2 id="節點存取模式">節點存取模式</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">data-volume</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">awsElasticBlockStore</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">volumeID</span>: <span style="color:#ae81ff">&lt;AWS volume ID&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">fsType</span>: <span style="color:#ae81ff">ext4</span>
+</span></span></code></pre></div><h2 id="節點存取模式">節點存取模式</h2>
 <p>這是個 Volume 的定義檔案:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>:
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">PersistentVolume</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">pv-vol1</span>
-
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">accessModes</span>:
-    - <span style="color:#ae81ff">ReadWriteOnce</span>
-  <span style="color:#f92672">capacity</span>:
-    <span style="color:#f92672">storage</span>: <span style="color:#ae81ff">1Gi</span>
-
-  <span style="color:#f92672">awsElasticBlockStore</span>:
-    <span style="color:#f92672">volumeID</span>: <span style="color:#ae81ff">&lt;volume-id&gt;</span>
-    <span style="color:#f92672">fsType</span>: <span style="color:#ae81ff">ext4</span>
-</code></pre></div><p>其中這段標註了 Access Modes。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">PersistentVolume</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">pv-vol1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">accessModes</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">ReadWriteOnce</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">capacity</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">storage</span>: <span style="color:#ae81ff">1Gi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">awsElasticBlockStore</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumeID</span>: <span style="color:#ae81ff">&lt;volume-id&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">fsType</span>: <span style="color:#ae81ff">ext4</span>
+</span></span></code></pre></div><p>其中這段標註了 Access Modes。</p>
 <p>Access Modes 是指 Volume 支持的被節點 (nodes) 掛載的方式。有三種模式：</p>
 <ul>
 <li>
@@ -306,8 +305,8 @@
 </li>
 </ul>
 <h2 id="取得現在有多少-volume-存在">取得現在有多少 Volume 存在</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get persistentvolume
-</code></pre></div><h1 id="persistent-volume-claims">Persistent Volume Claims</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get persistentvolume
+</span></span></code></pre></div><h1 id="persistent-volume-claims">Persistent Volume Claims</h1>
 <p>K8S Persistent Volume Claims (PVC) 是一種用戶對存儲資源的請求，可以  YAML 檔案定義。</p>
 <p>例如: 不用特別指定某個 Volume ，只要指出&quot;我需要一個 100 GB 的 Volume&quot; 即可自動找到某個 Volume 掛載上去。</p>
 <p>可以請求的選項有:</p>
@@ -320,25 +319,25 @@
 </ul>
 <h2 id="persistent-volume-claims-範例1">Persistent Volume Claims 範例1</h2>
 <p>以下指定了一個 500 Mi 的 Volume 需求，並且存取模式採用 ReadWriteOnce 。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">PersistentVolumeClaim</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">myclaim</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">accessModes</span>:
-    - <span style="color:#ae81ff">ReadWriteOnce</span>
-  <span style="color:#f92672">resources</span>:
-    <span style="color:#f92672">requests</span>:
-      <span style="color:#f92672">storage</span>: <span style="color:#ae81ff">500Mi</span>
-</code></pre></div><h2 id="persistent-volume-claims-指令">Persistent Volume Claims 指令</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">PersistentVolumeClaim</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">myclaim</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">accessModes</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">ReadWriteOnce</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">resources</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">requests</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">storage</span>: <span style="color:#ae81ff">500Mi</span>
+</span></span></code></pre></div><h2 id="persistent-volume-claims-指令">Persistent Volume Claims 指令</h2>
 <p>列出 Persistent Volume Claims:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get persistentvolumeclaim
-</code></pre></div><p>刪除 Persistent Volume Claims:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl delete persistentvolumeclaim myclaim
-</code></pre></div><h1 id="persistent-volume-reclaim-policy">Persistent Volume Reclaim Policy</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get persistentvolumeclaim
+</span></span></code></pre></div><p>刪除 Persistent Volume Claims:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl delete persistentvolumeclaim myclaim
+</span></span></code></pre></div><h1 id="persistent-volume-reclaim-policy">Persistent Volume Reclaim Policy</h1>
 <p>指定當刪除掉 Persistent Volume Claim 時，對 Volume 進行的操作:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">persistentVolumeReclaimPolicy</span>: <span style="color:#ae81ff">Retain</span>
-</code></pre></div><p>可選的有:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">persistentVolumeReclaimPolicy</span>: <span style="color:#ae81ff">Retain</span>
+</span></span></code></pre></div><p>可選的有:</p>
 <ul>
 <li>Delete: 刪除 Volume</li>
 <li>Recycle: 重複使用 Volume，但會清除其中資料，不建議使用。</li>
@@ -347,7 +346,7 @@
 <ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

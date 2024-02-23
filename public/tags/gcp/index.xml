@@ -6,132 +6,105 @@
     <description>Recent content in GCP on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Sun, 31 Dec 2023 05:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Dec 2023 05:00:44 +0800</lastBuildDate>
+    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>繪製GCP設計圖稿</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/%E7%B9%AA%E8%A3%BDgcp%E8%A8%AD%E8%A8%88%E5%9C%96%E7%A8%BF/</link>
       <pubDate>Sun, 31 Dec 2023 05:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/%E7%B9%AA%E8%A3%BDgcp%E8%A8%AD%E8%A8%88%E5%9C%96%E7%A8%BF/</guid>
       <description>Architecture Diagramming Tool 一個可以繪製GCP架構圖的工具，主要繪圖部件稱為 Google Cloud Developer Cheat Sheet 。 可以幫助設計 GCP 雲端架構。 可以用拖曳進行操作。 參考頁面: Introducing a Google Cloud architecture diagramming tool Google Cloud Developer</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-考前筆記</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-%E8%80%83%E5%89%8D%E7%AD%86%E8%A8%98/</link>
       <pubDate>Tue, 26 Dec 2023 01:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-%E8%80%83%E5%89%8D%E7%AD%86%E8%A8%98/</guid>
       <description>GCP ACE 考前模擬題目的小筆記 以下紀錄著模擬考題裏頭的各種超綱題。 儲存秘密 GCP Secret Manager 與 Environment variables 的抉擇，兩個都可行，該選哪個? GCP Secret Manager 提供版本控制和日誌記錄功</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-12-Storage 儲存</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-12/</link>
       <pubDate>Thu, 30 Nov 2023 16:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-12/</guid>
       <description>Storage 儲存分成兩種 Block Storage 類似許多二進位訊息的儲存區塊，可以作為硬碟直接掛上。從一個更高的角度來看，硬碟儲存的是一串 0 與 1 ， 映像檔也是如此。而 Block Storage 不</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-11-Cloud KMS (Cloud Key Management)</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-11/</link>
       <pubDate>Wed, 29 Nov 2023 17:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-11/</guid>
       <description>Data States 資料狀態 Data at rest: 資料在裝置上使用或者在備份中 Hard disk Database Backups Archives Data in motion (運動中): 資料在網路傳輸中 如資料從本地轉送到雲端儲存 應用程式跟 Database 交互中 兩種型</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-10-Cloud Run</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-10/</link>
       <pubDate>Wed, 29 Nov 2023 16:40:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-10/</guid>
       <description>Cloud Run 基於 Knative，一種自動管理 K8S 的工具，幾乎可以做到全自動擴展。 不須維護基礎設施。 使用時才付費。 Cloud Run for Anthos Cloud Run 是在數秒之內運作一個容器帶</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-09-Cloud function 第二代 (2nd gen)(未完成)</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-09/</link>
       <pubDate>Tue, 14 Nov 2023 11:20:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-09/</guid>
       <description>Cloud function - 2nd gen (未完成) 更長的執行時間 60 分鐘。 更大的 VM Size，16 GB RAM，4 vCPU。 Concurrency: 1 個 function 接受同時 1000 個併發。第一代，1 次接受 1 個併發。 Multiple</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-08-Cloud function 第一代</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-08/</link>
       <pubDate>Tue, 14 Nov 2023 09:50:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-08/</guid>
       <description>Cloud function 可以用在某個事件 (Event) 發生時，產生某個反應。 例如某個 error log 發生時，出現反饋。 這項服務是 Serverless 服務，只在運作時算錢。 支援語言 Node.js, Python, Go, Java, .NET, and Ruby 成本計算方</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-07-Google Kubernetes Engine</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-07/</link>
       <pubDate>Sat, 11 Nov 2023 11:20:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-07/</guid>
       <description>GKE 簡述 (p.111) Google 提供的 K8S 服務。 跟典型的 K8S 服務一樣有以下特色: Auto Scaling Service Discovery Load Balancer Self-Healing Zero Downtime Deployment Auto-repair Pod and Cluster Autoscaling 可用 Cloud Logging 與 Cloud Monitoring 監控 由 Google 提供的 Container-Optimized OS 提供 Persistent disks 與 Local SSD。 啟動</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-06-App Engine</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-06/</link>
       <pubDate>Sat, 11 Nov 2023 00:20:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-06/</guid>
       <description>App Engine 一個可以簡單部屬可以自動縮放的應用程式。 預設運作環境: Go, Java, .NET, Node.js, PHP, Python, Ruby ，這些語言都有提供運作環境。 客製化作環境: 可採用任何語言。 App Engine 是 Re</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-05-Managed Services</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-05/</link>
       <pubDate>Thu, 09 Nov 2023 15:55:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-05/</guid>
       <description>IAAS (Infrastructure as a Service) 供應商管理硬體，其他可以自訂。 例如 : VM。 需自己更新 OS, APP, APP runtime, Auto scaling, Availability, Load balancing。 PAAS (Platform as a Service) 供應商管理硬體, OS, 網路, APP runtime, Load balancing,</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-04-Cloud Load Balancing</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-04/</link>
       <pubDate>Thu, 09 Nov 2023 09:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-04/</guid>
       <description>Cloud Load Balancing 負載平衡，可以提供一個IP或者網址後方，放置多台機器。 可以單 region 或者 multiple regions。 增加服務的 Resiliency (彈性)，Auto Scaling，Hi</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-03-Instance Groups</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-03/</link>
       <pubDate>Wed, 08 Nov 2023 20:48:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-03/</guid>
       <description>Instance Groups 可以採用數個 VM template 組成一個群組進行管理。 兩種型態的 Instance Groups: Managed: 自動擴展的同一種 template 並且自動修復與自動管理釋放虛擬機。 Unmanaged: 許多不同型態的 template 組成，無法自</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-02-Gcloud簡介</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-02/</link>
       <pubDate>Wed, 08 Nov 2023 20:44:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-02/</guid>
       <description>Gcloud 的常用功能 # 初始化，登入GCP帳號 gcloud init # 列出所有啟動的屬性，可以看到登入帳號與 projuct 名稱 gcloud config list # 列出帳號 gcloud config list account # 列出區域 gcloud config list region # 列出 Project gcloud config</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-01-GCE介紹</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-01/</link>
       <pubDate>Wed, 08 Nov 2023 10:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-01/</guid>
       <description>GCP-ACE 證照筆記 Associate Cloud Engineer Certification 助理雲端工程師證照 Region 遍布全球的地區，一個地區會有多個 Zone 機房。 目前有 20 個以上。 Zones 資料中心 (data centers)，同 region 的 zone 資料互傳</description>
     </item>
-    
   </channel>
 </rss>

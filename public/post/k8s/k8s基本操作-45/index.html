@@ -7,7 +7,7 @@
     <title>K8S基本操作-45-Kubectx 和 Kubens  | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Kubectx 和 Kubens 是兩個用於簡化 Kubernetes 集群管理的命令行工具。 Kubectx 允許您快速在不同的 Kubernetes 集群和命名空間之間切換。 Kubens 允許您快速在不同的命名空間之間切換。 這兩個工具都">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -44,8 +44,7 @@
 <meta itemprop="description" content="Kubectx 和 Kubens 是兩個用於簡化 Kubernetes 集群管理的命令行工具。 Kubectx 允許您快速在不同的 Kubernetes 集群和命名空間之間切換。 Kubens 允許您快速在不同的命名空間之間切換。 這兩個工具都"><meta itemprop="datePublished" content="2024-02-07T20:00:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-07T20:00:44+08:00" />
 <meta itemprop="wordCount" content="167">
-<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="K8S基本操作-45-Kubectx 和 Kubens "/>
+<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="K8S基本操作-45-Kubectx 和 Kubens "/>
 <meta name="twitter:description" content="Kubectx 和 Kubens 是兩個用於簡化 Kubernetes 集群管理的命令行工具。 Kubectx 允許您快速在不同的 Kubernetes 集群和命名空間之間切換。 Kubens 允許您快速在不同的命名空間之間切換。 這兩個工具都"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -237,25 +236,25 @@
 <p>Kubectx 允許您快速在不同的 Kubernetes 集群和命名空間之間切換。</p>
 <p>Kubens 允許您快速在不同的命名空間之間切換。</p>
 <p>這兩個工具都提供上下文感知的提示，可幫助您了解当前的集群、命名空間和上下文。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#列出所有可用的集群</span>
-kubectx get clusters
-
-<span style="color:#75715e">#切換到特定集群</span>
-kubectx set cluster &lt;cluster-name&gt;
-
-<span style="color:#75715e">#列出所有可用的命名空間</span>
-kubectx get namespaces
-
-<span style="color:#75715e">#切換到特定命名空間</span>
-kubectx set namespace &lt;namespace-name&gt;
-
-<span style="color:#75715e">#查看当前的上下文</span>
-kubectx
-</code></pre></div><p><a href="https://github.com/ahmetb/kubectx">https://github.com/ahmetb/kubectx</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#列出所有可用的集群</span>
+</span></span><span style="display:flex;"><span>kubectx get clusters
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#切換到特定集群</span>
+</span></span><span style="display:flex;"><span>kubectx set cluster &lt;cluster-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#列出所有可用的命名空間</span>
+</span></span><span style="display:flex;"><span>kubectx get namespaces
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#切換到特定命名空間</span>
+</span></span><span style="display:flex;"><span>kubectx set namespace &lt;namespace-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#查看当前的上下文</span>
+</span></span><span style="display:flex;"><span>kubectx
+</span></span></code></pre></div><p><a href="https://github.com/ahmetb/kubectx">https://github.com/ahmetb/kubectx</a></p>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

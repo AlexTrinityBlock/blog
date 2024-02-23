@@ -6,42 +6,35 @@
     <description>Recent content in Hugo on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Fri, 26 Feb 2021 17:04:06 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Jul 2021 09:14:30 +0800</lastBuildDate>
+    <atom:link href="https://alextrinityblock.github.io/blog/public/post/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>插入數學內容的方法</title>
       <link>https://alextrinityblock.github.io/blog/public/post/hugo/%E6%8F%92%E5%85%A5%E6%95%B8%E5%AD%B8%E5%85%A7%E5%AE%B9%E7%9A%84%E6%96%B9%E6%B3%95/</link>
       <pubDate>Tue, 27 Jul 2021 09:14:30 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/hugo/%E6%8F%92%E5%85%A5%E6%95%B8%E5%AD%B8%E5%85%A7%E5%AE%B9%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
       <description>範例Latex與javascript引入語法 &amp;lt;script src=&amp;#34;https://polyfill.io/v3/polyfill.min.js?features=es6&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script id=&amp;#34;MathJax-script&amp;#34; async src=&amp;#34;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;p&amp;gt; When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\] &amp;lt;/p&amp;gt; 範例 When \(a \ne 0\), there are two solutions to \(ax^2 + bx</description>
     </item>
-    
     <item>
       <title>加入佈景主題</title>
       <link>https://alextrinityblock.github.io/blog/public/post/hugo/%E5%8A%A0%E5%85%A5%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C/</link>
       <pubDate>Sat, 27 Feb 2021 09:36:30 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/hugo/%E5%8A%A0%E5%85%A5%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C/</guid>
       <description>從github抓取的指令 例如 ，我們要抓的佈景主題的名稱叫 m10c 我們找到m10c的部落格網址 然後輸入以下指令 git submodule add https://github.com/vaga/hugo-theme-m10c.git themes/m10c 指令的最後一段 themes/m10c 意思是將主題</description>
     </item>
-    
     <item>
       <title>建立一個新的部落格</title>
       <link>https://alextrinityblock.github.io/blog/public/post/hugo/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%83%A8%E8%90%BD%E6%A0%BC/</link>
       <pubDate>Fri, 26 Feb 2021 21:14:30 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/hugo/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%83%A8%E8%90%BD%E6%A0%BC/</guid>
       <description>1.命令行 命令行輸入後 hugo new site hahablog 這樣會建立一個稱為『haha』的部落格</description>
     </item>
-    
     <item>
       <title>Hugo建立文章</title>
       <link>https://alextrinityblock.github.io/blog/public/post/hugo/hugo%E5%BB%BA%E7%AB%8B%E6%96%87%E7%AB%A0/</link>
       <pubDate>Fri, 26 Feb 2021 16:31:03 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/hugo/hugo%E5%BB%BA%E7%AB%8B%E6%96%87%E7%AB%A0/</guid>
       <description>1.命令行 命令行輸入後 hugo new posts/心平氣和.md 這樣會建立一個稱為『心平氣和』的文章 2.編輯 可以用各種文字編輯器進行編輯 通常是輸入內容 3</description>
     </item>
-    
   </channel>
 </rss>

@@ -7,7 +7,7 @@
     <title>Linux網路基本指令1 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="ip 類網路指令 以下指令僅在重新啟動前生效，如果要長期保存，需要根據各 Linux 發行版不同實踐調整設定檔案。 # 列出介面 ip link # 查詢個別網卡的資訊 ip addr show eth0 ip">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -44,8 +44,7 @@
 <meta itemprop="description" content="ip 類網路指令 以下指令僅在重新啟動前生效，如果要長期保存，需要根據各 Linux 發行版不同實踐調整設定檔案。 # 列出介面 ip link # 查詢個別網卡的資訊 ip addr show eth0 ip"><meta itemprop="datePublished" content="2024-02-08T22:00:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-08T22:00:44+08:00" />
 <meta itemprop="wordCount" content="409">
-<meta itemprop="keywords" content="linux,apt," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux網路基本指令1"/>
+<meta itemprop="keywords" content="linux,apt," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Linux網路基本指令1"/>
 <meta name="twitter:description" content="ip 類網路指令 以下指令僅在重新啟動前生效，如果要長期保存，需要根據各 Linux 發行版不同實踐調整設定檔案。 # 列出介面 ip link # 查詢個別網卡的資訊 ip addr show eth0 ip"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -235,38 +234,38 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="ip-類網路指令">ip 類網路指令</h1>
 <p>以下指令僅在重新啟動前生效，如果要長期保存，需要根據各 Linux 發行版不同實踐調整設定檔案。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 列出介面</span>
-ip link
-
-<span style="color:#75715e"># 查詢個別網卡的資訊</span>
-ip addr show eth0
-ip addr list eth0
-ip addr show dev eth0
-
-<span style="color:#75715e"># 給網卡定義 IP 地址</span>
-sudo ip addr add 10.20.0.15/24 dev eth1
-
-<span style="color:#75715e"># 啟動網卡</span>
-sudo ip link set dev eth1 up
-
-<span style="color:#75715e"># 停用網卡</span>
-sudo ip link set dev eth1 down
-
-<span style="color:#75715e"># 顯示 Routing Table</span>
-ip route
-ip route show
-ip route list
-
-<span style="color:#75715e"># add 新增 / del 刪除 / src 來源IP(本機IP) / via 透過...(網關或路由器) / dev 經由哪個網卡</span>
-ip route add 1.1.1.0/24 src 3.3.3.3 via 3.3.3.254 dev eth1
-</code></pre></div><h1 id="ip-轉發指令">IP 轉發指令</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 列出介面</span>
+</span></span><span style="display:flex;"><span>ip link
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查詢個別網卡的資訊</span>
+</span></span><span style="display:flex;"><span>ip addr show eth0
+</span></span><span style="display:flex;"><span>ip addr list eth0
+</span></span><span style="display:flex;"><span>ip addr show dev eth0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 給網卡定義 IP 地址</span>
+</span></span><span style="display:flex;"><span>sudo ip addr add 10.20.0.15/24 dev eth1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 啟動網卡</span>
+</span></span><span style="display:flex;"><span>sudo ip link set dev eth1 up
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 停用網卡</span>
+</span></span><span style="display:flex;"><span>sudo ip link set dev eth1 down
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 顯示 Routing Table</span>
+</span></span><span style="display:flex;"><span>ip route
+</span></span><span style="display:flex;"><span>ip route show
+</span></span><span style="display:flex;"><span>ip route list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># add 新增 / del 刪除 / src 來源IP(本機IP) / via 透過...(網關或路由器) / dev 經由哪個網卡</span>
+</span></span><span style="display:flex;"><span>ip route add 1.1.1.0/24 src 3.3.3.3 via 3.3.3.254 dev eth1
+</span></span></code></pre></div><h1 id="ip-轉發指令">IP 轉發指令</h1>
 <p>持久設置 IP 轉發:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 關閉 IP 轉發</span>
-echo <span style="color:#ae81ff">0</span> &gt; /proc/sys/net/ipv4/ip_forward
-
-<span style="color:#75715e"># 開啟 IP 轉發</span>
-echo <span style="color:#ae81ff">1</span> &gt; /proc/sys/net/ipv4/ip_forward
-</code></pre></div><p>IP 轉發的用途是把 Linux 作為一個類似 Router 的角色，可以做到從 eth0 收到封包，轉送到 eth1。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 關閉 IP 轉發</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#ae81ff">0</span> &gt; /proc/sys/net/ipv4/ip_forward
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 開啟 IP 轉發</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#ae81ff">1</span> &gt; /proc/sys/net/ipv4/ip_forward
+</span></span></code></pre></div><p>IP 轉發的用途是把 Linux 作為一個類似 Router 的角色，可以做到從 eth0 收到封包，轉送到 eth1。</p>
 <p>預設是關閉的，因為假定 eth0 是內部網路， eth1 是外部網路 ， 預設避免互通轉送可以確保一定的安全性。</p>
 <h1 id="dns-有關">DNS 有關</h1>
 <p>本機 DNS 解析路徑:</p>
@@ -274,9 +273,9 @@ echo <span style="color:#ae81ff">1</span> &gt; /proc/sys/net/ipv4/ip_forward
 </code></pre><p>外部 DNS 主機紀錄:</p>
 <pre tabindex="0"><code>/etc/resolv.conf 
 </code></pre><h1 id="從-url-找到對應-ip-與-dns-供應商">從 URL 找到對應 IP 與 DNS 供應商</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nslookup www.google.com
-dig www.google.com
-</code></pre></div><h1 id="一個容易配置的-dns-server---coredns">一個容易配置的 DNS Server - CoreDNS</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nslookup www.google.com
+</span></span><span style="display:flex;"><span>dig www.google.com
+</span></span></code></pre></div><h1 id="一個容易配置的-dns-server---coredns">一個容易配置的 DNS Server - CoreDNS</h1>
 <p>可以用二進制檔案，或者是容器啟動。</p>
 <p>啟動後會 Listen Port 53 。</p>
 <p>如果將 DNS 配置清單設置為 /etc/host ， 就可以對於寫在該配置檔案中的 DNS 查詢進行回應。</p>
@@ -284,11 +283,11 @@ dig www.google.com
 <ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/linux" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">linux</a>
+     <a href="/tags/linux" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">linux</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/apt" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">apt</a>
+     <a href="/tags/apt" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">apt</a>
    </li>
   
 </ul>

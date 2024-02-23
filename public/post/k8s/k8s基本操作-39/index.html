@@ -7,7 +7,7 @@
     <title>K8S基本操作-39-K8S 的使用者與權限 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="我們是否能在 K8S 建立使用者 並非直接建立，而是採用 x509 建立使用者鑰匙後建立。 K8S 的權限種類 Node 例如每個 Worker Node 都擁有一個權限身份，設置在 kubelet 用來存取 Kube API">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -44,8 +44,7 @@
 <meta itemprop="description" content="我們是否能在 K8S 建立使用者 並非直接建立，而是採用 x509 建立使用者鑰匙後建立。 K8S 的權限種類 Node 例如每個 Worker Node 都擁有一個權限身份，設置在 kubelet 用來存取 Kube API"><meta itemprop="datePublished" content="2024-02-07T10:50:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-07T10:50:44+08:00" />
 <meta itemprop="wordCount" content="1022">
-<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="K8S基本操作-39-K8S 的使用者與權限"/>
+<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="K8S基本操作-39-K8S 的使用者與權限"/>
 <meta name="twitter:description" content="我們是否能在 K8S 建立使用者 並非直接建立，而是採用 x509 建立使用者鑰匙後建立。 K8S 的權限種類 Node 例如每個 Worker Node 都擁有一個權限身份，設置在 kubelet 用來存取 Kube API"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -261,20 +260,20 @@
 </li>
 </ul>
 <p>以下為範例:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Policy</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">allow-pods-in-default-namespace</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">allow</span>:
-    - <span style="color:#f92672">effect</span>: <span style="color:#ae81ff">Allow</span>
-      <span style="color:#f92672">resources</span>:
-        - <span style="color:#ae81ff">pods</span>
-      <span style="color:#f92672">namespaces</span>:
-        - <span style="color:#ae81ff">default</span>
-  <span style="color:#f92672">users</span>:
-    - <span style="color:#ae81ff">system:serviceaccount:default:default</span>
-</code></pre></div><h2 id="rbac-角色基礎權限控制-role-based-access-control">RBAC (角色基礎權限控制 Role-Based Access Control)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Policy</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">allow-pods-in-default-namespace</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">allow</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">effect</span>: <span style="color:#ae81ff">Allow</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">resources</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">pods</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">namespaces</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">default</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">users</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">system:serviceaccount:default:default</span>
+</span></span></code></pre></div><h2 id="rbac-角色基礎權限控制-role-based-access-control">RBAC (角色基礎權限控制 Role-Based Access Control)</h2>
 <p>Role-Based Access Control (RBAC) 是一種基於角色的訪問控制模型。在 RBAC 模型中，訪問控制決策是根據用戶的角色來進行的。</p>
 <ul>
 <li>角色：角色是一組權限的集合。</li>
@@ -284,149 +283,149 @@
 <h3 id="範例1">範例1</h3>
 <p>設置一個管理員角色:</p>
 <p><em>rbac-role.yaml</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Role</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">admin</span>
-<span style="color:#f92672">rules</span>:
-  - <span style="color:#f92672">apiGroups</span>:
-      - <span style="color:#e6db74">&#34;*&#34;</span>
-    <span style="color:#f92672">resources</span>:
-      - <span style="color:#e6db74">&#34;*&#34;</span>
-    <span style="color:#f92672">verbs</span>:
-      - <span style="color:#e6db74">&#34;*&#34;</span>
-</code></pre></div><p>綁定 admin 在用戶 Peter 上</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Role</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">admin</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">rules</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">apiGroups</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">resources</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">verbs</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;*&#34;</span>
+</span></span></code></pre></div><p>綁定 admin 在用戶 Peter 上</p>
 <p><em>rbac-rolebinding.yaml</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">RoleBinding</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">admin-binding</span>
-<span style="color:#f92672">subjects</span>:
-  - <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">User</span>
-    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">peter</span>
-<span style="color:#f92672">roleRef</span>:
-  <span style="color:#f92672">apiGroup</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io</span>
-  <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Role</span>
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">admin</span>
-</code></pre></div><p>使用以下指令:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create -f rbac-role.yaml
-kubectl create -f rbac-rolebinding.yaml
-</code></pre></div><h3 id="範例2">範例2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">RoleBinding</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">admin-binding</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">subjects</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">User</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">peter</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">roleRef</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">apiGroup</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Role</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">admin</span>
+</span></span></code></pre></div><p>使用以下指令:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl create -f rbac-role.yaml
+</span></span><span style="display:flex;"><span>kubectl create -f rbac-rolebinding.yaml
+</span></span></code></pre></div><h3 id="範例2">範例2</h3>
 <p>建立一個可以查看 Pod 的角色:</p>
 <p><em>rbac-role.yaml</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Role</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">view-pods</span>
-<span style="color:#f92672">rules</span>:
-  - <span style="color:#f92672">apiGroups</span>:
-      - <span style="color:#e6db74">&#34;&#34;</span>
-    <span style="color:#f92672">resources</span>:
-      - <span style="color:#ae81ff">pods</span>
-    <span style="color:#f92672">verbs</span>:
-      - <span style="color:#ae81ff">get</span>
-</code></pre></div><p>然後賦予到 Jane 身上</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Role</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">view-pods</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">rules</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">apiGroups</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">resources</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">pods</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">verbs</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">get</span>
+</span></span></code></pre></div><p>然後賦予到 Jane 身上</p>
 <p><em>rbac-rolebinding.yaml</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">RoleBinding</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">view-pods-binding</span>
-<span style="color:#f92672">subjects</span>:
-  - <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">User</span>
-    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">jane</span>
-<span style="color:#f92672">roleRef</span>:
-  <span style="color:#f92672">apiGroup</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io</span>
-  <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Role</span>
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">view-pods</span>
-</code></pre></div><h3 id="範例3">範例3</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">RoleBinding</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">view-pods-binding</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">subjects</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">User</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">jane</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">roleRef</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">apiGroup</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Role</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">view-pods</span>
+</span></span></code></pre></div><h3 id="範例3">範例3</h3>
 <p>dev-user 使用者綁定於 developer 角色，可以對 Pod 進行操作，可以建立 ConfigMap 。</p>
 <p><em>developer-role.yaml</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Role</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">developer</span>
-<span style="color:#f92672">rules</span>:
-  - <span style="color:#f92672">apiGroups</span>: [<span style="color:#e6db74">&#34;&#34;</span>]
-    <span style="color:#f92672">resources</span>: [<span style="color:#e6db74">&#34;pods&#34;</span>]
-    <span style="color:#f92672">verbs</span>: [<span style="color:#e6db74">&#34;list&#34;</span>, <span style="color:#e6db74">&#34;get&#34;</span>, <span style="color:#e6db74">&#34;create&#34;</span>, <span style="color:#e6db74">&#34;update&#34;</span>, <span style="color:#e6db74">&#34;delete&#34;</span>]
-  - <span style="color:#f92672">apiGroups</span>: [<span style="color:#e6db74">&#34;&#34;</span>]
-    <span style="color:#f92672">resources</span>: [<span style="color:#e6db74">&#34;ConfigMap&#34;</span>]
-    <span style="color:#f92672">verbs</span>: [<span style="color:#e6db74">&#34;create&#34;</span>]
-</code></pre></div><p><em>devuser-developer-binding.yaml</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">RoleBinding</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">devuser-developer-binding</span>
-<span style="color:#f92672">subjects</span>:
-- <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">User</span>
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">dev-user</span>
-  <span style="color:#f92672">apiGroup</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io</span>
-<span style="color:#f92672">roleRef</span>:
-  <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Role</span>
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">developer</span>
-  <span style="color:#f92672">apiGroup</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io</span>
-</code></pre></div><h3 id="範例4">範例4</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Role</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">developer</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">rules</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">apiGroups</span>: [<span style="color:#e6db74">&#34;&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">resources</span>: [<span style="color:#e6db74">&#34;pods&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">verbs</span>: [<span style="color:#e6db74">&#34;list&#34;</span>, <span style="color:#e6db74">&#34;get&#34;</span>, <span style="color:#e6db74">&#34;create&#34;</span>, <span style="color:#e6db74">&#34;update&#34;</span>, <span style="color:#e6db74">&#34;delete&#34;</span>]
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">apiGroups</span>: [<span style="color:#e6db74">&#34;&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">resources</span>: [<span style="color:#e6db74">&#34;ConfigMap&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">verbs</span>: [<span style="color:#e6db74">&#34;create&#34;</span>]
+</span></span></code></pre></div><p><em>devuser-developer-binding.yaml</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">RoleBinding</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">devuser-developer-binding</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">subjects</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">User</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">dev-user</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">apiGroup</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">roleRef</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Role</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">developer</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">apiGroup</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io</span>
+</span></span></code></pre></div><h3 id="範例4">範例4</h3>
 <p>建議一個只能對名為 blue 或者 orange 的  Pod 進行更新的角色 developer:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Role</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">developer</span>
-<span style="color:#f92672">rules</span>:
-- <span style="color:#f92672">apiGroups</span>: [<span style="color:#e6db74">&#34;&#34;</span>]
-  <span style="color:#f92672">resources</span>: [<span style="color:#e6db74">&#34;pods&#34;</span>]
-  <span style="color:#f92672">verbs</span>: [<span style="color:#e6db74">&#34;get&#34;</span>, <span style="color:#ae81ff">“create“, “update“]</span>
-  <span style="color:#f92672">resourceNames</span>: [<span style="color:#ae81ff">“blue“, “orange”]</span>
-</code></pre></div><h2 id="webhook">Webhook</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Role</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">developer</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">rules</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">apiGroups</span>: [<span style="color:#e6db74">&#34;&#34;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">resources</span>: [<span style="color:#e6db74">&#34;pods&#34;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">verbs</span>: [<span style="color:#e6db74">&#34;get&#34;</span>, <span style="color:#ae81ff">“create“, “update“]</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">resourceNames</span>: [<span style="color:#ae81ff">“blue“, “orange”]</span>
+</span></span></code></pre></div><h2 id="webhook">Webhook</h2>
 <p>委託第三方支持 Webhook 的系統進行權限驗證，如: Open Policy Agent。</p>
 <p><a href="https://www.openpolicyagent.org/">https://www.openpolicyagent.org/</a></p>
 <h1 id="k8s-api-server-負責允許權限種類">K8S API Server 負責允許權限種類</h1>
 <p>K8S API Server 啟動時，需要決定要開啟哪些授權方式，例如以下範例:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ExecStart<span style="color:#f92672">=</span>/usr/local/bin/kube-apiserver <span style="color:#ae81ff">\\</span>
---advertise-address<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>INTERNAL_IP<span style="color:#e6db74">}</span> <span style="color:#ae81ff">\\</span>
---allow-privileged<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\\</span>
---apiserver-count<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> <span style="color:#ae81ff">\\</span>
---authorization-mode<span style="color:#f92672">=</span>NODE,RBAC,WEBHOOK <span style="color:#ae81ff">\\</span>
---bind-address<span style="color:#f92672">=</span>0.0.0.0 <span style="color:#ae81ff">\\</span>
---enable-swagger-ui<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\\</span>
---etcd-cafile<span style="color:#f92672">=</span>/var/lib/kubernetes/ca.pem <span style="color:#ae81ff">\\</span>
---etcd-certfile<span style="color:#f92672">=</span>/var/lib/kubernetes/apiserver-etcd-client.crt <span style="color:#ae81ff">\\</span>
---etcd-keyfile<span style="color:#f92672">=</span>/var/lib/kubernetes/apiserver-etcd-client.key <span style="color:#ae81ff">\\</span>
---etcd-servers<span style="color:#f92672">=</span>https://127.0.0.1:2379 <span style="color:#ae81ff">\\</span>
---event-ttl<span style="color:#f92672">=</span>1h <span style="color:#ae81ff">\\</span>
---kubelet-certificate-authority<span style="color:#f92672">=</span>/var/lib/kubernetes/ca.pem <span style="color:#ae81ff">\\</span>
---kubelet-client-certificate<span style="color:#f92672">=</span>/var/lib/kubernetes/apiserver-etcd-client.crt <span style="color:#ae81ff">\\</span>
---kubelet-client-key<span style="color:#f92672">=</span>/var/lib/kubernetes/apiserver-etcd-client.key <span style="color:#ae81ff">\\</span>
---service-node-port-range<span style="color:#f92672">=</span>30000-32767 <span style="color:#ae81ff">\\</span>
---client-ca-file<span style="color:#f92672">=</span>/var/lib/kubernetes/ca.pem <span style="color:#ae81ff">\\</span>
---tls-cert-file<span style="color:#f92672">=</span>/var/lib/kubernetes/apiserver.crt <span style="color:#ae81ff">\\</span>
---tls-private-key-file<span style="color:#f92672">=</span>/var/lib/kubernetes/apiserver.key <span style="color:#ae81ff">\\</span>
---v<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
-</code></pre></div><p>其中這一段:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ExecStart<span style="color:#f92672">=</span>/usr/local/bin/kube-apiserver <span style="color:#ae81ff">\\</span>
+</span></span><span style="display:flex;"><span>--advertise-address<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>INTERNAL_IP<span style="color:#e6db74">}</span> <span style="color:#ae81ff">\\</span>
+</span></span><span style="display:flex;"><span>--allow-privileged<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\\</span>
+</span></span><span style="display:flex;"><span>--apiserver-count<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> <span style="color:#ae81ff">\\</span>
+</span></span><span style="display:flex;"><span>--authorization-mode<span style="color:#f92672">=</span>NODE,RBAC,WEBHOOK <span style="color:#ae81ff">\\</span>
+</span></span><span style="display:flex;"><span>--bind-address<span style="color:#f92672">=</span>0.0.0.0 <span style="color:#ae81ff">\\</span>
+</span></span><span style="display:flex;"><span>--enable-swagger-ui<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\\</span>
+</span></span><span style="display:flex;"><span>--etcd-cafile<span style="color:#f92672">=</span>/var/lib/kubernetes/ca.pem <span style="color:#ae81ff">\\</span>
+</span></span><span style="display:flex;"><span>--etcd-certfile<span style="color:#f92672">=</span>/var/lib/kubernetes/apiserver-etcd-client.crt <span style="color:#ae81ff">\\</span>
+</span></span><span style="display:flex;"><span>--etcd-keyfile<span style="color:#f92672">=</span>/var/lib/kubernetes/apiserver-etcd-client.key <span style="color:#ae81ff">\\</span>
+</span></span><span style="display:flex;"><span>--etcd-servers<span style="color:#f92672">=</span>https://127.0.0.1:2379 <span style="color:#ae81ff">\\</span>
+</span></span><span style="display:flex;"><span>--event-ttl<span style="color:#f92672">=</span>1h <span style="color:#ae81ff">\\</span>
+</span></span><span style="display:flex;"><span>--kubelet-certificate-authority<span style="color:#f92672">=</span>/var/lib/kubernetes/ca.pem <span style="color:#ae81ff">\\</span>
+</span></span><span style="display:flex;"><span>--kubelet-client-certificate<span style="color:#f92672">=</span>/var/lib/kubernetes/apiserver-etcd-client.crt <span style="color:#ae81ff">\\</span>
+</span></span><span style="display:flex;"><span>--kubelet-client-key<span style="color:#f92672">=</span>/var/lib/kubernetes/apiserver-etcd-client.key <span style="color:#ae81ff">\\</span>
+</span></span><span style="display:flex;"><span>--service-node-port-range<span style="color:#f92672">=</span>30000-32767 <span style="color:#ae81ff">\\</span>
+</span></span><span style="display:flex;"><span>--client-ca-file<span style="color:#f92672">=</span>/var/lib/kubernetes/ca.pem <span style="color:#ae81ff">\\</span>
+</span></span><span style="display:flex;"><span>--tls-cert-file<span style="color:#f92672">=</span>/var/lib/kubernetes/apiserver.crt <span style="color:#ae81ff">\\</span>
+</span></span><span style="display:flex;"><span>--tls-private-key-file<span style="color:#f92672">=</span>/var/lib/kubernetes/apiserver.key <span style="color:#ae81ff">\\</span>
+</span></span><span style="display:flex;"><span>--v<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><p>其中這一段:</p>
 <pre tabindex="0"><code>--authorization-mode=NODE,RBAC,WEBHOOK
 </code></pre><p>這代表一個使用者 Node 驗證失敗後，會進行 RBAC 驗證，最後是 WEBHOOK。</p>
 <h1 id="角色有關的命令行">角色有關的命令行</h1>
 <p>取得角色列表：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get roles
-</code></pre></div><p>取得角色綁定:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get rolebindings
-</code></pre></div><p>描述一個角色:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl describe role &lt;角色名稱&gt;
-</code></pre></div><p>描述角色綁定:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl describe rolebinding &lt;角色綁定名稱&gt;
-</code></pre></div><h1 id="確認角色是否能存取某個資源">確認角色是否能存取某個資源</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get roles
+</span></span></code></pre></div><p>取得角色綁定:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get rolebindings
+</span></span></code></pre></div><p>描述一個角色:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl describe role &lt;角色名稱&gt;
+</span></span></code></pre></div><p>描述角色綁定:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl describe rolebinding &lt;角色綁定名稱&gt;
+</span></span></code></pre></div><h1 id="確認角色是否能存取某個資源">確認角色是否能存取某個資源</h1>
 <p>例如:檢查自己是否能建立 deployments:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl auth can-i create deployments
-</code></pre></div><p>輸出:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl auth can-i create deployments
+</span></span></code></pre></div><p>輸出:</p>
 <pre tabindex="0"><code>yes
 </code></pre><p>這代表可以。</p>
 <p>詢問 dev-user 用戶是否建立 deployments:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl auth can-i create deployments --as dev-user
-</code></pre></div><p>輸出:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl auth can-i create deployments --as dev-user
+</span></span></code></pre></div><p>輸出:</p>
 <pre tabindex="0"><code>no
 </code></pre><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

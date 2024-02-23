@@ -7,7 +7,7 @@
     <title>K8S基本操作-27-更新K8S Cluster | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="基本概念 以下是更新 K8S 需要更新的組件: (以下為同版本的組件) kube-apiserver (位於 Master 上) Controller-manager (位於 Master 上) kube-scheduler (位於 Master 上) kubelet (位於 Worker上) kube-proxy (位於 Work">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -44,8 +44,7 @@
 <meta itemprop="description" content="基本概念 以下是更新 K8S 需要更新的組件: (以下為同版本的組件) kube-apiserver (位於 Master 上) Controller-manager (位於 Master 上) kube-scheduler (位於 Master 上) kubelet (位於 Worker上) kube-proxy (位於 Work"><meta itemprop="datePublished" content="2024-02-03T15:00:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-03T15:00:44+08:00" />
 <meta itemprop="wordCount" content="541">
-<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="K8S基本操作-27-更新K8S Cluster"/>
+<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="K8S基本操作-27-更新K8S Cluster"/>
 <meta name="twitter:description" content="基本概念 以下是更新 K8S 需要更新的組件: (以下為同版本的組件) kube-apiserver (位於 Master 上) Controller-manager (位於 Master 上) kube-scheduler (位於 Master 上) kubelet (位於 Worker上) kube-proxy (位於 Work"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -261,30 +260,30 @@
 </code></pre><h1 id="單個-node-更新流程">單個 Node 更新流程</h1>
 <h3 id="將-node-上的-pod-移動到其他的-node">將 Node 上的 Pod 移動到其他的 Node</h3>
 <p>使用 Drain 指令:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl drain &lt;Node名稱&gt;
-</code></pre></div><p>例如，Node名稱為<code>node-1</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl drain node-1
-</code></pre></div><h3 id="檢查更新計畫">檢查更新計畫</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl drain &lt;Node名稱&gt;
+</span></span></code></pre></div><p>例如，Node名稱為<code>node-1</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl drain node-1
+</span></span></code></pre></div><h3 id="檢查更新計畫">檢查更新計畫</h3>
 <p>以下指令可以看到可用的最新版本，跟目前版本的差異。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubeadm upgrade plan
-</code></pre></div><h3 id="更新-kubeadm-到要更新道的版本">更新 kubeadm 到要更新道的版本</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-get upgrade -y kubeadm<span style="color:#f92672">=</span>1.12.0-00
-</code></pre></div><h3 id="kubeadm-進行更新">Kubeadm 進行更新</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubeadm upgrade apply v1.12.0
-</code></pre></div><h3 id="更新-kubelet">更新 Kubelet</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubeadm upgrade plan
+</span></span></code></pre></div><h3 id="更新-kubeadm-到要更新道的版本">更新 kubeadm 到要更新道的版本</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get upgrade -y kubeadm<span style="color:#f92672">=</span>1.12.0-00
+</span></span></code></pre></div><h3 id="kubeadm-進行更新">Kubeadm 進行更新</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubeadm upgrade apply v1.12.0
+</span></span></code></pre></div><h3 id="更新-kubelet">更新 Kubelet</h3>
 <p>Kubelet 是 Kubernetes 集群中運行在每個節點上的核心組件，它負責管理節點上的容器和與 Master 節點的通信。</p>
 <p>Kubelet 不會由 kubeadm 進行更新，需要手動更新:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-get upgrade -y kubelet<span style="color:#f92672">=</span>1.12.0-00
-</code></pre></div><p>更新後由於 Kubelet 是以 Daemon 的型態執行，所以需要重新啟動:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl restart kubelet
-</code></pre></div><h3 id="取消-node-的封鎖重新允許節點調度">取消 Node 的封鎖，重新允許節點調度</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl uncordon &lt;Node名稱&gt;
-</code></pre></div><p>例如，Node名稱為<code>node-1</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl uncordon node-1
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get upgrade -y kubelet<span style="color:#f92672">=</span>1.12.0-00
+</span></span></code></pre></div><p>更新後由於 Kubelet 是以 Daemon 的型態執行，所以需要重新啟動:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl restart kubelet
+</span></span></code></pre></div><h3 id="取消-node-的封鎖重新允許節點調度">取消 Node 的封鎖，重新允許節點調度</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl uncordon &lt;Node名稱&gt;
+</span></span></code></pre></div><p>例如，Node名稱為<code>node-1</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl uncordon node-1
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

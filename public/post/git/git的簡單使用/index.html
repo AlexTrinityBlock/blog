@@ -7,7 +7,7 @@
     <title>Git的簡單使用 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="1.Git的三個區域 Working tree 工作樹 我們甚麼都還沒做時，資料在這裡 Staging Area 暫存區 我們進行指令add 後資料在這裡 Repository 儲存庫 我們commit時資料進入儲存庫">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -43,9 +43,8 @@
 <meta itemprop="name" content="Git的簡單使用">
 <meta itemprop="description" content="1.Git的三個區域 Working tree 工作樹 我們甚麼都還沒做時，資料在這裡 Staging Area 暫存區 我們進行指令add 後資料在這裡 Repository 儲存庫 我們commit時資料進入儲存庫"><meta itemprop="datePublished" content="2022-02-23T00:03:44+08:00" />
 <meta itemprop="dateModified" content="2022-02-23T00:03:44+08:00" />
-<meta itemprop="wordCount" content="680">
-<meta itemprop="keywords" content="git,github," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Git的簡單使用"/>
+<meta itemprop="wordCount" content="684">
+<meta itemprop="keywords" content="git,github," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Git的簡單使用"/>
 <meta name="twitter:description" content="1.Git的三個區域 Working tree 工作樹 我們甚麼都還沒做時，資料在這裡 Staging Area 暫存區 我們進行指令add 後資料在這裡 Repository 儲存庫 我們commit時資料進入儲存庫"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -262,10 +261,9 @@
 No commits yet
 
 Changes to be committed:
-  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+  (use &#34;git rm --cached &lt;file&gt;...&#34; to unstage)
 
         new file:   README.md
-
 </code></pre><p>訊息告訴我們沒有任何的commits，但有個新檔案README.md出現</p>
 <h3 id="提交檔案">提交檔案</h3>
 <p>正式提交與留下評論的方式如下</p>
@@ -279,12 +277,12 @@ Changes to be committed:
 </code></pre><p>結果</p>
 <pre tabindex="0"><code>On branch master
 Changes not staged for commit:
-  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+  (use &#34;git add &lt;file&gt;...&#34; to update what will be committed)
+  (use &#34;git checkout -- &lt;file&gt;...&#34; to discard changes in working directory)
 
         modified:   README.md
 
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;)
 </code></pre><p>跳出提示，修改尚未做提交前的暫存
 也沒有新的內容被提交</p>
 <p>我們下指令查看那些東西被改變了</p>
@@ -309,7 +307,7 @@ index e69de29..a9d8da7 100644
 <p>可以在commit前觀察變更</p>
 <pre tabindex="0"><code>git diff --cached
 </code></pre><h3 id="最後提交">最後~提交</h3>
-<pre tabindex="0"><code>git commit -m '提交'
+<pre tabindex="0"><code>git commit -m &#39;提交&#39;
 </code></pre><h3 id="上傳到遠端git伺服器">上傳到遠端git伺服器</h3>
 <p>例如你想要將master分之，上傳到origin伺服器時。</p>
 <p>可以用以下指令進行上傳。</p>
@@ -317,19 +315,19 @@ index e69de29..a9d8da7 100644
 </code></pre><h1 id="4刪除">4.刪除</h1>
 <pre tabindex="0"><code>git rm README.md
 git add --all
-git commit &quot;刪除&quot;
+git commit &#34;刪除&#34;
 </code></pre><h1 id="5更改名稱與移動">5.更改名稱與移動</h1>
 <pre tabindex="0"><code>git mv README.md README2.md
 git add --all
-git commit &quot;變更名稱&quot;
+git commit &#34;變更名稱&#34;
 </code></pre><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/git" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">git</a>
+     <a href="/tags/git" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">git</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/github" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">github</a>
+     <a href="/tags/github" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">github</a>
    </li>
   
 </ul>

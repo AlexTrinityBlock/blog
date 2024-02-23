@@ -7,7 +7,7 @@
     <title>K8S基本操作-43-Secure Context 設置容器為 no-root 用戶與 Capability | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Secure Context 設置容器為 no-root 用戶 我們可以加入以下這段: spec: securityContext: runAsUser: 1010 加完之後狀況如下: --- apiVersion: v1 kind: Pod metadata: name: ubuntu-sleeper namespace: default spec: securityContext: runAsUser: 1010 containers: - command: - sleep - &#34;4800&#34; image: ubuntu name: ubuntu-sleeper 也可以寫在Contai">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -44,8 +44,7 @@
 <meta itemprop="description" content="Secure Context 設置容器為 no-root 用戶 我們可以加入以下這段: spec: securityContext: runAsUser: 1010 加完之後狀況如下: --- apiVersion: v1 kind: Pod metadata: name: ubuntu-sleeper namespace: default spec: securityContext: runAsUser: 1010 containers: - command: - sleep - &#34;4800&#34; image: ubuntu name: ubuntu-sleeper 也可以寫在Contai"><meta itemprop="datePublished" content="2024-02-07T17:00:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-07T17:00:44+08:00" />
 <meta itemprop="wordCount" content="201">
-<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="K8S基本操作-43-Secure Context 設置容器為 no-root 用戶與 Capability"/>
+<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="K8S基本操作-43-Secure Context 設置容器為 no-root 用戶與 Capability"/>
 <meta name="twitter:description" content="Secure Context 設置容器為 no-root 用戶 我們可以加入以下這段: spec: securityContext: runAsUser: 1010 加完之後狀況如下: --- apiVersion: v1 kind: Pod metadata: name: ubuntu-sleeper namespace: default spec: securityContext: runAsUser: 1010 containers: - command: - sleep - &#34;4800&#34; image: ubuntu name: ubuntu-sleeper 也可以寫在Contai"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -235,69 +234,69 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="secure-context-設置容器為-no-root-用戶">Secure Context 設置容器為 no-root 用戶</h1>
 <p>我們可以加入以下這段:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">securityContext</span>:
-    <span style="color:#f92672">runAsUser</span>: <span style="color:#ae81ff">1010</span>
-</code></pre></div><p>加完之後狀況如下:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
-<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ubuntu-sleeper</span>
-  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">securityContext</span>:
-    <span style="color:#f92672">runAsUser</span>: <span style="color:#ae81ff">1010</span>
-  <span style="color:#f92672">containers</span>:
-  - <span style="color:#f92672">command</span>:
-    - <span style="color:#ae81ff">sleep</span>
-    - <span style="color:#e6db74">&#34;4800&#34;</span>
-    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">ubuntu</span>
-    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ubuntu-sleeper</span>
-</code></pre></div><p>也可以寫在Container 裡頭:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">multi-pod</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">containers</span>:
-  -  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">ubuntu</span>
-     <span style="color:#f92672">name</span>: <span style="color:#ae81ff">web</span>
-     <span style="color:#f92672">command</span>: [<span style="color:#e6db74">&#34;sleep&#34;</span>, <span style="color:#e6db74">&#34;5000&#34;</span>]
-     <span style="color:#f92672">securityContext</span>:
-      <span style="color:#f92672">runAsUser</span>: <span style="color:#ae81ff">1002</span>
-
-  -  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">ubuntu</span>
-     <span style="color:#f92672">name</span>: <span style="color:#ae81ff">sidecar</span>
-     <span style="color:#f92672">command</span>: [<span style="color:#e6db74">&#34;sleep&#34;</span>, <span style="color:#e6db74">&#34;5000&#34;</span>]
-</code></pre></div><p>這樣就會以非 Root 的 User ID 1010 執行容器了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">securityContext</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runAsUser</span>: <span style="color:#ae81ff">1010</span>
+</span></span></code></pre></div><p>加完之後狀況如下:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ubuntu-sleeper</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">securityContext</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runAsUser</span>: <span style="color:#ae81ff">1010</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">command</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">sleep</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#e6db74">&#34;4800&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">ubuntu</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ubuntu-sleeper</span>
+</span></span></code></pre></div><p>也可以寫在Container 裡頭:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">multi-pod</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>  -  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">ubuntu</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">name</span>: <span style="color:#ae81ff">web</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">command</span>: [<span style="color:#e6db74">&#34;sleep&#34;</span>, <span style="color:#e6db74">&#34;5000&#34;</span>]
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">securityContext</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">runAsUser</span>: <span style="color:#ae81ff">1002</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  -  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">ubuntu</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">name</span>: <span style="color:#ae81ff">sidecar</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">command</span>: [<span style="color:#e6db74">&#34;sleep&#34;</span>, <span style="color:#e6db74">&#34;5000&#34;</span>]
+</span></span></code></pre></div><p>這樣就會以非 Root 的 User ID 1010 執行容器了。</p>
 <h1 id="capability">Capability</h1>
 <p>代表容器可對於主機的存取權限。</p>
 <p>我們在下面加上存取主機系統時間與網路的權限如下:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">securityContext</span>:
-      <span style="color:#f92672">capabilities</span>:
-        <span style="color:#f92672">add</span>: [<span style="color:#e6db74">&#34;SYS_TIME&#34;</span>,<span style="color:#e6db74">&#34;NET_ADMIN &#34;</span>]
-</code></pre></div><p>整體大致是這樣:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
-<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ubuntu-sleeper</span>
-  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">containers</span>:
-  - <span style="color:#f92672">command</span>:
-    - <span style="color:#ae81ff">sleep</span>
-    - <span style="color:#e6db74">&#34;4800&#34;</span>
-    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">ubuntu</span>
-    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ubuntu-sleeper</span>
-    <span style="color:#f92672">securityContext</span>:
-      <span style="color:#f92672">capabilities</span>:
-        <span style="color:#f92672">add</span>: [<span style="color:#e6db74">&#34;SYS_TIME&#34;</span>,<span style="color:#e6db74">&#34;NET_ADMIN &#34;</span>]
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>    <span style="color:#f92672">securityContext</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">capabilities</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">add</span>: [<span style="color:#e6db74">&#34;SYS_TIME&#34;</span>,<span style="color:#e6db74">&#34;NET_ADMIN &#34;</span>]
+</span></span></code></pre></div><p>整體大致是這樣:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ubuntu-sleeper</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">command</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">sleep</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#e6db74">&#34;4800&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">ubuntu</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ubuntu-sleeper</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">securityContext</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">capabilities</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">add</span>: [<span style="color:#e6db74">&#34;SYS_TIME&#34;</span>,<span style="color:#e6db74">&#34;NET_ADMIN &#34;</span>]
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

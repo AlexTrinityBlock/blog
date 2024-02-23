@@ -7,7 +7,7 @@
     <title>ASP.net中建立Model | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="啥是MVC架構 模型（Model） - 演算法、資料庫&hellip;等等程式操作。 視圖（View） - 圖形介面(此指網頁前端)相關。 控制器（Con">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -44,8 +44,7 @@
 <meta itemprop="description" content="啥是MVC架構 模型（Model） - 演算法、資料庫&hellip;等等程式操作。 視圖（View） - 圖形介面(此指網頁前端)相關。 控制器（Con"><meta itemprop="datePublished" content="2022-02-22T12:00:44+08:00" />
 <meta itemprop="dateModified" content="2022-02-22T12:00:44+08:00" />
 <meta itemprop="wordCount" content="1151">
-<meta itemprop="keywords" content="ASP.net," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="ASP.net中建立Model"/>
+<meta itemprop="keywords" content="ASP.net," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="ASP.net中建立Model"/>
 <meta name="twitter:description" content="啥是MVC架構 模型（Model） - 演算法、資料庫&hellip;等等程式操作。 視圖（View） - 圖形介面(此指網頁前端)相關。 控制器（Con"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -260,120 +259,120 @@
 <p><img src="/blog/public/2022-02-22/4.png" alt="img"></p>
 <h1 id="撰寫model的內容">撰寫Model的內容</h1>
 <p>Models/Item.cs</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">using</span> System;
-<span style="color:#66d9ef">using</span> System.Collections.Generic;
-<span style="color:#66d9ef">using</span> System.Linq;
-<span style="color:#66d9ef">using</span> System.Web;
-
-<span style="color:#66d9ef">namespace</span> web.Models <span style="color:#75715e">//如果要使用這個模組，就要using這個命名空間，像是: using web.Models;
-</span><span style="color:#75715e"></span>{
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Item</span>
-    {
-        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> id { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
-
-        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> location { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
-
-        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> number { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
-
-        <span style="color:#75715e">//當Item創建時若沒有輸入內容，屬性預設空值。
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">public</span> Item()
-        {
-            <span style="color:#66d9ef">this</span>.id = String.Empty;
-            <span style="color:#66d9ef">this</span>.location = String.Empty;
-            <span style="color:#66d9ef">this</span>.number = <span style="color:#ae81ff">0</span>;
-        }
-
-        <span style="color:#75715e">//當Item創建時若有輸入內容，則將內容更新到類別屬性。
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">public</span> Item(<span style="color:#66d9ef">string</span> <span style="color:#ae81ff">_</span>id, <span style="color:#66d9ef">string</span> <span style="color:#ae81ff">_l</span>ocation, <span style="color:#66d9ef">int</span> <span style="color:#ae81ff">_</span>number)
-        {
-            <span style="color:#66d9ef">this</span>.id = <span style="color:#ae81ff">_</span>id;
-            <span style="color:#66d9ef">this</span>.location = <span style="color:#ae81ff">_l</span>ocation;
-            <span style="color:#66d9ef">this</span>.number = <span style="color:#ae81ff">_</span>number;
-        }
-    }
-}
-</code></pre></div><h1 id="將model的內容傳遞到前端">將Model的內容傳遞到前端</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections.Generic;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Linq;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Web;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> web.Models <span style="color:#75715e">//如果要使用這個模組，就要using這個命名空間，像是: using web.Models;</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Item</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> id { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> location { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> number { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//當Item創建時若沒有輸入內容，屬性預設空值。</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> Item()
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.id = String.Empty;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.location = String.Empty;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.number = <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//當Item創建時若有輸入內容，則將內容更新到類別屬性。</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> Item(<span style="color:#66d9ef">string</span> _id, <span style="color:#66d9ef">string</span> _location, <span style="color:#66d9ef">int</span> _number)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.id = _id;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.location = _location;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.number = _number;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="將model的內容傳遞到前端">將Model的內容傳遞到前端</h1>
 <p>Controllers/HomeController.cs</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">using</span> System;
-<span style="color:#66d9ef">using</span> System.Collections.Generic;
-<span style="color:#66d9ef">using</span> System.Linq;
-<span style="color:#66d9ef">using</span> System.Web;
-<span style="color:#66d9ef">using</span> System.Web.Mvc;
-<span style="color:#66d9ef">using</span> web.Models;<span style="color:#75715e">//引入我們剛剛撰寫的模組的命名空間，這是一定要的。
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">namespace</span> web.Controllers
-{
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HomeController</span> : Controller
-    {
-        <span style="color:#75715e">//主頁面的回傳內容
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">public</span> ActionResult Index()
-        {
-            <span style="color:#75715e">//這裡是其中一種方式，使用ViewBag物件，把資料傳遞到前端。
-</span><span style="color:#75715e"></span>            DateTime date = DateTime.Now;<span style="color:#75715e">//取得時間
-</span><span style="color:#75715e"></span>            ViewBag.Date = date;<span style="color:#75715e">//把時間裝入ViewBag
-</span><span style="color:#75715e"></span>
-            <span style="color:#75715e">//建立一個List，有點像是速度更慢，但可以任意新增移除資料，長度彈性的陣列(這比喻從底層來看不精準。)
-</span><span style="color:#75715e"></span>            List&lt;Item&gt; list = <span style="color:#66d9ef">new</span> List&lt;Item&gt;();
-
-            <span style="color:#75715e">//新增三筆資料，等等用來傳遞到前端頁面
-</span><span style="color:#75715e"></span>            list.Add(<span style="color:#66d9ef">new</span> Item(<span style="color:#e6db74">&#34;A0101&#34;</span>, <span style="color:#e6db74">&#34;C38956&#34;</span>, <span style="color:#ae81ff">80</span>));
-            list.Add(<span style="color:#66d9ef">new</span> Item(<span style="color:#e6db74">&#34;A0251&#34;</span>, <span style="color:#e6db74">&#34;C23564&#34;</span>, <span style="color:#ae81ff">70</span>));
-            list.Add(<span style="color:#66d9ef">new</span> Item(<span style="color:#e6db74">&#34;A0356&#34;</span>, <span style="color:#e6db74">&#34;C02335&#34;</span>, <span style="color:#ae81ff">60</span>));
-
-            <span style="color:#75715e">//將剛剛的list傳遞到前端。
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">return</span> View(list);
-        }
-    }
-}
-</code></pre></div><h1 id="前端接收後端傳來的models">前端接收後端傳來的Models</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections.Generic;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Linq;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Web;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Web.Mvc;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> web.Models;<span style="color:#75715e">//引入我們剛剛撰寫的模組的命名空間，這是一定要的。</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> web.Controllers
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HomeController</span> : Controller
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//主頁面的回傳內容</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> ActionResult Index()
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//這裡是其中一種方式，使用ViewBag物件，把資料傳遞到前端。</span>
+</span></span><span style="display:flex;"><span>            DateTime date = DateTime.Now;<span style="color:#75715e">//取得時間</span>
+</span></span><span style="display:flex;"><span>            ViewBag.Date = date;<span style="color:#75715e">//把時間裝入ViewBag</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//建立一個List，有點像是速度更慢，但可以任意新增移除資料，長度彈性的陣列(這比喻從底層來看不精準。)</span>
+</span></span><span style="display:flex;"><span>            List&lt;Item&gt; list = <span style="color:#66d9ef">new</span> List&lt;Item&gt;();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//新增三筆資料，等等用來傳遞到前端頁面</span>
+</span></span><span style="display:flex;"><span>            list.Add(<span style="color:#66d9ef">new</span> Item(<span style="color:#e6db74">&#34;A0101&#34;</span>, <span style="color:#e6db74">&#34;C38956&#34;</span>, <span style="color:#ae81ff">80</span>));
+</span></span><span style="display:flex;"><span>            list.Add(<span style="color:#66d9ef">new</span> Item(<span style="color:#e6db74">&#34;A0251&#34;</span>, <span style="color:#e6db74">&#34;C23564&#34;</span>, <span style="color:#ae81ff">70</span>));
+</span></span><span style="display:flex;"><span>            list.Add(<span style="color:#66d9ef">new</span> Item(<span style="color:#e6db74">&#34;A0356&#34;</span>, <span style="color:#e6db74">&#34;C02335&#34;</span>, <span style="color:#ae81ff">60</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//將剛剛的list傳遞到前端。</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> View(list);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="前端接收後端傳來的models">前端接收後端傳來的Models</h1>
 <p>Views/Home/Index.cshtml</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- 這裡頭用var date來接收剛剛的時間ViewBag.Date --&gt;</span>
-@{
-    ViewBag.Title = &#34;Home Page&#34;;
-    var date = ViewBag.Date;
-}
-
-<span style="color:#75715e">&lt;!-- 允許CSS引入 --&gt;</span>
-@Styles.Render(&#34;~/Content/Site.css&#34;)
-
-<span style="color:#75715e">&lt;!-- 使用web.Models命名空間，這是為了成功使用Item --&gt;</span>
-@using web.Models;
-
-<span style="color:#75715e">&lt;!-- 從Controller取得傳遞過來的item，這裡的@model後頭要輸入的是型別，所以是List --&gt;</span>
-@model  List&lt;<span style="color:#f92672">Item</span>&gt;
-
-&lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-align: center;&#34;</span>&gt;POME材料項目盤點表單&lt;/<span style="color:#f92672">h1</span>&gt;
-
-&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table table-dark&#34;</span>&gt;
-    &lt;<span style="color:#f92672">thead</span>&gt;
-        &lt;<span style="color:#f92672">tr</span>&gt;
-            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">scope</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;項目&lt;/<span style="color:#f92672">th</span>&gt;
-            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">scope</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;位置&lt;/<span style="color:#f92672">th</span>&gt;
-            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">scope</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;數量&lt;/<span style="color:#f92672">th</span>&gt;
-        &lt;/<span style="color:#f92672">tr</span>&gt;
-    &lt;/<span style="color:#f92672">thead</span>&gt;
-    &lt;<span style="color:#f92672">tbody</span>&gt;
-        <span style="color:#75715e">&lt;!-- 這裡將把每個List元素都遍歷，每次取出的元素存入item --&gt;</span>
-        @foreach (var item in Model) { 
-            &lt;<span style="color:#f92672">tr</span>&gt;
-                <span style="color:#75715e">&lt;!-- 逐一將id,location,number放入表格 --&gt;</span>
-                &lt;<span style="color:#f92672">td</span>&gt;@item.id&lt;/<span style="color:#f92672">td</span>&gt;
-                &lt;<span style="color:#f92672">td</span>&gt;@item.location&lt;/<span style="color:#f92672">td</span>&gt;
-                &lt;<span style="color:#f92672">td</span>&gt;@item.number&lt;/<span style="color:#f92672">td</span>&gt;
-            &lt;/<span style="color:#f92672">tr</span>&gt;
-        }
-    &lt;/<span style="color:#f92672">tbody</span>&gt;
-&lt;/<span style="color:#f92672">table</span>&gt;
-
-
-<span style="color:#75715e">&lt;!-- 將取得的時間放入HTML中 --&gt;</span>
-&lt;<span style="color:#f92672">div</span>&gt;
-    現在時間: @date.ToString(&#34;yyyy/MM/dd HH:mm:ss&#34;) &lt;<span style="color:#f92672">br</span>&gt;
-&lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 這裡頭用var date來接收剛剛的時間ViewBag.Date --&gt;</span>
+</span></span><span style="display:flex;"><span>@{
+</span></span><span style="display:flex;"><span>    ViewBag.Title = &#34;Home Page&#34;;
+</span></span><span style="display:flex;"><span>    var date = ViewBag.Date;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 允許CSS引入 --&gt;</span>
+</span></span><span style="display:flex;"><span>@Styles.Render(&#34;~/Content/Site.css&#34;)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 使用web.Models命名空間，這是為了成功使用Item --&gt;</span>
+</span></span><span style="display:flex;"><span>@using web.Models;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 從Controller取得傳遞過來的item，這裡的@model後頭要輸入的是型別，所以是List --&gt;</span>
+</span></span><span style="display:flex;"><span>@model  List&lt;<span style="color:#f92672">Item</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-align: center;&#34;</span>&gt;POME材料項目盤點表單&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table table-dark&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">thead</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">scope</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;項目&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">scope</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;位置&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">scope</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;數量&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">thead</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tbody</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- 這裡將把每個List元素都遍歷，每次取出的元素存入item --&gt;</span>
+</span></span><span style="display:flex;"><span>        @foreach (var item in Model) { 
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">&lt;!-- 逐一將id,location,number放入表格 --&gt;</span>
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">td</span>&gt;@item.id&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">td</span>&gt;@item.location&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">td</span>&gt;@item.number&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tbody</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 將取得的時間放入HTML中 --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    現在時間: @date.ToString(&#34;yyyy/MM/dd HH:mm:ss&#34;) &lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/asp.net" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ASP.net</a>
+     <a href="/tags/asp.net" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ASP.net</a>
    </li>
   
 </ul>

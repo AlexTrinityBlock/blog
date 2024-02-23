@@ -7,7 +7,7 @@
     <title>SSH使用特定PEM檔案登入 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="我們常常使用SSH登入某台主機或電腦，SSH可以用密碼或者金鑰檔案進行登入。 由於金鑰檔案的長度會比人類可以記憶的密碼長的多，所以通常而言更加">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -44,8 +44,7 @@
 <meta itemprop="description" content="我們常常使用SSH登入某台主機或電腦，SSH可以用密碼或者金鑰檔案進行登入。 由於金鑰檔案的長度會比人類可以記憶的密碼長的多，所以通常而言更加"><meta itemprop="datePublished" content="2022-07-05T09:00:36+08:00" />
 <meta itemprop="dateModified" content="2022-07-05T09:00:36+08:00" />
 <meta itemprop="wordCount" content="205">
-<meta itemprop="keywords" content="linux,ssh," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="SSH使用特定PEM檔案登入"/>
+<meta itemprop="keywords" content="linux,ssh," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="SSH使用特定PEM檔案登入"/>
 <meta name="twitter:description" content="我們常常使用SSH登入某台主機或電腦，SSH可以用密碼或者金鑰檔案進行登入。 由於金鑰檔案的長度會比人類可以記憶的密碼長的多，所以通常而言更加"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -244,18 +243,18 @@
 <pre tabindex="0"><code>user
 </code></pre><p>用在pem檔案常常更換的情境下，一次性的使用pem檔案。</p>
 <p>則可以使用下列指令:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -i keyfile.pem user@domain.com
-</code></pre></div><h2 id="2永久使用pem檔案的方法">2.永久使用PEM檔案的方法</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh -i keyfile.pem user@domain.com
+</span></span></code></pre></div><h2 id="2永久使用pem檔案的方法">2.永久使用PEM檔案的方法</h2>
 <p>這將會把pem檔案加入現有的pem檔案儲存庫:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-add ~/keyfile.pem
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-add ~/keyfile.pem
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/linux" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">linux</a>
+     <a href="/tags/linux" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">linux</a>
    </li>
   
    <li class="list">
-     <a href="/blog/public/tags/ssh" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ssh</a>
+     <a href="/tags/ssh" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ssh</a>
    </li>
   
 </ul>

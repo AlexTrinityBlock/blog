@@ -7,7 +7,7 @@
     <title>K8S基本操作-47-K8S 多節點分次更新 | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="節點列表 假定我們有以下兩節點: controlplane node01 更新 Control Plane 主節點 假定我們要更新的目標版本是 1.27.0 ，如果要更新別的版本請手動修改以下版本 排空 controlplane 節點: kubectl drain controlplane --ignore-daemonsets 然後執">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -44,8 +44,7 @@
 <meta itemprop="description" content="節點列表 假定我們有以下兩節點: controlplane node01 更新 Control Plane 主節點 假定我們要更新的目標版本是 1.27.0 ，如果要更新別的版本請手動修改以下版本 排空 controlplane 節點: kubectl drain controlplane --ignore-daemonsets 然後執"><meta itemprop="datePublished" content="2024-02-15T12:00:44+08:00" />
 <meta itemprop="dateModified" content="2024-02-15T12:00:44+08:00" />
 <meta itemprop="wordCount" content="297">
-<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="K8S基本操作-47-K8S 多節點分次更新"/>
+<meta itemprop="keywords" content="K8S," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="K8S基本操作-47-K8S 多節點分次更新"/>
 <meta name="twitter:description" content="節點列表 假定我們有以下兩節點: controlplane node01 更新 Control Plane 主節點 假定我們要更新的目標版本是 1.27.0 ，如果要更新別的版本請手動修改以下版本 排空 controlplane 節點: kubectl drain controlplane --ignore-daemonsets 然後執"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -246,56 +245,56 @@
 <h1 id="更新-control-plane-主節點">更新 Control Plane 主節點</h1>
 <p>假定我們要更新的目標版本是 1.27.0 ，如果要更新別的版本請手動修改以下版本</p>
 <p>排空 controlplane 節點:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl drain controlplane --ignore-daemonsets
-</code></pre></div><p>然後執行以下腳本，列出更新資訊與進行更新，並且重啟:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl drain controlplane --ignore-daemonsets
+</span></span></code></pre></div><p>然後執行以下腳本，列出更新資訊與進行更新，並且重啟:</p>
 <p><em>script.sh</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt update
-apt-cache madison kubeadm
-
-apt-mark unhold kubeadm <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>apt-get update <span style="color:#f92672">&amp;&amp;</span> apt-get install -y kubeadm<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1.27.0-*&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>apt-mark hold kubeadm
-
-kubeadm version
-
-kubeadm upgrade plan
-
-sudo kubeadm upgrade apply v1.27.0
-
-apt-mark unhold kubelet kubectl <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>apt-get update <span style="color:#f92672">&amp;&amp;</span> apt-get install -y kubelet<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1.27.0-*&#39;</span> kubectl<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1.27.0-*&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>apt-mark hold kubelet kubectl
-
-sudo systemctl daemon-reload
-sudo systemctl restart kubelet
-</code></pre></div><p>解除 controlplane 封鎖:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl uncordon controlplane
-</code></pre></div><h1 id="更新-node01-節點">更新 node01 節點</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt update
+</span></span><span style="display:flex;"><span>apt-cache madison kubeadm
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>apt-mark unhold kubeadm <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>apt-get update <span style="color:#f92672">&amp;&amp;</span> apt-get install -y kubeadm<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1.27.0-*&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>apt-mark hold kubeadm
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kubeadm version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kubeadm upgrade plan
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo kubeadm upgrade apply v1.27.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>apt-mark unhold kubelet kubectl <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>apt-get update <span style="color:#f92672">&amp;&amp;</span> apt-get install -y kubelet<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1.27.0-*&#39;</span> kubectl<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1.27.0-*&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>apt-mark hold kubelet kubectl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo systemctl daemon-reload
+</span></span><span style="display:flex;"><span>sudo systemctl restart kubelet
+</span></span></code></pre></div><p>解除 controlplane 封鎖:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl uncordon controlplane
+</span></span></code></pre></div><h1 id="更新-node01-節點">更新 node01 節點</h1>
 <p>在 controlplane 上排空 node01:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl drain node01 --ignore-daemonsets
-</code></pre></div><p>SSH 連入 node01:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh root@node01
-</code></pre></div><p>然後執行以下腳本，列出更新資訊與進行更新，並且重啟:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-mark unhold kubeadm <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>apt-get update <span style="color:#f92672">&amp;&amp;</span> apt-get install -y kubeadm<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1.27.0-*&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>apt-mark hold kubeadm
-
-sudo kubeadm upgrade node
-
-apt-mark unhold kubelet kubectl <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>apt-get update <span style="color:#f92672">&amp;&amp;</span> apt-get install -y kubelet<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1.27.0-*&#39;</span> kubectl<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1.27.0-*&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>apt-mark hold kubelet kubectl
-
-sudo systemctl daemon-reload
-sudo systemctl restart kubelet
-</code></pre></div><p>回到 controlplane，解除 node01 封鎖:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl uncordon node01
-</code></pre></div><p>檢查是否所有節點升級完畢:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get nodes 
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl drain node01 --ignore-daemonsets
+</span></span></code></pre></div><p>SSH 連入 node01:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh root@node01
+</span></span></code></pre></div><p>然後執行以下腳本，列出更新資訊與進行更新，並且重啟:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-mark unhold kubeadm <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>apt-get update <span style="color:#f92672">&amp;&amp;</span> apt-get install -y kubeadm<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1.27.0-*&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>apt-mark hold kubeadm
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo kubeadm upgrade node
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>apt-mark unhold kubelet kubectl <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>apt-get update <span style="color:#f92672">&amp;&amp;</span> apt-get install -y kubelet<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1.27.0-*&#39;</span> kubectl<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1.27.0-*&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>apt-mark hold kubelet kubectl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo systemctl daemon-reload
+</span></span><span style="display:flex;"><span>sudo systemctl restart kubelet
+</span></span></code></pre></div><p>回到 controlplane，解除 node01 封鎖:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl uncordon node01
+</span></span></code></pre></div><p>檢查是否所有節點升級完畢:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get nodes 
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
+     <a href="/tags/k8s" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">K8S</a>
    </li>
   
 </ul>

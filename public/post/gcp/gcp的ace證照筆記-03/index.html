@@ -7,7 +7,7 @@
     <title>GCP的ACE證照筆記-03-Instance Groups | 無面者小站</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Instance Groups 可以採用數個 VM template 組成一個群組進行管理。 兩種型態的 Instance Groups: Managed: 自動擴展的同一種 template 並且自動修復與自動管理釋放虛擬機。 Unmanaged: 許多不同型態的 template 組成，無法自">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.1">
     
     
       
@@ -26,7 +26,7 @@
 
     
       
-<link rel="shortcut icon" href="/blog/public/avatar2.jpg" type="image/x-icon" />
+<link rel="shortcut icon" href="/avatar2.jpg" type="image/x-icon" />
 
 
     
@@ -44,8 +44,7 @@
 <meta itemprop="description" content="Instance Groups 可以採用數個 VM template 組成一個群組進行管理。 兩種型態的 Instance Groups: Managed: 自動擴展的同一種 template 並且自動修復與自動管理釋放虛擬機。 Unmanaged: 許多不同型態的 template 組成，無法自"><meta itemprop="datePublished" content="2023-11-08T20:48:44+08:00" />
 <meta itemprop="dateModified" content="2023-11-08T20:48:44+08:00" />
 <meta itemprop="wordCount" content="984">
-<meta itemprop="keywords" content="GCP," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="GCP的ACE證照筆記-03-Instance Groups"/>
+<meta itemprop="keywords" content="GCP," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="GCP的ACE證照筆記-03-Instance Groups"/>
 <meta name="twitter:description" content="Instance Groups 可以採用數個 VM template 組成一個群組進行管理。 兩種型態的 Instance Groups: Managed: 自動擴展的同一種 template 並且自動修復與自動管理釋放虛擬機。 Unmanaged: 許多不同型態的 template 組成，無法自"/>
 
 	<meta name="google-site-verification" content="PwYpY_hicXFDwb2NSEpBU7I_8yQDyj8JZMarXbZ_F9Q" />
@@ -339,44 +338,44 @@
 <p>instance 數量: 2</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud compute instance-groups managed create my-vm-cluster --zone us-central1-a --template debian-docker --size <span style="color:#ae81ff">2</span>
-</code></pre></div><p>其他可用參數</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">--health-check
---initial-delay
---cool-down-period
---scale-based-on-cpu
---target-cpu-utilization
---min-num-replicas
---initial-delay
---health-check
-</code></pre></div><h2 id="設置-autoscaling">設置 Autoscaling</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud compute instance-groups managed set-autoscaling  my-vm-cluster --max-num-replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
-</code></pre></div><h2 id="更新-policies">更新 Policies</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud compute instance-groups managed update my-vm-cluster --initial-delay<span style="color:#f92672">=</span><span style="color:#ae81ff">120</span>
-</code></pre></div><h2 id="調整虛擬機數量">調整虛擬機數量</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud compute instance-groups managed resize my-vm-cluster --size<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>
-</code></pre></div><h2 id="重建-instances">重建 Instances</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud compute instance-groups managed recreate-instances my-mig --instances<span style="color:#f92672">=</span>myinstance-1,my-instance-2
-</code></pre></div><h2 id="更新-instances">更新 Instances</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud compute instance-groups managed update-instances my-mig --instances<span style="color:#f92672">=</span>my-instance3,my-instance-4
-</code></pre></div><h2 id="更新-instances-template">更新 Instances-template</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud compute instance-groups managed set-instance-template my-mig --template<span style="color:#f92672">=</span>v2-template
-</code></pre></div><h2 id="重啟-instances">重啟 Instances</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> gcloud compute instance-groups managed rolling-action restart mymig
-</code></pre></div><h2 id="刪除後重建-instances">刪除後重建 Instances</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud compute instance-groups managed rolling-action replace my-mig
-</code></pre></div><h2 id="用新-template-更新-instances">用新 template 更新 Instances</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed create my-vm-cluster --zone us-central1-a --template debian-docker --size <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><p>其他可用參數</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>--health-check
+</span></span><span style="display:flex;"><span>--initial-delay
+</span></span><span style="display:flex;"><span>--cool-down-period
+</span></span><span style="display:flex;"><span>--scale-based-on-cpu
+</span></span><span style="display:flex;"><span>--target-cpu-utilization
+</span></span><span style="display:flex;"><span>--min-num-replicas
+</span></span><span style="display:flex;"><span>--initial-delay
+</span></span><span style="display:flex;"><span>--health-check
+</span></span></code></pre></div><h2 id="設置-autoscaling">設置 Autoscaling</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed set-autoscaling  my-vm-cluster --max-num-replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
+</span></span></code></pre></div><h2 id="更新-policies">更新 Policies</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed update my-vm-cluster --initial-delay<span style="color:#f92672">=</span><span style="color:#ae81ff">120</span>
+</span></span></code></pre></div><h2 id="調整虛擬機數量">調整虛擬機數量</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed resize my-vm-cluster --size<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>
+</span></span></code></pre></div><h2 id="重建-instances">重建 Instances</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed recreate-instances my-mig --instances<span style="color:#f92672">=</span>myinstance-1,my-instance-2
+</span></span></code></pre></div><h2 id="更新-instances">更新 Instances</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed update-instances my-mig --instances<span style="color:#f92672">=</span>my-instance3,my-instance-4
+</span></span></code></pre></div><h2 id="更新-instances-template">更新 Instances-template</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed set-instance-template my-mig --template<span style="color:#f92672">=</span>v2-template
+</span></span></code></pre></div><h2 id="重啟-instances">重啟 Instances</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> gcloud compute instance-groups managed rolling-action restart mymig
+</span></span></code></pre></div><h2 id="刪除後重建-instances">刪除後重建 Instances</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed rolling-action replace my-mig
+</span></span></code></pre></div><h2 id="用新-template-更新-instances">用新 template 更新 Instances</h2>
 <h3 id="basic-version-更新全部-instances">Basic Version 更新全部 Instances</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud compute instance-groups managed rollingaction start-update my-mig --version<span style="color:#f92672">=</span>template<span style="color:#f92672">=</span>v1-template
-</code></pre></div><h3 id="canary-version-更新部分-instance-到-v2-template">Canary Version 更新部分 Instance 到 v2 template</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud compute instance-groups managed rolling-action start-update my-mig --version<span style="color:#f92672">=</span>template<span style="color:#f92672">=</span>v1-template --canary-version<span style="color:#f92672">=</span>template<span style="color:#f92672">=</span>v2-template,target-size<span style="color:#f92672">=</span>10%
-</code></pre></div><h3 id="情境1">情境1</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed rollingaction start-update my-mig --version<span style="color:#f92672">=</span>template<span style="color:#f92672">=</span>v1-template
+</span></span></code></pre></div><h3 id="canary-version-更新部分-instance-到-v2-template">Canary Version 更新部分 Instance 到 v2 template</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed rolling-action start-update my-mig --version<span style="color:#f92672">=</span>template<span style="color:#f92672">=</span>v1-template --canary-version<span style="color:#f92672">=</span>template<span style="color:#f92672">=</span>v2-template,target-size<span style="color:#f92672">=</span>10%
+</span></span></code></pre></div><h3 id="情境1">情境1</h3>
 <p>確保至一個 instance 長期健康存在於所有時間。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud compute instance-groups managed set-autoscaling my-group --max-numreplicas<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --min-num-replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-</code></pre></div><h3 id="情境2">情境2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed set-autoscaling my-group --max-numreplicas<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --min-num-replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><h3 id="情境2">情境2</h3>
 <p>更新版本時不希望減少可用 Instance 的數量，並且一次只更新一個 Instance。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud compute instance-groups managed rolling-action start-update my-group --version<span style="color:#f92672">=</span>template<span style="color:#f92672">=</span>my-v1-template --max-surge <span style="color:#ae81ff">1</span> --max-unavailable <span style="color:#ae81ff">0</span>
-</code></pre></div><p>(P.70)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud compute instance-groups managed rolling-action start-update my-group --version<span style="color:#f92672">=</span>template<span style="color:#f92672">=</span>my-v1-template --max-surge <span style="color:#ae81ff">1</span> --max-unavailable <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>(P.70)</p>
 <pre tabindex="0"><code>Q: 希望 MIG 可以在整個 Zone 故障時存活怎麼做 ?
 A: 建立 multiple zone MIG or regional MIG
 
@@ -398,7 +397,7 @@ A: Cool-down period/Initial delay
 <ul class="pa0">
   
    <li class="list">
-     <a href="/blog/public/tags/gcp" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">GCP</a>
+     <a href="/tags/gcp" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">GCP</a>
    </li>
   
 </ul>

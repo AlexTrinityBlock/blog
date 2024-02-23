@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ventoy on 無面者小站</title>
+    <title>Ventoy on 無面者小站</title>
     <link>https://alextrinityblock.github.io/blog/public/tags/ventoy/</link>
-    <description>Recent content in ventoy on 無面者小站</description>
+    <description>Recent content in Ventoy on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Thu, 08 Jul 2021 10:29:36 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/tags/ventoy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Jul 2021 10:29:36 +0800</lastBuildDate>
+    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/ventoy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ventoy在隨身碟上裝多個作業系統</title>
       <link>https://alextrinityblock.github.io/blog/public/post/linux/ventoy%E5%9C%A8%E9%9A%A8%E8%BA%AB%E7%A2%9F%E4%B8%8A%E8%A3%9D%E5%A4%9A%E5%80%8B%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1/</link>
       <pubDate>Thu, 08 Jul 2021 10:29:36 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/linux/ventoy%E5%9C%A8%E9%9A%A8%E8%BA%AB%E7%A2%9F%E4%B8%8A%E8%A3%9D%E5%A4%9A%E5%80%8B%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1/</guid>
       <description>傳統隨身碟安裝作業統的方法 傳統上，我們會一個隨身碟安裝一個作業系統安裝程式或Live CD。當然也可以採取用分割區的方式，來在單個隨身碟安裝多</description>
     </item>
-    
   </channel>
 </rss>

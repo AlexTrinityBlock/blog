@@ -6,1338 +6,1043 @@
     <description>Recent content on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
-    <lastBuildDate>Mon, 19 Feb 2024 10:00:44 +0800</lastBuildDate><atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Feb 2024 10:00:44 +0800</lastBuildDate>
+    <atom:link href="https://alextrinityblock.github.io/blog/public/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>K8S基本操作-52-K8S 一些 CKA 的小筆記</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-53/</link>
       <pubDate>Mon, 19 Feb 2024 10:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-53/</guid>
       <description>查詢 CIDR CIDR 分配儲存在 API Server 上: cat /etc/kubernetes/manifests/kube-apiserver.yaml | grep range CNI Plugin 配置文件位置 CNI Plugin 配置文件位置在以下位置: /etc/cni/net.d/ 例如: /etc/cni/net.d/10-weave.conflist 列出所有資源名稱 如: pod, deployment, configmap。 kubectl api-resources --namespaced</description>
     </item>
-    
     <item>
       <title>K8S基本操作-52-kubectl 操作備忘</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-52/</link>
       <pubDate>Sat, 17 Feb 2024 16:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-52/</guid>
       <description>Kubectl 自動補全 # 自動補全腳本 source &amp;lt;(kubectl completion bash) echo &amp;#34;source &amp;lt;(kubectl completion bash)&amp;#34; &amp;gt;&amp;gt; ~/.bashrc # 把 kubectl 簡化成 k alias k=kubectl complete -o default -F __start_kubectl k &amp;ndash;all-namespaces 替代 kubectl -A 建立物件 kubectl apply -f ./my-manifest.yaml # 建立資源 kubectl apply -f ./my1.yaml -f ./my2.yaml # 建立資源從多個</description>
     </item>
-    
     <item>
       <title>K8S基本操作-51-K8S kubectl 參數簡寫</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-51/</link>
       <pubDate>Sat, 17 Feb 2024 13:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-51/</guid>
       <description>操作簡寫 例如: kubectl get pod pod1 可以寫成 kubectl get po pod1 以下是常用簡寫: certificates = cert, certs certificiaterequests = cr, crs certificatesigningrequests = csr componentstatuses = cs configmaps = cm cronjobs = cj customresourcedefinitions = crd, crds daemonsets = ds deployments = deploy endpoints = ep events = ev horizontalpodautoscalers = hpa ingresses = ing limitranges</description>
     </item>
-    
     <item>
       <title>K8S基本操作-50-K8S Ingress</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-50/</link>
       <pubDate>Fri, 16 Feb 2024 16:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-50/</guid>
       <description>Ingress 一句話說 Ingress 就是用不同的 Path 導向不同 Service 的功能。 如我們有2個頁面，一個是網站一個是 API ，分別屬於不同 K8S Service 。 Ingress 可以讓兩個 Service 用以下方式存取: # Web Service 存取</description>
     </item>
-    
     <item>
       <title>K8S基本操作-49-K8S內部的DNS與Port</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-49/</link>
       <pubDate>Thu, 15 Feb 2024 15:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-49/</guid>
       <description>K8S 各種服務使用的 Port ETCD: 2379,2380 port Kube-API: 6443 port Kubelete: 10250 port Kube-scheduler: 10259 port Kube-controller-manager: 10257 port 各種 Service 的內部 IP: 30000 - 32767 port K8S Service 中的 DNS 如果有個 Service 如下: Service Name: web-service Namespace: default 這樣就能用以下三個 URL 來存取 Service: # 同 Namespace</description>
     </item>
-    
     <item>
       <title>K8S基本操作-48-K8S與容器網路介面（Container Network Interface）</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-48/</link>
       <pubDate>Thu, 15 Feb 2024 13:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-48/</guid>
       <description>Container Network Interface 容器網路介面 K8S 的 CNI 是指容器網路介面（Container Network Interface），它是一個標準的 API，用於讓 K8S 與不同的網路插件溝通，實現</description>
     </item>
-    
     <item>
       <title>K8S基本操作-47-K8S 多節點分次更新</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-47/</link>
       <pubDate>Thu, 15 Feb 2024 12:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-47/</guid>
       <description>節點列表 假定我們有以下兩節點: controlplane node01 更新 Control Plane 主節點 假定我們要更新的目標版本是 1.27.0 ，如果要更新別的版本請手動修改以下版本 排空 controlplane 節點: kubectl drain controlplane --ignore-daemonsets 然後執</description>
     </item>
-    
     <item>
       <title>K8S基本操作-46-關於儲存與 Volume </title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-46/</link>
       <pubDate>Thu, 08 Feb 2024 15:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-46/</guid>
       <description>K8S 使用的儲存與網路介面 K8S 提供了三種開放的接口規範，分別是 CRI、CNI 和 CSI，用於對接不同的後端，實現計算、網路和存儲資源的管理。 只要符合</description>
     </item>
-    
     <item>
       <title>關於Docker的Image閒談1</title>
       <link>https://alextrinityblock.github.io/blog/public/post/docker/%E9%97%9C%E6%96%BCdocker%E7%9A%84image%E9%96%92%E8%AB%871/</link>
       <pubDate>Thu, 08 Feb 2024 14:10:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/docker/%E9%97%9C%E6%96%BCdocker%E7%9A%84image%E9%96%92%E8%AB%871/</guid>
       <description>Docker 的 Volume 與 Image 的具體儲存位置 實際上 Volume 與 Image 在 Linux 上儲存在以下目錄: /var/lib/docker/ /var/lib/docker/containers /var/lib/docker/image /var/lib/docker/volumes 雖然不建議，但純手動來複製 Image 也是可能的。 Docker 或者其他容器技術的 Layer 結構 以下是個</description>
     </item>
-    
     <item>
       <title>K8S基本操作-45-Kubectx 和 Kubens </title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-45/</link>
       <pubDate>Wed, 07 Feb 2024 20:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-45/</guid>
       <description>Kubectx 和 Kubens 是兩個用於簡化 Kubernetes 集群管理的命令行工具。 Kubectx 允許您快速在不同的 Kubernetes 集群和命名空間之間切換。 Kubens 允許您快速在不同的命名空間之間切換。 這兩個工具都</description>
     </item>
-    
     <item>
       <title>K8S基本操作-44-Network Policy</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-44/</link>
       <pubDate>Wed, 07 Feb 2024 17:40:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-44/</guid>
       <description>Network Policy K8S Network Policy 是一種 Kubernetes 的功能，可以讓你控制 Pod 之間或 Pod 與外部網路的通訊規則。你可以使用 Network Policy 來定義哪些 Pod 可以互相連接，或者哪些 Pod 可以存取特定的 IP 或埠</description>
     </item>
-    
     <item>
       <title>K8S基本操作-43-Secure Context 設置容器為 no-root 用戶與 Capability</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-43/</link>
       <pubDate>Wed, 07 Feb 2024 17:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-43/</guid>
       <description>Secure Context 設置容器為 no-root 用戶 我們可以加入以下這段: spec: securityContext: runAsUser: 1010 加完之後狀況如下: --- apiVersion: v1 kind: Pod metadata: name: ubuntu-sleeper namespace: default spec: securityContext: runAsUser: 1010 containers: - command: - sleep - &amp;#34;4800&amp;#34; image: ubuntu name: ubuntu-sleeper 也可以寫在Contai</description>
     </item>
-    
     <item>
       <title>K8S基本操作-42-K8S 選擇映像檔來源</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-42/</link>
       <pubDate>Wed, 07 Feb 2024 15:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-42/</guid>
       <description>建立一個 Secret 用於儲存映像檔專用 假定我們映像檔來源如下: Name: private-reg-cred Username: dock_user Password: dock_password Server: myprivateregistry.com:5000 Email: dock_user@myprivateregistry.com 我們以此用以下指令建立一個專用的 secret 儲存映像檔伺服器與登入資訊: kubectl create secret</description>
     </item>
-    
     <item>
       <title>K8S基本操作-41-K8S Service account</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-41/</link>
       <pubDate>Wed, 07 Feb 2024 13:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-41/</guid>
       <description>Service Account 介紹 服務帳戶 (Service Account) 是一種由 Kubernetes 管理的帳戶類型，主要用於為 Pod 中執行的程序提供身分。它可以讓 Pod 訪問 Kubernetes API 和其他資源，而無需使用密碼或其他敏感資訊。</description>
     </item>
-    
     <item>
       <title>K8S基本操作-40-K8S Cluster Role 主機叢集角色</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-40/</link>
       <pubDate>Wed, 07 Feb 2024 11:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-40/</guid>
       <description>Cluster Role 由於有些資源是綁定某一台主機的，例如: Volume 這種存在硬碟上的資源。 並且這些資源橫跨多個 Namespace 與多個 Node ， 如開發環境跟生產環境都需要 Volume 。 而有時候需要</description>
     </item>
-    
     <item>
       <title>K8S基本操作-39-K8S 的使用者與權限</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-39/</link>
       <pubDate>Wed, 07 Feb 2024 10:50:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-39/</guid>
       <description>我們是否能在 K8S 建立使用者 並非直接建立，而是採用 x509 建立使用者鑰匙後建立。 K8S 的權限種類 Node 例如每個 Worker Node 都擁有一個權限身份，設置在 kubelet 用來存取 Kube API</description>
     </item>
-    
     <item>
       <title>K8S基本操作-38-K8S API</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-38/</link>
       <pubDate>Wed, 07 Feb 2024 10:10:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-38/</guid>
       <description>K8S API 如果我們需要為 K8S 設置自訂介面，更加自動化，甚至將 K8S 由大語言模型管理，這時候存取 API 就是個需要的功能了。 常見的 API 我們這邊以不一定真實存在的 URL:</description>
     </item>
-    
     <item>
       <title>K8S基本操作-37-K8S原生憑證簽署方式</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-37/</link>
       <pubDate>Tue, 06 Feb 2024 15:40:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-37/</guid>
       <description>K8S 中各部件通訊時如何保障安全 kube-apiserver, kube-controller-manager, kube-scheduler, etcd, kubelet, kube-proxy 都存在著自己的鑰匙與憑證。 具體來說，每個部件都有著對應的憑證與Key: # 預設管理員 admin.crt admin.key # KUBE-SCHEDULER scheduler.crt scheduler.key # KUBE-CONTROLLER-MANAGER controllermanager.crt</description>
     </item>
-    
     <item>
       <title>K8S基本操作-36-當Kube-API Server 失效時用 CRICTL 檢查錯誤</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-36/</link>
       <pubDate>Tue, 06 Feb 2024 15:10:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-36/</guid>
       <description>失效情況 當 ETCD server 失效，或者 Kube API server 失效時，這時無法使用 kubectl 指令登入查看。 這種時刻，需要做的就是登入該 Server ，然後使用 K8S 採用的容器 Runtime 工具來檢查錯誤報告。</description>
     </item>
-    
     <item>
       <title>K8S基本操作-35-ETCD 的預設 Port</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-35/</link>
       <pubDate>Tue, 06 Feb 2024 15:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-35/</guid>
       <description>ETCD 的預設 Port ETCD server 預設使用 2379 port，所以當 Log 發生連線 2379 port 失敗時，可能是與 ETCD server 連線發生問題。</description>
     </item>
-    
     <item>
       <title>查看OpenSSL憑證指令</title>
       <link>https://alextrinityblock.github.io/blog/public/post/secure/%E6%9F%A5%E7%9C%8Bopenssl%E6%86%91%E8%AD%89%E6%8C%87%E4%BB%A4/</link>
       <pubDate>Tue, 06 Feb 2024 12:05:49 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/secure/%E6%9F%A5%E7%9C%8Bopenssl%E6%86%91%E8%AD%89%E6%8C%87%E4%BB%A4/</guid>
       <description>檢查憑證的指令如下 檢查憑證的指令可以用-text與-noout來查看憑證細節: openssl x509 -in my.crt -text -noout 輸出類似: Certificate: Data: Version: 3 (0x2) Serial Number: 3147495682089747350 (0x2bae26a58f090396) Signature Algorithm: sha256WithRSAEncryption Issuer: CN=kubernetes Validity Not Before: Feb 11 05:39:19</description>
     </item>
-    
     <item>
       <title>K8S基本操作-34-檢查 ETCD 登入 Log</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-34/</link>
       <pubDate>Tue, 06 Feb 2024 12:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-34/</guid>
       <description>檢查 ETCD 登入 Log 我們可以用以下指令查看 etcd 的 client 端登入 Log，包含驗證成功與失敗。 -l 代表詳細內容， -u 代表來自使用者的訊息。 journalctl -u etcd.service -l 或者我們可以採用 kubectl</description>
     </item>
-    
     <item>
       <title>關於OpenSSL憑證-建立自簽CA憑證與憑證登入授權要素</title>
       <link>https://alextrinityblock.github.io/blog/public/post/secure/%E9%97%9C%E6%96%BCopenssl%E6%86%91%E8%AD%89-%E5%BB%BA%E7%AB%8B%E8%87%AA%E7%B0%BDca%E6%86%91%E8%AD%89%E8%88%87%E6%86%91%E8%AD%89%E7%99%BB%E5%85%A5%E6%8E%88%E6%AC%8A%E8%A6%81%E7%B4%A0/</link>
       <pubDate>Mon, 05 Feb 2024 23:00:49 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/secure/%E9%97%9C%E6%96%BCopenssl%E6%86%91%E8%AD%89-%E5%BB%BA%E7%AB%8B%E8%87%AA%E7%B0%BDca%E6%86%91%E8%AD%89%E8%88%87%E6%86%91%E8%AD%89%E7%99%BB%E5%85%A5%E6%8E%88%E6%AC%8A%E8%A6%81%E7%B4%A0/</guid>
       <description>關於 CA Certificate Authority，也就是 SSL 數位憑證的簽發機構。CA 負責對申請 SSL 憑證的網站進行身份驗證，並為其簽發一個包含公開金鑰和其他資訊的數位憑</description>
     </item>
-    
     <item>
       <title>K8S基本操作-33-在 External ETCD server Restore</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-33/</link>
       <pubDate>Mon, 05 Feb 2024 12:45:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-33/</guid>
       <description>在外部 ETCD server Restore 回復備份 我們的備份位置: /root/cluster2.db 將要儲存新的 etcd 資料的目錄: /var/lib/etcd-data-new 進行備份回復的指令: ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --cacert=/etc/etcd/pki/ca.pem --cert=/etc/etcd/pki/etcd.pem --key=/etc/etcd/pki/etcd-key.pem snapshot restore /root/cluster2.db --data-dir /var/lib/etcd-data-new 修改 Service 修改以下檔案: /etc/systemd/system/etcd.service 把 ... [Service] User=etcd Type=notify</description>
     </item>
-    
     <item>
       <title>K8S基本操作-32-檢查ETCD server 上的各種狀態配置</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-32/</link>
       <pubDate>Mon, 05 Feb 2024 10:45:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-32/</guid>
       <description>用 PS 指令檢查 etcd 的各個配置檔案路徑與參數 有些情況 Kubectl 工具未安裝在 etcd server 上，所以必須要手動用 ps 指令檢查參數: ps aux|grep etcd 結果: etcd 808 0.0 0.0 11218624 56044 ? Ssl 01:58 0:44 /usr/local/bin/etcd --name etcd-server --data-dir=/var/lib/etcd-data</description>
     </item>
-    
     <item>
       <title>K8S基本操作-31-如何檢查Cluster採用的ETCD的IP or URL ?</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-31/</link>
       <pubDate>Mon, 05 Feb 2024 10:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-31/</guid>
       <description>如何檢查Cluster採用的ETCD的IP or URL ? 由於 Kube-API server，記錄著這類的訊息，所以可以調出 Pod 訊息查看 ETCD 的位置。 kubectl -n kube-system describe pod &amp;lt;Kube-API Server 的 Pod 名稱</description>
     </item>
-    
     <item>
       <title>K8S基本操作-30-多個 Cluster 與 KubeConfig</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-30/</link>
       <pubDate>Sun, 04 Feb 2024 16:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-30/</guid>
       <description>Config不等於Config Map KubeConfig 為何要使用 KubeConfig ? 由於如果每次使用 kubectl 指令時，都要附上長串的使用者/密碼/憑證路徑，對維運效率的十分有影響的。 如</description>
     </item>
-    
     <item>
       <title>K8S基本操作-29-備份與還原叢集</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-29/</link>
       <pubDate>Sun, 04 Feb 2024 10:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-29/</guid>
       <description>備份的幾種方式 Velero 可以簡單佈署在 Docker 上的 K8S 備份工具，還有 Web GUI 。 操作簡單功能完整。 此種方式甚至可以把 Volume 一起打包。 (文章撰寫時)是開源免費的。 https://velero.io/docs/v1.13/ Kubectl 備</description>
     </item>
-    
     <item>
       <title>K8S基本操作-28-檢查ETCD版本</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-28/</link>
       <pubDate>Sat, 03 Feb 2024 16:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-28/</guid>
       <description>ETCD 是什麼? K8S 的 ETCD 是一個開源的分散式鍵值儲存系統，用於儲存 Kubernetes 叢集的配置和狀態資料。 它是 Kubernetes 的核心元件之一，為叢集提供以下功能： 共享配置： 儲存 Kubernetes 叢</description>
     </item>
-    
     <item>
       <title>K8S基本操作-27-更新K8S Cluster</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-27/</link>
       <pubDate>Sat, 03 Feb 2024 15:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-27/</guid>
       <description>基本概念 以下是更新 K8S 需要更新的組件: (以下為同版本的組件) kube-apiserver (位於 Master 上) Controller-manager (位於 Master 上) kube-scheduler (位於 Master 上) kubelet (位於 Worker上) kube-proxy (位於 Work</description>
     </item>
-    
     <item>
       <title>K8S基本操作-26-Drain</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-26/</link>
       <pubDate>Fri, 02 Feb 2024 23:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-26/</guid>
       <description>Drain 與 uncordon 在 Kubernetes (K8S) 中，Drain (有排水的意思) 功能可以將 Pod 轉移到其他的 Node。 方便對某個 Node 進行更新。 排空 node01 由於一般會有 Daemonsets，所</description>
     </item>
-    
     <item>
       <title>K8S基本操作-25-Init Containers</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-25/</link>
       <pubDate>Fri, 02 Feb 2024 16:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-25/</guid>
       <description>Init Containers 在 Kubernetes (K8S) 中，Init Containers 是一種特殊的容器，在 Pod 內的應用容器啟動之前運行。 Init Containers 可以包含一些應用鏡像中不存在的實用工具和安裝腳本。 你可以在 Pod 的規</description>
     </item>
-    
     <item>
       <title>K8S基本操作-24-關於1個Pod中的2個容器共用1個Volume</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-24/</link>
       <pubDate>Fri, 02 Feb 2024 11:02:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-24/</guid>
       <description>關於1個Pod中的2個容器共用1個Volume 以下這個YAML中存在1個 Pod app 此 Pod 中有兩個容器app與sidecar。 接著我們注意到以下兩個容</description>
     </item>
-    
     <item>
       <title>K8S基本操作-23-Exec 執行 Pod 中的指令</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-23/</link>
       <pubDate>Fri, 02 Feb 2024 11:01:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-23/</guid>
       <description>Exec 執行 Pod 中的指令 假定我們的 Pod 稱為 app 。 例如，以下的的指令用來直接看 Pod 中的 Log (當然，這不是好方法，但在一切裝置好之前，也許會用上): kubectl exec -it app cat /log/app.log</description>
     </item>
-    
     <item>
       <title>K8S基本操作-22-K8S的Secret</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-22/</link>
       <pubDate>Fri, 02 Feb 2024 11:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-22/</guid>
       <description>命令建立 Secret 直接採用指令來輸入 Secret 的方法: kubectl create secret generic db-secret --from-literal=DB_Host=sql01 --from-literal=DB_User=root --from-literal=DB_Password=password123 YAML 儲存 Secret 將 Secret 轉換成 YAML 編輯: kubectl create secret generic db-secret --from-literal=DB_Host=sql01 --from-literal=DB_User=root --from-literal=DB_Password=password123 --dry-run=client -o yaml &amp;gt; db-secret.yaml 可以看到 Base64 編碼後的 Secret (防止一眼被人</description>
     </item>
-    
     <item>
       <title>K8S基本操作-21-K8S的YAML的環境變數與Config Map</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-21/</link>
       <pubDate>Fri, 02 Feb 2024 10:38:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-21/</guid>
       <description>環境變數 我們可以採用以下方式設置環境變數: apiVersion: v1 kind: Pod metadata: labels: name: webapp-color name: webapp-color namespace: default spec: containers: - env: - name: APP_COLOR value: pink image: kodekloud/webapp-color imagePullPolicy: Always name: webapp-color 其中的這一段就是了: - env: - name: APP_COLOR value: pink Config Map 以下是</description>
     </item>
-    
     <item>
       <title>K8S基本操作-20-K8S的YAML的 Command 對 Dockerfile 的 Entrypoint 覆蓋</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-20/</link>
       <pubDate>Thu, 01 Feb 2024 10:38:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-20/</guid>
-      <description>如果 Dockerfile 跟 K8S 的 YAML 配置的 Entrypoint 與 Command 不一樣呢? 實際上執行的指令會是哪一種? FROMpython:3.6-alpineRUN pip install flaskCOPY . /opt/EXPOSE8080WORKDIR/optENTRYPOINT [&amp;#34;python&amp;#34;, &amp;#34;app.py&amp;#34;]CMD [&amp;#34;--color&amp;#34;, &amp;#34;red&amp;#34;]apiVersion: v1 kind: Pod metadata: name: webapp-green labels: name: webapp-green spec: containers: - name: simple-webapp image: kodekloud/webapp-color command: [&amp;#34;python&amp;#34;, &amp;#34;app.py&amp;#34;] args: [&amp;#34;--color&amp;#34;, &amp;#34;pink&amp;#34;] 最後會以 K8S 的</description>
+      <description>如果 Dockerfile 跟 K8S 的 YAML 配置的 Entrypoint 與 Command 不一樣呢? 實際上執行的指令會是哪一種? FROM python:3.6-alpine RUN pip install flask COPY . /opt/ EXPOSE 8080 WORKDIR /opt ENTRYPOINT [&amp;#34;python&amp;#34;, &amp;#34;app.py&amp;#34;] CMD [&amp;#34;--color&amp;#34;, &amp;#34;red&amp;#34;] apiVersion: v1 kind: Pod metadata: name: webapp-green labels: name: webapp-green spec: containers: - name: simple-webapp image: kodekloud/webapp-color command: [&amp;#34;python&amp;#34;,</description>
     </item>
-    
     <item>
       <title>K8S基本操作-19-K8S的 Rolling Update與 Recreate </title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-19/</link>
       <pubDate>Tue, 30 Jan 2024 10:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-19/</guid>
       <description>我們觀察以下的 Deployment: apiVersion: apps/v1 kind: Deployment metadata: annotations: deployment.kubernetes.io/revision: &amp;#34;1&amp;#34; creationTimestamp: &amp;#34;2024-02-01T01:17:43Z&amp;#34; generation: 1 name: frontend namespace: default resourceVersion: &amp;#34;1023&amp;#34; uid: 2933b6b7-59b7-412f-b806-8b80a593f61f spec: minReadySeconds: 20 progressDeadlineSeconds: 600 replicas: 4 revisionHistoryLimit: 10 selector: matchLabels: name: webapp strategy: rollingUpdate: maxSurge: 25% maxUnavailable: 25% type: RollingUpdate template: metadata: creationTimestamp: null labels: name: webapp spec: containers: - image: kodekloud/webapp-color:v1 imagePullPolicy: IfNotPresent name: simple-webapp ports: - containerPort: 8080 protocol:</description>
     </item>
-    
     <item>
       <title>K8S基本操作-18-K8S讀取Log</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-18/</link>
       <pubDate>Mon, 29 Jan 2024 17:40:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-18/</guid>
       <description>檢查 Log 只要採用以下方式即可查看 Log 了。 kubectl logs &amp;lt;Pod名稱&amp;gt;</description>
     </item>
-    
     <item>
       <title>K8S基本操作-17-安裝Metrics Server</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-17/</link>
       <pubDate>Mon, 29 Jan 2024 17:10:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-17/</guid>
       <description>Metrics Server 可以監控 K8S 的 Cluster 上的每個 Node 的 CPU, RAM 等使用。 安裝 最簡單的方式是參照以下網址，直接一行指令安裝: https://github.com/kubernetes-sigs/metrics-server kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml 使用 可以查看 Node 的 CPU 與 RAM 使用率。 kubectl top node 輸</description>
     </item>
-    
     <item>
       <title>K8S基本操作-16-手動自行建設Scheduler</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-16/</link>
       <pubDate>Mon, 29 Jan 2024 16:10:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-16/</guid>
       <description>檢查預設的 Scheduler Scheduler 是個 Pod ，位於 kube-system 這個 namespace。 用以下指令查看 Scheduler: kubectl get pod -n kube-system 設置 Service Account 與 Cluster Role 設置如下: ServiceAccount: my-scheduler (kube-system namespace) ClusterRoleBinding: my-scheduler-as-kube-scheduler ClusterRoleBinding: my-scheduler-as-volume-scheduler 同時建立 Config Map 與 Depl</description>
     </item>
-    
     <item>
       <title>K8S基本操作-15-ServiceAccount 和 ClusterRoleBinding</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-15/</link>
       <pubDate>Mon, 29 Jan 2024 16:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-15/</guid>
       <description>ServiceAccount 和 ClusterRoleBinding ServiceAccount（服務帳戶） ServiceAccount（服務帳戶） 是一種 Kubernetes 資源，用於為 Pod 提供身份。Pod 可以使用 ServiceAccount 來訪問</description>
     </item>
-    
     <item>
       <title>K8S基本操作-14-Static pods</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-14/</link>
       <pubDate>Mon, 29 Jan 2024 11:10:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-14/</guid>
       <description>Static pods 在 Kubernetes 中，Static Pod 是一種特殊的 Pod，它不像一般的 Pod 由 Deployment 或 DaemonSet 等控制器管理，而是直接由特定節點上的 kubelet 进程管理。Static Pod 的主要特點</description>
     </item>
-    
     <item>
       <title>K8S基本操作-13-Daemonsets</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-13/</link>
       <pubDate>Mon, 29 Jan 2024 10:10:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-13/</guid>
       <description>Daemonsets 這類程式常駐於 Node 上，類似程式的守護進程。 可用以下指令檢查所有 Namespace 的 Daemonsets: kubectl get daemonsets --all-namespace 運行叢集守護進程，例如日誌收集、監控、網路代理程式等。 在所有節點</description>
     </item>
-    
     <item>
       <title>K8S基本操作-12-Resource limits</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-12/</link>
       <pubDate>Mon, 29 Jan 2024 10:05:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-12/</guid>
       <description>Resource limits 資源限制 我們可以設置一個 Deployment 最少需要多少資源，與最多消耗多少資源。 具體的用法是在 containers 裏頭寫下 requests 與 limits 項目。 官方的範例: --- apiVersion: v1 kind: Pod metadata: name: frontend spec: containers: - name:</description>
     </item>
-    
     <item>
       <title>K8S基本操作-11-Node Affinitty</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-11/</link>
       <pubDate>Mon, 29 Jan 2024 10:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-11/</guid>
       <description>Node Affinitty 在 Kubernetes 中，Node affinity（節點親和性）是一種用於控制 Pod 調度到哪些節點上的機制。它允許您根據節點的屬性和標籤，指定 Pod 應該调度到哪些</description>
     </item>
-    
     <item>
       <title>K8S基本操作-10-Taints AND Tolerations</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-10/</link>
       <pubDate>Mon, 29 Jan 2024 08:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-10/</guid>
       <description>Taints AND Tolerations 在 Kubernetes 中，Taints 和 Tolerations 是一種用於控制 Pod 調度到哪些節點上的機制。 Taints Taint 是一種附加到節點上的鍵值對。它表示該節點不適合運行具有特定容忍度（</description>
     </item>
-    
     <item>
       <title>K8S基本操作-09-Labels and Selectors</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-09/</link>
       <pubDate>Sun, 28 Jan 2024 08:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-09/</guid>
       <description>Labels and Selectors Labels 是附加到 Kubernetes 對象（例如 Pod、Deployment、Service 等）上的鍵值對。它們可以用來對對象進行分類和標識，以便於管理和查找。</description>
     </item>
-    
     <item>
       <title>K8S基本操作-08-Scheduling</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-08/</link>
       <pubDate>Fri, 26 Jan 2024 08:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-08/</guid>
       <description>Kube-scheduler kube-scheduler 負責監視新創建的或尚未調度（unscheduled）的 Pod，並選擇一個最佳節點來運行這些 Pod。由於 Pod 中的容器和 Pod 本身可能有不同的要求</description>
     </item>
-    
     <item>
       <title>繪製GCP設計圖稿</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/%E7%B9%AA%E8%A3%BDgcp%E8%A8%AD%E8%A8%88%E5%9C%96%E7%A8%BF/</link>
       <pubDate>Sun, 31 Dec 2023 05:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/%E7%B9%AA%E8%A3%BDgcp%E8%A8%AD%E8%A8%88%E5%9C%96%E7%A8%BF/</guid>
       <description>Architecture Diagramming Tool 一個可以繪製GCP架構圖的工具，主要繪圖部件稱為 Google Cloud Developer Cheat Sheet 。 可以幫助設計 GCP 雲端架構。 可以用拖曳進行操作。 參考頁面: Introducing a Google Cloud architecture diagramming tool Google Cloud Developer</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-考前筆記</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-%E8%80%83%E5%89%8D%E7%AD%86%E8%A8%98/</link>
       <pubDate>Tue, 26 Dec 2023 01:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-%E8%80%83%E5%89%8D%E7%AD%86%E8%A8%98/</guid>
       <description>GCP ACE 考前模擬題目的小筆記 以下紀錄著模擬考題裏頭的各種超綱題。 儲存秘密 GCP Secret Manager 與 Environment variables 的抉擇，兩個都可行，該選哪個? GCP Secret Manager 提供版本控制和日誌記錄功</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-12-Storage 儲存</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-12/</link>
       <pubDate>Thu, 30 Nov 2023 16:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-12/</guid>
       <description>Storage 儲存分成兩種 Block Storage 類似許多二進位訊息的儲存區塊，可以作為硬碟直接掛上。從一個更高的角度來看，硬碟儲存的是一串 0 與 1 ， 映像檔也是如此。而 Block Storage 不</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-11-Cloud KMS (Cloud Key Management)</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-11/</link>
       <pubDate>Wed, 29 Nov 2023 17:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-11/</guid>
       <description>Data States 資料狀態 Data at rest: 資料在裝置上使用或者在備份中 Hard disk Database Backups Archives Data in motion (運動中): 資料在網路傳輸中 如資料從本地轉送到雲端儲存 應用程式跟 Database 交互中 兩種型</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-10-Cloud Run</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-10/</link>
       <pubDate>Wed, 29 Nov 2023 16:40:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-10/</guid>
       <description>Cloud Run 基於 Knative，一種自動管理 K8S 的工具，幾乎可以做到全自動擴展。 不須維護基礎設施。 使用時才付費。 Cloud Run for Anthos Cloud Run 是在數秒之內運作一個容器帶</description>
     </item>
-    
     <item>
       <title>AWS-EKS-建立一個Cluster</title>
       <link>https://alextrinityblock.github.io/blog/public/post/aws/aws-eks-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8Bcluster/</link>
       <pubDate>Tue, 21 Nov 2023 13:00:00 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/aws/aws-eks-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8Bcluster/</guid>
       <description>簡述 簡單來說，使用 AWS CLI + eksctl 兩個工具，很快就可以佈署好，並且進行管理了。 比較多步驟的是在新環境中安裝 AWS CLI 。 1.用 Root acount 建立 IAM account 為了乾淨好管理，先</description>
     </item>
-    
     <item>
       <title>K8S基本操作-07-Ubuntu安裝K8S</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-07/</link>
       <pubDate>Tue, 21 Nov 2023 08:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-07/</guid>
       <description>MicroK8S Ubuntu 官方提供了一個 snap 套件可以超快的安裝 K8S ， 稱為 MicroK8S。 sudo snap install microk8s --classic --channel=1.28 sudo usermod -a -G microk8s $USER sudo chown -f -R $USER ~/.kube su - $USER 安裝後檢查狀態是否安裝完成 microk8s status --wait-ready 使</description>
     </item>
-    
     <item>
       <title>K8S基本操作-06-imperative指令</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-06/</link>
       <pubDate>Sun, 19 Nov 2023 18:56:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-06/</guid>
       <description>Imperative imperative command 指令式命令，例如詳細描述每個需要的步驟。 Declarative command 宣告式命令，僅需要描述期待，實現則由程式自行決定。 如 kubectl run nginx-pod --image=nginx:alpine 就屬於 imperative command。</description>
     </item>
-    
     <item>
       <title>K8S基本操作-05-Service基本使用</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-05/</link>
       <pubDate>Sun, 19 Nov 2023 18:25:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-05/</guid>
       <description>列出 services kubectl get services 結果如下 controlplane ~ ➜ kubectl get services NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE kubernetes ClusterIP 10.43.0.1 &amp;lt;none&amp;gt; 443/TCP 13m kubernetes 的 ClusterIP 是 K8S 預設的服務。 顯示 service 的細部內容 kubectl describe service kubernetes 結果如下。 controlplane ~ ➜ kubectl describe service kubernetes Name: kubernetes Namespace: default Labels: component=apiserver provider=kubernetes</description>
     </item>
-    
     <item>
       <title>K8S基本操作-04-namespace基本使用</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-04/</link>
       <pubDate>Sun, 19 Nov 2023 17:50:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-04/</guid>
       <description>列出 namespaces kubectl get namespaces 列出某 namespaces 裏頭的 pods 例如我們要取得 research namespaces 裏頭的 pod。 kubectl -n research get pods 算出某個 namespaces 裏頭的 pods 數量 kubectl -n research get pods --no-headers | wc -l 手動在某 namespaces 裏頭啟動 pod kubectl -n finance run redis</description>
     </item>
-    
     <item>
       <title>K8S基本操作-03-Deployment基本使用</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-03/</link>
       <pubDate>Sun, 19 Nov 2023 17:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-03/</guid>
       <description>取得當前有多少 Deployments kubectl get deployments 檢查 Deployments kubectl describe deployment frontend-deployment 用 YAML 執行一個 Deployment 記得 kind: Deployment 開頭要大寫 kubectl apply -f deployment-definition-1.yaml 閱讀 Deployment 官方文檔 kubectl explain deployment</description>
     </item>
-    
     <item>
       <title>K8S基本操作-02-ReplicaSet基本使用</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-02/</link>
       <pubDate>Sun, 19 Nov 2023 12:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-02/</guid>
       <description>本篇筆記主要談論 ReplicaSet 的基本操作。 ReplicaSet 只能維持 Pod 的數量，不能實現 Pod 的版本更新。如果要更新 Pod 的映像檔或配置，需要手動刪除舊的 Pod，讓 ReplicaSet 根據模板創建</description>
     </item>
-    
     <item>
       <title>K8S基本操作-01-建立與管理Pod</title>
       <link>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-01/</link>
       <pubDate>Sun, 19 Nov 2023 10:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-01/</guid>
       <description>本篇筆記主要談論 kubectl 的基本操作。 列出 default namespace 的 pods kubectl get pods 或者 kubectl get pods -n default 手動運作一個 Nginx 的 pod kubectl run nginx --image=nginx 確認 pod 使用哪個 image 用以下指令顯示 pod 完整細節。 例如我們的</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-09-Cloud function 第二代 (2nd gen)(未完成)</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-09/</link>
       <pubDate>Tue, 14 Nov 2023 11:20:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-09/</guid>
       <description>Cloud function - 2nd gen (未完成) 更長的執行時間 60 分鐘。 更大的 VM Size，16 GB RAM，4 vCPU。 Concurrency: 1 個 function 接受同時 1000 個併發。第一代，1 次接受 1 個併發。 Multiple</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-08-Cloud function 第一代</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-08/</link>
       <pubDate>Tue, 14 Nov 2023 09:50:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-08/</guid>
       <description>Cloud function 可以用在某個事件 (Event) 發生時，產生某個反應。 例如某個 error log 發生時，出現反饋。 這項服務是 Serverless 服務，只在運作時算錢。 支援語言 Node.js, Python, Go, Java, .NET, and Ruby 成本計算方</description>
     </item>
-    
     <item>
       <title>Serverless真的省錢嗎</title>
       <link>https://alextrinityblock.github.io/blog/public/post/daily/serverless%E7%9C%9F%E7%9A%84%E7%9C%81%E9%8C%A2%E5%97%8E/</link>
       <pubDate>Tue, 14 Nov 2023 09:08:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/daily/serverless%E7%9C%9F%E7%9A%84%E7%9C%81%E9%8C%A2%E5%97%8E/</guid>
       <description>不一定! 可能更貴。 根據文章 Scaling up the Prime Video audio/video monitoring service and reducing costs by 90% 的研究顯示，某個影像音訊監控服務，在採用各種 AWS Lambda 函數互相交互的時候，花費了大量的資金。 https://www.primevideotech.com/video-streaming/scaling-up-the-prime-video-audio-video-monitoring-service-and-reducing-costs-by-90</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-07-Google Kubernetes Engine</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-07/</link>
       <pubDate>Sat, 11 Nov 2023 11:20:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-07/</guid>
       <description>GKE 簡述 (p.111) Google 提供的 K8S 服務。 跟典型的 K8S 服務一樣有以下特色: Auto Scaling Service Discovery Load Balancer Self-Healing Zero Downtime Deployment Auto-repair Pod and Cluster Autoscaling 可用 Cloud Logging 與 Cloud Monitoring 監控 由 Google 提供的 Container-Optimized OS 提供 Persistent disks 與 Local SSD。 啟動</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-06-App Engine</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-06/</link>
       <pubDate>Sat, 11 Nov 2023 00:20:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-06/</guid>
       <description>App Engine 一個可以簡單部屬可以自動縮放的應用程式。 預設運作環境: Go, Java, .NET, Node.js, PHP, Python, Ruby ，這些語言都有提供運作環境。 客製化作環境: 可採用任何語言。 App Engine 是 Re</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-05-Managed Services</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-05/</link>
       <pubDate>Thu, 09 Nov 2023 15:55:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-05/</guid>
       <description>IAAS (Infrastructure as a Service) 供應商管理硬體，其他可以自訂。 例如 : VM。 需自己更新 OS, APP, APP runtime, Auto scaling, Availability, Load balancing。 PAAS (Platform as a Service) 供應商管理硬體, OS, 網路, APP runtime, Load balancing,</description>
     </item>
-    
     <item>
       <title>2023-11-09-面試心得</title>
       <link>https://alextrinityblock.github.io/blog/public/post/daily/2023-11-09-%E9%9D%A2%E8%A9%A6%E5%BF%83%E5%BE%97/</link>
       <pubDate>Thu, 09 Nov 2023 15:40:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/daily/2023-11-09-%E9%9D%A2%E8%A9%A6%E5%BF%83%E5%BE%97/</guid>
       <description>今天線上面試是一間 Laravel 有關的公司。 有錄取，人都很好，但由於在考證照，所以暫時沒加入! 以下是面試題目: 第一題 請問 MVC 架構分為哪三個部分? 第二題 Laravel 中</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-04-Cloud Load Balancing</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-04/</link>
       <pubDate>Thu, 09 Nov 2023 09:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-04/</guid>
       <description>Cloud Load Balancing 負載平衡，可以提供一個IP或者網址後方，放置多台機器。 可以單 region 或者 multiple regions。 增加服務的 Resiliency (彈性)，Auto Scaling，Hi</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-03-Instance Groups</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-03/</link>
       <pubDate>Wed, 08 Nov 2023 20:48:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-03/</guid>
       <description>Instance Groups 可以採用數個 VM template 組成一個群組進行管理。 兩種型態的 Instance Groups: Managed: 自動擴展的同一種 template 並且自動修復與自動管理釋放虛擬機。 Unmanaged: 許多不同型態的 template 組成，無法自</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-02-Gcloud簡介</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-02/</link>
       <pubDate>Wed, 08 Nov 2023 20:44:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-02/</guid>
       <description>Gcloud 的常用功能 # 初始化，登入GCP帳號 gcloud init # 列出所有啟動的屬性，可以看到登入帳號與 projuct 名稱 gcloud config list # 列出帳號 gcloud config list account # 列出區域 gcloud config list region # 列出 Project gcloud config</description>
     </item>
-    
     <item>
       <title>2023-11-07-面試心得</title>
       <link>https://alextrinityblock.github.io/blog/public/post/daily/2023-11-07-%E9%9D%A2%E8%A9%A6%E5%BF%83%E5%BE%97/</link>
       <pubDate>Wed, 08 Nov 2023 18:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/daily/2023-11-07-%E9%9D%A2%E8%A9%A6%E5%BF%83%E5%BE%97/</guid>
       <description>今天參加的面試是一間網頁公司，面試的是兩個職位。 後端工程師 SRE (Site Reliability Engineering) 網站可靠度工程師 我主要期待的是 SRE 的這份職位。 該公司若面試後超過 7 天沒有回應</description>
     </item>
-    
     <item>
       <title>GCP的ACE證照筆記-01-GCE介紹</title>
       <link>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-01/</link>
       <pubDate>Wed, 08 Nov 2023 10:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/gcp/gcp%E7%9A%84ace%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98-01/</guid>
       <description>GCP-ACE 證照筆記 Associate Cloud Engineer Certification 助理雲端工程師證照 Region 遍布全球的地區，一個地區會有多個 Zone 機房。 目前有 20 個以上。 Zones 資料中心 (data centers)，同 region 的 zone 資料互傳</description>
     </item>
-    
     <item>
       <title>CCNA證照筆記</title>
       <link>https://alextrinityblock.github.io/blog/public/post/ccna/ccna%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98/</link>
       <pubDate>Tue, 08 Nov 2022 18:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/ccna/ccna%E8%AD%89%E7%85%A7%E7%AD%86%E8%A8%98/</guid>
       <description>CCNA證照筆記</description>
     </item>
-    
     <item>
       <title>如何有效的使用Fetch函數</title>
       <link>https://alextrinityblock.github.io/blog/public/post/frontend/%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E7%9A%84%E4%BD%BF%E7%94%A8fetch%E5%87%BD%E6%95%B8/</link>
       <pubDate>Fri, 26 Aug 2022 00:00:00 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/frontend/%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E7%9A%84%E4%BD%BF%E7%94%A8fetch%E5%87%BD%E6%95%B8/</guid>
       <description>由於當前Fetch這種官方的前端AJAX函數，已經可以簡短的實現，再不換頁的情況下傳送訊息。所以可能的話盡量使用原生的Fetch函數來實現A</description>
     </item>
-    
     <item>
       <title>EJS-一個Javascript模板引擎</title>
       <link>https://alextrinityblock.github.io/blog/public/post/node.js/ejs-%E4%B8%80%E5%80%8Bjavascript%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</link>
       <pubDate>Thu, 18 Aug 2022 09:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/node.js/ejs-%E4%B8%80%E5%80%8Bjavascript%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</guid>
       <description>EJS-一個Javascript模板引擎 EJS是個可以像是PHP或者ASP般，在HTML中嵌入後端變數的模板引擎。 使用的語法是這樣的，我們傳</description>
     </item>
-    
     <item>
       <title>AWS證照SSA筆記</title>
       <link>https://alextrinityblock.github.io/blog/public/post/aws/aws%E8%AD%89%E7%85%A7ssa%E7%AD%86%E8%A8%98/</link>
       <pubDate>Thu, 18 Aug 2022 09:00:00 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/aws/aws%E8%AD%89%E7%85%A7ssa%E7%AD%86%E8%A8%98/</guid>
       <description>Region 區域，例如美國東部，或者東京&amp;hellip; Availability Zones 簡稱AZ，在一個區域裡頭，可以有數個AZ，例如同樣在東京，可以有兩個AWS機房。 IAM 權限控管</description>
     </item>
-    
     <item>
       <title>建置一個React前端網站</title>
       <link>https://alextrinityblock.github.io/blog/public/post/node.js/%E5%BB%BA%E7%BD%AE%E4%B8%80%E5%80%8Breact%E5%89%8D%E7%AB%AF%E7%B6%B2%E7%AB%99/</link>
       <pubDate>Fri, 12 Aug 2022 09:30:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/node.js/%E5%BB%BA%E7%BD%AE%E4%B8%80%E5%80%8Breact%E5%89%8D%E7%AB%AF%E7%B6%B2%E7%AB%99/</guid>
       <description>更新Node.js 這段請隨著Node.js的版本更新調整。 本文章撰寫的時候，我希望安裝Node.js 16 版，因為此時需要如此才能順利建置Rea</description>
     </item>
-    
     <item>
       <title>NPM初始化資料夾</title>
       <link>https://alextrinityblock.github.io/blog/public/post/node.js/npm%E5%88%9D%E5%A7%8B%E5%8C%96%E8%B3%87%E6%96%99%E5%A4%BE/</link>
       <pubDate>Fri, 12 Aug 2022 09:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/node.js/npm%E5%88%9D%E5%A7%8B%E5%8C%96%E8%B3%87%E6%96%99%E5%A4%BE/</guid>
       <description>NPM初始化空資料夾 建立一個空資料夾，並且進入資料夾。 mkdir npm-test cd npm-test 輸入npm初始化指令 npm init 然後輸入下列內容: package name: 專案名稱 version: 專案版本 description: 專案介紹 entry point:</description>
     </item>
-    
     <item>
       <title>Docker基本指令</title>
       <link>https://alextrinityblock.github.io/blog/public/post/docker/docker%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/</link>
       <pubDate>Wed, 06 Jul 2022 09:00:03 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/docker/docker%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/</guid>
       <description>Docker概念 半虛擬化 比一般虛擬機快 檔案大小很小 不用完全模擬到硬體層級 實用只指令 1.運作一個nginx網頁伺服器 run: 下載映像檔同時執行。 -d: 第</description>
     </item>
-    
     <item>
       <title>按照比例縮放元素的vh與vw</title>
       <link>https://alextrinityblock.github.io/blog/public/post/frontend/%E6%8C%89%E7%85%A7%E6%AF%94%E4%BE%8B%E7%B8%AE%E6%94%BE%E5%85%83%E7%B4%A0%E7%9A%84vh%E8%88%87vw/</link>
       <pubDate>Thu, 02 Jun 2022 12:00:00 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/frontend/%E6%8C%89%E7%85%A7%E6%AF%94%E4%BE%8B%E7%B8%AE%E6%94%BE%E5%85%83%E7%B4%A0%E7%9A%84vh%E8%88%87vw/</guid>
       <description>當我們想按照畫面比例縮放一個元素時 我們可以用以下兩種方式 %比例 width: 30%; 這個元素為父元素寬度的30%。 vw,vh比例 width: 100vw; 這個元素為瀏覽網頁的裝置的</description>
     </item>
-    
     <item>
       <title>Bootstrap響應式網頁出現白邊</title>
       <link>https://alextrinityblock.github.io/blog/public/post/frontend/bootstrap%E9%9F%BF%E6%87%89%E5%BC%8F%E7%B6%B2%E9%A0%81%E5%87%BA%E7%8F%BE%E7%99%BD%E9%82%8A/</link>
       <pubDate>Thu, 02 Jun 2022 09:00:00 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/frontend/bootstrap%E9%9F%BF%E6%87%89%E5%BC%8F%E7%B6%B2%E9%A0%81%E5%87%BA%E7%8F%BE%E7%99%BD%E9%82%8A/</guid>
       <description>問題 在使用Bootstrap時，響應式網頁在手機上出現了白色的邊框。 雖然已經使用.container或者.container-fluid了，</description>
     </item>
-    
     <item>
       <title>OAuth2.0概述</title>
       <link>https://alextrinityblock.github.io/blog/public/post/secure/oauth2.0%E6%A6%82%E8%BF%B0/</link>
       <pubDate>Fri, 11 Mar 2022 09:00:49 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/secure/oauth2.0%E6%A6%82%E8%BF%B0/</guid>
       <description>Ps. 此篇也會用於我嘉義大學的專題討論課程與ISLasb實驗室Meeting OAuth2.0簡化圖 實際的細節比這個多了一點點步驟，不過這是從簡單</description>
     </item>
-    
     <item>
       <title>軟體測試的覆蓋準則</title>
       <link>https://alextrinityblock.github.io/blog/public/post/cicd/%E8%BB%9F%E9%AB%94%E6%B8%AC%E8%A9%A6%E7%9A%84%E8%A6%86%E8%93%8B%E6%BA%96%E5%89%87/</link>
       <pubDate>Wed, 09 Mar 2022 15:00:45 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/cicd/%E8%BB%9F%E9%AB%94%E6%B8%AC%E8%A9%A6%E7%9A%84%E8%A6%86%E8%93%8B%E6%BA%96%E5%89%87/</guid>
-      <description>假設 假設這是我們今天要測試的程式。 INPUT A,B,X IF (A&amp;gt;1) AND (B=0) THEN Y=A IF (A=2) OR (X&amp;gt;1) THEN Y=X PRINT Y 流程圖 %%{init: {&#39;theme&#39;:&#39;dark&#39;}}%% flowchart TD A(程式開始) -- B{A1 and B=0} B --|True| D(Y=A) B --|False| E{A=2 or x1} D -- E{A=2 or x1} E{A=2 or x1} -- |False| G</description>
+      <description>假設 假設這是我們今天要測試的程式。 INPUT A,B,X IF (A&amp;gt;1) AND (B=0) THEN Y=A IF (A=2) OR (X&amp;gt;1) THEN Y=X PRINT Y 流程圖 %%{init: {&#39;theme&#39;:&#39;dark&#39;}}%% flowchart TD A(程式開始) --&gt; B{A&gt;1 and B=0} B --&gt;|True| D(Y=A) B --&gt;|False| E{A=2 or x&gt;1} D --&gt; E{A=2 or x&gt;1} E{A=2 or x&gt;1} --&gt; |False| G</description>
     </item>
-    
     <item>
       <title>Mermaid畫出流程圖</title>
       <link>https://alextrinityblock.github.io/blog/public/post/math/mermaid%E7%95%AB%E5%87%BA%E6%B5%81%E7%A8%8B%E5%9C%96/</link>
       <pubDate>Wed, 09 Mar 2022 14:30:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/math/mermaid%E7%95%AB%E5%87%BA%E6%B5%81%E7%A8%8B%E5%9C%96/</guid>
-      <description>我們可以用Mermaid這個Javascript函數庫來繪製出流程圖。 graph TD A(程式開始) -- B{A1 and B=0} B --|True| D(Y=A) B --|False| E{A=2 or x1} D -- E{A=2 or x1} E{A=2 or x1} -- |False| G(程式</description>
+      <description>我們可以用Mermaid這個Javascript函數庫來繪製出流程圖。 graph TD A(程式開始) --&gt; B{A&gt;1 and B=0} B --&gt;|True| D(Y=A) B --&gt;|False| E{A=2 or x&gt;1} D --&gt; E{A=2 or x&gt;1} E{A=2 or x&gt;1} --&gt; |False| G(程式</description>
     </item>
-    
     <item>
       <title>黑箱與白箱測試</title>
       <link>https://alextrinityblock.github.io/blog/public/post/cicd/%E9%BB%91%E7%AE%B1%E8%88%87%E7%99%BD%E7%AE%B1%E6%B8%AC%E8%A9%A6/</link>
       <pubDate>Wed, 09 Mar 2022 13:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/cicd/%E9%BB%91%E7%AE%B1%E8%88%87%E7%99%BD%E7%AE%B1%E6%B8%AC%E8%A9%A6/</guid>
       <description>白箱測試(White-box testing) 白箱測試(White-box testing)，我們已經了解軟體內部運作後，進行測試。很有可能程式是我們自己撰寫</description>
     </item>
-    
     <item>
       <title>Azure部屬MySQL</title>
       <link>https://alextrinityblock.github.io/blog/public/post/azure/azure%E9%83%A8%E5%B1%ACmysql/</link>
       <pubDate>Wed, 09 Mar 2022 10:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/azure/azure%E9%83%A8%E5%B1%ACmysql/</guid>
       <description>1.適用於 MySQL 的 Azure 資料庫 點選『適用於 MySQL 的 Azure 資料庫』 如果沒有的話，可以在上排選單。 2.建立 3.單一伺服器 4.建立MySQL伺服器 以下有幾個一定要</description>
     </item>
-    
     <item>
       <title>LaTex畫出矩陣</title>
       <link>https://alextrinityblock.github.io/blog/public/post/math/latex%E7%95%AB%E5%87%BA%E7%9F%A9%E9%99%A3/</link>
       <pubDate>Thu, 03 Mar 2022 14:43:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/math/latex%E7%95%AB%E5%87%BA%E7%9F%A9%E9%99%A3/</guid>
       <description>繪製出普通的矩陣 \documentclass{article} \usepackage{amsmath} \begin{document} $\begin{bmatrix} a &amp;amp; b &amp;amp; d\\ c &amp;amp; d &amp;amp; d \end{bmatrix}$ \end{document} $\begin{bmatrix} a &amp; b &amp; d\\ c &amp; d &amp; d \end{bmatrix}$ 繪製出有線的矩陣 \documentclass{article} \usepackage{amsmath} \begin{document} $\begin{bmatrix} \begin{array}{cc|c} a &amp;amp; b &amp;amp; d\\ c &amp;amp; d &amp;amp; d \end{array} \end{bmatrix}$ \end{document} $\begin{bmatrix} \begin{array}{cc|c} a &amp; b &amp; d\\ c</description>
     </item>
-    
     <item>
       <title>ASP.net找不到csc.exe</title>
       <link>https://alextrinityblock.github.io/blog/public/post/asp.net/asp.net%E6%89%BE%E4%B8%8D%E5%88%B0csc.exe/</link>
       <pubDate>Tue, 01 Mar 2022 12:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/asp.net/asp.net%E6%89%BE%E4%B8%8D%E5%88%B0csc.exe/</guid>
       <description>打開上排選單的 工具&amp;gt;NuGet套件管理員&amp;gt;套件管理器主控台 然後輸入以下指令。 Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r</description>
     </item>
-    
     <item>
       <title>Git整合過去Commit</title>
       <link>https://alextrinityblock.github.io/blog/public/post/git/git%E6%95%B4%E5%90%88%E9%81%8E%E5%8E%BBcommit/</link>
       <pubDate>Wed, 23 Feb 2022 00:04:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/git/git%E6%95%B4%E5%90%88%E9%81%8E%E5%8E%BBcommit/</guid>
       <description>如果說有多條commit要合併成一條 就需要使用 git rebase 1 首先，在git 中最新的一個commit 稱為 Head 所以git rebase的一個常用指令就是 git rebase</description>
     </item>
-    
     <item>
       <title>Git選擇分支</title>
       <link>https://alextrinityblock.github.io/blog/public/post/git/git%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Wed, 23 Feb 2022 00:04:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/git/git%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C/</guid>
       <description>1.什麼是分支? 當我們在開發某個東西時，總存在著測試和開發中，無法正常上線的狀態之版本 而多人合力開發時，也有很多的細節需要整合 這時候就會使用</description>
     </item>
-    
-    <item>
-      <title>Git復原失誤的操作</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/</link>
-      <pubDate>Wed, 23 Feb 2022 00:03:44 +0800</pubDate>
-      
-      <guid>https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/</guid>
-      <description>以Revert復原已經提交的變更 每次的變更都會留下雜湊質值 git log 可以查看 要復原變更可以以雜湊值復原 git revert acc6af6 如果復原時跳出UNIX式的VI編輯器介</description>
-    </item>
-    
     <item>
       <title>Git的簡單使用</title>
       <link>https://alextrinityblock.github.io/blog/public/post/git/git%E7%9A%84%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 23 Feb 2022 00:03:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/git/git%E7%9A%84%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8/</guid>
       <description>1.Git的三個區域 Working tree 工作樹 我們甚麼都還沒做時，資料在這裡 Staging Area 暫存區 我們進行指令add 後資料在這裡 Repository 儲存庫 我們commit時資料進入儲存庫</description>
     </item>
-    
+    <item>
+      <title>Git復原失誤的操作</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Wed, 23 Feb 2022 00:03:44 +0800</pubDate>
+      <guid>https://alextrinityblock.github.io/blog/public/post/git/git%E5%BE%A9%E5%8E%9F%E5%A4%B1%E8%AA%A4%E7%9A%84%E6%93%8D%E4%BD%9C/</guid>
+      <description>以Revert復原已經提交的變更 每次的變更都會留下雜湊質值 git log 可以查看 要復原變更可以以雜湊值復原 git revert acc6af6 如果復原時跳出UNIX式的VI編輯器介</description>
+    </item>
     <item>
       <title>用Gogs自己架設Git Server</title>
       <link>https://alextrinityblock.github.io/blog/public/post/git/%E7%94%A8gogs%E8%87%AA%E5%B7%B1%E6%9E%B6%E8%A8%ADgitserver/</link>
       <pubDate>Wed, 23 Feb 2022 00:02:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/git/%E7%94%A8gogs%E8%87%AA%E5%B7%B1%E6%9E%B6%E8%A8%ADgitserver/</guid>
       <description>Gogs是啥？ 由go語言撰寫而成，一個輕量化方便部屬的Git伺服器。 需要的部件 Docker: 一個能夠建立容器，快速部屬環境的半虛擬化工具。 Gogs: 輕量化Git</description>
     </item>
-    
     <item>
       <title>如何用22port以外連上Git Server</title>
       <link>https://alextrinityblock.github.io/blog/public/post/git/%E5%A6%82%E4%BD%95%E7%94%A822port%E4%BB%A5%E5%A4%96%E9%80%A3%E4%B8%8Agitserver/</link>
       <pubDate>Wed, 23 Feb 2022 00:01:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/git/%E5%A6%82%E4%BD%95%E7%94%A822port%E4%BB%A5%E5%A4%96%E9%80%A3%E4%B8%8Agitserver/</guid>
       <description>Git伺服器的SSH port 基本上來說，git server所使用的ssh port就是22 port。 為何會有例外 由於自己架設的Git Server，2</description>
     </item>
-    
     <item>
       <title>Jenkins的docker容器</title>
       <link>https://alextrinityblock.github.io/blog/public/post/cicd/jenkins%E7%9A%84docker%E5%AE%B9%E5%99%A8/</link>
       <pubDate>Wed, 23 Feb 2022 00:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/cicd/jenkins%E7%9A%84docker%E5%AE%B9%E5%99%A8/</guid>
       <description>一次性快速使用Jenkins docker run \ --rm \ -u root \ -p 8080:8080 \ -v jenkins-data:/var/jenkins_home \ -v /var/run/docker.sock:/var/run/docker.sock \ -v &amp;#34;$HOME&amp;#34;:/home \ jenkinsci/blueocean 趁密碼出現時，從終端機上頭複製下來 用複製到的密碼解鎖 http://127.0.0.1:8080/ 長期保存的Jen</description>
     </item>
-    
     <item>
       <title>將ASP.net部屬到Azure的AppService</title>
       <link>https://alextrinityblock.github.io/blog/public/post/asp.net/%E5%B0%87asp.net%E9%83%A8%E5%B1%AC%E5%88%B0azure%E7%9A%84appservice/</link>
       <pubDate>Wed, 23 Feb 2022 00:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/asp.net/%E5%B0%87asp.net%E9%83%A8%E5%B1%AC%E5%88%B0azure%E7%9A%84appservice/</guid>
       <description>啥是Azure的App Service服務? App Service是個微軟提供，要花錢的服務。 不過還好在碩士生涯中，學校有提供教育用的點數可以使用，</description>
     </item>
-    
     <item>
       <title>ASP.net中建立Model</title>
       <link>https://alextrinityblock.github.io/blog/public/post/asp.net/asp.net%E4%B8%AD%E5%BB%BA%E7%AB%8Bmodel/</link>
       <pubDate>Tue, 22 Feb 2022 12:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/asp.net/asp.net%E4%B8%AD%E5%BB%BA%E7%AB%8Bmodel/</guid>
       <description>啥是MVC架構 模型（Model） - 演算法、資料庫&amp;hellip;等等程式操作。 視圖（View） - 圖形介面(此指網頁前端)相關。 控制器（Con</description>
     </item>
-    
     <item>
       <title>用Express-generator重新實做路由</title>
       <link>https://alextrinityblock.github.io/blog/public/post/node.js/%E7%94%A8express-generator%E9%87%8D%E6%96%B0%E5%AF%A6%E5%81%9A%E8%B7%AF%E7%94%B1/</link>
       <pubDate>Fri, 18 Feb 2022 10:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/node.js/%E7%94%A8express-generator%E9%87%8D%E6%96%B0%E5%AF%A6%E5%81%9A%E8%B7%AF%E7%94%B1/</guid>
       <description>目錄 1.先備知識 2.新增路由檔案 3.修改app.js 先備知識 學會安裝NPM 用Express-generator建立專案 Express-gen</description>
     </item>
-    
     <item>
       <title>Express-generator使用與理解</title>
       <link>https://alextrinityblock.github.io/blog/public/post/node.js/express-generator%E4%BD%BF%E7%94%A8%E8%88%87%E7%90%86%E8%A7%A3/</link>
       <pubDate>Thu, 17 Feb 2022 13:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/node.js/express-generator%E4%BD%BF%E7%94%A8%E8%88%87%E7%90%86%E8%A7%A3/</guid>
       <description>目錄 1.先備知識 2.專案進入點/bin/www 3.理解package.json 4.理解app.js 5.調整Morgan的log格式 6.模塊(</description>
     </item>
-    
     <item>
       <title>用Express-generator建立專案</title>
       <link>https://alextrinityblock.github.io/blog/public/post/node.js/%E7%94%A8express-generator%E5%BB%BA%E7%AB%8B%E5%B0%88%E6%A1%88/</link>
       <pubDate>Wed, 16 Feb 2022 14:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/node.js/%E7%94%A8express-generator%E5%BB%BA%E7%AB%8B%E5%B0%88%E6%A1%88/</guid>
       <description>建立一個資料夾稱為web mkdir web 進入資料夾 cd web 安裝express 完整語法 npm install express --save 也可以安裝為開發者模式 npm install express --save-dev 簡化語法 一般模式 npm i express 也可以安裝為</description>
     </item>
-    
     <item>
       <title>使用Express</title>
       <link>https://alextrinityblock.github.io/blog/public/post/node.js/%E4%BD%BF%E7%94%A8express/</link>
       <pubDate>Wed, 16 Feb 2022 13:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/node.js/%E4%BD%BF%E7%94%A8express/</guid>
       <description>原生的安裝方式 建立一個資料夾稱為web mkdir web 進入資料夾 cd web 安裝express 完整語法 npm install express --save 也可以安裝為開發者模式 npm install express --save-dev 簡化語法 一般模式 npm i</description>
     </item>
-    
     <item>
       <title>執行一個簡單的node.js程式</title>
       <link>https://alextrinityblock.github.io/blog/public/post/node.js/%E5%9F%B7%E8%A1%8C%E4%B8%80%E5%80%8B%E7%B0%A1%E5%96%AE%E7%9A%84node.js%E7%A8%8B%E5%BC%8F/</link>
       <pubDate>Wed, 16 Feb 2022 12:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/node.js/%E5%9F%B7%E8%A1%8C%E4%B8%80%E5%80%8B%E7%B0%A1%E5%96%AE%E7%9A%84node.js%E7%A8%8B%E5%BC%8F/</guid>
       <description>Node.js一句話陳述 用javascript在非瀏覽器的本機環境用的直譯器。 一個簡單的javascript的程式 檔案名稱: main.js console.log(&amp;#34;Hello world&amp;#34;); 直接執行 node</description>
     </item>
-    
     <item>
       <title>ASP.net架構簡介</title>
       <link>https://alextrinityblock.github.io/blog/public/post/asp.net/asp.net%E6%9E%B6%E6%A7%8B%E7%B0%A1%E4%BB%8B/</link>
       <pubDate>Tue, 15 Feb 2022 12:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/asp.net/asp.net%E6%9E%B6%E6%A7%8B%E7%B0%A1%E4%BB%8B/</guid>
       <description>ASP.net初探 這只是隨意概括的淺談ASP.net的架構。 在這邊展示的是ASP.net的MVC架構網站的一個概括模型。 進入點與外層資料夾結</description>
     </item>
-    
     <item>
       <title>NPM安裝</title>
       <link>https://alextrinityblock.github.io/blog/public/post/node.js/npm%E5%AE%89%E8%A3%9D/</link>
       <pubDate>Tue, 15 Feb 2022 12:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/node.js/npm%E5%AE%89%E8%A3%9D/</guid>
       <description>NPM是啥？ node.js就像是一個登山客，沒有任何裝備時能作到的事情不多，而NPM就如同他的背包，可以讓node.js裝上許多不同的模塊。</description>
     </item>
-    
     <item>
       <title>NS2課程筆記</title>
       <link>https://alextrinityblock.github.io/blog/public/post/class/ns2%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98/</link>
       <pubDate>Tue, 12 Oct 2021 09:00:49 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/class/ns2%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98/</guid>
       <description>目錄 NS2使用什麼語言 變數 閱讀檔案 判斷與表示 流程控制 程序(類似函數) NS2使用什麼語言 NS2使用一種稱為TCL的語言，如果想了解更多的語法可</description>
     </item>
-    
     <item>
       <title>OpenGL課堂筆記</title>
       <link>https://alextrinityblock.github.io/blog/public/post/class/opengl%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/</link>
       <pubDate>Thu, 07 Oct 2021 10:00:49 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/class/opengl%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/</guid>
       <description>目錄 第一週 推薦書 Edward Angel and Dave Shreiner, Interactive Computer Graphics: A Top-Down Approach With Shader-Based Opengl, 6th Edition, Addison-Wesley Pub. Co., April 10, 2011. ISBN：978-0132545235. Edward Angel and Dave Shreiner, Interactive Computer Graphics: A Top-Down Approach Using WebGL, 7th Edition, Addison-Wesley Pub. Co., March 10,</description>
     </item>
-    
     <item>
       <title>資訊安全與管理筆記</title>
       <link>https://alextrinityblock.github.io/blog/public/post/class/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E8%88%87%E7%AE%A1%E7%90%86%E7%AD%86%E8%A8%98/</link>
       <pubDate>Sun, 03 Oct 2021 22:00:49 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/class/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E8%88%87%E7%AE%A1%E7%90%86%E7%AD%86%E8%A8%98/</guid>
       <description>目錄 第一週 第二週 第三週 第一週 推薦書 William Stallings. Cryptography and Network Security: Principles and Practice (7th Edition). Prentice Hall, 2017(主要) Behrouz A. Forouzan. Introduction to Cryptography and Network Security. McGraw-Hill, 2007. Douglas R. Stinson. Cryptography : theory and practice (3/e). Boca Raton : Chapman &amp;amp; Hall/CRC, 2006. Bruce Schneier. Applied Cryptography: Protocols,</description>
     </item>
-    
     <item>
       <title>影像識別課程筆記</title>
       <link>https://alextrinityblock.github.io/blog/public/post/class/%E5%BD%B1%E5%83%8F%E8%AD%98%E5%88%A5%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98/</link>
       <pubDate>Fri, 01 Oct 2021 09:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/class/%E5%BD%B1%E5%83%8F%E8%AD%98%E5%88%A5%E8%AA%B2%E7%A8%8B%E7%AD%86%E8%A8%98/</guid>
       <description>目錄 第一週 第二週 第一週 什麼是影像？ 影像是由許多x,y軸座標組成。 單一個點的振幅，也可以視為光線的亮度，稱為『intensity』(強度)或『</description>
     </item>
-    
     <item>
       <title>opengl安裝(Ubuntu)</title>
       <link>https://alextrinityblock.github.io/blog/public/post/opengl/opengl%E5%AE%89%E8%A3%9Dubuntu/</link>
       <pubDate>Wed, 29 Sep 2021 09:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/opengl/opengl%E5%AE%89%E8%A3%9Dubuntu/</guid>
       <description>1.Linux版本 此範例用在Ubuntu20.04 2.apt安裝opengl 安裝OpenGL與相關依賴 sudo apt install cmake make g++ libx11-dev libgl1-mesa-dev libglu1-mesa-dev libxrandr-dev libxext-dev libglew-dev libglfw3 libglfw3-dev freeglut3-dev freeglut3 這邊主</description>
     </item>
-    
     <item>
       <title>Android06客戶端Socket(待修正)</title>
       <link>https://alextrinityblock.github.io/blog/public/post/android/android06%E5%AE%A2%E6%88%B6%E7%AB%AFsocket/</link>
       <pubDate>Fri, 24 Sep 2021 21:20:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/android/android06%E5%AE%A2%E6%88%B6%E7%AB%AFsocket/</guid>
       <description>本篇未經調整，雖然能運作，但其中命名可能容易混淆，請斟酌參考。 1.開通網路使用權限 AndroidManifest.xml &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;manifest xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; package=&amp;#34;com.example.httpreguests&amp;#34;&amp;gt; &amp;lt;!--這兩行是關鍵內容，可以啟動網路</description>
     </item>
-    
     <item>
       <title>java撰寫socket的client端</title>
       <link>https://alextrinityblock.github.io/blog/public/post/java/java%E6%92%B0%E5%AF%ABsocket%E7%9A%84client%E7%AB%AF/</link>
       <pubDate>Fri, 24 Sep 2021 20:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/java/java%E6%92%B0%E5%AF%ABsocket%E7%9A%84client%E7%AB%AF/</guid>
       <description>1.緣由 我今天在實驗室跟學長一起研究Java中Socket的撰寫，在此進行筆記以免忘記。 Socket是由server與client組成，有時</description>
     </item>
-    
     <item>
       <title>opencv的第一個程式</title>
       <link>https://alextrinityblock.github.io/blog/public/post/opencv/opencv%E7%9A%84%E7%AC%AC%E4%B8%80%E5%80%8B%E7%A8%8B%E5%BC%8F/</link>
       <pubDate>Wed, 22 Sep 2021 09:10:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/opencv/opencv%E7%9A%84%E7%AC%AC%E4%B8%80%E5%80%8B%E7%A8%8B%E5%BC%8F/</guid>
-      <description>1.要求 需要看懂，建議去看基礎的C++教學。 2.main.cpp 我們首先建立一個檔案，稱為main.cpp 內含我們主要的C++檔案 #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;opencv2/opencv.hpp&amp;gt; using namespace cv; int main(int argc, char* argv[]) { // 檢</description>
+      <description>1.要求 需要看懂，建議去看基礎的C++教學。 2.main.cpp 我們首先建立一個檔案，稱為main.cpp 內含我們主要的C++檔案 #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;opencv2/opencv.hpp&amp;gt; using namespace cv; int main(int argc, char* argv[]) { //</description>
     </item>
-    
     <item>
       <title>opencv安裝</title>
       <link>https://alextrinityblock.github.io/blog/public/post/opencv/opencv%E5%AE%89%E8%A3%9D/</link>
       <pubDate>Wed, 22 Sep 2021 09:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/opencv/opencv%E5%AE%89%E8%A3%9D/</guid>
       <description>1.Linux版本 此範例用在Ubuntu20.04 2.apt安裝opencv 安裝c++版本 sudo apt-get install libopencv-dev 安裝python版本 sudo apt-get install python-opencv</description>
     </item>
-    
     <item>
       <title>Android05進行httprequest</title>
       <link>https://alextrinityblock.github.io/blog/public/post/android/android05%E9%80%B2%E8%A1%8Chttprequest/</link>
       <pubDate>Thu, 16 Sep 2021 09:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/android/android05%E9%80%B2%E8%A1%8Chttprequest/</guid>
       <description>1.開通網路使用權限 AndroidManifest.xml &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;manifest xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; package=&amp;#34;com.example.httpreguests&amp;#34;&amp;gt; &amp;lt;!--這兩行是關鍵內容，可以啟動網路使用權限--&amp;gt; &amp;lt;uses-permission android:name=&amp;#34;android.permission.INTERNET&amp;#34;/&amp;gt; &amp;lt;uses-permission android:name=&amp;#34;android.permission.ACCESS_NETWORK_STATE&amp;#34; /&amp;gt; &amp;lt;!--這兩行是關鍵內容，</description>
     </item>
-    
     <item>
       <title>Android snackbar與除錯log04</title>
       <link>https://alextrinityblock.github.io/blog/public/post/android/android-snackbar%E8%88%87%E9%99%A4%E9%8C%AFlog04/</link>
       <pubDate>Fri, 10 Sep 2021 09:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/android/android-snackbar%E8%88%87%E9%99%A4%E9%8C%AFlog04/</guid>
       <description>1.目標 各種程式語言在執行的時候都可以看到一些log，方便我們除錯與對程式進行調整。 Android上也存在著顯示log的工具。 除此之外，還有</description>
     </item>
-    
     <item>
       <title>Android長期保存資料於SharedPreferences03</title>
       <link>https://alextrinityblock.github.io/blog/public/post/android/android%E9%95%B7%E6%9C%9F%E4%BF%9D%E5%AD%98%E8%B3%87%E6%96%99%E6%96%BCsharedpreferences03/</link>
       <pubDate>Thu, 09 Sep 2021 15:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/android/android%E9%95%B7%E6%9C%9F%E4%BF%9D%E5%AD%98%E8%B3%87%E6%96%99%E6%96%BCsharedpreferences03/</guid>
       <description>1.目標 將資料存入Android的SharedPreferences，進行長期保存 官方文檔 https://developer.android.com/reference/android/content/SharedPreferences 2.前端 欄位： 文字輸入欄位(將資料存入Share</description>
     </item>
-    
     <item>
       <title>Android將使用者輸入傳入後端02</title>
       <link>https://alextrinityblock.github.io/blog/public/post/android/android%E5%B0%87%E4%BD%BF%E7%94%A8%E8%80%85%E8%BC%B8%E5%85%A5%E5%82%B3%E5%85%A5%E5%BE%8C%E7%AB%AF02/</link>
       <pubDate>Thu, 09 Sep 2021 14:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/android/android%E5%B0%87%E4%BD%BF%E7%94%A8%E8%80%85%E8%BC%B8%E5%85%A5%E5%82%B3%E5%85%A5%E5%BE%8C%E7%AB%AF02/</guid>
       <description>1.目標 這次的目標是要把前端輸入欄位的內容，接收到後端的java，然後再重新傳回前端。 從前端擷取內容，對於像是帳號密碼登入，輸入金額，或類似</description>
     </item>
-    
     <item>
       <title>Android中的按鈕01</title>
       <link>https://alextrinityblock.github.io/blog/public/post/android/android%E4%B8%AD%E7%9A%84%E6%8C%89%E9%88%9501/</link>
       <pubDate>Thu, 09 Sep 2021 09:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/android/android%E4%B8%AD%E7%9A%84%E6%8C%89%E9%88%9501/</guid>
       <description>1.介紹 當我們要開發安卓App時，第一個步驟就是安裝Android Studio。 可以在官方網站上頭找到下載點。 Android Studio官方網站 https://developer.android.com/studio 2.開</description>
     </item>
-    
     <item>
       <title>單向函數</title>
       <link>https://alextrinityblock.github.io/blog/public/post/math/%E5%96%AE%E5%90%91%E5%87%BD%E6%95%B8/</link>
       <pubDate>Fri, 20 Aug 2021 14:43:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/math/%E5%96%AE%E5%90%91%E5%87%BD%E6%95%B8/</guid>
       <description>1.簡介 簡單來說，用某個函數將x算成y很容易。 \[ y=f(x) \] 但是反過來的話，將y算回x則十分困難。也就是說，y算回x需要大量的時間，甚至有時候只能將</description>
     </item>
-    
     <item>
       <title>數學符號</title>
       <link>https://alextrinityblock.github.io/blog/public/post/math/%E6%95%B8%E5%AD%B8%E7%AC%A6%E8%99%9F/</link>
       <pubDate>Fri, 20 Aug 2021 14:43:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/math/%E6%95%B8%E5%AD%B8%E7%AC%A6%E8%99%9F/</guid>
       <description>1.連續乘法符號 該符號代表連續成法，是pi的大寫版本。 \[ \prod_{i=1}^{4} {i} = 1\times2\times3\times4=24 \] &amp;lt;script src=&amp;#34;https://polyfill.io/v3/polyfill.min.js?features=es6&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script id=&amp;#34;MathJax-script&amp;#34; async src=&amp;#34;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;p&amp;gt; \[ \prod_{i=1}^{4} {i} = 1\times2\times3\times4 \] &amp;lt;/p&amp;gt;</description>
     </item>
-    
     <item>
       <title>python網路與安全閱讀心得</title>
       <link>https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E8%88%87%E5%AE%89%E5%85%A8%E8%AE%80%E6%9B%B8%E5%BF%83%E5%BE%97/</link>
       <pubDate>Mon, 26 Jul 2021 10:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E8%88%87%E5%AE%89%E5%85%A8%E8%AE%80%E6%9B%B8%E5%BF%83%E5%BE%97/</guid>
       <description>本篇引用自Mastering python for networking and security一書 文中所有範例都來自該書本與該書本的範例網站 書本的範例儲存庫: https://github.com/PacktPublishing/Mastering-Python-for-Networking-and-Security-Second-Edition 目錄 第一章 從目錄來看，</description>
     </item>
-    
     <item>
       <title>MAC位址掩蔽</title>
       <link>https://alextrinityblock.github.io/blog/public/post/secure/mac%E4%BD%8D%E5%9D%80%E6%8E%A9%E8%94%BD/</link>
       <pubDate>Wed, 21 Jul 2021 10:00:49 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/secure/mac%E4%BD%8D%E5%9D%80%E6%8E%A9%E8%94%BD/</guid>
       <description>作者 阿維 環境 Ubuntu 20.04 概念 我們的IP位址，除非申請固定IP否則是會變化的，如果你願意也可以用特定軟體來改變或借用別人的IP位址。 所以既然IP是可以</description>
     </item>
-    
     <item>
       <title>suricata入侵防禦系統(IPS)</title>
       <link>https://alextrinityblock.github.io/blog/public/post/secure/suricata%E5%85%A5%E4%BE%B5%E9%98%B2%E7%A6%A6%E7%B3%BB%E7%B5%B1ips/</link>
       <pubDate>Mon, 19 Jul 2021 09:00:49 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/secure/suricata%E5%85%A5%E4%BE%B5%E9%98%B2%E7%A6%A6%E7%B3%BB%E7%B5%B1ips/</guid>
       <description>作者 阿維 環境 拜託，使用Ubuntu吧! 不然要從頭編譯suricata。 雖然可以，但是比較麻煩。 安裝 安裝PPA sudo apt-get update sudo apt-get install software-properties-common sudo add-apt-repository ppa:oisf/suricata-stable sudo apt-get update 安裝s</description>
     </item>
-    
     <item>
       <title>讓firefox跑在docker-compose裡頭的正確腳本</title>
       <link>https://alextrinityblock.github.io/blog/public/post/docker/%E8%AE%93firefox%E8%B7%91%E5%9C%A8docker-compose%E8%A3%A1%E9%A0%AD%E7%9A%84%E6%AD%A3%E7%A2%BA%E8%85%B3%E6%9C%AC/</link>
       <pubDate>Sat, 17 Jul 2021 10:05:03 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/docker/%E8%AE%93firefox%E8%B7%91%E5%9C%A8docker-compose%E8%A3%A1%E9%A0%AD%E7%9A%84%E6%AD%A3%E7%A2%BA%E8%85%B3%E6%9C%AC/</guid>
       <description>資料夾結構 firefox ├── docker-compose.yml ├── Dockerfile └── run docker-compose.yml #docker-compose版本 version: &amp;#34;3.4&amp;#34; #服務，不過這裡唯一的服務就是firefox瀏覽器 services: #服務名稱，</description>
     </item>
-    
     <item>
       <title>用UFW在ping下隱藏自己</title>
       <link>https://alextrinityblock.github.io/blog/public/post/secure/%E7%94%A8ufw%E5%9C%A8ping%E4%B8%8B%E9%9A%B1%E8%97%8F%E8%87%AA%E5%B7%B1/</link>
       <pubDate>Tue, 13 Jul 2021 16:00:49 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/secure/%E7%94%A8ufw%E5%9C%A8ping%E4%B8%8B%E9%9A%B1%E8%97%8F%E8%87%AA%E5%B7%B1/</guid>
       <description>作者 阿維 概念 通常入侵與攻擊的第一步驟，是藉由ICMP(例如ping)或其他開放端口服務發掘主機所在的IP位址。 我們可以嘗試先在ICMP的角度</description>
     </item>
-    
     <item>
       <title>公共WIFI網路嗅探</title>
       <link>https://alextrinityblock.github.io/blog/public/post/secure/%E5%85%AC%E5%85%B1wifi%E7%B6%B2%E8%B7%AF%E5%97%85%E6%8E%A2/</link>
       <pubDate>Thu, 08 Jul 2021 16:00:49 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/secure/%E5%85%AC%E5%85%B1wifi%E7%B6%B2%E8%B7%AF%E5%97%85%E6%8E%A2/</guid>
       <description>作者 阿維 同意條款 閱讀本篇文章等同承諾: 不將相關知識用在任何非法用途 不窺探他人隱私 保持誠實與友善 所有安全測試知識只用於維護安全的目的 測試用的器</description>
     </item>
-    
     <item>
       <title>一篇CC攻擊腳本分析</title>
       <link>https://alextrinityblock.github.io/blog/public/post/secure/%E4%B8%80%E7%AF%87cc%E6%94%BB%E6%93%8A%E8%85%B3%E6%9C%AC%E5%88%86%E6%9E%90/</link>
       <pubDate>Mon, 21 Jun 2021 09:00:49 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/secure/%E4%B8%80%E7%AF%87cc%E6%94%BB%E6%93%8A%E8%85%B3%E6%9C%AC%E5%88%86%E6%9E%90/</guid>
       <description>聲明 本篇分析由阿維撰寫，特此感謝推薦我資安書籍的王教授，陪我進行測試的蕉蕉，與陪我聊天的小李。 本篇文章的研究目的是為了保護網站主機，而對於攻</description>
     </item>
-    
     <item>
       <title>AppArmor研究_1</title>
       <link>https://alextrinityblock.github.io/blog/public/post/secure/apparmor%E7%A0%94%E7%A9%B6_1/</link>
       <pubDate>Wed, 16 Jun 2021 10:01:49 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/secure/apparmor%E7%A0%94%E7%A9%B6_1/</guid>
       <description>AppArmor 是一款附帶在Ubuntu linux裡頭的核心安全模組，是用來進行強制存取控制(MAC)的。 假定我們今天運作著PHP網頁伺服器，而裡頭某個漏</description>
     </item>
-    
     <item>
       <title>讓容器獲得本機網路的完整權限</title>
       <link>https://alextrinityblock.github.io/blog/public/post/docker/%E8%AE%93%E5%AE%B9%E5%99%A8%E7%8D%B2%E5%BE%97%E6%9C%AC%E6%A9%9F%E7%B6%B2%E8%B7%AF%E7%9A%84%E5%AE%8C%E6%95%B4%E6%AC%8A%E9%99%90-copy/</link>
       <pubDate>Sat, 12 Jun 2021 00:05:03 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/docker/%E8%AE%93%E5%AE%B9%E5%99%A8%E7%8D%B2%E5%BE%97%E6%9C%AC%E6%A9%9F%E7%B6%B2%E8%B7%AF%E7%9A%84%E5%AE%8C%E6%95%B4%E6%AC%8A%E9%99%90-copy/</guid>
       <description>docker run指令的對外網開放端口選項 我們如果想讓容器與本機使用同一個網路，並且能建立像是網頁伺服器一類的對外開放端口， 可以將網路設置為host。</description>
     </item>
-    
     <item>
       <title>docker運作圖形程式</title>
       <link>https://alextrinityblock.github.io/blog/public/post/docker/docker%E9%81%8B%E4%BD%9C%E5%9C%96%E5%BD%A2%E7%A8%8B%E5%BC%8F/</link>
       <pubDate>Tue, 08 Jun 2021 00:05:03 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/docker/docker%E9%81%8B%E4%BD%9C%E5%9C%96%E5%BD%A2%E7%A8%8B%E5%BC%8F/</guid>
       <description>本篇我們以在docker上頭運作firefox程式為案例。 但也可應用在其他的軟體。 知識 連線檔案 由於在linux上頭連socket連線都是以檔</description>
     </item>
-    
     <item>
       <title>github免密碼上傳與RSA金鑰產生</title>
       <link>https://alextrinityblock.github.io/blog/public/post/git/github%E5%85%8D%E5%AF%86%E7%A2%BC%E4%B8%8A%E5%82%B3/</link>
       <pubDate>Wed, 19 May 2021 00:05:03 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/git/github%E5%85%8D%E5%AF%86%E7%A2%BC%E4%B8%8A%E5%82%B3/</guid>
       <description>先決條件 這篇是建立在理解 git基本使用 擁有github帳號 使用linux 上述條件達成才比較能夠理解本篇git的部份， 建議上網找些資料學習。 不</description>
     </item>
-    
     <item>
       <title>LinuxMint20.1上安裝docker</title>
       <link>https://alextrinityblock.github.io/blog/public/post/docker/linuxmint%E4%B8%8A%E5%AE%89%E8%A3%9Ddocker/</link>
       <pubDate>Wed, 19 May 2021 00:05:03 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/docker/linuxmint%E4%B8%8A%E5%AE%89%E8%A3%9Ddocker/</guid>
       <description>Mint安裝docker會遇上的問題 由於Mint目前還沒有專用版本的docker儲存庫， 所以我們必須使用Mint的源頭Ubuntu版本的do</description>
     </item>
-    
     <item>
       <title>python與byte串與網路</title>
       <link>https://alextrinityblock.github.io/blog/public/post/python/python%E8%88%87%E5%AD%97%E5%85%83%E4%B8%B2/</link>
       <pubDate>Sat, 15 May 2021 00:00:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/python/python%E8%88%87%E5%AD%97%E5%85%83%E4%B8%B2/</guid>
       <description>本篇引用自Foundations of Python Network Programming一書 bytes串與網路的關係 在網路傳輸時如socket，是無法直接採取Unico</description>
     </item>
-    
     <item>
       <title>中斷無線網路的方法</title>
       <link>https://alextrinityblock.github.io/blog/public/post/secure/%E4%B8%AD%E6%96%B7%E7%84%A1%E7%B7%9A%E7%B6%B2%E8%B7%AF%E7%9A%84%E6%96%B9%E6%B3%95/</link>
       <pubDate>Mon, 03 May 2021 10:01:49 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/secure/%E4%B8%AD%E6%96%B7%E7%84%A1%E7%B7%9A%E7%B6%B2%E8%B7%AF%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
       <description>警告：此方法只能用於自己的無線網路裝置，目的應該是了解無線網路運作，絕對不能造成他人的困擾或損失，我們應該秉持所有人類都是同胞的心態。就算你</description>
     </item>
-    
     <item>
       <title>docker.sock錯誤處理</title>
       <link>https://alextrinityblock.github.io/blog/public/post/docker/docker%E7%A7%92%E9%80%80%E7%9A%84%E5%95%8F%E9%A1%8C/</link>
       <pubDate>Sat, 01 May 2021 23:05:03 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/docker/docker%E7%A7%92%E9%80%80%E7%9A%84%E5%95%8F%E9%A1%8C/</guid>
       <description>docker.sock的錯誤 剛裝好docker時常常會跳出此種錯誤 Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/json: dial unix /var/run/docker.sock: connect: permission denied docker.sock的功能 簡</description>
     </item>
-    
     <item>
       <title>python網路程式03:tcp</title>
       <link>https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F03tcp/</link>
       <pubDate>Thu, 29 Apr 2021 23:15:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F03tcp/</guid>
       <description>本篇引用自Foundations of Python Network Programming一書 1.tcp通訊 import argparse, socket #如果長度不符預期，則發出錯誤提示 def recvall(sock, length): data = b&amp;#39;&amp;#39; while len(data) &amp;lt; length: more</description>
     </item>
-    
     <item>
       <title>python網路程式02:udp協定與port</title>
       <link>https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F02udp%E5%8D%94%E5%AE%9A%E8%88%87port/</link>
       <pubDate>Thu, 29 Apr 2021 22:15:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F02udp%E5%8D%94%E5%AE%9A%E8%88%87port/</guid>
       <description>本篇引用自Foundations of Python Network Programming一書 1.port的用途 port其實可以看作在網路傳輸訊息上頭的一個小標籤 用來區分</description>
     </item>
-    
     <item>
       <title>python網路程式01:基礎</title>
       <link>https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F01%E5%9F%BA%E7%A4%8E/</link>
       <pubDate>Thu, 29 Apr 2021 16:15:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F01%E5%9F%BA%E7%A4%8E/</guid>
       <description>本篇引用自Foundations of Python Network Programming一書 本章討論如何使用python發出http請求 1.用網址取得主機ip import socket if __name__ ==</description>
     </item>
-    
     <item>
       <title>python_virtualenv使用</title>
       <link>https://alextrinityblock.github.io/blog/public/post/python/python_virtualenv%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Thu, 29 Apr 2021 14:43:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/python/python_virtualenv%E4%BD%BF%E7%94%A8/</guid>
       <description>1.安裝virtualenv虛擬環境 linux mint或ubuntu上頭安裝時可以用apt來進行安裝 sudo apt install virtualenv 或直接用pip3來安裝 pip3 install virtualenv 2.建立虛擬</description>
     </item>
-    
     <item>
       <title>檢查下載檔是否被調包</title>
       <link>https://alextrinityblock.github.io/blog/public/post/secure/%E6%AA%A2%E6%9F%A5%E4%B8%8B%E8%BC%89%E6%AA%94%E6%98%AF%E5%90%A6%E8%A2%AB%E8%AA%BF%E5%8C%85/</link>
       <pubDate>Tue, 27 Apr 2021 14:01:49 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/secure/%E6%AA%A2%E6%9F%A5%E4%B8%8B%E8%BC%89%E6%AA%94%E6%98%AF%E5%90%A6%E8%A2%AB%E8%AA%BF%E5%8C%85/</guid>
       <description>1.檢查檔案的方法 今天假設我們下載了一個檔案，叫做 ubuntu-20.04.2-live-server-amd64.iso 我們要如何檢查是否被High客給調包？ （High客：在網路上無時無刻情緒都很high，會</description>
     </item>
-    
     <item>
       <title>ngrok使用</title>
       <link>https://alextrinityblock.github.io/blog/public/post/network/ngrok%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sat, 24 Apr 2021 14:43:44 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/network/ngrok%E4%BD%BF%E7%94%A8/</guid>
       <description>人不可能一帆風順，人生低潮的時候，還是需要能遠端展示網頁的工具 當手邊沒太多錢訂購vps或者是固定ip網路時&amp;hellip;就靠ngrok架站</description>
     </item>
-    
     <item>
       <title>docker秒退的問題</title>
       <link>https://alextrinityblock.github.io/blog/public/post/docker/docker.sock%E9%8C%AF%E8%AA%A4%E8%99%95%E7%90%86/</link>
       <pubDate>Fri, 16 Apr 2021 16:31:03 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/docker/docker.sock%E9%8C%AF%E8%AA%A4%E8%99%95%E7%90%86/</guid>
       <description>docker為何秒退的猜測 這只是猜測，個人實力不足，不能直接斷言問題所在。 當docker中所有的程序（process）都執行完畢時，dock</description>
     </item>
-    
     <item>
       <title>區域變數與陣列的記憶體安排</title>
       <link>https://alextrinityblock.github.io/blog/public/post/c/%E5%8D%80%E5%9F%9F%E8%AE%8A%E6%95%B8%E8%88%87%E9%99%A3%E5%88%97%E7%9A%84%E8%A8%98%E6%86%B6%E9%AB%94%E5%AE%89%E6%8E%92/</link>
       <pubDate>Sun, 28 Mar 2021 23:58:48 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/c/%E5%8D%80%E5%9F%9F%E8%AE%8A%E6%95%B8%E8%88%87%E9%99%A3%E5%88%97%E7%9A%84%E8%A8%98%E6%86%B6%E9%AB%94%E5%AE%89%E6%8E%92/</guid>
       <description>區域變數與動態分配存在於stack中，是由高位向低位記憶體成長 類似這樣 記憶體高位 ----- int a int b int c . . . ----- 記憶體低位 而陣列存在於heap中，是由</description>
     </item>
-    
     <item>
       <title>C語言程式與x86組合語言的關係</title>
       <link>https://alextrinityblock.github.io/blog/public/post/c/c%E8%AA%9E%E8%A8%80%E7%A8%8B%E5%BC%8F%E8%88%87x86%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%80%E7%9A%84%E9%97%9C%E4%BF%82/</link>
       <pubDate>Thu, 25 Mar 2021 02:14:58 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/c/c%E8%AA%9E%E8%A8%80%E7%A8%8B%E5%BC%8F%E8%88%87x86%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%80%E7%9A%84%E9%97%9C%E4%BF%82/</guid>
       <description>緣由 前段時間，嘉義大學資訊工程系受人敬重的王教授寄給我一份關於防範buffer overflow的相關文章， 這文章十分的棒，裡頭大致上提到如何</description>
     </item>
-    
     <item>
       <title>Gdb使用</title>
       <link>https://alextrinityblock.github.io/blog/public/post/c/gdb%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 24 Mar 2021 14:01:49 +0800</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/c/gdb%E4%BD%BF%E7%94%A8/</guid>
       <description>GDB使用指令 --------------- 提示gcc編譯時記得開啟g選項，編譯出來的產物才不會啟動優化， 同時可以使用gdb除錯 匯入檔案：gdb 檔案名稱 匯入後命令行左邊</description>
     </item>
-    
     <item>
       <title>自我介紹</title>
       <link>https://alextrinityblock.github.io/blog/public/post/temp/%E8%87%AA%E6%88%91%E4%BB%8B%E7%B4%B9/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://alextrinityblock.github.io/blog/public/post/temp/%E8%87%AA%E6%88%91%E4%BB%8B%E7%B4%B9/</guid>
       <description>很高興認識你，下方是關於我的一些簡單介紹，希望你大概理解我是個如何的人~ 1.信仰 我同時是基督新教徒與天主教徒，在我看來人與人之間追求和平，彼</description>
     </item>
-    
   </channel>
 </rss>
