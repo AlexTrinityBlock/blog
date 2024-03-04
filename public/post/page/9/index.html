@@ -194,6 +194,25 @@
                <div class="mb3 pa4 mid-gray overflow-hidden">
     
       <div class="f6">
+        March 4, 2024
+      </div>
+    
+    <h1 class="f3 near-black">
+      <a href="https://alextrinityblock.github.io/blog/public/post/cicd/jenkins%E7%9A%84docker-compose%E5%AE%B9%E5%99%A8/" class="link black dim">
+        Jenkins的docker-compose容器
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Jenkins 的參考 YAML 以下 Docker compose 應對到 80 port。 docker-compose.yaml version: &#39;3.3&#39; services: jenkins: image: jenkins/jenkins:lts restart: unless-stopped privileged: true user: root ports: - 80:8080 container_name: jenkins volumes: - ./jenkins/data:/var/jenkins_home - /var/run/docker.sock:/var/run/docker.sock - /usr/local/bin/docker:/usr/local/bin/docker 連入容器的方法 docker exec jenkins bash
+    </div>
+  </div>
+
+        </div>
+        
+        <div class="relative w-100  w-30-l mb4 bg-white">
+               <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
         February 23, 2024
       </div>
     

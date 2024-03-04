@@ -210,6 +210,38 @@
           
         
         <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+          <a href="https://alextrinityblock.github.io/blog/public/post/cicd/jenkins%E7%9A%84docker-compose%E5%AE%B9%E5%99%A8/" class="db grow">
+            <img src="https://alextrinityblock.github.io/blog/public/cicd.png" class="img" alt="image from Jenkins的docker-compose容器">
+          </a>
+        </div>
+      
+      <div class="blah w-100 w-60-ns pl3-ns">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://alextrinityblock.github.io/blog/public/post/cicd/jenkins%E7%9A%84docker-compose%E5%AE%B9%E5%99%A8/" class="color-inherit dim link">
+            Jenkins的docker-compose容器
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Jenkins 的參考 YAML 以下 Docker compose 應對到 80 port。 docker-compose.yaml version: &#39;3.3&#39; services: jenkins: image: jenkins/jenkins:lts restart: unless-stopped privileged: true user: root ports: - 80:8080 container_name: jenkins volumes: - ./jenkins/data:/var/jenkins_home - /var/run/docker.sock:/var/run/docker.sock - /usr/local/bin/docker:/usr/local/bin/docker 連入容器的方法 docker exec jenkins bash
+        </div>
+          <a href="https://alextrinityblock.github.io/blog/public/post/cicd/jenkins%E7%9A%84docker-compose%E5%AE%B9%E5%99%A8/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+        </div>
+        
+        <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+          
+        
+        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
           <a href="https://alextrinityblock.github.io/blog/public/post/linux/linux_service%E5%B0%8F%E7%AD%86%E8%A8%98/" class="db grow">
             <img src="https://alextrinityblock.github.io/blog/public/debian1.jpeg" class="img" alt="image from Linux Service小筆記">
           </a>
@@ -1129,44 +1161,18 @@
 
         </div>
         
-        <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-          
-        
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-30/" class="db grow">
-            <img src="https://alextrinityblock.github.io/blog/public/k8s.png" class="img" alt="image from K8S基本操作-30-多個 Cluster 與 KubeConfig">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-30/" class="color-inherit dim link">
-            K8S基本操作-30-多個 Cluster 與 KubeConfig
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Config不等於Config Map KubeConfig 為何要使用 KubeConfig ? 由於如果每次使用 kubectl 指令時，都要附上長串的使用者/密碼/憑證路徑，對維運效率的十分有影響的。 如
-        </div>
-          <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-30/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">繼續閱讀</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-        </div>
-        
     </section>
 
     
     <section class="w-100">
         <h1 class="f3">更多</h1>
          
+        <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-30/" class="link black dim">
+              K8S基本操作-30-多個 Cluster 與 KubeConfig
+            </a>
+        </h2>
+        
         <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-29/" class="link black dim">
               K8S基本操作-29-備份與還原叢集
@@ -1182,12 +1188,6 @@
         <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-27/" class="link black dim">
               K8S基本操作-27-更新K8S Cluster
-            </a>
-        </h2>
-        
-        <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://alextrinityblock.github.io/blog/public/post/k8s/k8s%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-26/" class="link black dim">
-              K8S基本操作-26-Drain
             </a>
         </h2>
           
