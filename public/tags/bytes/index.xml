@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bytes on 無面者小站</title>
-    <link>https://alextrinityblock.github.io/blog/public/tags/bytes/</link>
+    <link>http://localhost:1313/blog/public/tags/bytes/</link>
     <description>Recent content in Bytes on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <lastBuildDate>Sat, 15 May 2021 00:00:44 +0800</lastBuildDate>
-    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/bytes/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/public/tags/bytes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>python與byte串與網路</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/python/python%E8%88%87%E5%AD%97%E5%85%83%E4%B8%B2/</link>
+      <link>http://localhost:1313/blog/public/post/python/python%E8%88%87%E5%AD%97%E5%85%83%E4%B8%B2/</link>
       <pubDate>Sat, 15 May 2021 00:00:44 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/python/python%E8%88%87%E5%AD%97%E5%85%83%E4%B8%B2/</guid>
+      <guid>http://localhost:1313/blog/public/post/python/python%E8%88%87%E5%AD%97%E5%85%83%E4%B8%B2/</guid>
       <description>本篇引用自Foundations of Python Network Programming一書 bytes串與網路的關係 在網路傳輸時如socket，是無法直接採取Unico</description>
     </item>
   </channel>

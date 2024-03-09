@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>防火牆 on 無面者小站</title>
-    <link>https://alextrinityblock.github.io/blog/public/tags/%E9%98%B2%E7%81%AB%E7%89%86/</link>
+    <link>http://localhost:1313/blog/public/tags/%E9%98%B2%E7%81%AB%E7%89%86/</link>
     <description>Recent content in 防火牆 on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <lastBuildDate>Tue, 13 Jul 2021 16:00:49 +0800</lastBuildDate>
-    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/%E9%98%B2%E7%81%AB%E7%89%86/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/public/tags/%E9%98%B2%E7%81%AB%E7%89%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>用UFW在ping下隱藏自己</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/secure/%E7%94%A8ufw%E5%9C%A8ping%E4%B8%8B%E9%9A%B1%E8%97%8F%E8%87%AA%E5%B7%B1/</link>
+      <link>http://localhost:1313/blog/public/post/secure/%E7%94%A8ufw%E5%9C%A8ping%E4%B8%8B%E9%9A%B1%E8%97%8F%E8%87%AA%E5%B7%B1/</link>
       <pubDate>Tue, 13 Jul 2021 16:00:49 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/secure/%E7%94%A8ufw%E5%9C%A8ping%E4%B8%8B%E9%9A%B1%E8%97%8F%E8%87%AA%E5%B7%B1/</guid>
+      <guid>http://localhost:1313/blog/public/post/secure/%E7%94%A8ufw%E5%9C%A8ping%E4%B8%8B%E9%9A%B1%E8%97%8F%E8%87%AA%E5%B7%B1/</guid>
       <description>作者 阿維 概念 通常入侵與攻擊的第一步驟，是藉由ICMP(例如ping)或其他開放端口服務發掘主機所在的IP位址。 我們可以嘗試先在ICMP的角度</description>
     </item>
   </channel>

@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CICD on 無面者小站</title>
-    <link>https://alextrinityblock.github.io/blog/public/tags/cicd/</link>
+    <link>http://localhost:1313/blog/public/tags/cicd/</link>
     <description>Recent content in CICD on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <lastBuildDate>Mon, 04 Mar 2024 18:00:44 +0800</lastBuildDate>
-    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/cicd/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/public/tags/cicd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Jenkins的docker-compose容器</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/cicd/jenkins%E7%9A%84docker-compose%E5%AE%B9%E5%99%A8/</link>
+      <link>http://localhost:1313/blog/public/post/cicd/jenkins%E7%9A%84docker-compose%E5%AE%B9%E5%99%A8/</link>
       <pubDate>Mon, 04 Mar 2024 18:00:44 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/cicd/jenkins%E7%9A%84docker-compose%E5%AE%B9%E5%99%A8/</guid>
+      <guid>http://localhost:1313/blog/public/post/cicd/jenkins%E7%9A%84docker-compose%E5%AE%B9%E5%99%A8/</guid>
       <description>Jenkins 的參考 YAML 以下 Docker compose 應對到 80 port。 docker-compose.yaml version: &amp;#39;3.3&amp;#39; services: jenkins: image: jenkins/jenkins:lts restart: unless-stopped privileged: true user: root ports: - 80:8080 container_name: jenkins volumes: - ./jenkins/data:/var/jenkins_home - /var/run/docker.sock:/var/run/docker.sock - /usr/local/bin/docker:/usr/local/bin/docker 連入容器的方法 docker exec jenkins bash</description>
     </item>
     <item>
       <title>軟體測試的覆蓋準則</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/cicd/%E8%BB%9F%E9%AB%94%E6%B8%AC%E8%A9%A6%E7%9A%84%E8%A6%86%E8%93%8B%E6%BA%96%E5%89%87/</link>
+      <link>http://localhost:1313/blog/public/post/cicd/%E8%BB%9F%E9%AB%94%E6%B8%AC%E8%A9%A6%E7%9A%84%E8%A6%86%E8%93%8B%E6%BA%96%E5%89%87/</link>
       <pubDate>Wed, 09 Mar 2022 15:00:45 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/cicd/%E8%BB%9F%E9%AB%94%E6%B8%AC%E8%A9%A6%E7%9A%84%E8%A6%86%E8%93%8B%E6%BA%96%E5%89%87/</guid>
+      <guid>http://localhost:1313/blog/public/post/cicd/%E8%BB%9F%E9%AB%94%E6%B8%AC%E8%A9%A6%E7%9A%84%E8%A6%86%E8%93%8B%E6%BA%96%E5%89%87/</guid>
       <description>假設 假設這是我們今天要測試的程式。 INPUT A,B,X IF (A&amp;gt;1) AND (B=0) THEN Y=A IF (A=2) OR (X&amp;gt;1) THEN Y=X PRINT Y 流程圖 %%{init: {&#39;theme&#39;:&#39;dark&#39;}}%% flowchart TD A(程式開始) --&gt; B{A&gt;1 and B=0} B --&gt;|True| D(Y=A) B --&gt;|False| E{A=2 or x&gt;1} D --&gt; E{A=2 or x&gt;1} E{A=2 or x&gt;1} --&gt; |False| G</description>
     </item>
     <item>
       <title>黑箱與白箱測試</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/cicd/%E9%BB%91%E7%AE%B1%E8%88%87%E7%99%BD%E7%AE%B1%E6%B8%AC%E8%A9%A6/</link>
+      <link>http://localhost:1313/blog/public/post/cicd/%E9%BB%91%E7%AE%B1%E8%88%87%E7%99%BD%E7%AE%B1%E6%B8%AC%E8%A9%A6/</link>
       <pubDate>Wed, 09 Mar 2022 13:00:44 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/cicd/%E9%BB%91%E7%AE%B1%E8%88%87%E7%99%BD%E7%AE%B1%E6%B8%AC%E8%A9%A6/</guid>
+      <guid>http://localhost:1313/blog/public/post/cicd/%E9%BB%91%E7%AE%B1%E8%88%87%E7%99%BD%E7%AE%B1%E6%B8%AC%E8%A9%A6/</guid>
       <description>白箱測試(White-box testing) 白箱測試(White-box testing)，我們已經了解軟體內部運作後，進行測試。很有可能程式是我們自己撰寫</description>
     </item>
     <item>
       <title>Jenkins的docker容器</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/cicd/jenkins%E7%9A%84docker%E5%AE%B9%E5%99%A8/</link>
+      <link>http://localhost:1313/blog/public/post/cicd/jenkins%E7%9A%84docker%E5%AE%B9%E5%99%A8/</link>
       <pubDate>Wed, 23 Feb 2022 00:00:44 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/cicd/jenkins%E7%9A%84docker%E5%AE%B9%E5%99%A8/</guid>
+      <guid>http://localhost:1313/blog/public/post/cicd/jenkins%E7%9A%84docker%E5%AE%B9%E5%99%A8/</guid>
       <description>一次性快速使用Jenkins docker run \ --rm \ -u root \ -p 8080:8080 \ -v jenkins-data:/var/jenkins_home \ -v /var/run/docker.sock:/var/run/docker.sock \ -v &amp;#34;$HOME&amp;#34;:/home \ jenkinsci/blueocean 趁密碼出現時，從終端機上頭複製下來 用複製到的密碼解鎖 http://127.0.0.1:8080/ 長期保存的Jen</description>
     </item>
   </channel>
