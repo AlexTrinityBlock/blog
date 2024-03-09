@@ -221,6 +221,31 @@ do
 done
 ```
 
+# 鳥哥的防火牆範例
+
+```bash
+#!/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin; export PATH
+
+# 1. 清除規則
+iptables -F
+iptables -X
+iptables -Z
+
+# 2. 設定政策
+iptables -P   INPUT DROP
+iptables -P  OUTPUT ACCEPT
+iptables -P FORWARD ACCEPT
+
+# 3~5. 制訂各項規則
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A INPUT -i eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+#iptables -A INPUT -i eth0 -s 192.168.1.0/24 -j ACCEPT
+
+# 6. 寫入防火牆規則設定檔
+/etc/init.d/iptables save
+```
+
 # 參考資料
 
 [https://linux.vbird.org/linux_server/centos6/0250simple_firewall.php](https://linux.vbird.org/linux_server/centos6/0250simple_firewall.php)

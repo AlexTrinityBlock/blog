@@ -43,7 +43,7 @@
 <meta itemprop="name" content="iptables筆記">
 <meta itemprop="description" content="iptables 是什麼? iptables 是 Linux 內核中的防火牆軟體 netfilter 的管理工具，位於使用者空間，同時也是 netfilter 的一部分。 Netfilter 位於內核空間，不僅有網路地址轉換的功能，也具備資料包內"><meta itemprop="datePublished" content="2024-03-09T11:39:25+08:00" />
 <meta itemprop="dateModified" content="2024-03-09T11:39:25+08:00" />
-<meta itemprop="wordCount" content="1751">
+<meta itemprop="wordCount" content="1842">
 <meta itemprop="keywords" content="linux,iptables," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="iptables筆記"/>
 <meta name="twitter:description" content="iptables 是什麼? iptables 是 Linux 內核中的防火牆軟體 netfilter 的管理工具，位於使用者空間，同時也是 netfilter 的一部分。 Netfilter 位於內核空間，不僅有網路地址轉換的功能，也具備資料包內"/>
 
@@ -384,6 +384,27 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
 </span></span><span style="display:flex;"><span>   iptables -A INPUT -i eth0 -p icmp --icmp-type $typeicmp -j ACCEPT
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><h1 id="鳥哥的防火牆範例">鳥哥的防火牆範例</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>PATH<span style="color:#f92672">=</span>/sbin:/bin:/usr/sbin:/usr/bin; export PATH
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1. 清除規則</span>
+</span></span><span style="display:flex;"><span>iptables -F
+</span></span><span style="display:flex;"><span>iptables -X
+</span></span><span style="display:flex;"><span>iptables -Z
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. 設定政策</span>
+</span></span><span style="display:flex;"><span>iptables -P   INPUT DROP
+</span></span><span style="display:flex;"><span>iptables -P  OUTPUT ACCEPT
+</span></span><span style="display:flex;"><span>iptables -P FORWARD ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3~5. 制訂各項規則</span>
+</span></span><span style="display:flex;"><span>iptables -A INPUT -i lo -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A INPUT -i eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#iptables -A INPUT -i eth0 -s 192.168.1.0/24 -j ACCEPT</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 6. 寫入防火牆規則設定檔</span>
+</span></span><span style="display:flex;"><span>/etc/init.d/iptables save
 </span></span></code></pre></div><h1 id="參考資料">參考資料</h1>
 <p><a href="https://linux.vbird.org/linux_server/centos6/0250simple_firewall.php">https://linux.vbird.org/linux_server/centos6/0250simple_firewall.php</a></p>
 <ul class="pa0">
