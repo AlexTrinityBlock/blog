@@ -2,136 +2,136 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>前端 on 無面者小站</title>
-    <link>http://localhost:1313/blog/public/tags/%E5%89%8D%E7%AB%AF/</link>
+    <link>https://alextrinityblock.github.io/blog/public/tags/%E5%89%8D%E7%AB%AF/</link>
     <description>Recent content in 前端 on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <lastBuildDate>Fri, 19 Mar 2021 00:39:36 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/public/tags/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vue筆記18以list管理class綁定</title>
-      <link>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%9818%E4%BB%A5list%E7%AE%A1%E7%90%86class%E7%B6%81%E5%AE%9A/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9818%E4%BB%A5list%E7%AE%A1%E7%90%86class%E7%B6%81%E5%AE%9A/</link>
       <pubDate>Fri, 19 Mar 2021 00:39:36 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%9818%E4%BB%A5list%E7%AE%A1%E7%90%86class%E7%B6%81%E5%AE%9A/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9818%E4%BB%A5list%E7%AE%A1%E7%90%86class%E7%B6%81%E5%AE%9A/</guid>
       <description>Vue筆記18以list管理class綁定 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;zh-hant-TW&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;簡化版Vue學習&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;style&amp;gt; .activeRed { color: red; }</description>
     </item>
     <item>
       <title>Vue筆記16動態調整綁定class</title>
-      <link>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%9816%E5%8B%95%E6%85%8B%E8%AA%BF%E6%95%B4%E7%B6%81%E5%AE%9Aclass/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9816%E5%8B%95%E6%85%8B%E8%AA%BF%E6%95%B4%E7%B6%81%E5%AE%9Aclass/</link>
       <pubDate>Fri, 19 Mar 2021 00:39:05 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%9816%E5%8B%95%E6%85%8B%E8%AA%BF%E6%95%B4%E7%B6%81%E5%AE%9Aclass/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9816%E5%8B%95%E6%85%8B%E8%AA%BF%E6%95%B4%E7%B6%81%E5%AE%9Aclass/</guid>
       <description>Vue筆記16動態調整綁定class &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;zh-hant-TW&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;簡化版Vue學習&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;style&amp;gt; .activeRed { color: red; } .activeFont { font-size:</description>
     </item>
     <item>
       <title>Vue筆記17另一種class綁定方式</title>
-      <link>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%9817%E5%8F%A6%E4%B8%80%E7%A8%AEclass%E7%B6%81%E5%AE%9A%E6%96%B9%E5%BC%8F/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9817%E5%8F%A6%E4%B8%80%E7%A8%AEclass%E7%B6%81%E5%AE%9A%E6%96%B9%E5%BC%8F/</link>
       <pubDate>Fri, 19 Mar 2021 00:39:05 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%9817%E5%8F%A6%E4%B8%80%E7%A8%AEclass%E7%B6%81%E5%AE%9A%E6%96%B9%E5%BC%8F/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9817%E5%8F%A6%E4%B8%80%E7%A8%AEclass%E7%B6%81%E5%AE%9A%E6%96%B9%E5%BC%8F/</guid>
       <description>Vue筆記17另一種class綁定方式 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;zh-hant-TW&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;簡化版Vue學習&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;style&amp;gt; .activeRed { color: red; } .activeFont {</description>
     </item>
     <item>
       <title>Vue筆記13覆蓋原本標籤行為</title>
-      <link>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%9813%E8%A6%86%E8%93%8B%E5%8E%9F%E6%9C%AC%E6%A8%99%E7%B1%A4%E8%A1%8C%E7%82%BA/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9813%E8%A6%86%E8%93%8B%E5%8E%9F%E6%9C%AC%E6%A8%99%E7%B1%A4%E8%A1%8C%E7%82%BA/</link>
       <pubDate>Thu, 18 Mar 2021 20:50:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%9813%E8%A6%86%E8%93%8B%E5%8E%9F%E6%9C%AC%E6%A8%99%E7%B1%A4%E8%A1%8C%E7%82%BA/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9813%E8%A6%86%E8%93%8B%E5%8E%9F%E6%9C%AC%E6%A8%99%E7%B1%A4%E8%A1%8C%E7%82%BA/</guid>
       <description>Vue筆記13覆蓋原本標籤行為 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;zh-hant-TW&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;簡化版Vue學習&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;tag01&amp;#34;&amp;gt; &amp;lt;div&amp;gt; {{ message01 }}&amp;lt;/div&amp;gt; &amp;lt;!</description>
     </item>
     <item>
       <title>Vue筆記14vbind與von縮寫</title>
-      <link>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%9814vbind%E8%88%87von%E7%B8%AE%E5%AF%AB/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9814vbind%E8%88%87von%E7%B8%AE%E5%AF%AB/</link>
       <pubDate>Thu, 18 Mar 2021 20:50:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%9814vbind%E8%88%87von%E7%B8%AE%E5%AF%AB/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9814vbind%E8%88%87von%E7%B8%AE%E5%AF%AB/</guid>
       <description>Vue筆記14vbind與von縮寫 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;zh-hant-TW&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;簡化版Vue學習&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;tag01&amp;#34;&amp;gt; &amp;lt;!-- v-bin</description>
     </item>
     <item>
       <title>Vue筆記15計算屬性</title>
-      <link>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%9815%E8%A8%88%E7%AE%97%E5%B1%AC%E6%80%A7/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9815%E8%A8%88%E7%AE%97%E5%B1%AC%E6%80%A7/</link>
       <pubDate>Thu, 18 Mar 2021 20:50:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%9815%E8%A8%88%E7%AE%97%E5%B1%AC%E6%80%A7/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9815%E8%A8%88%E7%AE%97%E5%B1%AC%E6%80%A7/</guid>
       <description>Vue筆記15計算屬性 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;zh-hant-TW&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;簡化版Vue學習&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;tag01&amp;#34;&amp;gt; &amp;lt;!--可以在綁定範</description>
     </item>
     <item>
       <title>Vue筆記12將表達式插入模板</title>
-      <link>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%9812%E5%B0%87%E8%A1%A8%E9%81%94%E5%BC%8F%E6%8F%92%E5%85%A5%E6%A8%A1%E6%9D%BF/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9812%E5%B0%87%E8%A1%A8%E9%81%94%E5%BC%8F%E6%8F%92%E5%85%A5%E6%A8%A1%E6%9D%BF/</link>
       <pubDate>Thu, 18 Mar 2021 20:50:23 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%9812%E5%B0%87%E8%A1%A8%E9%81%94%E5%BC%8F%E6%8F%92%E5%85%A5%E6%A8%A1%E6%9D%BF/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9812%E5%B0%87%E8%A1%A8%E9%81%94%E5%BC%8F%E6%8F%92%E5%85%A5%E6%A8%A1%E6%9D%BF/</guid>
       <description>Vue筆記12將表達式插入模板 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;zh-hant-TW&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;簡化版Vue學習&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;tag01&amp;#34;&amp;gt; &amp;lt;!--此處</description>
     </item>
     <item>
       <title>Vue筆記11偵測元素的創建與變更</title>
-      <link>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%9811%E5%81%B5%E6%B8%AC%E5%85%83%E7%B4%A0%E7%9A%84%E5%89%B5%E5%BB%BA%E8%88%87%E8%AE%8A%E6%9B%B4/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9811%E5%81%B5%E6%B8%AC%E5%85%83%E7%B4%A0%E7%9A%84%E5%89%B5%E5%BB%BA%E8%88%87%E8%AE%8A%E6%9B%B4/</link>
       <pubDate>Wed, 17 Mar 2021 11:52:40 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%9811%E5%81%B5%E6%B8%AC%E5%85%83%E7%B4%A0%E7%9A%84%E5%89%B5%E5%BB%BA%E8%88%87%E8%AE%8A%E6%9B%B4/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9811%E5%81%B5%E6%B8%AC%E5%85%83%E7%B4%A0%E7%9A%84%E5%89%B5%E5%BB%BA%E8%88%87%E8%AE%8A%E6%9B%B4/</guid>
       <description>Vue筆記11偵測元素的創建與變更 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;zh-hant-TW&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;簡化版Vue學習&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;tag01&amp;#34;&amp;gt; &amp;lt;div&amp;gt;{{ text01 }}&amp;lt;/div&amp;gt; &amp;lt;div style=&amp;#34;color:red&amp;#34;&amp;gt;{{ changeAlert }}&amp;lt;/div&amp;gt;</description>
     </item>
     <item>
       <title>Vue筆記10.資料的綁定</title>
-      <link>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%9810.%E8%B3%87%E6%96%99%E7%9A%84%E7%B6%81%E5%AE%9A/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9810.%E8%B3%87%E6%96%99%E7%9A%84%E7%B6%81%E5%AE%9A/</link>
       <pubDate>Wed, 17 Mar 2021 11:02:30 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%9810.%E8%B3%87%E6%96%99%E7%9A%84%E7%B6%81%E5%AE%9A/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%9810.%E8%B3%87%E6%96%99%E7%9A%84%E7%B6%81%E5%AE%9A/</guid>
       <description>Vue筆記10.資料的綁定 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;zh-hant-TW&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;簡化版Vue學習&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;!--物件目標標籤</description>
     </item>
     <item>
       <title>Vue筆記9.組件基本使用方式</title>
-      <link>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%989.%E7%B5%84%E4%BB%B6%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%989.%E7%B5%84%E4%BB%B6%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F/</link>
       <pubDate>Tue, 16 Mar 2021 01:20:54 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%989.%E7%B5%84%E4%BB%B6%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%989.%E7%B5%84%E4%BB%B6%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F/</guid>
       <description>Vue筆記9.組件基本使用方式 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;zh-hant-TW&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;簡化版Vue學習&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;!--物件目標</description>
     </item>
     <item>
       <title>Vue筆記8.簡單使用組件</title>
-      <link>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%988.%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8%E7%B5%84%E4%BB%B6/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%988.%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8%E7%B5%84%E4%BB%B6/</link>
       <pubDate>Tue, 16 Mar 2021 00:45:10 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%988.%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8%E7%B5%84%E4%BB%B6/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%988.%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8%E7%B5%84%E4%BB%B6/</guid>
       <description>Vue筆記8.簡單使用組件 vue框架對於重複使用網頁部件（例如按鈕，分隔線）提出了解決方案 這類重複使用部件內容有些複雜 以下先用最簡單但是無法</description>
     </item>
     <item>
       <title>Vue筆記7.同步表單與頁面文字</title>
-      <link>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%987.%E5%90%8C%E6%AD%A5%E8%A1%A8%E5%96%AE%E8%88%87%E9%A0%81%E9%9D%A2%E6%96%87%E5%AD%97/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%987.%E5%90%8C%E6%AD%A5%E8%A1%A8%E5%96%AE%E8%88%87%E9%A0%81%E9%9D%A2%E6%96%87%E5%AD%97/</link>
       <pubDate>Tue, 16 Mar 2021 00:06:55 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%987.%E5%90%8C%E6%AD%A5%E8%A1%A8%E5%96%AE%E8%88%87%E9%A0%81%E9%9D%A2%E6%96%87%E5%AD%97/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%987.%E5%90%8C%E6%AD%A5%E8%A1%A8%E5%96%AE%E8%88%87%E9%A0%81%E9%9D%A2%E6%96%87%E5%AD%97/</guid>
       <description>Vue筆記7.同步表單與頁面文字 可以藉由v-model來同步輸入框與物件內的資料 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;zh-hant-TW&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;簡化版Vue學習&amp;l</description>
     </item>
     <item>
       <title>Vue筆記6.以按鈕啟動函數</title>
-      <link>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%986.%E4%BB%A5%E6%8C%89%E9%88%95%E5%95%9F%E5%8B%95%E5%87%BD%E6%95%B8/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%986.%E4%BB%A5%E6%8C%89%E9%88%95%E5%95%9F%E5%8B%95%E5%87%BD%E6%95%B8/</link>
       <pubDate>Mon, 15 Mar 2021 18:52:53 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%986.%E4%BB%A5%E6%8C%89%E9%88%95%E5%95%9F%E5%8B%95%E5%87%BD%E6%95%B8/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%986.%E4%BB%A5%E6%8C%89%E9%88%95%E5%95%9F%E5%8B%95%E5%87%BD%E6%95%B8/</guid>
       <description>Vue筆記6.以按鈕啟動函數 我們建立一段字串&amp;quot;我是貓&amp;quot;在vue物件中 然後用&amp;quot;addWord()&amp;ldquo;這</description>
     </item>
     <item>
       <title>Vue筆記5.for迴圈</title>
-      <link>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%985.for%E8%BF%B4%E5%9C%88/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%985.for%E8%BF%B4%E5%9C%88/</link>
       <pubDate>Mon, 15 Mar 2021 18:31:39 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%985.for%E8%BF%B4%E5%9C%88/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%985.for%E8%BF%B4%E5%9C%88/</guid>
       <description>Vue筆記5.for迴圈 若我們希望某個元素重複出現，例如卡片或商品外框 但是內容要求不同，例如商品名稱，我們可採用v-for &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;zh-hant-TW&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;l</description>
     </item>
     <item>
       <title>Vue筆記4.條件式顯示隱藏元素</title>
-      <link>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%984.%E6%A2%9D%E4%BB%B6%E5%BC%8F%E9%A1%AF%E7%A4%BA%E9%9A%B1%E8%97%8F%E5%85%83%E7%B4%A0/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%984.%E6%A2%9D%E4%BB%B6%E5%BC%8F%E9%A1%AF%E7%A4%BA%E9%9A%B1%E8%97%8F%E5%85%83%E7%B4%A0/</link>
       <pubDate>Mon, 15 Mar 2021 15:31:27 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/vue/vue%E7%AD%86%E8%A8%984.%E6%A2%9D%E4%BB%B6%E5%BC%8F%E9%A1%AF%E7%A4%BA%E9%9A%B1%E8%97%8F%E5%85%83%E7%B4%A0/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue%E7%AD%86%E8%A8%984.%E6%A2%9D%E4%BB%B6%E5%BC%8F%E9%A1%AF%E7%A4%BA%E9%9A%B1%E8%97%8F%E5%85%83%E7%B4%A0/</guid>
       <description>Vue筆記4.條件式顯示隱藏元素 我們如果希望某些頁面元素， 在特定條件下隱藏或顯示。 甚至是將所有頁面元素放入同一頁， 僅在需要時顯示必要部份。 我</description>
     </item>
     <item>
       <title>Vue筆記 3:動態修改標籤屬性</title>
-      <link>http://localhost:1313/blog/public/post/vue/vue3.%E4%BF%AE%E6%94%B9%E6%A8%99%E7%B1%A4%E5%B1%AC%E6%80%A7/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue3.%E4%BF%AE%E6%94%B9%E6%A8%99%E7%B1%A4%E5%B1%AC%E6%80%A7/</link>
       <pubDate>Thu, 11 Mar 2021 14:52:38 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/vue/vue3.%E4%BF%AE%E6%94%B9%E6%A8%99%E7%B1%A4%E5%B1%AC%E6%80%A7/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue3.%E4%BF%AE%E6%94%B9%E6%A8%99%E7%B1%A4%E5%B1%AC%E6%80%A7/</guid>
       <description>Vue筆記 3:動態修改標籤屬性 稍微提到一下，如果這篇教學對你有幫助，請不要吝嗇教導你周圍的同事，我可以保證你一定會過得更快樂 HTMl標籤存在</description>
     </item>
     <item>
       <title>Vue筆記 2:將字串插入目標標籤</title>
-      <link>http://localhost:1313/blog/public/post/vue/vue2.%E5%B0%87%E5%AD%97%E4%B8%B2%E6%8F%92%E5%85%A5%E7%9B%AE%E6%A8%99%E6%A8%99%E7%B1%A4/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue2.%E5%B0%87%E5%AD%97%E4%B8%B2%E6%8F%92%E5%85%A5%E7%9B%AE%E6%A8%99%E6%A8%99%E7%B1%A4/</link>
       <pubDate>Thu, 11 Mar 2021 14:49:54 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/vue/vue2.%E5%B0%87%E5%AD%97%E4%B8%B2%E6%8F%92%E5%85%A5%E7%9B%AE%E6%A8%99%E6%A8%99%E7%B1%A4/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue2.%E5%B0%87%E5%AD%97%E4%B8%B2%E6%8F%92%E5%85%A5%E7%9B%AE%E6%A8%99%E6%A8%99%E7%B1%A4/</guid>
       <description>Vue筆記 2:將字串插入目標標籤 我們注意到vue導入特定文字需要四個部份： 1.目標html標籤，下列範例為tag01 2.目標標籤中的文字區塊</description>
     </item>
     <item>
       <title>Vue:1直接引用</title>
-      <link>http://localhost:1313/blog/public/post/vue/vue1.%E7%9B%B4%E6%8E%A5%E5%BC%95%E7%94%A8/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/vue/vue1.%E7%9B%B4%E6%8E%A5%E5%BC%95%E7%94%A8/</link>
       <pubDate>Thu, 11 Mar 2021 14:43:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/vue/vue1.%E7%9B%B4%E6%8E%A5%E5%BC%95%E7%94%A8/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/vue/vue1.%E7%9B%B4%E6%8E%A5%E5%BC%95%E7%94%A8/</guid>
       <description>Vue筆記 1：直接引用 該筆記為了快速上手，蓄意忽視webpack等套件使用，若有機會將會於別篇筆記提及 首先我們簡單的建立一個html檔案，然</description>
     </item>
   </channel>

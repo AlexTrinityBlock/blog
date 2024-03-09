@@ -158,10 +158,67 @@ iptables -P FORWARD ACCEPT
 
 # 增加 iptables 規則
 
+```bash
+[root@www ~]# iptables [-AI 鏈名] [-io 網路介面] [-p 協定] \
+> [-s 來源IP/網域] [-d 目標IP/網域] -j [ACCEPT|DROP|REJECT|LOG]
+選項與參數：
+-AI 鏈名：在某個鏈上 "插入" 或 "新增" 規則
+    -A ：在鏈的末端新增規則。例如，原本有四條規則，使用 -A 就會加上第五條規則。
+    -I ：在鏈的開頭或指定位置插入規則。例如，原本有四條規則，使用 -I 就會把新規則放在第一條，而原本的規則就會往後移。
+    鏈 ：有 INPUT, OUTPUT, FORWARD 等，分別對應不同的封包方向，與 -io 有關，請看下面。
+
+-io 網路介面：設定封包的進出介面
+    -i ：封包的來源介面，例如 eth0, lo 等。要與 INPUT 鏈搭配使用。
+    -o ：封包的目的介面，要與 OUTPUT 鏈搭配使用。
+
+-p 協定：設定規則適用的封包類型
+   常見的封包類型有： tcp, udp, icmp 及 all 。
+
+-s 來源 IP/網域：設定封包的來源 IP 或網域，例如：
+   IP  ：192.168.0.100
+   網域：192.168.0.0/24 或 192.168.0.0/255.255.255.0 都可以。
+   如果要設定『不允許』的來源，就加上 ! ，例如：
+   -s ! 192.168.100.0/24 表示不允許 192.168.100.0/24 的封包來源。
+
+-d 目標 IP/網域：同 -s ，只是設定封包的目的 IP 或網域。
+
+-j ：後面接動作，常用的動作有接受(ACCEPT)、丟棄(DROP)、拒絕(REJECT)及記錄(LOG)
+```
+
 允許 localhost 進入的任何內容:
 
 ```bash
 iptables -A INPUT -i lo -j ACCEPTs
+```
+
+# 允許主機主動發起的連線
+
+如果由我們主動發起通信，由遠方回應我們時，該如何放行呢?
+
+```bash
+[root@www ~]# iptables -A INPUT [-m state] [--state 狀態]
+選項與參數：
+-m state ：使用狀態模組來過濾封包的連線狀態
+--state 狀態：指定要過濾的封包的連線狀態，可以是以下之一：
+     INVALID    ：無效的封包，例如資料破損或不符合協定的封包
+     ESTABLISHED：已經建立連線的封包，例如 TCP 的三方交握後的封包
+     NEW        ：新建立連線的封包，例如 TCP 的 SYN 封包
+     RELATED    ：與已建立連線的封包有關的封包，例如 FTP 的資料傳輸封包
+
+範例：允許已建立或相關的封包通過，並丟棄無效的封包
+[root@www ~]# iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+[root@www ~]# iptables -A INPUT -m state --state INVALID -j DROP
+```
+
+# 鳥哥的拒絕 Ping 但允許其他 ICMP 的腳本
+
+```bash
+#!/bin/bash
+icmp_type="0 3 4 11 12 14 16 18"
+for typeicmp in $icmp_type
+do
+   iptables -A INPUT -i eth0 -p icmp --icmp-type $typeicmp -j ACCEPT
+done
 ```
 
 # 參考資料

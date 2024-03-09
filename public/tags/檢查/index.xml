@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>檢查 on 無面者小站</title>
-    <link>http://localhost:1313/blog/public/tags/%E6%AA%A2%E6%9F%A5/</link>
+    <link>https://alextrinityblock.github.io/blog/public/tags/%E6%AA%A2%E6%9F%A5/</link>
     <description>Recent content in 檢查 on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <lastBuildDate>Thu, 08 Jul 2021 16:00:49 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/public/tags/%E6%AA%A2%E6%9F%A5/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/%E6%AA%A2%E6%9F%A5/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>公共WIFI網路嗅探</title>
-      <link>http://localhost:1313/blog/public/post/secure/%E5%85%AC%E5%85%B1wifi%E7%B6%B2%E8%B7%AF%E5%97%85%E6%8E%A2/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/secure/%E5%85%AC%E5%85%B1wifi%E7%B6%B2%E8%B7%AF%E5%97%85%E6%8E%A2/</link>
       <pubDate>Thu, 08 Jul 2021 16:00:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/secure/%E5%85%AC%E5%85%B1wifi%E7%B6%B2%E8%B7%AF%E5%97%85%E6%8E%A2/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/secure/%E5%85%AC%E5%85%B1wifi%E7%B6%B2%E8%B7%AF%E5%97%85%E6%8E%A2/</guid>
       <description>作者 阿維 同意條款 閱讀本篇文章等同承諾: 不將相關知識用在任何非法用途 不窺探他人隱私 保持誠實與友善 所有安全測試知識只用於維護安全的目的 測試用的器</description>
     </item>
     <item>
       <title>檢查下載檔是否被調包</title>
-      <link>http://localhost:1313/blog/public/post/secure/%E6%AA%A2%E6%9F%A5%E4%B8%8B%E8%BC%89%E6%AA%94%E6%98%AF%E5%90%A6%E8%A2%AB%E8%AA%BF%E5%8C%85/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/secure/%E6%AA%A2%E6%9F%A5%E4%B8%8B%E8%BC%89%E6%AA%94%E6%98%AF%E5%90%A6%E8%A2%AB%E8%AA%BF%E5%8C%85/</link>
       <pubDate>Tue, 27 Apr 2021 14:01:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/secure/%E6%AA%A2%E6%9F%A5%E4%B8%8B%E8%BC%89%E6%AA%94%E6%98%AF%E5%90%A6%E8%A2%AB%E8%AA%BF%E5%8C%85/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/secure/%E6%AA%A2%E6%9F%A5%E4%B8%8B%E8%BC%89%E6%AA%94%E6%98%AF%E5%90%A6%E8%A2%AB%E8%AA%BF%E5%8C%85/</guid>
       <description>1.檢查檔案的方法 今天假設我們下載了一個檔案，叫做 ubuntu-20.04.2-live-server-amd64.iso 我們要如何檢查是否被High客給調包？ （High客：在網路上無時無刻情緒都很high，會</description>
     </item>
   </channel>
