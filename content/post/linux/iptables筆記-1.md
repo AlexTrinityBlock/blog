@@ -246,6 +246,50 @@ iptables -A INPUT -i eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
 /etc/init.d/iptables save
 ```
 
+# SNAT 與 DNAT
+
+SNAT: 內網主機要連接到外網，並且使用對外的 Host IP 時使用。
+
+DNAT: 外網主機要存取某台內網主機的服務時使用。
+
+## SNAT 的配置方式
+
+假定 eth0 是對外界面，eth1 是對內介面。
+
+```bash
+# 同意所有來自對對內介面發來的封包
+iptables -A INPUT -i eth1 -j ACCEPT
+
+# 允許從eth0,eth1之間轉發封包
+echo "1" > /proc/sys/net/ipv4/ip_forward
+
+# 將來自 192.168.100.0/24 轉發到對外界面，並且隱藏調原本對內介面 IP
+iptables -t nat -A POSTROUTING -s 192.168.100.0/24 -o eth0 -j MASQUERADE
+```
+
+### 固定對外 IP 的寫法
+
+```bash
+iptables -t nat -A POSTROUTING -o eth0 -j SNAT \
+         --to-source 192.168.1.100
+```
+
+### 多個對外 IP 的寫法
+
+```bash
+iptables -t nat -A POSTROUTING -o eth0 -j SNAT \
+         --to-source 192.168.1.210-192.168.1.220
+```
+
+## DNAT 的配置
+
+從外側  IP 轉發到內網中的 Web server 範例
+
+```bash
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 \
+     -j DNAT --to-destination 192.168.100.10:80 
+```
+
 # 參考資料
 
 [https://linux.vbird.org/linux_server/centos6/0250simple_firewall.php](https://linux.vbird.org/linux_server/centos6/0250simple_firewall.php)
