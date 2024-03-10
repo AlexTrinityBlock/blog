@@ -16,6 +16,13 @@
       <description>adduser 和 useradd 的差異: adduser 用法 sudo adduser [選項] 用戶名 # 無選項添加新用戶: 會提示您輸入用戶的密碼和其他信息。 sudo adduser 用戶名 # 添加系統用戶: 這將添加一個沒有家目錄</description>
     </item>
     <item>
+      <title>linux常用解壓縮指令</title>
+      <link>https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%A3%93%E7%B8%AE%E6%8C%87%E4%BB%A4/</link>
+      <pubDate>Sat, 09 Mar 2024 21:00:25 +0800</pubDate>
+      <guid>https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%A3%93%E7%B8%AE%E6%8C%87%E4%BB%A4/</guid>
+      <description>tar 假定我們有個目錄稱為 ./my 壓縮 # 壓縮 tar -czvf my.tar.gz ./my # 單純歸檔 tar -cvf my.tar ./my c：建立一個新的歸檔檔案。 z：使用 gzip 壓縮。 v：顯示執行過程中的詳細資訊（verb</description>
+    </item>
+    <item>
       <title>iptables筆記-1</title>
       <link>https://alextrinityblock.github.io/blog/public/post/linux/iptables%E7%AD%86%E8%A8%98-1/</link>
       <pubDate>Sat, 09 Mar 2024 11:39:25 +0800</pubDate>
