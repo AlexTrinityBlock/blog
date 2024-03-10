@@ -1,5 +1,5 @@
 ---
-title: "iptables筆記"
+title: "iptables筆記-1"
 date: 2024-03-09T11:39:25+08:00
 draft: false
 featured_image: "/debian1.jpeg"
