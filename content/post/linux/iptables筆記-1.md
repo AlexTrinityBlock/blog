@@ -290,6 +290,47 @@ iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 \
      -j DNAT --to-destination 192.168.100.10:80 
 ```
 
+# 一個僅允許部分 IP 訪問的 iptables 腳本範例
+
+* ESTABLISHED：這個狀態表示該封包與一個已經在兩個方向上都有封包傳輸的連接相關聯。如果你想要維持兩個主機之間的連接，就需要接受這個狀態的封包。
+
+* RELATED：這個狀態意味著封包正在開始一個新的連接，但這個新連接與一個已存在的連接有關。例如，在 FTP 協議中，除了使用控制連接的21號端口外，數據傳輸還會使用另一個 TCP 連接（20號端口）。因此，如果一個新的封包是與這樣的現有連接相關的，它就會被標記為 RELATED 狀態。
+
+
+```bash
+#!/bin/bash
+
+# 啟動 iptables 服務
+/bin/systemctl start iptables.service
+
+# 清理預設的 Filter Table 的所有規則
+iptables -F
+# 清理 NAT table 的規則
+iptables -t nat -F
+
+# 從 localhost 本機網路介面進來一律允許
+iptables -A INPUT -i lo -j ACCEPT
+# 由我方發起的連線一律允許。
+iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+# 允許 10.0.0.1 IP 訪問 22 port
+iptables -A INPUT -p tcp --dport 22 -s 10.0.0.1 -j ACCEPT
+
+# 限制 ICMP 封包最大速度為每秒 20 個
+iptables -A INPUT -p icmp -m icmp --icmp-type any -m limit --limit 20/s -j ACCEPT
+
+# 允許多個 IP 訪問特定的 8443 port 網頁
+iptables -A INPUT -s 10.0.0.1,10.0.0.2,10.0.0.3  -p tcp --dport 8443 -j ACCEPT
+
+# 丟棄其他的封包
+iptables -P INPUT DROP
+
+# 列出 filter 上的規則
+iptables -nvL
+# 顯示 iptables 狀態
+/bin/systemctl status iptables.service
+```
+
 # 參考資料
 
 [https://linux.vbird.org/linux_server/centos6/0250simple_firewall.php](https://linux.vbird.org/linux_server/centos6/0250simple_firewall.php)

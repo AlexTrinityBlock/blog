@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Modeset on 無面者小站</title>
-    <link>https://alextrinityblock.github.io/blog/public/tags/modeset/</link>
+    <link>http://localhost:1313/blog/public/tags/modeset/</link>
     <description>Recent content in Modeset on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <lastBuildDate>Sat, 20 Mar 2021 11:07:13 +0800</lastBuildDate>
-    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/modeset/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/public/tags/modeset/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux_mint卡在開始logo的解決</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/linux_mint%E5%8D%A1%E5%9C%A8%E9%96%8B%E5%A7%8Blogo%E7%9A%84%E8%A7%A3%E6%B1%BA/</link>
+      <link>http://localhost:1313/blog/public/post/linux/linux_mint%E5%8D%A1%E5%9C%A8%E9%96%8B%E5%A7%8Blogo%E7%9A%84%E8%A7%A3%E6%B1%BA/</link>
       <pubDate>Sat, 20 Mar 2021 11:07:13 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/linux_mint%E5%8D%A1%E5%9C%A8%E9%96%8B%E5%A7%8Blogo%E7%9A%84%E8%A7%A3%E6%B1%BA/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/linux_mint%E5%8D%A1%E5%9C%A8%E9%96%8B%E5%A7%8Blogo%E7%9A%84%E8%A7%A3%E6%B1%BA/</guid>
       <description>Linux_mint卡在開始logo的解決 linux mint 在某些情況下會卡在開機logo 而引發這種情況的可能原因 常常與顯示卡（gpu）有關連 若顯示卡是n</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Firefox on 無面者小站</title>
-    <link>https://alextrinityblock.github.io/blog/public/tags/firefox/</link>
+    <link>http://localhost:1313/blog/public/tags/firefox/</link>
     <description>Recent content in Firefox on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <lastBuildDate>Sat, 17 Jul 2021 10:05:03 +0800</lastBuildDate>
-    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/firefox/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/public/tags/firefox/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>讓firefox跑在docker-compose裡頭的正確腳本</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/docker/%E8%AE%93firefox%E8%B7%91%E5%9C%A8docker-compose%E8%A3%A1%E9%A0%AD%E7%9A%84%E6%AD%A3%E7%A2%BA%E8%85%B3%E6%9C%AC/</link>
+      <link>http://localhost:1313/blog/public/post/docker/%E8%AE%93firefox%E8%B7%91%E5%9C%A8docker-compose%E8%A3%A1%E9%A0%AD%E7%9A%84%E6%AD%A3%E7%A2%BA%E8%85%B3%E6%9C%AC/</link>
       <pubDate>Sat, 17 Jul 2021 10:05:03 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/docker/%E8%AE%93firefox%E8%B7%91%E5%9C%A8docker-compose%E8%A3%A1%E9%A0%AD%E7%9A%84%E6%AD%A3%E7%A2%BA%E8%85%B3%E6%9C%AC/</guid>
+      <guid>http://localhost:1313/blog/public/post/docker/%E8%AE%93firefox%E8%B7%91%E5%9C%A8docker-compose%E8%A3%A1%E9%A0%AD%E7%9A%84%E6%AD%A3%E7%A2%BA%E8%85%B3%E6%9C%AC/</guid>
       <description>資料夾結構 firefox ├── docker-compose.yml ├── Dockerfile └── run docker-compose.yml #docker-compose版本 version: &amp;#34;3.4&amp;#34; #服務，不過這裡唯一的服務就是firefox瀏覽器 services: #服務名稱，</description>
     </item>
   </channel>
