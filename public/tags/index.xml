@@ -2,577 +2,577 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 無面者小站</title>
-    <link>http://localhost:1313/blog/public/tags/</link>
+    <link>https://alextrinityblock.github.io/blog/public/tags/</link>
     <description>Recent content in Tags on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <lastBuildDate>Sun, 10 Mar 2024 13:29:36 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/public/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apt</title>
-      <link>http://localhost:1313/blog/public/tags/apt/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/apt/</link>
       <pubDate>Sun, 10 Mar 2024 13:29:36 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/apt/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/apt/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>http://localhost:1313/blog/public/tags/linux/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/linux/</link>
       <pubDate>Sun, 10 Mar 2024 13:29:36 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/linux/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Java</title>
-      <link>http://localhost:1313/blog/public/tags/java/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/java/</link>
       <pubDate>Sun, 10 Mar 2024 12:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/java/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/java/</guid>
       <description></description>
     </item>
     <item>
       <title>Iptables</title>
-      <link>http://localhost:1313/blog/public/tags/iptables/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/iptables/</link>
       <pubDate>Sat, 09 Mar 2024 11:39:25 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/iptables/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/iptables/</guid>
       <description></description>
     </item>
     <item>
       <title>CICD</title>
-      <link>http://localhost:1313/blog/public/tags/cicd/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/cicd/</link>
       <pubDate>Mon, 04 Mar 2024 18:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/cicd/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/cicd/</guid>
       <description></description>
     </item>
     <item>
       <title>Service</title>
-      <link>http://localhost:1313/blog/public/tags/service/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/service/</link>
       <pubDate>Fri, 23 Feb 2024 13:50:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/service/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/service/</guid>
       <description></description>
     </item>
     <item>
       <title>K8S</title>
-      <link>http://localhost:1313/blog/public/tags/k8s/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/k8s/</link>
       <pubDate>Mon, 19 Feb 2024 10:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/k8s/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/k8s/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker</title>
-      <link>http://localhost:1313/blog/public/tags/docker/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/docker/</link>
       <pubDate>Thu, 08 Feb 2024 14:10:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/docker/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>OpenSSL</title>
-      <link>http://localhost:1313/blog/public/tags/openssl/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/openssl/</link>
       <pubDate>Tue, 06 Feb 2024 12:05:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/openssl/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/openssl/</guid>
       <description></description>
     </item>
     <item>
       <title>Secure</title>
-      <link>http://localhost:1313/blog/public/tags/secure/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/secure/</link>
       <pubDate>Tue, 06 Feb 2024 12:05:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/secure/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/secure/</guid>
       <description></description>
     </item>
     <item>
       <title>SSL</title>
-      <link>http://localhost:1313/blog/public/tags/ssl/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/ssl/</link>
       <pubDate>Tue, 06 Feb 2024 12:05:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/ssl/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/ssl/</guid>
       <description></description>
     </item>
     <item>
       <title>Journalctl</title>
-      <link>http://localhost:1313/blog/public/tags/journalctl/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/journalctl/</link>
       <pubDate>Tue, 06 Feb 2024 12:01:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/journalctl/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/journalctl/</guid>
       <description></description>
     </item>
     <item>
       <title>GCP</title>
-      <link>http://localhost:1313/blog/public/tags/gcp/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/gcp/</link>
       <pubDate>Sun, 31 Dec 2023 05:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/gcp/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/gcp/</guid>
       <description></description>
     </item>
     <item>
       <title>AWS</title>
-      <link>http://localhost:1313/blog/public/tags/aws/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/aws/</link>
       <pubDate>Tue, 21 Nov 2023 13:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/aws/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/aws/</guid>
       <description></description>
     </item>
     <item>
       <title>Daily</title>
-      <link>http://localhost:1313/blog/public/tags/daily/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/daily/</link>
       <pubDate>Tue, 14 Nov 2023 09:08:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/daily/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/daily/</guid>
       <description></description>
     </item>
     <item>
       <title>CCNA</title>
-      <link>http://localhost:1313/blog/public/tags/ccna/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/ccna/</link>
       <pubDate>Tue, 08 Nov 2022 18:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/ccna/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/ccna/</guid>
       <description></description>
     </item>
     <item>
       <title>Frontend</title>
-      <link>http://localhost:1313/blog/public/tags/frontend/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/frontend/</link>
       <pubDate>Fri, 26 Aug 2022 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/frontend/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/frontend/</guid>
       <description></description>
     </item>
     <item>
       <title>Node.js</title>
-      <link>http://localhost:1313/blog/public/tags/node.js/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/node.js/</link>
       <pubDate>Thu, 18 Aug 2022 09:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/node.js/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/node.js/</guid>
       <description></description>
     </item>
     <item>
       <title>React</title>
-      <link>http://localhost:1313/blog/public/tags/react/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/react/</link>
       <pubDate>Fri, 12 Aug 2022 09:30:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/react/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/react/</guid>
       <description></description>
     </item>
     <item>
       <title>Ssh</title>
-      <link>http://localhost:1313/blog/public/tags/ssh/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/ssh/</link>
       <pubDate>Tue, 05 Jul 2022 09:00:36 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/ssh/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/ssh/</guid>
       <description></description>
     </item>
     <item>
       <title>Virtualbox</title>
-      <link>http://localhost:1313/blog/public/tags/virtualbox/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/virtualbox/</link>
       <pubDate>Mon, 14 Mar 2022 15:00:36 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/virtualbox/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/virtualbox/</guid>
       <description></description>
     </item>
     <item>
       <title>Monitor</title>
-      <link>http://localhost:1313/blog/public/tags/monitor/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/monitor/</link>
       <pubDate>Mon, 14 Mar 2022 13:29:36 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/monitor/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/monitor/</guid>
       <description></description>
     </item>
     <item>
       <title>System-Monitoring-Center</title>
-      <link>http://localhost:1313/blog/public/tags/system-monitoring-center/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/system-monitoring-center/</link>
       <pubDate>Mon, 14 Mar 2022 13:29:36 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/system-monitoring-center/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/system-monitoring-center/</guid>
       <description></description>
     </item>
     <item>
       <title>Cc</title>
-      <link>http://localhost:1313/blog/public/tags/cc/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/cc/</link>
       <pubDate>Fri, 11 Mar 2022 09:00:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/cc/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/cc/</guid>
       <description></description>
     </item>
     <item>
       <title>Ddos</title>
-      <link>http://localhost:1313/blog/public/tags/ddos/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/ddos/</link>
       <pubDate>Fri, 11 Mar 2022 09:00:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/ddos/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/ddos/</guid>
       <description></description>
     </item>
     <item>
       <title>Math</title>
-      <link>http://localhost:1313/blog/public/tags/math/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/math/</link>
       <pubDate>Wed, 09 Mar 2022 14:30:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/math/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/math/</guid>
       <description></description>
     </item>
     <item>
       <title>Azure</title>
-      <link>http://localhost:1313/blog/public/tags/azure/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/azure/</link>
       <pubDate>Wed, 09 Mar 2022 10:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/azure/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/azure/</guid>
       <description></description>
     </item>
     <item>
       <title>ASP.net</title>
-      <link>http://localhost:1313/blog/public/tags/asp.net/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/asp.net/</link>
       <pubDate>Tue, 01 Mar 2022 12:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/asp.net/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/asp.net/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>http://localhost:1313/blog/public/tags/git/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/git/</link>
       <pubDate>Wed, 23 Feb 2022 00:04:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/git/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Github</title>
-      <link>http://localhost:1313/blog/public/tags/github/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/github/</link>
       <pubDate>Wed, 23 Feb 2022 00:04:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/github/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/github/</guid>
       <description></description>
     </item>
     <item>
       <title>Git Server</title>
-      <link>http://localhost:1313/blog/public/tags/git-server/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/git-server/</link>
       <pubDate>Wed, 23 Feb 2022 00:02:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/git-server/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/git-server/</guid>
       <description></description>
     </item>
     <item>
       <title>NS2</title>
-      <link>http://localhost:1313/blog/public/tags/ns2/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/ns2/</link>
       <pubDate>Tue, 12 Oct 2021 09:00:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/ns2/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/ns2/</guid>
       <description></description>
     </item>
     <item>
       <title>Opengl</title>
-      <link>http://localhost:1313/blog/public/tags/opengl/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/opengl/</link>
       <pubDate>Thu, 07 Oct 2021 10:00:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/opengl/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/opengl/</guid>
       <description></description>
     </item>
     <item>
       <title>資安</title>
-      <link>http://localhost:1313/blog/public/tags/%E8%B3%87%E5%AE%89/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/%E8%B3%87%E5%AE%89/</link>
       <pubDate>Sun, 03 Oct 2021 22:00:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/%E8%B3%87%E5%AE%89/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/%E8%B3%87%E5%AE%89/</guid>
       <description></description>
     </item>
     <item>
       <title>資訊安全與管理</title>
-      <link>http://localhost:1313/blog/public/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E8%88%87%E7%AE%A1%E7%90%86/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E8%88%87%E7%AE%A1%E7%90%86/</link>
       <pubDate>Sun, 03 Oct 2021 22:00:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E8%88%87%E7%AE%A1%E7%90%86/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E8%88%87%E7%AE%A1%E7%90%86/</guid>
       <description></description>
     </item>
     <item>
       <title>課堂筆記</title>
-      <link>http://localhost:1313/blog/public/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/</link>
       <pubDate>Sun, 03 Oct 2021 22:00:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/</guid>
       <description></description>
     </item>
     <item>
       <title>Opencv</title>
-      <link>http://localhost:1313/blog/public/tags/opencv/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/opencv/</link>
       <pubDate>Fri, 01 Oct 2021 09:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/opencv/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/opencv/</guid>
       <description></description>
     </item>
     <item>
       <title>Android</title>
-      <link>http://localhost:1313/blog/public/tags/android/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/android/</link>
       <pubDate>Fri, 24 Sep 2021 21:20:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/android/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/android/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>http://localhost:1313/blog/public/tags/hugo/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/hugo/</link>
       <pubDate>Tue, 27 Jul 2021 09:14:30 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/hugo/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/hugo/</guid>
       <description></description>
     </item>
     <item>
       <title>Network</title>
-      <link>http://localhost:1313/blog/public/tags/network/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/network/</link>
       <pubDate>Mon, 26 Jul 2021 10:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/network/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/network/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>http://localhost:1313/blog/public/tags/python/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/python/</link>
       <pubDate>Mon, 26 Jul 2021 10:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/python/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>MAC</title>
-      <link>http://localhost:1313/blog/public/tags/mac/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/mac/</link>
       <pubDate>Wed, 21 Jul 2021 10:00:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/mac/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/mac/</guid>
       <description></description>
     </item>
     <item>
       <title>Firefox</title>
-      <link>http://localhost:1313/blog/public/tags/firefox/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/firefox/</link>
       <pubDate>Sat, 17 Jul 2021 10:05:03 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/firefox/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/firefox/</guid>
       <description></description>
     </item>
     <item>
       <title>Firewall</title>
-      <link>http://localhost:1313/blog/public/tags/firewall/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/firewall/</link>
       <pubDate>Tue, 13 Jul 2021 16:00:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/firewall/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/firewall/</guid>
       <description></description>
     </item>
     <item>
       <title>防火牆</title>
-      <link>http://localhost:1313/blog/public/tags/%E9%98%B2%E7%81%AB%E7%89%86/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/%E9%98%B2%E7%81%AB%E7%89%86/</link>
       <pubDate>Tue, 13 Jul 2021 16:00:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/%E9%98%B2%E7%81%AB%E7%89%86/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/%E9%98%B2%E7%81%AB%E7%89%86/</guid>
       <description></description>
     </item>
     <item>
       <title>Ettercap</title>
-      <link>http://localhost:1313/blog/public/tags/ettercap/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/ettercap/</link>
       <pubDate>Thu, 08 Jul 2021 16:00:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/ettercap/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/ettercap/</guid>
       <description></description>
     </item>
     <item>
       <title>Wifi</title>
-      <link>http://localhost:1313/blog/public/tags/wifi/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/wifi/</link>
       <pubDate>Thu, 08 Jul 2021 16:00:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/wifi/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/wifi/</guid>
       <description></description>
     </item>
     <item>
       <title>中間人攻擊</title>
-      <link>http://localhost:1313/blog/public/tags/%E4%B8%AD%E9%96%93%E4%BA%BA%E6%94%BB%E6%93%8A/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/%E4%B8%AD%E9%96%93%E4%BA%BA%E6%94%BB%E6%93%8A/</link>
       <pubDate>Thu, 08 Jul 2021 16:00:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/%E4%B8%AD%E9%96%93%E4%BA%BA%E6%94%BB%E6%93%8A/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/%E4%B8%AD%E9%96%93%E4%BA%BA%E6%94%BB%E6%93%8A/</guid>
       <description></description>
     </item>
     <item>
       <title>檢查</title>
-      <link>http://localhost:1313/blog/public/tags/%E6%AA%A2%E6%9F%A5/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/%E6%AA%A2%E6%9F%A5/</link>
       <pubDate>Thu, 08 Jul 2021 16:00:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/%E6%AA%A2%E6%9F%A5/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/%E6%AA%A2%E6%9F%A5/</guid>
       <description></description>
     </item>
     <item>
       <title>Ventoy</title>
-      <link>http://localhost:1313/blog/public/tags/ventoy/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/ventoy/</link>
       <pubDate>Thu, 08 Jul 2021 10:29:36 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/ventoy/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/ventoy/</guid>
       <description></description>
     </item>
     <item>
       <title>AppArmor</title>
-      <link>http://localhost:1313/blog/public/tags/apparmor/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/apparmor/</link>
       <pubDate>Wed, 16 Jun 2021 10:01:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/apparmor/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/apparmor/</guid>
       <description></description>
     </item>
     <item>
       <title>Auditd</title>
-      <link>http://localhost:1313/blog/public/tags/auditd/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/auditd/</link>
       <pubDate>Wed, 16 Jun 2021 10:01:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/auditd/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/auditd/</guid>
       <description></description>
     </item>
     <item>
       <title>Kvm</title>
-      <link>http://localhost:1313/blog/public/tags/kvm/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/kvm/</link>
       <pubDate>Fri, 28 May 2021 13:29:36 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/kvm/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/kvm/</guid>
       <description></description>
     </item>
     <item>
       <title>Byte</title>
-      <link>http://localhost:1313/blog/public/tags/byte/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/byte/</link>
       <pubDate>Sat, 15 May 2021 00:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/byte/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/byte/</guid>
       <description></description>
     </item>
     <item>
       <title>Bytes</title>
-      <link>http://localhost:1313/blog/public/tags/bytes/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/bytes/</link>
       <pubDate>Sat, 15 May 2021 00:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/bytes/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/bytes/</guid>
       <description></description>
     </item>
     <item>
       <title>Aircrack</title>
-      <link>http://localhost:1313/blog/public/tags/aircrack/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/aircrack/</link>
       <pubDate>Mon, 03 May 2021 10:01:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/aircrack/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/aircrack/</guid>
       <description></description>
     </item>
     <item>
       <title>Curl</title>
-      <link>http://localhost:1313/blog/public/tags/curl/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/curl/</link>
       <pubDate>Sat, 01 May 2021 13:29:36 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/curl/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/curl/</guid>
       <description></description>
     </item>
     <item>
       <title>Shell</title>
-      <link>http://localhost:1313/blog/public/tags/shell/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/shell/</link>
       <pubDate>Sat, 01 May 2021 13:29:36 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/shell/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/shell/</guid>
       <description></description>
     </item>
     <item>
       <title>網路</title>
-      <link>http://localhost:1313/blog/public/tags/%E7%B6%B2%E8%B7%AF/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/%E7%B6%B2%E8%B7%AF/</link>
       <pubDate>Thu, 29 Apr 2021 16:15:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/%E7%B6%B2%E8%B7%AF/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/%E7%B6%B2%E8%B7%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>Virtualenv</title>
-      <link>http://localhost:1313/blog/public/tags/virtualenv/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/virtualenv/</link>
       <pubDate>Thu, 29 Apr 2021 14:43:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/virtualenv/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/virtualenv/</guid>
       <description></description>
     </item>
     <item>
       <title>Bashtop</title>
-      <link>http://localhost:1313/blog/public/tags/bashtop/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/bashtop/</link>
       <pubDate>Wed, 28 Apr 2021 11:39:25 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/bashtop/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/bashtop/</guid>
       <description></description>
     </item>
     <item>
       <title>主機狀態</title>
-      <link>http://localhost:1313/blog/public/tags/%E4%B8%BB%E6%A9%9F%E7%8B%80%E6%85%8B/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/%E4%B8%BB%E6%A9%9F%E7%8B%80%E6%85%8B/</link>
       <pubDate>Wed, 28 Apr 2021 11:39:25 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/%E4%B8%BB%E6%A9%9F%E7%8B%80%E6%85%8B/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/%E4%B8%BB%E6%A9%9F%E7%8B%80%E6%85%8B/</guid>
       <description></description>
     </item>
     <item>
       <title>Sha</title>
-      <link>http://localhost:1313/blog/public/tags/sha/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/sha/</link>
       <pubDate>Tue, 27 Apr 2021 14:01:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/sha/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/sha/</guid>
       <description></description>
     </item>
     <item>
       <title>Ngrok</title>
-      <link>http://localhost:1313/blog/public/tags/ngrok/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/ngrok/</link>
       <pubDate>Sat, 24 Apr 2021 14:43:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/ngrok/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/ngrok/</guid>
       <description></description>
     </item>
     <item>
       <title>手機網路</title>
-      <link>http://localhost:1313/blog/public/tags/%E6%89%8B%E6%A9%9F%E7%B6%B2%E8%B7%AF/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/%E6%89%8B%E6%A9%9F%E7%B6%B2%E8%B7%AF/</link>
       <pubDate>Sat, 24 Apr 2021 14:43:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/%E6%89%8B%E6%A9%9F%E7%B6%B2%E8%B7%AF/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/%E6%89%8B%E6%A9%9F%E7%B6%B2%E8%B7%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>伺服器</title>
-      <link>http://localhost:1313/blog/public/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/</link>
       <pubDate>Sat, 24 Apr 2021 14:43:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/</guid>
       <description></description>
     </item>
     <item>
       <title>C</title>
-      <link>http://localhost:1313/blog/public/tags/c/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/c/</link>
       <pubDate>Sun, 28 Mar 2021 23:58:48 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/c/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/c/</guid>
       <description></description>
     </item>
     <item>
       <title>Gdb</title>
-      <link>http://localhost:1313/blog/public/tags/gdb/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/gdb/</link>
       <pubDate>Sun, 28 Mar 2021 23:58:48 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/gdb/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/gdb/</guid>
       <description></description>
     </item>
     <item>
       <title>反組譯</title>
-      <link>http://localhost:1313/blog/public/tags/%E5%8F%8D%E7%B5%84%E8%AD%AF/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/%E5%8F%8D%E7%B5%84%E8%AD%AF/</link>
       <pubDate>Sun, 28 Mar 2021 23:58:48 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/%E5%8F%8D%E7%B5%84%E8%AD%AF/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/%E5%8F%8D%E7%B5%84%E8%AD%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>組合語言</title>
-      <link>http://localhost:1313/blog/public/tags/%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%80/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%80/</link>
       <pubDate>Sun, 28 Mar 2021 23:58:48 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%80/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%80/</guid>
       <description></description>
     </item>
     <item>
       <title>Gpu</title>
-      <link>http://localhost:1313/blog/public/tags/gpu/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/gpu/</link>
       <pubDate>Sat, 20 Mar 2021 11:07:13 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/gpu/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/gpu/</guid>
       <description></description>
     </item>
     <item>
       <title>Grub</title>
-      <link>http://localhost:1313/blog/public/tags/grub/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/grub/</link>
       <pubDate>Sat, 20 Mar 2021 11:07:13 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/grub/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/grub/</guid>
       <description></description>
     </item>
     <item>
       <title>Modeset</title>
-      <link>http://localhost:1313/blog/public/tags/modeset/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/modeset/</link>
       <pubDate>Sat, 20 Mar 2021 11:07:13 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/modeset/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/modeset/</guid>
       <description></description>
     </item>
     <item>
       <title>開機</title>
-      <link>http://localhost:1313/blog/public/tags/%E9%96%8B%E6%A9%9F/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/%E9%96%8B%E6%A9%9F/</link>
       <pubDate>Sat, 20 Mar 2021 11:07:13 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/%E9%96%8B%E6%A9%9F/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/%E9%96%8B%E6%A9%9F/</guid>
       <description></description>
     </item>
     <item>
       <title>開機失敗</title>
-      <link>http://localhost:1313/blog/public/tags/%E9%96%8B%E6%A9%9F%E5%A4%B1%E6%95%97/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/%E9%96%8B%E6%A9%9F%E5%A4%B1%E6%95%97/</link>
       <pubDate>Sat, 20 Mar 2021 11:07:13 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/%E9%96%8B%E6%A9%9F%E5%A4%B1%E6%95%97/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/%E9%96%8B%E6%A9%9F%E5%A4%B1%E6%95%97/</guid>
       <description></description>
     </item>
     <item>
       <title>Vue</title>
-      <link>http://localhost:1313/blog/public/tags/vue/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/vue/</link>
       <pubDate>Fri, 19 Mar 2021 00:39:36 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/vue/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/vue/</guid>
       <description></description>
     </item>
     <item>
       <title>前端</title>
-      <link>http://localhost:1313/blog/public/tags/%E5%89%8D%E7%AB%AF/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/%E5%89%8D%E7%AB%AF/</link>
       <pubDate>Fri, 19 Mar 2021 00:39:36 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/%E5%89%8D%E7%AB%AF/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/%E5%89%8D%E7%AB%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>Ramdisk</title>
-      <link>http://localhost:1313/blog/public/tags/ramdisk/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/ramdisk/</link>
       <pubDate>Mon, 01 Mar 2021 13:29:36 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/ramdisk/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/ramdisk/</guid>
       <description></description>
     </item>
     <item>
       <title>Tmpfs</title>
-      <link>http://localhost:1313/blog/public/tags/tmpfs/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/tmpfs/</link>
       <pubDate>Mon, 01 Mar 2021 13:29:36 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/tmpfs/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/tmpfs/</guid>
       <description></description>
     </item>
     <item>
       <title>自訂</title>
-      <link>http://localhost:1313/blog/public/tags/%E8%87%AA%E8%A8%82/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/%E8%87%AA%E8%A8%82/</link>
       <pubDate>Mon, 01 Mar 2021 13:01:33 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/%E8%87%AA%E8%A8%82/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/%E8%87%AA%E8%A8%82/</guid>
       <description></description>
     </item>
     <item>
       <title>Ssd</title>
-      <link>http://localhost:1313/blog/public/tags/ssd/</link>
+      <link>https://alextrinityblock.github.io/blog/public/tags/ssd/</link>
       <pubDate>Mon, 01 Mar 2021 11:24:26 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/tags/ssd/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/tags/ssd/</guid>
       <description></description>
     </item>
   </channel>

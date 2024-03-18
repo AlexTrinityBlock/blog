@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Service on 無面者小站</title>
-    <link>http://localhost:1313/blog/public/tags/service/</link>
+    <link>https://alextrinityblock.github.io/blog/public/tags/service/</link>
     <description>Recent content in Service on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <lastBuildDate>Fri, 23 Feb 2024 13:50:44 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/public/tags/service/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/service/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux Service小筆記</title>
-      <link>http://localhost:1313/blog/public/post/linux/linux_service%E5%B0%8F%E7%AD%86%E8%A8%98/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/linux/linux_service%E5%B0%8F%E7%AD%86%E8%A8%98/</link>
       <pubDate>Fri, 23 Feb 2024 13:50:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/linux/linux_service%E5%B0%8F%E7%AD%86%E8%A8%98/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/linux/linux_service%E5%B0%8F%E7%AD%86%E8%A8%98/</guid>
       <description>Service 啟動與關閉 Service 可以用在希望開機時自動運作一組程式或者 Bash 腳本，可以自動的啟動或者關閉一連串流程，甚至可以在程式崩潰時重啟。 這類操作由指令 service 與 systemctl</description>
     </item>
   </channel>

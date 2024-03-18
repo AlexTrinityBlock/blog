@@ -320,7 +320,9 @@ iptables -A INPUT -p tcp --dport 22 -s 10.0.0.1 -j ACCEPT
 iptables -A INPUT -p icmp -m icmp --icmp-type any -m limit --limit 20/s -j ACCEPT
 
 # 允許多個 IP 訪問特定的 8443 port 網頁
-iptables -A INPUT -s 10.0.0.1,10.0.0.2,10.0.0.3  -p tcp --dport 8443 -j ACCEPT
+iptables -A INPUT -s 10.0.0.1 -p tcp --dport 8443 -j ACCEPT
+iptables -A INPUT -s 10.0.0.2 -p tcp --dport 8443 -j ACCEPT
+iptables -A INPUT -s 10.0.0.3 -p tcp --dport 8443 -j ACCEPT
 
 # 丟棄其他的封包
 iptables -P INPUT DROP

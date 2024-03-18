@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>伺服器 on 無面者小站</title>
-    <link>http://localhost:1313/blog/public/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/</link>
+    <link>https://alextrinityblock.github.io/blog/public/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/</link>
     <description>Recent content in 伺服器 on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <lastBuildDate>Sat, 24 Apr 2021 14:43:44 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/public/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/%E4%BC%BA%E6%9C%8D%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ngrok使用</title>
-      <link>http://localhost:1313/blog/public/post/network/ngrok%E4%BD%BF%E7%94%A8/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/network/ngrok%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sat, 24 Apr 2021 14:43:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/network/ngrok%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/network/ngrok%E4%BD%BF%E7%94%A8/</guid>
       <description>人不可能一帆風順，人生低潮的時候，還是需要能遠端展示網頁的工具 當手邊沒太多錢訂購vps或者是固定ip網路時&amp;hellip;就靠ngrok架站</description>
     </item>
   </channel>

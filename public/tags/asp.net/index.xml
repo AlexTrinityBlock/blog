@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ASP.net on 無面者小站</title>
-    <link>http://localhost:1313/blog/public/tags/asp.net/</link>
+    <link>https://alextrinityblock.github.io/blog/public/tags/asp.net/</link>
     <description>Recent content in ASP.net on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <lastBuildDate>Tue, 01 Mar 2022 12:00:44 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/public/tags/asp.net/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/asp.net/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ASP.net找不到csc.exe</title>
-      <link>http://localhost:1313/blog/public/post/asp.net/asp.net%E6%89%BE%E4%B8%8D%E5%88%B0csc.exe/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/asp.net/asp.net%E6%89%BE%E4%B8%8D%E5%88%B0csc.exe/</link>
       <pubDate>Tue, 01 Mar 2022 12:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/asp.net/asp.net%E6%89%BE%E4%B8%8D%E5%88%B0csc.exe/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/asp.net/asp.net%E6%89%BE%E4%B8%8D%E5%88%B0csc.exe/</guid>
       <description>打開上排選單的 工具&amp;gt;NuGet套件管理員&amp;gt;套件管理器主控台 然後輸入以下指令。 Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r</description>
     </item>
     <item>
       <title>將ASP.net部屬到Azure的AppService</title>
-      <link>http://localhost:1313/blog/public/post/asp.net/%E5%B0%87asp.net%E9%83%A8%E5%B1%AC%E5%88%B0azure%E7%9A%84appservice/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/asp.net/%E5%B0%87asp.net%E9%83%A8%E5%B1%AC%E5%88%B0azure%E7%9A%84appservice/</link>
       <pubDate>Wed, 23 Feb 2022 00:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/asp.net/%E5%B0%87asp.net%E9%83%A8%E5%B1%AC%E5%88%B0azure%E7%9A%84appservice/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/asp.net/%E5%B0%87asp.net%E9%83%A8%E5%B1%AC%E5%88%B0azure%E7%9A%84appservice/</guid>
       <description>啥是Azure的App Service服務? App Service是個微軟提供，要花錢的服務。 不過還好在碩士生涯中，學校有提供教育用的點數可以使用，</description>
     </item>
     <item>
       <title>ASP.net中建立Model</title>
-      <link>http://localhost:1313/blog/public/post/asp.net/asp.net%E4%B8%AD%E5%BB%BA%E7%AB%8Bmodel/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/asp.net/asp.net%E4%B8%AD%E5%BB%BA%E7%AB%8Bmodel/</link>
       <pubDate>Tue, 22 Feb 2022 12:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/asp.net/asp.net%E4%B8%AD%E5%BB%BA%E7%AB%8Bmodel/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/asp.net/asp.net%E4%B8%AD%E5%BB%BA%E7%AB%8Bmodel/</guid>
       <description>啥是MVC架構 模型（Model） - 演算法、資料庫&amp;hellip;等等程式操作。 視圖（View） - 圖形介面(此指網頁前端)相關。 控制器（Con</description>
     </item>
     <item>
       <title>ASP.net架構簡介</title>
-      <link>http://localhost:1313/blog/public/post/asp.net/asp.net%E6%9E%B6%E6%A7%8B%E7%B0%A1%E4%BB%8B/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/asp.net/asp.net%E6%9E%B6%E6%A7%8B%E7%B0%A1%E4%BB%8B/</link>
       <pubDate>Tue, 15 Feb 2022 12:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/asp.net/asp.net%E6%9E%B6%E6%A7%8B%E7%B0%A1%E4%BB%8B/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/asp.net/asp.net%E6%9E%B6%E6%A7%8B%E7%B0%A1%E4%BB%8B/</guid>
       <description>ASP.net初探 這只是隨意概括的淺談ASP.net的架構。 在這邊展示的是ASP.net的MVC架構網站的一個概括模型。 進入點與外層資料夾結</description>
     </item>
   </channel>
