@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MAC on 無面者小站</title>
-    <link>https://alextrinityblock.github.io/blog/public/tags/mac/</link>
+    <link>http://localhost:1313/blog/public/tags/mac/</link>
     <description>Recent content in MAC on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <lastBuildDate>Wed, 21 Jul 2021 10:00:49 +0800</lastBuildDate>
-    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/public/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MAC位址掩蔽</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/secure/mac%E4%BD%8D%E5%9D%80%E6%8E%A9%E8%94%BD/</link>
+      <link>http://localhost:1313/blog/public/post/secure/mac%E4%BD%8D%E5%9D%80%E6%8E%A9%E8%94%BD/</link>
       <pubDate>Wed, 21 Jul 2021 10:00:49 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/secure/mac%E4%BD%8D%E5%9D%80%E6%8E%A9%E8%94%BD/</guid>
+      <guid>http://localhost:1313/blog/public/post/secure/mac%E4%BD%8D%E5%9D%80%E6%8E%A9%E8%94%BD/</guid>
       <description>作者 阿維 環境 Ubuntu 20.04 概念 我們的IP位址，除非申請固定IP否則是會變化的，如果你願意也可以用特定軟體來改變或借用別人的IP位址。 所以既然IP是可以</description>
     </item>
   </channel>

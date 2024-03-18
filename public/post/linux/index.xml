@@ -2,164 +2,164 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>一個凡人的筆記 on 無面者小站</title>
-    <link>https://alextrinityblock.github.io/blog/public/post/linux/</link>
+    <link>http://localhost:1313/blog/public/post/linux/</link>
     <description>Recent content in 一個凡人的筆記 on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <lastBuildDate>Sun, 10 Mar 2024 13:29:36 +0800</lastBuildDate>
-    <atom:link href="https://alextrinityblock.github.io/blog/public/post/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/public/post/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>adduser 和 useradd 的差異</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/adduser-%E5%92%8C-useradd-%E7%9A%84%E5%B7%AE%E7%95%B0/</link>
+      <link>http://localhost:1313/blog/public/post/linux/adduser-%E5%92%8C-useradd-%E7%9A%84%E5%B7%AE%E7%95%B0/</link>
       <pubDate>Sun, 10 Mar 2024 13:29:36 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/adduser-%E5%92%8C-useradd-%E7%9A%84%E5%B7%AE%E7%95%B0/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/adduser-%E5%92%8C-useradd-%E7%9A%84%E5%B7%AE%E7%95%B0/</guid>
       <description>adduser 和 useradd 的差異: adduser 用法 sudo adduser [選項] 用戶名 # 無選項添加新用戶: 會提示您輸入用戶的密碼和其他信息。 sudo adduser 用戶名 # 添加系統用戶: 這將添加一個沒有家目錄</description>
     </item>
     <item>
       <title>linux常用解壓縮指令</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%A3%93%E7%B8%AE%E6%8C%87%E4%BB%A4/</link>
+      <link>http://localhost:1313/blog/public/post/linux/linux%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%A3%93%E7%B8%AE%E6%8C%87%E4%BB%A4/</link>
       <pubDate>Sat, 09 Mar 2024 21:00:25 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%A3%93%E7%B8%AE%E6%8C%87%E4%BB%A4/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/linux%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%A3%93%E7%B8%AE%E6%8C%87%E4%BB%A4/</guid>
       <description>tar 假定我們有個目錄稱為 ./my 壓縮 # 壓縮 tar -czvf my.tar.gz ./my # 單純歸檔 tar -cvf my.tar ./my c：建立一個新的歸檔檔案。 z：使用 gzip 壓縮。 v：顯示執行過程中的詳細資訊（verb</description>
     </item>
     <item>
       <title>iptables筆記-1</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/iptables%E7%AD%86%E8%A8%98-1/</link>
+      <link>http://localhost:1313/blog/public/post/linux/iptables%E7%AD%86%E8%A8%98-1/</link>
       <pubDate>Sat, 09 Mar 2024 11:39:25 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/iptables%E7%AD%86%E8%A8%98-1/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/iptables%E7%AD%86%E8%A8%98-1/</guid>
       <description>iptables 是什麼? iptables 是 Linux 內核中的防火牆軟體 netfilter 的管理工具，位於使用者空間，同時也是 netfilter 的一部分。 Netfilter 位於內核空間，不僅有網路地址轉換的功能，也具備資料包內</description>
     </item>
     <item>
       <title>Linux Service小筆記</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/linux_service%E5%B0%8F%E7%AD%86%E8%A8%98/</link>
+      <link>http://localhost:1313/blog/public/post/linux/linux_service%E5%B0%8F%E7%AD%86%E8%A8%98/</link>
       <pubDate>Fri, 23 Feb 2024 13:50:44 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/linux_service%E5%B0%8F%E7%AD%86%E8%A8%98/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/linux_service%E5%B0%8F%E7%AD%86%E8%A8%98/</guid>
       <description>Service 啟動與關閉 Service 可以用在希望開機時自動運作一組程式或者 Bash 腳本，可以自動的啟動或者關閉一連串流程，甚至可以在程式崩潰時重啟。 這類操作由指令 service 與 systemctl</description>
     </item>
     <item>
       <title>Linux網路基本指令1</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/linux%E7%B6%B2%E8%B7%AF%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A41/</link>
+      <link>http://localhost:1313/blog/public/post/linux/linux%E7%B6%B2%E8%B7%AF%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A41/</link>
       <pubDate>Thu, 08 Feb 2024 22:00:44 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/linux%E7%B6%B2%E8%B7%AF%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A41/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/linux%E7%B6%B2%E8%B7%AF%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A41/</guid>
       <description>ip 類網路指令 以下指令僅在重新啟動前生效，如果要長期保存，需要根據各 Linux 發行版不同實踐調整設定檔案。 # 列出介面 ip link # 查詢個別網卡的資訊 ip addr show eth0 ip</description>
     </item>
     <item>
       <title>linux查看Journalctl的log</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/linux%E6%9F%A5%E7%9C%8B/</link>
+      <link>http://localhost:1313/blog/public/post/linux/linux%E6%9F%A5%E7%9C%8B/</link>
       <pubDate>Tue, 06 Feb 2024 12:01:44 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/linux%E6%9F%A5%E7%9C%8B/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/linux%E6%9F%A5%E7%9C%8B/</guid>
       <description>Journalctl 檢查近期 Linux 的Log。 -f: 在終端機上持續輸出。 -n 100: 近期 100 條 Log。 journalctl -f -n 100</description>
     </item>
     <item>
       <title>nginx配置多個reverse-proxy</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/nginx%E9%85%8D%E7%BD%AE%E5%A4%9A%E5%80%8Breverse-proxy/</link>
+      <link>http://localhost:1313/blog/public/post/linux/nginx%E9%85%8D%E7%BD%AE%E5%A4%9A%E5%80%8Breverse-proxy/</link>
       <pubDate>Tue, 21 Nov 2023 21:29:36 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/nginx%E9%85%8D%E7%BD%AE%E5%A4%9A%E5%80%8Breverse-proxy/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/nginx%E9%85%8D%E7%BD%AE%E5%A4%9A%E5%80%8Breverse-proxy/</guid>
       <description>我們可以看到 nginx 的配置檔案位於下面的位置。 /etc/nginx/nginx.conf 我們可以用下列方法來重新導向我們的 Domain name，可以導向容器，或者其他運作中的程式實例。 nginx.conf server { server_name example1.com; location</description>
     </item>
     <item>
       <title>SSH使用特定PEM檔案登入</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/ssh%E4%BD%BF%E7%94%A8%E7%89%B9%E5%AE%9Apem%E6%AA%94%E6%A1%88%E7%99%BB%E5%85%A5/</link>
+      <link>http://localhost:1313/blog/public/post/linux/ssh%E4%BD%BF%E7%94%A8%E7%89%B9%E5%AE%9Apem%E6%AA%94%E6%A1%88%E7%99%BB%E5%85%A5/</link>
       <pubDate>Tue, 05 Jul 2022 09:00:36 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/ssh%E4%BD%BF%E7%94%A8%E7%89%B9%E5%AE%9Apem%E6%AA%94%E6%A1%88%E7%99%BB%E5%85%A5/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/ssh%E4%BD%BF%E7%94%A8%E7%89%B9%E5%AE%9Apem%E6%AA%94%E6%A1%88%E7%99%BB%E5%85%A5/</guid>
       <description>我們常常使用SSH登入某台主機或電腦，SSH可以用密碼或者金鑰檔案進行登入。 由於金鑰檔案的長度會比人類可以記憶的密碼長的多，所以通常而言更加</description>
     </item>
     <item>
       <title>VirtualBox虛擬機作為伺服器</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/virtualbox%E8%99%9B%E6%93%AC%E6%A9%9F%E4%BD%9C%E7%82%BA%E4%BC%BA%E6%9C%8D%E5%99%A8/</link>
+      <link>http://localhost:1313/blog/public/post/linux/virtualbox%E8%99%9B%E6%93%AC%E6%A9%9F%E4%BD%9C%E7%82%BA%E4%BC%BA%E6%9C%8D%E5%99%A8/</link>
       <pubDate>Mon, 14 Mar 2022 15:00:36 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/virtualbox%E8%99%9B%E6%93%AC%E6%A9%9F%E4%BD%9C%E7%82%BA%E4%BC%BA%E6%9C%8D%E5%99%A8/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/virtualbox%E8%99%9B%E6%93%AC%E6%A9%9F%E4%BD%9C%E7%82%BA%E4%BC%BA%E6%9C%8D%E5%99%A8/</guid>
       <description>如果我們今天想要架設一個小小的服務，或者網頁，甚至只是想在一個乾淨的環境開發網站，不希望開發完畢後電腦裡頭還留下一大堆網頁開發的程式，這個時</description>
     </item>
     <item>
       <title>好用的linux工作管理員</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/%E5%A5%BD%E7%94%A8%E7%9A%84linux%E5%B7%A5%E4%BD%9C%E7%AE%A1%E7%90%86%E5%93%A1/</link>
+      <link>http://localhost:1313/blog/public/post/linux/%E5%A5%BD%E7%94%A8%E7%9A%84linux%E5%B7%A5%E4%BD%9C%E7%AE%A1%E7%90%86%E5%93%A1/</link>
       <pubDate>Mon, 14 Mar 2022 13:29:36 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/%E5%A5%BD%E7%94%A8%E7%9A%84linux%E5%B7%A5%E4%BD%9C%E7%AE%A1%E7%90%86%E5%93%A1/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/%E5%A5%BD%E7%94%A8%E7%9A%84linux%E5%B7%A5%E4%BD%9C%E7%AE%A1%E7%90%86%E5%93%A1/</guid>
       <description>這是一款非常好用的整合linux工作管理員。 跟Bashtop,Gotop這類的終端機管理員比起來，可以用滑鼠操作的GUI是一大亮點。 除此之外</description>
     </item>
     <item>
       <title>linux下了解自己的連線與port狀態</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/linux%E4%B8%8B%E4%BA%86%E8%A7%A3%E8%87%AA%E5%B7%B1%E7%9A%84%E9%80%A3%E7%B7%9A%E8%88%87port%E7%8B%80%E6%85%8B/</link>
+      <link>http://localhost:1313/blog/public/post/linux/linux%E4%B8%8B%E4%BA%86%E8%A7%A3%E8%87%AA%E5%B7%B1%E7%9A%84%E9%80%A3%E7%B7%9A%E8%88%87port%E7%8B%80%E6%85%8B/</link>
       <pubDate>Fri, 16 Jul 2021 10:29:36 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/linux%E4%B8%8B%E4%BA%86%E8%A7%A3%E8%87%AA%E5%B7%B1%E7%9A%84%E9%80%A3%E7%B7%9A%E8%88%87port%E7%8B%80%E6%85%8B/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/linux%E4%B8%8B%E4%BA%86%E8%A7%A3%E8%87%AA%E5%B7%B1%E7%9A%84%E9%80%A3%E7%B7%9A%E8%88%87port%E7%8B%80%E6%85%8B/</guid>
       <description>大綱 本文章探討兩個可以用來了解當前port狀態的工具，ss與NetHogs。 ss是大多是linux發行版的內建工具。 NetHogs則可以非常</description>
     </item>
     <item>
       <title>ventoy在隨身碟上裝多個作業系統</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/ventoy%E5%9C%A8%E9%9A%A8%E8%BA%AB%E7%A2%9F%E4%B8%8A%E8%A3%9D%E5%A4%9A%E5%80%8B%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1/</link>
+      <link>http://localhost:1313/blog/public/post/linux/ventoy%E5%9C%A8%E9%9A%A8%E8%BA%AB%E7%A2%9F%E4%B8%8A%E8%A3%9D%E5%A4%9A%E5%80%8B%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1/</link>
       <pubDate>Thu, 08 Jul 2021 10:29:36 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/ventoy%E5%9C%A8%E9%9A%A8%E8%BA%AB%E7%A2%9F%E4%B8%8A%E8%A3%9D%E5%A4%9A%E5%80%8B%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/ventoy%E5%9C%A8%E9%9A%A8%E8%BA%AB%E7%A2%9F%E4%B8%8A%E8%A3%9D%E5%A4%9A%E5%80%8B%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1/</guid>
       <description>傳統隨身碟安裝作業統的方法 傳統上，我們會一個隨身碟安裝一個作業系統安裝程式或Live CD。當然也可以採取用分割區的方式，來在單個隨身碟安裝多</description>
     </item>
     <item>
       <title>清理apt暫時存檔</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/%E6%B8%85%E7%90%86apt%E6%9A%AB%E6%99%82%E5%AD%98%E6%AA%94/</link>
+      <link>http://localhost:1313/blog/public/post/linux/%E6%B8%85%E7%90%86apt%E6%9A%AB%E6%99%82%E5%AD%98%E6%AA%94/</link>
       <pubDate>Wed, 02 Jun 2021 13:29:36 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/%E6%B8%85%E7%90%86apt%E6%9A%AB%E6%99%82%E5%AD%98%E6%AA%94/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/%E6%B8%85%E7%90%86apt%E6%9A%AB%E6%99%82%E5%AD%98%E6%AA%94/</guid>
       <description>下載套件的暫存路徑清除 當apt套件管理工具在安裝套件時，會先對套件進行下載。 下載完畢尚未安裝的套件會被儲存在以下路徑: /var/cache/apt/archives 當這個目錄裡頭的東西</description>
     </item>
     <item>
       <title>安裝KVM</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/%E5%AE%89%E8%A3%9Dkvm/</link>
+      <link>http://localhost:1313/blog/public/post/linux/%E5%AE%89%E8%A3%9Dkvm/</link>
       <pubDate>Fri, 28 May 2021 13:29:36 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/%E5%AE%89%E8%A3%9Dkvm/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/%E5%AE%89%E8%A3%9Dkvm/</guid>
       <description>本篇討論在linux mint上頭安裝kvm虛擬機的方法。 檢查CPU相容性 cpu檢查工具 sudo apt install cpu-checker 檢查 sudo kvm-ok apt 套件安裝 sudo apt install -y qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager ovmf 啟動虛</description>
     </item>
     <item>
       <title>curl遠端執行shell</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/curl%E5%9F%B7%E8%A1%8C%E9%81%A0%E7%AB%AFshell/</link>
+      <link>http://localhost:1313/blog/public/post/linux/curl%E5%9F%B7%E8%A1%8C%E9%81%A0%E7%AB%AFshell/</link>
       <pubDate>Sat, 01 May 2021 13:29:36 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/curl%E5%9F%B7%E8%A1%8C%E9%81%A0%E7%AB%AFshell/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/curl%E5%9F%B7%E8%A1%8C%E9%81%A0%E7%AB%AFshell/</guid>
       <description>遠端(例如github或網頁)執行shell script的方法， 此方法需要curl套件。 bash &amp;lt; &amp;lt;(curl -s 網址) 這種方法執行的shell中不可加入su</description>
     </item>
     <item>
       <title>Bashtop好看點的主機狀態面板</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/bashtop%E5%A5%BD%E7%9C%8B%E9%BB%9E%E7%9A%84%E4%B8%BB%E6%A9%9F%E7%8B%80%E6%85%8B%E9%9D%A2%E6%9D%BF/</link>
+      <link>http://localhost:1313/blog/public/post/linux/bashtop%E5%A5%BD%E7%9C%8B%E9%BB%9E%E7%9A%84%E4%B8%BB%E6%A9%9F%E7%8B%80%E6%85%8B%E9%9D%A2%E6%9D%BF/</link>
       <pubDate>Wed, 28 Apr 2021 11:39:25 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/bashtop%E5%A5%BD%E7%9C%8B%E9%BB%9E%E7%9A%84%E4%B8%BB%E6%A9%9F%E7%8B%80%E6%85%8B%E9%9D%A2%E6%9D%BF/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/bashtop%E5%A5%BD%E7%9C%8B%E9%BB%9E%E7%9A%84%E4%B8%BB%E6%A9%9F%E7%8B%80%E6%85%8B%E9%9D%A2%E6%9D%BF/</guid>
       <description>希望有個看起來酷炫又詳細的主機狀態顯示器嗎？ bashtop符合你的需求！ 在debian上頭安裝bashtop sudo add-apt-repository ppa:bashtop-monitor/bashtop sudo apt update sudo apt install bashtop</description>
     </item>
     <item>
       <title>Linux_mint卡在開始logo的解決</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/linux_mint%E5%8D%A1%E5%9C%A8%E9%96%8B%E5%A7%8Blogo%E7%9A%84%E8%A7%A3%E6%B1%BA/</link>
+      <link>http://localhost:1313/blog/public/post/linux/linux_mint%E5%8D%A1%E5%9C%A8%E9%96%8B%E5%A7%8Blogo%E7%9A%84%E8%A7%A3%E6%B1%BA/</link>
       <pubDate>Sat, 20 Mar 2021 11:07:13 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/linux_mint%E5%8D%A1%E5%9C%A8%E9%96%8B%E5%A7%8Blogo%E7%9A%84%E8%A7%A3%E6%B1%BA/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/linux_mint%E5%8D%A1%E5%9C%A8%E9%96%8B%E5%A7%8Blogo%E7%9A%84%E8%A7%A3%E6%B1%BA/</guid>
       <description>Linux_mint卡在開始logo的解決 linux mint 在某些情況下會卡在開機logo 而引發這種情況的可能原因 常常與顯示卡（gpu）有關連 若顯示卡是n</description>
     </item>
     <item>
       <title>把記憶體當硬碟用</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/%E6%8A%8A%E8%A8%98%E6%86%B6%E9%AB%94%E7%95%B6%E7%A1%AC%E7%A2%9F%E7%94%A8/</link>
+      <link>http://localhost:1313/blog/public/post/linux/%E6%8A%8A%E8%A8%98%E6%86%B6%E9%AB%94%E7%95%B6%E7%A1%AC%E7%A2%9F%E7%94%A8/</link>
       <pubDate>Mon, 01 Mar 2021 13:29:36 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/%E6%8A%8A%E8%A8%98%E6%86%B6%E9%AB%94%E7%95%B6%E7%A1%AC%E7%A2%9F%E7%94%A8/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/%E6%8A%8A%E8%A8%98%E6%86%B6%E9%AB%94%E7%95%B6%E7%A1%AC%E7%A2%9F%E7%94%A8/</guid>
       <description>你希望有個資料夾可以關機之後就徹底清除嗎？ 你感覺某個檔案在硬碟裡的執行速度還是不夠快嗎？ 這時候你可以啟用ramdisk 修改檔案系統表 已roo</description>
     </item>
     <item>
       <title>Linux Mint20更換開機圖示</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/linux-mint20%E6%9B%B4%E6%8F%9B%E9%96%8B%E6%A9%9F%E5%9C%96%E7%A4%BA/</link>
+      <link>http://localhost:1313/blog/public/post/linux/linux-mint20%E6%9B%B4%E6%8F%9B%E9%96%8B%E6%A9%9F%E5%9C%96%E7%A4%BA/</link>
       <pubDate>Mon, 01 Mar 2021 13:01:33 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/linux-mint20%E6%9B%B4%E6%8F%9B%E9%96%8B%E6%A9%9F%E5%9C%96%E7%A4%BA/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/linux-mint20%E6%9B%B4%E6%8F%9B%E9%96%8B%E6%A9%9F%E5%9C%96%E7%A4%BA/</guid>
       <description>下載喜歡的開機圖示 下載開機圖示1 下載開機圖示2 打開圖示資料夾取出最裡層的資料夾 然後將其複製到以下位置 /usr/share/plymouth/themes 修改圖示檔案設定文件 修改預設的開機圖示</description>
     </item>
     <item>
       <title>Linux在SSD上的損耗減少策略2(關閉系統紀錄)</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/</link>
+      <link>http://localhost:1313/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/</link>
       <pubDate>Mon, 01 Mar 2021 11:24:26 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A52%E9%97%9C%E9%96%89%E7%B3%BB%E7%B5%B1%E7%B4%80%E9%8C%84/</guid>
       <description>在linux中，為了明確清楚電腦曾經發生過什麼，所以會將一切紀錄記載在以下資料夾 /var/log 但是這樣終究會損耗SSD的寫入次數 而且紀錄檔會越來越大 如果</description>
     </item>
     <item>
       <title>linux在SSD上的損耗減少策略1(佔存檔移入記憶體)</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/</link>
+      <link>http://localhost:1313/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/</link>
       <pubDate>Mon, 01 Mar 2021 01:04:15 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/linux%E5%9C%A8ssd%E4%B8%8A%E7%9A%84%E6%90%8D%E8%80%97%E6%B8%9B%E5%B0%91%E7%AD%96%E7%95%A51%E4%BD%94%E5%AD%98%E6%AA%94%E7%A7%BB%E5%85%A5%E8%A8%98%E6%86%B6%E9%AB%94/</guid>
       <description>概述 固態硬碟SSD存在著寫入次數限制 而linux上頭各應用程式 暫時存在的檔案通常會放在 /tmp 目錄之中 我們該如何減少/tmp 中頻繁的擦寫帶來的損耗</description>
     </item>
     <item>
       <title>手動連接裝置或磁碟槽（掛載）</title>
-      <link>https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/</link>
+      <link>http://localhost:1313/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/</link>
       <pubDate>Sun, 28 Feb 2021 00:46:22 +0800</pubDate>
-      <guid>https://alextrinityblock.github.io/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/</guid>
+      <guid>http://localhost:1313/blog/public/post/linux/%E6%89%8B%E5%8B%95%E9%80%A3%E6%8E%A5%E8%A3%9D%E7%BD%AE%E6%88%96%E7%A3%81%E7%A2%9F%E6%A7%BD%E6%8E%9B%E8%BC%89/</guid>
       <description>假設今天，你的硬碟同時存在linux與windows 你啟動linux後希望存取windows的D槽 此時D槽被標記為 /dev/sda2 這時你可以先建立資料夾 /media/MyDisk</description>
     </item>
   </channel>
