@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Frontend on 無面者小站</title>
-    <link>http://localhost:1313/blog/public/tags/frontend/</link>
+    <link>https://alextrinityblock.github.io/blog/public/tags/frontend/</link>
     <description>Recent content in Frontend on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <lastBuildDate>Fri, 26 Aug 2022 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/public/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何有效的使用Fetch函數</title>
-      <link>http://localhost:1313/blog/public/post/frontend/%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E7%9A%84%E4%BD%BF%E7%94%A8fetch%E5%87%BD%E6%95%B8/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/frontend/%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E7%9A%84%E4%BD%BF%E7%94%A8fetch%E5%87%BD%E6%95%B8/</link>
       <pubDate>Fri, 26 Aug 2022 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/frontend/%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E7%9A%84%E4%BD%BF%E7%94%A8fetch%E5%87%BD%E6%95%B8/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/frontend/%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E7%9A%84%E4%BD%BF%E7%94%A8fetch%E5%87%BD%E6%95%B8/</guid>
       <description>由於當前Fetch這種官方的前端AJAX函數，已經可以簡短的實現，再不換頁的情況下傳送訊息。所以可能的話盡量使用原生的Fetch函數來實現A</description>
     </item>
     <item>
       <title>按照比例縮放元素的vh與vw</title>
-      <link>http://localhost:1313/blog/public/post/frontend/%E6%8C%89%E7%85%A7%E6%AF%94%E4%BE%8B%E7%B8%AE%E6%94%BE%E5%85%83%E7%B4%A0%E7%9A%84vh%E8%88%87vw/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/frontend/%E6%8C%89%E7%85%A7%E6%AF%94%E4%BE%8B%E7%B8%AE%E6%94%BE%E5%85%83%E7%B4%A0%E7%9A%84vh%E8%88%87vw/</link>
       <pubDate>Thu, 02 Jun 2022 12:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/frontend/%E6%8C%89%E7%85%A7%E6%AF%94%E4%BE%8B%E7%B8%AE%E6%94%BE%E5%85%83%E7%B4%A0%E7%9A%84vh%E8%88%87vw/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/frontend/%E6%8C%89%E7%85%A7%E6%AF%94%E4%BE%8B%E7%B8%AE%E6%94%BE%E5%85%83%E7%B4%A0%E7%9A%84vh%E8%88%87vw/</guid>
       <description>當我們想按照畫面比例縮放一個元素時 我們可以用以下兩種方式 %比例 width: 30%; 這個元素為父元素寬度的30%。 vw,vh比例 width: 100vw; 這個元素為瀏覽網頁的裝置的</description>
     </item>
     <item>
       <title>Bootstrap響應式網頁出現白邊</title>
-      <link>http://localhost:1313/blog/public/post/frontend/bootstrap%E9%9F%BF%E6%87%89%E5%BC%8F%E7%B6%B2%E9%A0%81%E5%87%BA%E7%8F%BE%E7%99%BD%E9%82%8A/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/frontend/bootstrap%E9%9F%BF%E6%87%89%E5%BC%8F%E7%B6%B2%E9%A0%81%E5%87%BA%E7%8F%BE%E7%99%BD%E9%82%8A/</link>
       <pubDate>Thu, 02 Jun 2022 09:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/frontend/bootstrap%E9%9F%BF%E6%87%89%E5%BC%8F%E7%B6%B2%E9%A0%81%E5%87%BA%E7%8F%BE%E7%99%BD%E9%82%8A/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/frontend/bootstrap%E9%9F%BF%E6%87%89%E5%BC%8F%E7%B6%B2%E9%A0%81%E5%87%BA%E7%8F%BE%E7%99%BD%E9%82%8A/</guid>
       <description>問題 在使用Bootstrap時，響應式網頁在手機上出現了白色的邊框。 雖然已經使用.container或者.container-fluid了，</description>
     </item>
   </channel>

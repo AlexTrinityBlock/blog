@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>資安 on 無面者小站</title>
-    <link>http://localhost:1313/blog/public/tags/%E8%B3%87%E5%AE%89/</link>
+    <link>https://alextrinityblock.github.io/blog/public/tags/%E8%B3%87%E5%AE%89/</link>
     <description>Recent content in 資安 on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <lastBuildDate>Sun, 03 Oct 2021 22:00:49 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/public/tags/%E8%B3%87%E5%AE%89/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/%E8%B3%87%E5%AE%89/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>資訊安全與管理筆記</title>
-      <link>http://localhost:1313/blog/public/post/class/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E8%88%87%E7%AE%A1%E7%90%86%E7%AD%86%E8%A8%98/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/class/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E8%88%87%E7%AE%A1%E7%90%86%E7%AD%86%E8%A8%98/</link>
       <pubDate>Sun, 03 Oct 2021 22:00:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/class/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E8%88%87%E7%AE%A1%E7%90%86%E7%AD%86%E8%A8%98/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/class/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E8%88%87%E7%AE%A1%E7%90%86%E7%AD%86%E8%A8%98/</guid>
       <description>目錄 第一週 第二週 第三週 第一週 推薦書 William Stallings. Cryptography and Network Security: Principles and Practice (7th Edition). Prentice Hall, 2017(主要) Behrouz A. Forouzan. Introduction to Cryptography and Network Security. McGraw-Hill, 2007. Douglas R. Stinson. Cryptography : theory and practice (3/e). Boca Raton : Chapman &amp;amp; Hall/CRC, 2006. Bruce Schneier. Applied Cryptography: Protocols,</description>
     </item>
     <item>
       <title>MAC位址掩蔽</title>
-      <link>http://localhost:1313/blog/public/post/secure/mac%E4%BD%8D%E5%9D%80%E6%8E%A9%E8%94%BD/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/secure/mac%E4%BD%8D%E5%9D%80%E6%8E%A9%E8%94%BD/</link>
       <pubDate>Wed, 21 Jul 2021 10:00:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/secure/mac%E4%BD%8D%E5%9D%80%E6%8E%A9%E8%94%BD/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/secure/mac%E4%BD%8D%E5%9D%80%E6%8E%A9%E8%94%BD/</guid>
       <description>作者 阿維 環境 Ubuntu 20.04 概念 我們的IP位址，除非申請固定IP否則是會變化的，如果你願意也可以用特定軟體來改變或借用別人的IP位址。 所以既然IP是可以</description>
     </item>
     <item>
       <title>用UFW在ping下隱藏自己</title>
-      <link>http://localhost:1313/blog/public/post/secure/%E7%94%A8ufw%E5%9C%A8ping%E4%B8%8B%E9%9A%B1%E8%97%8F%E8%87%AA%E5%B7%B1/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/secure/%E7%94%A8ufw%E5%9C%A8ping%E4%B8%8B%E9%9A%B1%E8%97%8F%E8%87%AA%E5%B7%B1/</link>
       <pubDate>Tue, 13 Jul 2021 16:00:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/secure/%E7%94%A8ufw%E5%9C%A8ping%E4%B8%8B%E9%9A%B1%E8%97%8F%E8%87%AA%E5%B7%B1/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/secure/%E7%94%A8ufw%E5%9C%A8ping%E4%B8%8B%E9%9A%B1%E8%97%8F%E8%87%AA%E5%B7%B1/</guid>
       <description>作者 阿維 概念 通常入侵與攻擊的第一步驟，是藉由ICMP(例如ping)或其他開放端口服務發掘主機所在的IP位址。 我們可以嘗試先在ICMP的角度</description>
     </item>
     <item>
       <title>公共WIFI網路嗅探</title>
-      <link>http://localhost:1313/blog/public/post/secure/%E5%85%AC%E5%85%B1wifi%E7%B6%B2%E8%B7%AF%E5%97%85%E6%8E%A2/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/secure/%E5%85%AC%E5%85%B1wifi%E7%B6%B2%E8%B7%AF%E5%97%85%E6%8E%A2/</link>
       <pubDate>Thu, 08 Jul 2021 16:00:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/secure/%E5%85%AC%E5%85%B1wifi%E7%B6%B2%E8%B7%AF%E5%97%85%E6%8E%A2/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/secure/%E5%85%AC%E5%85%B1wifi%E7%B6%B2%E8%B7%AF%E5%97%85%E6%8E%A2/</guid>
       <description>作者 阿維 同意條款 閱讀本篇文章等同承諾: 不將相關知識用在任何非法用途 不窺探他人隱私 保持誠實與友善 所有安全測試知識只用於維護安全的目的 測試用的器</description>
     </item>
     <item>
       <title>AppArmor研究_1</title>
-      <link>http://localhost:1313/blog/public/post/secure/apparmor%E7%A0%94%E7%A9%B6_1/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/secure/apparmor%E7%A0%94%E7%A9%B6_1/</link>
       <pubDate>Wed, 16 Jun 2021 10:01:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/secure/apparmor%E7%A0%94%E7%A9%B6_1/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/secure/apparmor%E7%A0%94%E7%A9%B6_1/</guid>
       <description>AppArmor 是一款附帶在Ubuntu linux裡頭的核心安全模組，是用來進行強制存取控制(MAC)的。 假定我們今天運作著PHP網頁伺服器，而裡頭某個漏</description>
     </item>
     <item>
       <title>中斷無線網路的方法</title>
-      <link>http://localhost:1313/blog/public/post/secure/%E4%B8%AD%E6%96%B7%E7%84%A1%E7%B7%9A%E7%B6%B2%E8%B7%AF%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/secure/%E4%B8%AD%E6%96%B7%E7%84%A1%E7%B7%9A%E7%B6%B2%E8%B7%AF%E7%9A%84%E6%96%B9%E6%B3%95/</link>
       <pubDate>Mon, 03 May 2021 10:01:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/secure/%E4%B8%AD%E6%96%B7%E7%84%A1%E7%B7%9A%E7%B6%B2%E8%B7%AF%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/secure/%E4%B8%AD%E6%96%B7%E7%84%A1%E7%B7%9A%E7%B6%B2%E8%B7%AF%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
       <description>警告：此方法只能用於自己的無線網路裝置，目的應該是了解無線網路運作，絕對不能造成他人的困擾或損失，我們應該秉持所有人類都是同胞的心態。就算你</description>
     </item>
     <item>
       <title>檢查下載檔是否被調包</title>
-      <link>http://localhost:1313/blog/public/post/secure/%E6%AA%A2%E6%9F%A5%E4%B8%8B%E8%BC%89%E6%AA%94%E6%98%AF%E5%90%A6%E8%A2%AB%E8%AA%BF%E5%8C%85/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/secure/%E6%AA%A2%E6%9F%A5%E4%B8%8B%E8%BC%89%E6%AA%94%E6%98%AF%E5%90%A6%E8%A2%AB%E8%AA%BF%E5%8C%85/</link>
       <pubDate>Tue, 27 Apr 2021 14:01:49 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/secure/%E6%AA%A2%E6%9F%A5%E4%B8%8B%E8%BC%89%E6%AA%94%E6%98%AF%E5%90%A6%E8%A2%AB%E8%AA%BF%E5%8C%85/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/secure/%E6%AA%A2%E6%9F%A5%E4%B8%8B%E8%BC%89%E6%AA%94%E6%98%AF%E5%90%A6%E8%A2%AB%E8%AA%BF%E5%8C%85/</guid>
       <description>1.檢查檔案的方法 今天假設我們下載了一個檔案，叫做 ubuntu-20.04.2-live-server-amd64.iso 我們要如何檢查是否被High客給調包？ （High客：在網路上無時無刻情緒都很high，會</description>
     </item>
   </channel>

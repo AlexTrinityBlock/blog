@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on 無面者小站</title>
-    <link>http://localhost:1313/blog/public/tags/python/</link>
+    <link>https://alextrinityblock.github.io/blog/public/tags/python/</link>
     <description>Recent content in Python on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <lastBuildDate>Mon, 26 Jul 2021 10:00:44 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/public/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>python網路與安全閱讀心得</title>
-      <link>http://localhost:1313/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E8%88%87%E5%AE%89%E5%85%A8%E8%AE%80%E6%9B%B8%E5%BF%83%E5%BE%97/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E8%88%87%E5%AE%89%E5%85%A8%E8%AE%80%E6%9B%B8%E5%BF%83%E5%BE%97/</link>
       <pubDate>Mon, 26 Jul 2021 10:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E8%88%87%E5%AE%89%E5%85%A8%E8%AE%80%E6%9B%B8%E5%BF%83%E5%BE%97/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E8%88%87%E5%AE%89%E5%85%A8%E8%AE%80%E6%9B%B8%E5%BF%83%E5%BE%97/</guid>
       <description>本篇引用自Mastering python for networking and security一書 文中所有範例都來自該書本與該書本的範例網站 書本的範例儲存庫: https://github.com/PacktPublishing/Mastering-Python-for-Networking-and-Security-Second-Edition 目錄 第一章 從目錄來看，</description>
     </item>
     <item>
       <title>python與byte串與網路</title>
-      <link>http://localhost:1313/blog/public/post/python/python%E8%88%87%E5%AD%97%E5%85%83%E4%B8%B2/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/python/python%E8%88%87%E5%AD%97%E5%85%83%E4%B8%B2/</link>
       <pubDate>Sat, 15 May 2021 00:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/python/python%E8%88%87%E5%AD%97%E5%85%83%E4%B8%B2/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/python/python%E8%88%87%E5%AD%97%E5%85%83%E4%B8%B2/</guid>
       <description>本篇引用自Foundations of Python Network Programming一書 bytes串與網路的關係 在網路傳輸時如socket，是無法直接採取Unico</description>
     </item>
     <item>
       <title>python網路程式03:tcp</title>
-      <link>http://localhost:1313/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F03tcp/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F03tcp/</link>
       <pubDate>Thu, 29 Apr 2021 23:15:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F03tcp/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F03tcp/</guid>
       <description>本篇引用自Foundations of Python Network Programming一書 1.tcp通訊 import argparse, socket #如果長度不符預期，則發出錯誤提示 def recvall(sock, length): data = b&amp;#39;&amp;#39; while len(data) &amp;lt; length: more</description>
     </item>
     <item>
       <title>python網路程式02:udp協定與port</title>
-      <link>http://localhost:1313/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F02udp%E5%8D%94%E5%AE%9A%E8%88%87port/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F02udp%E5%8D%94%E5%AE%9A%E8%88%87port/</link>
       <pubDate>Thu, 29 Apr 2021 22:15:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F02udp%E5%8D%94%E5%AE%9A%E8%88%87port/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F02udp%E5%8D%94%E5%AE%9A%E8%88%87port/</guid>
       <description>本篇引用自Foundations of Python Network Programming一書 1.port的用途 port其實可以看作在網路傳輸訊息上頭的一個小標籤 用來區分</description>
     </item>
     <item>
       <title>python網路程式01:基礎</title>
-      <link>http://localhost:1313/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F01%E5%9F%BA%E7%A4%8E/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F01%E5%9F%BA%E7%A4%8E/</link>
       <pubDate>Thu, 29 Apr 2021 16:15:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F01%E5%9F%BA%E7%A4%8E/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/python/python%E7%B6%B2%E8%B7%AF%E7%A8%8B%E5%BC%8F01%E5%9F%BA%E7%A4%8E/</guid>
       <description>本篇引用自Foundations of Python Network Programming一書 本章討論如何使用python發出http請求 1.用網址取得主機ip import socket if __name__ ==</description>
     </item>
     <item>
       <title>python_virtualenv使用</title>
-      <link>http://localhost:1313/blog/public/post/python/python_virtualenv%E4%BD%BF%E7%94%A8/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/python/python_virtualenv%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Thu, 29 Apr 2021 14:43:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/python/python_virtualenv%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/python/python_virtualenv%E4%BD%BF%E7%94%A8/</guid>
       <description>1.安裝virtualenv虛擬環境 linux mint或ubuntu上頭安裝時可以用apt來進行安裝 sudo apt install virtualenv 或直接用pip3來安裝 pip3 install virtualenv 2.建立虛擬</description>
     </item>
   </channel>

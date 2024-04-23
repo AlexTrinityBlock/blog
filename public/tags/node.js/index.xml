@@ -2,73 +2,73 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Node.js on 無面者小站</title>
-    <link>http://localhost:1313/blog/public/tags/node.js/</link>
+    <link>https://alextrinityblock.github.io/blog/public/tags/node.js/</link>
     <description>Recent content in Node.js on 無面者小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <lastBuildDate>Thu, 18 Aug 2022 09:00:44 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/public/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://alextrinityblock.github.io/blog/public/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>EJS-一個Javascript模板引擎</title>
-      <link>http://localhost:1313/blog/public/post/node.js/ejs-%E4%B8%80%E5%80%8Bjavascript%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/node.js/ejs-%E4%B8%80%E5%80%8Bjavascript%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</link>
       <pubDate>Thu, 18 Aug 2022 09:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/node.js/ejs-%E4%B8%80%E5%80%8Bjavascript%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/node.js/ejs-%E4%B8%80%E5%80%8Bjavascript%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</guid>
       <description>EJS-一個Javascript模板引擎 EJS是個可以像是PHP或者ASP般，在HTML中嵌入後端變數的模板引擎。 使用的語法是這樣的，我們傳</description>
     </item>
     <item>
       <title>建置一個React前端網站</title>
-      <link>http://localhost:1313/blog/public/post/node.js/%E5%BB%BA%E7%BD%AE%E4%B8%80%E5%80%8Breact%E5%89%8D%E7%AB%AF%E7%B6%B2%E7%AB%99/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/node.js/%E5%BB%BA%E7%BD%AE%E4%B8%80%E5%80%8Breact%E5%89%8D%E7%AB%AF%E7%B6%B2%E7%AB%99/</link>
       <pubDate>Fri, 12 Aug 2022 09:30:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/node.js/%E5%BB%BA%E7%BD%AE%E4%B8%80%E5%80%8Breact%E5%89%8D%E7%AB%AF%E7%B6%B2%E7%AB%99/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/node.js/%E5%BB%BA%E7%BD%AE%E4%B8%80%E5%80%8Breact%E5%89%8D%E7%AB%AF%E7%B6%B2%E7%AB%99/</guid>
       <description>更新Node.js 這段請隨著Node.js的版本更新調整。 本文章撰寫的時候，我希望安裝Node.js 16 版，因為此時需要如此才能順利建置Rea</description>
     </item>
     <item>
       <title>NPM初始化資料夾</title>
-      <link>http://localhost:1313/blog/public/post/node.js/npm%E5%88%9D%E5%A7%8B%E5%8C%96%E8%B3%87%E6%96%99%E5%A4%BE/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/node.js/npm%E5%88%9D%E5%A7%8B%E5%8C%96%E8%B3%87%E6%96%99%E5%A4%BE/</link>
       <pubDate>Fri, 12 Aug 2022 09:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/node.js/npm%E5%88%9D%E5%A7%8B%E5%8C%96%E8%B3%87%E6%96%99%E5%A4%BE/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/node.js/npm%E5%88%9D%E5%A7%8B%E5%8C%96%E8%B3%87%E6%96%99%E5%A4%BE/</guid>
       <description>NPM初始化空資料夾 建立一個空資料夾，並且進入資料夾。 mkdir npm-test cd npm-test 輸入npm初始化指令 npm init 然後輸入下列內容: package name: 專案名稱 version: 專案版本 description: 專案介紹 entry point:</description>
     </item>
     <item>
       <title>用Express-generator重新實做路由</title>
-      <link>http://localhost:1313/blog/public/post/node.js/%E7%94%A8express-generator%E9%87%8D%E6%96%B0%E5%AF%A6%E5%81%9A%E8%B7%AF%E7%94%B1/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/node.js/%E7%94%A8express-generator%E9%87%8D%E6%96%B0%E5%AF%A6%E5%81%9A%E8%B7%AF%E7%94%B1/</link>
       <pubDate>Fri, 18 Feb 2022 10:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/node.js/%E7%94%A8express-generator%E9%87%8D%E6%96%B0%E5%AF%A6%E5%81%9A%E8%B7%AF%E7%94%B1/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/node.js/%E7%94%A8express-generator%E9%87%8D%E6%96%B0%E5%AF%A6%E5%81%9A%E8%B7%AF%E7%94%B1/</guid>
       <description>目錄 1.先備知識 2.新增路由檔案 3.修改app.js 先備知識 學會安裝NPM 用Express-generator建立專案 Express-gen</description>
     </item>
     <item>
       <title>Express-generator使用與理解</title>
-      <link>http://localhost:1313/blog/public/post/node.js/express-generator%E4%BD%BF%E7%94%A8%E8%88%87%E7%90%86%E8%A7%A3/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/node.js/express-generator%E4%BD%BF%E7%94%A8%E8%88%87%E7%90%86%E8%A7%A3/</link>
       <pubDate>Thu, 17 Feb 2022 13:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/node.js/express-generator%E4%BD%BF%E7%94%A8%E8%88%87%E7%90%86%E8%A7%A3/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/node.js/express-generator%E4%BD%BF%E7%94%A8%E8%88%87%E7%90%86%E8%A7%A3/</guid>
       <description>目錄 1.先備知識 2.專案進入點/bin/www 3.理解package.json 4.理解app.js 5.調整Morgan的log格式 6.模塊(</description>
     </item>
     <item>
       <title>用Express-generator建立專案</title>
-      <link>http://localhost:1313/blog/public/post/node.js/%E7%94%A8express-generator%E5%BB%BA%E7%AB%8B%E5%B0%88%E6%A1%88/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/node.js/%E7%94%A8express-generator%E5%BB%BA%E7%AB%8B%E5%B0%88%E6%A1%88/</link>
       <pubDate>Wed, 16 Feb 2022 14:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/node.js/%E7%94%A8express-generator%E5%BB%BA%E7%AB%8B%E5%B0%88%E6%A1%88/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/node.js/%E7%94%A8express-generator%E5%BB%BA%E7%AB%8B%E5%B0%88%E6%A1%88/</guid>
       <description>建立一個資料夾稱為web mkdir web 進入資料夾 cd web 安裝express 完整語法 npm install express --save 也可以安裝為開發者模式 npm install express --save-dev 簡化語法 一般模式 npm i express 也可以安裝為</description>
     </item>
     <item>
       <title>使用Express</title>
-      <link>http://localhost:1313/blog/public/post/node.js/%E4%BD%BF%E7%94%A8express/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/node.js/%E4%BD%BF%E7%94%A8express/</link>
       <pubDate>Wed, 16 Feb 2022 13:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/node.js/%E4%BD%BF%E7%94%A8express/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/node.js/%E4%BD%BF%E7%94%A8express/</guid>
       <description>原生的安裝方式 建立一個資料夾稱為web mkdir web 進入資料夾 cd web 安裝express 完整語法 npm install express --save 也可以安裝為開發者模式 npm install express --save-dev 簡化語法 一般模式 npm i</description>
     </item>
     <item>
       <title>執行一個簡單的node.js程式</title>
-      <link>http://localhost:1313/blog/public/post/node.js/%E5%9F%B7%E8%A1%8C%E4%B8%80%E5%80%8B%E7%B0%A1%E5%96%AE%E7%9A%84node.js%E7%A8%8B%E5%BC%8F/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/node.js/%E5%9F%B7%E8%A1%8C%E4%B8%80%E5%80%8B%E7%B0%A1%E5%96%AE%E7%9A%84node.js%E7%A8%8B%E5%BC%8F/</link>
       <pubDate>Wed, 16 Feb 2022 12:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/node.js/%E5%9F%B7%E8%A1%8C%E4%B8%80%E5%80%8B%E7%B0%A1%E5%96%AE%E7%9A%84node.js%E7%A8%8B%E5%BC%8F/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/node.js/%E5%9F%B7%E8%A1%8C%E4%B8%80%E5%80%8B%E7%B0%A1%E5%96%AE%E7%9A%84node.js%E7%A8%8B%E5%BC%8F/</guid>
       <description>Node.js一句話陳述 用javascript在非瀏覽器的本機環境用的直譯器。 一個簡單的javascript的程式 檔案名稱: main.js console.log(&amp;#34;Hello world&amp;#34;); 直接執行 node</description>
     </item>
     <item>
       <title>NPM安裝</title>
-      <link>http://localhost:1313/blog/public/post/node.js/npm%E5%AE%89%E8%A3%9D/</link>
+      <link>https://alextrinityblock.github.io/blog/public/post/node.js/npm%E5%AE%89%E8%A3%9D/</link>
       <pubDate>Tue, 15 Feb 2022 12:00:44 +0800</pubDate>
-      <guid>http://localhost:1313/blog/public/post/node.js/npm%E5%AE%89%E8%A3%9D/</guid>
+      <guid>https://alextrinityblock.github.io/blog/public/post/node.js/npm%E5%AE%89%E8%A3%9D/</guid>
       <description>NPM是啥？ node.js就像是一個登山客，沒有任何裝備時能作到的事情不多，而NPM就如同他的背包，可以讓node.js裝上許多不同的模塊。</description>
     </item>
   </channel>
