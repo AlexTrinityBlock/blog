@@ -6,6 +6,8 @@ stages:
   displayName: Deploy to VM
   jobs:
   - deployment: VMDeploy
+    workspace:
+      clean: all
     displayName: Deploy to cicd VM
     environment: 
       name: deployment-vm
@@ -15,12 +17,7 @@ stages:
       runOnce:
         deploy:
           steps:
-          - script: |
-              echo "清理工作區..."
-              rm -rf ./*
           - script: git clone https://github.com/AlexTrinityBlock/blog.git
             displayName: '下載 Blog'
-          - script: cd ./blog && pwd
-            displayName: '進入目錄'
-          - script: hugo
+          - script: cd ./blog && hugo
             displayName: '編譯 Hugo'
