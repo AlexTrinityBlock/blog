@@ -17,3 +17,7 @@ stages:
           steps:
           - script: git clone https://github.com/AlexTrinityBlock/blog.git
             displayName: '下載 Blog'
+          - script: cd ./blog && pwd
+            displayName: '進入目錄'
+          - script: hugo
+            displayName: '編譯 Hugo'
