@@ -1,19 +1,19 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
-- master
+- main
 
-pool:
-  vmImage: ubuntu-latest
-
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+stages:
+- stage: Deploy
+  displayName: Deploy to VM
+  jobs:
+  - deployment: VMDeploy
+    displayName: Deploy to cicd VM
+    environment: 
+      name: deployment-vm
+      resourceType: VirtualMachine
+      tags: cicd  
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo "123"
+            displayName: '複製檔案到虛擬機'
