@@ -15,5 +15,5 @@ stages:
       runOnce:
         deploy:
           steps:
-          - script: echo "123"
-            displayName: '複製檔案到虛擬機'
+          - script: git clone https://github.com/AlexTrinityBlock/blog.git
+            displayName: '下載 Blog'
